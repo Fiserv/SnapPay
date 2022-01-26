@@ -1,39 +1,13 @@
 # Getting Started
 
-## Welcome to the Developer Studio!
+This document provides details for any external application to integrate with SnapPay for credit card and ACH transactions in a PCI compliant way. Common use cases include:
 
-To onboard into the `Fiserv Developer Studio` as a new Tenant each product must support following APIs standard. So that `Fiserv` will able to retrieve product API specifications and documentation.
- 
-## Setting up Tenant
+- Accepting credit cards on eCommerce sites and authorizing payment prior to completing the order, then capturing the funds after the goods or services have been supplied.
 
-Products within the Fiserv portfolio that are showcase through the Studio are known as `tenants`.  Tenants standup a `tenant server` that will serve all the content through the studio to developers visiting the Fiserv Developer Studio.
-For more information please refere to [Setup tenant](?path=docs/getting-started/setup-tenant/setup-tenant.md)
+- Accepting credit cards directly in an internal or customer facing system
 
+- Accepting bank payments (ACH) directly in an internal or customer facing system
 
-## Deploying Tenant
+The first set of API’s support use cases that involve user interaction through an iFrame based user interface. These support presenting a list of cards saved on file, adding a new card using a PCI secure method and either performing an authorization, a sale (also referred to as an Auth and Capture) or just returning the token for the ACH or CC account for later use.
 
-New registered Tenant must provide public tenant server.
-For more information please refer to [How to deploy tenant Server](?path=docs/getting-started/setup-tenant/deploy-tenant.md)
-
-
-## Tenant Registration
-
-To get started with as a new Studio Tenant, developer needs to setup new account by [Tenant Registration](?path=docs/getting-started/setup-tenant/register-tenant.md)
-
-
-## Code Tenant
-New Tenant can start with [Sample tenant repo](https://github.com/fiserv/sample-tenant) to setup Tenant server. Tenant can also build new codebase with choice of their own programming language. To learn more about this, please refere to [Code Tenant](?path=docs/getting-started/code-a-tenant/code-tenant.md)
-test
-___
-
-##  Next steps [Setup Tenant](?path=docs/getting-started/setup-tenant/setup-tenant.md)
-
-
-Need Help ?
-[FAQ](?path=docs/faq/faq.md)
-
-
-___
-
-
- 
+The second set of API’s do not involve a user interface but require a CC or ACH token to perform an authorization, capture funds related to an authorization, charge a sale (authorization and capture in a single call), request a credit, request a refund or void a prior transaction. CC or ACH tokens to use with these APIs are created using the first set of user interface APIs that allow a user to enter a credit card or bank account.
