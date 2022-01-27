@@ -31,7 +31,7 @@
 - sections:
     - title: Getting Started
       link: docs/getting-started.md
- - sections:
+- sections:
     - title: APIs with User Interaction
       link: docs/apis-with-user-interaction.md
 - sections:
