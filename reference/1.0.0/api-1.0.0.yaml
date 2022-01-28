@@ -161,6 +161,370 @@ paths:
           description: Unauthorized access.
         '500':
           description: Internal server error.
+  /api/Interop/GetPaymentDetails:
+    post:
+      tags:
+        - APIs with User Interaction
+      x-group-name: APIs with User Interaction
+      x-proxy-name: Get Payment Details
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            maxLength: 10
+            minLength: 0
+            type: number
+        - name: MerchantId
+          in: header
+          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
+          schema:
+            maxLength: 50
+            minLength: 0
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  nullable: false
+                  maxLength: 10
+                  minLength: 0
+                  type: number
+                  example: 1000000001
+                companycode:
+                  description: Company Code
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 00200
+              additionalProperties: false
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/Interop/Tokenize:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Tokenize
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            maxLength: 10
+            minLength: 0
+            type: number
+        - name: MerchantId
+          in: header
+          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
+          schema:
+            maxLength: 50
+            minLength: 0
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  nullable: false
+                  maxLength: 10
+                  minLength: 0
+                  type: number
+                  example: 1000000001
+                companycode:
+                  description: Company Code
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 00200
+              additionalProperties: false
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/Interop/Authorize:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Authorize
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            maxLength: 10
+            minLength: 0
+            type: number
+        - name: MerchantId
+          in: header
+          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
+          schema:
+            maxLength: 50
+            minLength: 0
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  nullable: false
+                  maxLength: 10
+                  minLength: 0
+                  type: number
+                  example: 1000000001
+                companycode:
+                  description: Company Code
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 00200
+              additionalProperties: false
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/Interop/Charge:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Charge
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            maxLength: 10
+            minLength: 0
+            type: number
+        - name: MerchantId
+          in: header
+          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
+          schema:
+            maxLength: 50
+            minLength: 0
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  nullable: false
+                  maxLength: 10
+                  minLength: 0
+                  type: number
+                  example: 1000000001
+                companycode:
+                  description: Company Code
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 00200
+              additionalProperties: false
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/Interop/Capture:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Capture
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            maxLength: 10
+            minLength: 0
+            type: number
+        - name: MerchantId
+          in: header
+          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
+          schema:
+            maxLength: 50
+            minLength: 0
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  nullable: false
+                  maxLength: 10
+                  minLength: 0
+                  type: number
+                  example: 1000000001
+                companycode:
+                  description: Company Code
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 00200
+              additionalProperties: false
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/Interop/Credit:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Credit
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            maxLength: 10
+            minLength: 0
+            type: number
+        - name: MerchantId
+          in: header
+          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
+          schema:
+            maxLength: 50
+            minLength: 0
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  nullable: false
+                  maxLength: 10
+                  minLength: 0
+                  type: number
+                  example: 1000000001
+                companycode:
+                  description: Company Code
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 00200
+              additionalProperties: false
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/Interop/Refund:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Refund
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            maxLength: 10
+            minLength: 0
+            type: number
+        - name: MerchantId
+          in: header
+          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
+          schema:
+            maxLength: 50
+            minLength: 0
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  nullable: false
+                  maxLength: 10
+                  minLength: 0
+                  type: number
+                  example: 1000000001
+                companycode:
+                  description: Company Code
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 00200
+              additionalProperties: false
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
   /api/Interop/Void:
     post:
       tags:
@@ -301,6 +665,266 @@ paths:
                         type: string
                         description: Authorization Code
                         example: VOID
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/TransactionHistory:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Transaction History Download
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            maxLength: 10
+            minLength: 0
+            type: number
+        - name: MerchantId
+          in: header
+          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
+          schema:
+            maxLength: 50
+            minLength: 0
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  nullable: false
+                  maxLength: 10
+                  minLength: 0
+                  type: number
+                  example: 1000000001
+                companycode:
+                  description: Company Code
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 00200
+              additionalProperties: false
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/FundingHistory:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Funding History Download
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            maxLength: 10
+            minLength: 0
+            type: number
+        - name: MerchantId
+          in: header
+          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
+          schema:
+            maxLength: 50
+            minLength: 0
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  nullable: false
+                  maxLength: 10
+                  minLength: 0
+                  type: number
+                  example: 1000000001
+                companycode:
+                  description: Company Code
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 00200
+              additionalProperties: false
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/bin:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Bin Information
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            maxLength: 10
+            minLength: 0
+            type: number
+        - name: MerchantId
+          in: header
+          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
+          schema:
+            maxLength: 50
+            minLength: 0
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  nullable: false
+                  maxLength: 10
+                  minLength: 0
+                  type: number
+                  example: 1000000001
+                companycode:
+                  description: Company Code
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 00200
+              additionalProperties: false
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /AccountUpdater/GetUpdater:
+    post:
+      tags:
+        - Card Account Updater
+      x-group-name: Card Account Updater
+      x-proxy-name: Get Updater
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            maxLength: 10
+            minLength: 0
+            type: number
+        - name: MerchantId
+          in: header
+          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
+          schema:
+            maxLength: 50
+            minLength: 0
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  nullable: false
+                  maxLength: 10
+                  minLength: 0
+                  type: number
+                  example: 1000000001
+                companycode:
+                  description: Company Code
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 00200
+              additionalProperties: false
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /AccountUpdater/PutUpdater:
+    post:
+      tags:
+        - Card Account Updater
+      x-group-name: Card Account Updater
+      x-proxy-name: Put Updater
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            maxLength: 10
+            minLength: 0
+            type: number
+        - name: MerchantId
+          in: header
+          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
+          schema:
+            maxLength: 50
+            minLength: 0
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  nullable: false
+                  maxLength: 10
+                  minLength: 0
+                  type: number
+                  example: 1000000001
+                companycode:
+                  description: Company Code
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 00200
+              additionalProperties: false
+      responses:
+        '200':
+          description: Request successful.
         '400':
           description: Invalid request.
         '401':
