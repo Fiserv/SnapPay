@@ -32,6 +32,9 @@
   - title: Getting Started
     link: docs/getting-started.md
 - sections:
+  - title: "What's new"
+    link: docs/whats-new.md
+- sections:
   - title: APIs with User Interaction
     link: docs/apis-with-user-interaction.md
 - sections:
@@ -43,9 +46,6 @@
 - sections:
   - title: Appendix A - Test Data
     link: docs/appendix-a-test-data.md
-- sections:
-  - title: "What's new"
-    link: docs/whats-new.md
 
 # - sections:
 #     - title: Introduction
