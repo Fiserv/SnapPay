@@ -59,17 +59,17 @@
 		"bug": {
 			"label": "bug,REPLACEME",
 			"template": "bug.md",
-			"assignees": "awaneesh.srivastava@fiserv.com,palani.p@fiserv.com"
+			"assignees": "anandrewfiserv"
 		},
 		"feedback": {
 			"label": "feedback,REPLACEME",
 			"template": "feedback.md",
-			"assignees": "awaneesh.srivastava@fiserv.com"
+			"assignees": "anandrewfiserv"
 		},
 		"enhancement": {
 			"label": "enhancement,REPLACEME",
 			"template": "feature.md",
-			"assignees": "awaneesh.srivastava@fiserv.com"
+			"assignees": "anandrewfiserv"
 		}
 	}]
 }
