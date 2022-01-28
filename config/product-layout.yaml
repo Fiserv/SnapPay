@@ -52,7 +52,7 @@ featuredFeatures:
       - relatedAPI: 
         title: Get Request ID API
         description: This API prepares SnapPay with the information required to properly display SnapPay from within an iFrame or as a full page for user interaction to Authorize, Charge or Tokenize a credit card or ACH account.
-        type: "patch"        
+        type: "post"        
         path: "/api/Interop/GetRequestID"
       - relatedAPI: 
         title: Get Payment Details API
