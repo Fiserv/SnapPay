@@ -10,12 +10,12 @@ End Point URLs
   
 These are production URLs. Test URLs will be provided during test account setup.
 
-# iFrame related APIs
+## iFrame related APIs
 
 [https://restapi.snappayglobal.com/api/Interop/GetRequestID](https://urldefense.com/v3/__https://restapi.snappayglobal.com/api/Interop/GetRequestID__;!!P9vvK-4S!1K3DQo-5wOnM3FyywnbnB68mmIlM7ZXdiA_elnRr4boFLQhPYuDU3WjNE1_ykow7lEfB$)  
 [https://restapi.snappayglobal.com/api/Interop/GetPaymentDetails](https://urldefense.com/v3/__https://restapi.snappayglobal.com/api/Interop/GetPaymentDetails__;!!P9vvK-4S!1K3DQo-5wOnM3FyywnbnB68mmIlM7ZXdiA_elnRr4boFLQhPYuDU3WjNE1_ykiRayOPf$)  
 
-# Non UI APIs
+## Non UI APIs
 
 [https://restapi.snappayglobal.com/api/Interop/Tokenize](https://urldefense.com/v3/__https://restapi.snappayglobal.com/api/Interop/Tokenize__;!!P9vvK-4S!1K3DQo-5wOnM3FyywnbnB68mmIlM7ZXdiA_elnRr4boFLQhPYuDU3WjNE1_ykmE5oRf2$)  
 [https://restapi.snappayglobal.com/api/Interop/Authorize](https://urldefense.com/v3/__https://restapi.snappayglobal.com/api/Interop/Authorize__;!!P9vvK-4S!1K3DQo-5wOnM3FyywnbnB68mmIlM7ZXdiA_elnRr4boFLQhPYuDU3WjNE1_ykhmgF_E9$)  
@@ -28,7 +28,7 @@ These are production URLs. Test URLs will be provided during test account setup.
 [https://restapi.snappayglobal.com/api/FundingHistory](https://urldefense.com/v3/__https://restapi.snappayglobal.com/api/FundingHistory__;!!P9vvK-4S!1K3DQo-5wOnM3FyywnbnB68mmIlM7ZXdiA_elnRr4boFLQhPYuDU3WjNE1_ykuj3fz_a$)  
 [https://restapi.snappayglobal.com/api/bin](https://urldefense.com/v3/__https://restapi.snappayglobal.com/api/bin__;!!P9vvK-4S!1K3DQo-5wOnM3FyywnbnB68mmIlM7ZXdiA_elnRr4boFLQhPYuDU3WjNE1_ykvfbWExX$)  
 
-# CAU APIs
+## CAU APIs
 
 [https://restapi.snappayglobal.com/AccountUpdater/GetUpdater](https://urldefense.com/v3/__https://restapi.snappayglobal.com/AccountUpdater/GetUpdater__;!!P9vvK-4S!1K3DQo-5wOnM3FyywnbnB68mmIlM7ZXdiA_elnRr4boFLQhPYuDU3WjNE1_yko4_QO44$)  
 [https://restapi.snappayglobal.com/AccountUpdater/PutUpdater](https://urldefense.com/v3/__https://restapi.snappayglobal.com/AccountUpdater/PutUpdater__;!!P9vvK-4S!1K3DQo-5wOnM3FyywnbnB68mmIlM7ZXdiA_elnRr4boFLQhPYuDU3WjNE1_ykmWuribJ$)  
@@ -44,7 +44,7 @@ SnapPay Account ID
 
 Authentication
 
-Following values are needed for API authentication
+### Following values are needed for API authentication
 
 1.  API user ID
 2.  API password
