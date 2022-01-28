@@ -1,8 +1,6 @@
-Appendix A: Test Data
-=====================
+# Appendix A - Test Data
 
-Test Cards
-----------
+## Test Cards
 
 Note: Remove XX from the Card # and use any date in future for expiration date.
 
@@ -34,8 +32,7 @@ Discover
 
 AMEX
 
-Test ACH Details
-----------------
+## Test ACH Details
 
 Routing Number
 
