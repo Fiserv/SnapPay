@@ -29,20 +29,20 @@
 ################################################################################
 
 - sections:
-    - title: Getting Started
-      link: docs/getting-started.md
+  - title: Getting Started
+    link: docs/getting-started.md
 - sections:
-    - title: APIs with User Interaction
-      link: docs/apis-with-user-interaction.md
+  - title: APIs with User Interaction
+    link: docs/apis-with-user-interaction.md
 - sections:
-    - title: APIs without User Interaction
-      link: docs/apis-without-user-interaction.md
+  - title: APIs without User Interaction
+    link: docs/apis-without-user-interaction.md
 - sections:
-    - title: Card Account Updater
-      link: docs/card-account-updater.md
+  - title: Card Account Updater
+    link: docs/card-account-updater.md
 - sections:
-    - title: Appendix A - Test Data
-      link: docs/appendix-a-test-data.md
+  - title: Appendix A - Test Data
+    link: docs/appendix-a-test-data.md
 
 # - sections:
 #     - title: Introduction
