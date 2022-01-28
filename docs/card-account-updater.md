@@ -1,6 +1,6 @@
-# Card Account Updater (CAU) APIs
+# Card Account Updater APIs
 
-The Card Account Updater service provides merchants the ability to keep their customers' card data up-to-date. The Card Account Updater API includessupport pagination of GET requests, and the ability to submit DELETE requests.
+The Card Account Updater (CAU) service provides merchants the ability to keep their customers' card data up-to-date. The Card Account Updater API includessupport pagination of GET requests, and the ability to submit DELETE requests.
 
 *   Use the PutUpdater method to manually submit tokens to the Card Account Updater service.
 *   Use the GetUpdater method to retrieve data about recent updates.
