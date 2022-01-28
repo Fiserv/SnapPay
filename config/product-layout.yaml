@@ -29,23 +29,24 @@
 ################################################################################
 header:
   productionDescription: Digitally transform your payment process with certified ERP integration to improve working capital and increase efficiencies. SnapPay from Fiserv, integrates with popular ERP solutions and shopping cart solutions to serve the holistic B2B payment needs of enterprise-size businesses.
-  whoIsItFor: REPLACE ME
+  whoIsItFor: SnapPay application is built to serve medium and large merchants for enabling payments on both accounts receivables and payables side of business. It also serves government sector.
+
   image: 
     link: "/assets/images/Fiserv_Logo.jpg"
-    altText: REPLACEME™
+    altText: Fiserv SnapPay™
 featuredFeatures:
-  - title: REPLACE ME
-    description:  REPLACE ME
+  - title: Enable Payments for external application
+    description:  This set of API enables our merchants to integrate payment processing with any application of their choice. Their customers can make payments using credit card or ACH.
     tags: ["REPLACEME", "REPLACEME", "REPLACEME"]
     bullets: ["REPLACEME", "REPLACEME" ]  
     relatedDocs:
       - relatedDoc: 
-        title: REPLACEME
-        description: REPLACEME
+        title: GetRequestID API
+        description: This API prepares SnapPay with the information required to properly display SnapPay from within an iFrame or as a full page for user interaction to Authorize, Charge or Tokenize a credit card or ACH account.
         link: ./docs/REPLACE-ME1.md
       - relatedDoc: 
-        title: REPLACEME
-        description: REPLACEME
+        title: GetPaymentDetails API
+        description: This API returns the results of the GetRequestID and iFrame interaction to allow for further business processing like completing the order creation process on an eCommerce site after successful card authorization.
         link: ./docs/REPLACE-ME2.md
       - relatedDoc: 
         title: REPLACEME
@@ -53,13 +54,13 @@ featuredFeatures:
         link: ./docs/REPLACE-ME3.md
     relatedAPIs:
       - relatedAPI: 
-        title: REPLACEME
-        description: REPLACEME
+        title: GetRequestID API
+        description: This API prepares SnapPay with the information required to properly display SnapPay from within an iFrame or as a full page for user interaction to Authorize, Charge or Tokenize a credit card or ACH account.
         type: "patch"        
         path: "/v1/REPLACEME1"
       - relatedAPI: 
-        title: REPLACEME
-        description: REPLACEME
+        title: GetPaymentDetails API
+        description: This API returns the results of the GetRequestID and iFrame interaction to allow for further business processing like completing the order creation process on an eCommerce site after successful card authorization.
         type: "post"        
         path: "/v1/REPLACEME2"
       - relatedAPI: 
