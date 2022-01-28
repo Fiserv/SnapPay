@@ -1,10 +1,10 @@
-**User Interaction APIs are used for the following use cases:**
+# User Interaction APIs are used for the following use cases
 
-1.  Use SnapPay iFrame/Popup Form to authorize an amount using a saved or new credit card. The SnapPay iFrame will optionally display the following based on application configuration: ability to list, select, delete, edit or add a card.  
+1. Use SnapPay iFrame/Popup Form to authorize an amount using a saved or new credit card. The SnapPay iFrame will optionally display the following based on application configuration: ability to list, select, delete, edit or add a card.  
     To implement, use authorizationtype=”A” (Authorize) on API GetRequestID.
-2.  Use SnapPay iFrame/Popup Form to make a payment using saved or new payment method for a credit card or ACH account. The SnapPay iFrame will optionally display the following based on application configuration: ability to list, select, delete, edit or add a card as well as the ability to list, select, delete, edit or add an ACH bank account.  
+1. Use SnapPay iFrame/Popup Form to make a payment using saved or new payment method for a credit card or ACH account. The SnapPay iFrame will optionally display the following based on application configuration: ability to list, select, delete, edit or add a card as well as the ability to list, select, delete, edit or add an ACH bank account.  
     To implement, use authorizationtype=”S” (Sale) on API GetRequestID.
-3.  Use the SnapPay field level control iFrame to only tokenize a credit card number. The SnapPay iFrame will only display a single field for credit card number entry, and allows style sheet customization of the field display.  
+1. Use the SnapPay field level control iFrame to only tokenize a credit card number. The SnapPay iFrame will only display a single field for credit card number entry, and allows style sheet customization of the field display.  
     See section: API – GetRequestID – Field Level Control.
 
 API - Get Request ID – Full UI Option including iFrame
@@ -28,6 +28,6 @@ After successful authorization or charge/sale transaction, SnapPay will redirect
     **Note2: iOS does not support SnapPay within an iFrame. For requests coming from iOS, set the value of the paramter openiniframe to N.**
 3.  External application consumes the web service GetPaymentDetails to get ACH/credit card token along with payment transaction details and displays confirmation page.
 
-**In short, consume GetRequestID → open SnapPay → consume GetPaymentDetails**  
+### In short, consume GetRequestID → open SnapPay → consume GetPaymentDetails
   
 If the user requests to save a payment method, they will be associated with the userid that is passed. They will be displayed on later calls for the same userid. A SnapPay configuration parameter determines if the user is matched with a SnapPay user, allowing the same payment methods to be shared and updated by SnapPay EIPP and this API.
