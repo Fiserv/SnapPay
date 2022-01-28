@@ -41,7 +41,7 @@ paths:
       tags:
         - APIs with User Interaction
       x-group-name: APIs with User Interaction
-      x-proxy-name: GetRequestID - Field Level Control Option
+      x-proxy-name: Get Request ID
       summary: Get request ID
       description: Get request ID.
       operationId: getRequestID
@@ -312,7 +312,7 @@ paths:
       tags:
         - Card Account Updater
       x-group-name: Card Account Updater
-      x-proxy-name: DeleteUpdater
+      x-proxy-name: Delete Updater
       summary: DeleteUpdater
       description: The DELETE request unenrolls accounts that have been manually added using the PUT method.
       operationId: deleteUpdater
