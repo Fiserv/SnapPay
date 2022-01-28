@@ -32,8 +32,8 @@
   - title: Getting Started
     link: docs/getting-started.md
 - sections:
-  - title: "What's new"
-    link: docs/whats-new.md
+  - title: "What's Needed"
+    link: docs/whats-needed.md
 - sections:
   - title: APIs with User Interaction
     link: docs/apis-with-user-interaction.md
