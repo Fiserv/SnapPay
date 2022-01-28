@@ -41,30 +41,21 @@ featuredFeatures:
     bullets: ["REPLACEME", "REPLACEME" ]  
     relatedDocs:
       - relatedDoc: 
-        title: GetRequestID API
-        description: This API prepares SnapPay with the information required to properly display SnapPay from within an iFrame or as a full page for user interaction to Authorize, Charge or Tokenize a credit card or ACH account.
-        link: ./docs/REPLACE-ME1.md
+        title: Getting Started
+        description: Getting started with SnapPay APIs.
+        link: "/docs/getting-started.md"
       - relatedDoc: 
-        title: GetPaymentDetails API
-        description: This API returns the results of the GetRequestID and iFrame interaction to allow for further business processing like completing the order creation process on an eCommerce site after successful card authorization.
-        link: ./docs/REPLACE-ME2.md
-      - relatedDoc: 
-        title: REPLACEME
-        description: REPLACEME
-        link: ./docs/REPLACE-ME3.md
+        title: APIs with User Interaction
+        description: These set of APIs require user interaction.
+        link: "/docs/apis-with-user-interaction.md"
     relatedAPIs:
       - relatedAPI: 
-        title: GetRequestID API
+        title: Get Request ID API
         description: This API prepares SnapPay with the information required to properly display SnapPay from within an iFrame or as a full page for user interaction to Authorize, Charge or Tokenize a credit card or ACH account.
         type: "patch"        
-        path: "/v1/REPLACEME1"
+        path: "/api/Interop/GetRequestID"
       - relatedAPI: 
-        title: GetPaymentDetails API
+        title: Get Payment Details API
         description: This API returns the results of the GetRequestID and iFrame interaction to allow for further business processing like completing the order creation process on an eCommerce site after successful card authorization.
         type: "post"        
-        path: "/v1/REPLACEME2"
-      - relatedAPI: 
-        title: REPLACEME
-        description: REPLACEME
-        type: "get"        
-        path: "/v1/REPLACEME3"
+        path: "/api/Interop/GetPaymentDetails"
