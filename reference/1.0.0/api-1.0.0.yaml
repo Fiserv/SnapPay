@@ -167,6 +167,9 @@ paths:
         - APIs with User Interaction
       x-group-name: APIs with User Interaction
       x-proxy-name: Get Payment Details
+      summary: Get Payment Details
+      description: Get Payment Details.
+      operationId: getPaymentDetails
       parameters:
         - name: AccountId
           in: header
@@ -219,6 +222,9 @@ paths:
         - APIs without User Interaction
       x-group-name: APIs without User Interaction
       x-proxy-name: Tokenize
+      summary: Tokenize
+      description: Tokenize.
+      operationId: tokenize
       parameters:
         - name: AccountId
           in: header
@@ -271,6 +277,9 @@ paths:
         - APIs without User Interaction
       x-group-name: APIs without User Interaction
       x-proxy-name: Authorize
+      summary: Authorize
+      description: Authorize.
+      operationId: authorize
       parameters:
         - name: AccountId
           in: header
@@ -323,6 +332,9 @@ paths:
         - APIs without User Interaction
       x-group-name: APIs without User Interaction
       x-proxy-name: Charge
+      summary: Charge
+      description: Charge.
+      operationId: charge
       parameters:
         - name: AccountId
           in: header
@@ -375,6 +387,9 @@ paths:
         - APIs without User Interaction
       x-group-name: APIs without User Interaction
       x-proxy-name: Capture
+      summary: Capture
+      description: Capture.
+      operationId: capture
       parameters:
         - name: AccountId
           in: header
@@ -427,6 +442,9 @@ paths:
         - APIs without User Interaction
       x-group-name: APIs without User Interaction
       x-proxy-name: Credit
+      summary: Credit
+      description: Credit.
+      operationId: credit
       parameters:
         - name: AccountId
           in: header
@@ -479,6 +497,9 @@ paths:
         - APIs without User Interaction
       x-group-name: APIs without User Interaction
       x-proxy-name: Refund
+      summary: Refund
+      description: Refund.
+      operationId: refund
       parameters:
         - name: AccountId
           in: header
@@ -676,7 +697,10 @@ paths:
       tags:
         - APIs without User Interaction
       x-group-name: APIs without User Interaction
-      x-proxy-name: Transaction History Download
+      x-proxy-name: Retrieve Transaction History
+      summary: Retrieve Transaction History
+      description: Retrieve Transaction History.
+      operationId: retrieveTransactionHistory
       parameters:
         - name: AccountId
           in: header
@@ -728,7 +752,10 @@ paths:
       tags:
         - APIs without User Interaction
       x-group-name: APIs without User Interaction
-      x-proxy-name: Funding History Download
+      x-proxy-name: Retrieve Funding History
+      summary: Retrieve Funding History
+      description: Retrieve Funding History.
+      operationId: retrieveFundingHistory
       parameters:
         - name: AccountId
           in: header
@@ -781,6 +808,9 @@ paths:
         - APIs without User Interaction
       x-group-name: APIs without User Interaction
       x-proxy-name: Bin Information
+      summary: Bin Information
+      description: Bin Information.
+      operationId: binInformation
       parameters:
         - name: AccountId
           in: header
@@ -833,6 +863,9 @@ paths:
         - Card Account Updater
       x-group-name: Card Account Updater
       x-proxy-name: Get Updater
+      summary: Get Updater
+      description: Get Updater.
+      operationId: getUpdater
       parameters:
         - name: AccountId
           in: header
@@ -885,6 +918,9 @@ paths:
         - Card Account Updater
       x-group-name: Card Account Updater
       x-proxy-name: Put Updater
+      summary: Put Updater
+      description: Put Updater.
+      operationId: putUpdater
       parameters:
         - name: AccountId
           in: header
