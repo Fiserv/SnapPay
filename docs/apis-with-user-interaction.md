@@ -13,7 +13,7 @@ API - Get Request ID – Full UI Option including iFrame
 The GetRequestID API prepares SnapPay with the information required to properly display SnapPay from within an iFrame or as a full page for user interaction to Authorize, Charge or Tokenize a credit card or ACH account.  
   
 Process Flow for interacting with users to authorize, charge or tokenize a credit card or ACH accounts.  
-![Process Flow]:<../assets/images/GetReqImg1.png>
+![Process Flow](../assets/images/GetReqImg1.jpg)
   
 The external application will consume a web service GetRequestID to get a request ID by passing details like company code, currency code, etc. to SnapPay. SnapPay will store these details and responds with a request ID. The request ID will expire within a number of seconds after consuming the web service. The number of seconds until expiring is configured within the SnapPay account.  
 After consuming the web service, the external application will either redirect the user to a page where the SnapPay screen will open in an iFrame or redirect the user to SnapPay page directly . User will be able to use ACH accounts or credit cards on file to authorize or charge the amount or add a payment method. Authorization is available for credit card only and not available for ACH. Based on the parameter (SavePaymentMethod), the user will be able to save the payment method for future use.  
