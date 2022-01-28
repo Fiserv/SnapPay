@@ -30,342 +30,363 @@
 
 openapi: 3.0.2
 info:
-  title: Dev Portal Tenant APIs.
-  description: To onboard properly into the Fiserv Developer Studio as a tenant each
-    product must support these APIs so that we can retrieve product specific API specifications
-    and documentation.
+  title: SnapPay
+  description: Digitally transform your payment process with certified ERP integration to improve working capital and increase efficiencies. SnapPay from Fiserv, integrates with popular ERP solutions and shopping cart solutions to serve the holistic B2B payment needs of enterprise-size businesses.
   version: 1.0.0
 servers:
-  - url: https://tenants.fiserv.com/
+  - url: https://restapi.snappayglobal.com
 paths:
-  /v1/products:
-    get:
-      tags:
-        - Tenant
-      x-group-name: Tenant
-      x-proxy-name: products
-      summary: Returns tenant provider API.
-      operationId: TenantProviderID
-      responses:
-        200:
-          description: Tenant provider response. <a href="https://fiserv.com" rel="noopener noreferrer" target="_blank">external link</a> <a href="../docs?path=docs/getting-started/setup-tenant/setup-tenant.md">Setup Tenant</a>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TenantProviderResponse'
-            text/yaml:
-              schema:
-                $ref: '#/components/schemas/TenantProviderResponse'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/TenantProviderResponse'
-  /v1/apis:
+  /api/Interop/GetRequestID:
     post:
       tags:
-        - Specs
-      x-group-name: Specs
-      x-proxy-name: apis
-      summary: Returns OpenAPI Spec.
-      operationId: APISpecProviderId
+        - APIs with User Interaction
+      x-group-name: APIs with User Interaction
+      x-proxy-name: GetRequestID - Field Level Control Option
+      summary: Get request ID
+      description: Get request ID.
+      operationId: getRequestID
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            maxLength: 10
+            minLength: 0
+            type: number
+        - name: MerchantId
+          in: header
+          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
+          schema:
+            maxLength: 50
+            minLength: 0
+            type: string
       requestBody:
-        description: Filter Request
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SpecsFilterRequest'
-        required: false
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  nullable: false
+                  maxLength: 10
+                  minLength: 0
+                  type: number
+                  example: 1000000001
+                companycode:
+                  description: Company Code
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 00200
+                currencycode:
+                  description: Currency Code
+                  nullable: false
+                  maxLength: 5
+                  minLength: 0
+                  type: string
+                  example: USD
+                customerid:
+                  description: Customer ID
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 600038
+                userid:
+                  description: External Application User ID
+                  nullable: false
+                  maxLength: 100
+                  minLength: 0
+                  type: string
+                  example: johnsmith@abc.com
+                transactiontype:
+                  description: T - for Tokenization
+                  nullable: false
+                  maxLength: 1
+                  minLength: 0
+                  type: string
+                  example: T
+                paymentmethod:
+                  description: CC - for credit card
+                  nullable: false
+                  maxLength: 3
+                  minLength: 0
+                  type: string
+                  example: CC
+                language:
+                  description: '""en-US"" for English language'
+                  nullable: false
+                  maxLength: 5
+                  minLength: 0
+                  type: string
+                  example: en-US
+                stylecss:
+                  description: CSS properties separated by semicolon. List is given below under Supported CSS Properties.
+                  nullable: true
+                  maxLength: 600
+                  minLength: 0
+                  type: string
+                  example: 'border:2px solid orange; text-align: left;'
+              additionalProperties: false
       responses:
-        200:
-          description: ""
-          content: {}
-      x-codegen-request-body-name: Body
-  /v1/docs:
-    get:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: Account ID
+                    example: 1000000008
+                  token:
+                    type: string
+                    description: Request ID that will be used to open SnapPay iFrame
+                    example: 0b724a4f-5bbb-e811-b229-000c29cce4c0
+                  status:
+                    type: string
+                    description: Y or N
+                    example: Y
+                  message:
+                    type: string
+                    description: e.g. Information stored successfully
+                    example: Information stored successfully.
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/Interop/Void:
+    post:
       tags:
-        - Documents
-      x-group-name: Documents
-      x-proxy-name: docs
-      summary: Returns Docs in markdown format.
-      operationId: DocsAPIId
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Void
+      summary: Void
+      description: The Void API attempts to void or cancel a prior authorization transaction. The original authorization transaction is set in parameter referencetransactionid and some explanatory text can be set in the reference parameter. For voding charge and capture transaction, use refund API.
+      operationId: void
       parameters:
-        - in: query
-          name: path
-          schema:
-            type: string
+        - name: AccountId
+          in: header
+          description: Account ID
           required: true
-          description: Markdown document path
+          schema:
+            maxLength: 10
+            minLength: 0
+            type: number
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  nullable: false
+                  maxLength: 10
+                  minLength: 0
+                  type: number
+                  example: 1000000001
+                customerid:
+                  description: Customer ID
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 600038
+                currency:
+                  description: Currency Code
+                  nullable: false
+                  maxLength: 5
+                  minLength: 0
+                  type: string
+                  example: USD
+                companycode:
+                  description: Company Code
+                  nullable: false
+                  maxLength: 20
+                  minLength: 0
+                  type: string
+                  example: 00200
+                userid:
+                  description: External Application User ID
+                  nullable: false
+                  maxLength: 100
+                  minLength: 0
+                  type: string
+                  example: johnsmith@abc.com
+                referencetransactionid:
+                  description: Reference Transaction ID. Either pgtransactionid or paymenttransactionid based on SnapPay account configuration
+                  nullable: false
+                  maxLength: 30
+                  minLength: 0
+                  type: string
+                  example: 1458
+                reference:
+                  description: Reference Text
+                  nullable: false
+                  maxLength: 50
+                  minLength: 0
+                  type: string
+                purchaseorder:
+                  description: Purchase Order
+                  nullable: false
+                  maxLength: 50
+                  minLength: 0
+                  type: string
+              additionalProperties: false
       responses:
-        200:
-          description: ""
-          content: {}
-      x-codegen-request-body-name: Body
-  /v1/layouts:
-    get:
-      tags:
-        - Layout
-      x-group-name: Layout
-      x-proxy-name: layouts
-      summary: Returns the product page layout.
-      operationId: LayoutAPIId
-      responses:
-        200:
-          description: This text will appear as description of your response body.
+        '200':
+          description: Request successful.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PageLayoutResponse'
-            text/yaml:
-              schema:
-                $ref: '#/components/schemas/PageLayoutResponse'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/PageLayoutResponse'
-  /live:
-    get:
-      tags:
-        - HealthCheck
-      x-group-name: HealthCheck
-      x-proxy-name: live
-      summary: Health check probes.
-      operationId: healthCheckId
-      x-links: 
-        link1: 
-          description: Developer Studio
-          flag: external
-          url:  'https://dev-developerstudio.fiserv.com/'
-        link2: 
-          description: Setup tenant
-          flag: internal
-          url:  '../docs?path=docs/getting-started/setup-tenant/setup-tenant.md'
-        link3: 
-          description: Fiserv Portal
-          flag: external
-          url:  'https://fiserv.com'
-      responses:
-        200:
-          description: Health check.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LiveProbeResponse'
-  
-components:
-  schemas:
-    LiveProbeResponse:
-      type: object
-      properties:
-        message:
-          type: string
-          description: Message
-    PageLayoutResponse:
-      type: array
-      items:
-        type: object
-        properties:
-          hero:
-            type: array
-            items:
-              type: object
-              properties:
-                descrption:
-                  type: string
-                  description: Descrption
-                image:
-                  type: string
-                  description: Image
-            description: Hero
-          journey Cards:
-            type: array
-            items:
-              type: object
-              properties:
-                journeyCard:
-                  type: array
-                  items:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: AccountID
+                    example: 1000000008
+                  pgtransactionid:
+                    type: string
+                    description: Payment Gateway Transaction ID
+                    example: 1458102983091283
+                  paymenttransactionid:
+                    type: string
+                    description: SnapPay Transaction ID
+                    example: 1458
+                  status:
+                    type: string
+                    description: Overall Status
+                    example: Y
+                  message:
+                    type: string
+                    description: e.g. Transaction Successful
+                    example: Transaction successful.
+                  reference:
+                    type: string
+                    description: Reference Text is returned back
+                  purchaseorder:
+                    type: string
+                    description: Purchase Order
+                  transaction:
                     type: object
                     properties:
-                      contextualNavigationCards:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            contextualNavigationCard:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  description:
-                                    type: string
-                                    description: Description
-                                  link:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        type:
-                                          type: string
-                                          description: Type
-                                        uri:
-                                          type: string
-                                          description: URI
-                                    description: Link
-                                  title:
-                                    type: string
-                                    description: Title
-                              description: ContextualNavigationCard
-                        description: ContextualNavigationCards
-                      description:
+                      merchantid:
                         type: string
-                        description: Description
-                      link:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            type:
-                              type: string
-                              description: Type
-                            uri:
-                              type: string
-                              description: URI
-                        description: Link
-                      title:
+                        description: Payment Gateway Merchant ID
+                        example: 34032039484234
+                      returncode:
                         type: string
-                        description: Title
-                  description: JourneyCard
-            description: JourneyCards
-    SpecsFilterRequest:
-      type: object
-      properties:
-        categories:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-                description: Name
-              subcategories:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    name:
-                      type: string
-                      description: Name
-                description: Subcategories
-          description: Categories
-    TenantProviderResponse:
-      type: object
-      properties:
-        brand:
-          type: string
-          description: Brand
-        brandDescription:
-          type: string
-          description: BrandDescription
-        brandLogoURL:
-          type: string
-          description: BrandLogoURL
-        categories:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-                description: Name
-              subcategories:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    name:
-                      type: string
-                      description: Name
-                    value:
-                      type: string
-                      description: Value
-                description: Subcategories
-              value:
-                type: string
-                description: Value
-          description: Categories
-        name:
-          type: string
-          description: Name
-        product:
-          type: object
-          properties:
-            apiSpecification:
-              type: string
-              description: APISpecification 
-            description:
-              type: string
-              description: Description
-            documentation:
-              type: string
-              description: Documentation
-            featured:
-              type: boolean
-              description: Featured
-            layout:
-              type: string
-              description: Layout
-            logoURL:
-              type: string
-              description: LogoURL
-          description: Product
-        solution:
-          type: string
-          description: Solution
-        title:
-          type: string
-          description: Title
-  responses:
-    apiSpecResponseWrapper:
-      description: OpenAPI Spec for the APIs. 
-      content: {}
-    docsResponseWrapper:
-      description: Markdown files.
-      content: {}
-    liveResponse:
-      description: Health check.
-      content:
-        application/json:
+                        description: Payment Gateway Return Code
+                        example: 00
+                      returndescription:
+                        type: string
+                        description: Return Description
+                        example: Void successful.
+                      pgtransactionid:
+                        type: string
+                        description: Payment Gateway Transaction ID
+                        example: 260997162758
+                      paymenttransactionid:
+                        type: string
+                        description: SnapPay Transaction ID
+                        example: 1494
+                      authorizationcode:
+                        type: string
+                        description: Authorization Code
+                        example: VOID
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /AccountUpdater/DeleteUpdater:
+    post:
+      tags:
+        - Card Account Updater
+      x-group-name: Card Account Updater
+      x-proxy-name: DeleteUpdater
+      summary: DeleteUpdater
+      description: The DELETE request unenrolls accounts that have been manually added using the PUT method.
+      operationId: deleteUpdater
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
           schema:
-            $ref: '#/components/schemas/LiveProbeResponse'
-        text/yaml:
+            maxLength: 10
+            minLength: 0
+            type: number
+        - name: MerchantId
+          in: header
+          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
           schema:
-            $ref: '#/components/schemas/LiveProbeResponse'
-        text/plain:
-          schema:
-            $ref: '#/components/schemas/LiveProbeResponse'
-    productPage:
-      description: This text will appear as description of your response body. 
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PageLayoutResponse'
-        text/yaml:
-          schema:
-            $ref: '#/components/schemas/PageLayoutResponse'
-        text/plain:
-          schema:
-            $ref: '#/components/schemas/PageLayoutResponse'
-    tenant:
-      description: This text will appear as description of your response body. 
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TenantProviderResponse'
-        text/yaml:
-          schema:
-            $ref: '#/components/schemas/TenantProviderResponse'
-        text/plain:
-          schema:
-            $ref: '#/components/schemas/TenantProviderResponse'
-  securitySchemes:
-    basic:
-      type: http
-      scheme: basic
+            maxLength: 50
+            minLength: 0
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchid:
+                  description: Merchant ID
+                  nullable: false
+                  type: number
+                  example: 496695144562
+                accounts:
+                  description: List of Credit Card Tokens that need to be deleted
+                  nullable: false
+                  type: array
+                  items:
+                    type: number
+                  example: [ 9417085548851111, 9550096877584444 ]
+              additionalProperties: false
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  merchid:
+                    type: number
+                    description: Merchant ID
+                    example: 496695144562
+                  total:
+                    type: number
+                    description: Total tokens received
+                    example: 2
+                  deleted:
+                    type: number
+                    description: Number of tokens that were deleted successfully
+                    example: 1
+                  notdeleted:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        account:
+                          type: string
+                          description: The token that caused the error
+                          example: 9550096877584444
+                        message:
+                          type: string
+                          description: Error message
+                          example: account/token does not exist in CAU database
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
