@@ -308,7 +308,7 @@ paths:
         '500':
           description: Internal server error.
   /AccountUpdater/DeleteUpdater:
-    post:
+    put:
       tags:
         - Card Account Updater
       x-group-name: Card Account Updater
