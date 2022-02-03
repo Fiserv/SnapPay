@@ -1,5 +1,5 @@
-################################################################################
-# Copyrights © 2021-2022 Fiserv, Inc. or its affiliates. 
+###########################################################################
+# Copyrights � 2021-2022 Fiserv, Inc. or its affiliates. 
 # Fiserv is a trademark of Fiserv, Inc., 
 # registered or used in the United States and foreign countries, 
 # and may or may not be registered in your country.  
@@ -26,25 +26,55 @@
 # No warranties, either express or implied, 
 # are granted or extended by this work or 
 # the delivery of this work
-################################################################################
-
+#########################################################################
 openapi: 3.0.2
 info:
   title: SnapPay
   description: Digitally transform your payment process with certified ERP integration to improve working capital and increase efficiencies. SnapPay from Fiserv, integrates with popular ERP solutions and shopping cart solutions to serve the holistic B2B payment needs of enterprise-size businesses.
   version: 1.0.0
 servers:
-  - url: https://restapi.snappayglobal.com
+  - url: https://restapi.snappayglobal.com/
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+security:
+  - basicAuth: []
+tags:
+  - name: APIs with user interaction
+  - name: APIs without user interaction
+  - name: Card Account Updater
 paths:
-  /api/Interop/GetRequestID:
+  /api/interop/GetRequestID:
     post:
       tags:
-        - APIs with User Interaction
-      x-group-name: APIs with User Interaction
-      x-proxy-name: Get Request ID
-      summary: Get request ID
+        - APIs with user interaction
+        x-group-name: APIs with User Interaction
+        x-proxy-name: Get Request ID
+      summary: Get Request ID - Field Level
       description: Get request ID.
       operationId: getRequestID
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                accountid: '1000000001'
+                companycode: '00100'
+                currencycode: USD
+                customerid: '100'
+                userid: noreply@snappay.com
+                savepaymentmethod: 'Y'
+                redirecturl: https://www.xyz.com/receive
+                transactiontype: T
+                paymentmethod: CC
+                transactionamount: '0.00'
+                cvvrequired: 'Y'
+                language: en-US
+            security:
+              - basicAuth: []
       parameters:
         - name: AccountId
           in: header
@@ -61,76 +91,12 @@ paths:
             maxLength: 50
             minLength: 0
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountid:
-                  description: Account ID
-                  nullable: false
-                  maxLength: 10
-                  minLength: 0
-                  type: number
-                  example: 1000000001
-                companycode:
-                  description: Company Code
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 00200
-                currencycode:
-                  description: Currency Code
-                  nullable: false
-                  maxLength: 5
-                  minLength: 0
-                  type: string
-                  example: USD
-                customerid:
-                  description: Customer ID
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 600038
-                userid:
-                  description: External Application User ID
-                  nullable: false
-                  maxLength: 100
-                  minLength: 0
-                  type: string
-                  example: johnsmith@abc.com
-                transactiontype:
-                  description: T - for Tokenization
-                  nullable: false
-                  maxLength: 1
-                  minLength: 0
-                  type: string
-                  example: T
-                paymentmethod:
-                  description: CC - for credit card
-                  nullable: false
-                  maxLength: 3
-                  minLength: 0
-                  type: string
-                  example: CC
-                language:
-                  description: '""en-US"" for English language'
-                  nullable: false
-                  maxLength: 5
-                  minLength: 0
-                  type: string
-                  example: en-US
-                stylecss:
-                  description: CSS properties separated by semicolon. List is given below under Supported CSS Properties.
-                  nullable: true
-                  maxLength: 600
-                  minLength: 0
-                  type: string
-                  example: 'border:2px solid orange; text-align: left;'
-              additionalProperties: false
+          example: 'optional '
+        - name: Signature
+          in: header
+          schema:
+            type: string
+          example: HMAC <<unique hmac value>>
       responses:
         '200':
           description: Request successful.
@@ -170,6 +136,16 @@ paths:
       summary: Get Payment Details
       description: Get Payment Details.
       operationId: getPaymentDetails
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                accountid: '1000000001'
+                token: 073c8be3-b0db-e811-a954-000d3a92a01e
+      security:
+        - basicAuth: []
       parameters:
         - name: AccountId
           in: header
@@ -186,27 +162,12 @@ paths:
             maxLength: 50
             minLength: 0
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountid:
-                  description: Account ID
-                  nullable: false
-                  maxLength: 10
-                  minLength: 0
-                  type: number
-                  example: 1000000001
-                companycode:
-                  description: Company Code
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 00200
-              additionalProperties: false
+          example: 'optional '
+        - name: Signature
+          in: header
+          schema:
+            type: string
+          example: HMAC <<unique hmac value>>
       responses:
         '200':
           description: Request successful.
@@ -216,7 +177,7 @@ paths:
           description: Unauthorized access.
         '500':
           description: Internal server error.
-  /api/Interop/Tokenize:
+  /api/interop/tokenize:
     post:
       tags:
         - APIs without User Interaction
@@ -225,7 +186,39 @@ paths:
       summary: Tokenize
       description: Tokenize.
       operationId: tokenize
-      parameters:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                accountid: 1000000001
+                requesttype: C
+                currency: USD
+                companycode: '00200'
+                branchplant: ''
+                ordertype: ''
+                mode: CC
+                type: VISA
+                routingnumber: ''
+                bankname: ''
+                checktype: ''
+                identificationtype: ''
+                dlstate: ''
+                identificationnumber: ''
+                accountnumber: 16 digit card number
+                expirationdate: '042020'
+                name: ABC Customer
+                addressline1: Main Street
+                city: Aurora
+                state: IL
+                zip: '60540'
+                country: US
+                email: noreply@snappay.com
+                phonenumber: ''
+        security:
+        - basicAuth: []
+        parameters:
         - name: AccountId
           in: header
           description: Account ID
@@ -241,37 +234,22 @@ paths:
             maxLength: 50
             minLength: 0
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountid:
-                  description: Account ID
-                  nullable: false
-                  maxLength: 10
-                  minLength: 0
-                  type: number
-                  example: 1000000001
-                companycode:
-                  description: Company Code
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 00200
-              additionalProperties: false
+          example: 'optional '
+        - name: Signature
+          in: header
+          schema:
+            type: string
+          example: HMAC <<unique hmac value>>
       responses:
         '200':
-          description: Request successful.
+            description: Request successful.
         '400':
           description: Invalid request.
         '401':
           description: Unauthorized access.
         '500':
           description: Internal server error.
-  /api/Interop/Authorize:
+  /api/interop/authorize:
     post:
       tags:
         - APIs without User Interaction
@@ -280,6 +258,40 @@ paths:
       summary: Authorize
       description: Authorize.
       operationId: authorize
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                accountid: 1000000001
+                customerid: '100'
+                currency: USD
+                companycode: '00200'
+                branchplant: ''
+                ordertype: ''
+                orderid: ''
+                invoiceid: '10093'
+                userid: user1
+                reference: ''
+                purchaseorder: ''
+                cards:
+                  - transactionamount: 10
+                    tokenid: '9417085548851111'
+                    cvv: ''
+                    expirationdate: '042023'
+                    customername: ABC Customer
+                    addressline1: Main street
+                    city: Aurora
+                    state: IL
+                    zip: '60540'
+                    country: US
+                    email: noreply@snappay.com
+                    phonenumber: ''
+                    type: VISA
+                    last4: '1111'
+      security:
+        - basicAuth: []
       parameters:
         - name: AccountId
           in: header
@@ -296,27 +308,12 @@ paths:
             maxLength: 50
             minLength: 0
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountid:
-                  description: Account ID
-                  nullable: false
-                  maxLength: 10
-                  minLength: 0
-                  type: number
-                  example: 1000000001
-                companycode:
-                  description: Company Code
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 00200
-              additionalProperties: false
+          example: 'optional '
+        - name: Signature
+          in: header
+          schema:
+            type: string
+          example: HMAC <<unique hmac value>>
       responses:
         '200':
           description: Request successful.
@@ -326,7 +323,7 @@ paths:
           description: Unauthorized access.
         '500':
           description: Internal server error.
-  /api/Interop/Charge:
+  /api/interop/charge:
     post:
       tags:
         - APIs without User Interaction
@@ -335,6 +332,49 @@ paths:
       summary: Charge
       description: Charge.
       operationId: charge
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                accountid: '1000000001'
+                referencetransactionid: '1329'
+                transactionamount: '500'
+                customerid: '4242'
+                currency: USD
+                companycode: '00200'
+                userid: noreply@snappay.com
+                orderid: '123'
+                invoiceid: '123'
+                customid: ''
+                comment: Capture for Order 123
+                sendemailreceipts: 'Y'
+                level3:
+                  - linenumber: '001'
+                    productcode: BQT01
+                    unitcost: '1.75'
+                    quantity: '3'
+                    itemdescriptor: Bouquet
+                    unitofmeasure: EA
+                    commoditycode: Commodity 1
+                    taxamount: '0.12'
+                    taxrate: '8'
+                    itemdiscount: '0'
+                    lineitemtotal: '5.37'
+                  - linenumber: '002'
+                    productcode: BQT02
+                    unitcost: '2'
+                    quantity: '3'
+                    itemdescriptor: Bouquet
+                    unitofmeasure: EA
+                    commoditycode: Commodity 2
+                    taxamount: '0.97'
+                    taxrate: '8'
+                    itemdiscount: '0'
+                    lineitemtotal: '6.97'
+      security:
+        - basicAuth: []
       parameters:
         - name: AccountId
           in: header
@@ -351,27 +391,12 @@ paths:
             maxLength: 50
             minLength: 0
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountid:
-                  description: Account ID
-                  nullable: false
-                  maxLength: 10
-                  minLength: 0
-                  type: number
-                  example: 1000000001
-                companycode:
-                  description: Company Code
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 00200
-              additionalProperties: false
+          example: 'optional '
+        - name: Signature
+          in: header
+          schema:
+            type: string
+          example: HMAC <<unique hmac value>>
       responses:
         '200':
           description: Request successful.
@@ -390,43 +415,95 @@ paths:
       summary: Capture
       description: Capture.
       operationId: capture
-      parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            maxLength: 10
-            minLength: 0
-            type: number
-        - name: MerchantId
-          in: header
-          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
-          schema:
-            maxLength: 50
-            minLength: 0
-            type: string
       requestBody:
         content:
           application/json:
             schema:
               type: object
-              properties:
-                accountid:
-                  description: Account ID
-                  nullable: false
-                  maxLength: 10
-                  minLength: 0
-                  type: number
-                  example: 1000000001
-                companycode:
-                  description: Company Code
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 00200
-              additionalProperties: false
+              example:
+                accountid: '1000000001'
+                companycode: '00100'
+                shipfromzip: '60500'
+                branchplant: M30
+                orderid: '123448'
+                invoiceid: '567848'
+                orderdate: ''
+                userid: userid1
+                shiptocountry: ''
+                purchaseorder: '1243'
+                shiptozip: ''
+                customerid: '4242'
+                currency: USD
+                sendemailreceipts: 'Y'
+                ecomind: E
+                cof: C
+                cofscheduled: 'N'
+                paymentmethod:
+                  tokenid: '100672315657'
+                  transactionamount: '125.50'
+                  cvv: '123'
+                  customername: Hex Financial
+                  addressline1: Main Street
+                  city: Aurora
+                  state: IL
+                  zip: '60540'
+                  country: US
+                  email: noreply@snappay.com
+                  phonenumber: ''
+                  type: checking
+                  last4: '6789'
+                  routingnumber: '123123123'
+                  secureflag: '05'
+                  securevalue: ''
+                  securedstid: ''
+                  secureexemption: lowvalue
+                level3:
+                  - linenumber: '1.000'
+                    productcode: ROS01
+                    taxrate: '0.073'
+                    quantity: '2'
+                    itemdescriptor: Mixed Bouquet
+                    unitcost: '30.7500'
+                    lineitemtotal: '65.96'
+                    taxamount: '4.46'
+                    commoditycode: Commodity 1
+                    unitofmeasure: EA
+                  - linenumber: '2.000'
+                    productcode: BQT02
+                    taxrate: '0.073'
+                    quantity: '2'
+                    itemdescriptor: Spring Bouquet
+                    unitcost: '25.6250'
+                    lineitemtotal: '54.97'
+                    taxamount: '3.72'
+                    commoditycode: Commodity 2
+                    unitofmeasure: EA
+                ordertype: SO
+                userfields:
+                  - udf0: Value 1
+                  - udf1: Value 2
+                  - udf2: Value 3
+                  - udf3: Value 4
+                  - custommerchant: Your Company
+                  - customphone: 888-555-HELP
+      security:
+        - basicAuth: []
+      parameters:
+       - name: AccountId
+         in: header
+         description: Account ID
+         required: true
+         schema:
+            maxLength: 10
+            minLength: 0
+            type: number
+       - name: MerchantId
+         in: header
+         description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
+         schema:
+            maxLength: 50
+            minLength: 0
+            type: string
       responses:
         '200':
           description: Request successful.
@@ -439,12 +516,49 @@ paths:
   /api/Interop/Credit:
     post:
       tags:
-        - APIs without User Interaction
+         - APIs without User Interaction
       x-group-name: APIs without User Interaction
       x-proxy-name: Credit
       summary: Credit
       description: Credit.
       operationId: credit
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                accountid: 1000000001
+                customerid: '100'
+                currency: USD
+                companycode: '00100'
+                userid: User1
+                orderid: '123'
+                invoiceid: '423'
+                ordertype: ''
+                branchplant: ''
+                reference: ''
+                purchaseorder: ''
+                sendemailreceipts: 'Y'
+                ecomind: E
+                cof: C
+                cofscheduled: 'N'
+                paymentmethod:
+                  transactionamount: '12.34'
+                  tokenid: '9548009641895454'
+                  secureflag: '05'
+                  securevalue: ''
+                  securedstid: ''
+                  secureexemption: lowvalue
+                userfields:
+                  - udf0: Value 1
+                  - udf1: Value 2
+                  - udf2: Value 3
+                  - udf3: Value 4
+                  - custommerchant: Fiserv Company
+                  - customphone: 888-555-HELP
+      security:
+        - basicAuth: []
       parameters:
         - name: AccountId
           in: header
@@ -461,27 +575,12 @@ paths:
             maxLength: 50
             minLength: 0
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountid:
-                  description: Account ID
-                  nullable: false
-                  maxLength: 10
-                  minLength: 0
-                  type: number
-                  example: 1000000001
-                companycode:
-                  description: Company Code
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 00200
-              additionalProperties: false
+          example: 'optional '
+        - name: Signature
+          in: header
+          schema:
+            type: string
+          example: HMAC <<unique hmac value>>
       responses:
         '200':
           description: Request successful.
@@ -500,6 +599,26 @@ paths:
       summary: Refund
       description: Refund.
       operationId: refund
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                accountid: 1000000001
+                referencetransactionid: '1403'
+                transactionamount: '10.00'
+                customerid: '100'
+                currency: USD
+                companycode: '00100'
+                userid: User
+                orderid: '123'
+                invoiceid: '423'
+                reference: ''
+                purchaseorder: ''
+                sendemailreceipts: 'Y'
+      security:
+        - basicAuth: []
       parameters:
         - name: AccountId
           in: header
@@ -516,30 +635,15 @@ paths:
             maxLength: 50
             minLength: 0
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountid:
-                  description: Account ID
-                  nullable: false
-                  maxLength: 10
-                  minLength: 0
-                  type: number
-                  example: 1000000001
-                companycode:
-                  description: Company Code
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 00200
-              additionalProperties: false
+          example: 'optional '
+        - name: Signature
+          in: header
+          schema:
+            type: string
+          example: HMAC <<unique hmac value>>
       responses:
         '200':
-          description: Request successful.
+           description: Request successful.
         '400':
           description: Invalid request.
         '401':
@@ -569,138 +673,87 @@ paths:
           application/json:
             schema:
               type: object
-              properties:
-                accountid:
-                  description: Account ID
-                  nullable: false
-                  maxLength: 10
-                  minLength: 0
-                  type: number
-                  example: 1000000001
-                customerid:
-                  description: Customer ID
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 600038
-                currency:
-                  description: Currency Code
-                  nullable: false
-                  maxLength: 5
-                  minLength: 0
-                  type: string
-                  example: USD
-                companycode:
-                  description: Company Code
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 00200
-                userid:
-                  description: External Application User ID
-                  nullable: false
-                  maxLength: 100
-                  minLength: 0
-                  type: string
-                  example: johnsmith@abc.com
-                referencetransactionid:
-                  description: Reference Transaction ID. Either pgtransactionid or paymenttransactionid based on SnapPay account configuration
-                  nullable: false
-                  maxLength: 30
-                  minLength: 0
-                  type: string
-                  example: 1458
-                reference:
-                  description: Reference Text
-                  nullable: false
-                  maxLength: 50
-                  minLength: 0
-                  type: string
-                purchaseorder:
-                  description: Purchase Order
-                  nullable: false
-                  maxLength: 50
-                  minLength: 0
-                  type: string
-              additionalProperties: false
+              example:
+                accountid: 1000000001
+                referencetransactionid: '1458'
+                customerid: '100'
+                currency: USD
+                companycode: '00100'
+                userid: User
+                reference: ''
+                purchaseorder: ''
+      security:
+        - basicAuth: []
+      parameters:
+        - name: AccountId
+          in: header
+          schema:
+            type: integer
+          example: '1000000001'
+        - name: merchantid
+          in: header
+          schema:
+            type: string
+          example: 'optional '
+        - name: Signature
+          in: header
+          schema:
+            type: string
+          example: HMAC <<unique hmac value>>
       responses:
         '200':
           description: Request successful.
           content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  accountid:
-                    type: number
-                    description: AccountID
-                    example: 1000000008
-                  pgtransactionid:
-                    type: string
-                    description: Payment Gateway Transaction ID
-                    example: 1458102983091283
-                  paymenttransactionid:
-                    type: string
-                    description: SnapPay Transaction ID
-                    example: 1458
-                  status:
-                    type: string
-                    description: Overall Status
-                    example: Y
-                  message:
-                    type: string
-                    description: e.g. Transaction Successful
-                    example: Transaction successful.
-                  reference:
-                    type: string
-                    description: Reference Text is returned back
-                  purchaseorder:
-                    type: string
-                    description: Purchase Order
-                  transaction:
-                    type: object
-                    properties:
-                      merchantid:
-                        type: string
-                        description: Payment Gateway Merchant ID
-                        example: 34032039484234
-                      returncode:
-                        type: string
-                        description: Payment Gateway Return Code
-                        example: 00
-                      returndescription:
-                        type: string
-                        description: Return Description
-                        example: Void successful.
-                      pgtransactionid:
-                        type: string
-                        description: Payment Gateway Transaction ID
-                        example: 260997162758
-                      paymenttransactionid:
-                        type: string
-                        description: SnapPay Transaction ID
-                        example: 1494
-                      authorizationcode:
-                        type: string
-                        description: Authorization Code
-                        example: VOID
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
-  /api/TransactionHistory:
+            application/json: {}
+  /api/interop/GetTransaction:
     post:
       tags:
-        - APIs without User Interaction
+        - APIs without user interaction
+      summary: GetTransaction
+      description: GetTransactionRequest
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                accountid: '1000000001'
+                transactionid: '3664'
+                orderid: '123'
+      security:
+        - basicAuth: []
+      parameters:
+        - name: AccountId
+          in: header
+          schema:
+            type: integer
+          example: '1000000001'
+        - name: merchantid
+          in: header
+          schema:
+            type: string
+          example: 'optional '
+        - name: Signature
+          in: header
+          schema:
+            type: string
+          example: HMAC <<unique hmac value>>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/TransactionHistory:
+    get:
+      tags:
+        - APIs without user interaction
       x-group-name: APIs without User Interaction
       x-proxy-name: Retrieve Transaction History
       summary: Retrieve Transaction History
       description: Retrieve Transaction History.
       operationId: retrieveTransactionHistory
+      security:
+        - basicAuth: []
       parameters:
         - name: AccountId
           in: header
@@ -717,27 +770,27 @@ paths:
             maxLength: 50
             minLength: 0
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountid:
-                  description: Account ID
-                  nullable: false
-                  maxLength: 10
-                  minLength: 0
-                  type: number
-                  example: 1000000001
-                companycode:
-                  description: Company Code
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 00200
-              additionalProperties: false
+          example: 'optional '
+        - name: Signature
+          in: header
+          schema:
+            type: string
+          example: HMAC <<unique hmac value>>
+        - name: startdate
+          in: query
+          schema:
+            type: string
+          example: '{{startdate}}'
+        - name: enddate
+          in: query
+          schema:
+            type: string
+          example: '{{enddate}}'
+        - name: type
+          in: query
+          schema:
+            type: string
+          example: C
       responses:
         '200':
           description: Request successful.
@@ -748,7 +801,7 @@ paths:
         '500':
           description: Internal server error.
   /api/FundingHistory:
-    post:
+    get:
       tags:
         - APIs without User Interaction
       x-group-name: APIs without User Interaction
@@ -772,38 +825,28 @@ paths:
             maxLength: 50
             minLength: 0
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountid:
-                  description: Account ID
-                  nullable: false
-                  maxLength: 10
-                  minLength: 0
-                  type: number
-                  example: 1000000001
-                companycode:
-                  description: Company Code
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 00200
-              additionalProperties: false
+         
+        - name: startdate
+          in: query
+          schema:
+            type: string
+          example: '{{startdate}}'
+        - name: enddate
+          in: query
+          schema:
+            type: string
+          example: '{{enddate}}'
       responses:
-        '200':
+         '200':
           description: Request successful.
-        '400':
+         '400':
           description: Invalid request.
-        '401':
+         '401':
           description: Unauthorized access.
-        '500':
+         '500':
           description: Internal server error.
-  /api/bin:
-    post:
+  /api/binapi/MID/token:
+    get:
       tags:
         - APIs without User Interaction
       x-group-name: APIs without User Interaction
@@ -827,27 +870,12 @@ paths:
             maxLength: 50
             minLength: 0
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountid:
-                  description: Account ID
-                  nullable: false
-                  maxLength: 10
-                  minLength: 0
-                  type: number
-                  example: 1000000001
-                companycode:
-                  description: Company Code
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 00200
-              additionalProperties: false
+          example: 'optional '
+        - name: Signature
+          in: header
+          schema:
+            type: string
+          example: HMAC <<unique hmac value>>
       responses:
         '200':
           description: Request successful.
@@ -862,10 +890,24 @@ paths:
       tags:
         - Card Account Updater
       x-group-name: Card Account Updater
-      x-proxy-name: Get Updater
-      summary: Get Updater
+      x-proxy-name: Put Updater
+      summary: Put Updater
       description: Get Updater.
       operationId: getUpdater
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                merchid: MID
+                accounts:
+                  - account: '4111111111111111'
+                    expiry: '0122'
+                  - account: '9434567891111111'
+                    expiry: '0525'
+      security:
+        - basicAuth: []
       parameters:
         - name: AccountId
           in: header
@@ -882,27 +924,12 @@ paths:
             maxLength: 50
             minLength: 0
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountid:
-                  description: Account ID
-                  nullable: false
-                  maxLength: 10
-                  minLength: 0
-                  type: number
-                  example: 1000000001
-                companycode:
-                  description: Company Code
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 00200
-              additionalProperties: false
+          example: 'optional '
+        - name: Signature
+          in: header
+          schema:
+            type: string
+          example: HMAC <<unique hmac value>>
       responses:
         '200':
           description: Request successful.
@@ -921,6 +948,9 @@ paths:
       summary: Put Updater
       description: Put Updater.
       operationId: putUpdater
+
+      security:
+        - basicAuth: []
       parameters:
         - name: AccountId
           in: header
@@ -937,27 +967,22 @@ paths:
             maxLength: 50
             minLength: 0
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountid:
-                  description: Account ID
-                  nullable: false
-                  maxLength: 10
-                  minLength: 0
-                  type: number
-                  example: 1000000001
-                companycode:
-                  description: Company Code
-                  nullable: false
-                  maxLength: 20
-                  minLength: 0
-                  type: string
-                  example: 00200
-              additionalProperties: false
+          example: 'optional '
+        - name: Signature
+          in: header
+          schema:
+            type: string
+          example: HMAC <<unique hmac value>>
+        - name: merchid
+          in: query
+          schema:
+            type: string
+          example: MID
+        - name: date
+          in: query
+          schema:
+            type: integer
+          example: '20220131'
       responses:
         '200':
           description: Request successful.
@@ -968,7 +993,7 @@ paths:
         '500':
           description: Internal server error.
   /AccountUpdater/DeleteUpdater:
-    put:
+    post:
       tags:
         - Card Account Updater
       x-group-name: Card Account Updater
