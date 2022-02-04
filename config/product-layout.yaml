@@ -48,6 +48,10 @@ featuredFeatures:
         title: APIs with User Interaction
         description: These set of APIs require user interaction.
         link: "/docs/apis-with-user-interaction.md"
+      - relatedDoc: 
+        title: APIs without User Interaction
+        description: These set of APIs does not require user interaction.
+        link: "/docs/apis-without-user-interaction.md"
     relatedAPIs:
       - relatedAPI: 
         title: Get Request ID API
@@ -59,3 +63,11 @@ featuredFeatures:
         description: This API returns the results of the GetRequestID and iFrame interaction to allow for further business processing like completing the order creation process on an eCommerce site after successful card authorization.
         type: "post"        
         path: "/api/Interop/GetPaymentDetails"
+  - title: Seamlessly Integrate With Leading ERP Platforms
+    description: Extend the accounts receivable and accounts payable process beyond the ERP into the extended supply chain. Facilitate the movement of funds securely and seamlessly. We offer an open API platform and the ability to integrate with any ERP.
+    tags: ["REPLACEME", "REPLACEME", "REPLACEME"]
+    bullets: ["REPLACEME", "REPLACEME" ]  
+  - title: Streamline Invoice-to-Pay Processes
+    description: Now you can move money and information between buyers and suppliers digitally and securely, with a comprehensive, multichannel payment automation solution from Fiserv.
+    tags: ["REPLACEME", "REPLACEME", "REPLACEME"]
+    bullets: ["REPLACEME", "REPLACEME" ]  
