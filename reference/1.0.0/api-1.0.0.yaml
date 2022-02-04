@@ -60,19 +60,59 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-                accountid: '1000000001'
-                companycode: '00100'
-                currencycode: USD
-                customerid: '100'
-                userid: noreply@snappay.com
-                savepaymentmethod: 'Y'
-                redirecturl: https://www.xyz.com/receive
-                transactiontype: T
-                paymentmethod: CC
-                transactionamount: '0.00'
-                cvvrequired: 'Y'
-                language: en-US
+              properties:
+                accountid:
+                  description: Account ID
+                  type: number
+                  example: 1000000001
+                companycode:
+                  description: Company Code
+                  type: string
+                  example: 00200
+                currencycode: 
+                  description: Currency Code
+                  type: string
+                  example: USD
+                customerid: 
+                  description: Customer ID
+                  type: string
+                  example: 100
+                userid: 
+                  description: External Application User ID
+                  type: string
+                  example: johnsmith@abc.com
+                transactiontype:
+                  description: S - for Sale
+                  type: string
+                  example: S
+                paymentmethod:
+                  description: CC - for credit card
+                  type: string
+                  example: CC
+                language:
+                  description: en-US for English language
+                  type: string
+                  example: en-US
+                stylecss:
+                  description: CSS properties separated by semicolon. List is given below under Supported CSS Properties.
+                  type: string
+                  example: border:2px solid orange;
+                savepaymentmethod: 
+                  description: Save payment method for future use
+                  type: string
+                  example: Y
+                redirecturl: 
+                  description: en-US for English language
+                  type: string
+                  example: https://xyz.com/orderconfirmation
+                transactionamount: 
+                  description: Transaction Amount
+                  type: number
+                  example: 100.25
+                cvvrequired: 
+                  description: Credit Card Security Code
+                  type: string
+                  example: Y
       parameters:
         - name: AccountId
           in: header
@@ -114,7 +154,7 @@ paths:
                   status:
                     type: string
                     description: Y or N
-                    example: Y
+                    example: 'Y'
                   message:
                     type: string
                     description: e.g. Information stored successfully
@@ -238,7 +278,7 @@ paths:
           example: HMAC <<unique hmac value>>
       responses:
         '200':
-            description: Request successful.
+          description: Request successful.
         '400':
           description: Invalid request.
         '401':
@@ -485,18 +525,18 @@ paths:
       security:
         - basicAuth: []
       parameters:
-       - name: AccountId
-         in: header
-         description: Account ID
-         required: true
-         schema:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
             maxLength: 10
             minLength: 0
             type: number
-       - name: MerchantId
-         in: header
-         description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
-         schema:
+        - name: MerchantId
+          in: header
+          description: Merchant ID (if you pass this parameter, SnapPay will bypass the logic of identifying MID for this transaction)
+          schema:
             maxLength: 50
             minLength: 0
             type: string
@@ -639,7 +679,7 @@ paths:
           example: HMAC <<unique hmac value>>
       responses:
         '200':
-           description: Request successful.
+          description: Request successful.
         '400':
           description: Invalid request.
         '401':
@@ -814,7 +854,6 @@ paths:
             maxLength: 50
             minLength: 0
             type: string
-         
         - name: startdate
           in: query
           schema:
@@ -826,13 +865,13 @@ paths:
             type: string
           example: '{{enddate}}'
       responses:
-         '200':
+        '200':
           description: Request successful.
-         '400':
+        '400':
           description: Invalid request.
-         '401':
+        '401':
           description: Unauthorized access.
-         '500':
+        '500':
           description: Internal server error.
   /api/binapi/MID/token:
     get:
@@ -937,7 +976,6 @@ paths:
       summary: Put Updater
       description: Put Updater.
       operationId: putUpdater
-
       security:
         - basicAuth: []
       parameters:
@@ -1023,7 +1061,9 @@ paths:
                   type: array
                   items:
                     type: number
-                  example: [ 9417085548851111, 9550096877584444 ]
+                  example:
+                    - 9417085548851112
+                    - 9550096877584444
               additionalProperties: false
       responses:
         '200':
@@ -1064,3 +1104,4 @@ paths:
           description: Unauthorized access.
         '500':
           description: Internal server error.
+
