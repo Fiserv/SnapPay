@@ -49,9 +49,9 @@ paths:
   /api/interop/GetRequestID:
     post:
       tags:
-        - APIs with user interaction
-        x-group-name: APIs with User Interaction
-        x-proxy-name: Get Request ID
+        - APIs with User Interaction
+      x-group-name: APIs with User Interaction
+      x-proxy-name: Get Request ID
       summary: Get Request ID - Field Level
       description: Get request ID.
       operationId: getRequestID
@@ -73,8 +73,6 @@ paths:
                 transactionamount: '0.00'
                 cvvrequired: 'Y'
                 language: en-US
-            security:
-              - basicAuth: []
       parameters:
         - name: AccountId
           in: header
@@ -216,9 +214,7 @@ paths:
                 country: US
                 email: noreply@snappay.com
                 phonenumber: ''
-        security:
-        - basicAuth: []
-        parameters:
+      parameters:
         - name: AccountId
           in: header
           description: Account ID
@@ -659,15 +655,6 @@ paths:
       summary: Void
       description: The Void API attempts to void or cancel a prior authorization transaction. The original authorization transaction is set in parameter referencetransactionid and some explanatory text can be set in the reference parameter. For voding charge and capture transaction, use refund API.
       operationId: void
-      parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            maxLength: 10
-            minLength: 0
-            type: number
       requestBody:
         content:
           application/json:
