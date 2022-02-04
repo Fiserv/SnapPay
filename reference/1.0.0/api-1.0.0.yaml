@@ -42,8 +42,8 @@ components:
 security:
   - basicAuth: []
 tags:
-  - name: APIs with user interaction
-  - name: APIs without user interaction
+  - name: APIs with User Interaction
+  - name: APIs without User Interaction
   - name: Card Account Updater
 paths:
   /api/interop/GetRequestID:
@@ -512,7 +512,7 @@ paths:
   /api/Interop/Credit:
     post:
       tags:
-         - APIs without User Interaction
+        - APIs without User Interaction
       x-group-name: APIs without User Interaction
       x-proxy-name: Credit
       summary: Credit
@@ -695,7 +695,9 @@ paths:
   /api/interop/GetTransaction:
     post:
       tags:
-        - APIs without user interaction
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Get Transaction
       summary: GetTransaction
       description: GetTransactionRequest
       requestBody:
@@ -733,7 +735,7 @@ paths:
   /api/TransactionHistory:
     get:
       tags:
-        - APIs without user interaction
+        - APIs without User Interaction
       x-group-name: APIs without User Interaction
       x-proxy-name: Retrieve Transaction History
       summary: Retrieve Transaction History
