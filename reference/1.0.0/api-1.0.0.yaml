@@ -879,8 +879,8 @@ paths:
       tags:
         - Card Account Updater
       x-group-name: Card Account Updater
-      x-proxy-name: Put Updater
-      summary: Put Updater
+      x-proxy-name: Get Updater
+      summary: Get Updater
       description: Get Updater.
       operationId: getUpdater
       requestBody:
