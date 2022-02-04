@@ -12,8 +12,8 @@ These are production URLs. Test URLs will be provided during test account setup.
 
 ## iFrame related APIs
 
-[https://restapi.snappayglobal.com/api/Interop/GetRequestID](https://urldefense.com/v3/__https://restapi.snappayglobal.com/api/Interop/GetRequestID__;!!P9vvK-4S!1K3DQo-5wOnM3FyywnbnB68mmIlM7ZXdiA_elnRr4boFLQhPYuDU3WjNE1_ykow7lEfB$)  
-[https://restapi.snappayglobal.com/api/Interop/GetPaymentDetails](https://urldefense.com/v3/__https://restapi.snappayglobal.com/api/Interop/GetPaymentDetails__;!!P9vvK-4S!1K3DQo-5wOnM3FyywnbnB68mmIlM7ZXdiA_elnRr4boFLQhPYuDU3WjNE1_ykiRayOPf$)  
+[Get Request ID](../api/?type=post&path=/api/Interop/GetRequestID)
+[Get Payment Details](../api/?type=post&path=/api/Interop/GetPaymentDetails)
 
 ## Non UI APIs
 
