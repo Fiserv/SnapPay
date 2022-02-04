@@ -12,7 +12,7 @@ These are production URLs. Test URLs will be provided during test account setup.
 
 ## iFrame related APIs
 
-[Get Request ID](../api/?type=post&path=/api/Interop/GetRequestID)
+[Get Request ID](../api/?type=post&path=/api/Interop/GetRequestID)  
 [Get Payment Details](../api/?type=post&path=/api/Interop/GetPaymentDetails)
 
 ## Non UI APIs
