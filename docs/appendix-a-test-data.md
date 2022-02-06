@@ -2,7 +2,7 @@
 
 ## Test Cards
 
-Note: Use any date in future for expiration date.
+Note: Use any date in future for credit card expiration date.
 
 | Card Number      | Type       |
 |------------------|------------|
@@ -19,5 +19,4 @@ Note: Use any date in future for expiration date.
 
 | Routing Number | Bank Account Number |
 |----------------|---------------------|
-| 121000248      | 144155167           |
-| 123123123      | 123456789           |
+| 071904779      | 123456789           |
