@@ -2,20 +2,32 @@
 
 The following general instructions apply to every API.
 
-Name
+| Name                                 | Value                                                |
+|--------------------------------------|------------------------------------------------------|
+| Request Type                         | Application/json                                     |
+| AccountID                            | SnapPay Account ID                                   |
+| UserId                               | API User ID                                          |
+| Password                             | API Password                                         |
+| Secret Key (API Authentication Code) | Shared Secret Key used for generating HMAC signature |
 
-Value
+### Following values are needed for API authentication
 
-End Point URLs  
+1.  API user ID
+2.  API password
+3.  HMAC Signature using shared secret key (add a key “Signature” in request header with HMAC value generated using content of the request and shared secret key)
+
+
+
+## End Point URLs  
   
 These are production URLs. Test URLs will be provided during test account setup.
 
-## iFrame related APIs
+### iFrame related APIs
 
 [Get Request ID](../api/?type=post&path=/api/interop/GetRequestID)  
 [Get Payment Details](../api/?type=post&path=/api/interop/GetPaymentDetails)
 
-## Non UI APIs
+### Non UI APIs
 
 [Tokenize](../api/?type=post&path=/api/interop/Tokenize)  
 [Authorize](../api/?type=post&path=/api/interop/Authorize)  
@@ -28,36 +40,8 @@ These are production URLs. Test URLs will be provided during test account setup.
 [Funding History](../api/?type=post&path=/api/interop/FundingHistory)  
 [Bin Info](../api/?type=post&path=/api/interop/binapi)  
 
-## CAU APIs
+### CAU APIs
 
 [Get Updater](../api/?type=post&path=/AccountUpdater/GetUpdater)  
 [Put Updater](../api/?type=post&path=/AccountUpdater/PutUpdater)  
 [Delete Updater](../api/?type=post&path=/AccountUpdater/DeleteUpdater)  
-
-Request Type
-
-Application/json
-
-AccountID
-
-SnapPay Account ID
-
-Authentication
-
-### Following values are needed for API authentication
-
-1.  API user ID
-2.  API password
-3.  HMAC Signature using shared secret key (add a key “Signature” in request header with HMAC value generated using content of the request and shared secret key)
-
-UserId
-
-API User ID
-
-Password
-
-API Password
-
-Secret Key (API Authentication Code)
-
-Shared Secret Key used for generating HMAC signature.
