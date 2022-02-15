@@ -3,7 +3,7 @@
   "name": "SnapPay",
   "brand": "Fiserv",
   "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Fiserv_Logo.jpg",
-  "solution": "merchants",
+  "solution": ["merchants","carat"],
   "brandDescription": "Digitally transform your payment process with certified ERP integration to improve working capital and increase efficiencies. SnapPay from Fiserv, integrates with popular ERP solutions and shopping cart solutions to serve the holistic B2B payment needs of enterprise-size businesses.",
   "categories": [
     {
