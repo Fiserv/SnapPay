@@ -1,0 +1,75 @@
+{
+  "title": "SnapPay",
+  "name": "SnapPay",
+  "brand": "Fiserv",
+  "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Fiserv_Logo.jpg",
+  "solution": ["merchants","carat"],
+  "brandDescription": "Digitally transform your payment process with certified ERP integration to improve working capital and increase efficiencies. SnapPay from Fiserv, integrates with popular ERP solutions and shopping cart solutions to serve the holistic B2B payment needs of enterprise-size businesses.",
+  "categories": [
+    {
+      "name": "businessTypes",
+      "value": "Business Types",
+      "subcategories": [
+        {
+          "name": "valueAddedServices",
+          "value": "Value Added Services"
+        }
+      ]
+    }
+  ],
+  
+  "apiVersions": [
+      {
+        "version": "1.0.0",
+        "versionType": "major",
+        "releaseNotesPath": "/release-notes/release-notes-1.0.0.md",
+        "apiSpecFileNames": ["api-1.0.0"]
+      }
+  ],
+  "product": {
+    "featured": true,
+    "logoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Portal_Logo.png",
+    "description": "Digitally transform your payment process with certified ERP integration to improve working capital and increase efficiencies. SnapPay from Fiserv, integrates with popular ERP solutions and shopping cart solutions to serve the holistic B2B payment needs of enterprise-size businesses.",
+    "longDescription":"Digitally transform your payment process with certified ERP integration to improve working capital and increase efficiencies. SnapPay from Fiserv, integrates with popular ERP solutions and shopping cart solutions to serve the holistic B2B payment needs of enterprise-size businesses.",
+    "apiSpecification": "/v1/apis/SnapPay",
+    "layout": "/v1/layouts/SnapPay",
+    "documentation": "/v1/docs/SnapPay",
+    "documenttree": "/v1/docs/SnapPay",
+    "documenttreeV2": "/v2/docs/SnapPay",
+    "feature":[
+      {
+        "name": "sandBox",
+        "value": false
+      },
+      {
+        "name": "plugins",
+        "value": false
+      },
+      {
+        "name": "industryOptionsAPIExplorer",
+        "value": false
+      },
+      {
+        "name": "editParameterAPIExplorer",
+        "value": false
+      }
+  ]
+  },
+   "supportConfig": [{ 
+		"bug": {
+			"label": "bug,REPLACEME",
+			"template": "bug.md",
+			"assignees": "anandrewfiserv"
+		},
+		"feedback": {
+			"label": "feedback,REPLACEME",
+			"template": "feedback.md",
+			"assignees": "anandrewfiserv"
+		},
+		"enhancement": {
+			"label": "enhancement,REPLACEME",
+			"template": "feature.md",
+			"assignees": "anandrewfiserv"
+		}
+	}]
+}
