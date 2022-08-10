@@ -10,7 +10,6 @@ info:
 servers:
   - url: https://restapi.snappayglobal.com/
   - url: https://demo1.cditechnology.com/SnapPay/REST/
-  - url: http://localhost:40288/
     
 components:
   securitySchemes:
