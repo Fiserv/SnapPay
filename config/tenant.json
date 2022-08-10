@@ -36,6 +36,7 @@
     "documentation": "/v1/docs/SnapPay",
     "documenttree": "/v1/docs/SnapPay",
     "documenttreeV2": "/v2/docs/SnapPay",
+    "sandbox": "/v1/sandboxrun/SnapPay",
     "feature":[
       {
         "name": "sandBox",
