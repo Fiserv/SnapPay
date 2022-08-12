@@ -3444,6 +3444,20 @@ paths:
         application only for CardConnect payment gateway.
       operationId: binInformation
       parameters:
+        - name: MID
+          in: path
+          description: MID
+          required: true
+          schema:
+            type: number
+          example: 1000000001
+        - name: token
+          in: path
+          description: token
+          required: true
+          schema:
+            type: number
+          example: 1000000001
         - name: AccountId
           in: header
           description: Account ID
@@ -6643,11 +6657,3 @@ paths:
           description: Unauthorized access.
         '500':
           description: Internal server error.
-
-      
-      
-      
-      
-  
-      
-    
