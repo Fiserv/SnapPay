@@ -3429,7 +3429,7 @@ paths:
           description: Unauthorized access.
         '500':
           description: Internal server error.
-  /api/binapi/<MID>/<token>:
+  /api/binapi/{MID}/{token}:
     get:
       tags:
         - Pass through API
