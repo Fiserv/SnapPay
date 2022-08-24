@@ -8188,7 +8188,7 @@ paths:
     get:
       tags:
         - Pass through API
-      x-group-name: APass through API
+      x-group-name: Pass through API
       x-proxy-name: Bin Information
       summary: Bin Information
       description: >-
