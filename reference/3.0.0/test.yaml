@@ -5234,9 +5234,9 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
-            default: "1000000001"
-          example: "1000000001"
+            type: integer
+            default: 1000000001
+          example: 1000000001
           
         - name: MerchantId
           in: header
@@ -5245,7 +5245,7 @@ paths:
             logic of identifying MID for this transaction)
           schema:
             type: string
-            example: "312312312312"
+            example: 312312312312
         - name: Signature
           in: header
           description: HMAC Signature
@@ -5322,12 +5322,12 @@ paths:
               properties:
                 accountid:
                   description: Account ID
-                  type: string
-                  example: "1000000001"
+                  type: number
+                  example: 1000000001
                 token:
                   description: Request Token ID
                   type: string
-                  example: "073c8be3-b0db-e811-a954-000d3a92a01e"
+                  example: 073c8be3-b0db-e811-a954-000d3a92a01e
             examples:
               Default:
                 summary: Default
@@ -5554,7 +5554,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
                   example: 1000000001
                 requesttype:
@@ -5828,7 +5828,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
                   example: 1000000001
                 customerid:
@@ -5942,7 +5942,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
+            type: number
             default: 1000000001
           example: 1000000001
         - name: MerchantId
@@ -5971,7 +5971,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
                     example: 1000000001
                   status:
@@ -6073,7 +6073,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
                   example: 1000000001
                 customerid:
@@ -6234,7 +6234,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
+            type: number
             default: 1000000001
           example: 1000000001
         - name: MerchantId
@@ -6263,7 +6263,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
                     example: 1000000001
                   status:
@@ -6402,7 +6402,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
                   example: 1000000001
                 referencetransactionid:
@@ -6506,7 +6506,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
+            type: number
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -6527,7 +6527,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
                     example: 1000000001
                   status:
@@ -6611,7 +6611,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
                   example: 1000000001
                 customerid:
