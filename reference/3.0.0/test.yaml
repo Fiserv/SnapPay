@@ -5323,11 +5323,11 @@ paths:
                 accountid:
                   description: Account ID
                   type: string
-                  example: 1000000001
+                  example: "1000000001"
                 token:
                   description: Request Token ID
                   type: string
-                  example: 073c8be3-b0db-e811-a954-000d3a92a01e
+                  example: "073c8be3-b0db-e811-a954-000d3a92a01e"
             examples:
               Default:
                 summary: Default
