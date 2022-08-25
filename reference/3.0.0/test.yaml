@@ -416,7 +416,7 @@ components:
       properties:
         accountid:
           description: Account ID
-          type: integer
+          type: string
           example: 1000000001
         companycode:
           description: Company Code
@@ -466,7 +466,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         token:
@@ -486,7 +486,7 @@ components:
       properties:
         accountid:
           description: Account ID
-          type: integer
+          type: string
           example: 1000000001
         token:
           description: Request Token ID
@@ -496,7 +496,7 @@ components:
       type: object
       properties:
        accountid:
-         type: integer
+         type: string
          description: Account ID
          example: 1000000001
        status:
@@ -669,7 +669,7 @@ components:
       type: object
       properties:
        accountid:
-        type: integer
+        type: string
         description: Account ID
         example: 1000000001
        requesttype:
@@ -774,7 +774,7 @@ components:
       type: object
       properties:
        accountid:
-         type: integer
+         type: string
          description: Account ID
          example: 1000000001
        status:
@@ -881,7 +881,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         customerid:
@@ -989,7 +989,7 @@ components:
      type: object
      properties:
       accountid:
-        type: integer
+        type: string
         description: Account ID
         example: 1000000001
       status:
@@ -1066,7 +1066,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         customerid:
@@ -1225,7 +1225,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         status:
@@ -1343,7 +1343,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         referencetransactionid:
@@ -1445,7 +1445,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         status:
@@ -1512,7 +1512,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         customerid:
@@ -1622,7 +1622,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         status:
@@ -1681,7 +1681,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         referencetransactionid:
@@ -1734,7 +1734,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         status:
@@ -1852,7 +1852,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         referencetransactionid:
@@ -1893,7 +1893,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         status:
@@ -1959,7 +1959,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         orderid:
@@ -1982,7 +1982,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         message:
@@ -2788,7 +2788,7 @@ components:
       properties:
         accountid:
           description: Account ID
-          type: integer
+          type: string
           example: 1000000000
         email:
           type: string
@@ -2953,7 +2953,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000000
         requestid:
@@ -2977,7 +2977,7 @@ components:
             properties:
               accountid:
                 description: Account ID
-                type: integer
+                type: string
                 example: 1000000000
               email:
                 type: string
@@ -3102,7 +3102,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000000
         requestid:
@@ -3125,7 +3125,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         email:
@@ -3236,7 +3236,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         requestid:
@@ -3259,7 +3259,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         email:
@@ -3328,7 +3328,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000000
         requestid:
@@ -3351,7 +3351,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         apiname:
@@ -3552,7 +3552,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000000
         requestid:
@@ -3575,7 +3575,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         email:
@@ -3656,7 +3656,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000000
         requestid:
@@ -3679,7 +3679,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         email:
@@ -3823,7 +3823,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000000
         requestid:
@@ -3847,7 +3847,7 @@ components:
       properties:
         accountid:
           description: Account ID
-          type: integer
+          type: string
           example: 1000000001
         email:
           type: string
@@ -3960,7 +3960,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000000
         requestid:
@@ -3984,7 +3984,7 @@ components:
       properties:
         accountid:
           description: Account ID
-          type: integer
+          type: string
           example: 1000000001
         documentid:
           description: Document ID
@@ -4015,7 +4015,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000000
         requestid:
@@ -4038,7 +4038,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         customerid:
@@ -4065,7 +4065,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         message:
@@ -4445,7 +4445,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         companycode:
@@ -4581,7 +4581,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         requestid:
@@ -4600,7 +4600,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         requestid:
@@ -4611,7 +4611,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         status:
@@ -4626,7 +4626,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         process:
@@ -4647,7 +4647,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         status:
@@ -4759,7 +4759,7 @@ components:
       type: object
       properties:
         accountid: 
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         status: 
@@ -4940,7 +4940,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         userid:
@@ -5089,7 +5089,7 @@ components:
       type: object
       properties:
         accountid:
-          type: integer
+          type: string
           description: Account ID
           example: 1000000001
         token:
@@ -5234,7 +5234,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
           
@@ -5265,7 +5265,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000008
                   token:
@@ -5323,7 +5323,7 @@ paths:
               properties:
                 accountid:
                   description: Account ID
-                  type: integer
+                  type: string
                   example: 1000000001
                 token:
                   description: Request Token ID
@@ -5339,7 +5339,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -5360,7 +5360,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   status:
@@ -5555,7 +5555,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 requesttype:
@@ -5666,7 +5666,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
         - name: MerchantId
@@ -5695,7 +5695,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   status:
@@ -5829,7 +5829,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 customerid:
@@ -5943,7 +5943,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
         - name: MerchantId
@@ -5972,7 +5972,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   status:
@@ -6074,7 +6074,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 customerid:
@@ -6235,7 +6235,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
         - name: MerchantId
@@ -6264,7 +6264,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   status:
@@ -6403,7 +6403,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 referencetransactionid:
@@ -6507,7 +6507,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -6528,7 +6528,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   status:
@@ -6612,7 +6612,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 customerid:
@@ -6724,7 +6724,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
         - name: MerchantId
@@ -6753,7 +6753,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   status:
@@ -6833,7 +6833,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 referencetransactionid:
@@ -6888,7 +6888,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -6909,7 +6909,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   status:
@@ -7050,7 +7050,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 referencetransactionid:
@@ -7093,7 +7093,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -7114,7 +7114,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   status:
@@ -7202,7 +7202,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 orderid:
@@ -7227,7 +7227,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -7248,7 +7248,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   message:
@@ -7475,7 +7475,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -7823,7 +7823,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -8219,7 +8219,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -8332,7 +8332,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -8584,7 +8584,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -8676,7 +8676,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -8743,7 +8743,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 customerid:
@@ -8772,7 +8772,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
       responses:
@@ -8784,7 +8784,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   message:
@@ -8939,7 +8939,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 companycode:
@@ -9077,7 +9077,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
       responses:
@@ -9089,7 +9089,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   requestid:
@@ -9139,7 +9139,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
       responses:
@@ -9151,7 +9151,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   status:
@@ -9184,7 +9184,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 process:
@@ -9224,7 +9224,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
       responses:
@@ -9236,7 +9236,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   status:
@@ -9469,7 +9469,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 userid:
@@ -9620,7 +9620,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
       responses:
@@ -9632,7 +9632,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   token:
@@ -9670,7 +9670,7 @@ paths:
               properties:
                 accountid:
                   description: Account ID
-                  type: integer
+                  type: string
                   example: 1000000001
                 email:
                   type: string
@@ -9837,7 +9837,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000000
       responses:
@@ -9849,7 +9849,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000000
                   requestid:
@@ -9891,7 +9891,7 @@ paths:
               properties:
                 accountid:
                   description: Account ID
-                  type: integer
+                  type: string
                   example: 1000000001
                 email:
                   type: string
@@ -10018,7 +10018,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000000
       responses:
@@ -10030,7 +10030,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000000
                   requestid:
@@ -10071,7 +10071,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 email:
@@ -10184,7 +10184,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
       responses:
@@ -10196,7 +10196,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   requestid:
@@ -10237,7 +10237,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 email:
@@ -10308,7 +10308,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
       responses:
@@ -10320,7 +10320,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   requestid:
@@ -10361,7 +10361,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 apiname:
@@ -10564,7 +10564,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
       responses:
@@ -10576,7 +10576,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000000
                   requestid:
@@ -10617,7 +10617,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 email:
@@ -10700,7 +10700,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
       responses:
@@ -10712,7 +10712,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000000
                   requestid:
@@ -10753,7 +10753,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 email:
@@ -10899,7 +10899,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
       responses:
@@ -10911,7 +10911,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000000
                   requestid:
@@ -10953,7 +10953,7 @@ paths:
               properties:
                 accountid:
                   description: Account ID
-                  type: integer
+                  type: string
                   example: 1000000001
                 email:
                   type: string
@@ -11068,7 +11068,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
       responses:
@@ -11080,7 +11080,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000000
                   requestid:
@@ -11122,7 +11122,7 @@ paths:
               properties:
                 accountid:
                   description: Account ID
-                  type: integer
+                  type: string
                   example: 1000000001
                 documentid:
                   description: Document ID
@@ -11155,7 +11155,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
       responses:
@@ -11167,7 +11167,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000000
                   requestid:
@@ -11208,7 +11208,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: 1000000001
                 companycode:
@@ -11399,7 +11399,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: string
             default: 1000000001
           example: 1000000001
       responses:
@@ -11411,7 +11411,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: string
                     description: Account ID
                     example: 1000000001
                   token:
