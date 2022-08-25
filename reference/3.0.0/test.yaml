@@ -5245,7 +5245,7 @@ paths:
             logic of identifying MID for this transaction)
           schema:
             type: string
-            example: "312312312312"
+            example: 312312312312
         - name: Signature
           in: header
           description: HMAC Signature
@@ -5253,8 +5253,8 @@ paths:
           schema:
             type: string
             example: >-
-              "Hmac
-              MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA=="
+              Hmac
+              MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
       responses:
         '200':
           description: Request successful.
