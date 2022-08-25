@@ -5245,7 +5245,7 @@ paths:
             logic of identifying MID for this transaction)
           schema:
             type: string
-            example: 312312312312
+            example: "312312312312"
         - name: Signature
           in: header
           description: HMAC Signature
