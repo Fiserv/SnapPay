@@ -5235,8 +5235,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
           
         - name: MerchantId
           in: header
