@@ -5234,7 +5234,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
+            type: number
             default: 1000000001
           example: 1000000001
           
