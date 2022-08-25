@@ -416,7 +416,7 @@ components:
       properties:
         accountid:
           description: Account ID
-          type: number
+          type: integer
           example: 1000000001
         companycode:
           description: Company Code
@@ -456,7 +456,7 @@ components:
           example: https://xyz.com/orderconfirmation
         transactionamount:
           description: Transaction Amount
-          type: number
+          type: integer
           example: 100.25
         cvvrequired:
           description: Credit Card Security Code
@@ -466,7 +466,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         token:
@@ -486,7 +486,7 @@ components:
       properties:
         accountid:
           description: Account ID
-          type: number
+          type: integer
           example: 1000000001
         token:
           description: Request Token ID
@@ -496,7 +496,7 @@ components:
       type: object
       properties:
        accountid:
-         type: number
+         type: integer
          description: Account ID
          example: 1000000001
        status:
@@ -511,7 +511,7 @@ components:
          type: object
          properties:
            paymentmethodid:
-             type: number
+             type: integer
              description: SnapPay Payment Method ID for Credit Card or ACH
              example: 123456
            tokenid:
@@ -658,18 +658,18 @@ components:
                for convenience fee)
              example: null
            feeamount:
-             type: number
+             type: integer
              description: Fee Amount (amount in currency)
              example: 0
            feevalue:
-             type: number
+             type: integer
              description: Fee Value (value in % for Surcharge fee)
              example: 0
     TokenizeRequest:
       type: object
       properties:
        accountid:
-        type: number
+        type: integer
         description: Account ID
         example: 1000000001
        requesttype:
@@ -774,7 +774,7 @@ components:
       type: object
       properties:
        accountid:
-         type: number
+         type: integer
          description: Account ID
          example: 1000000001
        status:
@@ -881,7 +881,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         customerid:
@@ -930,7 +930,7 @@ components:
             type: object
             properties:
               transactionamount:
-                type: number
+                type: integer
                 description: Transaction Amount
                 example: 10
               tokenid:
@@ -989,7 +989,7 @@ components:
      type: object
      properties:
       accountid:
-        type: number
+        type: integer
         description: Account ID
         example: 1000000001
       status:
@@ -1066,7 +1066,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         customerid:
@@ -1117,7 +1117,7 @@ components:
           type: object
           properties:
             transactionamount:
-              type: number
+              type: integer
               description: Transaction Amount
               example: 10
             tokenid:
@@ -1186,11 +1186,11 @@ components:
                 description: Product Code or Item Number
                 example: BQT01
               unitcost:
-                type: number
+                type: integer
                 description: Unit Cost
                 example: 1.75
               quantity:
-                type: number
+                type: integer
                 description: Quantity
                 example: 3
               itemdescriptor:
@@ -1206,26 +1206,26 @@ components:
                 description: Commodity Code
                 example: Commodity Code1
               taxamount:
-                type: number
+                type: integer
                 description: Tax Amount
                 example: 0.12
               taxrate:
-                type: number
+                type: integer
                 description: Tax Rate in %
                 example: 8
               itemdiscount:
-                type: number
+                type: integer
                 description: Item Discount
                 example: null
               lineitemtotal:
-                type: number
+                type: integer
                 description: Line Item Total
                 example: 5.37
     ChargeResponse:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         status:
@@ -1332,18 +1332,18 @@ components:
                 for convenience fee)
               example: null
             feeamount:
-              type: number
+              type: integer
               description: Fee Amount (amount in currency)
               example: 0
             feevalue:
-              type: number
+              type: integer
               description: Fee Value (value in % for Surcharge fee)
               example: 0  
     CaptureRequest:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         referencetransactionid:
@@ -1353,7 +1353,7 @@ components:
             paymenttransactionid based on SnapPay account configuration
           example: 1394
         transactionamount:
-          type: number
+          type: integer
           description: Amount to be captured/settled
           example: 500
         customerid:
@@ -1406,11 +1406,11 @@ components:
                 description: Product Code or Item Number
                 example: BQT01
               unitcost:
-                type: number
+                type: integer
                 description: Unit Cost
                 example: 1.75
               quantity:
-                type: number
+                type: integer
                 description: Quantity
                 example: 3
               itemdescriptor:
@@ -1426,26 +1426,26 @@ components:
                 description: Commodity Code
                 example: Commodity Code1
               taxamount:
-                type: number
+                type: integer
                 description: Tax Amount
                 example: 0.12
               taxrate:
-                type: number
+                type: integer
                 description: Tax Rate in %
                 example: 8
               itemdiscount:
-                type: number
+                type: integer
                 description: Item Discount
                 example: null
               lineitemtotal:
-                type: number
+                type: integer
                 description: Line Item Total
                 example: 5.37
     CaptureResponse:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         status:
@@ -1512,7 +1512,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         customerid:
@@ -1563,7 +1563,7 @@ components:
           type: object
           properties:
             transactionamount:
-              type: number
+              type: integer
               description: Transaction Amount
               example: 10
             tokenid:
@@ -1622,7 +1622,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         status:
@@ -1681,7 +1681,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         referencetransactionid:
@@ -1691,7 +1691,7 @@ components:
             paymenttransactionid based on SnapPay account configuration
           example: 1394
         transactionamount:
-          type: number
+          type: integer
           description: Amount to be captured/settled
           example: 500
         customerid:
@@ -1734,7 +1734,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         status:
@@ -1841,18 +1841,18 @@ components:
                 for convenience fee)
               example: null
             feeamount:
-              type: number
+              type: integer
               description: Fee Amount (amount in currency)
               example: 0
             feevalue:
-              type: number
+              type: integer
               description: Fee Value (value in % for Surcharge fee)
               example: 0
     VoidRequest:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         referencetransactionid:
@@ -1862,7 +1862,7 @@ components:
             paymenttransactionid based on SnapPay account configuration
           example: 1394
         transactionamount:
-          type: number
+          type: integer
           description: Amount to be captured/settled
           example: 500
         customerid:
@@ -1893,7 +1893,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         status:
@@ -1959,7 +1959,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         orderid:
@@ -1982,7 +1982,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         message:
@@ -2040,7 +2040,7 @@ components:
                 description: Transaction Date
                 example: 02/14/2021 030028 PM
               transactionamount:
-                type: number
+                type: integer
                 description: Transaction Amount
                 example: 75.25
               currency:
@@ -2048,17 +2048,17 @@ components:
                 description: Currency Code
                 example: USD
               totaltransactionamount:
-                type: number
+                type: integer
                 description: >-
                   Total transaction amount (transactionamount +
                   feeamount)
                 example: 75.25
               feeamount:
-                type: number
+                type: integer
                 description: Fee Amount (amount in currency)
                 example: 0
               feevalue:
-                type: number
+                type: integer
                 description: Fee Value (value in % for Surcharge fee)
                 example: 0
               dctransaction:
@@ -2081,7 +2081,7 @@ components:
                     description: Payment Gateway Transaction ID
                     example: 360354240638
                   paymenttransactionid:
-                    type: number
+                    type: integer
                     description: SnapPay Transaction ID
                     example: 43237
                   authorizationcode:
@@ -2097,7 +2097,7 @@ components:
                     description: Processor Response Code
                     example: RPCT
                   transactionamount:
-                    type: number
+                    type: integer
                     description: Transaction Amount
                     example: 75.25
                   currency:
@@ -2105,24 +2105,24 @@ components:
                     description: Currency Code
                     example: USD
                   totaltransactionamount:
-                    type: number
+                    type: integer
                     description: >-
                       Total transaction amount (transactionamount +
                       feeamount)
                     example: 75.25
                   feeamount:
-                    type: number
+                    type: integer
                     description: Fee Amount (amount in currency)
                     example: 0
                   feevalue:
-                    type: number
+                    type: integer
                     description: Fee Value (value in % for Surcharge fee)
                     example: 0
               paymentmethod:
                 type: object
                 properties:
                   paymentmethodid:
-                    type: number
+                    type: integer
                     description: SnapPay Payment Method ID
                     example: 18304
                   tokenid:
@@ -2146,11 +2146,11 @@ components:
                     description: Last Name
                     example: Smith
                   expirationmonth:
-                    type: number
+                    type: integer
                     description: Expiration Month
                     example: 12
                   expirationyear:
-                    type: number
+                    type: integer
                     description: Expiration Year
                     example: 2029
                   addressline1:
@@ -2181,11 +2181,11 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: SnapPay Account ID
           example: 1000000001
         transactionscount:
-          type: number
+          type: integer
           description: >-
             Transaction Count – This parameter will give the number of
             payment transactions sent.
@@ -2203,7 +2203,7 @@ components:
             type: object
             properties:
               paymentheaderid:
-                type: number
+                type: integer
                 description: SnapPay Payment Header ID
                 example: 12432
               sourcetype:
@@ -2221,7 +2221,7 @@ components:
                 description: Company Code
                 example: 200
               transactionamount:
-                type: number
+                type: integer
                 description: Transaction Amount
                 example: 100.1
               comments:
@@ -2250,35 +2250,35 @@ components:
                       description: Line Number (Pay Item)
                       example: 1
                     openamount:
-                      type: number
+                      type: integer
                       description: Open Amount
                       example: 300
                     taxableamount:
-                      type: number
+                      type: integer
                       description: Taxable Amount
                       example: 20
                     taxamount:
-                      type: number
+                      type: integer
                       description: Tax Amount
                       example: 10
                     paidamount:
-                      type: number
+                      type: integer
                       description: Paid Amount
                       example: 25
                     paidtax:
-                      type: number
+                      type: integer
                       description: Paid Tax
                       example: 0.5
                     discountavailable:
-                      type: number
+                      type: integer
                       description: Discount Available
                       example: 0
                     discounttaken:
-                      type: number
+                      type: integer
                       description: Discount Taken
                       example: 0
                     discountapplied:
-                      type: number
+                      type: integer
                       description: Discount Applied
                       example: 0
                     comments:
@@ -2313,7 +2313,7 @@ components:
                     description: Payment Gateway Merchant Name
                     example: BluePay
                   transactionamount:
-                    type: number
+                    type: integer
                     description: Transaction Amount
                     example: 120.1
                   authorizationnumber:
@@ -2337,11 +2337,11 @@ components:
                     description: Fee Type (Convenience / Surcharge / Service)
                     example: Convenience
                   feeamount:
-                    type: number
+                    type: integer
                     description: Fee Amount
                     example: 20
                   feevalue:
-                    type: number
+                    type: integer
                     description: >-
                       Fee Value – same as amount for convenience fee
                       and % for surcharge
@@ -2460,7 +2460,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: SnapPay Account ID
           example: 1000000001
         status:
@@ -2472,7 +2472,7 @@ components:
           description: Message
           example: Deposit information attached.
         transactionscount:
-          type: number
+          type: integer
           description: Transaction Count
           example: 53
         merchantdata:
@@ -2515,11 +2515,11 @@ components:
                             description: Net Sales
                             example: 148
                           totalfunding:
-                            type: number
+                            type: integer
                             description: Total Funding
                             example: 102.77
                           fee:
-                            type: number
+                            type: integer
                             description: Fee
                             example: o
                           datechanged:
@@ -2603,7 +2603,7 @@ components:
                                 description: Merchant ID
                                 example: 236695144562
                               transactionamount:
-                                type: number
+                                type: integer
                                 description: Transaction Amount
                                 example: 1
                               fundedamount:
@@ -2649,11 +2649,11 @@ components:
                                   Service)
                                 example: null
                               feeamount:
-                                type: number
+                                type: integer
                                 description: Fee Amount
                                 example: 0
                               feevalue:
-                                type: number
+                                type: integer
                                 description: >-
                                   Fee Value – same as amount for
                                   convenience fee and % for surcharge
@@ -2721,11 +2721,11 @@ components:
                                     description: Last Name
                                     example: Smith
                                   expirationmonth:
-                                    type: number
+                                    type: integer
                                     description: Expiration Month
                                     example: 12
                                   expirationyear:
-                                    type: number
+                                    type: integer
                                     description: Expiration Year
                                     example: 2029
                                   addressline1:
@@ -2788,7 +2788,7 @@ components:
       properties:
         accountid:
           description: Account ID
-          type: number
+          type: integer
           example: 1000000000
         email:
           type: string
@@ -2805,7 +2805,7 @@ components:
                   type: object
                   properties:
                     billingcustomerid:
-                      type: number
+                      type: integer
                       description: Sold to
                       example: 4242
                     parentcustomerid:
@@ -2813,7 +2813,7 @@ components:
                       description: Parent Customer ID
                       example: 4242
                     shipto:
-                      type: number
+                      type: integer
                       description: Ship to
                       example: 4242
                     invoicenumber:
@@ -2821,7 +2821,7 @@ components:
                       description: Invoice Number
                       example: 10112
                     invoicetype:
-                      type: number
+                      type: integer
                       description: Invoice Type
                       example: RI
                     companycode:
@@ -2829,7 +2829,7 @@ components:
                       description: Company Code
                       example: 200
                     currency:
-                      type: number
+                      type: integer
                       description: Currency
                       example: USD
                     fiscalyear:
@@ -2837,7 +2837,7 @@ components:
                       description: Fiscal Year
                       example: 2022
                     branchplant:
-                      type: number
+                      type: integer
                       description: Branch Plant
                       example: A10
                     ordertype:
@@ -2845,7 +2845,7 @@ components:
                       description: Order Type
                       example: SO
                     email:
-                      type: number
+                      type: integer
                       description: Email
                       example: first.last@company.com
                     comments:
@@ -2853,7 +2853,7 @@ components:
                       description: Comments
                       example: test comments
                     suppliername:
-                      type: number
+                      type: integer
                       description: Supplier Name
                       example: CDI
                     invoicedetail:
@@ -2862,39 +2862,39 @@ components:
                         type: object
                         properties:
                           linenumber:
-                            type: number
+                            type: integer
                             description: Invoice line number
                             example: 1
                           grossamount:
-                            type: number
+                            type: integer
                             description: Gross Amount
                             example: 250
                           openamount:
-                            type: number
+                            type: integer
                             description: Open Amount
                             example: 250
                           paidamount:
-                            type: number
+                            type: integer
                             description: Paid Amount
                             example: 0
                           taxableamount:
-                            type: number
+                            type: integer
                             description: Taxable Amount
                             example: 150
                           nontaxableamount:
-                            type: number
+                            type: integer
                             description: Non Taxable Amount
                             example: 50
                           taxamount:
-                            type: number
+                            type: integer
                             description: Tax Amount
                             example: 10
                           discountamount:
-                            type: number
+                            type: integer
                             description: Discount Amount
                             example: 250
                           discosuntamount2:
-                            type: number
+                            type: integer
                             description: Discount Amount2
                             example: 250
                           statementid:
@@ -2953,11 +2953,11 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000000
         requestid:
-          type: number
+          type: integer
           description: Request ID generated for
           example: 1011
         apiname:
@@ -2977,7 +2977,7 @@ components:
             properties:
               accountid:
                 description: Account ID
-                type: number
+                type: integer
                 example: 1000000000
               email:
                 type: string
@@ -3071,7 +3071,7 @@ components:
                             description: Enrolled for autopay
                             example: 'Y'
                           maxamountperinvoice:
-                            type: number
+                            type: integer
                             description: Max amount per invoice
                             example: 1000
                           currencycode:
@@ -3102,11 +3102,11 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000000
         requestid:
-          type: number
+          type: integer
           description: Request ID generated for
           example: 1012
         apiname:
@@ -3125,7 +3125,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         email:
@@ -3181,66 +3181,66 @@ components:
                               type: object
                               properties:
                                 year:
-                                  type: number
+                                  type: integer
                                   description: Year
                                   example: 2022
                                 salesamount01:
-                                  type: number
+                                  type: integer
                                   description: Sales Amount 01
                                   example: 2145.21
                                 salesamount02:
-                                  type: number
+                                  type: integer
                                   description: Sales Amount 02
                                   example: 2145.21
                                 salesamount03:
-                                  type: number
+                                  type: integer
                                   description: Sales Amount 03
                                   example: 2145.21
                                 salesamount04:
-                                  type: number
+                                  type: integer
                                   description: Sales Amount 04
                                   example: 2145.21
                                 salesamount05:
-                                  type: number
+                                  type: integer
                                   description: Sales Amount 05
                                   example: 2145.21
                                 salesamount06:
-                                  type: number
+                                  type: integer
                                   description: Sales Amount 06
                                   example: 2145.21
                                 salesamount07:
-                                  type: number
+                                  type: integer
                                   description: Sales Amount 07
                                   example: 2145.21
                                 salesamount08:
-                                  type: number
+                                  type: integer
                                   description: Sales Amount 08
                                   example: 2145.21
                                 salesamount09:
-                                  type: number
+                                  type: integer
                                   description: Sales Amount 09
                                   example: 2145.21
                                 salesamount10:
-                                  type: number
+                                  type: integer
                                   description: Sales Amount 10
                                   example: 2145.21
                                 salesamount11:
-                                  type: number
+                                  type: integer
                                   description: Sales Amount 11
                                   example: 2145.21
                                 salesamount12:
-                                  type: number
+                                  type: integer
                                   description: Sales Amount 12
                                   example: 2145.21   
     TenantSalesHistoryUploadResponse:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         requestid:
-          type: number
+          type: integer
           description: Request ID generated
           example: 1012
         apiname:
@@ -3259,7 +3259,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         email:
@@ -3308,7 +3308,7 @@ components:
                 description: Country
                 example: US
               phonenumber:
-                type: number
+                type: integer
                 description: Phone number
                 example: null
               email:
@@ -3328,11 +3328,11 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000000
         requestid:
-          type: number
+          type: integer
           description: Request ID generated for
           example: 1011
         apiname:
@@ -3351,7 +3351,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         apiname:
@@ -3424,7 +3424,7 @@ components:
                           description: Order type
                           example: SO
                         linenumber:
-                          type: number
+                          type: integer
                           description: Line number
                           example: 1
                         itemname:
@@ -3436,7 +3436,7 @@ components:
                           description: Item description
                           example: Item1 description
                         quantity:
-                          type: number
+                          type: integer
                           description: Quantity
                           example: 1
                         uom:
@@ -3444,15 +3444,15 @@ components:
                           description: UOM
                           example: EA
                         unitprice:
-                          type: number
+                          type: integer
                           description: Unit price
                           example: 20
                         extendedprice:
-                          type: number
+                          type: integer
                           description: Extended price
                           example: 20
                         discountamount:
-                          type: number
+                          type: integer
                           description: Discount amount
                           example: 0
                         commoditycode:
@@ -3460,7 +3460,7 @@ components:
                           description: Commodity code
                           example: 121
                         taxamount:
-                          type: number
+                          type: integer
                           description: Tax amount
                           example: 10
                         taxid:
@@ -3468,7 +3468,7 @@ components:
                           description: Tax ID
                           example: IL
                         taxrate:
-                          type: number
+                          type: integer
                           description: Tax rate
                           example: 10
                         taxtype:
@@ -3541,7 +3541,7 @@ components:
                           description: Country
                           example: US
                         phonenumber:
-                          type: number
+                          type: integer
                           description: Phone number
                           example: null
                         email:
@@ -3552,11 +3552,11 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000000
         requestid:
-          type: number
+          type: integer
           description: Request ID generated for
           example: 1011
         apiname:
@@ -3575,7 +3575,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         email:
@@ -3636,7 +3636,7 @@ components:
                 description: Country
                 example: US
               phonenumber:
-                type: number
+                type: integer
                 description: Phone number
                 example: null
               email:
@@ -3656,11 +3656,11 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000000
         requestid:
-          type: number
+          type: integer
           description: Request ID generated for
           example: 1011
         apiname:
@@ -3679,7 +3679,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         email:
@@ -3748,39 +3748,39 @@ components:
                       type: object
                       properties:
                         linenumber:
-                          type: number
+                          type: integer
                           description: Line number
                           example: 1
                         grossamount:
-                          type: number
+                          type: integer
                           description: Gross amount
                           example: 200
                         openamount:
-                          type: number
+                          type: integer
                           description: Open amount
                           example: 200
                         discountamount:
-                          type: number
+                          type: integer
                           description: Discount amount
                           example: 0
                         discountamount2:
-                          type: number
+                          type: integer
                           description: Discount amount2
                           example: 0
                         taxableamount:
-                          type: number
+                          type: integer
                           description: Taxable amount
                           example: 200
                         nontaxableamount:
-                          type: number
+                          type: integer
                           description: Non taxable amount
                           example: ''
                         taxamount:
-                          type: number
+                          type: integer
                           description: Tax amount
                           example: 10
                         paidamount:
-                          type: number
+                          type: integer
                           description: Paid amount
                           example: 0
                         invoicepo:
@@ -3823,11 +3823,11 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000000
         requestid:
-          type: number
+          type: integer
           description: Request ID generated for
           example: 1011
         apiname:
@@ -3847,7 +3847,7 @@ components:
       properties:
         accountid:
           description: Account ID
-          type: number
+          type: integer
           example: 1000000001
         email:
           type: string
@@ -3945,7 +3945,7 @@ components:
                       description: Enrolled for autopay
                       example: 'Y'
                     maxamountperinvoice:
-                      type: number
+                      type: integer
                       description: Max amount per invoice
                       example: 1000
                     companycode:
@@ -3960,11 +3960,11 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000000
         requestid:
-          type: number
+          type: integer
           description: Request ID generated for
           example: 1012
         apiname:
@@ -3984,7 +3984,7 @@ components:
       properties:
         accountid:
           description: Account ID
-          type: number
+          type: integer
           example: 1000000001
         documentid:
           description: Document ID
@@ -4015,11 +4015,11 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000000
         requestid:
-          type: number
+          type: integer
           description: Request ID generated for
           example: 1012
         apiname:
@@ -4038,7 +4038,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         customerid:
@@ -4058,14 +4058,14 @@ components:
           description: Flag for active status
           example: 'Y'
         pagenumber:
-          type: number
+          type: integer
           description: Page Number
           example: 1
     GetPaymentMethodsResponse:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         message:
@@ -4077,23 +4077,23 @@ components:
           description: Status
           example: 'Y'
         pagenumber:
-          type: number
+          type: integer
           description: Pagenumber
           example: 1
         perpagesize:
-          type: number
+          type: integer
           description: Per page size
           example: 500
         currentpagesize:
-          type: number
+          type: integer
           description: Current page size
           example: 2
         totalpages:
-          type: number
+          type: integer
           description: Total pages
           example: 1
         totalpaymentmethods:
-          type: number
+          type: integer
           description: Total payment methods
           example: 2
         paymentmethods:
@@ -4114,11 +4114,11 @@ components:
                 description: Last4
                 example: 1111
               routingnumber:
-                type: number
+                type: integer
                 description: Rounting number
                 example: null
               tokenid:
-                type: number
+                type: integer
                 description: Token ID
                 example: 9499375544005220
               paymentgateway:
@@ -4170,7 +4170,7 @@ components:
                 description: Country
                 example: US
               phonenumber:
-                type: number
+                type: integer
                 description: Phone number
                 example: null
               email:
@@ -4195,38 +4195,38 @@ components:
                       description: Currency code
                       example: USD
                     maxamount:
-                      type: number
+                      type: integer
                       description: Max amount
                       example: 300  
     GetUpdaterResponse:
       type: object
       properties:
         pageNumber:
-          type: number
+          type: integer
           description: The number of the current page of results
           example: 1
         perPageSize:
-          type: number
+          type: integer
           description: The number of results per page
           example: 2000
         currentPageSize:
-          type: number
+          type: integer
           description: The number of results contained in the current page
           example: 2000
         totalPages:
-          type: number
+          type: integer
           description: The total number of pages
           example: 1
         totalUpdates:
-          type: number
+          type: integer
           description: The total number of updates for the period
           example: 3
         updatesStartDate:
-          type: number
+          type: integer
           description: The start date of the time period used to retrieve updates
           example: 20210406
         updatesEndDate:
-          type: number
+          type: integer
           description: The current date
           example: 20210506
         updates:
@@ -4283,7 +4283,7 @@ components:
                       debit card -V = Visa
                     example: D
                   bin:
-                    type: number
+                    type: integer
                     description: >-
                       The bank identification number (BIN) of the card
                       used
@@ -4372,15 +4372,15 @@ components:
           description: Merchant ID
           example: 236695144562
         total:
-          type: number
+          type: integer
           description: Total tokens received
           example: 2
         successes:
-          type: number
+          type: integer
           description: Number of tokens enrolled successfully
           example: 1
         failures:
-          type: number
+          type: integer
           description: Number of failures
           example: 1
         errors:
@@ -4417,15 +4417,15 @@ components:
       type: object
       properties:
         merchid:
-          type: number
+          type: integer
           description: Merchant ID
           example: 496695144562
         total:
-          type: number
+          type: integer
           description: Total tokens received
           example: 2
         deleted:
-          type: number
+          type: integer
           description: Number of tokens that were deleted successfully
           example: 1
         notdeleted:
@@ -4445,7 +4445,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         companycode:
@@ -4473,7 +4473,7 @@ components:
           description: Transaction type
           example: A
         transactionamount:
-          type: number
+          type: integer
           description: Transaction amount
           example: 10
         mode:
@@ -4581,7 +4581,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         requestid:
@@ -4600,7 +4600,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         requestid:
@@ -4611,7 +4611,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         status:
@@ -4626,7 +4626,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         process:
@@ -4647,7 +4647,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         status:
@@ -4680,7 +4680,7 @@ components:
                 description: Schedule end date
                 example: 08/23/2022 07:00:00 PM
               amount:
-                type: number
+                type: integer
                 description: Schedueled Amount
                 example: 20
               stopdate:
@@ -4741,10 +4741,10 @@ components:
                       description: Company code
                       example: 101
                     linenumber:
-                      type: number
+                      type: integer
                       description: Invoice line number
                     amount:
-                      type: number
+                      type: integer
                       description: Amount
                       example: 10
                     currency:
@@ -4759,7 +4759,7 @@ components:
       type: object
       properties:
         accountid: 
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         status: 
@@ -4865,7 +4865,7 @@ components:
                 description: Month
                 example: '06'
               salesamount: 
-                type: number
+                type: integer
                 description: Sales amount
                 example: 1910
               companycode: 
@@ -4896,15 +4896,15 @@ components:
           description: Host Batch
           example: 115
         refundtotal:
-          type: number
+          type: integer
           description: Refund Total
           example: 600
         batchid:
-          type: number
+          type: integer
           description: Batch ID
           example: 918
         chargetotal:
-          type: number
+          type: integer
           description: Charge Total
           example: 1792.19
         hoststat:
@@ -4921,7 +4921,7 @@ components:
             type: object
             properties:
               setlamount:
-                type: number
+                type: integer
                 description: Settle amount
                 example: 100
               setlstat:
@@ -4940,7 +4940,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         userid:
@@ -4962,7 +4962,7 @@ components:
               description: User Email
               example: first.last@company.com
             phoneno:
-              type: number
+              type: integer
               description: Phone number
               example: ''
             usergroup:
@@ -5012,7 +5012,7 @@ components:
               description: Country
               example: US
             phonenumber:
-              type: number
+              type: integer
               description: Phone number
               example: null
             email:
@@ -5070,7 +5070,7 @@ components:
               description: Country
               example: US
             phonenumber:
-              type: number
+              type: integer
               description: Phone number
               example: null
             email:
@@ -5089,7 +5089,7 @@ components:
       type: object
       properties:
         accountid:
-          type: number
+          type: integer
           description: Account ID
           example: 1000000001
         token:
@@ -5179,7 +5179,7 @@ components:
           description: Effective to
           example: 06/15/2072 06:43:33 AM
         phoneno: 
-          type: number
+          type: integer
           description: phone number
           example: 123456789  
     
@@ -5234,7 +5234,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
           
@@ -5265,7 +5265,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000008
                   token:
@@ -5323,7 +5323,7 @@ paths:
               properties:
                 accountid:
                   description: Account ID
-                  type: number
+                  type: integer
                   example: 1000000001
                 token:
                   description: Request Token ID
@@ -5339,7 +5339,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -5360,7 +5360,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   status:
@@ -5375,7 +5375,7 @@ paths:
                     type: object
                     properties:
                       paymentmethodid:
-                        type: number
+                        type: integer
                         description: SnapPay Payment Method ID for Credit Card or ACH
                         example: 123456
                       tokenid:
@@ -5522,11 +5522,11 @@ paths:
                           for convenience fee)
                         example: null
                       feeamount:
-                        type: number
+                        type: integer
                         description: Fee Amount (amount in currency)
                         example: 0
                       feevalue:
-                        type: number
+                        type: integer
                         description: Fee Value (value in % for Surcharge fee)
                         example: 0
         '400':
@@ -5555,7 +5555,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 requesttype:
@@ -5666,7 +5666,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
         - name: MerchantId
@@ -5695,7 +5695,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   status:
@@ -5829,7 +5829,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 customerid:
@@ -5878,7 +5878,7 @@ paths:
                     type: object
                     properties:
                       transactionamount:
-                        type: number
+                        type: integer
                         description: Transaction Amount
                         example: 10
                       tokenid:
@@ -5943,7 +5943,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
         - name: MerchantId
@@ -5972,7 +5972,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   status:
@@ -6074,7 +6074,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 customerid:
@@ -6125,7 +6125,7 @@ paths:
                   type: object
                   properties:
                     transactionamount:
-                      type: number
+                      type: integer
                       description: Transaction Amount
                       example: 10
                     tokenid:
@@ -6194,11 +6194,11 @@ paths:
                         description: Product Code or Item Number
                         example: BQT01
                       unitcost:
-                        type: number
+                        type: integer
                         description: Unit Cost
                         example: 1.75
                       quantity:
-                        type: number
+                        type: integer
                         description: Quantity
                         example: 3
                       itemdescriptor:
@@ -6214,19 +6214,19 @@ paths:
                         description: Commodity Code
                         example: Commodity Code1
                       taxamount:
-                        type: number
+                        type: integer
                         description: Tax Amount
                         example: 0.12
                       taxrate:
-                        type: number
+                        type: integer
                         description: Tax Rate in %
                         example: 8
                       itemdiscount:
-                        type: number
+                        type: integer
                         description: Item Discount
                         example: null
                       lineitemtotal:
-                        type: number
+                        type: integer
                         description: Line Item Total
                         example: 5.37
       parameters:
@@ -6235,7 +6235,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
         - name: MerchantId
@@ -6264,7 +6264,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   status:
@@ -6371,11 +6371,11 @@ paths:
                           for convenience fee)
                         example: null
                       feeamount:
-                        type: number
+                        type: integer
                         description: Fee Amount (amount in currency)
                         example: 0
                       feevalue:
-                        type: number
+                        type: integer
                         description: Fee Value (value in % for Surcharge fee)
                         example: 0
         '400':
@@ -6403,7 +6403,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 referencetransactionid:
@@ -6413,7 +6413,7 @@ paths:
                     paymenttransactionid based on SnapPay account configuration
                   example: 1394
                 transactionamount:
-                  type: number
+                  type: integer
                   description: Amount to be captured/settled
                   example: 500
                 customerid:
@@ -6466,11 +6466,11 @@ paths:
                         description: Product Code or Item Number
                         example: BQT01
                       unitcost:
-                        type: number
+                        type: integer
                         description: Unit Cost
                         example: 1.75
                       quantity:
-                        type: number
+                        type: integer
                         description: Quantity
                         example: 3
                       itemdescriptor:
@@ -6486,19 +6486,19 @@ paths:
                         description: Commodity Code
                         example: Commodity Code1
                       taxamount:
-                        type: number
+                        type: integer
                         description: Tax Amount
                         example: 0.12
                       taxrate:
-                        type: number
+                        type: integer
                         description: Tax Rate in %
                         example: 8
                       itemdiscount:
-                        type: number
+                        type: integer
                         description: Item Discount
                         example: null
                       lineitemtotal:
-                        type: number
+                        type: integer
                         description: Line Item Total
                         example: 5.37
       parameters:
@@ -6507,7 +6507,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -6528,7 +6528,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   status:
@@ -6612,7 +6612,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 customerid:
@@ -6663,7 +6663,7 @@ paths:
                   type: object
                   properties:
                     transactionamount:
-                      type: number
+                      type: integer
                       description: Transaction Amount
                       example: 10
                     tokenid:
@@ -6724,7 +6724,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
         - name: MerchantId
@@ -6753,7 +6753,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   status:
@@ -6833,7 +6833,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 referencetransactionid:
@@ -6843,7 +6843,7 @@ paths:
                     paymenttransactionid based on SnapPay account configuration
                   example: 1394
                 transactionamount:
-                  type: number
+                  type: integer
                   description: Amount to be captured/settled
                   example: 500
                 customerid:
@@ -6888,7 +6888,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -6909,7 +6909,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   status:
@@ -7016,11 +7016,11 @@ paths:
                           for convenience fee)
                         example: null
                       feeamount:
-                        type: number
+                        type: integer
                         description: Fee Amount (amount in currency)
                         example: 0
                       feevalue:
-                        type: number
+                        type: integer
                         description: Fee Value (value in % for Surcharge fee)
                         example: 0
         '400':
@@ -7050,7 +7050,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 referencetransactionid:
@@ -7060,7 +7060,7 @@ paths:
                     paymenttransactionid based on SnapPay account configuration
                   example: 1394
                 transactionamount:
-                  type: number
+                  type: integer
                   description: Amount to be captured/settled
                   example: 500
                 customerid:
@@ -7093,7 +7093,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -7114,7 +7114,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   status:
@@ -7202,7 +7202,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 orderid:
@@ -7227,7 +7227,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -7248,7 +7248,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   message:
@@ -7306,7 +7306,7 @@ paths:
                           description: Transaction Date
                           example: 02/14/2021 030028 PM
                         transactionamount:
-                          type: number
+                          type: integer
                           description: Transaction Amount
                           example: 75.25
                         currency:
@@ -7314,17 +7314,17 @@ paths:
                           description: Currency Code
                           example: USD
                         totaltransactionamount:
-                          type: number
+                          type: integer
                           description: >-
                             Total transaction amount (transactionamount +
                             feeamount)
                           example: 75.25
                         feeamount:
-                          type: number
+                          type: integer
                           description: Fee Amount (amount in currency)
                           example: 0
                         feevalue:
-                          type: number
+                          type: integer
                           description: Fee Value (value in % for Surcharge fee)
                           example: 0
                         dctransaction:
@@ -7347,7 +7347,7 @@ paths:
                               description: Payment Gateway Transaction ID
                               example: 360354240638
                             paymenttransactionid:
-                              type: number
+                              type: integer
                               description: SnapPay Transaction ID
                               example: 43237
                             authorizationcode:
@@ -7363,7 +7363,7 @@ paths:
                               description: Processor Response Code
                               example: RPCT
                             transactionamount:
-                              type: number
+                              type: integer
                               description: Transaction Amount
                               example: 75.25
                             currency:
@@ -7371,24 +7371,24 @@ paths:
                               description: Currency Code
                               example: USD
                             totaltransactionamount:
-                              type: number
+                              type: integer
                               description: >-
                                 Total transaction amount (transactionamount +
                                 feeamount)
                               example: 75.25
                             feeamount:
-                              type: number
+                              type: integer
                               description: Fee Amount (amount in currency)
                               example: 0
                             feevalue:
-                              type: number
+                              type: integer
                               description: Fee Value (value in % for Surcharge fee)
                               example: 0
                         paymentmethod:
                           type: object
                           properties:
                             paymentmethodid:
-                              type: number
+                              type: integer
                               description: SnapPay Payment Method ID
                               example: 18304
                             tokenid:
@@ -7412,11 +7412,11 @@ paths:
                               description: Last Name
                               example: Smith
                             expirationmonth:
-                              type: number
+                              type: integer
                               description: Expiration Month
                               example: 12
                             expirationyear:
-                              type: number
+                              type: integer
                               description: Expiration Year
                               example: 2029
                             addressline1:
@@ -7475,7 +7475,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -7522,11 +7522,11 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: SnapPay Account ID
                     example: 1000000001
                   transactionscount:
-                    type: number
+                    type: integer
                     description: >-
                       Transaction Count – This parameter will give the number of
                       payment transactions sent.
@@ -7544,7 +7544,7 @@ paths:
                       type: object
                       properties:
                         paymentheaderid:
-                          type: number
+                          type: integer
                           description: SnapPay Payment Header ID
                           example: 12432
                         sourcetype:
@@ -7562,7 +7562,7 @@ paths:
                           description: Company Code
                           example: 00200
                         transactionamount:
-                          type: number
+                          type: integer
                           description: Transaction Amount
                           example: 100.1
                         comments:
@@ -7591,35 +7591,35 @@ paths:
                                 description: Line Number (Pay Item)
                                 example: 1
                               openamount:
-                                type: number
+                                type: integer
                                 description: Open Amount
                                 example: 300
                               taxableamount:
-                                type: number
+                                type: integer
                                 description: Taxable Amount
                                 example: 20
                               taxamount:
-                                type: number
+                                type: integer
                                 description: Tax Amount
                                 example: 10
                               paidamount:
-                                type: number
+                                type: integer
                                 description: Paid Amount
                                 example: 25
                               paidtax:
-                                type: number
+                                type: integer
                                 description: Paid Tax
                                 example: 0.5
                               discountavailable:
-                                type: number
+                                type: integer
                                 description: Discount Available
                                 example: 0
                               discounttaken:
-                                type: number
+                                type: integer
                                 description: Discount Taken
                                 example: 0
                               discountapplied:
-                                type: number
+                                type: integer
                                 description: Discount Applied
                                 example: 0
                               comments:
@@ -7654,7 +7654,7 @@ paths:
                               description: Payment Gateway Merchant Name
                               example: BluePay
                             transactionamount:
-                              type: number
+                              type: integer
                               description: Transaction Amount
                               example: 120.1
                             authorizationnumber:
@@ -7678,11 +7678,11 @@ paths:
                               description: Fee Type (Convenience / Surcharge / Service)
                               example: Convenience
                             feeamount:
-                              type: number
+                              type: integer
                               description: Fee Amount
                               example: 20
                             feevalue:
-                              type: number
+                              type: integer
                               description: >-
                                 Fee Value – same as amount for convenience fee
                                 and % for surcharge
@@ -7823,7 +7823,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -7856,7 +7856,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: SnapPay Account ID
                     example: 1000000001
                   status:
@@ -7868,7 +7868,7 @@ paths:
                     description: Message
                     example: Deposit information attached.
                   transactionscount:
-                    type: number
+                    type: integer
                     description: Transaction Count
                     example: 53
                   merchantdata:
@@ -7911,11 +7911,11 @@ paths:
                                       description: Net Sales
                                       example: 148
                                     totalfunding:
-                                      type: number
+                                      type: integer
                                       description: Total Funding
                                       example: 102.77
                                     fee:
-                                      type: number
+                                      type: integer
                                       description: Fee
                                       example: o
                                     datechanged:
@@ -7999,7 +7999,7 @@ paths:
                                           description: Merchant ID
                                           example: 236695144562
                                         transactionamount:
-                                          type: number
+                                          type: integer
                                           description: Transaction Amount
                                           example: 1
                                         fundedamount:
@@ -8045,11 +8045,11 @@ paths:
                                             Service)
                                           example: null
                                         feeamount:
-                                          type: number
+                                          type: integer
                                           description: Fee Amount
                                           example: 0
                                         feevalue:
-                                          type: number
+                                          type: integer
                                           description: >-
                                             Fee Value – same as amount for
                                             convenience fee and % for surcharge
@@ -8117,11 +8117,11 @@ paths:
                                               description: Last Name
                                               example: Smith
                                             expirationmonth:
-                                              type: number
+                                              type: integer
                                               description: Expiration Month
                                               example: 12
                                             expirationyear:
-                                              type: number
+                                              type: integer
                                               description: Expiration Year
                                               example: 2029
                                             addressline1:
@@ -8205,21 +8205,21 @@ paths:
           description: MID
           required: true
           schema:
-            type: number
+            type: integer
           example: 123456789
         - name: token
           in: path
           description: Token
           required: true
           schema:
-            type: number
+            type: integer
           example: 21341516224
         - name: AccountId
           in: header
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -8250,7 +8250,7 @@ paths:
                       = Mastercard -N = Non-co-branded debit card -V = Visa
                     example: D
                   bin:
-                    type: number
+                    type: integer
                     description: The bank identification number (BIN) of the card used
                     example: 601101
                   cardusestring:
@@ -8332,7 +8332,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -8352,7 +8352,7 @@ paths:
             service.
           required: true
           schema:
-            type: number
+            type: integer
         - name: daysBack
           in: query
           description: >-
@@ -8360,7 +8360,7 @@ paths:
             updates reported within that period. Defaults to 30 if not provided.
           required: false
           schema:
-            type: number
+            type: integer
         - name: page
           in: query
           description: >-
@@ -8368,7 +8368,7 @@ paths:
             provided.
           required: false
           schema:
-            type: number
+            type: integer
         - name: binInfo
           in: query
           description: >-
@@ -8377,7 +8377,7 @@ paths:
             includes a new card number. Defaults to false if not provided.
           required: false
           schema:
-            type: number
+            type: integer
       responses:
         '200':
           description: Request successful.
@@ -8387,31 +8387,31 @@ paths:
                 type: object
                 properties:
                   pageNumber:
-                    type: number
+                    type: integer
                     description: The number of the current page of results
                     example: 1
                   perPageSize:
-                    type: number
+                    type: integer
                     description: The number of results per page
                     example: 2000
                   currentPageSize:
-                    type: number
+                    type: integer
                     description: The number of results contained in the current page
                     example: 2000
                   totalPages:
-                    type: number
+                    type: integer
                     description: The total number of pages
                     example: 1
                   totalUpdates:
-                    type: number
+                    type: integer
                     description: The total number of updates for the period
                     example: 3
                   updatesStartDate:
-                    type: number
+                    type: integer
                     description: The start date of the time period used to retrieve updates
                     example: 20210406
                   updatesEndDate:
-                    type: number
+                    type: integer
                     description: The current date
                     example: 20210506
                   updates:
@@ -8468,7 +8468,7 @@ paths:
                                 debit card -V = Visa
                               example: D
                             bin:
-                              type: number
+                              type: integer
                               description: >-
                                 The bank identification number (BIN) of the card
                                 used
@@ -8584,7 +8584,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -8609,15 +8609,15 @@ paths:
                     description: Merchant ID
                     example: 236695144562
                   total:
-                    type: number
+                    type: integer
                     description: Total tokens received
                     example: 2
                   successes:
-                    type: number
+                    type: integer
                     description: Number of tokens enrolled successfully
                     example: 1
                   failures:
-                    type: number
+                    type: integer
                     description: Number of failures
                     example: 1
                   errors:
@@ -8676,7 +8676,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
         - name: Signature
@@ -8697,15 +8697,15 @@ paths:
                 type: object
                 properties:
                   merchid:
-                    type: number
+                    type: integer
                     description: Merchant ID
                     example: 496695144562
                   total:
-                    type: number
+                    type: integer
                     description: Total tokens received
                     example: 2
                   deleted:
-                    type: number
+                    type: integer
                     description: Number of tokens that were deleted successfully
                     example: 1
                   notdeleted:
@@ -8743,7 +8743,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 customerid:
@@ -8763,7 +8763,7 @@ paths:
                   description: Flag for active status
                   example: 'Y'
                 pagenumber:
-                  type: number
+                  type: integer
                   description: Page Number
                   example: 1
       parameters:
@@ -8772,7 +8772,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
       responses:
@@ -8784,7 +8784,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   message:
@@ -8796,23 +8796,23 @@ paths:
                     description: Status
                     example: 'Y'
                   pagenumber:
-                    type: number
+                    type: integer
                     description: Pagenumber
                     example: 1
                   perpagesize:
-                    type: number
+                    type: integer
                     description: Per page size
                     example: 500
                   currentpagesize:
-                    type: number
+                    type: integer
                     description: Current page size
                     example: 2
                   totalpages:
-                    type: number
+                    type: integer
                     description: Total pages
                     example: 1
                   totalpaymentmethods:
-                    type: number
+                    type: integer
                     description: Total payment methods
                     example: 2
                   paymentmethods:
@@ -8833,11 +8833,11 @@ paths:
                           description: Last4
                           example: 1111
                         routingnumber:
-                          type: number
+                          type: integer
                           description: Rounting number
                           example: null
                         tokenid:
-                          type: number
+                          type: integer
                           description: Token ID
                           example: 9499375544005220
                         paymentgateway:
@@ -8889,7 +8889,7 @@ paths:
                           description: Country
                           example: US
                         phonenumber:
-                          type: number
+                          type: integer
                           description: Phone number
                           example: null
                         email:
@@ -8914,7 +8914,7 @@ paths:
                                 description: Currency code
                                 example: USD
                               maxamount:
-                                type: number
+                                type: integer
                                 description: Max amount
                                 example: 300
         '400':
@@ -8939,7 +8939,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 companycode:
@@ -8967,7 +8967,7 @@ paths:
                   description: Transaction type
                   example: A
                 transactionamount:
-                  type: number
+                  type: integer
                   description: Transaction amount
                   example: 10
                 mode:
@@ -9077,7 +9077,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
       responses:
@@ -9089,7 +9089,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   requestid:
@@ -9126,7 +9126,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 requestid:
@@ -9139,7 +9139,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
       responses:
@@ -9151,7 +9151,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   status:
@@ -9184,7 +9184,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 process:
@@ -9224,7 +9224,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
       responses:
@@ -9236,7 +9236,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   status:
@@ -9269,7 +9269,7 @@ paths:
                           description: Schedule end date
                           example: 08/23/2022 07:00:00 PM
                         amount:
-                          type: number
+                          type: integer
                           description: Schedueled Amount
                           example: 20
                         stopdate:
@@ -9330,10 +9330,10 @@ paths:
                                 description: Company code
                                 example: 00200
                               linenumber:
-                                type: number
+                                type: integer
                                 description: Invoice line number
                               amount:
-                                type: number
+                                type: integer
                                 description: Amount
                                 example: 10
                               currency:
@@ -9407,15 +9407,15 @@ paths:
                     description: Host Batch
                     example: 115
                   refundtotal:
-                    type: number
+                    type: integer
                     description: Refund Total
                     example: 600
                   batchid:
-                    type: number
+                    type: integer
                     description: Batch ID
                     example: 918
                   chargetotal:
-                    type: number
+                    type: integer
                     description: Charge Total
                     example: 1792.19
                   hoststat:
@@ -9432,7 +9432,7 @@ paths:
                       type: object
                       properties:
                         setlamount:
-                          type: number
+                          type: integer
                           description: Settle amount
                           example: 100
                         setlstat:
@@ -9469,7 +9469,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 userid:
@@ -9491,7 +9491,7 @@ paths:
                       description: User Email
                       example: first.last@company.com
                     phoneno:
-                      type: number
+                      type: integer
                       description: Phone number
                       example: ''
                     usergroup:
@@ -9541,7 +9541,7 @@ paths:
                       description: Country
                       example: US
                     phonenumber:
-                      type: number
+                      type: integer
                       description: Phone number
                       example: null
                     email:
@@ -9599,7 +9599,7 @@ paths:
                       description: Country
                       example: US
                     phonenumber:
-                      type: number
+                      type: integer
                       description: Phone number
                       example: null
                     email:
@@ -9620,7 +9620,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
       responses:
@@ -9632,7 +9632,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   token:
@@ -9670,7 +9670,7 @@ paths:
               properties:
                 accountid:
                   description: Account ID
-                  type: number
+                  type: integer
                   example: 1000000001
                 email:
                   type: string
@@ -9687,7 +9687,7 @@ paths:
                           type: object
                           properties:
                             billingcustomerid:
-                              type: number
+                              type: integer
                               description: Sold to
                               example: 100
                             parentcustomerid:
@@ -9695,7 +9695,7 @@ paths:
                               description: Parent Customer ID
                               example: 100
                             shipto:
-                              type: number
+                              type: integer
                               description: Ship to
                               example: 100
                             invoicenumber:
@@ -9703,7 +9703,7 @@ paths:
                               description: Invoice Number
                               example: 10112
                             invoicetype:
-                              type: number
+                              type: integer
                               description: Invoice Type
                               example: RI
                             companycode:
@@ -9711,7 +9711,7 @@ paths:
                               description: Company Code
                               example: 200
                             currency:
-                              type: number
+                              type: integer
                               description: Currency
                               example: USD
                             fiscalyear:
@@ -9719,7 +9719,7 @@ paths:
                               description: Fiscal Year
                               example: 2022
                             branchplant:
-                              type: number
+                              type: integer
                               description: Branch Plant
                               example: A10
                             ordertype:
@@ -9727,7 +9727,7 @@ paths:
                               description: Order Type
                               example: SO
                             email:
-                              type: number
+                              type: integer
                               description: Email
                               example: first.last@company.com
                             comments:
@@ -9735,7 +9735,7 @@ paths:
                               description: Comments
                               example: test comments
                             suppliername:
-                              type: number
+                              type: integer
                               description: Supplier Name
                               example: CDI
                             invoicedetail:
@@ -9744,39 +9744,39 @@ paths:
                                 type: object
                                 properties:
                                   linenumber:
-                                    type: number
+                                    type: integer
                                     description: Invoice line number
                                     example: 1
                                   grossamount:
-                                    type: number
+                                    type: integer
                                     description: Gross Amount
                                     example: 250
                                   openamount:
-                                    type: number
+                                    type: integer
                                     description: Open Amount
                                     example: 250
                                   paidamount:
-                                    type: number
+                                    type: integer
                                     description: Paid Amount
                                     example: 0
                                   taxableamount:
-                                    type: number
+                                    type: integer
                                     description: Taxable Amount
                                     example: 150
                                   nontaxableamount:
-                                    type: number
+                                    type: integer
                                     description: Non Taxable Amount
                                     example: 50
                                   taxamount:
-                                    type: number
+                                    type: integer
                                     description: Tax Amount
                                     example: 10
                                   discountamount:
-                                    type: number
+                                    type: integer
                                     description: Discount Amount
                                     example: 250
                                   discosuntamount2:
-                                    type: number
+                                    type: integer
                                     description: Discount Amount2
                                     example: 250
                                   statementid:
@@ -9837,7 +9837,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000000
       responses:
@@ -9849,11 +9849,11 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000000
                   requestid:
-                    type: number
+                    type: integer
                     description: Request ID generated for
                     example: 1011
                   apiname:
@@ -9891,7 +9891,7 @@ paths:
               properties:
                 accountid:
                   description: Account ID
-                  type: number
+                  type: integer
                   example: 1000000001
                 email:
                   type: string
@@ -9985,7 +9985,7 @@ paths:
                               description: Enrolled for autopay
                               example: 'Y'
                             maxamountperinvoice:
-                              type: number
+                              type: integer
                               description: Max amount per invoice
                               example: 1000
                             currencycode:
@@ -10018,7 +10018,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000000
       responses:
@@ -10030,11 +10030,11 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000000
                   requestid:
-                    type: number
+                    type: integer
                     description: Request ID generated for
                     example: 1012
                   apiname:
@@ -10071,7 +10071,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 email:
@@ -10127,55 +10127,55 @@ paths:
                                       type: object
                                       properties:
                                         year:
-                                          type: number
+                                          type: integer
                                           description: Year
                                           example: 2022
                                         salesamount01:
-                                          type: number
+                                          type: integer
                                           description: Sales Amount 01
                                           example: 2145.21
                                         salesamount02:
-                                          type: number
+                                          type: integer
                                           description: Sales Amount 02
                                           example: 2145.21
                                         salesamount03:
-                                          type: number
+                                          type: integer
                                           description: Sales Amount 03
                                           example: 2145.21
                                         salesamount04:
-                                          type: number
+                                          type: integer
                                           description: Sales Amount 04
                                           example: 2145.21
                                         salesamount05:
-                                          type: number
+                                          type: integer
                                           description: Sales Amount 05
                                           example: 2145.21
                                         salesamount06:
-                                          type: number
+                                          type: integer
                                           description: Sales Amount 06
                                           example: 2145.21
                                         salesamount07:
-                                          type: number
+                                          type: integer
                                           description: Sales Amount 07
                                           example: 2145.21
                                         salesamount08:
-                                          type: number
+                                          type: integer
                                           description: Sales Amount 08
                                           example: 2145.21
                                         salesamount09:
-                                          type: number
+                                          type: integer
                                           description: Sales Amount 09
                                           example: 2145.21
                                         salesamount10:
-                                          type: number
+                                          type: integer
                                           description: Sales Amount 10
                                           example: 2145.21
                                         salesamount11:
-                                          type: number
+                                          type: integer
                                           description: Sales Amount 11
                                           example: 2145.21
                                         salesamount12:
-                                          type: number
+                                          type: integer
                                           description: Sales Amount 12
                                           example: 2145.21
       parameters:
@@ -10184,7 +10184,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
       responses:
@@ -10196,11 +10196,11 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   requestid:
-                    type: number
+                    type: integer
                     description: Request ID generated
                     example: 1012
                   apiname:
@@ -10237,7 +10237,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 email:
@@ -10286,7 +10286,7 @@ paths:
                         description: Country
                         example: US
                       phonenumber:
-                        type: number
+                        type: integer
                         description: Phone number
                         example: null
                       email:
@@ -10308,7 +10308,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
       responses:
@@ -10320,11 +10320,11 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   requestid:
-                    type: number
+                    type: integer
                     description: Request ID generated for
                     example: 1011
                   apiname:
@@ -10361,7 +10361,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 apiname:
@@ -10434,7 +10434,7 @@ paths:
                                   description: Order type
                                   example: SO
                                 linenumber:
-                                  type: number
+                                  type: integer
                                   description: Line number
                                   example: 1
                                 itemname:
@@ -10446,7 +10446,7 @@ paths:
                                   description: Item description
                                   example: Item1 description
                                 quantity:
-                                  type: number
+                                  type: integer
                                   description: Quantity
                                   example: 1
                                 uom:
@@ -10454,15 +10454,15 @@ paths:
                                   description: UOM
                                   example: EA
                                 unitprice:
-                                  type: number
+                                  type: integer
                                   description: Unit price
                                   example: 20
                                 extendedprice:
-                                  type: number
+                                  type: integer
                                   description: Extended price
                                   example: 20
                                 discountamount:
-                                  type: number
+                                  type: integer
                                   description: Discount amount
                                   example: 0
                                 commoditycode:
@@ -10470,7 +10470,7 @@ paths:
                                   description: Commodity code
                                   example: 121
                                 taxamount:
-                                  type: number
+                                  type: integer
                                   description: Tax amount
                                   example: 10
                                 taxid:
@@ -10478,7 +10478,7 @@ paths:
                                   description: Tax ID
                                   example: IL
                                 taxrate:
-                                  type: number
+                                  type: integer
                                   description: Tax rate
                                   example: 10
                                 taxtype:
@@ -10551,7 +10551,7 @@ paths:
                                   description: Country
                                   example: US
                                 phonenumber:
-                                  type: number
+                                  type: integer
                                   description: Phone number
                                   example: null
                                 email:
@@ -10564,7 +10564,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
       responses:
@@ -10576,11 +10576,11 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000000
                   requestid:
-                    type: number
+                    type: integer
                     description: Request ID generated for
                     example: 1011
                   apiname:
@@ -10617,7 +10617,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 email:
@@ -10678,7 +10678,7 @@ paths:
                         description: Country
                         example: US
                       phonenumber:
-                        type: number
+                        type: integer
                         description: Phone number
                         example: null
                       email:
@@ -10700,7 +10700,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
       responses:
@@ -10712,11 +10712,11 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000000
                   requestid:
-                    type: number
+                    type: integer
                     description: Request ID generated for
                     example: 1011
                   apiname:
@@ -10753,7 +10753,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 email:
@@ -10822,39 +10822,39 @@ paths:
                               type: object
                               properties:
                                 linenumber:
-                                  type: number
+                                  type: integer
                                   description: Line number
                                   example: 1
                                 grossamount:
-                                  type: number
+                                  type: integer
                                   description: Gross amount
                                   example: 200
                                 openamount:
-                                  type: number
+                                  type: integer
                                   description: Open amount
                                   example: 200
                                 discountamount:
-                                  type: number
+                                  type: integer
                                   description: Discount amount
                                   example: 0
                                 discountamount2:
-                                  type: number
+                                  type: integer
                                   description: Discount amount2
                                   example: 0
                                 taxableamount:
-                                  type: number
+                                  type: integer
                                   description: Taxable amount
                                   example: 200
                                 nontaxableamount:
-                                  type: number
+                                  type: integer
                                   description: Non taxable amount
                                   example: ''
                                 taxamount:
-                                  type: number
+                                  type: integer
                                   description: Tax amount
                                   example: 10
                                 paidamount:
-                                  type: number
+                                  type: integer
                                   description: Paid amount
                                   example: 0
                                 invoicepo:
@@ -10899,7 +10899,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
       responses:
@@ -10911,11 +10911,11 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000000
                   requestid:
-                    type: number
+                    type: integer
                     description: Request ID generated for
                     example: 1011
                   apiname:
@@ -10953,7 +10953,7 @@ paths:
               properties:
                 accountid:
                   description: Account ID
-                  type: number
+                  type: integer
                   example: 1000000001
                 email:
                   type: string
@@ -11051,7 +11051,7 @@ paths:
                               description: Enrolled for autopay
                               example: 'Y'
                             maxamountperinvoice:
-                              type: number
+                              type: integer
                               description: Max amount per invoice
                               example: 1000
                             companycode:
@@ -11068,7 +11068,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
       responses:
@@ -11080,11 +11080,11 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000000
                   requestid:
-                    type: number
+                    type: integer
                     description: Request ID generated for
                     example: 1012
                   apiname:
@@ -11122,7 +11122,7 @@ paths:
               properties:
                 accountid:
                   description: Account ID
-                  type: number
+                  type: integer
                   example: 1000000001
                 documentid:
                   description: Document ID
@@ -11155,7 +11155,7 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
       responses:
@@ -11167,11 +11167,11 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000000
                   requestid:
-                    type: number
+                    type: integer
                     description: Request ID generated for
                     example: 1012
                   apiname:
@@ -11208,7 +11208,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: number
+                  type: integer
                   description: Account ID
                   example: 1000000001
                 companycode:
@@ -11272,11 +11272,11 @@ paths:
                   description: Payment method
                   example: CC
                 transactionamount:
-                  type: number
+                  type: integer
                   description: Transaction amount
                   example: 100
                 amount:
-                  type: number
+                  type: integer
                   description: Aamount
                   example: 150
                 cvvrequired:
@@ -11340,7 +11340,7 @@ paths:
                       description: Country
                       example: US
                     phonenumber:
-                      type: number
+                      type: integer
                       description: Phone number
                       example: null
                     email:
@@ -11382,7 +11382,7 @@ paths:
                       description: Country
                       example: US
                     phonenumber:
-                      type: number
+                      type: integer
                       description: Phone number
                       example: null
                     email:
@@ -11394,12 +11394,12 @@ paths:
                       description: VAT Registration number
                       example: ''
       parameters:
-        - name: AccountId
+        - name: AccountId 
           in: header
           description: Account ID
           required: true
           schema:
-            type: number
+            type: integer
             default: 1000000001
           example: 1000000001
       responses:
@@ -11411,7 +11411,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: number
+                    type: integer
                     description: Account ID
                     example: 1000000001
                   token:
