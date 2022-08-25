@@ -417,7 +417,8 @@ components:
         accountid:
           description: Account ID
           type: string
-          example: 1000000001
+          example:  >-
+              1000000001
         companycode:
           description: Company Code
           type: string
@@ -468,7 +469,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example:  >-
+              1000000001
         token:
           type: string
           description: Request ID that will be used to open SnapPay iFrame
@@ -487,7 +489,8 @@ components:
         accountid:
           description: Account ID
           type: string
-          example: 1000000001
+          example:  >-
+              1000000001
         token:
           description: Request Token ID
           type: string
@@ -498,7 +501,8 @@ components:
        accountid:
          type: string
          description: Account ID
-         example: 1000000001
+         example: >-
+              1000000001
        status:
          type: string
          description: Y or N
@@ -671,7 +675,8 @@ components:
        accountid:
         type: string
         description: Account ID
-        example: 1000000001
+        example: >-
+              1000000001
        requesttype:
         type: string
         description: >-
@@ -776,7 +781,8 @@ components:
        accountid:
          type: string
          description: Account ID
-         example: 1000000001
+         example: >-
+              1000000001
        status:
          type: string
          description: Y or N
@@ -883,7 +889,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example: >-
+              1000000001
         customerid:
           type: string
           description: Customer ID
@@ -991,7 +998,8 @@ components:
       accountid:
         type: string
         description: Account ID
-        example: 1000000001
+        example: >-
+              1000000001
       status:
         type: string
         description: Y or N
@@ -1068,7 +1076,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example: >-
+              1000000001
         customerid:
           type: string
           description: Customer ID
@@ -1227,7 +1236,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example: >-
+              1000000001
         status:
           type: string
           description: Y or N
@@ -1345,7 +1355,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example:  >-
+              1000000001
         referencetransactionid:
           type: string
           description: >-
@@ -1447,7 +1458,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example: >-
+              1000000001
         status:
           type: string
           description: Y or N
@@ -1514,7 +1526,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example:  >-
+              1000000001
         customerid:
           type: string
           description: Customer ID
@@ -1624,7 +1637,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example: >-
+              1000000001
         status:
           type: string
           description: Y or N
@@ -1683,7 +1697,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example: >-
+              1000000001
         referencetransactionid:
           type: string
           description: >-
@@ -1736,7 +1751,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example:  >-
+              1000000001
         status:
           type: string
           description: Y or N
@@ -1854,7 +1870,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example: >-
+              1000000001
         referencetransactionid:
           type: string
           description: >-
@@ -1895,7 +1912,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example: >-
+              1000000001
         status:
           type: string
           description: Y or N
@@ -1961,7 +1979,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example:  >-
+              1000000001
         orderid:
           type: string
           description: Account
@@ -1984,7 +2003,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example: >-
+              1000000001
         message:
           type: string
           description: Message
@@ -2789,7 +2809,8 @@ components:
         accountid:
           description: Account ID
           type: string
-          example: 1000000000
+          example: >-
+              1000000001
         email:
           type: string
           description: Email to send status of upload
@@ -2955,7 +2976,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000000
+          example: >-
+              1000000001
         requestid:
           type: integer
           description: Request ID generated for
@@ -2978,7 +3000,8 @@ components:
               accountid:
                 description: Account ID
                 type: string
-                example: 1000000000
+                example: >-
+                  1000000001
               email:
                 type: string
                 description: Email to send status of upload
@@ -3104,7 +3127,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000000
+          example: >-
+              1000000001
         requestid:
           type: integer
           description: Request ID generated for
@@ -3127,7 +3151,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example: >-
+              1000000001
         email:
           type: string
           description: Email
@@ -3238,7 +3263,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example: >-
+              1000000001
         requestid:
           type: integer
           description: Request ID generated
@@ -3261,7 +3287,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example: >-
+              1000000001
         email:
           type: string
           description: Email
@@ -3330,7 +3357,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000000
+          example: >-
+              1000000001
         requestid:
           type: integer
           description: Request ID generated for
@@ -3353,7 +3381,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example: >-
+              1000000001
         apiname:
           type: string
           description: API Name
@@ -3554,7 +3583,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000000
+          example: >-
+              1000000001
         requestid:
           type: integer
           description: Request ID generated for
@@ -3577,7 +3607,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example: >-
+              1000000001
         email:
           type: string
           description: Email
@@ -3658,7 +3689,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000000
+          example: >-
+              1000000001
         requestid:
           type: integer
           description: Request ID generated for
@@ -3681,7 +3713,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000001
+          example: >-
+              1000000001
         email:
           type: string
           description: Email
@@ -3825,7 +3858,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000000
+          example:  >-
+              1000000001
         requestid:
           type: integer
           description: Request ID generated for
@@ -3848,7 +3882,8 @@ components:
         accountid:
           description: Account ID
           type: string
-          example: 1000000001
+          example:  >-
+              1000000001
         email:
           type: string
           description: Email to send status of upload
@@ -3962,7 +3997,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000000
+          example: >- 
+            1000000000
         requestid:
           type: integer
           description: Request ID generated for
@@ -4017,7 +4053,8 @@ components:
         accountid:
           type: string
           description: Account ID
-          example: 1000000000
+          example: >- 
+            1000000000
         requestid:
           type: integer
           description: Request ID generated for
@@ -9840,8 +9877,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000000
+            default:  >- 
+              1000000000
+          example:  >- 
+            1000000000
       responses:
         '200':
           description: Request successful.
@@ -9853,7 +9892,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000000
+                    example: >- 
+                      1000000000
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -10021,8 +10061,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000000
+            default: >- 
+              1000000000
+          example: >- 
+            1000000000
       responses:
         '200':
           description: Request successful.
@@ -10034,7 +10076,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000000
+                    example: >- 
+                      1000000000
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -10075,7 +10118,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >- 
+                    1000000000
                 email:
                   type: string
                   description: Email
@@ -10187,8 +10231,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >- 
+              1000000000
+          example: >- 
+            1000000000
       responses:
         '200':
           description: Request successful.
@@ -10200,7 +10246,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000001
+                    example: >- 
+                      1000000000
                   requestid:
                     type: integer
                     description: Request ID generated
@@ -10241,7 +10288,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >- 
+                    1000000000
                 email:
                   type: string
                   description: Email
@@ -10311,8 +10359,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >- 
+                    1000000000
+          example: >- 
+                    1000000000
       responses:
         '200':
           description: Request successful.
@@ -10324,7 +10374,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000001
+                    example: >- 
+                      1000000000
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -10365,7 +10416,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >- 
+                    1000000000
                 apiname:
                   type: string
                   description: API Name
@@ -10567,8 +10619,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default:  >- 
+                    1000000000
+          example:  >- 
+                    1000000000
       responses:
         '200':
           description: Request successful.
@@ -10580,7 +10634,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000000
+                    example: >- 
+                      1000000000
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -10621,7 +10676,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >- 
+                    1000000000
                 email:
                   type: string
                   description: Email
@@ -10703,8 +10759,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >- 
+                    1000000000
+          example:  >- 
+                    1000000000
       responses:
         '200':
           description: Request successful.
@@ -10716,7 +10774,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000000
+                    example:  >- 
+                      1000000000
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -10757,7 +10816,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >- 
+                    1000000000
                 email:
                   type: string
                   description: Email
@@ -10902,8 +10962,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >- 
+                    1000000000
+          example: >- 
+                    1000000000
       responses:
         '200':
           description: Request successful.
@@ -10915,7 +10977,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000000
+                    example: >- 
+                      1000000000
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -10956,7 +11019,8 @@ paths:
                 accountid:
                   description: Account ID
                   type: string
-                  example: 1000000001
+                  example: >- 
+                    1000000000
                 email:
                   type: string
                   description: Email to send status of upload
@@ -11071,8 +11135,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >- 
+                    1000000000
+          example:  >- 
+                    1000000000
       responses:
         '200':
           description: Request successful.
@@ -11084,7 +11150,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000000
+                    example:  >- 
+                      1000000000
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -11125,7 +11192,8 @@ paths:
                 accountid:
                   description: Account ID
                   type: string
-                  example: 1000000001
+                  example: >- 
+                    1000000000
                 documentid:
                   description: Document ID
                   type: string
@@ -11158,8 +11226,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >- 
+                    1000000000
+          example:  >- 
+                    1000000000
       responses:
         '200':
           description: Request successful.
@@ -11171,7 +11241,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000000
+                    example:  >- 
+                      1000000000
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -11212,7 +11283,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >- 
+                    1000000000
                 companycode:
                   type: string
                   description: Company code
@@ -11402,8 +11474,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >- 
+                    1000000000
+          example:  >- 
+                    1000000000
       responses:
         '200':
           description: Request successful.
@@ -11415,7 +11489,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000001
+                    example:  >- 
+                     1000000000
                   token:
                     type: string
                     description: Request ID that will be used to open SnapPay iFrame
