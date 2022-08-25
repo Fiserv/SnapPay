@@ -5234,9 +5234,9 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: integer
-            default: 1000000001
-          example: 1000000001
+            type: string
+            default: "1000000001"
+          example: "1000000001"
           
         - name: MerchantId
           in: header
