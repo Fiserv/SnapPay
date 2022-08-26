@@ -8834,7 +8834,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >-
+                    1000000001
                 customerid:
                   type: string
                   description: Customer ID
@@ -9032,7 +9033,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >-
+                    1000000001
                 companycode:
                   type: string
                   description: Company code
@@ -9219,7 +9221,7 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: integer
+                  type: string
                   description: Account ID
                   example: >-
                     1000000001
@@ -9282,7 +9284,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >-
+                    1000000001
                 process:
                   type: string
                   description: >-
@@ -9570,7 +9573,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >-
+                    1000000001
                 userid:
                   type: string
                   description: User ID
