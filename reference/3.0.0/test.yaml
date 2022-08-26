@@ -5306,7 +5306,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000008
+                    example: >-
+                      1000000008
                   token:
                     type: string
                     description: Request ID that will be used to open SnapPay iFrame
@@ -5363,7 +5364,8 @@ paths:
                 accountid:
                   description: Account ID
                   type: string
-                  example: 1000000001
+                  example: >-
+                    1000000001
                 token:
                   description: Request Token ID
                   type: string
@@ -5379,8 +5381,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -5401,7 +5405,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000001
+                    example: >-
+                      1000000001
                   status:
                     type: string
                     description: Y or N
@@ -5596,7 +5601,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >-
+                    1000000001
                 requesttype:
                   type: string
                   description: >-
@@ -5636,7 +5642,8 @@ paths:
                 bankname:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >-
+                    1000000001
                 checktype:
                   type: string
                   description: Check Type â€“ C for corporate and P for personal
@@ -5706,8 +5713,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
         - name: MerchantId
           in: header
           description: >-
@@ -5736,7 +5745,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000001
+                    example: >-
+                      1000000001
                   status:
                     type: string
                     description: Y or N
@@ -5870,7 +5880,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >-
+                    1000000001
                 customerid:
                   type: string
                   description: Customer ID
@@ -5983,8 +5994,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
         - name: MerchantId
           in: header
           description: >-
@@ -6013,7 +6026,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000001
+                    example: >-
+                      1000000001
                   status:
                     type: string
                     description: Y or N
@@ -6115,7 +6129,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >-
+                    1000000001
                 customerid:
                   type: string
                   description: Customer ID
@@ -6275,8 +6290,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
         - name: MerchantId
           in: header
           description: >-
@@ -6305,7 +6322,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000001
+                    example: >-
+                      1000000001
                   status:
                     type: string
                     description: Y or N
@@ -6444,7 +6462,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >-
+                    1000000001
                 referencetransactionid:
                   type: string
                   description: >-
@@ -6547,8 +6566,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -6569,7 +6590,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000001
+                    example: >- 
+                      1000000001
                   status:
                     type: string
                     description: Y or N
@@ -6653,7 +6675,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >-
+                    1000000001
                 customerid:
                   type: string
                   description: Customer ID
@@ -6764,8 +6787,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
         - name: MerchantId
           in: header
           description: >-
@@ -6794,7 +6819,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000001
+                    example: >-
+                      1000000001
                   status:
                     type: string
                     description: Y or N
@@ -6874,7 +6900,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >-
+                    1000000001
                 referencetransactionid:
                   type: string
                   description: >-
@@ -6928,8 +6955,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -6950,7 +6979,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000001
+                    example: >-
+                      1000000001
                   status:
                     type: string
                     description: Y or N
@@ -7091,7 +7121,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >-
+                    1000000001
                 referencetransactionid:
                   type: string
                   description: >-
@@ -7133,8 +7164,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -7155,7 +7188,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000001
+                    example: >-
+                      1000000001
                   status:
                     type: string
                     description: Y or N
@@ -7243,7 +7277,8 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: 1000000001
+                  example: >-
+                    1000000001
                 orderid:
                   type: string
                   description: Account
@@ -7267,8 +7302,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -7289,7 +7326,8 @@ paths:
                   accountid:
                     type: string
                     description: Account ID
-                    example: 1000000001
+                    example: >-
+                      1000000001
                   message:
                     type: string
                     description: Message
@@ -7515,8 +7553,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -7863,8 +7903,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -8259,8 +8301,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -8372,8 +8416,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -8624,8 +8670,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -8716,8 +8764,10 @@ paths:
           required: true
           schema:
             type: string
-            default: 1000000001
-          example: 1000000001
+            default: >-
+              1000000001
+          example: >-
+            1000000001
         - name: Signature
           in: header
           description: HMAC Signature
