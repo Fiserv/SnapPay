@@ -7,7 +7,7 @@ info:
     integrates with popular ERP solutions and shopping cart solutions to serve
     the holistic B2B payment needs of enterprise-size businesses.
   
-  version: 3.0.5
+  version: 3.0.7
 servers:
   - url: https://restapi.snappayglobal.com/
   - url: https://demo1.cditechnology.com/SnapPay/REST/
@@ -99,7 +99,7 @@ components:
         stylecss: "border:2px solid orange; text-align: left;"
     GetRequestIDResponse:
       value:
-        accountid: 1000000008
+        accountid: 1000000001
         token: 0b724a4f-5bbb-e811-b229-000c29cce4c0
         status: 'Y'
         message: Information stored successfully.
@@ -1245,7 +1245,7 @@ components:
         message:
           type: string
           description: Message
-          example: Authorization successful.
+          example: Transaction successful.
         transaction:
           type: object
           properties:
@@ -1467,7 +1467,7 @@ components:
         message:
           type: string
           description: Message
-          example: Authorization successful.
+          example: Transaction successful.
         paymenttransactionid:
           type: string
           description: SnapPay Payment Transaction ID
@@ -1646,7 +1646,7 @@ components:
         message:
           type: string
           description: Message
-          example: Authorization successful.
+          example: Transaction successful.
         transaction:
           type: object
           properties:
@@ -1760,7 +1760,7 @@ components:
         message:
           type: string
           description: Message
-          example: Authorization successful.
+          example: Transaction successful.
         paymenttransactionid:
           type: string
           description: SnapPay Payment Transaction ID
@@ -1921,7 +1921,7 @@ components:
         message:
           type: string
           description: Message
-          example: Authorization successful.
+          example: Transaction successful.
         paymenttransactionid:
           type: string
           description: SnapPay Payment Transaction ID
@@ -5271,11 +5271,9 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
+            type: integer
+            default: 1000000001
+          example: 1000000001
           
         - name: MerchantId
           in: header
@@ -5307,7 +5305,7 @@ paths:
                     type: string
                     description: Account ID
                     example: >-
-                      1000000008
+                      1000000001
                   token:
                     type: string
                     description: Request ID that will be used to open SnapPay iFrame
@@ -5697,7 +5695,7 @@ paths:
                 email:
                   type: string
                   description: Email Address
-                  example: noreply@snappay.com
+                  example: abc@company.com
                 phonenumber:
                   type: string
                   description: Phone Number
@@ -6331,7 +6329,7 @@ paths:
                   message:
                     type: string
                     description: Message
-                    example: Authorization successful.
+                    example: Transaction successful.
                   transaction:
                     type: object
                     properties:
@@ -6599,7 +6597,7 @@ paths:
                   message:
                     type: string
                     description: Message
-                    example: Authorization successful.
+                    example: Transaction successful.
                   paymenttransactionid:
                     type: string
                     description: SnapPay Payment Transaction ID
@@ -6828,7 +6826,7 @@ paths:
                   message:
                     type: string
                     description: Message
-                    example: Authorization successful.
+                    example: Transaction successful.
                   transaction:
                     type: object
                     properties:
@@ -6988,7 +6986,7 @@ paths:
                   message:
                     type: string
                     description: Message
-                    example: Authorization successful.
+                    example: Transaction successful.
                   paymenttransactionid:
                     type: string
                     description: SnapPay Payment Transaction ID
@@ -7197,7 +7195,7 @@ paths:
                   message:
                     type: string
                     description: Message
-                    example: Authorization successful.
+                    example: Transaction successful.
                   paymenttransactionid:
                     type: string
                     description: SnapPay Payment Transaction ID
@@ -7635,7 +7633,7 @@ paths:
                         customerid:
                           type: string
                           description: Customer ID
-                          example: 5987
+                          example: 100
                         companycode:
                           type: string
                           description: Company Code
@@ -7875,7 +7873,7 @@ paths:
                             fundingdate:
                               type: string
                               description: Funding Date
-                              example: 12/20/2018
+                              example: 08/20/2022
         '400':
           description: Invalid request.
         '401':
@@ -7973,7 +7971,7 @@ paths:
                               fundingdate:
                                 type: string
                                 description: Funding Date
-                                example: 8/1/2018 12:00:00 AM
+                                example: 08/1/2022 12:00:00 AM
                               paymentgateway:
                                 type: string
                                 description: Payment Gateway
@@ -8118,7 +8116,7 @@ paths:
                                         transactiondate:
                                           type: string
                                           description: Transaction Date
-                                          example: 07/30/2018
+                                          example: 07/30/2022
                                         feetype:
                                           type: string
                                           description: >-
@@ -8662,7 +8660,7 @@ paths:
                       expiry:
                         type: string
                         description: Expiration Date (mmyy)
-                        example: 122
+                        example: 0122
       parameters:
         - name: AccountId
           in: header
@@ -8915,7 +8913,7 @@ paths:
                         customerid:
                           type: string
                           description: Customer ID
-                          example: 4242
+                          example: 100
                         type:
                           type: string
                           description: Type
@@ -9000,7 +8998,7 @@ paths:
                               companycode:
                                 type: string
                                 description: Company code
-                                example: 101
+                                example: 00200
                               currencycode:
                                 type: string
                                 description: Currency code
@@ -9038,7 +9036,7 @@ paths:
                 companycode:
                   type: string
                   description: Company code
-                  example: 101
+                  example: 00200
                 currencycode:
                   type: string
                   description: Currency code
@@ -9610,7 +9608,7 @@ paths:
                     customerid:
                       type: string
                       description: Customer ID
-                      example: 4242
+                      example: 100
                     customername:
                       type: string
                       description: Customer name
@@ -9815,7 +9813,7 @@ paths:
                             companycode:
                               type: string
                               description: Company Code
-                              example: 200
+                              example: 00200
                             currency:
                               type: integer
                               description: Currency
@@ -9904,7 +9902,7 @@ paths:
                                   duedate:
                                     type: string
                                     description: Invoice Due Date
-                                    example: '2018-06-30'
+                                    example: '2022-06-30'
                                   discountduedate:
                                     type: string
                                     description: Discount Due Date
@@ -9912,15 +9910,15 @@ paths:
                                   discountduedate2:
                                     type: string
                                     description: Discount Due Date2
-                                    example: '2018-06-30'
+                                    example: '2022-06-30'
                                   invoicedate:
                                     type: string
                                     description: Invoice Date
-                                    example: '2018-03-30'
+                                    example: '2022-03-30'
                                   statementdate:
                                     type: string
                                     description: Statment Date
-                                    example: '2018-03-30'
+                                    example: '2022-03-30'
                                   businessunit:
                                     type: string
                                     description: Business Unit
@@ -9945,9 +9943,9 @@ paths:
           schema:
             type: string
             default:  >- 
-              1000000000
+              1000000001
           example:  >- 
-            1000000000
+            1000000001
       responses:
         '200':
           description: Request successful.
@@ -9960,7 +9958,7 @@ paths:
                     type: string
                     description: Account ID
                     example: >- 
-                      1000000000
+                      1000000001
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -10129,9 +10127,9 @@ paths:
           schema:
             type: string
             default: >- 
-              1000000000
+              1000000001
           example: >- 
-            1000000000
+            1000000001
       responses:
         '200':
           description: Request successful.
@@ -10144,7 +10142,7 @@ paths:
                     type: string
                     description: Account ID
                     example: >- 
-                      1000000000
+                      1000000001
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -10186,7 +10184,7 @@ paths:
                   type: string
                   description: Account ID
                   example: >- 
-                    1000000000
+                    1000000001
                 email:
                   type: string
                   description: Email
@@ -10299,9 +10297,9 @@ paths:
           schema:
             type: string
             default: >- 
-              1000000000
+              1000000001
           example: >- 
-            1000000000
+            1000000001
       responses:
         '200':
           description: Request successful.
@@ -10314,7 +10312,7 @@ paths:
                     type: string
                     description: Account ID
                     example: >- 
-                      1000000000
+                      1000000001
                   requestid:
                     type: integer
                     description: Request ID generated
@@ -10356,7 +10354,7 @@ paths:
                   type: string
                   description: Account ID
                   example: >- 
-                    1000000000
+                    1000000001
                 email:
                   type: string
                   description: Email
@@ -10427,9 +10425,9 @@ paths:
           schema:
             type: string
             default: >- 
-                    1000000000
+                    1000000001
           example: >- 
-                    1000000000
+                    1000000001
       responses:
         '200':
           description: Request successful.
@@ -10442,7 +10440,7 @@ paths:
                     type: string
                     description: Account ID
                     example: >- 
-                      1000000000
+                      1000000001
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -10484,7 +10482,7 @@ paths:
                   type: string
                   description: Account ID
                   example: >- 
-                    1000000000
+                    1000000001
                 apiname:
                   type: string
                   description: API Name
@@ -10687,9 +10685,9 @@ paths:
           schema:
             type: string
             default:  >- 
-                    1000000000
+                    1000000001
           example:  >- 
-                    1000000000
+                    1000000001
       responses:
         '200':
           description: Request successful.
@@ -10702,7 +10700,7 @@ paths:
                     type: string
                     description: Account ID
                     example: >- 
-                      1000000000
+                      1000000001
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -10744,7 +10742,7 @@ paths:
                   type: string
                   description: Account ID
                   example: >- 
-                    1000000000
+                    1000000001
                 email:
                   type: string
                   description: Email
@@ -10827,9 +10825,9 @@ paths:
           schema:
             type: string
             default: >- 
-                    1000000000
+                    1000000001
           example:  >- 
-                    1000000000
+                    1000000001
       responses:
         '200':
           description: Request successful.
@@ -10842,7 +10840,7 @@ paths:
                     type: string
                     description: Account ID
                     example:  >- 
-                      1000000000
+                      1000000001
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -10884,7 +10882,7 @@ paths:
                   type: string
                   description: Account ID
                   example: >- 
-                    1000000000
+                    1000000001
                 email:
                   type: string
                   description: Email
@@ -11030,9 +11028,9 @@ paths:
           schema:
             type: string
             default: >- 
-                    1000000000
+                    1000000001
           example: >- 
-                    1000000000
+                    1000000001
       responses:
         '200':
           description: Request successful.
@@ -11045,7 +11043,7 @@ paths:
                     type: string
                     description: Account ID
                     example: >- 
-                      1000000000
+                      1000000001
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -11087,7 +11085,7 @@ paths:
                   description: Account ID
                   type: string
                   example: >- 
-                    1000000000
+                    1000000001
                 email:
                   type: string
                   description: Email to send status of upload
@@ -11203,9 +11201,9 @@ paths:
           schema:
             type: string
             default: >- 
-                    1000000000
+                    1000000001
           example:  >- 
-                    1000000000
+                    1000000001
       responses:
         '200':
           description: Request successful.
@@ -11218,7 +11216,7 @@ paths:
                     type: string
                     description: Account ID
                     example:  >- 
-                      1000000000
+                      1000000001
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -11260,7 +11258,7 @@ paths:
                   description: Account ID
                   type: string
                   example: >- 
-                    1000000000
+                    1000000001
                 documentid:
                   description: Document ID
                   type: string
@@ -11294,9 +11292,9 @@ paths:
           schema:
             type: string
             default: >- 
-                    1000000000
+                    1000000001
           example:  >- 
-                    1000000000
+                    1000000001
       responses:
         '200':
           description: Request successful.
@@ -11309,7 +11307,7 @@ paths:
                     type: string
                     description: Account ID
                     example:  >- 
-                      1000000000
+                      1000000001
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -11351,7 +11349,7 @@ paths:
                   type: string
                   description: Account ID
                   example: >- 
-                    1000000000
+                    1000000001
                 companycode:
                   type: string
                   description: Company code
@@ -11542,9 +11540,9 @@ paths:
           schema:
             type: string
             default: >- 
-                    1000000000
+                    1000000001
           example:  >- 
-                    1000000000
+                    1000000001
       responses:
         '200':
           description: Request successful.
@@ -11557,7 +11555,7 @@ paths:
                     type: string
                     description: Account ID
                     example:  >- 
-                     1000000000
+                     1000000001
                   token:
                     type: string
                     description: Request ID that will be used to open SnapPay iFrame
