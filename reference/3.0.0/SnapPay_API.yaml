@@ -21,7 +21,7 @@ components:
     GetRequestID-O:
       value:
         accountid: 1000000001
-        companycode: "00200"
+        companycode: "'00200'"
         customerid: "100"
         userid: "erpuser"
         currencycode: "USD"
@@ -35,7 +35,7 @@ components:
     GetRequestID-I:
       value:
         accountid: 1000000001
-        companycode: "00200"
+        companycode: "'00200'"
         customerid: "100"
         userid: "erpuser"
         currencycode: "USD"
@@ -49,7 +49,7 @@ components:
     GetRequestID-A:
       value:
         accountid: 1000000001
-        companycode: "00200"
+        companycode: "'00200'"
         customerid: "100"
         userid: "ecomuser"
         currencycode: "USD"
@@ -66,7 +66,7 @@ components:
     GetRequestID-S:
       value:
         accountid: 1000000001
-        companycode: "00200"
+        companycode: "'00200'"
         customerid: "100"
         userid: "ecomuser"
         currencycode: "USD"
@@ -83,7 +83,7 @@ components:
     GetRequestID-T:
       value:
         accountid: 1000000001
-        companycode: "00200"
+        companycode: "'00200'"
         customerid: "100"
         userid: "ecomuser"
         currencycode: "USD"
@@ -416,7 +416,7 @@ components:
         companycode:
           description: Company Code
           type: string
-          example: 00200
+          example: '00200'
         currencycode:
           description: Currency Code
           type: string
@@ -955,7 +955,7 @@ components:
        companycode:
          type: string
          description: Company Code
-         example: 00200
+         example: '00200'
        branchplant:
          type: string
          description: Branch Plant
@@ -1063,7 +1063,7 @@ components:
        companycode:
          type: string
          description: Company Code
-         example: 00200
+         example: '00200'
        branchplant:
          type: string
          description: Branch Plant
@@ -1167,7 +1167,7 @@ components:
         companycode:
           type: string
           description: Company Code
-          example: 00200
+          example: '00200'
         branchplant:
           type: string
           description: Branch Plant
@@ -1354,7 +1354,7 @@ components:
         companycode:
           type: string
           description: Company Code
-          example: 00200
+          example: '00200'
         branchplant:
           type: string
           description: Branch Plant
@@ -1643,7 +1643,7 @@ components:
         companycode:
           type: string
           description: Company Code
-          example: 00200
+          example: '00200'
         orderid:
           type: string
           description: Order ID
@@ -1804,7 +1804,7 @@ components:
         companycode:
           type: string
           description: Company Code
-          example: 00200
+          example: '00200'
         branchplant:
           type: string
           description: Branch Plant
@@ -1985,7 +1985,7 @@ components:
         companycode:
           type: string
           description: Company Code
-          example: 00200
+          example: '00200'
         orderid:
           type: string
           description: Order ID
@@ -2158,7 +2158,7 @@ components:
         companycode:
           type: string
           description: Company Code
-          example: 00200
+          example: '00200'
         userid:
           type: string
           description: User ID
@@ -2504,7 +2504,7 @@ components:
               companycode:
                 type: string
                 description: Company Code
-                example: 00200
+                example: '00200'
               transactionamount:
                 type: integer
                 description: Transaction Amount
@@ -3113,7 +3113,7 @@ components:
                     companycode:
                       type: string
                       description: Company Code
-                      example: 00200
+                      example: '00200'
                     currency:
                       type: integer
                       description: Currency
@@ -3687,7 +3687,7 @@ components:
                   companycode:
                     type: string
                     description: Company code
-                    example: 00200
+                    example: '00200'
                   currency:
                     type: string
                     description: Currency
@@ -4015,7 +4015,7 @@ components:
                   companycode:
                     type: string
                     description: Company code
-                    example: 00200
+                    example: '00200'
                   currency:
                     type: string
                     description: Currency
@@ -4251,7 +4251,7 @@ components:
                     companycode:
                       type: string
                       description: Company code
-                      example: 00200
+                      example: '00200'
                     currencycode:
                       type: string
                       description: Currency code
@@ -4753,7 +4753,7 @@ components:
         companycode:
           type: string
           description: Company code
-          example: 00200
+          example: '00200'
         currencycode:
           type: string
           description: Currency code
@@ -5876,7 +5876,7 @@ paths:
                 companycode:
                   type: string
                   description: Company Code
-                  example: 00200
+                  example: '00200'
                 branchplant:
                   type: string
                   description: Branch Plant
@@ -6022,7 +6022,7 @@ paths:
                   companycode:
                     type: string
                     description: Company Code
-                    example: 00200
+                    example: '00200'
                   branchplant:
                     type: string
                     description: Branch Plant
@@ -6153,7 +6153,7 @@ paths:
                 companycode:
                   type: string
                   description: Company Code
-                  example: 00200
+                  example: '00200'
                 branchplant:
                   type: string
                   description: Branch Plant
@@ -6402,7 +6402,7 @@ paths:
                 companycode:
                   type: string
                   description: Company Code
-                  example: 00200
+                  example: '00200'
                 branchplant:
                   type: string
                   description: Branch Plant
@@ -6745,7 +6745,7 @@ paths:
                 companycode:
                   type: string
                   description: Company Code
-                  example: 00200
+                  example: '00200'
                 orderid:
                   type: string
                   description: Order ID
@@ -6948,7 +6948,7 @@ paths:
                 companycode:
                   type: string
                   description: Company Code
-                  example: 00200
+                  example: '00200'
                 branchplant:
                   type: string
                   description: Branch Plant
@@ -7183,7 +7183,7 @@ paths:
                 companycode:
                   type: string
                   description: Company Code
-                  example: 00200
+                  example: '00200'
                 orderid:
                   type: string
                   description: Order ID
@@ -7404,7 +7404,7 @@ paths:
                 companycode:
                   type: string
                   description: Company Code
-                  example: 00200
+                  example: '00200'
                 userid:
                   type: string
                   description: User ID
@@ -7899,7 +7899,7 @@ paths:
                         companycode:
                           type: string
                           description: Company Code
-                          example: 00200
+                          example: '00200'
                         transactionamount:
                           type: integer
                           description: Transaction Amount
@@ -9260,7 +9260,7 @@ paths:
                               companycode:
                                 type: string
                                 description: Company code
-                                example: 00200
+                                example: '00200'
                               currencycode:
                                 type: string
                                 description: Currency code
@@ -9298,7 +9298,7 @@ paths:
                 companycode:
                   type: string
                   description: Company code
-                  example: 00200
+                  example: '00200'
                 currencycode:
                   type: string
                   description: Currency code
@@ -9690,7 +9690,7 @@ paths:
                               companycode:
                                 type: string
                                 description: Company code
-                                example: 00200
+                                example: '00200'
                               linenumber:
                                 type: integer
                                 description: Invoice line number
@@ -10075,7 +10075,7 @@ paths:
                             companycode:
                               type: string
                               description: Company Code
-                              example: 00200
+                              example: '00200'
                             currency:
                               type: integer
                               description: Currency
@@ -10485,7 +10485,7 @@ paths:
                                   companycode:
                                     type: string
                                     description: Company code
-                                    example: 00200
+                                    example: '00200'
                                   currencycode:
                                     type: string
                                     description: Currency code
@@ -10678,7 +10678,7 @@ paths:
                             companycode:
                               type: string
                               description: Company code
-                              example: 00200
+                              example: '00200'
       parameters:
         - name: AccountId
           in: header
@@ -10784,7 +10784,7 @@ paths:
                           companycode:
                             type: string
                             description: Company code
-                            example: 00200
+                            example: '00200'
                           currency:
                             type: string
                             description: Currency
@@ -11078,7 +11078,7 @@ paths:
                             companycode:
                               type: string
                               description: Company code
-                              example: 00200
+                              example: '00200'
       parameters:
         - name: AccountId
           in: header
@@ -11180,7 +11180,7 @@ paths:
                           companycode:
                             type: string
                             description: Company code
-                            example: 00200
+                            example: '00200'
                           currency:
                             type: string
                             description: Currency
@@ -11450,7 +11450,7 @@ paths:
                             companycode:
                               type: string
                               description: Company code
-                              example: 00200
+                              example: '00200'
                             currencycode:
                               type: string
                               description: Currency code
@@ -11532,7 +11532,7 @@ paths:
                 companycode:
                   description: Company code
                   type: string
-                  example: 00200
+                  example: '00200'
                 documentname:
                   description: Document name
                   type: string
@@ -11615,7 +11615,7 @@ paths:
                 companycode:
                   type: string
                   description: Company code
-                  example: 00200
+                  example: '00200'
                 currencycode:
                   type: string
                   description: Currency code
