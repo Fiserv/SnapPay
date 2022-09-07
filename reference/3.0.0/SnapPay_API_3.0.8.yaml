@@ -6157,11 +6157,11 @@ paths:
                 branchplant:
                   type: string
                   description: Branch Plant
-                  example: null
+                  example: ''
                 ordertype:
                   type: string
                   description: Order Type
-                  example: null
+                  example: ''
                 orderid:
                   type: string
                   description: Order ID
@@ -6177,7 +6177,7 @@ paths:
                 reference:
                   type: string
                   description: Reference Text
-                  example: null
+                  example: ''
                 purchaseorder:
                   type: string
                   description: Purchase Order
@@ -6194,7 +6194,7 @@ paths:
                       tokenid:
                         type: string
                         description: Token ID
-                        example: 9412345678912344
+                        example: 'XXXXXXXXXXXX2344'
                       type:
                         type: string
                         description: Type of credit card
@@ -6214,7 +6214,7 @@ paths:
                       customername:
                         type: string
                         description: Name on credit card
-                        example: John Smith
+                        example: First Last
                       addressline1:
                         type: string
                         description: Address Line 1
@@ -6238,15 +6238,11 @@ paths:
                       email:
                         type: string
                         description: Email Address
-                        example: john.smith@company.com
+                        example: first.last@company.com
                       phonenumber:
                         type: string
                         description: Phone Number
-                        example: null
-            examples:
-              Default:
-                summary: Default
-                $ref: '#/components/examples/AuthorizeDefaultRequest'
+                        example: ''
       parameters:
         - name: AccountId
           in: header
