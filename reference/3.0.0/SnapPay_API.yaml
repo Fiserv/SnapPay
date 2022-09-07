@@ -7,7 +7,7 @@ info:
     integrates with popular ERP solutions and shopping cart solutions to serve
     the holistic B2B payment needs of enterprise-size businesses.
   
-  version: 3.0.7
+  version: 3.0.8
 servers:
   - url: https://restapi.snappayglobal.com/
   - url: https://demo1.cditechnology.com/SnapPay/REST/
@@ -28,9 +28,6 @@ components:
         transactiontype: "O"
         paymentmethod: "CC"
         language: "en-US"
-        savepaymentmethod: "Y"
-        saveatcustomer: "Y"
-        saveatsupplier: "N"
         orderid: "Ord001"
         redirecturl: "https://www.google.com"
         transactionamount: "51"
@@ -45,9 +42,6 @@ components:
         transactiontype: "I"
         paymentmethod: "CC"
         language: "en-US"
-        savepaymentmethod: "Y"
-        saveatcustomer: "Y"
-        saveatsupplier: "N"
         orderid: ""
         redirecturl: "https://www.google.com"
         transactionamount: "51"
@@ -165,7 +159,7 @@ components:
         accountid: 1000000001
         customerid: '100'
         currency: USD
-        companycode: '200'
+        companycode: '00200'
         branchplant: null
         ordertype: null
         orderid: '123456'
@@ -463,6 +457,277 @@ components:
           description: Credit Card Security Code
           type: string
           example: 'Y'
+        invoiceid: 
+          description: Invoice ID
+          type: string
+          example: '4621657657'
+        orderid: 
+          description: Order ID
+          type: string
+          example: ''
+        comments: 
+          description: Comments
+          type: string
+          example: 'test comments'
+        stylecss: 
+          description: Style CSS  
+          type: string
+          example: ''
+        ordertype: 
+          description: Order Type
+          type: string
+          example: ''
+        branchplant: 
+          description: Branch plant
+          type: string
+          example: ''
+        useboltdevice:
+          description: Bolt device flag
+          type: string
+          example: 'N'
+        devicehsn: 
+          description: Device HSN number 
+          type: string
+          example: ''
+        purchaseorder:
+          description: Purchase order number
+          type: string
+          example: '1243'
+        ecomind: 
+          description: Ecommerce indicator
+          type: string
+          example: 'E'
+        cof: 
+          description: COF
+          type: string
+          example: 'C'
+        cofscheduled: 
+          description: COF Scheduled
+          type: string
+          example: 'N'
+        openiniframe: 
+          description: Open in iframe flag
+          type: string
+          example: 'Y'
+        sendemailreceipts:
+          description: Send email flag
+          type: string
+          example: 'Y'
+        parenturi: 
+          description: Parent uri
+          type: string
+          example: 'https://abc.com'
+        displaycardname: 
+          description: Display card name flag
+          type: string
+          example: 'Y'
+        displayaddress: 
+          description: Display address flag
+          type: string
+          example: 'Y'
+        displaytransactionamount: 
+          description: Display transaction amount flag
+          type: string
+          example: 'Y'
+        displaycurrencycode: 
+          description: Display currency code flag
+          type: string
+          example: 'Y'
+        displaycustomer: 
+          description: Display customer flag
+          type: string
+          example: 'Y'
+        displaypagetitle: 
+          description: Display page title flag
+          type: string
+          example: 'Y'
+        user:
+          type: object
+          properties:
+            userfirstname:
+              type: string
+              description: User first name
+              example: Fistname
+            userlastname: 
+              type: string
+              description: User last name
+              example: Lastname
+            useremail:
+              type: string
+              description: User email
+              example: firstname.lastname@company.com
+            forcepasswordreset: 
+              type: string
+              description: Force password flag
+              example: N
+            forcetermsandconditions:
+              type: string
+              description: Force terms and conditions flag
+              example: N
+            devicegroup: 
+              type: string
+              description: Device group
+              example: Device1 
+        customer:
+          type: object
+          properties:
+            customername:
+              type: string
+              description: Customer name
+              example: custname
+            addressline1:
+              type: string
+              description: Address Line1
+              example: Street 100
+            addressline2:
+              type: string
+              description: Address Line2
+              example: ''
+            city:
+              type: string
+              description: City
+              example: Chicago
+            state:
+              type: string
+              description: State
+              example: IL
+            zipcode:
+              type: string
+              description: Zipcode
+              example: 60603
+            country:
+              type: string
+              description: Country
+              example: US
+            phone:
+              type: integer
+              description: Phone number
+              example: null
+            email:
+              type: string
+              description: Email
+              example: first.last@company.com  
+            vatregistrationnumber:
+              type: string
+              description: VAT registration number 
+              example: ''
+        supplier:
+          type: object
+          properties:
+            suppliername:
+              type: string
+              description: Customer name
+              example: suppname
+            addressline1:
+              type: string
+              description: Address Line1
+              example: Street 100
+            addressline2:
+              type: string
+              description: Address Line2
+              example: ''
+            city:
+              type: string
+              description: City
+              example: Chicago
+            state:
+              type: string
+              description: State
+              example: IL
+            zipcode:
+              type: string
+              description: Zipcode
+              example: 60603
+            country:
+              type: string
+              description: Country
+              example: US
+            phone:
+              type: integer
+              description: Phone number
+              example: null
+            email:
+              type: string
+              description: Email
+              example: first.last@company.com  
+            identificationtype:
+              type: string
+              description: >- 
+                Allowed values are "DATE_OF_BIRTH" Or "MEMBER_ID" OR "SPECIAL_CODE" used for payee creation in money network.
+              example: 'MEMBER_ID'
+            identificationdata:
+              type: string
+              description: Identification data
+              example: '123456'
+            companyname:
+              description: Company name
+              type: string
+              example: 'ABC Builders'
+            clientcompanyname: 
+              type: string
+              description: Client company name
+              example: 'XYZ'
+            internalmemo:
+              type: string
+              description: Internal memo
+              example: ''
+            comments:
+              type: string
+              description: Comments 
+              example: 'test comments'
+            reason:
+              type: string
+              description: Reason
+              example: ''
+            status:
+              type: string
+              description: Status
+              example: ''
+        level3:
+          type: array
+          items:
+            type: object
+            properties:
+              linenumber:
+                type: string
+                description: Line number
+                example: '1'
+              productcode:
+                type: string
+                description: Product code
+                example: ROS01
+              taxrate: 
+                type: number
+                description: Tax rate
+                example: 0.073
+              quantity:
+                type: number
+                description: Quantity
+                example: 2
+              itemdescription:
+                type: string
+                description: Item description
+                example: 'Mixed bouquet'
+              unitcost:
+                type: number
+                description: Unit cost
+                example: 30.75
+              lineitemtotal:
+                type: number
+                description: Line item total
+                example: 65.96
+              taxamount:
+                type: number
+                description: Tax amount
+                example: 4.46
+              commoditycode:
+                type: string
+                description: Commodity code
+                example: ''
+              unitofmeasure:
+                type: string
+                description: Unit of measure
+                example: 'EA'
     GetRequestIDResponse:
       type: object
       properties:
@@ -1378,7 +1643,7 @@ components:
         companycode:
           type: string
           description: Company Code
-          example: 200
+          example: 00200
         orderid:
           type: string
           description: Order ID
@@ -1539,7 +1804,7 @@ components:
         companycode:
           type: string
           description: Company Code
-          example: 200
+          example: 00200
         branchplant:
           type: string
           description: Branch Plant
@@ -1720,7 +1985,7 @@ components:
         companycode:
           type: string
           description: Company Code
-          example: 200
+          example: 00200
         orderid:
           type: string
           description: Order ID
@@ -1893,7 +2158,7 @@ components:
         companycode:
           type: string
           description: Company Code
-          example: 200
+          example: 00200
         userid:
           type: string
           description: User ID
@@ -2239,7 +2504,7 @@ components:
               companycode:
                 type: string
                 description: Company Code
-                example: 200
+                example: 00200
               transactionamount:
                 type: integer
                 description: Transaction Amount
@@ -2848,7 +3113,7 @@ components:
                     companycode:
                       type: string
                       description: Company Code
-                      example: 200
+                      example: 00200
                     currency:
                       type: integer
                       description: Currency
@@ -3422,7 +3687,7 @@ components:
                   companycode:
                     type: string
                     description: Company code
-                    example: 101
+                    example: 00200
                   currency:
                     type: string
                     description: Currency
@@ -3750,7 +4015,7 @@ components:
                   companycode:
                     type: string
                     description: Company code
-                    example: 101
+                    example: 00200
                   currency:
                     type: string
                     description: Currency
@@ -3986,7 +4251,7 @@ components:
                     companycode:
                       type: string
                       description: Company code
-                      example: 101
+                      example: 00200
                     currencycode:
                       type: string
                       description: Currency code
@@ -4488,7 +4753,7 @@ components:
         companycode:
           type: string
           description: Company code
-          example: 101
+          example: 00200
         currencycode:
           type: string
           description: Currency code
@@ -5284,8 +5549,7 @@ paths:
             logic of identifying MID for this transaction)
           schema:
             type: string
-            example: >-
-              312312312312
+            
         - name: Signature
           in: header
           description: HMAC Signature
@@ -5369,11 +5633,7 @@ paths:
                 token:
                   description: Request Token ID
                   type: string
-                  example: 073c8be3-b0db-e811-a954-000d3a92a01e
-            examples:
-              Default:
-                summary: Default
-                $ref: '#/components/examples/GetPaymentDetailDefault'
+                  example: 1870de80-072a-ed11-bd6e-0050f2c73a18
       parameters:
         - name: AccountId
           in: header
@@ -5425,7 +5685,7 @@ paths:
                       tokenid:
                         type: string
                         description: Payment Gateway Token ID for Credit Card or ACH
-                        example: 9412345678912344
+                        example: XXXXXXXXXXXX1234
                       last4:
                         type: string
                         description: Last 4 digits of credit card or bank account number
@@ -5437,15 +5697,15 @@ paths:
                       routingnumber:
                         type: string
                         description: Bank Routing Number
-                        example: 71904779
+                        example: 123123123
                       firstname:
                         type: string
                         description: First Name
-                        example: John
+                        example: First
                       lastname:
                         type: string
                         description: Last Name
-                        example: Smith
+                        example: Last
                       expirationmonth:
                         type: string
                         description: Expiration Month
@@ -5477,7 +5737,7 @@ paths:
                       email:
                         type: string
                         description: Email Address
-                        example: john.smith@company.com
+                        example: first.last@company.com
                   transaction:
                     type: object
                     properties:
@@ -5724,7 +5984,7 @@ paths:
             logic of identifying MID for this transaction)
           schema:
             type: string
-          example: 312312312312
+          
         - name: Signature
           in: header
           description: HMAC Signature
@@ -6005,7 +6265,7 @@ paths:
             logic of identifying MID for this transaction)
           schema:
             type: string
-          example: 312312312312
+          
         - name: Signature
           in: header
           description: HMAC Signature
@@ -6301,7 +6561,7 @@ paths:
             logic of identifying MID for this transaction)
           schema:
             type: string
-          example: 312312312312
+          
         - name: Signature
           in: header
           description: HMAC Signature
@@ -6798,7 +7058,7 @@ paths:
             logic of identifying MID for this transaction)
           schema:
             type: string
-          example: 312312312312
+          
         - name: Signature
           in: header
           description: HMAC Signature
