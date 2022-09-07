@@ -7787,8 +7787,8 @@ paths:
       tags:
         - APIs without User Interaction
       x-group-name: APIs without User Interaction
-      x-proxy-name: Retrieve Transaction History
-      summary: Retrieve Transaction History
+      x-proxy-name: Transaction History
+      summary: Transaction History
       description: >-
         The TransactionHistory download API can report all payment transactions
         that have occurred on the SnapPay portal.  Based on account
@@ -8143,8 +8143,8 @@ paths:
       tags:
         - APIs without User Interaction
       x-group-name: APIs without User Interaction
-      x-proxy-name: Retrieve Funding History
-      summary: Retrieve Funding History
+      x-proxy-name: Funding History
+      summary: Funding History
       description: >-
         This API reports amounts that are funded in merchant bank account along
         with payment transactions. Payment transactions include credit card
