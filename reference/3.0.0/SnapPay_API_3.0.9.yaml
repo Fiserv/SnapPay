@@ -12224,7 +12224,7 @@ paths:
               72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
         - name: MerchantID
           in: header
-          description: Merchant IS
+          description: Merchant ID
           required: true
           schema:
             type: string
@@ -12384,7 +12384,7 @@ paths:
               72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
         - name: MerchantID
           in: header
-          description: Merchant IS
+          description: Merchant ID
           required: true
           schema:
             type: string
@@ -12494,6 +12494,14 @@ paths:
                     1000000001
           example:  >- 
                     1000000001
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -12557,7 +12565,7 @@ paths:
               72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
         - name: MerchantID
           in: header
-          description: Merchant IS
+          description: Merchant ID
           required: true
           schema:
             type: string
@@ -12630,7 +12638,7 @@ paths:
               72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
         - name: MerchantID
           in: header
-          description: Merchant IS
+          description: Merchant ID
           required: true
           schema:
             type: string
@@ -12684,6 +12692,14 @@ paths:
                     1000000001
           example:  >- 
                     1000000001
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -12749,7 +12765,7 @@ paths:
               72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
         - name: MerchantID
           in: header
-          description: Merchant IS
+          description: Merchant ID
           required: true
           schema:
             type: string
@@ -12808,6 +12824,14 @@ paths:
                     1000000001
           example:  >- 
                     1000000001
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -12915,7 +12939,7 @@ paths:
               72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
         - name: MerchantID
           in: header
-          description: Merchant IS
+          description: Merchant ID
           required: true
           schema:
             type: string
@@ -13001,7 +13025,7 @@ paths:
               72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
         - name: MerchantID
           in: header
-          description: Merchant IS
+          description: Merchant ID
           required: true
           schema:
             type: string
@@ -13082,7 +13106,7 @@ paths:
               72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
         - name: MerchantID
           in: header
-          description: Merchant IS
+          description: Merchant ID
           required: true
           schema:
             type: string
@@ -13163,7 +13187,7 @@ paths:
               72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
         - name: MerchantID
           in: header
-          description: Merchant IS
+          description: Merchant ID
           required: true
           schema:
             type: string
@@ -13241,7 +13265,7 @@ paths:
               72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
         - name: MerchantID
           in: header
-          description: Merchant IS
+          description: Merchant ID
           required: true
           schema:
             type: string
@@ -13325,7 +13349,7 @@ paths:
               72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
         - name: MerchantID
           in: header
-          description: Merchant IS
+          description: Merchant ID
           required: true
           schema:
             type: string
@@ -13506,7 +13530,7 @@ paths:
               72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
         - name: MerchantID
           in: header
-          description: Merchant IS
+          description: Merchant ID
           required: true
           schema:
             type: string
@@ -13567,6 +13591,14 @@ paths:
             type: string
             default: >-
               72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -13618,6 +13650,14 @@ paths:
             type: string
             default: >-
               72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -13673,6 +13713,14 @@ paths:
             type: string
             default: >-
               72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
