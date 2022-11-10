@@ -5514,7 +5514,7 @@ tags:
   - name: Card Account Updater
   - name: ERP Agents
   - name: Pass through API
-  - name: Device pass through API
+  - name: Bolt Pass through API
   - name: Real Estate
   
 paths:
@@ -12135,8 +12135,8 @@ paths:
   /P2PE/authcard:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Auth Card
       summary: Auth Card
       description: To authorize a card
@@ -12303,8 +12303,8 @@ paths:
   /P2PE/authcardmanual:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Auth Card Manual
       summary: Auth Card Manual
       description: To authorize a card for manual entry
@@ -12459,8 +12459,8 @@ paths:
   /P2PE/connect:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Connect
       summary: Connect
       description: Connect to device
@@ -12516,8 +12516,8 @@ paths:
   /P2PE/disconnect:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Disconnect
       summary: Disconnect
       description: Disconnect session
@@ -12589,8 +12589,8 @@ paths:
   /P2PE/getPanPadVersion:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Get Panpad version
       summary: Get Panpad version
       description: To authorize a card for manual entry
@@ -12657,8 +12657,8 @@ paths:
   /P2PE/listTerminals:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: List Terminals
       summary: List Terminal
       description: To get the list of configured HSN for cardconnect merchant 
@@ -12708,8 +12708,8 @@ paths:
   /P2PE/ping:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Ping
       summary: Ping
       description: Ping request
@@ -12777,8 +12777,8 @@ paths:
   /P2PE/preconnect:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Preconnect
       summary: Preconnect
       description: Preconnect
@@ -12834,8 +12834,8 @@ paths:
   /P2PE/readCard:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Read Card
       summary: Read Card
       description: To read a card
@@ -12951,8 +12951,8 @@ paths:
   /P2PE/readConfirmation:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Read confirmation
       summary: Read confirmation
       description: Read confirmation
@@ -13028,8 +13028,8 @@ paths:
   /P2PE/readInput:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Read input
       summary: Read input
       description: Read input
@@ -13109,8 +13109,8 @@ paths:
   /P2PE/readManual:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Read manual
       summary: Read manual
       description: Read manual
@@ -13194,8 +13194,8 @@ paths:
   /P2PE/readSignature:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Read signature
       summary: Read signature
       description: Read signature
@@ -13268,8 +13268,8 @@ paths:
   /P2PE/tip:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Tip
       summary: Tip
       description: Tip
@@ -13465,8 +13465,8 @@ paths:
   /P2PE/cancel:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Cancel
       summary: Transaction update
       description: Cancel
@@ -13524,8 +13524,8 @@ paths:
   /P2PE/display:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Display
       summary: Display
       description: Display
@@ -13579,8 +13579,8 @@ paths:
   /P2PE/clearDisplay:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Clear display
       summary: Clear display
       description: Clear display
@@ -13630,8 +13630,8 @@ paths:
   /P2PE/dateTime:
     post:
       tags:
-        - Device pass through API
-      x-group-name: Device pass through API
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
       x-proxy-name: Datetime
       summary: Datetime
       description: Datetime
