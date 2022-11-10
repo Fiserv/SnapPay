@@ -12214,6 +12214,22 @@ paths:
                     1000000001
           example:  >- 
                     1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+        - name: MerchantID
+          in: header
+          description: Merchant IS
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -12358,6 +12374,22 @@ paths:
                     1000000001
           example:  >- 
                     1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+        - name: MerchantID
+          in: header
+          description: Merchant IS
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -12446,7 +12478,7 @@ paths:
                 hsn:
                   type: string
                   description: Device ID
-                  example: "18100PP840123456"
+                  example: "18100PP84021655"
                 force: 
                   type: string
                   description: Force
@@ -12473,7 +12505,7 @@ paths:
                   X-CardConnect-SessionKey: 
                     type: string 
                     description: Card connect session key 
-                    example: "d395cf10cd4942c98699bb7ea9ba5b27;expires=2019-06-25T21:32:08.45Z"
+                    example: "72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z"
                   
         '400':
           description: Invalid request.
@@ -12503,7 +12535,7 @@ paths:
                 hsn:
                   type: string
                   description: Device ID
-                  example: "18100PP84012345"
+                  example: "18100PP84021655"
       parameters:
         - name: AccountId 
           in: header
@@ -12515,6 +12547,22 @@ paths:
                     1000000001
           example:  >- 
                     1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+        - name: MerchantID
+          in: header
+          description: Merchant IS
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -12560,7 +12608,7 @@ paths:
                 hsn:
                   type: string
                   description: Device ID
-                  example: "18100PP84012345"
+                  example: "18100PP84021655"
       parameters:
         - name: AccountId 
           in: header
@@ -12572,6 +12620,22 @@ paths:
                     1000000001
           example:  >- 
                     1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+        - name: MerchantID
+          in: header
+          description: Merchant IS
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -12663,7 +12727,7 @@ paths:
                 hsn:
                   type: string
                   description: Device ID
-                  example: "18100PP84012345"
+                  example: "18100PP84021655"
       parameters:
         - name: AccountId 
           in: header
@@ -12675,6 +12739,22 @@ paths:
                     1000000001
           example:  >- 
                     1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+        - name: MerchantID
+          in: header
+          description: Merchant IS
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -12716,7 +12796,7 @@ paths:
                 hsn:
                   type: string
                   description: Device ID
-                  example: "18100PP84012345"
+                  example: "18100PP84021655"
       parameters:
         - name: AccountId 
           in: header
@@ -12825,6 +12905,22 @@ paths:
                     1000000001
           example:  >- 
                     1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+        - name: MerchantID
+          in: header
+          description: Merchant IS
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -12895,6 +12991,22 @@ paths:
                     1000000001
           example:  >- 
                     1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+        - name: MerchantID
+          in: header
+          description: Merchant IS
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -12960,6 +13072,22 @@ paths:
                     1000000001
           example:  >- 
                     1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+        - name: MerchantID
+          in: header
+          description: Merchant IS
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -13000,7 +13128,7 @@ paths:
                 hsn:
                   type: string
                   description: Device ID
-                  example: "18100PP84012345"
+                  example: "18100PP84021655"
                 beep: 
                   type: string
                   description: Beep flag
@@ -13025,6 +13153,22 @@ paths:
                     1000000001
           example:  >- 
                     1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+        - name: MerchantID
+          in: header
+          description: Merchant IS
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -13087,6 +13231,22 @@ paths:
                     1000000001
           example:  >- 
                     1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+        - name: MerchantID
+          in: header
+          description: Merchant IS
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -13135,7 +13295,7 @@ paths:
                 prompt: 
                   type: string
                   description: Message to prompt
-                  example: "Please confirm"
+                  example: "Would you like to leave a tip?"
                 tipPercentPresets:
                   type: number
                   description: Tip percent preset
@@ -13155,6 +13315,22 @@ paths:
                     1000000001
           example:  >- 
                     1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+        - name: MerchantID
+          in: header
+          description: Merchant IS
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
       responses:
         '200':
           description: Request successful.
@@ -13163,14 +13339,18 @@ paths:
               schema:
                 type: object
                 properties:
-                  errorMessage: 
+                  amount: 
                     type: string 
-                    description: Error message
-                    example: "Tip requires Bolt revision 1060108"
-                  errorcode:
+                    description: Amount
+                    example: "1000"
+                  tip:
                     type: string 
-                    description: Error code
-                    example: "3"
+                    description: Tip amount
+                    example: "150"
+                  total:
+                    type: string 
+                    description: Total amount
+                    example: "1150"
         '400':
           description: Invalid request.
         '401':
@@ -13281,8 +13461,225 @@ paths:
           description: Unauthorized access.
         '500':
           description: Internal server error.
-      
-      
-  
-      
+          
+  /P2PE/cancel:
+    post:
+      tags:
+        - Device pass through API
+      x-group-name: Device pass through API
+      x-proxy-name: Cancel
+      summary: Transaction update
+      description: Cancel
+      operationId: cancel
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+        - name: MerchantID
+          in: header
+          description: Merchant IS
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+            description: Request successful.
+        '400':
+            description: Invalid request.
+        '401':
+            description: Unauthorized access.
+        '500':
+            description: Internal server error.
+  /P2PE/display:
+    post:
+      tags:
+        - Device pass through API
+      x-group-name: Device pass through API
+      x-proxy-name: Display
+      summary: Display
+      description: Display
+      operationId: display
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+                text:
+                  type: string
+                  description: Text
+                  example: "Display"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+            description: Invalid request.
+        '401':
+            description: Unauthorized access.
+        '500':
+            description: Internal server error.
+  /P2PE/clearDisplay:
+    post:
+      tags:
+        - Device pass through API
+      x-group-name: Device pass through API
+      x-proxy-name: Clear display
+      summary: Clear display
+      description: Clear display
+      operationId: clearDisplay
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+            description: Invalid request.
+        '401':
+            description: Unauthorized access.
+        '500':
+            description: Internal server error.
+  /P2PE/dateTime:
+    post:
+      tags:
+        - Device pass through API
+      x-group-name: Device pass through API
+      x-proxy-name: Datetime
+      summary: Datetime
+      description: Datetime
+      operationId: datetime
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+                dateTime:
+                  type: string
+                  description: Datetime
+                  example: "2019-06-25T21:41:45"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+            description: Invalid request.
+        '401':
+            description: Unauthorized access.
+        '500':
+            description: Internal server error.    
     
