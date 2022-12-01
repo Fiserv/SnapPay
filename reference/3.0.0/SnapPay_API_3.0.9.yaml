@@ -232,6 +232,12 @@ components:
         process: salesreporting
         fromdate: '2022-06-01'
         todate: '2022-09-27'
+    SnapPayReportingAutopayRequest:
+      value:
+        accountid: 1000000001
+        process: autopay
+        fromdate: '2022-01-01'
+        todate: '2022-01-30'
     SnapPayReportingScheduleResponse:
       value:
         accountid: 1000000001
@@ -9734,7 +9740,7 @@ paths:
                 $ref: '#/components/examples/SnapPayReportingSalesReportingRequest'
               Autopay:
                 summary: Autopay
-                $ref: '#/components/examples/SnapPayReportingAutopayResponse'
+                $ref: '#/components/examples/SnapPayReportingAutopayRequest'
       parameters:
         - name: AccountId
           in: header
@@ -9971,6 +9977,9 @@ paths:
                 Sales Reporting: 
                   summary: Sales reporting
                   $ref: '#/components/examples/SnapPayReportingSalesReportingResponse'
+                Autopay:
+                  summary: Autopay
+                  $ref: '#/components/examples/SnapPayReportingAutopayResponse'
         '400':
           description: Invalid request.
         '401':
