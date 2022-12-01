@@ -425,6 +425,139 @@ components:
             currencycode: USD
             submittedtoagent: 'Y'
             salesinvitedcode: X
+    SnapPayReportingAutopayResponse:
+     value:
+      accountid: 1000713954
+      status: 'Y'
+      message: Data retrieved successfully.
+      autopaydata:
+        - autopayid: 149
+          customerid: '4242'
+          paymentmethodid: 39650
+          maxamount: 20000
+          enrolleddate: 11/13/2019 03:30:04 PM
+          canceldate: 1/24/2022 02:54:02 PM
+          createdon: 11/13/2019 03:30:04 PM
+          updatedon: 1/24/2022 02:54:02 PM
+          createdby: csr
+          updatedby: usercsr
+          workstationip: 52.252.131.94
+          sourcetype: I
+          leasenumber: 4242-1018
+          companycode: '00150'
+          currencycode: USD
+          leasedescription: Lease Description 4242-1018
+          documenttype: RD
+          leasedetails:
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: '1018'
+              unitdescription: Oakbrook Center
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: 1018j
+              unitdescription: J. Crew
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: 1018k
+              unitdescription: Kate Spade
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: 1018l
+              unitdescription: Lululemon
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: 1018m
+              unitdescription: Macy's
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: 1018n
+              unitdescription: Nordstrom Rack
+        - autopayid: 375
+          customerid: '4242'
+          paymentmethodid: 39650
+          maxamount: 0
+          enrolleddate: 1/24/2022 02:54:13 PM
+          canceldate: 1/24/2022 02:57:53 PM
+          createdon: 1/24/2022 02:54:13 PM
+          updatedon: 1/24/2022 02:57:53 PM
+          createdby: usercsr
+          updatedby: usercsr
+          workstationip: 52.252.131.94
+          sourcetype: I
+          leasenumber: 4242-1018
+          companycode: '00150'
+          currencycode: USD
+          leasedescription: Lease Description 4242-1018
+          documenttype: RD
+          leasedetails:
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: '1018'
+              unitdescription: Oakbrook Center
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: 1018j
+              unitdescription: J. Crew
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: 1018k
+              unitdescription: Kate Spade
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: 1018l
+              unitdescription: Lululemon
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: 1018m
+              unitdescription: Macy's
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: 1018n
+              unitdescription: Nordstrom Rack
+        - autopayid: 376
+          customerid: '4242'
+          paymentmethodid: 39650
+          maxamount: 0
+          enrolleddate: 1/24/2022 02:58:19 PM
+          canceldate: 11/4/2022 03:27:57 PM
+          createdon: 1/24/2022 02:58:19 PM
+          updatedon: 11/4/2022 03:27:57 PM
+          createdby: usercsr
+          updatedby: usercsr
+          workstationip: 52.252.131.94
+          sourcetype: I
+          leasenumber: 4242-1018
+          companycode: '00150'
+          currencycode: USD
+          leasedescription: Lease Description 4242-1018
+          documenttype: RD
+          leasedetails:
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: '1018'
+              unitdescription: Oakbrook Center
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: 1018j
+              unitdescription: J. Crew
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: 1018k
+              unitdescription: Kate Spade
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: 1018l
+              unitdescription: Lululemon
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: 1018m
+              unitdescription: Macy's
+            - businessunit: '5100'
+              businessdescription: Oakbrook Center
+              unit: 1018n
+              unitdescription: Nordstrom Rack
+      
   schemas:
     GetRequestIDRequest: 
       type: object
@@ -9599,7 +9732,9 @@ paths:
               Sales Reporting: 
                 summary: Sales Reporting
                 $ref: '#/components/examples/SnapPayReportingSalesReportingRequest'
-            
+              Autopay:
+                summary: Autopay
+                $ref: '#/components/examples/SnapPayReportingAutopayResponse'
       parameters:
         - name: AccountId
           in: header
