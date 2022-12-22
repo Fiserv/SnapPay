@@ -244,7 +244,9 @@ components:
         status: 'Y'
         message: Data retrieved successfully.
         scheduledata:
-          - source: I
+          - scheduleid: 591
+            schedulename: 'Schedule Test'
+            source: I
             frequency: F
             startdate: 06/23/2022 07:00:00 PM
             enddate: 06/23/2022 07:00:00 PM
@@ -257,7 +259,10 @@ components:
             leasedescription: Lease Description 1
             businessdescription: Business Description 1
             unitdescription: Unit Description 1
-            glcode: MISC
+            createdby: "atulncsr"
+            createdon: "12/16/2022 04:44:55 AM"
+            updatedby: null
+            updatedon: ""
             paymentmethod:
               - paymentmethodid: 32595
                 type: 'VISA'
@@ -329,6 +334,14 @@ components:
             effectivefrom: 06/15/2022 06:43:33 AM
             effectiveto: 06/15/2072 06:43:33 AM
             phoneno: ''
+            createdby: null
+            createdon: "06/03/2022 08:38:11 AM"
+            updatedby: "atuladmin"
+            updatedon: "12/16/2022 07:31:15 AM"
+            lockcount: 0
+            lastpasswordchanged: "12/16/2022 07:31:15 AM"
+            lastlogin: "12/16/2022 07:36:38 AM"
+            useridentity: 17555
           - userid: useradmin
             firstname: first
             lastname: last
@@ -341,54 +354,58 @@ components:
             effectivefrom: 06/03/2022 08:37:15 AM
             effectiveto: 06/03/2072 08:37:15 AM
             phoneno: null
-          - userid: first.last@company.com
-            firstname: first
-            lastname: last
-            email: first.last@company.com
-            usertypename: customer
-            usergroup: Customer
-            isactive: 'Y'
-            forcepasswordreset: 'N'
-            forcetermsandconditions: 'Y'
-            effectivefrom: 06/01/2022 12:38:39 AM
-            effectiveto: 06/01/2072 12:38:39 AM
-            phoneno: ''
+            createdby: "atuladmin"
+            createdon: "05/25/2021 04:55:22 AM"
+            updatedby: "atulncust"
+            updatedon: "06/27/2022 04:47:28 AM"
+            lockcount: 0
+            lastpasswordchanged: "06/27/2022 04:47:28 AM"
+            lastlogin: "08/01/2022 05:45:35 AM"
+            useridentity: 10565
     SnapPayReportingUserCustomerResponse:
       value:
-        accountid: 1000000001
+        accountid: 10000000001
         status: 'Y'
         message: Data retrieved successfully.
         usercustomerdata:
-          - customerid: '12346'
+          - customerid: '17517'
             associationtype: soldto
             isdefault: 'N'
-            userid: csruser
-          - customerid: '12345'
+            userid: usercsr
+            createdby: admin
+            createdon: 04/11/2022 02:20:51 AM
+            updatedby: asncsr
+            updatedon: 07/07/2022 08:55:27 AM
+          - customerid: '10006180'
             associationtype: soldto
             isdefault: 'N'
-            userid: csruser
-          - customerid: '21452'
-            associationtype: soldto
-            isdefault: 'N'
-            userid: csruser
+            userid: usercsr
+            createdby: admin
+            createdon: 04/06/2022 06:41:20 AM
+            updatedby: null
+            updatedon: ''
     SnapPayReportingUserLeaseResponse:
       value:
-        accountid: 1000000001
+        accountid: 10000000001
         status: 'Y'
         message: Data retrieved successfully.
         userleasedata:
-          - leasenumber: '451414'
-            isdefault: 'Y'
-            userid: csruser
-          - leasenumber: '451412'
-            isdefault: 'Y'
-            userid: csruser
-          - leasenumber: '451415'
+          - leasenumber: '491141'
             isdefault: 'N'
-            userid: csruser
-          - leasenumber: '451413'
-            isdefault: 'Y'
-            userid: csruser
+            userid: csr
+            createdby: admin
+            createdon: 12/16/2022 07:37:33 AM
+            updatedby: null
+            updatedon: ''
+            leasedescription: ARITZIA
+          - leasenumber: '44446'
+            isdefault: 'N'
+            userid: csr
+            createdby: admin
+            createdon: 12/16/2022 07:37:32 AM
+            updatedby: null
+            updatedon: ''
+            leasedescription: Lease Description 451416 1.00
     SnapPayReportingSalesReportingResponse:
       value:
         accountid: 1000000001
@@ -433,137 +450,156 @@ components:
             salesinvitedcode: X
     SnapPayReportingAutopayResponse:
      value:
-      accountid: 1000713954
+      accountid: 1000000001
       status: 'Y'
       message: Data retrieved successfully.
       autopaydata:
-        - autopayid: 149
-          customerid: '4242'
-          paymentmethodid: 39650
-          maxamount: 20000
-          enrolleddate: 11/13/2019 03:30:04 PM
-          canceldate: 1/24/2022 02:54:02 PM
-          createdon: 11/13/2019 03:30:04 PM
-          updatedon: 1/24/2022 02:54:02 PM
+        - autopayid: 395
+          customerid: '2505'
+          maxamount: 0
+          enrolleddate: 10/13/2022 08:00:03 AM
+          canceldate: null
+          createdon: 10/13/2022 08:00:03 AM
+          updatedon: null
           createdby: csr
-          updatedby: usercsr
-          workstationip: 52.252.131.94
+          updatedby: null
+          workstationip: 127.0.0.1
           sourcetype: I
-          leasenumber: 4242-1018
-          companycode: '00150'
+          leasenumber: '451412'
+          companycode: '103'
           currencycode: USD
-          leasedescription: Lease Description 4242-1018
-          documenttype: RD
+          leasedescription: Lease Description 451412 1.00
+          documenttype: LS
+          paymentmethod:
+            paymentmethodid: 32595
+            type: VISA
+            mode: CC
+            last4: '5165'
+            routingnumber: null
+            maskedaccountnumber: null
+            tokenid: '1234508369325165'
+            merchantid: CardConnect
+            paymentgateway: CardConnect
+            firstname: First
+            lastname: Last
+            expirationmonth: 6
+            expirationyear: 2029
+            addressline1: 22nd Street
+            city: Chicago
+            state: IL
+            zip: '60605'
+            country: US
+            phonenumber: null
+            email: first.last@company.com
           leasedetails:
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: '1018'
-              unitdescription: Oakbrook Center
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: 1018j
-              unitdescription: J. Crew
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: 1018k
-              unitdescription: Kate Spade
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: 1018l
-              unitdescription: Lululemon
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: 1018m
-              unitdescription: Macy's
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: 1018n
-              unitdescription: Nordstrom Rack
-        - autopayid: 375
-          customerid: '4242'
-          paymentmethodid: 39650
+            - businessunit: '15010'
+              businessdescription: Deer Park Town Center
+              unit: '102'
+              unitdescription: Space 102
+        - autopayid: 396
+          customerid: '2505'
           maxamount: 0
-          enrolleddate: 1/24/2022 02:54:13 PM
-          canceldate: 1/24/2022 02:57:53 PM
-          createdon: 1/24/2022 02:54:13 PM
-          updatedon: 1/24/2022 02:57:53 PM
-          createdby: usercsr
-          updatedby: usercsr
-          workstationip: 52.252.131.94
+          enrolleddate: 10/13/2022 08:06:07 AM
+          canceldate: null
+          createdon: 10/13/2022 08:06:07 AM
+          updatedon: null
+          createdby: csr
+          updatedby: null
+          workstationip: 127.0.0.1
           sourcetype: I
-          leasenumber: 4242-1018
-          companycode: '00150'
+          leasenumber: '451414'
+          companycode: '103'
           currencycode: USD
-          leasedescription: Lease Description 4242-1018
-          documenttype: RD
+          leasedescription: Lease Description 451414 1.00
+          documenttype: LS
+          paymentmethod:
+            paymentmethodid: 33647
+            type: MC
+            mode: CC
+            last4: '2025'
+            routingnumber: null
+            maskedaccountnumber: null
+            tokenid: '1234938937322025'
+            merchantid: CardConnect
+            paymentgateway: CardConnect
+            firstname: First
+            lastname: Last
+            expirationmonth: 6
+            expirationyear: 2025
+            addressline1: 22nd Street
+            city: Chicago
+            state: IL
+            zip: '60605'
+            country: US
+            phonenumber: null
+            email: first.last@company.com
           leasedetails:
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: '1018'
-              unitdescription: Oakbrook Center
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: 1018j
-              unitdescription: J. Crew
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: 1018k
-              unitdescription: Kate Spade
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: 1018l
-              unitdescription: Lululemon
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: 1018m
-              unitdescription: Macy's
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: 1018n
-              unitdescription: Nordstrom Rack
-        - autopayid: 376
-          customerid: '4242'
-          paymentmethodid: 39650
-          maxamount: 0
-          enrolleddate: 1/24/2022 02:58:19 PM
-          canceldate: 11/4/2022 03:27:57 PM
-          createdon: 1/24/2022 02:58:19 PM
-          updatedon: 11/4/2022 03:27:57 PM
-          createdby: usercsr
-          updatedby: usercsr
-          workstationip: 52.252.131.94
-          sourcetype: I
-          leasenumber: 4242-1018
-          companycode: '00150'
-          currencycode: USD
-          leasedescription: Lease Description 4242-1018
-          documenttype: RD
-          leasedetails:
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: '1018'
-              unitdescription: Oakbrook Center
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: 1018j
-              unitdescription: J. Crew
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: 1018k
-              unitdescription: Kate Spade
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: 1018l
-              unitdescription: Lululemon
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: 1018m
-              unitdescription: Macy's
-            - businessunit: '5100'
-              businessdescription: Oakbrook Center
-              unit: 1018n
-              unitdescription: Nordstrom Rack
-      
+            - businessunit: '15010'
+              businessdescription: Deer Park Town Center
+              unit: '101'
+              unitdescription: Space 102
+    TenantSalesReportingDownloadResponse:
+     value:
+      accountid: 1000000001
+      errormessage: ''
+      salesreportcustomerdata:
+        - customerid: '2505'
+          salesreportleasedata:
+            - leasenumber: '451413'
+              salesreportbusinessunitdata:
+                - businessunit: '15010'
+                  unitnumber: '102'
+                  companycode: '00200'
+                  currencycode: USD
+                  productcode: OTDR
+                  salesreportdata:
+                    - year: 2022
+                      month: 6
+                      salesamount: 1500
+                      salesinvitedcode: X
+                      batchnumber: 0
+                      monthdesc: June
+                      createdby: admin
+                      createdon: 06/24/2022 04:21:49 AM
+                      updatedby: RESTAPI
+                      updatedon: 12/22/2022 02:59:53 AM
+                  salesreporthistorydata: null
+                - businessunit: '15010'
+                  unitnumber: '103'
+                  companycode: '00200'
+                  currencycode: USD
+                  productcode: OTDR
+                  salesreportdata:
+                    - year: 2022
+                      month: 6
+                      salesamount: 2780
+                      salesinvitedcode: X
+                      batchnumber: 0
+                      monthdesc: June
+                      createdby: admin
+                      createdon: 06/24/2022 04:23:05 AM
+                      updatedby: RESTAPI
+                      updatedon: 12/22/2022 02:59:54 AM
+                  salesreporthistorydata: null
+            - leasenumber: '451414'
+              salesreportbusinessunitdata:
+                - businessunit: '15020'
+                  unitnumber: '102'
+                  companycode: '00200'
+                  currencycode: USD
+                  productcode: OTDR
+                  salesreportdata:
+                    - year: 2022
+                      month: 6
+                      salesamount: 1910
+                      salesinvitedcode: X
+                      batchnumber: 0
+                      monthdesc: June
+                      createdby: admin
+                      createdon: 06/24/2022 04:24:32 AM
+                      updatedby: RESTAPI
+                      updatedon: 12/22/2022 02:59:54 AM
+                  salesreporthistorydata: null
   schemas:
     GetRequestIDRequest: 
       type: object
@@ -5766,7 +5802,6 @@ paths:
           description: Unauthorized access.
         '500':
           description: Internal server error.
-  
   /api/Interop/GetPaymentDetails:
     post:
       tags:
@@ -13874,4 +13909,284 @@ paths:
             description: Unauthorized access.
         '500':
             description: Internal server error.    
-    
+  /api/GetACHRejects:
+    get:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Get ACH Rejects
+      summary: Get ACH Rejects
+      description: >-
+        To download all rejected ACH transactions.
+      operationId: getACHRejects
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              1000000001
+          example: >-
+            1000000001
+        - name: Signature
+          in: header
+          description: HMAC Signature
+          required: true
+          schema:
+            type: string
+          example: >-
+            Hmac
+            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - name: startdate
+          in: query
+          schema:
+            type: string
+          description: Start/FromDate
+          example: 04/01/2022
+        - name: enddate
+          in: query
+          schema:
+            type: string
+          description: End/To Date
+          example: 04/30/2022
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: integer
+                    description: SnapPay Account ID
+                    example: 1000000001
+                  message:
+                    type: string
+                    description: >-
+                      Return message for API execution
+                    example: 'ACH Rejects found.'
+                  status:
+                    type: string
+                    description: Status of API execution
+                    example: 'Y'
+                  transactionscount:
+                    type: integer
+                    description: >-
+                      Transaction Count – This parameter will give the number of
+                      payment transactions sent.
+                    example: 1
+                  transactions:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        transaction:
+                          type: object
+                          properties:
+                            transactionstatus:
+                              type: string
+                              description: Transaction status
+                              example: 'Failed'
+                            paymenttransactionid:
+                              type: number
+                              description: Payment transaction ID from SnapPay
+                              example: 124253245345
+                            pgtransactionid:
+                              type: string
+                              description: Transaction ID from payment gateway
+                              example: 53245345213121
+                            currencycode:
+                              type: string
+                              description: Currency Code
+                              example: USD
+                            pgtransactiontype:
+                              type: string
+                              description: Payment Gateway Transaction Type
+                              example: S
+                            merchantid:
+                              type: string
+                              description: Merchant id from payment gateway
+                              example: 1012345678
+                            transactionamount:
+                              type: number
+                              description: Transaction Amount
+                              example: 120.1
+                            authorizationnumber:
+                              type: string
+                              description: Authorization Number
+                              example: SDRDXX
+                            pgreturncode:
+                              type: string
+                              description: Payment Gateway Return Code
+                              example: 0
+                            procrespcode:
+                              type: string
+                              description: Payment Gateway response Code
+                              example: 1234
+                            pgreturndescription:
+                              type: string
+                              description: Return Description
+                              example: ACH Reject
+                            paymentdate:
+                              type: string
+                              description: Transaction Date
+                              example: 2022-04-16 8:05 PM
+                            feetype:
+                              type: string
+                              description: Fee Type (Convenience / Surcharge / Service)
+                              example: Service
+                            feeamount:
+                              type: number
+                              description: Fee Amount
+                              example: 0
+                            feevalue:
+                              type: number
+                              description: >-
+                                Fee Value – same as amount for convenience fee
+                                and % for surcharge
+                              example: 0
+                            feeformat:
+                              type: string
+                              description: >-
+                                Fee Format (Flat/Percentage) 
+                              example: Flat
+                            feestatus:
+                              type: string
+                              description: Fee Status (Y/N)
+                              example: 'Y'
+                            feeauthcode:
+                              type: string
+                              description: >-
+                                Fee Authorization Code
+                              example: 1234
+                            feetransactionid:
+                              type: string
+                              description: >-
+                                Fee Transaction ID
+                              example: 10112452326
+                        paymentmethod:
+                          type: object
+                          properties:
+                            type:
+                              type: string
+                              description: Type of payment method – Visa, Mastercard, etc.
+                              example: MC
+                            last4:
+                              type: string
+                              description: Last 4 digits of payment method
+                              example: 5454
+                            routingnumber:
+                              type: string
+                              description: Routing Number
+                              example: null
+                            tokenid:
+                              type: string
+                              description: Token ID
+                              example: 1234567891
+                            paymentgateway:
+                              type: string
+                              description: Payment Gateway
+                              example: BluePay
+                            firstname:
+                              type: string
+                              description: First Name
+                              example: first
+                            lastname:
+                              type: string
+                              description: Last Name
+                              example: last
+                            addressline1:
+                              type: string
+                              description: Address Line 1
+                              example: 123 Main St
+                            city:
+                              type: string
+                              description: City
+                              example: Lombard
+                            state:
+                              type: string
+                              description: State
+                              example: IL
+                            zip:
+                              type: string
+                              description: Zip/Postal Code
+                              example: 60148
+                            country:
+                              type: string
+                              description: Country
+                              example: US
+                            phonenumber:
+                              type: string
+                              description: Phone Number
+                              example: null
+                            email:
+                              type: string
+                              description: Email
+                              example: first.last@company.com
+                        
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/tenantsalesreportdownload:
+    post:
+      tags:
+        - Real Estate
+      x-group-name: Real Estate
+      x-proxy-name: Tenantsalesreport Download
+      summary: Tenantsalesreport Download
+      description: Reporting for real estate customers.
+      operationId: tenantsalesreportdownload
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              1000000001
+          example: >-
+            1000000001
+        - name: Signature
+          in: header
+          description: HMAC Signature
+          required: true
+          schema:
+            type: string
+          example: >-
+            Hmac
+            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - name: startdate
+          in: query
+          schema:
+            type: string
+          description: Start/FromDate
+          example: 04/01/2022
+        - name: enddate
+          in: query
+          schema:
+            type: string
+          description: End/To Date
+          example: 04/30/2022
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              examples: 
+                ResponseExample: 
+                  summary: Schedule
+                  $ref: '#/components/examples/TenantSalesReportingDownloadResponse'
+                
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
