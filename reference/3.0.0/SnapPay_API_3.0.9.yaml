@@ -7,7 +7,7 @@ info:
     integrates with popular ERP solutions and shopping cart solutions to serve
     the holistic B2B payment needs of enterprise-size businesses.
   
-  version: 3.0.8
+  version: 3.0.9
 servers:
   - url: https://restapi.snappayglobal.com/
   - url: https://demo1.cditechnology.com/SnapPay/REST/
@@ -232,13 +232,21 @@ components:
         process: salesreporting
         fromdate: '2022-06-01'
         todate: '2022-09-27'
+    SnapPayReportingAutopayRequest:
+      value:
+        accountid: 1000000001
+        process: autopay
+        fromdate: '2022-01-01'
+        todate: '2022-01-30'
     SnapPayReportingScheduleResponse:
       value:
         accountid: 1000000001
         status: 'Y'
         message: Data retrieved successfully.
         scheduledata:
-          - source: I
+          - scheduleid: 591
+            schedulename: 'Schedule Test'
+            source: I
             frequency: F
             startdate: 06/23/2022 07:00:00 PM
             enddate: 06/23/2022 07:00:00 PM
@@ -251,7 +259,31 @@ components:
             leasedescription: Lease Description 1
             businessdescription: Business Description 1
             unitdescription: Unit Description 1
-            glcode: MISC
+            createdby: "atulncsr"
+            createdon: "12/16/2022 04:44:55 AM"
+            updatedby: null
+            updatedon: ""
+            paymentmethod:
+              - paymentmethodid: 32595
+                type: 'VISA'
+                mode: 'CC'
+                last4: '5165'
+                routingnumber: null
+                maskedaccountnumber: null
+                tokenid: 'XXXXXXXXXXXX5165'
+                merchantid: 'CardConnect'
+                paymentgateway: 'CardConnect'
+                firstname: 'First'
+                lastname: 'Last'
+                expirationmonth: 6
+                expirationyear: 2029
+                addressline1: '22nd Street'
+                city: 'Chicago'
+                state: 'IL'
+                zip: '60605'
+                country: 'US'
+                phonenumber: null
+                email: 'first.lat@cditechnology.com'
             invoicedata:
               - invoicenumber: '2022622'
                 customerid: '2505'
@@ -302,6 +334,14 @@ components:
             effectivefrom: 06/15/2022 06:43:33 AM
             effectiveto: 06/15/2072 06:43:33 AM
             phoneno: ''
+            createdby: null
+            createdon: "06/03/2022 08:38:11 AM"
+            updatedby: "atuladmin"
+            updatedon: "12/16/2022 07:31:15 AM"
+            lockcount: 0
+            lastpasswordchanged: "12/16/2022 07:31:15 AM"
+            lastlogin: "12/16/2022 07:36:38 AM"
+            useridentity: 17555
           - userid: useradmin
             firstname: first
             lastname: last
@@ -314,54 +354,58 @@ components:
             effectivefrom: 06/03/2022 08:37:15 AM
             effectiveto: 06/03/2072 08:37:15 AM
             phoneno: null
-          - userid: first.last@company.com
-            firstname: first
-            lastname: last
-            email: first.last@company.com
-            usertypename: customer
-            usergroup: Customer
-            isactive: 'Y'
-            forcepasswordreset: 'N'
-            forcetermsandconditions: 'Y'
-            effectivefrom: 06/01/2022 12:38:39 AM
-            effectiveto: 06/01/2072 12:38:39 AM
-            phoneno: ''
+            createdby: "atuladmin"
+            createdon: "05/25/2021 04:55:22 AM"
+            updatedby: "atulncust"
+            updatedon: "06/27/2022 04:47:28 AM"
+            lockcount: 0
+            lastpasswordchanged: "06/27/2022 04:47:28 AM"
+            lastlogin: "08/01/2022 05:45:35 AM"
+            useridentity: 10565
     SnapPayReportingUserCustomerResponse:
       value:
-        accountid: 1000000001
+        accountid: 10000000001
         status: 'Y'
         message: Data retrieved successfully.
         usercustomerdata:
-          - customerid: '12346'
+          - customerid: '17517'
             associationtype: soldto
             isdefault: 'N'
-            userid: csruser
-          - customerid: '12345'
+            userid: usercsr
+            createdby: admin
+            createdon: 04/11/2022 02:20:51 AM
+            updatedby: asncsr
+            updatedon: 07/07/2022 08:55:27 AM
+          - customerid: '10006180'
             associationtype: soldto
             isdefault: 'N'
-            userid: csruser
-          - customerid: '21452'
-            associationtype: soldto
-            isdefault: 'N'
-            userid: csruser
+            userid: usercsr
+            createdby: admin
+            createdon: 04/06/2022 06:41:20 AM
+            updatedby: null
+            updatedon: ''
     SnapPayReportingUserLeaseResponse:
       value:
-        accountid: 1000000001
+        accountid: 10000000001
         status: 'Y'
         message: Data retrieved successfully.
         userleasedata:
-          - leasenumber: '451414'
-            isdefault: 'Y'
-            userid: csruser
-          - leasenumber: '451412'
-            isdefault: 'Y'
-            userid: csruser
-          - leasenumber: '451415'
+          - leasenumber: '491141'
             isdefault: 'N'
-            userid: csruser
-          - leasenumber: '451413'
-            isdefault: 'Y'
-            userid: csruser
+            userid: csr
+            createdby: admin
+            createdon: 12/16/2022 07:37:33 AM
+            updatedby: null
+            updatedon: ''
+            leasedescription: ARITZIA
+          - leasenumber: '44446'
+            isdefault: 'N'
+            userid: csr
+            createdby: admin
+            createdon: 12/16/2022 07:37:32 AM
+            updatedby: null
+            updatedon: ''
+            leasedescription: Lease Description 451416 1.00
     SnapPayReportingSalesReportingResponse:
       value:
         accountid: 1000000001
@@ -404,6 +448,158 @@ components:
             currencycode: USD
             submittedtoagent: 'Y'
             salesinvitedcode: X
+    SnapPayReportingAutopayResponse:
+     value:
+      accountid: 1000000001
+      status: 'Y'
+      message: Data retrieved successfully.
+      autopaydata:
+        - autopayid: 395
+          customerid: '2505'
+          maxamount: 0
+          enrolleddate: 10/13/2022 08:00:03 AM
+          canceldate: null
+          createdon: 10/13/2022 08:00:03 AM
+          updatedon: null
+          createdby: csr
+          updatedby: null
+          workstationip: 127.0.0.1
+          sourcetype: I
+          leasenumber: '451412'
+          companycode: '103'
+          currencycode: USD
+          leasedescription: Lease Description 451412 1.00
+          documenttype: LS
+          paymentmethod:
+            paymentmethodid: 32595
+            type: VISA
+            mode: CC
+            last4: '5165'
+            routingnumber: null
+            maskedaccountnumber: null
+            tokenid: '1234508369325165'
+            merchantid: CardConnect
+            paymentgateway: CardConnect
+            firstname: First
+            lastname: Last
+            expirationmonth: 6
+            expirationyear: 2029
+            addressline1: 22nd Street
+            city: Chicago
+            state: IL
+            zip: '60605'
+            country: US
+            phonenumber: null
+            email: first.last@company.com
+          leasedetails:
+            - businessunit: '15010'
+              businessdescription: Deer Park Town Center
+              unit: '102'
+              unitdescription: Space 102
+        - autopayid: 396
+          customerid: '2505'
+          maxamount: 0
+          enrolleddate: 10/13/2022 08:06:07 AM
+          canceldate: null
+          createdon: 10/13/2022 08:06:07 AM
+          updatedon: null
+          createdby: csr
+          updatedby: null
+          workstationip: 127.0.0.1
+          sourcetype: I
+          leasenumber: '451414'
+          companycode: '103'
+          currencycode: USD
+          leasedescription: Lease Description 451414 1.00
+          documenttype: LS
+          paymentmethod:
+            paymentmethodid: 33647
+            type: MC
+            mode: CC
+            last4: '2025'
+            routingnumber: null
+            maskedaccountnumber: null
+            tokenid: '1234938937322025'
+            merchantid: CardConnect
+            paymentgateway: CardConnect
+            firstname: First
+            lastname: Last
+            expirationmonth: 6
+            expirationyear: 2025
+            addressline1: 22nd Street
+            city: Chicago
+            state: IL
+            zip: '60605'
+            country: US
+            phonenumber: null
+            email: first.last@company.com
+          leasedetails:
+            - businessunit: '15010'
+              businessdescription: Deer Park Town Center
+              unit: '101'
+              unitdescription: Space 102
+    TenantSalesReportingDownloadResponse:
+     value:
+      accountid: 1000000001
+      errormessage: ''
+      salesreportcustomerdata:
+        - customerid: '2505'
+          salesreportleasedata:
+            - leasenumber: '451413'
+              salesreportbusinessunitdata:
+                - businessunit: '15010'
+                  unitnumber: '102'
+                  companycode: '00200'
+                  currencycode: USD
+                  productcode: OTDR
+                  salesreportdata:
+                    - year: 2022
+                      month: 6
+                      salesamount: 1500
+                      salesinvitedcode: X
+                      batchnumber: 0
+                      monthdesc: June
+                      createdby: admin
+                      createdon: 06/24/2022 04:21:49 AM
+                      updatedby: RESTAPI
+                      updatedon: 12/22/2022 02:59:53 AM
+                  salesreporthistorydata: null
+                - businessunit: '15010'
+                  unitnumber: '103'
+                  companycode: '00200'
+                  currencycode: USD
+                  productcode: OTDR
+                  salesreportdata:
+                    - year: 2022
+                      month: 6
+                      salesamount: 2780
+                      salesinvitedcode: X
+                      batchnumber: 0
+                      monthdesc: June
+                      createdby: admin
+                      createdon: 06/24/2022 04:23:05 AM
+                      updatedby: RESTAPI
+                      updatedon: 12/22/2022 02:59:54 AM
+                  salesreporthistorydata: null
+            - leasenumber: '451414'
+              salesreportbusinessunitdata:
+                - businessunit: '15020'
+                  unitnumber: '102'
+                  companycode: '00200'
+                  currencycode: USD
+                  productcode: OTDR
+                  salesreportdata:
+                    - year: 2022
+                      month: 6
+                      salesamount: 1910
+                      salesinvitedcode: X
+                      batchnumber: 0
+                      monthdesc: June
+                      createdby: admin
+                      createdon: 06/24/2022 04:24:32 AM
+                      updatedby: RESTAPI
+                      updatedon: 12/22/2022 02:59:54 AM
+                  salesreporthistorydata: null
   schemas:
     GetRequestIDRequest: 
       type: object
@@ -5493,7 +5689,9 @@ tags:
   - name: Card Account Updater
   - name: ERP Agents
   - name: Pass through API
+  - name: Bolt Pass through API
   - name: Real Estate
+  
 paths:
   /api/interop/GetRequestID:
     post:
@@ -5556,7 +5754,9 @@ paths:
           required: true
           schema:
             type: string
-          
+            example: >-
+              Hmac
+              MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
       responses:
         '200':
           description: Request successful.
@@ -5602,7 +5802,6 @@ paths:
           description: Unauthorized access.
         '500':
           description: Internal server error.
-  
   /api/Interop/GetPaymentDetails:
     post:
       tags:
@@ -8044,6 +8243,10 @@ paths:
                                 Fee Transaction ID – same as transactionid for
                                 convenience fee and surcharge fee
                               example: 100214822343
+                            batchid:
+                              type: string
+                              description: Batch ID
+                              example: 101
                         paymentmethod:
                           type: object
                           properties:
@@ -9570,7 +9773,9 @@ paths:
               Sales Reporting: 
                 summary: Sales Reporting
                 $ref: '#/components/examples/SnapPayReportingSalesReportingRequest'
-            
+              Autopay:
+                summary: Autopay
+                $ref: '#/components/examples/SnapPayReportingAutopayRequest'
       parameters:
         - name: AccountId
           in: header
@@ -9608,6 +9813,14 @@ paths:
                     items:
                       type: object
                       properties:
+                        scheduleid: 
+                          type: number 
+                          description: Schedule ID
+                          example: 515
+                        schedulename: 
+                          type: string
+                          description: Schedule name
+                          example: Schedule Test
                         source:
                           type: string
                           description: Source
@@ -9663,7 +9876,90 @@ paths:
                         glcode:
                           type: string
                           description: GLcode
-                          example: MISC`
+                          example: MISC
+                        paymentmethoddata:
+                          type: object
+                          properties: 
+                            paymentmethodid:
+                              type: number
+                              description: Payment Method ID
+                              example: 12345
+                            type: 
+                              type: string
+                              description: Card Type
+                              example: VISA
+                            mode: 
+                              type: string
+                              description: Mode
+                              example: CC
+                            last4:
+                              type: string
+                              description: Last4
+                              example: 1111
+                            routingnumber:
+                              type: string
+                              description: Routing number
+                              example: null
+                            maskedaccountnumber:
+                              type: string
+                              description: Masked account number
+                              example: null
+                            tokenid: 
+                              type: string
+                              description: Token
+                              example: 9455508369325165
+                            merchantid: 
+                              type: string
+                              description: Merchant name
+                              example: CardConnect
+                            paymentgateway:
+                              type: string
+                              description: Payment Gateway
+                              example: CardConnect
+                            firstname: 
+                              type: string
+                              description: First name
+                              example: first
+                            lastname:
+                              type: string
+                              description: Last name
+                              example: last
+                            expirationmonth: 
+                              type: string
+                              description: Expiration month
+                              example: 6
+                            expirationyear:
+                              type: string
+                              description: Expiration year
+                              example: 2029
+                            addressline1: 
+                              type: string
+                              description: Address line1
+                              example: 100 Ave
+                            city: 
+                              type: string
+                              description: City
+                              example: Chicago
+                            state:
+                              type: string
+                              description: State
+                              example: IL
+                            zip: 
+                              type: string
+                              description: Zipcode
+                              example: 60605
+                            country:
+                              type: string
+                              description: Country
+                              example: US
+                            phonenumber: 
+                              type: string
+                              description: Phone number
+                              example: null
+                            email: 
+                              type: string
+                              description: Email
+                              example: atul.nemade@cditechnology.com
                         invoicedata:
                           type: array
                           items:
@@ -9716,6 +10012,9 @@ paths:
                 Sales Reporting: 
                   summary: Sales reporting
                   $ref: '#/components/examples/SnapPayReportingSalesReportingResponse'
+                Autopay:
+                  summary: Autopay
+                  $ref: '#/components/examples/SnapPayReportingAutopayResponse'
         '400':
           description: Invalid request.
         '401':
@@ -11830,11 +12129,2064 @@ paths:
           description: Unauthorized access.
         '500':
           description: Internal server error.
-  
-      
-      
-      
-      
-  
-      
-    
+  /api/inquire/{MID}/{token}:
+    get:
+      tags:
+        - Pass through API
+      x-group-name: Pass through API
+      x-proxy-name: Inquire API
+      summary: Inquire API
+      description: >-
+        This API is only for CardConnect payment gateway.
+      operationId: inquireAPI
+      parameters:
+        - name: MID
+          in: path
+          description: MID
+          required: true
+          schema:
+            type: integer
+          example: 123456789
+        - name: token
+          in: path
+          description: Token
+          required: true
+          schema:
+            type: integer
+          example: 21341516224
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              1000000001
+          example: >-
+            1000000001
+        - name: Signature
+          in: header
+          description: HMAC Signature
+          required: true
+          schema:
+            type: string
+          example: >-
+            Hmac
+            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  amount: 
+                    type: number
+                    description: Amount 
+                    example: 20.50
+                  orderId: 
+                    type: string
+                    description: Order ID
+                    example: 'AB-11-9876'
+                  resptext: 
+                    type: string
+                    description: Response text
+                    example: 'Approval'
+                  setlstat: 
+                    type: string
+                    description: Settlement status
+                    example: 'Queued for Capture'
+                  capturedate: 
+                    type: string
+                    description: Capture date
+                    example: '20170815142832'
+                  acctid: 
+                    type: string
+                    description: Account ID from CardConnect
+                    example: '1'
+                  respcode: 
+                    type: string
+                    description: Response code 
+                    example: 00
+                  batchid: 
+                    type: number
+                    description: Batch ID 
+                    example: 1256 
+                  merchid: 
+                    type: string
+                    description: Merchant ID
+                    example: 9876545657
+                  entrymode:
+                    type: string
+                    description: Entry mode
+                    example: 'ECommerce'
+                  token: 
+                    type: string
+                    description: Token 
+                    example: 94214572152
+                  respproc: 
+                    type: string
+                    description: Response proc
+                    example: 'PPS'
+                  bintype: 
+                    type: string
+                    description: Bin type
+                    example: ''
+                  profileid: 
+                    type: string
+                    description: Profile ID
+                    example: '1170018000746'
+                  authdate: 
+                    type: string
+                    description: Auth date
+                    example: '20170815'
+                  lastfour: 
+                    type: string
+                    description: Last 4
+                    example: '1111'
+                  name: 
+                    type: string
+                    description: Name
+                    example: 'CC Test'
+                  currency: 
+                    type: string
+                    description: Currency
+                    example: 'USD'
+                  settledate: 
+                    type: string
+                    description: Settlement date
+                    example: '20180829193252'
+                  retref: 
+                    type: string
+                    description: Return reference
+                    example: '227145252112'
+                  respstat: 
+                    type: string
+                    description: Response stat
+                    example: 'A'
+                  account: 
+                    type: string
+                    description: Token
+                    example: '9441149619831111'
+                  expiry: 
+                    type: string
+                    description: Expiry
+                    example: '1222'
+                  voidable: 
+                    type: string
+                    description: Flag for void
+                    example: 'Y'
+                  refundable: 
+                    type: string
+                    description: Flag for refund 
+                    example: 'N'
+                  userfields:
+                    type: object
+                    properties:
+                      udf0: 
+                        type: string
+                        description: User field 0
+                        example: 'value0'
+                      udf1: 
+                        type: string
+                        description: User field 1
+                        example: 'value1'
+                      udf2: 
+                        type: string
+                        description: User field 2
+                        example: 'value2'
+                      custommerchant: 
+                        type: string
+                        description: Custom merchant
+                        example: 'ABC Company'
+                      customphone: 
+                        type: string
+                        description: Custom phone
+                        example: '222-111-HELP'
+                
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /P2PE/authcard:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Auth Card
+      summary: Auth Card
+      description: To authorize a card
+      operationId: AuthCard
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+                amount: 
+                  type: number
+                  description: Amount
+                  example: 100
+                includeSignature: 
+                  type: string
+                  description: Include Signature flag
+                  example: "false"
+                includeAmountDisplay: 
+                  type: string 
+                  description: Include amount display flag
+                  example: "true"
+                beep: 
+                  type: string
+                  description: Beep flag
+                  example: "false"
+                aid: 
+                  type: string
+                  description: AID
+                  example: "credit"
+                includeAVS: 
+                  type: string
+                  description: Include AVS flag
+                  example: "true"
+                capture: 
+                  type: string
+                  description: Capture flag
+                  example: "true"
+                orderId: 
+                  type: string
+                  description: Order ID
+                  example: "06252019"
+                userFields:
+                  type: array
+                  items:
+                    properties:
+                      UDF1: 
+                        type: string
+                        description: UDF1
+                        example: "Jean-Luc Picard"
+                      UDF2: 
+                        type: string
+                        description: UDF2
+                        example: "47AT"
+                clearDisplayDelay:
+                  type: string
+                  description: Clear display delay
+                  example: "500"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token: 
+                    type: string 
+                    description: Token 
+                    example: "9516927123456789"
+                  expiry: 
+                    type: string
+                    description: Expiry
+                    example: "1225"
+                  name: 
+                    type: string
+                    description: Name
+                    example: "GIFT/CARD"
+                  batchid:
+                    type: string
+                    description: Batch ID
+                    example: "349"
+                  retref: 
+                    type: string
+                    description: Return reference
+                    example: "176574265188"
+                  avsresp: 
+                    type: string
+                    description: AVS response
+                    example: "Z"
+                  respproc: 
+                    type: string
+                    description: Respproc
+                    example: "RPCT"
+                  amount: 
+                    type: string
+                    description: Amount
+                    example: "1.00"
+                  resptext: 
+                    type: string
+                    description: Response text
+                    example: "Approval"
+                  authcode: 
+                    type: string
+                    description: Auth code
+                    example: "PPS230"
+                  respcode: 
+                    type: string
+                    description: Response code
+                    example: "000"
+                  merchid: 
+                    type: string
+                    description: Merchant ID
+                    example: "123456789"
+                  cvvresp: 
+                    type: string
+                    description: CVV response
+                    example: "P"
+                  respstat: 
+                    type: string
+                    description: Response stat
+                    example: "A"
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /P2PE/authcardmanual:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Auth Card Manual
+      summary: Auth Card Manual
+      description: To authorize a card for manual entry
+      operationId: AuthCardManual
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+                amount: 
+                  type: number
+                  description: Amount
+                  example: 100
+                includeSignature: 
+                  type: string
+                  description: Include Signature flag
+                  example: "false"
+                includeAmountDisplay: 
+                  type: string 
+                  description: Include amount display flag
+                  example: "true"
+                beep: 
+                  type: string
+                  description: Beep flag
+                  example: "false"
+                includeAVS: 
+                  type: string
+                  description: Include AVS flag
+                  example: "true"
+                includeCVV: 
+                  type: string
+                  description: Include CVV flag
+                  example: "true"
+                capture: 
+                  type: string
+                  description: Capture flag
+                  example: "true"
+                gzipSignature: 
+                  type: string
+                  description: gzipSignature flag
+                  example: "false"
+                orderId: 
+                  type: string
+                  description: Order ID
+                  example: "06252019"
+                clearDisplayDelay:
+                  type: string
+                  description: Clear display delay
+                  example: "500"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token: 
+                    type: string 
+                    description: Token 
+                    example: "9516927123456789"
+                  expiry: 
+                    type: string
+                    description: Expiry
+                    example: "1225"
+                  batchid:
+                    type: string
+                    description: Batch ID
+                    example: "349"
+                  retref: 
+                    type: string
+                    description: Return reference
+                    example: "176574265188"
+                  avsresp: 
+                    type: string
+                    description: AVS response
+                    example: "Z"
+                  respproc: 
+                    type: string
+                    description: Respproc
+                    example: "RPCT"
+                  amount: 
+                    type: string
+                    description: Amount
+                    example: "1.00"
+                  resptext: 
+                    type: string
+                    description: Response text
+                    example: "Approval"
+                  authcode: 
+                    type: string
+                    description: Auth code
+                    example: "PPS230"
+                  respcode: 
+                    type: string
+                    description: Response code
+                    example: "000"
+                  merchid: 
+                    type: string
+                    description: Merchant ID
+                    example: "123456789"
+                  cvvresp: 
+                    type: string
+                    description: CVV response
+                    example: "P"
+                  respstat: 
+                    type: string
+                    description: Response stat
+                    example: "A"
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /P2PE/connect:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Connect
+      summary: Connect
+      description: Connect to device
+      operationId: Connect
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+                force: 
+                  type: string
+                  description: Force
+                  example: "true"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  X-CardConnect-SessionKey: 
+                    type: string 
+                    description: Card connect session key 
+                    example: "72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z"
+                  
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /P2PE/disconnect:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Disconnect
+      summary: Disconnect
+      description: Disconnect session
+      operationId: disconnect
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errorCode: 
+                    type: string 
+                    description: Error code 
+                    example: "1"
+                  errorMessage: 
+                    type: string 
+                    description: Error message 
+                    example: "Session key for hsn 18100PP84012345 was not valid"
+                  
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /P2PE/getPanPadVersion:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Get Panpad version
+      summary: Get Panpad version
+      description: To authorize a card for manual entry
+      operationId: getPanPadVersion
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  version: 
+                    type: string 
+                    description: Error code 
+                    example: "01060040"
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /P2PE/listTerminals:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: List Terminals
+      summary: List Terminal
+      description: To get the list of configured HSN for cardconnect merchant 
+      operationId: listterminal
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "12452589"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  terminals: 
+                    type: string
+                    description: Terminals
+                    example: 
+                      - "17217SC81316999"
+                      - "18145PP21498843"
+                      - "18238PP21557324"
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /P2PE/ping:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Ping
+      summary: Ping
+      description: Ping request
+      operationId: ping
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  connected: 
+                    type: string 
+                    description: Connection flag
+                    example: "true"
+                
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /P2PE/preconnect:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Preconnect
+      summary: Preconnect
+      description: Preconnect
+      operationId: preconnect
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errorCode: 
+                    type: string 
+                    description: Error code 
+                    example: "3"
+                  errorMessage: 
+                    type: string 
+                    description: Error message 
+                    example: "Merchant is not configured for two-factor authentication"
+                  
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /P2PE/readCard:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Read Card
+      summary: Read Card
+      description: To read a card
+      operationId: readcard
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+                amount: 
+                  type: number
+                  description: Amount
+                  example: 100
+                includeSignature: 
+                  type: string
+                  description: Include Signature flag
+                  example: "false"
+                includeAmountDisplay: 
+                  type: string 
+                  description: Include amount display flag
+                  example: "true"
+                beep: 
+                  type: string
+                  description: Beep flag
+                  example: "false"
+                aid: 
+                  type: string
+                  description: AID
+                  example: "credit"
+                gzipSignature: 
+                  type: string
+                  description: gzipSignature flag
+                  example: "false"
+                signatureFormat: 
+                  type: string
+                  description: Signature format
+                  example: "png"
+                signatureImageType: 
+                  type: string
+                  description: Signature image type
+                  example: "rgb"
+                signatureDimensions:
+                  type: string
+                  description: Signature dimensions
+                  example: "320,450"
+                confirmAmount:
+                  type: string
+                  description: Confirm amount flag
+                  example: "true"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token: 
+                    type: string 
+                    description: Token 
+                    example: "9516927123456789"
+                  expiry: 
+                    type: string
+                    description: Expiry
+                    example: "1225"
+                  name: 
+                    type: string
+                    description: Name
+                    example: "GIFT/CARD"
+                  
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /P2PE/readConfirmation:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Read confirmation
+      summary: Read confirmation
+      description: Read confirmation
+      operationId: readconfirmation
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+                beep: 
+                  type: string
+                  description: Beep flag
+                  example: "false"
+                prompt: 
+                  type: string
+                  description: Message to prompt
+                  example: "Please confirm"
+                
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  confirmed: 
+                    type: string 
+                    description: Confirmed flag
+                    example: "true"
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /P2PE/readInput:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Read input
+      summary: Read input
+      description: Read input
+      operationId: readinput
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+                beep: 
+                  type: string
+                  description: Beep flag
+                  example: "false"
+                prompt: 
+                  type: string
+                  description: Message to prompt
+                  example: "Enter amount"
+                format:
+                  type: string 
+                  description: Format
+                  example: "Amount"
+                
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  input: 
+                    type: string 
+                    description: Confirmed flag
+                    example: "6304299823"
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /P2PE/readManual:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Read manual
+      summary: Read manual
+      description: Read manual
+      operationId: readmanual
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+                beep: 
+                  type: string
+                  description: Beep flag
+                  example: "false"
+                includeSignature: 
+                  type: string
+                  description: Include signature flag
+                  example: "false"
+                includeExpirationDate:
+                  type: string 
+                  description: Include expiration date
+                  example: "true"
+                
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token: 
+                    type: string 
+                    description: Token
+                    example: "9548540556123456"
+                  expiry: 
+                    type: string 
+                    description: Card expiry date
+                    example: "1225"
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /P2PE/readSignature:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Read signature
+      summary: Read signature
+      description: Read signature
+      operationId: readsignature
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+               
+                prompt: 
+                  type: string
+                  description: Message to prompt
+                  example: "Please confirm"
+                
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  signature: 
+                    type: string 
+                    description: Signature
+                    example: "H4sICAAAAAAC/1NJRy5CTVAA7JihTsRAFEXPpElrJru2glBLUFUowiZ4/qEoHKAIrqP4Ij6gn1KF3gRTsdmHgE3A3icqeMc2J9OZefPmtrd3j5cAcANcAHOCdyCRAOh/nv/GzAiCIAiCIAiCIAiCf0xjk+yOZrOopoWdLZpbFejE166/5yyNnAHY2VFw29NqCyvWn9ZMcAdHaXhcvaioiu52urs9ymqyvT7bRZ/thnXcdiW3l6wDAM/Sxh4BkrS7VQMwSg2yrgC0f5Y5FUDry20q8tltU2nmregyNZ9iR++Z6m5RC2rKG7kYh9w4XLXNedyWISfxyj5jyGJZsWHI6nXSTEOWG/N+qOVuc+1wtw63mnWXvcN9dbhPDvfB4d6/OfLNh8N9cWSjq5Xc85VcPWukspbrOL9yBu0d7q4k2e3MipquGM0OyPl3NE92dny7BkEQBEEQBEEQ/OFrAH0pxvFuKgAA"
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /P2PE/tip:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Tip
+      summary: Tip
+      description: Tip
+      operationId: tip
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+                amount: 
+                  type: string
+                  description: Amount
+                  example: "1000"
+                prompt: 
+                  type: string
+                  description: Message to prompt
+                  example: "Would you like to leave a tip?"
+                tipPercentPresets:
+                  type: number
+                  description: Tip percent preset
+                  example: 
+                    - 10 
+                    - 15 
+                    - 20
+                
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  amount: 
+                    type: string 
+                    description: Amount
+                    example: "1000"
+                  tip:
+                    type: string 
+                    description: Tip amount
+                    example: "150"
+                  total:
+                    type: string 
+                    description: Total amount
+                    example: "1150"
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/TransactionUpdate:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Transaction update
+      summary: Transaction update
+      description: To update the message for transaction
+      operationId: transactionupdate
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:  
+                accountid:
+                  type: string
+                  description: Account ID
+                  example: >-
+                    1000000001
+                message: 
+                  type: string 
+                  description: Message to update
+                  example: "Transaction Successful–Payment modified in ERP"
+                invoicedata:
+                  type: array
+                  items:
+                    properties:
+                        invoicenumber:
+                          type: string
+                          description: Invoice number
+                          example: "INV-101"
+                        paymentheaderid:
+                          type: number
+                          description: Payment header ID
+                          example: 44631
+                        paymenttransactionid:
+                          type: number
+                          description: Payment transaction ID
+                          example: 2830252123456
+                        
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: string
+                    description: Account ID
+                    example: >-
+                      1000000001
+                  message: 
+                    type: string 
+                    description: Return message
+                    example: "Transaction updated successfully"
+                  status:
+                    type: string
+                    description: Status
+                    example: "Y"
+                  apiname:
+                    type: string
+                    description: API name
+                    example: "TransactionUpdate"
+                  invoicedata:
+                    type: array
+                    items:
+                      properties:
+                        invoicenumber:
+                          type: string
+                          description: Invoice number
+                          example: "INV-101"
+                        paymentheaderid:
+                          type: number
+                          description: Payment header ID
+                          example: 44631
+                        paymenttransactionid: 
+                          type: number
+                          description: Payment transaction ID
+                          example: 2830252123456
+                        status: 
+                          type: string
+                          description: Status
+                          example: "Y"
+
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+          
+  /P2PE/cancel:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Cancel
+      summary: Transaction update
+      description: Cancel
+      operationId: cancel
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+            description: Request successful.
+        '400':
+            description: Invalid request.
+        '401':
+            description: Unauthorized access.
+        '500':
+            description: Internal server error.
+  /P2PE/display:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Display
+      summary: Display
+      description: Display
+      operationId: display
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+                text:
+                  type: string
+                  description: Text
+                  example: "Display"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+            description: Invalid request.
+        '401':
+            description: Unauthorized access.
+        '500':
+            description: Internal server error.
+  /P2PE/clearDisplay:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Clear display
+      summary: Clear display
+      description: Clear display
+      operationId: clearDisplay
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+            description: Invalid request.
+        '401':
+            description: Unauthorized access.
+        '500':
+            description: Internal server error.
+  /P2PE/dateTime:
+    post:
+      tags:
+        - Bolt Pass through API
+      x-group-name: Bolt Pass through API
+      x-proxy-name: Datetime
+      summary: Datetime
+      description: Datetime
+      operationId: datetime
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                merchantId:
+                  type: string
+                  description: Merchant ID
+                  example: "1245258"
+                hsn:
+                  type: string
+                  description: Device ID
+                  example: "18100PP84021655"
+                dateTime:
+                  type: string
+                  description: Datetime
+                  example: "2019-06-25T21:41:45"
+      parameters:
+        - name: AccountId 
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >- 
+                    1000000001
+          example:  >- 
+                    1000000001
+        - name: X-CardConnect-SessionKey
+          in: header
+          description: Session Key
+          required: true
+          schema:
+            type: string
+            default: >-
+              72eb45c4e6034aa1b5c5ba0532209a87
+        - name: MerchantID
+          in: header
+          description: Merchant ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              12345678
+      responses:
+        '200':
+          description: Request successful.
+        '400':
+            description: Invalid request.
+        '401':
+            description: Unauthorized access.
+        '500':
+            description: Internal server error.    
+  /api/GetACHRejects:
+    get:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Get ACH Rejects
+      summary: Get ACH Rejects
+      description: >-
+        To download all rejected ACH transactions.
+      operationId: getACHRejects
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              1000000001
+          example: >-
+            1000000001
+        - name: Signature
+          in: header
+          description: HMAC Signature
+          required: true
+          schema:
+            type: string
+          example: >-
+            Hmac
+            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - name: startdate
+          in: query
+          schema:
+            type: string
+          description: Start/FromDate
+          example: 04/01/2022
+        - name: enddate
+          in: query
+          schema:
+            type: string
+          description: End/To Date
+          example: 04/30/2022
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: integer
+                    description: SnapPay Account ID
+                    example: 1000000001
+                  message:
+                    type: string
+                    description: >-
+                      Return message for API execution
+                    example: 'ACH Rejects found.'
+                  status:
+                    type: string
+                    description: Status of API execution
+                    example: 'Y'
+                  transactionscount:
+                    type: integer
+                    description: >-
+                      Transaction Count – This parameter will give the number of
+                      payment transactions sent.
+                    example: 1
+                  transactions:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        transaction:
+                          type: object
+                          properties:
+                            transactionstatus:
+                              type: string
+                              description: Transaction status
+                              example: 'Failed'
+                            paymenttransactionid:
+                              type: number
+                              description: Payment transaction ID from SnapPay
+                              example: 124253245345
+                            pgtransactionid:
+                              type: string
+                              description: Transaction ID from payment gateway
+                              example: 53245345213121
+                            currencycode:
+                              type: string
+                              description: Currency Code
+                              example: USD
+                            pgtransactiontype:
+                              type: string
+                              description: Payment Gateway Transaction Type
+                              example: S
+                            merchantid:
+                              type: string
+                              description: Merchant id from payment gateway
+                              example: 1012345678
+                            transactionamount:
+                              type: number
+                              description: Transaction Amount
+                              example: 120.1
+                            authorizationnumber:
+                              type: string
+                              description: Authorization Number
+                              example: SDRDXX
+                            pgreturncode:
+                              type: string
+                              description: Payment Gateway Return Code
+                              example: 0
+                            procrespcode:
+                              type: string
+                              description: Payment Gateway response Code
+                              example: 1234
+                            pgreturndescription:
+                              type: string
+                              description: Return Description
+                              example: ACH Reject
+                            paymentdate:
+                              type: string
+                              description: Transaction Date
+                              example: 2022-04-16 8:05 PM
+                            feetype:
+                              type: string
+                              description: Fee Type (Convenience / Surcharge / Service)
+                              example: Service
+                            feeamount:
+                              type: number
+                              description: Fee Amount
+                              example: 0
+                            feevalue:
+                              type: number
+                              description: >-
+                                Fee Value – same as amount for convenience fee
+                                and % for surcharge
+                              example: 0
+                            feeformat:
+                              type: string
+                              description: >-
+                                Fee Format (Flat/Percentage) 
+                              example: Flat
+                            feestatus:
+                              type: string
+                              description: Fee Status (Y/N)
+                              example: 'Y'
+                            feeauthcode:
+                              type: string
+                              description: >-
+                                Fee Authorization Code
+                              example: 1234
+                            feetransactionid:
+                              type: string
+                              description: >-
+                                Fee Transaction ID
+                              example: 10112452326
+                        paymentmethod:
+                          type: object
+                          properties:
+                            type:
+                              type: string
+                              description: Type of payment method – Visa, Mastercard, etc.
+                              example: MC
+                            last4:
+                              type: string
+                              description: Last 4 digits of payment method
+                              example: 5454
+                            routingnumber:
+                              type: string
+                              description: Routing Number
+                              example: null
+                            tokenid:
+                              type: string
+                              description: Token ID
+                              example: 1234567891
+                            paymentgateway:
+                              type: string
+                              description: Payment Gateway
+                              example: BluePay
+                            firstname:
+                              type: string
+                              description: First Name
+                              example: first
+                            lastname:
+                              type: string
+                              description: Last Name
+                              example: last
+                            addressline1:
+                              type: string
+                              description: Address Line 1
+                              example: 123 Main St
+                            city:
+                              type: string
+                              description: City
+                              example: Lombard
+                            state:
+                              type: string
+                              description: State
+                              example: IL
+                            zip:
+                              type: string
+                              description: Zip/Postal Code
+                              example: 60148
+                            country:
+                              type: string
+                              description: Country
+                              example: US
+                            phonenumber:
+                              type: string
+                              description: Phone Number
+                              example: null
+                            email:
+                              type: string
+                              description: Email
+                              example: first.last@company.com
+                        
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/tenantsalesreportdownload:
+    post:
+      tags:
+        - Real Estate
+      x-group-name: Real Estate
+      x-proxy-name: Tenantsalesreport Download
+      summary: Tenantsalesreport Download
+      description: Reporting for real estate customers.
+      operationId: tenantsalesreportdownload
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              1000000001
+          example: >-
+            1000000001
+        - name: Signature
+          in: header
+          description: HMAC Signature
+          required: true
+          schema:
+            type: string
+          example: >-
+            Hmac
+            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - name: startdate
+          in: query
+          schema:
+            type: string
+          description: Start/FromDate
+          example: 04/01/2022
+        - name: enddate
+          in: query
+          schema:
+            type: string
+          description: End/To Date
+          example: 04/30/2022
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              examples: 
+                ResponseExample: 
+                  summary: Schedule
+                  $ref: '#/components/examples/TenantSalesReportingDownloadResponse'
+                
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
