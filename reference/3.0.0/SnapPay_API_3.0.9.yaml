@@ -10923,7 +10923,7 @@ paths:
                         type: string
                         description: Customer ID
                         example: 100
-                      customername:
+                      name:
                         type: string
                         description: Customer name
                         example: custname
@@ -10931,6 +10931,14 @@ paths:
                         type: string
                         description: Display name
                         example: Cust Name
+                      customertype:
+                        type: string
+                        description: Customer Type
+                        example: C
+                      active:
+                        type: string
+                        description: Active flag
+                        example: Y
                       addressline1:
                         type: string
                         description: Address Line1
@@ -10947,7 +10955,7 @@ paths:
                         type: string
                         description: State
                         example: IL
-                      zip:
+                      zipcode:
                         type: string
                         description: Zipcode
                         example: 60603
@@ -10955,7 +10963,7 @@ paths:
                         type: string
                         description: Country
                         example: US
-                      phonenumber:
+                      phone:
                         type: integer
                         description: Phone number
                         example: null
@@ -10963,6 +10971,18 @@ paths:
                         type: string
                         description: Email
                         example: first.last@company.com
+                      vatregistrationnumber:
+                        type: string
+                        description: VAT registration number
+                        example: 123212
+                      defaultcompanycode: 
+                        type: string
+                        description: Default company code
+                        example: 100
+                      paymentmode: 
+                        type: string
+                        description: Payment mode
+                        example: CC/ACH
                       companylist:
                         type: array
                         items:
@@ -10971,7 +10991,7 @@ paths:
                             companycode:
                               type: string
                               description: Company code
-                              example: '00200'
+                              example: 100
       parameters:
         - name: AccountId
           in: header
