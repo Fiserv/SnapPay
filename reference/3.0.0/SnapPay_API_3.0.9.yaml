@@ -8037,6 +8037,12 @@ paths:
           schema:
             type: string
           example: C
+        - name: pagenumber
+          in: query
+          description: Page number to be passed if there are more transactions in repsonse.
+          schema:
+            type: number
+          example: 8
         - name: status
           in: query
           schema:
@@ -8063,6 +8069,11 @@ paths:
                       Transaction Count – This parameter will give the number of
                       payment transactions sent.
                     example: 100
+                  pagenumber:
+                    type: integer
+                    description: >-
+                      Current page number for the transactions in response
+                    example: 8
                   transactionremaining:
                     type: string
                     description: >-
@@ -10982,7 +10993,7 @@ paths:
                       paymentmode: 
                         type: string
                         description: Payment mode
-                        example: CC/ACH
+                        example: CC,ACH
                       companylist:
                         type: array
                         items:
