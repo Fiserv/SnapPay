@@ -8450,6 +8450,35 @@ paths:
                           type: string
                           description: Payment Gateway Merchant ID
                           example: 496695144562
+                        feedepositlist:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              feedepositid: 
+                                type: string
+                                description: Fee Deposit ID
+                                example: "8455d504-2d1e-4d15-b8b4-35ada249a9b48"
+                              feedepositdate:
+                                type: string
+                                description: Fee Deposit date
+                                example: "3/2/2023 12:00:00 AM"
+                              paymentgateway:
+                                type: string
+                                description: Payment Gateway
+                                example: "CardX"
+                              feedeposittotal: 
+                                type: number
+                                description: Fee Deposit Detail
+                                example: -58.3
+                              depositsourceid:
+                                type: string 
+                                description: Deposit Source ID
+                                example: "16777189004821"
+                              depositsource:
+                                type: string
+                                description: Deposit Source
+                                example: "fiserv"
                         fundingmasterlist:
                           type: array
                           items:
@@ -8568,6 +8597,10 @@ paths:
                                           type: string
                                           description: Merchant ID
                                           example: 236695144562
+                                        merchantname:
+                                          type: string
+                                          description: Merchant name
+                                          example: "creditcardmerchant"
                                         transactionamount:
                                           type: integer
                                           description: Transaction Amount
@@ -8649,6 +8682,14 @@ paths:
                                             transactionid for convenience and
                                             surcharge fee
                                           example: null
+                                        merchantfee:
+                                          type: number
+                                          description: Merchant Fee
+                                          example: 3.3
+                                        settledascardtype: 
+                                          type: string
+                                          description: Settled with Card type
+                                          example: "debit"
                                         paymentmethod:
                                           type: object
                                           properties:
@@ -8674,6 +8715,10 @@ paths:
                                               type: string
                                               description: Merchant ID Name
                                               example: MID1-USD
+                                            merchantname:
+                                              type: string
+                                              description: Mechant name
+                                              example: "creditcardmerchant"
                                             paymentgateway:
                                               type: string
                                               description: Payment Gateway
