@@ -798,12 +798,12 @@ components:
                       feeauthcode: null
                       feetransactionid: '0'
                       merchantfee: 3.3
-                      settledascardtype: debit
+                      settledascardtype: ""
                       paymentmethod:
                         type: VISA
                         last4: '6301'
                         routingnumber: null
-                        tokenid: '9450039021499916301'
+                        tokenid: '1234039021499916301'
                         merchantid: merchant
                         merchantname: CardConnectMerchant
                         paymentgateway: CardConnect
@@ -847,12 +847,12 @@ components:
                       feeauthcode: TSTAUT
                       feetransactionid: '1000012629'
                       merchantfee: 11.02
-                      settledascardtype: credit
+                      settledascardtype: ""
                       paymentmethod:
                         type: VISA
                         last4: '7342'
                         routingnumber: null
-                        tokenid: '9443527225498927342'
+                        tokenid: '1234527225498927342'
                         merchantid: merchant
                         merchantname: CardConnectMerchant
                         paymentgateway: CardConnect
