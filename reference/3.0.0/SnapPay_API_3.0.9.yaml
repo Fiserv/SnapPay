@@ -871,6 +871,53 @@ components:
                       ordernumber: null
                       invoicenumber: null
                       reference: ''
+    UserDataUploadRequest:
+      value: 
+        accountid: '1000000001'
+        users:
+          - userid: user01
+            firstname: first
+            lastname: last
+            email: first.last@company.com
+            usertypename: customer
+            usergroupname: customer
+            isactive: 'Y'
+            effectivefrom: '2023-02-23'
+            effectiveto: '2028-12-31'
+            phone: 123-456-7890
+            forcepasswordreset: 'Y'
+            forcetermsandconditions: 'Y'
+            devicegroup: ''
+            deleteuser: 'N'
+            customers:
+              - customerid: '10006438'
+                associationtype: soldto
+                isdefault: 'Y'
+              - customerid: '100'
+                associationtype: soldto
+                isdefault: 'N'
+          - userid: user02
+            firstname: CSR
+            lastname: USER
+            email: csr.user@company.com
+            usertypename: CSR
+            usergroupname: CSR
+            isactive: 'Y'
+            effectivefrom: '2023-02-23'
+            effectiveto: '2028-12-31'
+            phone: 123-456-7890
+            forcepasswordreset: 'Y'
+            forcetermsandconditions: 'Y'
+            devicegroup: devicegrp
+            deleteuser: 'N'
+            customers:
+              - customerid: '4242'
+                associationtype: shipto
+                isdefault: 'Y'
+              - customerid: '100'
+                associationtype: shipto
+                isdefault: 'N'
+        
         
   schemas:
     GetRequestIDRequest: 
@@ -949,7 +996,7 @@ components:
           description: Branch plant
           type: string
           example: ''
-        useboltdevice:
+        useterminaldevice:
           description: Terminal device flag
           type: string
           example: 'N'
@@ -14871,6 +14918,10 @@ paths:
                               type: string
                               description: Default flag for customer-user association 
                               example: "Y"
+            examples:
+              Example 1:
+                summary: Example 1
+                $ref: '#/components/examples/UserDataUploadRequest'  
       parameters:
         - name: AccountId
           in: header
