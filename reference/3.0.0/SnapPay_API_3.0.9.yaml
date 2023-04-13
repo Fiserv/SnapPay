@@ -600,6 +600,325 @@ components:
                       updatedby: RESTAPI
                       updatedon: 12/22/2022 02:59:54 AM
                   salesreporthistorydata: null
+    FundingHistoryRepsonseCardX:
+      value:
+        accountid: 1000000001
+        status: 'Y'
+        message: Deposit information attached.
+        transactionscount: 2
+        merchantdata:
+          - merchantid: merchant
+            feedepositlist:
+              - feedepositid: 1234d504-2d1e-4d15-ba3b4-352de49a9b48
+                feedepositdate: 3/2/2023 12:00:00 AM
+                paymentgateway: CardX
+                feedeposittotal: -58.3
+                depositsourceid: '13457189004821'
+                depositsource: company
+              - feedepositid: abcd6cd4-1234-48b9-8737-71b04ca6b2dd
+                feedepositdate: 2/28/2023 12:00:00 AM
+                paymentgateway: CardX
+                feedeposittotal: -20.99
+                depositsourceid: '12345460745791'
+                depositsource: company
+            fundingmasterlist:
+              - fundingmasterid: a12de471-5070-4c7a-99af-df37bedc8daa
+                fundingdate: 3/24/2023 12:00:00 AM
+                paymentgateway: CardX
+                fundings:
+                  - fundingid: '1234619665380'
+                    netsales: 0
+                    totalfunding: 1393.3
+                    fee: 0
+                    datechanged: ''
+                    ddanumber: ''
+                    thirdparty: 0
+                    dateadded: ''
+                    fundingmasterid: abcde471-5070-4c7a-99af-df37bedc8daa
+                    reversal: 0
+                    interchangefee: 0
+                    adjustment: 0
+                    currency: USD
+                    servicecharge: 0
+                    otheradjustment: 0
+                    abanumber: ''
+                paymentdata:
+                  transactions:
+                    - snappaytransactionid: '12628'
+                      transactionid: '2313024917330'
+                      fundingtxnid: a12dbdf7-0708-4643-b526-1ce4a4dd7b9d
+                      currencycode: USD
+                      type: sale
+                      merchantid: snaptstao
+                      merchantname: CardXMerchant
+                      transactionamount: 305
+                      fundedamount: 301.7
+                      interchangeunitfee: 0
+                      interchangepercentfee: 0
+                      cardnumber: 453273XXXXXX1234
+                      cardtype: debit
+                      cardbrand: Visa
+                      fundingid: '1234619665380'
+                      authorizationnumber: TSTAUT
+                      transactiondate: 3/23/2023 12:00:00 AM
+                      feetype: null
+                      feeamount: 0
+                      feevalue: 0
+                      feeformat: null
+                      feestatus: null
+                      feeauthcode: null
+                      feetransactionid: '0'
+                      merchantfee: 3.3
+                      settledascardtype: debit
+                      paymentmethod:
+                        type: VISA
+                        last4: '6301'
+                        routingnumber: null
+                        tokenid: '9450039021499916301'
+                        merchantid: merchantid
+                        merchantname: CardXMerchant
+                        paymentgateway: CardX
+                        firstname: First
+                        lastname: W
+                        expirationmonth: 9
+                        expirationyear: 2029
+                        addressline1: 495 N Commons Dr
+                        city: Aurora
+                        state: IL
+                        zip: '60563'
+                        country: US
+                        phonenumber: ''
+                        email: first.last@company.com
+                      invoices: []
+                      ordernumber: null
+                      invoicenumber: null
+                      reference: ''
+                    - snappaytransactionid: '1000012629'
+                      transactionid: '032313050561428'
+                      fundingtxnid: a12df69fd-b401-443a-b398-26882ff100d1
+                      currencycode: USD
+                      type: sale
+                      merchantid: merchant
+                      merchantname: CardXMerchant
+                      transactionamount: 326.03
+                      fundedamount: 315.01
+                      interchangeunitfee: 0
+                      interchangepercentfee: 0
+                      cardnumber: 448571XXXXXX4567
+                      cardtype: credit
+                      cardbrand: Visa
+                      fundingid: '1234619665380'
+                      authorizationnumber: TSTAUT
+                      transactiondate: 3/23/2023 12:00:00 AM
+                      feetype: Surcharge
+                      feeamount: 11.03
+                      feevalue: 3.5
+                      feeformat: Percentage
+                      feestatus: 'Y'
+                      feeauthcode: TSTAUT
+                      feetransactionid: '1000012629'
+                      merchantfee: 11.02
+                      settledascardtype: credit
+                      paymentmethod:
+                        type: VISA
+                        last4: '7342'
+                        routingnumber: null
+                        tokenid: '9443527225498927342'
+                        merchantid: merchant
+                        merchantname: CardXMerchant
+                        paymentgateway: CardX
+                        firstname: ABC
+                        lastname: Financial
+                        expirationmonth: 8
+                        expirationyear: 2028
+                        addressline1: 495 N Commons Dr
+                        city: Aurora
+                        state: IL
+                        zip: '60563'
+                        country: US
+                        phonenumber: ''
+                        email: first.last@cditechnology.com
+                      invoices: []
+                      ordernumber: null
+                      invoicenumber: null
+                      reference: ''
+    FundingHistoryRepsonseCardConnect:
+      value:
+        accountid: 1000000001
+        status: 'Y'
+        message: Deposit information attached.
+        transactionscount: 2
+        merchantdata:
+          - merchantid: merchant
+            fundingmasterlist:
+              - fundingmasterid: a12de471-5070-4c7a-99af-df37bedc8daa
+                fundingdate: 3/24/2023 12:00:00 AM
+                paymentgateway: CardConnect
+                fundings:
+                  - fundingid: '1234619665380'
+                    netsales: 0
+                    totalfunding: 1393.3
+                    fee: 0
+                    datechanged: ''
+                    ddanumber: ''
+                    thirdparty: 0
+                    dateadded: ''
+                    fundingmasterid: abcde471-5070-4c7a-99af-df37bedc8daa
+                    reversal: 0
+                    interchangefee: 0
+                    adjustment: 0
+                    currency: USD
+                    servicecharge: 0
+                    otheradjustment: 0
+                    abanumber: ''
+                paymentdata:
+                  transactions:
+                    - snappaytransactionid: '12628'
+                      transactionid: '2313024917330'
+                      fundingtxnid: a12dbdf7-0708-4643-b526-1ce4a4dd7b9d
+                      currencycode: USD
+                      type: sale
+                      merchantid: merchant
+                      merchantname: CardConnectMerchant
+                      transactionamount: 305
+                      fundedamount: 301.7
+                      interchangeunitfee: 0
+                      interchangepercentfee: 0
+                      cardnumber: 453273XXXXXX1234
+                      cardtype: debit
+                      cardbrand: Visa
+                      fundingid: '1234619665380'
+                      authorizationnumber: TSTAUT
+                      transactiondate: 3/23/2023 12:00:00 AM
+                      feetype: null
+                      feeamount: 0
+                      feevalue: 0
+                      feeformat: null
+                      feestatus: null
+                      feeauthcode: null
+                      feetransactionid: '0'
+                      merchantfee: 3.3
+                      settledascardtype: ""
+                      paymentmethod:
+                        type: VISA
+                        last4: '6301'
+                        routingnumber: null
+                        tokenid: '1234039021499916301'
+                        merchantid: merchant
+                        merchantname: CardConnectMerchant
+                        paymentgateway: CardConnect
+                        firstname: First
+                        lastname: W
+                        expirationmonth: 9
+                        expirationyear: 2029
+                        addressline1: 495 N Commons Dr
+                        city: Aurora
+                        state: IL
+                        zip: '60563'
+                        country: US
+                        phonenumber: ''
+                        email: first.last@company.com
+                      invoices: []
+                      ordernumber: null
+                      invoicenumber: null
+                      reference: ''
+                    - snappaytransactionid: '1000012629'
+                      transactionid: '032313050561428'
+                      fundingtxnid: a12df69fd-b401-443a-b398-26882ff100d1
+                      currencycode: USD
+                      type: sale
+                      merchantid: merchant
+                      merchantname: CardConnectMerchant
+                      transactionamount: 326.03
+                      fundedamount: 315.01
+                      interchangeunitfee: 0
+                      interchangepercentfee: 0
+                      cardnumber: 448571XXXXXX4567
+                      cardtype: credit
+                      cardbrand: Visa
+                      fundingid: '1234619665380'
+                      authorizationnumber: TSTAUT
+                      transactiondate: 3/23/2023 12:00:00 AM
+                      feetype: Surcharge
+                      feeamount: 11.03
+                      feevalue: 3.5
+                      feeformat: Percentage
+                      feestatus: 'Y'
+                      feeauthcode: TSTAUT
+                      feetransactionid: '1000012629'
+                      merchantfee: 11.02
+                      settledascardtype: ""
+                      paymentmethod:
+                        type: VISA
+                        last4: '7342'
+                        routingnumber: null
+                        tokenid: '1234527225498927342'
+                        merchantid: merchant
+                        merchantname: CardConnectMerchant
+                        paymentgateway: CardConnect
+                        firstname: ABC
+                        lastname: Financial
+                        expirationmonth: 8
+                        expirationyear: 2028
+                        addressline1: 495 N Commons Dr
+                        city: Aurora
+                        state: IL
+                        zip: '60563'
+                        country: US
+                        phonenumber: ''
+                        email: first.last@company.com
+                      invoices: []
+                      ordernumber: null
+                      invoicenumber: null
+                      reference: ''
+    UserDataUploadRequest:
+      value: 
+        accountid: '1000000001'
+        users:
+          - userid: user01
+            firstname: first
+            lastname: last
+            email: first.last@company.com
+            usertypename: customer
+            usergroupname: customer
+            isactive: 'Y'
+            effectivefrom: '2023-02-23'
+            effectiveto: '2028-12-31'
+            phone: 123-456-7890
+            forcepasswordreset: 'Y'
+            forcetermsandconditions: 'Y'
+            devicegroup: ''
+            deleteuser: 'N'
+            customers:
+              - customerid: '10006438'
+                associationtype: soldto
+                isdefault: 'Y'
+              - customerid: '100'
+                associationtype: soldto
+                isdefault: 'N'
+          - userid: user02
+            firstname: CSR
+            lastname: USER
+            email: csr.user@company.com
+            usertypename: CSR
+            usergroupname: CSR
+            isactive: 'Y'
+            effectivefrom: '2023-02-23'
+            effectiveto: '2028-12-31'
+            phone: 123-456-7890
+            forcepasswordreset: 'Y'
+            forcetermsandconditions: 'Y'
+            devicegroup: devicegrp
+            deleteuser: 'N'
+            customers:
+              - customerid: '4242'
+                associationtype: shipto
+                isdefault: 'Y'
+              - customerid: '100'
+                associationtype: shipto
+                isdefault: 'N'
+        
+        
   schemas:
     GetRequestIDRequest: 
       type: object
@@ -677,8 +996,8 @@ components:
           description: Branch plant
           type: string
           example: ''
-        useboltdevice:
-          description: Bolt device flag
+        useterminaldevice:
+          description: Terminal device flag
           type: string
           example: 'N'
         devicehsn: 
@@ -2937,333 +3256,7 @@ components:
                     type: string
                     description: Funding Date
                     example: 12/20/2018 
-    FundingHistoryResponse:
-      type: object
-      properties:
-        accountid:
-          type: integer
-          description: SnapPay Account ID
-          example: 1000000001
-        status:
-          type: string
-          description: Status Y/N
-          example: 'Y'
-        message:
-          type: string
-          description: Message
-          example: Deposit information attached.
-        transactionscount:
-          type: integer
-          description: Transaction Count
-          example: 53
-        merchantdata:
-          type: array
-          items:
-            type: object
-            properties:
-              merchantid:
-                type: string
-                description: Payment Gateway Merchant ID
-                example: 496695144562
-              fundingmasterlist:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    fundingmasterid:
-                      type: string
-                      description: Funding Master ID
-                      example: 213173470121646
-                    fundingdate:
-                      type: string
-                      description: Funding Date
-                      example: 8/1/2018 12:00:00 AM
-                    paymentgateway:
-                      type: string
-                      description: Payment Gateway
-                      example: CardConnect
-                    fundings:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          fundingid:
-                            type: string
-                            description: Funding ID
-                            example: 213173494121647
-                          netsales:
-                            type: string
-                            description: Net Sales
-                            example: 148
-                          totalfunding:
-                            type: integer
-                            description: Total Funding
-                            example: 102.77
-                          fee:
-                            type: integer
-                            description: Fee
-                            example: o
-                          datechanged:
-                            type: string
-                            description: Date Changed
-                            example: 07/31/2018
-                          ddanumber:
-                            type: string
-                            description: DDA Number
-                            example: 3300770540
-                          thirdparty:
-                            type: string
-                            description: Third Party Charges
-                            example: -39.2
-                          dateadded:
-                            type: string
-                            description: Date Added
-                            example: 07/31/2018
-                          fundingmasterid:
-                            type: string
-                            description: Funding Master ID
-                            example: 213173470121646
-                          reversal:
-                            type: string
-                            description: Reversal
-                            example: -6.03
-                          interchangefee:
-                            type: string
-                            description: Interchange Fee
-                            example: 0
-                          adjustment:
-                            type: string
-                            description: Adjustment
-                            example: 0
-                          currency:
-                            type: string
-                            description: Currency Code
-                            example: USD
-                          servicecharge:
-                            type: string
-                            description: Service Charge
-                            example: 0
-                          otheradjustment:
-                            type: string
-                            description: Other Adjustment
-                            example: 0
-                          abanumber:
-                            type: string
-                            description: ABA Number
-                            example: 121140399
-                    paymentdata:
-                      type: object
-                      properties:
-                        transactions:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              snappaytransactionid:
-                                type: string
-                                description: SnapPay Payment Transaction ID
-                                example: 1141
-                              transactionid:
-                                type: string
-                                description: Payment Gateway Transaction ID
-                                example: 212884163608
-                              fundingtxnid:
-                                type: string
-                                description: Funding Transaction ID
-                                example: 213173470121646
-                              currencycode:
-                                type: string
-                                description: Currency Code
-                                example: USD
-                              type:
-                                type: string
-                                description: Type of transactions - SALE
-                                example: SALE
-                              merchantid:
-                                type: string
-                                description: Merchant ID
-                                example: 236695144562
-                              transactionamount:
-                                type: integer
-                                description: Transaction Amount
-                                example: 1
-                              fundedamount:
-                                type: string
-                                description: Funded Amount
-                                example: 1
-                              interchangeunitfee:
-                                type: string
-                                description: Interchange Unit Fee
-                                example: 0
-                              interchangepercentfee:
-                                type: string
-                                description: Interchange Percent Fee
-                                example: 0
-                              cardnumber:
-                                type: string
-                                description: Masked Credit Card Number
-                                example: 54XXXXXXXXXX5454
-                              cardtype:
-                                type: string
-                                description: Card Type – Credit / Debit
-                                example: Credit
-                              cardbrand:
-                                type: string
-                                description: Card Brand – VISA / MC / DISCOV
-                                example: MC
-                              fundingid:
-                                type: string
-                                description: Funding ID
-                                example: 213173685121651
-                              authorizationnumber:
-                                type: string
-                                description: Authorization Number
-                                example: PPS010
-                              transactiondate:
-                                type: string
-                                description: Transaction Date
-                                example: 07/30/2018
-                              feetype:
-                                type: string
-                                description: >-
-                                  Fee Type (Convenience / Surcharge /
-                                  Service)
-                                example: null
-                              feeamount:
-                                type: integer
-                                description: Fee Amount
-                                example: 0
-                              feevalue:
-                                type: integer
-                                description: >-
-                                  Fee Value – same as amount for
-                                  convenience fee and % for surcharge
-                                example: 0
-                              feeformat:
-                                type: string
-                                description: >-
-                                  Fee Format (Dollar/Percentage) – Dollar
-                                  is supported for convenience fee and %
-                                  for surcharge
-                                example: null
-                              feestatus:
-                                type: string
-                                description: Fee Transaction Status (Y/N)
-                                example: null
-                              feeauthcode:
-                                type: string
-                                description: >-
-                                  Fee Authorization Code – same as
-                                  authorizationnumber for convenience and
-                                  surcharge fee
-                                example: null
-                              feetransactionid:
-                                type: string
-                                description: >-
-                                  Fee Transaction ID – same as
-                                  transactionid for convenience and
-                                  surcharge fee
-                                example: null
-                              paymentmethod:
-                                type: object
-                                properties:
-                                  type:
-                                    type: string
-                                    description: >-
-                                      Type of payment method – Visa,
-                                      Mastercard, etc.
-                                    example: MC
-                                  last4:
-                                    type: string
-                                    description: Last 4 digits of payment method
-                                    example: 5454
-                                  routingnumber:
-                                    type: string
-                                    description: Routing Number
-                                    example: null
-                                  tokenid:
-                                    type: string
-                                    description: Token ID
-                                    example: 9548009641895454
-                                  merchantid:
-                                    type: string
-                                    description: Merchant ID Name
-                                    example: MID1-USD
-                                  paymentgateway:
-                                    type: string
-                                    description: Payment Gateway
-                                    example: CardConnect
-                                  firstname:
-                                    type: string
-                                    description: First Name
-                                    example: John
-                                  lastname:
-                                    type: string
-                                    description: Last Name
-                                    example: Smith
-                                  expirationmonth:
-                                    type: integer
-                                    description: Expiration Month
-                                    example: 12
-                                  expirationyear:
-                                    type: integer
-                                    description: Expiration Year
-                                    example: 2029
-                                  addressline1:
-                                    type: string
-                                    description: Address Line 1
-                                    example: 123 Main St
-                                  city:
-                                    type: string
-                                    description: City
-                                    example: Lombard
-                                  state:
-                                    type: string
-                                    description: State
-                                    example: IL
-                                  zip:
-                                    type: string
-                                    description: Zip/Postal Code
-                                    example: 60148
-                                  country:
-                                    type: string
-                                    description: Country
-                                    example: US
-                                  phonenumber:
-                                    type: string
-                                    description: Phone Number
-                                    example: null
-                                  email:
-                                    type: string
-                                    description: Email
-                                    example: john.smith@company.com
-                              invoices:
-                                type: object
-                                properties:
-                                  invoicenumber:
-                                    type: string
-                                    description: Invoice number
-                                    example: 322839
-                                  invoicetype:
-                                    type: string
-                                    description: Invoice document type
-                                    example: RI
-                                  company:
-                                    type: string
-                                    description: Company code on invoice
-                                    example: 200
-                                  currency:
-                                    type: string
-                                    description: Currency code on invoice
-                                    example: USD
-                                  linenumber:
-                                    type: string
-                                    description: Invoice line number (Pay item)
-                                    example: 1
-                                  paidamount:
-                                    type: string
-                                    description: Invoice Paid Amount
-                                    example: -1  
+    
     InvoiceDataUploadRequest:
       type: object
       properties:
@@ -5680,7 +5673,462 @@ components:
           type: integer
           description: phone number
           example: 123456789  
-    
+    FundingHistoryResponse:
+      type: object
+      properties:
+                  accountid:
+                    type: integer
+                    description: SnapPay Account ID
+                    example: 1000000001
+                  status:
+                    type: string
+                    description: Status Y/N
+                    example: 'Y'
+                  message:
+                    type: string
+                    description: Message
+                    example: Deposit information attached.
+                  transactionscount:
+                    type: integer
+                    description: Transaction Count
+                    example: 53
+                  merchantdata:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        merchantid:
+                          type: string
+                          description: Payment Gateway Merchant ID
+                          example: 496695144562
+                        feedepositlist:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              feedepositid: 
+                                type: string
+                                description: Fee Deposit ID
+                                example: "8455d504-2d1e-4d15-b8b4-35ada249a9b48"
+                              feedepositdate:
+                                type: string
+                                description: Fee Deposit date
+                                example: "3/2/2023 12:00:00 AM"
+                              paymentgateway:
+                                type: string
+                                description: Payment Gateway
+                                example: "CardX"
+                              feedeposittotal: 
+                                type: number
+                                description: Fee Deposit Detail
+                                example: -58.3
+                              depositsourceid:
+                                type: string 
+                                description: Deposit Source ID
+                                example: "16777189004821"
+                              depositsource:
+                                type: string
+                                description: Deposit Source
+                                example: "fiserv"
+                        fundingmasterlist:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              fundingmasterid:
+                                type: string
+                                description: Funding Master ID
+                                example: 213173470121646
+                              fundingdate:
+                                type: string
+                                description: Funding Date
+                                example: 08/1/2022 12:00:00 AM
+                              paymentgateway:
+                                type: string
+                                description: Payment Gateway
+                                example: CardConnect
+                              fundings:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    fundingid:
+                                      type: string
+                                      description: Funding ID
+                                      example: 213173494121647
+                                    netsales:
+                                      type: string
+                                      description: Net Sales
+                                      example: 148
+                                    totalfunding:
+                                      type: integer
+                                      description: Total Funding
+                                      example: 102.77
+                                    fee:
+                                      type: integer
+                                      description: Fee
+                                      example: o
+                                    datechanged:
+                                      type: string
+                                      description: Date Changed
+                                      example: 07/31/2018
+                                    ddanumber:
+                                      type: string
+                                      description: DDA Number
+                                      example: 3300770540
+                                    thirdparty:
+                                      type: string
+                                      description: Third Party Charges
+                                      example: -39.2
+                                    dateadded:
+                                      type: string
+                                      description: Date Added
+                                      example: 07/31/2018
+                                    fundingmasterid:
+                                      type: string
+                                      description: Funding Master ID
+                                      example: 213173470121646
+                                    reversal:
+                                      type: string
+                                      description: Reversal
+                                      example: -6.03
+                                    interchangefee:
+                                      type: string
+                                      description: Interchange Fee
+                                      example: 0
+                                    adjustment:
+                                      type: string
+                                      description: Adjustment
+                                      example: 0
+                                    currency:
+                                      type: string
+                                      description: Currency Code
+                                      example: USD
+                                    servicecharge:
+                                      type: string
+                                      description: Service Charge
+                                      example: 0
+                                    otheradjustment:
+                                      type: string
+                                      description: Other Adjustment
+                                      example: 0
+                                    abanumber:
+                                      type: string
+                                      description: ABA Number
+                                      example: 121140399
+                              paymentdata:
+                                type: object
+                                properties:
+                                  transactions:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        snappaytransactionid:
+                                          type: string
+                                          description: SnapPay Payment Transaction ID
+                                          example: 1141
+                                        transactionid:
+                                          type: string
+                                          description: Payment Gateway Transaction ID
+                                          example: 212884163608
+                                        fundingtxnid:
+                                          type: string
+                                          description: Funding Transaction ID
+                                          example: 213173470121646
+                                        currencycode:
+                                          type: string
+                                          description: Currency Code
+                                          example: USD
+                                        type:
+                                          type: string
+                                          description: Type of transactions - SALE
+                                          example: SALE
+                                        merchantid:
+                                          type: string
+                                          description: Merchant ID
+                                          example: 236695144562
+                                        merchantname:
+                                          type: string
+                                          description: Merchant name
+                                          example: "creditcardmerchant"
+                                        transactionamount:
+                                          type: integer
+                                          description: Transaction Amount
+                                          example: 1
+                                        fundedamount:
+                                          type: string
+                                          description: Funded Amount
+                                          example: 1
+                                        interchangeunitfee:
+                                          type: string
+                                          description: Interchange Unit Fee
+                                          example: 0
+                                        interchangepercentfee:
+                                          type: string
+                                          description: Interchange Percent Fee
+                                          example: 0
+                                        cardnumber:
+                                          type: string
+                                          description: Masked Credit Card Number
+                                          example: 54XXXXXXXXXX5454
+                                        cardtype:
+                                          type: string
+                                          description: Card Type – Credit / Debit
+                                          example: Credit
+                                        cardbrand:
+                                          type: string
+                                          description: Card Brand – VISA / MC / DISCOV
+                                          example: MC
+                                        fundingid:
+                                          type: string
+                                          description: Funding ID
+                                          example: 213173685121651
+                                        authorizationnumber:
+                                          type: string
+                                          description: Authorization Number
+                                          example: PPS010
+                                        transactiondate:
+                                          type: string
+                                          description: Transaction Date
+                                          example: 07/30/2022
+                                        feetype:
+                                          type: string
+                                          description: >-
+                                            Fee Type (Convenience / Surcharge /
+                                            Service)
+                                          example: null
+                                        feeamount:
+                                          type: integer
+                                          description: Fee Amount
+                                          example: 0
+                                        feevalue:
+                                          type: integer
+                                          description: >-
+                                            Fee Value – same as amount for
+                                            convenience fee and % for surcharge
+                                          example: 0
+                                        feeformat:
+                                          type: string
+                                          description: >-
+                                            Fee Format (Dollar/Percentage) – Dollar
+                                            is supported for convenience fee and %
+                                            for surcharge
+                                          example: null
+                                        feestatus:
+                                          type: string
+                                          description: Fee Transaction Status (Y/N)
+                                          example: null
+                                        feeauthcode:
+                                          type: string
+                                          description: >-
+                                            Fee Authorization Code – same as
+                                            authorizationnumber for convenience and
+                                            surcharge fee
+                                          example: null
+                                        feetransactionid:
+                                          type: string
+                                          description: >-
+                                            Fee Transaction ID – same as
+                                            transactionid for convenience and
+                                            surcharge fee
+                                          example: null
+                                        merchantfee:
+                                          type: number
+                                          description: Merchant Fee
+                                          example: 3.3
+                                        settledascardtype: 
+                                          type: string
+                                          description: Settled with Card type
+                                          example: "debit"
+                                        paymentmethod:
+                                          type: object
+                                          properties:
+                                            type:
+                                              type: string
+                                              description: >-
+                                                Type of payment method – Visa,
+                                                Mastercard, etc.
+                                              example: MC
+                                            last4:
+                                              type: string
+                                              description: Last 4 digits of payment method
+                                              example: 5454
+                                            routingnumber:
+                                              type: string
+                                              description: Routing Number
+                                              example: null
+                                            tokenid:
+                                              type: string
+                                              description: Token ID
+                                              example: 9548009641895454
+                                            merchantid:
+                                              type: string
+                                              description: Merchant ID Name
+                                              example: MID1-USD
+                                            merchantname:
+                                              type: string
+                                              description: Mechant name
+                                              example: "creditcardmerchant"
+                                            paymentgateway:
+                                              type: string
+                                              description: Payment Gateway
+                                              example: CardConnect
+                                            firstname:
+                                              type: string
+                                              description: First Name
+                                              example: John
+                                            lastname:
+                                              type: string
+                                              description: Last Name
+                                              example: Smith
+                                            expirationmonth:
+                                              type: integer
+                                              description: Expiration Month
+                                              example: 12
+                                            expirationyear:
+                                              type: integer
+                                              description: Expiration Year
+                                              example: 2029
+                                            addressline1:
+                                              type: string
+                                              description: Address Line 1
+                                              example: 123 Main St
+                                            city:
+                                              type: string
+                                              description: City
+                                              example: Lombard
+                                            state:
+                                              type: string
+                                              description: State
+                                              example: IL
+                                            zip:
+                                              type: string
+                                              description: Zip/Postal Code
+                                              example: 60148
+                                            country:
+                                              type: string
+                                              description: Country
+                                              example: US
+                                            phonenumber:
+                                              type: string
+                                              description: Phone Number
+                                              example: null
+                                            email:
+                                              type: string
+                                              description: Email
+                                              example: john.smith@company.com
+                                        invoices:
+                                          type: object
+                                          properties:
+                                            invoicenumber:
+                                              type: string
+                                              description: Invoice number
+                                              example: 322839
+                                            invoicetype:
+                                              type: string
+                                              description: Invoice document type
+                                              example: RI
+                                            company:
+                                              type: string
+                                              description: Company code on invoice
+                                              example: 200
+                                            currency:
+                                              type: string
+                                              description: Currency code on invoice
+                                              example: USD
+                                            linenumber:
+                                              type: string
+                                              description: Invoice line number (Pay item)
+                                              example: 1
+                                            paidamount:
+                                              type: string
+                                              description: Invoice Paid Amount
+                                              example: -1
+    UserDataUploadRequest:
+      type: object
+      properties:
+                accountid:
+                  type: string
+                  description: Account ID
+                  example: >-
+                        1000000001
+                users:
+                  type: array
+                  items:
+                    properties:
+                      userid:
+                        type: string
+                        description: User ID
+                        example: "user01"
+                      firstname: 
+                        type: string
+                        description: First Name
+                        example:  First
+                      lastname:
+                        type: string
+                        description: Last name
+                        example: Last
+                      email:
+                        type: string
+                        description: Email ID
+                        example: first.last@company.com
+                      usertypename:
+                        type: string
+                        description: User type name
+                        example: CSR
+                      usergroupname:
+                        type: string
+                        description: User group name
+                        example: CSR
+                      isactive:
+                        type: string
+                        description: Active flag
+                        example: "Y"
+                      effectivefrom:
+                        type: string
+                        description: Effective from date
+                        example: "2028-12-31"
+                      effectivetodate:
+                        type: string
+                        description: Effectove to date
+                        example: "2028-12-31"
+                      phone: 
+                        type: string
+                        description: Phone number
+                        example: "123-456-7890"
+                      forcepasswordreset:
+                        type: string 
+                        description: Force password reset flag
+                        example: "Y"
+                      forcetermsandconditions: 
+                        type: string
+                        description: Force terms and conditions flag
+                        example: "N"
+                      devicegroup:
+                        type: string 
+                        description: Device group name
+                        example: "Device group"
+                      deleteuser: 
+                        type: string
+                        description: Delete user flag
+                        example: "N"
+                      customers:
+                        type: array
+                        items:
+                          properties:
+                            customerid: 
+                              type: string
+                              description: CustomerID 
+                              example: "100"
+                            associationtype:
+                              type: string
+                              description: Address type (shipto or soldto)
+                              example: "Shipto"
+                            isdefault:
+                              type: string
+                              description: Default flag for customer-user association 
+                              example: "Y"
 security:
   - basicAuth: []
 tags:
@@ -5689,7 +6137,7 @@ tags:
   - name: Card Account Updater
   - name: ERP Agents
   - name: Pass through API
-  - name: Bolt Pass through API
+  - name: Terminal Pass through API
   - name: Real Estate
   
 paths:
@@ -8082,268 +8530,289 @@ paths:
                       downloaded.
                     example: 'Yes'
                   paymentdata:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        paymentheaderid:
-                          type: integer
-                          description: SnapPay Payment Header ID
-                          example: 12432
-                        sourcetype:
-                          type: string
-                          description: >-
-                            Source Type – I for Invoice and U for unapplied cash
-                            payment (pre-payment)
-                          example: I
-                        customerid:
-                          type: string
-                          description: Customer ID
-                          example: 100
-                        companycode:
-                          type: string
-                          description: Company Code
-                          example: '00200'
-                        transactionamount:
-                          type: integer
-                          description: Transaction Amount
-                          example: 100.1
-                        comments:
-                          type: string
-                          description: Header Comments
-                          example: Comments about the payment
-                        paymentdate:
-                          type: string
-                          description: SnapPay
-                          example: 2018-07-16 8:05 PM
-                        paymentdetails:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              invoicenumber:
-                                type: string
-                                description: Invoice Number
-                                example: 13069
-                              invoicetype:
-                                type: string
-                                description: Invoice Type
-                                example: RI
-                              linenumber:
-                                type: string
-                                description: Line Number (Pay Item)
-                                example: 1
-                              openamount:
-                                type: integer
-                                description: Open Amount
-                                example: 300
-                              taxableamount:
-                                type: integer
-                                description: Taxable Amount
-                                example: 20
-                              taxamount:
-                                type: integer
-                                description: Tax Amount
-                                example: 10
-                              paidamount:
-                                type: integer
-                                description: Paid Amount
-                                example: 25
-                              paidtax:
-                                type: integer
-                                description: Paid Tax
-                                example: 0.5
-                              discountavailable:
-                                type: integer
-                                description: Discount Available
-                                example: 0
-                              discounttaken:
-                                type: integer
-                                description: Discount Taken
-                                example: 0
-                              discountapplied:
-                                type: integer
-                                description: Discount Applied
-                                example: 0
-                              comments:
-                                type: string
-                                description: Line Comments
-                                example: null
-                              reasoncode:
-                                type: string
-                                description: Reason Code
-                                example: null
-                              paymentdate:
-                                type: string
-                                description: Transaction Date
-                                example: 2018-07-16 8:05 PM
-                        paymenttransaction:
-                          type: object
+                    type: object
+                    properties:
+                      paymentheader:
+                        type: array
+                        items:
                           properties:
-                            transactionid:
+                            paymentheaderid:
+                              type: integer
+                              description: SnapPay Payment Header ID
+                              example: 12432
+                            sourcetype:
                               type: string
-                              description: Transaction ID
-                              example: 100214822343
-                            currencycode:
+                              description: "Source Type – I for Invoice and U for unapplied cash
+                              payment (pre-payment)"
+                              example: I
+                            customerid:
                               type: string
-                              description: Currency Code
-                              example: USD
-                            pgtransactiontype:
+                              description: Customer ID
+                              example: "100"
+                            suppliercode: 
                               type: string
-                              description: Payment Gateway Transaction Type
-                              example: S
-                            pgmerchantname:
+                              description: Supplier ID
+                              example: ""
+                            companycode:
                               type: string
-                              description: Payment Gateway Merchant Name
-                              example: BluePay
+                              description: Company Code
+                              example: '00200'
                             transactionamount:
                               type: integer
                               description: Transaction Amount
-                              example: 120.1
-                            authorizationnumber:
+                              example: 100.1
+                            comments:
                               type: string
-                              description: Authorization Number
-                              example: SDRDXX
-                            pgreturncode:
+                              description: Header Comments
+                              example: Comments about the payment
+                            leasedetail: 
                               type: string
-                              description: Payment Gateway Return Code
-                              example: 0
-                            pgreturndescription:
-                              type: string
-                              description: Payment Gateway Return Description
-                              example: Transaction Successful
+                              description : Lease details
+                              example: ""
+                            paymentdetails:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  invoicenumber:
+                                    type: string
+                                    description: Invoice Number
+                                    example: 13069
+                                  invoicetype:
+                                    type: string
+                                    description: Invoice Type
+                                    example: RI
+                                  linenumber:
+                                    type: string
+                                    description: Line Number (Pay Item)
+                                    example: 1
+                                  openamount:
+                                    type: integer
+                                    description: Open Amount
+                                    example: 300
+                                  taxableamount:
+                                    type: integer
+                                    description: Taxable Amount
+                                    example: 20
+                                  taxamount:
+                                    type: integer
+                                    description: Tax Amount
+                                    example: 10
+                                  paidamount:
+                                    type: integer
+                                    description: Paid Amount
+                                    example: 25
+                                  paidtax:
+                                    type: integer
+                                    description: Paid Tax
+                                    example: 0.5
+                                  discountavailable:
+                                    type: integer
+                                    description: Discount Available
+                                    example: 0
+                                  discounttaken:
+                                    type: integer
+                                    description: Discount Taken
+                                    example: 0
+                                  discountapplied:
+                                    type: integer
+                                    description: Discount Applied
+                                    example: 0
+                                  comments:
+                                    type: string
+                                    description: Line Comments
+                                    example: null
+                                  reasoncode:
+                                    type: string
+                                    description: Reason Code
+                                    example: null
+                                  paymentdate:
+                                    type: string
+                                    description: Transaction Date
+                                    example: 2018-07-16 8:05 PM
+                            paymenttransaction:
+                              type: object
+                              properties:
+                                transactionid:
+                                  type: string
+                                  description: Transaction ID
+                                  example: "100214822343"
+                                currencycode:
+                                  type: string
+                                  description: Currency Code
+                                  example: USD
+                                pgtransactiontype:
+                                  type: string
+                                  description: Payment Gateway Transaction Type
+                                  example: S
+                                merchantid:
+                                  type: string
+                                  description: Merchant ID
+                                  example: "440121793761"
+                                merchantname:
+                                  type: string
+                                  description: Merchant Name in SnapPay
+                                  example: "CardConnectMerchant"
+                                transactionamount:
+                                  type: integer
+                                  description: Transaction Amount
+                                  example: 120.1
+                                authorizationnumber:
+                                  type: string
+                                  description: Authorization Number
+                                  example: SDRDXX
+                                pgreturncode:
+                                  type: string
+                                  description: Payment Gateway Return Code
+                                  example: "0"
+                                pgreturndescription:
+                                  type: string
+                                  description: Payment Gateway Return Description
+                                  example: Transaction Successful
+                                paymentdate:
+                                  type: string
+                                  description: Transaction Date
+                                  example: "2018-07-16 8:05 PM"
+                                feetype:
+                                  type: string
+                                  description: Fee Type (Convenience / Surcharge / Service)
+                                  example: "Convenience"
+                                feeamount:
+                                  type: integer
+                                  description: Fee Amount
+                                  example: 20
+                                feevalue:
+                                  type: integer
+                                  description: >-
+                                    Fee Value – same as amount for convenience fee
+                                    and % for surcharge
+                                  example: 20
+                                feeformat:
+                                  type: string
+                                  description: >-
+                                    Fee Format (Dollar/Percentage) – Dollar is
+                                    supported for convenience fee and % for
+                                    surcharge fee
+                                  example: "Dollar"
+                                feestatus:
+                                  type: string
+                                  description: Fee Status (Y/N)
+                                  example: 'Y'
+                                feeauthcode:
+                                  type: string
+                                  description: >-
+                                    Fee Authorization Code – same as
+                                    authorizationnumber for convenience fee and
+                                    surcharge fee
+                                  example: SDRDXX
+                                feetransactionid:
+                                  type: string
+                                  description: >-
+                                    Fee Transaction ID – same as transactionid for
+                                    convenience fee and surcharge fee
+                                  example: "100214822343"
+                                batchid:
+                                  type: string
+                                  description: Batch ID
+                                  example: 101
+                            paymentmethod:
+                              type: object
+                              properties:
+                                type:
+                                  type: string
+                                  description: Type of payment method – Visa, Mastercard, etc.
+                                  example: "MC"
+                                last4:
+                                  type: number
+                                  description: Last 4 digits of payment method
+                                  example: 5454
+                                routingnumber:
+                                  type: string
+                                  description: Routing Number
+                                  example: null
+                                tokenid:
+                                  type: string
+                                  description: Token ID
+                                  example: 1234567891
+                                merchantid:
+                                  type: string
+                                  description: Merchant ID
+                                  example: "440121793761"
+                                merchantname:
+                                  type: string
+                                  description: Merchant Name in SnapPay
+                                  example: "CardConnectMerchant"
+                                paymentgateway:
+                                  type: string
+                                  description: Payment Gateway
+                                  example: "BluePay"
+                                firstname:
+                                  type: string
+                                  description: First Name
+                                  example: "John"
+                                lastname:
+                                  type: string
+                                  description: Last Name
+                                  example: Smith
+                                expirationmonth:
+                                  type: string
+                                  description: Expiration Month
+                                  example: 12
+                                expirationyear:
+                                  type: string
+                                  description: Expiration Year
+                                  example: 2029
+                                addressline1:
+                                  type: string
+                                  description: Address Line 1
+                                  example: 123 Main St
+                                city:
+                                  type: string
+                                  description: City
+                                  example: Lombard
+                                state:
+                                  type: string
+                                  description: State
+                                  example: IL
+                                zip:
+                                  type: string
+                                  description: Zip/Postal Code
+                                  example: 60148
+                                country:
+                                  type: string
+                                  description: Country
+                                  example: US
+                                phonenumber:
+                                  type: string
+                                  description: Phone Number
+                                  example: null
+                                email:
+                                  type: string
+                                  description: Email
+                                  example: john.smith@company.com
+                            paymenttransactionrecon:
+                              type: object
+                              properties:
+                                fundingmasterid:
+                                  type: string
+                                  description: Funding Master ID
+                                  example: 12345678
+                                fundingid:
+                                  type: string
+                                  description: Funding ID
+                                  example: 456123788
+                                fundingdate:
+                                  type: string
+                                  description: Funding Date
+                                  example: 08/20/2022
                             paymentdate:
                               type: string
-                              description: Transaction Date
-                              example: 2018-07-16 8:05 PM
-                            feetype:
+                              description: Payment date
+                              example: "12/16/2022 06:24:03 PM"
+                            interoprequestnumber:
                               type: string
-                              description: Fee Type (Convenience / Surcharge / Service)
-                              example: Convenience
-                            feeamount:
-                              type: integer
-                              description: Fee Amount
-                              example: 20
-                            feevalue:
-                              type: integer
-                              description: >-
-                                Fee Value – same as amount for convenience fee
-                                and % for surcharge
-                              example: 20
-                            feeformat:
-                              type: string
-                              description: >-
-                                Fee Format (Dollar/Percentage) – Dollar is
-                                supported for convenience fee and % for
-                                surcharge fee
-                              example: Dollar
-                            feestatus:
-                              type: string
-                              description: Fee Status (Y/N)
-                              example: 'Y'
-                            feeauthcode:
-                              type: string
-                              description: >-
-                                Fee Authorization Code – same as
-                                authorizationnumber for convenience fee and
-                                surcharge fee
-                              example: SDRDXX
-                            feetransactionid:
-                              type: string
-                              description: >-
-                                Fee Transaction ID – same as transactionid for
-                                convenience fee and surcharge fee
-                              example: 100214822343
-                            batchid:
-                              type: string
-                              description: Batch ID
-                              example: 101
-                        paymentmethod:
-                          type: object
-                          properties:
-                            type:
-                              type: string
-                              description: Type of payment method – Visa, Mastercard, etc.
-                              example: MC
-                            last4:
-                              type: string
-                              description: Last 4 digits of payment method
-                              example: 5454
-                            routingnumber:
-                              type: string
-                              description: Routing Number
-                              example: null
-                            tokenid:
-                              type: string
-                              description: Token ID
-                              example: 1234567891
-                            merchantid:
-                              type: string
-                              description: Merchant ID
-                              example: 100121793761
-                            paymentgateway:
-                              type: string
-                              description: Payment Gateway
-                              example: BluePay
-                            firstname:
-                              type: string
-                              description: First Name
-                              example: John
-                            lastname:
-                              type: string
-                              description: Last Name
-                              example: Smith
-                            expirationmonth:
-                              type: string
-                              description: Expiration Month
-                              example: 12
-                            expirationyear:
-                              type: string
-                              description: Expiration Year
-                              example: 2029
-                            addressline1:
-                              type: string
-                              description: Address Line 1
-                              example: 123 Main St
-                            city:
-                              type: string
-                              description: City
-                              example: Lombard
-                            state:
-                              type: string
-                              description: State
-                              example: IL
-                            zip:
-                              type: string
-                              description: Zip/Postal Code
-                              example: 60148
-                            country:
-                              type: string
-                              description: Country
-                              example: US
-                            phonenumber:
-                              type: string
-                              description: Phone Number
-                              example: null
-                            email:
-                              type: string
-                              description: Email
-                              example: john.smith@company.com
-                        paymenttransactionrecon:
-                          type: object
-                          properties:
-                            fundingmasterid:
-                              type: string
-                              description: Funding Master ID
-                              example: 12345678
-                            fundingid:
-                              type: string
-                              description: Funding ID
-                              example: 456123788
-                            fundingdate:
-                              type: string
-                              description: Funding Date
-                              example: 08/20/2022
+                              description: Interop request number
+                              example: "f33b25ed-9cb6-eb11-a7ad-00155d546c89"
         '400':
           description: Invalid request.
         '401':
@@ -8429,6 +8898,35 @@ paths:
                           type: string
                           description: Payment Gateway Merchant ID
                           example: 496695144562
+                        feedepositlist:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              feedepositid: 
+                                type: string
+                                description: Fee Deposit ID
+                                example: "8455d504-2d1e-4d15-b8b4-35ada249a9b48"
+                              feedepositdate:
+                                type: string
+                                description: Fee Deposit date
+                                example: "3/2/2023 12:00:00 AM"
+                              paymentgateway:
+                                type: string
+                                description: Payment Gateway
+                                example: "CardX"
+                              feedeposittotal: 
+                                type: number
+                                description: Fee Deposit Detail
+                                example: -58.3
+                              depositsourceid:
+                                type: string 
+                                description: Deposit Source ID
+                                example: "16777189004821"
+                              depositsource:
+                                type: string
+                                description: Deposit Source
+                                example: "fiserv"
                         fundingmasterlist:
                           type: array
                           items:
@@ -8547,6 +9045,10 @@ paths:
                                           type: string
                                           description: Merchant ID
                                           example: 236695144562
+                                        merchantname:
+                                          type: string
+                                          description: Merchant name
+                                          example: "creditcardmerchant"
                                         transactionamount:
                                           type: integer
                                           description: Transaction Amount
@@ -8628,6 +9130,14 @@ paths:
                                             transactionid for convenience and
                                             surcharge fee
                                           example: null
+                                        merchantfee:
+                                          type: number
+                                          description: Merchant Fee
+                                          example: 3.3
+                                        settledascardtype: 
+                                          type: string
+                                          description: Settled with Card type
+                                          example: "debit"
                                         paymentmethod:
                                           type: object
                                           properties:
@@ -8653,6 +9163,10 @@ paths:
                                               type: string
                                               description: Merchant ID Name
                                               example: MID1-USD
+                                            merchantname:
+                                              type: string
+                                              description: Mechant name
+                                              example: "creditcardmerchant"
                                             paymentgateway:
                                               type: string
                                               description: Payment Gateway
@@ -8728,6 +9242,13 @@ paths:
                                               type: string
                                               description: Invoice Paid Amount
                                               example: -1
+              examples: 
+                CardX:
+                  summary: CardX
+                  $ref: '#/components/examples/FundingHistoryRepsonseCardX'
+                CardConnect:
+                  summary: CardConnect
+                  $ref: '#/components/examples/FundingHistoryRepsonseCardConnect'
         '400':
           description: Invalid request.
         '401':
@@ -12345,8 +12866,8 @@ paths:
   /P2PE/authcard:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Auth Card
       summary: Auth Card
       description: To authorize a card
@@ -12513,8 +13034,8 @@ paths:
   /P2PE/authcardmanual:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Auth Card Manual
       summary: Auth Card Manual
       description: To authorize a card for manual entry
@@ -12669,8 +13190,8 @@ paths:
   /P2PE/connect:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Connect
       summary: Connect
       description: Connect to device
@@ -12734,8 +13255,8 @@ paths:
   /P2PE/disconnect:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Disconnect
       summary: Disconnect
       description: Disconnect session
@@ -12807,8 +13328,8 @@ paths:
   /P2PE/getPanPadVersion:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Get Panpad version
       summary: Get Panpad version
       description: To authorize a card for manual entry
@@ -12875,8 +13396,8 @@ paths:
   /P2PE/listTerminals:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: List Terminals
       summary: List Terminal
       description: To get the list of configured HSN for cardconnect merchant 
@@ -12934,8 +13455,8 @@ paths:
   /P2PE/ping:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Ping
       summary: Ping
       description: Ping request
@@ -13003,8 +13524,8 @@ paths:
   /P2PE/preconnect:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Preconnect
       summary: Preconnect
       description: Preconnect
@@ -13068,8 +13589,8 @@ paths:
   /P2PE/readCard:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Read Card
       summary: Read Card
       description: To read a card
@@ -13185,8 +13706,8 @@ paths:
   /P2PE/readConfirmation:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Read confirmation
       summary: Read confirmation
       description: Read confirmation
@@ -13262,8 +13783,8 @@ paths:
   /P2PE/readInput:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Read input
       summary: Read input
       description: Read input
@@ -13343,8 +13864,8 @@ paths:
   /P2PE/readManual:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Read manual
       summary: Read manual
       description: Read manual
@@ -13428,8 +13949,8 @@ paths:
   /P2PE/readSignature:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Read signature
       summary: Read signature
       description: Read signature
@@ -13502,8 +14023,8 @@ paths:
   /P2PE/tip:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Tip
       summary: Tip
       description: Tip
@@ -13699,8 +14220,8 @@ paths:
   /P2PE/cancel:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Cancel
       summary: Transaction update
       description: Cancel
@@ -13758,8 +14279,8 @@ paths:
   /P2PE/display:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Display
       summary: Display
       description: Display
@@ -13821,8 +14342,8 @@ paths:
   /P2PE/clearDisplay:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Clear display
       summary: Clear display
       description: Clear display
@@ -13880,8 +14401,8 @@ paths:
   /P2PE/dateTime:
     post:
       tags:
-        - Bolt Pass through API
-      x-group-name: Bolt Pass through API
+        - Terminal Pass through API
+      x-group-name: Terminal Pass through API
       x-proxy-name: Datetime
       summary: Datetime
       description: Datetime
@@ -14221,3 +14742,239 @@ paths:
           description: Unauthorized access.
         '500':
           description: Internal server error.
+  /api/interop/GetServiceFeeAmount:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Get Service Fee Amount
+      summary: Get Service Fee Amount
+      description: >-
+        Purpose of this API to get service fee amount based on merchant id and amount sent in request
+      operationId: getServiceFeeAmount
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  type: string
+                  description: Account ID
+                  example: >-
+                    1000000001
+                merchantid:
+                  description: Merchant ID
+                  type: string
+                  example: 123456789
+                transactionamount:
+                  description: Transaction amount
+                  type: number
+                  example: 100.00
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              1000000001
+          example: >-
+            1000000001
+        - name: Signature
+          in: header
+          description: HMAC Signature
+          required: true
+          schema:
+            type: string
+          example: >-
+            Hmac
+            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+      responses: 
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: string
+                    description: Account ID
+                    example: >-
+                      1000000001
+                  servicefeeamount:
+                    type: number
+                    description: Service fee amount 
+                    example: 2.7
+                  message:
+                    type: string
+                    description: Message
+                    example: "Service fee amount retrieved successfully."
+                  status:
+                    type: string
+                    description: API execution status
+                    example: "Y"
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/UserDataUpload:
+    post:
+      tags:
+        - ERP Agents
+      x-group-name: ERP Agents
+      x-proxy-name: User Data Upload
+      summary: User Data Upload
+      description: Upload users to SnapPay
+      operationId: userdataupload
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  type: string
+                  description: Account ID
+                  example: >-
+                        1000000001
+                users:
+                  type: array
+                  items:
+                    properties:
+                      userid:
+                        type: string
+                        description: User ID
+                        example: "user01"
+                      firstname: 
+                        type: string
+                        description: First Name
+                        example:  First
+                      lastname:
+                        type: string
+                        description: Last name
+                        example: Last
+                      email:
+                        type: string
+                        description: Email ID
+                        example: first.last@company.com
+                      usertypename:
+                        type: string
+                        description: User type name
+                        example: CSR
+                      usergroupname:
+                        type: string
+                        description: User group name
+                        example: CSR
+                      isactive:
+                        type: string
+                        description: Active flag
+                        example: "Y"
+                      effectivefrom:
+                        type: string
+                        description: Effective from date
+                        example: "2028-12-31"
+                      effectivetodate:
+                        type: string
+                        description: Effectove to date
+                        example: "2028-12-31"
+                      phone: 
+                        type: string
+                        description: Phone number
+                        example: "123-456-7890"
+                      forcepasswordreset:
+                        type: string 
+                        description: Force password reset flag
+                        example: "Y"
+                      forcetermsandconditions: 
+                        type: string
+                        description: Force terms and conditions flag
+                        example: "N"
+                      devicegroup:
+                        type: string 
+                        description: Device group name
+                        example: "Device group"
+                      deleteuser: 
+                        type: string
+                        description: Delete user flag
+                        example: "N"
+                      customers:
+                        type: array
+                        items:
+                          properties:
+                            customerid: 
+                              type: string
+                              description: CustomerID 
+                              example: "100"
+                            associationtype:
+                              type: string
+                              description: Address type (shipto or soldto)
+                              example: "Shipto"
+                            isdefault:
+                              type: string
+                              description: Default flag for customer-user association 
+                              example: "Y"
+            examples:
+              Example 1:
+                summary: Example 1
+                $ref: '#/components/examples/UserDataUploadRequest'  
+      parameters:
+        - name: AccountId
+          in: header
+          description: Account ID
+          required: true
+          schema:
+            type: string
+            default: >-
+              1000000001
+          example: >-
+            1000000001
+        - name: Signature
+          in: header
+          description: HMAC Signature
+          required: true
+          schema:
+            type: string
+          example: >-
+            Hmac
+            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: string
+                    description: Account ID
+                    example: >-
+                        1000000001
+                  requestid:
+                    type: integer
+                    description: Request ID
+                    example: 16290
+                  apiname:
+                    type: string
+                    description: API Name
+                    example: UserDataUpload
+                  status:
+                    type: string
+                    description: API execution status
+                    example: "Y"
+                  message:
+                    type: string
+                    description: Message
+                    example: "Request received."
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.  
+                  
