@@ -58,7 +58,7 @@ components:
         language: "en-US"
         savepaymentmethod: "Y"
         saveatcustomer: "Y"
-        saveatsupplier: "N"
+        displaycardssavedatcustomer: "Y"
         orderid: ""
         redirecturl: "https://www.google.com"
         transactionamount: "51"
@@ -75,7 +75,7 @@ components:
         language: "en-US"
         savepaymentmethod: "Y"
         saveatcustomer: "Y"
-        saveatsupplier: "N"
+        displaycardssavedatcustomer: "Y"
         orderid: ""
         redirecturl: "https://www.google.com"
         transactionamount: "51"
@@ -952,6 +952,10 @@ components:
           description: CC - for credit card
           type: string
           example: CC
+        displaycardssavedatcustomer: 
+          description: Display card saved at customer level
+          type: string
+          example: "Y"
         language:
           description: en-US for English language
           type: string
