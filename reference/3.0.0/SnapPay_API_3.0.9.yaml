@@ -917,7 +917,17 @@ components:
               - customerid: '100'
                 associationtype: shipto
                 isdefault: 'N'
-        
+  parameters:
+    AccountIDParam:
+      x-model-version: 1.0
+      name: accountid
+      schema: {
+        type: number,
+        default: 1000000001
+      }
+      in: path
+      required: true
+      description: Account ID     
         
   schemas:
     GetRequestIDRequest: 
@@ -944,6 +954,10 @@ components:
           description: External Application User ID
           type: string
           example: first.last@company.com
+        savepaymentmethod:
+          description: Save payment method for future use
+          type: string
+          example: 'Y'
         transactiontype:
           description: S - for Sale
           type: string
@@ -960,14 +974,22 @@ components:
           description: en-US for English language
           type: string
           example: en-US
-        savepaymentmethod:
-          description: Save payment method for future use
-          type: string
-          example: 'Y'
         redirecturl:
           description: en-US for English language
           type: string
           example: https://xyz.com/orderconfirmation
+        redirectionurlonerror: 
+          type: string
+          description: Redirection URL when error occured
+          example: "#"
+        reference: 
+          type: string
+          description: Reference
+          example: null
+        type: 
+          type: string
+          description: Customer type
+          example: "C"
         transactionamount:
           description: Transaction Amount
           type: integer
@@ -1000,7 +1022,7 @@ components:
           description: Branch plant
           type: string
           example: ''
-        useterminaldevice:
+        useboltdevice:
           description: Terminal device flag
           type: string
           example: 'N'
@@ -6831,6 +6853,18 @@ paths:
                   type: string
                   description: Purchase Order
                   example: USD
+                ecomind: 
+                  type: string
+                  description: Ecommerce indicator 
+                  example: "E"
+                cof:
+                  type: string
+                  description: COF
+                  example: "C"
+                cofscheduled: 
+                  type: string
+                  description: COF Scheduled
+                  example: "N"
                 cards:
                   type: array
                   items:
@@ -6892,6 +6926,52 @@ paths:
                         type: string
                         description: Phone Number
                         example: ''
+                      secureflag:
+                        type: string
+                        description: Secure flag
+                        example: "05"
+                      securevalue:
+                        type: string
+                        description: Secure value
+                        example: ""
+                      securedstid: 
+                        type: string 
+                        description: Secure DST ID
+                        example: ""
+                      secureexemption:
+                        type: string
+                        description: Secure exemption
+                        example: "lowvalue"
+                userfields:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      udf0:
+                        type: string
+                        description: User defined field 0
+                        example: "Value 1"
+                      udf1:
+                        type: string
+                        description: User defined field 1
+                        example: "Value 2"
+                      udf2:
+                        type: string
+                        description: User defined field 2
+                        example: "Value 3"
+                      udf3:
+                        type: string
+                        description: User defined field 3
+                        example: "Value 4"
+                      custommerchant:
+                        type: string
+                        description: Custom Merchant
+                        example: "Company"
+                      customphone:
+                        type: string
+                        description: Custom Phone
+                        example: "123-456-HELP"
+                      
       parameters:
         - name: AccountId
           in: header
