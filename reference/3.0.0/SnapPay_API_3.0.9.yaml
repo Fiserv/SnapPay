@@ -101,7 +101,7 @@ components:
       value:
         accountid: 1000000001
         token: 59be95d9-cd6e-ec11-bad0-0022488db98a
-    TokenizeDefaultRequest:
+    TokenizeCCRequest:
       value: 
         accountid: 1000000001
         requesttype: C
@@ -111,8 +111,8 @@ components:
         ordertype: null
         mode: CC
         type: VISA
-        routingnumber: '123456789'
-        bankname: 'bank'
+        routingnumber: ''
+        bankname: ''
         checktype: null
         identificationtype: null
         dlstate: null
@@ -127,7 +127,7 @@ components:
         country: US
         email: first.last@company.com
         phonenumber: 123456789
-    TokenizeDefaultResponse:
+    TokenizeCCResponse:
       value:
         accountid: 1000000001
         status: 'Y'
@@ -136,7 +136,7 @@ components:
         companycode: '00200'
         branchplant: null
         ordertype: null
-        mode: Tokenization successful.
+        mode: CC
         type: VISA
         last4: '1111'
         routingnumber: null
@@ -145,6 +145,59 @@ components:
         identificationtype: null
         identificationnumber: null
         tokenid: '1234567891231111'
+        expirationdate: '122029'
+        name: First Last
+        addressline1: 123 Main St
+        city: Lombard
+        state: IL
+        zip: '60148'
+        country: US
+        email: first.last@company.com
+        phonenumber: null
+    TokenizeACHRequest:
+      value: 
+        accountid: 1000000001
+        requesttype: C
+        currency: USD
+        companycode: '00200'
+        branchplant: null
+        ordertype: null
+        mode: CC
+        type: SAVING
+        routingnumber: '121123248'
+        bankname: 'bank'
+        checktype: null
+        identificationtype: null
+        dlstate: null
+        identificationnumber: null
+        accountnumber: '144155159'
+        expirationdate: '122029'
+        name: First Last
+        addressline1: 123 Main St
+        city: Lombard
+        state: IL
+        zip: '60148'
+        country: US
+        email: first.last@company.com
+        phonenumber: 123456789
+    TokenizeACHResponse:
+      value:
+        accountid: 1000000001
+        status: 'Y'
+        message: Tokenization successful.
+        currency: USD
+        companycode: '00200'
+        branchplant: null
+        ordertype: null
+        mode: ACH
+        type: SAVING
+        last4: '5159'
+        routingnumber: '121123248'
+        bankname: 'bank'
+        checktype: null
+        identificationtype: null
+        identificationnumber: null
+        tokenid: '101260621595'
         expirationdate: '122029'
         name: First Last
         addressline1: 123 Main St
@@ -171,9 +224,23 @@ components:
           - transactionamount: 10
             tokenid: 'XXXXXXXXXXXX2344'
             type: VISA
-            last4: '2345'
+            last4: '2344'
             cvv: '123'
             expirationdate: '122029'
+            customername: First Last
+            addressline1: 123 Main St
+            city: Lombard
+            state: IL
+            zip: '60148'
+            country: US
+            email: first.last@company.com
+            phonenumber: null
+          - transactionamount: 25.14
+            tokenid: 'XXXXXXXXXXXX1111'
+            type: MC
+            last4: '1111'
+            cvv: '123'
+            expirationdate: '022027'
             customername: First Last
             addressline1: 123 Main St
             city: Lombard
@@ -6530,10 +6597,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >-
-                    1000000001
+                  example: 1000000001
                 requesttype:
                   type: string
                   description: >-
@@ -6634,20 +6700,21 @@ paths:
                   description: Phone Number
                   example: 630-123-1233
             examples:
-              Default:
-                summary: Default
-                $ref: '#/components/examples/TokenizeDefaultRequest'
+              Credit Card:
+                summary: Credit Card
+                $ref: '#/components/examples/TokenizeCCRequest'
+              ACH:
+                summary: ACH
+                $ref: '#/components/examples/TokenizeACHRequest'
       parameters:
         - name: AccountId
           in: header
           description: Account ID
           required: true
           schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
+            type: number
+            default: 1000000001
+          example: 1000000001
         - name: MerchantId
           in: header
           description: >-
@@ -6674,10 +6741,9 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
-                    example: >-
-                      1000000001
+                    example: 1000000001
                   status:
                     type: string
                     description: Y or N
@@ -6779,9 +6845,12 @@ paths:
                     description: Phone Number
                     example: null
               examples:
-                Default:
-                  summary: Default
-                  $ref: '#/components/examples/TokenizeDefaultResponse'
+                Credit Card:
+                  summary: Credit Card
+                  $ref: '#/components/examples/TokenizeCCResponse'
+                ACH:
+                  summary: ACH
+                  $ref: '#/components/examples/TokenizeACHResponse'
         '400':
           description: Invalid request.
         '401':
@@ -6809,10 +6878,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >-
-                    1000000001
+                  example: 1000000001
                 customerid:
                   type: string
                   description: Customer ID
@@ -6865,6 +6933,83 @@ paths:
                   type: string
                   description: COF Scheduled
                   example: "N"
+                card:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      transactionamount:
+                        type: integer
+                        description: Transaction Amount
+                        example: 10
+                      tokenid:
+                        type: string
+                        description: Token ID
+                        example: 'XXXXXXXXXXXX2344'
+                      type:
+                        type: string
+                        description: Type of credit card
+                        example: VISA
+                      last4:
+                        type: string
+                        description: Last 4 digits of credit card
+                        example: 2345
+                      cvv:
+                        type: string
+                        description: CVV
+                        example: 123
+                      expirationdate:
+                        type: string
+                        description: Expiration Date mmYYYY
+                        example: 122029
+                      customername:
+                        type: string
+                        description: Name on credit card
+                        example: First Last
+                      addressline1:
+                        type: string
+                        description: Address Line 1
+                        example: 123 Main St
+                      city:
+                        type: string
+                        description: City
+                        example: Lombard
+                      state:
+                        type: string
+                        description: State
+                        example: IL
+                      zip:
+                        type: string
+                        description: Zip/Postal Code
+                        example: 60148
+                      country:
+                        type: string
+                        description: Country
+                        example: US
+                      email:
+                        type: string
+                        description: Email Address
+                        example: first.last@company.com
+                      phonenumber:
+                        type: string
+                        description: Phone Number
+                        example: ''
+                      secureflag:
+                        type: string
+                        description: Secure flag
+                        example: "05"
+                      securevalue:
+                        type: string
+                        description: Secure value
+                        example: ""
+                      securedstid: 
+                        type: string 
+                        description: Secure DST ID
+                        example: ""
+                      secureexemption:
+                        type: string
+                        description: Secure exemption
+                        example: "lowvalue"
                 cards:
                   type: array
                   items:
@@ -6978,11 +7123,9 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
+            type: number
+            default: 1000000001
+          example: 1000000001
         - name: MerchantId
           in: header
           description: >-
@@ -7009,10 +7152,9 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
-                    example: >-
-                      1000000001
+                    example: 1000000001
                   status:
                     type: string
                     description: Y or N
@@ -7112,10 +7254,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >-
-                    1000000001
+                  example: 1000000001
                 customerid:
                   type: string
                   description: Customer ID
@@ -7140,6 +7281,10 @@ paths:
                   type: string
                   description: Order ID
                   example: 123456
+                orderdate:
+                  type: string
+                  description: Order Date
+                  example: ""
                 invoiceid:
                   type: string
                   description: Invoice ID
@@ -7148,10 +7293,6 @@ paths:
                   type: string
                   description: User ID
                   example: user1
-                reference:
-                  type: string
-                  description: Reference Text
-                  example: null
                 purchaseorder:
                   type: string
                   description: Purchase Order
@@ -7160,6 +7301,30 @@ paths:
                   type: string
                   description: Send Email Receipt
                   example: 'Y'
+                shipfromzip:
+                  type: string
+                  description: Ship from location
+                  example: 60605
+                shiptozip:
+                  type: string
+                  description: Ship to location
+                  example: 60603
+                shiptocountry:
+                  type: string
+                  description: Ship to country
+                  example: USA
+                ecomind:
+                  type: string
+                  description: Ecommerce indicator
+                  example: "E"
+                cof: 
+                  type: string
+                  description: COF
+                  example: "C"
+                cofscheduled: 
+                  type: string
+                  description: COF schedule flag
+                  example: "N"
                 paymentmethod:
                   type: object
                   properties:
@@ -7268,6 +7433,35 @@ paths:
                         type: integer
                         description: Line Item Total
                         example: 5.37
+                userfields:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      udf0:
+                        type: string
+                        description: User defined field 0
+                        example: "Value 1"
+                      udf1:
+                        type: string
+                        description: User defined field 1
+                        example: "Value 2"
+                      udf2:
+                        type: string
+                        description: User defined field 2
+                        example: "Value 3"
+                      udf3:
+                        type: string
+                        description: User defined field 3
+                        example: "Value 4"
+                      custommerchant:
+                        type: string
+                        description: Custom Merchant
+                        example: "Company"
+                      customphone:
+                        type: string
+                        description: Custom Phone
+                        example: "123-456-HELP"
       parameters:
         - name: AccountId
           in: header
@@ -7305,10 +7499,9 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
-                    example: >-
-                      1000000001
+                    example: 1000000001
                   status:
                     type: string
                     description: Y or N
@@ -7445,10 +7638,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >-
-                    1000000001
+                  example: 1000000001
                 referencetransactionid:
                   type: string
                   description: >-
@@ -7483,14 +7675,14 @@ paths:
                   type: string
                   description: User ID
                   example: user1
-                reference:
+                customid: 
                   type: string
-                  description: Reference Text
-                  example: null
-                purchaseorder:
-                  type: string
-                  description: Purchase Order
-                  example: USD
+                  description: Custom ID
+                  example: ""
+                comment:
+                  type: string 
+                  description: Comments
+                  example: "Capture"
                 sendemailreceipts:
                   type: string
                   description: Send Email Receipt
@@ -7573,10 +7765,9 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
-                    example: >- 
-                      1000000001
+                    example: 1000000001
                   status:
                     type: string
                     description: Y or N
@@ -7593,6 +7784,14 @@ paths:
                     type: string
                     description: Payment Gateway Transaction ID
                     example: 132912341342
+                  reference: 
+                    type: string
+                    description: Reference
+                    example: ""
+                  purchaseorder: 
+                    type: string
+                    description: Purchase Order
+                    example: ""
                   transaction:
                     type: object
                     properties:
@@ -7660,8 +7859,7 @@ paths:
                 accountid:
                   type: string
                   description: Account ID
-                  example: >-
-                    1000000001
+                  example: 1000000001
                 customerid:
                   type: string
                   description: Customer ID
@@ -7706,6 +7904,18 @@ paths:
                   type: string
                   description: Send Email Receipt
                   example: 'Y'
+                ecomind: 
+                  type: string
+                  description: Ecommerce indicator
+                  example: "E"
+                cof: 
+                  type: string
+                  description: COF
+                  example: "C"
+                cofscheduled: 
+                  type: string
+                  description: COF scheduled
+                  example: "N"
                 paymentmethod:
                   type: object
                   properties:
@@ -7717,54 +7927,51 @@ paths:
                       type: string
                       description: Token ID
                       example: 9412345678912344
-                    type:
+                    secureflag: 
                       type: string
-                      description: Type of credit card
-                      example: VISA
-                    last4:
+                      description: Secure flag
+                      example: "05"
+                    securevalue: 
                       type: string
-                      description: Last 4 digits of credit card
-                      example: 2345
-                    cvv:
+                      description: Secure value
+                      example: ""
+                    securedstid: 
                       type: string
-                      description: CVV
-                      example: 123
-                    expirationdate:
+                      description: Secure DST ID
+                      example: ""
+                    secureexemption: 
                       type: string
-                      description: Expiration Date mmYYYY
-                      example: 122029
-                    customername:
-                      type: string
-                      description: Name on credit card
-                      example: John Smith
-                    addressline1:
-                      type: string
-                      description: Address Line 1
-                      example: 123 Main St
-                    city:
-                      type: string
-                      description: City
-                      example: Lombard
-                    state:
-                      type: string
-                      description: State
-                      example: IL
-                    zip:
-                      type: string
-                      description: Zip/Postal Code
-                      example: 60148
-                    country:
-                      type: string
-                      description: Country
-                      example: US
-                    email:
-                      type: string
-                      description: Email Address
-                      example: john.smith@company.com
-                    phonenumber:
-                      type: string
-                      description: Phone Number
-                      example: null
+                      description: Secure Exemption
+                      example: "lowvalue"
+                userfields:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      udf0:
+                        type: string
+                        description: User defined field 0
+                        example: "Value 1"
+                      udf1:
+                        type: string
+                        description: User defined field 1
+                        example: "Value 2"
+                      udf2:
+                        type: string
+                        description: User defined field 2
+                        example: "Value 3"
+                      udf3:
+                        type: string
+                        description: User defined field 3
+                        example: "Value 4"
+                      custommerchant:
+                        type: string
+                        description: Custom Merchant
+                        example: "Company"
+                      customphone:
+                        type: string
+                        description: Custom Phone
+                        example: "123-456-HELP"
       parameters:
         - name: AccountId
           in: header
@@ -7883,10 +8090,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >-
-                    1000000001
+                  example: 1000000001
                 referencetransactionid:
                   type: string
                   description: >-
@@ -7962,10 +8168,9 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
-                    example: >-
-                      1000000001
+                    example: 1000000001
                   status:
                     type: string
                     description: Y or N
@@ -7982,6 +8187,14 @@ paths:
                     type: string
                     description: Payment Gateway Transaction ID
                     example: 132912341342
+                  reference": 
+                    type: string
+                    description: Reference
+                    example: ""
+                  purchaseorder: 
+                    type: string
+                    description: Purchase order
+                    example: ""
                   transaction:
                     type: object
                     properties:
@@ -8191,6 +8404,14 @@ paths:
                     type: string
                     description: Payment Gateway Transaction ID
                     example: 132912341342
+                  reference: 
+                    type: string
+                    description: Reference
+                    example: ""
+                  purchaseorder": 
+                    type: string
+                    description: Purchase order
+                    example: ""
                   transaction:
                     type: object
                     properties:
@@ -8260,10 +8481,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >-
-                    1000000001
+                  example: 1000000001
                 orderid:
                   type: string
                   description: Account
@@ -8309,10 +8529,9 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
-                    example: >-
-                      1000000001
+                    example: 1000000001
                   message:
                     type: string
                     description: Message
@@ -8322,73 +8541,76 @@ paths:
                     items:
                       type: object
                       properties:
-                        transactionstatus:
-                          type: string
-                          description: >-
-                            Transaction Status - Open, Captured or Failed for
-                            authorization transaction. Failed or Success for
-                            other transactions.
-                          example: Captured
-                        merchantid:
-                          type: string
-                          description: Payment Gateway Merchant ID
-                          example: 34032039484234
-                        returncode:
-                          type: string
-                          description: Payment Gateway Return Code
-                          example: 0
-                        returndescription:
-                          type: string
-                          description: Payment Gateway Return Description
-                          example: Transaction successful
-                        procrespcode:
-                          type: string
-                          description: Processor Response Code
-                          example: RPCT
-                        pgtransactionid:
-                          type: string
-                          description: Payment Gateway Transaction ID
-                          example: 260711140916
-                        pgtransactiontype:
-                          type: string
-                          description: >-
-                            Payment Gateway Transaction Type - A for Authorize,
-                            etc.
-                          example: A
-                        paymenttransactionid:
-                          type: string
-                          description: SnapPay Transaction ID
-                          example: 136243
-                        authorizationcode:
-                          type: string
-                          description: Authorization Code
-                          example: 234AS5
-                        transactiondate:
-                          type: string
-                          description: Transaction Date
-                          example: 02/14/2021 030028 PM
-                        transactionamount:
-                          type: integer
-                          description: Transaction Amount
-                          example: 75.25
-                        currency:
-                          type: string
-                          description: Currency Code
-                          example: USD
-                        totaltransactionamount:
-                          type: integer
-                          description: >-
-                            Total transaction amount (transactionamount +
-                            feeamount)
-                          example: 75.25
-                        feeamount:
-                          type: integer
-                          description: Fee Amount (amount in currency)
-                          example: 0
-                        feevalue:
-                          type: integer
-                          description: Fee Value (value in % for Surcharge fee)
-                          example: 0
+                        transaction:
+                          type: object
+                          properties:
+                            transactionstatus:
+                              type: string
+                              description: >-
+                                Transaction Status - Open, Captured or Failed for
+                                authorization transaction. Failed or Success for
+                                other transactions.
+                              example: Captured
+                            merchantid:
+                              type: string
+                              description: Payment Gateway Merchant ID
+                              example: 34032039484234
+                            returncode:
+                              type: string
+                              description: Payment Gateway Return Code
+                              example: 0
+                            returndescription:
+                              type: string
+                              description: Payment Gateway Return Description
+                              example: Transaction successful
+                            procrespcode:
+                              type: string
+                              description: Processor Response Code
+                              example: RPCT
+                            pgtransactionid:
+                              type: string
+                              description: Payment Gateway Transaction ID
+                              example: 260711140916
+                            pgtransactiontype:
+                              type: string
+                              description: >-
+                                Payment Gateway Transaction Type - A for Authorize,
+                                etc.
+                              example: A
+                            paymenttransactionid:
+                              type: string
+                              description: SnapPay Transaction ID
+                              example: 136243
+                            authorizationcode:
+                              type: string
+                              description: Authorization Code
+                              example: 234AS5
+                            transactiondate:
+                              type: string
+                              description: Transaction Date
+                              example: 02/14/2021 030028 PM
+                            transactionamount:
+                              type: integer
+                              description: Transaction Amount
+                              example: 75.25
+                            currency:
+                              type: string
+                              description: Currency Code
+                              example: USD
+                            totaltransactionamount:
+                              type: integer
+                              description: >-
+                                Total transaction amount (transactionamount +
+                                feeamount)
+                              example: 75.25
+                            feeamount:
+                              type: integer
+                              description: Fee Amount (amount in currency)
+                              example: 0
+                            feevalue:
+                              type: integer
+                              description: Fee Value (value in % for Surcharge fee)
+                              example: 0
                         dctransaction:
                           type: object
                           properties:
@@ -8537,11 +8759,9 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
+            type: number
+            default: 1000000001
+          example: 1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -8592,7 +8812,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: number
                     description: SnapPay Account ID
                     example: 1000000001
                   transactionscount:
@@ -8633,7 +8853,7 @@ paths:
                               type: string
                               description: Customer ID
                               example: "100"
-                            suppliercode: 
+                            supplierid: 
                               type: string
                               description: Supplier ID
                               example: ""
@@ -8670,6 +8890,10 @@ paths:
                                     type: string
                                     description: Line Number (Pay Item)
                                     example: 1
+                                  fiscalyear:
+                                    type: string
+                                    description: Fiscal year
+                                    example: "2023"
                                   openamount:
                                     type: integer
                                     description: Open Amount
@@ -8714,6 +8938,18 @@ paths:
                                     type: string
                                     description: Transaction Date
                                     example: 2018-07-16 8:05 PM
+                                  supplierinvoicenumber:
+                                    type: string
+                                    description: Supplier Invoice number
+                                    example: null
+                                  statementid: 
+                                    type: string
+                                    description: Statement ID
+                                    example: "227"
+                                  statementdate: 
+                                    type: string
+                                    description: Statement date
+                                    example: "4/27/2021"
                             paymenttransaction:
                               type: object
                               properties:
@@ -8721,6 +8957,14 @@ paths:
                                   type: string
                                   description: Transaction ID
                                   example: "100214822343"
+                                paymenttransactionid:
+                                  type: number
+                                  description: Payment transaction ID
+                                  example: 37930
+                                referencetransactionid: 
+                                  type: number
+                                  description: Reference transaction id
+                                  example: null
                                 currencycode:
                                   type: string
                                   description: Currency Code
@@ -8799,6 +9043,14 @@ paths:
                                   type: string
                                   description: Batch ID
                                   example: 101
+                                ordernumber: 
+                                  type: string
+                                  description: Order number
+                                  example: "Ord001"
+                                submittedby:
+                                  type: string
+                                  description: Transaction submitted by 
+                                  example: "user"
                             paymentmethod:
                               type: object
                               properties:
@@ -8924,10 +9176,8 @@ paths:
           required: true
           schema:
             type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
+            default: 1000000001
+          example: 1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -8958,7 +9208,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: number
                     description: SnapPay Account ID
                     example: 1000000001
                   status:
@@ -9373,11 +9623,9 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
+            type: number
+            default: 1000000001
+          example: 1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -9936,10 +10184,8 @@ paths:
           required: true
           schema:
             type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
+            default: 1000000001
+          example: 1000000001
       responses:
         '200':
           description: Request successful.
@@ -9971,7 +10217,7 @@ paths:
                   currentpagesize:
                     type: integer
                     description: Current page size
-                    example: 2
+                    example: 1
                   totalpages:
                     type: integer
                     description: Total pages
@@ -9979,7 +10225,7 @@ paths:
                   totalpaymentmethods:
                     type: integer
                     description: Total payment methods
-                    example: 2
+                    example: 1
                   paymentmethods:
                     type: array
                     items:
@@ -10104,10 +10350,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >-
-                    1000000001
+                  example: 1000000001
                 companycode:
                   type: string
                   description: Company code
@@ -10294,10 +10539,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >-
-                    1000000001
+                  example: 1000000001
                 requestid:
                   type: string
                   description: Request ID
@@ -10308,11 +10552,9 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
+            type: number
+            default: 1000000001
+          example: 1000000001
       responses:
         '200':
           description: Request successful.
@@ -10322,7 +10564,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
                     example: 1000000001
                   status:
@@ -10654,13 +10896,13 @@ paths:
           schema:
             type: string
           example: 123456789
-        - name: date
+        - name: batchid
           in: header
-          description: Date
+          description: batchid
           required: true
           schema:
-            type: string
-          example: '2022-07-14'
+            type: number
+          example: 123
       responses:
         '200':
           description: Request successful.
@@ -10740,10 +10982,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >-
-                    1000000001
+                  example: 1000000001
                 userid:
                   type: string
                   description: User ID
@@ -10774,6 +11015,22 @@ paths:
                       type: string
                       description: User type
                       example: ''
+                    isactive: 
+                      type: string
+                      description: Active flag
+                      example: "Y"
+                    forcepasswordreset: 
+                      type: string
+                      description: Force password reset
+                      example: "N"
+                    forcetermsandconditions: 
+                      type: string
+                      description: Force terms and conditions
+                      example: "N"
+                    devicegroup: 
+                      type: string 
+                      description: Device group 
+                      example: ""
                 customer:
                   properties:
                     customerid:
@@ -10832,6 +11089,67 @@ paths:
                       type: string
                       description: VAT registration number
                       example: ''
+                customers:
+                  type: array
+                  items: 
+                    type: object
+                    properties:
+                      customerid:
+                        type: string
+                        description: Customer ID
+                        example: 100
+                      customername:
+                        type: string
+                        description: Customer name
+                        example: custname
+                      displayname:
+                        type: string
+                        description: Display name
+                        example: Cust Name
+                      addressline1:
+                        type: string
+                        description: Address Line1
+                        example: Street 100
+                      addressline2:
+                        type: string
+                        description: Address Line2
+                        example: ''
+                      city:
+                        type: string
+                        description: City
+                        example: Chicago
+                      state:
+                        type: string
+                        description: State
+                        example: IL
+                      zip:
+                        type: string
+                        description: Zipcode
+                        example: 60603
+                      country:
+                        type: string
+                        description: Country
+                        example: US
+                      phonenumber:
+                        type: integer
+                        description: Phone number
+                        example: null
+                      email:
+                        type: string
+                        description: Email
+                        example: first.last@company.com
+                      defaultcurrencycode:
+                        type: string
+                        description: Default currency code
+                        example: USD
+                      defaultcompanycode:
+                        type: string
+                        description: Default company code
+                        example: 200
+                      vatregistrationnumber:
+                        type: string
+                        description: VAT registration number
+                        example: ''
                 supplier:
                   properties:
                     supplierid:
@@ -11013,6 +11331,10 @@ paths:
                               type: integer
                               description: Supplier Name
                               example: CDI
+                            allowpayment: 
+                              type: string
+                              description: Allow payment flag
+                              example: "S"
                             invoicedetail:
                               type: array
                               items:
@@ -11258,6 +11580,14 @@ paths:
                                     type: string
                                     description: Country
                                     example: USA
+                                  phonenumber: 
+                                    type: string
+                                    description: Phone number
+                                    example: "1524299870"
+                                  email: 
+                                    type: string
+                                    description: Email address
+                                    example: "first.last@company.com"
                             enrollautopay:
                               type: string
                               description: Enrolled for autopay
@@ -11352,10 +11682,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >- 
-                    1000000001
+                  example: 1000000001
                 email:
                   type: string
                   description: Email
@@ -11466,11 +11795,9 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
-            default: >- 
-              1000000001
-          example: >- 
-            1000000001
+            type: number
+            default: 1000000001
+          example: 1000000001
       responses:
         '200':
           description: Request successful.
@@ -11480,10 +11807,9 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
-                    example: >- 
-                      1000000001
+                    example: 1000000001
                   requestid:
                     type: integer
                     description: Request ID generated
@@ -11522,10 +11848,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >- 
-                    1000000001
+                  example: 1000000001
                 email:
                   type: string
                   description: Email
@@ -11614,11 +11939,9 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
-            default: >- 
-                    1000000001
-          example: >- 
-                    1000000001
+            type: number
+            default: 1000000001
+          example: 1000000001
       responses:
         '200':
           description: Request successful.
@@ -11628,10 +11951,9 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
-                    example: >- 
-                      1000000001
+                    example: 1000000001
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -11670,10 +11992,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >- 
-                    1000000001
+                  example: 1000000001
                 apiname:
                   type: string
                   description: API Name
@@ -11824,7 +12145,7 @@ paths:
                                   type: string
                                   description: Parent Customer ID
                                   example: 100
-                                billingorshopping:
+                                billingorshipping:
                                   type: string
                                   description: Billing or shopping
                                   example: B
@@ -11852,7 +12173,7 @@ paths:
                                   type: string
                                   description: State
                                   example: IL
-                                zip:
+                                zipcode:
                                   type: string
                                   description: Zipcode
                                   example: 60603
@@ -11860,7 +12181,7 @@ paths:
                                   type: string
                                   description: Country
                                   example: US
-                                phonenumber:
+                                phone:
                                   type: integer
                                   description: Phone number
                                   example: null
@@ -11868,6 +12189,14 @@ paths:
                                   type: string
                                   description: Email
                                   example: first.last@company.com
+                                currency: 
+                                  type: string
+                                  description: Currency
+                                  example: "USD"
+                                vatregistrationnumber:
+                                  type: string
+                                  description: VAT registration number
+                                  example: ""
       parameters:
         - name: AccountId
           in: header
@@ -11930,10 +12259,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >- 
-                    1000000001
+                  example: 1000000001
                 email:
                   type: string
                   description: Email
@@ -11983,7 +12311,7 @@ paths:
                         type: string
                         description: State
                         example: IL
-                      zip:
+                      zipcode:
                         type: string
                         description: Zipcode
                         example: 60603
@@ -11991,23 +12319,47 @@ paths:
                         type: string
                         description: Country
                         example: US
-                      phonenumber:
-                        type: integer
+                      phone:
+                        type: string
                         description: Phone number
                         example: null
                       email:
                         type: string
                         description: Email
                         example: first.last@company.com
-                      companylist:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            companycode:
-                              type: string
-                              description: Company code
-                              example: '00200'
+                      identificationtype: 
+                        type: string
+                        description: >- 
+                          Allowed values are   "DATE_OF_BIRTH" Or "MEMBER_ID" OR "SPECIAL_CODE" used for payee creation in money network
+                        example: ""
+                      identificationdata: 
+                        type: string
+                        description: Identification data
+                        example: "12/12/1961"
+                      companyname:
+                        type: string
+                        description: Company name
+                        example: "Battery Builders"
+                      clientcompanyname: 
+                        type: string
+                        description: Client company name
+                        example: "Fiserv"
+                      internalmemo: 
+                        type: string
+                        description: Internal Memo
+                        example: ""
+                      comments: 
+                        type: string
+                        description: Comments
+                        example: ""
+                      reason: 
+                        type: string
+                        description: Reason
+                        example: ""
+                      status: 
+                        type: string
+                        description: Status
+                        example: ""
       parameters:
         - name: AccountId
           in: header
@@ -12070,10 +12422,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >- 
-                    1000000001
+                  example: 1000000001
                 email:
                   type: string
                   description: Email
@@ -12447,9 +12798,8 @@ paths:
               properties:
                 accountid:
                   description: Account ID
-                  type: string
-                  example: >- 
-                    1000000001
+                  type: number
+                  example: 1000000001
                 documentid:
                   description: Document ID
                   type: string
@@ -12537,10 +12887,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >- 
-                    1000000001
+                  example: 1000000001
                 companycode:
                   type: string
                   description: Company code
@@ -12585,7 +12934,7 @@ paths:
                   type: string
                   description: Save at customer flag
                   example: 'Y'
-                displaypmsavedatcustomer:
+                displaycardssavedatcustomer:
                   type: string
                   description: Display payment method saved at supplier flag
                   example: 'Y'
@@ -12729,11 +13078,9 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
+            type: number
+            default: 1000000001
+          example:  1000000001
       responses:
         '200':
           description: Request successful.
@@ -12743,10 +13090,9 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
-                    example:  >- 
-                     1000000001
+                    example:  1000000001
                   token:
                     type: string
                     description: Request ID that will be used to open SnapPay iFrame
@@ -14212,10 +14558,9 @@ paths:
               type: object
               properties:  
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >-
-                    1000000001
+                  example: 1000000001
                 message: 
                   type: string 
                   description: Message to update
@@ -14243,11 +14588,9 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
+            type: number
+            default: 1000000001
+          example:  1000000001
       responses:
         '200':
           description: Request successful.
@@ -14257,10 +14600,9 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
-                    example: >-
-                      1000000001
+                    example: 1000000001
                   message: 
                     type: string 
                     description: Return message
@@ -14269,6 +14611,10 @@ paths:
                     type: string
                     description: Status
                     example: "Y"
+                  requestid: 
+                    type: number
+                    description: Request ID
+                    example: 16156
                   apiname:
                     type: string
                     description: API name
@@ -14561,11 +14907,9 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
+            type: number
+            default: 1000000001
+          example: 1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -14784,11 +15128,9 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
+            type: number
+            default: 1000000001
+          example: 1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -14843,10 +15185,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >-
-                    1000000001
+                  example: 1000000001
                 merchantid:
                   description: Merchant ID
                   type: string
@@ -14861,11 +15202,9 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
+            type: number
+            default: 1000000001
+          example: 1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -14884,10 +15223,9 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
-                    example: >-
-                      1000000001
+                    example: 1000000001
                   servicefeeamount:
                     type: number
                     description: Service fee amount 
@@ -14922,10 +15260,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >-
-                        1000000001
+                  example: 1000000001
                 users:
                   type: array
                   items:
