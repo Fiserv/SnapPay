@@ -346,7 +346,6 @@ components:
             taxamount: '3.72'
             commoditycode: ''
             unitofmeasure: EA
-        
     GetRequestID-T:
       value:
         accountid: 1000000001
@@ -366,7 +365,6 @@ components:
         parenturi: https://company.com
         displaycardname: 'Y'
         displayaddress: 'N'
-        
     GetRequestID-Fee:
       value:
         accountid: 1000000001
@@ -488,7 +486,7 @@ components:
         identificationtype: null
         dlstate: null
         identificationnumber: null
-        accountnumber: 'XXXXXXXXXXXX1111'
+        accountnumber: '4111111111111111'
         expirationdate: '122029'
         name: First Last
         addressline1: 123 Main St
@@ -578,6 +576,65 @@ components:
         country: US
         email: first.last@company.com
         phonenumber: null
+    TokenizeWithDeviceDataRequest:
+      value:
+        accountid: 1000000001
+        requesttype: C
+        currency: USD
+        companycode: '00200'
+        branchplant: ''
+        ordertype: ''
+        mode: CC
+        devicedata: "02A600C0170018008292;4387********1053=2804?*274C4F7252CB38CDAEF155D58898E969C574A1D0547A2728000000000000000000000000000000000000000035303454363134353131CDCDCD070120B040011C36AE03"
+        type: ''
+        routingnumber: ''
+        bankname: ''
+        checktype: ''
+        identificationtype: ''
+        identificationnumber: ''
+        accountnumber: ''
+        expirationdate: ''
+        name: First Last
+        addressline1: 123 Main St
+        city: Lombard
+        state: IL
+        zip: '60148'
+        country: US
+        email: first.last@company.com
+        phonenumber: 123456789
+    CaptureResponseWithFee:
+      value:
+        accountid: 1000000001
+        status: 'Y'
+        message: Transaction successful.
+        paymenttransactionid: '1362'
+        pgtransactionid: '132912341342'
+        reference: ''
+        purchaseorder: ''
+        transaction:
+          merchantid: '12345789562'
+          returncode: '000'
+          returndescription: Transaction successful.
+          pgtransactionid: '123456342330'
+          paymenttransactionid: '1394'
+          authorizationcode: PPS038
+          transactiondate: 06/06/2019 02:25:33 PM
+          procrespcode: RPCT
+          transactionamount: 74.00
+          currency: USD
+          procresp: RPCT-000
+          totaltransactionamount: 76.59
+          feereturncode: '26'
+          feereturndescription: Transaction successful.
+          feeamount: 2.59
+          feeauthcode: PPS191
+          feeformat: Percentage
+          feevalue: 3.5
+          feestatus: 'Y'
+          feetransactionid: '01475235228256'
+          feetype: Service
+          feeprocresp: PPS-26
+        
     AuthorizeDefaultRequest:
       value:
         accountid: 1000000001
@@ -6681,10 +6738,9 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
-                    example: >-
-                      1000000001
+                    example: 1000000001
                   token:
                     type: string
                     description: Request ID that will be used to open SnapPay iFrame
@@ -6697,20 +6753,6 @@ paths:
                     type: string
                     description: e.g. Information stored successfully
                     example: Information stored successfully.
-              examples: 
-                Transaction Type O:
-                  summary: TransactionType O
-                  $ref: '#/components/examples/GetRequestIDResponse'
-                Transaction Type I:
-                  summary: TransactionType I
-                  $ref: '#/components/examples/GetRequestIDResponse'
-                Transaction Type A:
-                  summary: TransactionType A
-                  $ref: '#/components/examples/GetRequestIDResponse'
-                Transaction Type S:
-                  summary: TransactionType S
-                  $ref: '#/components/examples/GetRequestIDResponse'
-                
         '400':
           description: Invalid request.
         '401':
@@ -7012,9 +7054,8 @@ paths:
                   example: 71904779
                 bankname:
                   type: string
-                  description: Account ID
-                  example: >-
-                    1000000001
+                  description: Bank name
+                  example: "Bank"
                 checktype:
                   type: string
                   description: Check Type â€“ C for corporate and P for personal
@@ -7080,6 +7121,9 @@ paths:
               ACH:
                 summary: ACH
                 $ref: '#/components/examples/TokenizeACHRequest'
+              Tokenize Device Data:
+                summary: Tokenize Device Data
+                $ref: '#/components/examples/TokenizeWithDeviceDataRequest'
       parameters:
         - name: AccountId
           in: header
@@ -7307,6 +7351,10 @@ paths:
                   type: string
                   description: COF Scheduled
                   example: "N"
+                iscapture: 
+                  type: string
+                  description: Is Capture flag (Y or N)
+                  example: "Y"
                 card:
                   type: array
                   items:
@@ -8024,7 +8072,7 @@ paths:
                 transactionamount:
                   type: integer
                   description: Amount to be captured/settled
-                  example: 500
+                  example: 74.00
                 customerid:
                   type: string
                   description: Customer ID
@@ -8116,11 +8164,9 @@ paths:
           description: Account ID
           required: true
           schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
+            type: number
+            default: 1000000001
+          example: 1000000001
         - name: Signature
           in: header
           description: HMAC Signature
@@ -8209,6 +8255,10 @@ paths:
                         type: string
                         description: Currency Code
                         example: USD
+              examples:
+                Capture with fee:
+                  summary: With Fee Parameters
+                  $ref: '#/components/examples/CaptureResponseWithFee'
         '400':
           description: Invalid request.
         '401':
