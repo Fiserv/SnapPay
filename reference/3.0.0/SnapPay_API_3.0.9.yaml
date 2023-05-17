@@ -21,76 +21,447 @@ components:
     GetRequestID-O:
       value:
         accountid: 1000000001
-        companycode: "00200"
-        customerid: "100"
-        userid: "erpuser"
-        currencycode: "USD"
-        transactiontype: "O"
-        paymentmethod: "CC"
-        language: "en-US"
-        orderid: "Ord001"
-        redirecturl: "https://www.google.com"
-        transactionamount: "51"
-        InvoiceId: ""
+        companycode: '00200'
+        currencycode: USD
+        customerid: '4242'
+        userid: first.last@company.com
+        savepaymentmethod: 'Y'
+        saveatsupplier: 'Y'
+        displaypmsavedatsupplier: 'Y'
+        saveatcustomer: 'Y'
+        displaycardssavedatcustomer: 'Y'
+        redirecturl: https://company.com
+        redirectionurlonerror: '#'
+        reference: ''
+        type: C
+        transactiontype: O
+        transactionamount: 0.00
+        paymentmethod: CC
+        cvvrequired: 'Y'
+        invoiceid: '4621657657'
+        orderid: ''
+        comments: ''
+        language: en-US
+        stylecss: ''
+        ordertype: ''
+        branchplant: ''
+        useboltdevice: 'Y'
+        devicehsn: ''
+        purchaseorder: '1243'
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        openiniframe: 'Y'
+        sendemailreceipts: 'Y'
+        parenturi: https://company.com
+        displaycardname: 'Y'
+        displayaddress: 'Y'
+        displaytransactionamount: 'Y'
+        displaycurrencycode: 'Y'
+        displaycustomer: 'Y'
+        displaypagetitle: 'Y'
+        user:
+          userfirstname: First
+          userlastname: Last
+          useremail: first.last@company.com
+          isactive: 'Y'
+          forcepasswordreset: 'N'
+          forcetermsandconditions: 'N'
+          devicegroup: ''
+        customer:
+          customername: ABC, Inc.
+          addressline1: 100 Eve
+          addressline2: ''
+          city: Chicago
+          state: IL
+          zipcode: '60605'
+          country: US
+          phone: ''
+          email: name@company.com
+          vatregistrationnumber: ''
+        level3:
+          - linenumber: '1.000'
+            productcode: 'ROS01'
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: 'Mixed Bouquet'
+            unitcost: '30.7500'
+            lineitemtotal: '65.96'
+            taxamount: '4.46'
+            commoditycode: ''
+            unitofmeasure: EA
+          - linenumber: '2.000'
+            productcode: 'BQT02'
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: 'Spring Bouquet'
+            unitcost: '25.6250'
+            lineitemtotal: '54.97'
+            taxamount: '3.72'
+            commoditycode: ''
+            unitofmeasure: EA
     GetRequestID-I:
       value:
         accountid: 1000000001
-        companycode: "00200"
-        customerid: "100"
-        userid: "erpuser"
-        currencycode: "USD"
-        transactiontype: "I"
-        paymentmethod: "CC"
-        language: "en-US"
-        orderid: ""
-        redirecturl: "https://www.google.com"
-        transactionamount: "51"
-        InvoiceId: ""
+        companycode: '00200'
+        currencycode: USD
+        customerid: '4242'
+        userid: first.last@company.com
+        savepaymentmethod: 'Y'
+        saveatsupplier: 'Y'
+        displaypmsavedatsupplier: 'Y'
+        saveatcustomer: 'Y'
+        displaycardssavedatcustomer: 'Y'
+        redirecturl: https://company.com
+        redirectionurlonerror: '#'
+        reference: ''
+        type: C
+        transactiontype: I
+        transactionamount: 0.00
+        paymentmethod: CC
+        cvvrequired: 'Y'
+        invoiceid: '4621657657'
+        orderid: ''
+        comments: ''
+        language: en-US
+        stylecss: ''
+        ordertype: ''
+        branchplant: ''
+        useboltdevice: 'Y'
+        devicehsn: ''
+        purchaseorder: '1243'
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        openiniframe: 'Y'
+        sendemailreceipts: 'Y'
+        parenturi: https://company.com
+        displaycardname: 'Y'
+        displayaddress: 'Y'
+        displaytransactionamount: 'Y'
+        displaycurrencycode: 'Y'
+        displaycustomer: 'Y'
+        displaypagetitle: 'Y'
+        user:
+          userfirstname: First
+          userlastname: Last
+          useremail: first.last@company.com
+          isactive: 'Y'
+          forcepasswordreset: 'N'
+          forcetermsandconditions: 'N'
+          devicegroup: ''
+        customer:
+          customername: ABC, Inc.
+          addressline1: 100 Eve
+          addressline2: ''
+          city: Chicago
+          state: IL
+          zipcode: '60605'
+          country: US
+          phone: ''
+          email: name@company.com
+          vatregistrationnumber: ''
+        level3:
+          - linenumber: '1.000'
+            productcode: 'ROS01'
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: 'Mixed Bouquet'
+            unitcost: '30.7500'
+            lineitemtotal: '65.96'
+            taxamount: '4.46'
+            commoditycode: ''
+            unitofmeasure: EA
+          - linenumber: '2.000'
+            productcode: 'BQT02'
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: 'Spring Bouquet'
+            unitcost: '25.6250'
+            lineitemtotal: '54.97'
+            taxamount: '3.72'
+            commoditycode: ''
+            unitofmeasure: EA
     GetRequestID-A:
       value:
         accountid: 1000000001
-        companycode: "00200"
-        customerid: "100"
-        userid: "ecomuser"
-        currencycode: "USD"
-        transactiontype: "A"
-        paymentmethod: "CC"
-        language: "en-US"
-        savepaymentmethod: "Y"
-        saveatcustomer: "Y"
-        displaycardssavedatcustomer: "Y"
-        orderid: ""
-        redirecturl: "https://www.google.com"
-        transactionamount: "51"
-        InvoiceId: ""
+        companycode: '00200'
+        currencycode: USD
+        customerid: '4242'
+        userid: first.last@company.com
+        savepaymentmethod: 'Y'
+        saveatsupplier: 'Y'
+        displaypmsavedatsupplier: 'Y'
+        saveatcustomer: 'Y'
+        displaycardssavedatcustomer: 'Y'
+        redirecturl: https://company.com
+        redirectionurlonerror: '#'
+        reference: ''
+        type: C
+        transactiontype: A
+        transactionamount: 51.00
+        paymentmethod: CC
+        cvvrequired: 'Y'
+        invoiceid: '4621657657'
+        orderid: ''
+        comments: ''
+        language: en-US
+        stylecss: ''
+        ordertype: ''
+        branchplant: ''
+        useboltdevice: 'Y'
+        devicehsn: ''
+        purchaseorder: '1243'
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        openiniframe: 'Y'
+        sendemailreceipts: 'Y'
+        parenturi: https://company.com
+        displaycardname: 'Y'
+        displayaddress: 'Y'
+        displaytransactionamount: 'Y'
+        displaycurrencycode: 'Y'
+        displaycustomer: 'Y'
+        displaypagetitle: 'Y'
+        user:
+          userfirstname: First
+          userlastname: Last
+          useremail: first.last@company.com
+          isactive: 'Y'
+          forcepasswordreset: 'N'
+          forcetermsandconditions: 'N'
+          devicegroup: ''
+        customer:
+          customername: ABC, Inc.
+          addressline1: 100 Eve
+          addressline2: ''
+          city: Chicago
+          state: IL
+          zipcode: '60605'
+          country: US
+          phone: ''
+          email: name@company.com
+          vatregistrationnumber: ''
+        level3:
+          - linenumber: '1.000'
+            productcode: 'ROS01'
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: 'Mixed Bouquet'
+            unitcost: '30.7500'
+            lineitemtotal: '65.96'
+            taxamount: '4.46'
+            commoditycode: ''
+            unitofmeasure: EA
+          - linenumber: '2.000'
+            productcode: 'BQT02'
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: 'Spring Bouquet'
+            unitcost: '25.6250'
+            lineitemtotal: '54.97'
+            taxamount: '3.72'
+            commoditycode: ''
+            unitofmeasure: EA
     GetRequestID-S:
       value:
         accountid: 1000000001
-        companycode: "00200"
-        customerid: "100"
-        userid: "ecomuser"
-        currencycode: "USD"
-        transactiontype: "S"
-        paymentmethod: "CC"
-        language: "en-US"
-        savepaymentmethod: "Y"
-        saveatcustomer: "Y"
-        displaycardssavedatcustomer: "Y"
-        orderid: ""
-        redirecturl: "https://www.google.com"
-        transactionamount: "51"
-        InvoiceId: ""
+        companycode: '00200'
+        currencycode: USD
+        customerid: '4242'
+        userid: first.last@company.com
+        savepaymentmethod: 'Y'
+        saveatsupplier: 'Y'
+        displaypmsavedatsupplier: 'Y'
+        saveatcustomer: 'Y'
+        displaycardssavedatcustomer: 'Y'
+        redirecturl: https://company.com
+        redirectionurlonerror: '#'
+        reference: ''
+        type: C
+        transactiontype: S
+        transactionamount: 100.00
+        paymentmethod: CC
+        cvvrequired: 'Y'
+        invoiceid: '4621657657'
+        orderid: ''
+        comments: ''
+        language: en-US
+        stylecss: ''
+        ordertype: ''
+        branchplant: ''
+        useboltdevice: 'Y'
+        devicehsn: ''
+        purchaseorder: '1243'
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        openiniframe: 'Y'
+        sendemailreceipts: 'Y'
+        parenturi: https://company.com
+        displaycardname: 'Y'
+        displayaddress: 'Y'
+        displaytransactionamount: 'Y'
+        displaycurrencycode: 'Y'
+        displaycustomer: 'Y'
+        displaypagetitle: 'Y'
+        user:
+          userfirstname: First
+          userlastname: Last
+          useremail: first.last@company.com
+          isactive: 'Y'
+          forcepasswordreset: 'N'
+          forcetermsandconditions: 'N'
+          devicegroup: ''
+        customer:
+          customername: ABC, Inc.
+          addressline1: 100 Eve
+          addressline2: ''
+          city: Chicago
+          state: IL
+          zipcode: '60605'
+          country: US
+          phone: ''
+          email: name@company.com
+          vatregistrationnumber: ''
+        level3:
+          - linenumber: '1.000'
+            productcode: 'ROS01'
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: 'Mixed Bouquet'
+            unitcost: '30.7500'
+            lineitemtotal: '65.96'
+            taxamount: '4.46'
+            commoditycode: ''
+            unitofmeasure: EA
+          - linenumber: '2.000'
+            productcode: 'BQT02'
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: 'Spring Bouquet'
+            unitcost: '25.6250'
+            lineitemtotal: '54.97'
+            taxamount: '3.72'
+            commoditycode: ''
+            unitofmeasure: EA
+        
     GetRequestID-T:
       value:
         accountid: 1000000001
-        companycode: "00200"
-        customerid: "100"
-        userid: "ecomuser"
-        currencycode: "USD"
-        transactiontype: "T"
-        paymentmethod: "CC"
-        language: "en-US"
-        stylecss: "border:2px solid orange; text-align: left;"
+        companycode: '00200'
+        currencycode: USD
+        transactionType: T
+        paymentmethod: CC
+        language: en-US
+        stylecss: 'width: 50.50%;height:50.50%;'
+        customerid: '100'
+        userid: user1
+        savepaymentmethod: 'N'
+        saveatcustomer: 'N'
+        displaycardssavedatcustomer: 'N'
+        redirecturl: https://www.google.com/
+        transactionamount: 0.00
+        parenturi: https://company.com
+        displaycardname: 'Y'
+        displayaddress: 'N'
+        
+    GetRequestID-Fee:
+      value:
+        accountid: 1000000001
+        companycode: '00200'
+        currencycode: USD
+        customerid: '4242'
+        supplierid: '14343'
+        userid: first.last@company.com
+        savepaymentmethod: 'Y'
+        saveatsupplier: 'Y'
+        displaypmsavedatsupplier: 'Y'
+        saveatcustomer: 'Y'
+        displaycardssavedatcustomer: 'Y'
+        redirecturl: https://www.xyz.com/receive
+        type: C
+        transactiontype: S
+        transactionamount: 100
+        paymentmethod: CC
+        cvvrequired: 'Y'
+        invoiceid: '4621657657'
+        orderid: ''
+        comments: ''
+        language: en-US
+        stylecss: ''
+        ordertype: ''
+        branchplant: ''
+        useboltdevice: 'Y'
+        devicehsn: '122353253252'
+        purchaseorder: '1243'
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        openiniframe: 'Y'
+        feevalue: 10.5
+        feeformat: Flat
+        waivefee: 'N'
+        user:
+          userfirstname: first
+          userlastname: last
+          useremail: first.last@xyz.com
+          isactive: 'Y'
+          forcepasswordreset: 'N'
+          forcetermsandconditions: 'N'
+          devicegroup: ''
+        customer:
+          customername: ''
+          addressline1: ''
+          addressline2: ''
+          city: ''
+          state: ''
+          zipcode: ''
+          country: ''
+          phone: ''
+          email: ''
+          vatregistrationnumber: ''
+        supplier:
+          suppliername: Battery Builders
+          addressline1: 31W238 91st St,
+          addressline2: ''
+          city: Naperville
+          state: IL
+          zipcode: '60564'
+          country: US
+          phone: (630) 851-5800
+          email: t2@company.com
+          identificationtype: ''
+          identificationdata: 12/12/1961
+          companyname: Battery Builders
+          clientcompanyname: Company
+          internalmemo: ''
+          comments: ''
+          reason: ''
+          status: ''
+        level3:
+          - linenumber: '1.000'
+            productcode: ROS01
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: Mixed Bouquet
+            unitcost: '30.7500'
+            lineitemtotal: '65.96'
+            taxamount: '4.46'
+            commoditycode: ''
+            unitofmeasure: EA
+          - linenumber: '2.000'
+            productcode: BQT02
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: Spring Bouquet
+            unitcost: '25.6250'
+            lineitemtotal: '54.97'
+            taxamount: '3.72'
+            commoditycode: ''
+            unitofmeasure: EA
+        
     GetRequestIDResponse:
       value:
         accountid: 1000000001
@@ -6254,20 +6625,23 @@ paths:
             schema:
               $ref: '#/components/schemas/GetRequestIDRequest'
             examples:
-              TransactionType A:
-                summary: TransactionType A
+              With Fee Parameters:
+                summary: With Fee Parameters
+                $ref: '#/components/examples/GetRequestID-Fee'
+              Transaction Type A:
+                summary: Transaction Type A
                 $ref: '#/components/examples/GetRequestID-A'
-              TransactionType S:
-                summary: TransactionType S
+              Transaction Type S:
+                summary: Transaction Type S
                 $ref: '#/components/examples/GetRequestID-S'
-              TransactionType T:
-                summary: TransactionType T
+              Transaction Type T:
+                summary: Transaction Type T
                 $ref: '#/components/examples/GetRequestID-T'
-              TransactionType O:
-                summary: TransactionType O
+              Transaction Type O:
+                summary: Transaction Type O
                 $ref: '#/components/examples/GetRequestID-O'
-              TransactionType I:
-                summary: TransactionType I
+              Transaction Type I:
+                summary: Transaction Type I
                 $ref: '#/components/examples/GetRequestID-I'
       parameters:
         - name: AccountId
@@ -14940,7 +15314,7 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: integer
+                    type: number
                     description: SnapPay Account ID
                     example: 1000000001
                   message:
