@@ -1414,16 +1414,86 @@ components:
                 isdefault: 'N'
   parameters:
     AccountIDParam:
-      x-model-version: 1.0
       name: accountid
       schema: {
         type: number,
         default: 1000000001
       }
-      in: path
+      in: header
       required: true
-      description: Account ID     
-        
+      description: Account ID  
+    MerchantIDParam:
+      name: merchantid
+      schema: {
+        type: string,
+        default: ''
+      }
+      in: header
+      required: true
+      description: >-
+            Merchant ID (if you pass this parameter, SnapPay will bypass the
+            logic of identifying MID for this transaction)
+    HMACParam:
+      name: signature
+      schema: {
+        type: string,
+        default: Hmac
+            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+      }
+      in: header
+      required: true
+      description: >-
+            HMAC Signature
+    StartDateParam:
+      name: startdate
+      schema: {
+        type: string,
+        default: 04/01/2023
+      }
+      in: query
+      required: false
+      description: >-
+            Start Date
+    EndDateParam:
+      name: enddate
+      schema: {
+        type: string,
+        default: 05/01/2023
+      }
+      in: query
+      required: false
+      description: >-
+            End Date
+    TypeParam:
+      name: type
+      schema: {
+        type: string,
+        default: C
+      }
+      in: query
+      required: false
+      description: >-
+            Type
+    PageNumberParam:
+      name: pagenumber
+      schema: {
+        type: number,
+        default: 1
+      }
+      in: query
+      required: false
+      description: >-
+            Page Number
+    SessionKeyParam:
+      name: X-CardConnect-SessionKey
+      schema: {
+        type: string,
+        default: 72eb45c4e6034aa1b5c5ba0532209a87
+      }
+      in: header
+      required: true
+      description: >-
+            72eb45c4e6034aa1b5c5ba0532209a87
   schemas:
     GetRequestIDRequest: 
       type: object
@@ -6701,34 +6771,9 @@ paths:
                 summary: Transaction Type I
                 $ref: '#/components/examples/GetRequestID-I'
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
-          
-        - name: MerchantId
-          in: header
-          description: >-
-            Merchant ID (if you pass this parameter, SnapPay will bypass the
-            logic of identifying MID for this transaction)
-          schema:
-            type: string
-            
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-            example: >-
-              Hmac
-              MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses:
         '200':
           description: Request successful.
@@ -6789,25 +6834,8 @@ paths:
                   type: string
                   example: 1870de80-072a-ed11-bd6e-0050f2c73a18
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses:
         '200':
           description: Request successful.
@@ -7125,31 +7153,9 @@ paths:
                 summary: Tokenize Device Data
                 $ref: '#/components/examples/TokenizeWithDeviceDataRequest'
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: number
-            default: 1000000001
-          example: 1000000001
-        - name: MerchantId
-          in: header
-          description: >-
-            Merchant ID (if you pass this parameter, SnapPay will bypass the
-            logic of identifying MID for this transaction)
-          schema:
-            type: string
-          
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses:
         '200':
           description: Request successful.
@@ -7540,31 +7546,9 @@ paths:
                         example: "123-456-HELP"
                       
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: number
-            default: 1000000001
-          example: 1000000001
-        - name: MerchantId
-          in: header
-          description: >-
-            Merchant ID (if you pass this parameter, SnapPay will bypass the
-            logic of identifying MID for this transaction)
-          schema:
-            type: string
-          
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses:
         '200':
           description: Request successful.
@@ -7885,33 +7869,9 @@ paths:
                         description: Custom Phone
                         example: "123-456-HELP"
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
-        - name: MerchantId
-          in: header
-          description: >-
-            Merchant ID (if you pass this parameter, SnapPay will bypass the
-            logic of identifying MID for this transaction)
-          schema:
-            type: string
-          
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses:
         '200':
           description: Request successful.
@@ -8159,23 +8119,8 @@ paths:
                         description: Line Item Total
                         example: 5.37
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: number
-            default: 1000000001
-          example: 1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses:
         '200':
           description: Request successful.
@@ -8397,33 +8342,9 @@ paths:
                         description: Custom Phone
                         example: "123-456-HELP"
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
-        - name: MerchantId
-          in: header
-          description: >-
-            Merchant ID (if you pass this parameter, SnapPay will bypass the
-            logic of identifying MID for this transaction)
-          schema:
-            type: string
-          
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses:
         '200':
           description: Request successful.
@@ -8564,25 +8485,8 @@ paths:
                   description: Send Email Receipt
                   example: 'Y'
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses:
         '200':
           description: Request successful.
@@ -8780,25 +8684,8 @@ paths:
                   description: Purchase Order
                   example: USD
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses:
         '200':
           description: Request successful.
@@ -8925,25 +8812,8 @@ paths:
                   description: Account
                   example: null
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses:
         '200':
           description: Request successful.
@@ -9178,55 +9048,12 @@ paths:
         called.
       operationId: retrieveTransactionHistory
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: number
-            default: 1000000001
-          example: 1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
-        - name: startdate
-          in: query
-          schema:
-            type: string
-          description: Start/FromDate
-          example: 04/01/2022
-        - name: enddate
-          in: query
-          schema:
-            type: string
-          description: End/To Date
-          example: 04/30/2022
-        - name: type
-          in: query
-          description: Type C for customer and S for Supplier. Default value is C.
-          schema:
-            type: string
-          example: C
-        - name: pagenumber
-          in: query
-          description: Page number to be passed if there are more transactions in repsonse.
-          schema:
-            type: number
-          example: 8
-        - name: status
-          in: query
-          schema:
-            type: string
-          description: >-
-            Status S – successful transaction, F – failed transactions and A –
-            all transactions. Default value is S.
-          example: S
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+        - {$ref: '#/components/parameters/StartDateParam'}
+        - {$ref: '#/components/parameters/EndDateParam'}
+        - {$ref: '#/components/parameters/TypeParam'}
+        - {$ref: '#/components/parameters/PageNumberParam'}
       responses:
         '200':
           description: Request successful.
@@ -9594,35 +9421,10 @@ paths:
         CardConnect and CardX only.
       operationId: retrieveFundingHistory
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: 1000000001
-          example: 1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
-        - name: startdate
-          in: query
-          schema:
-            type: string
-          description: Start/FromDate
-          example: 04/01/2022
-        - name: enddate
-          in: query
-          schema:
-            type: string
-          description: End/To Date
-          example: 04/30/2022
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+        - {$ref: '#/components/parameters/StartDateParam'}
+        - {$ref: '#/components/parameters/EndDateParam'}
       responses:
         '200':
           description: Request successful.
@@ -10042,23 +9844,8 @@ paths:
           schema:
             type: integer
           example: 21341516224
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: number
-            default: 1000000001
-          example: 1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses:
         '200':
           description: Request successful.
@@ -10155,25 +9942,8 @@ paths:
         the previous number of days specified using the daysBack parameter.
       operationId: getUpdater
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
         - name: merchid
           in: query
           description: >-
@@ -10409,25 +10179,8 @@ paths:
                         description: Expiration Date (mmyy)
                         example: 0122
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses:
         '200':
           description: Request successful.
@@ -10503,25 +10256,8 @@ paths:
                     - '9417085548851112'
                     - '9550096877584444'
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses:
         '200':
           description: Request successful.
@@ -10602,14 +10338,7 @@ paths:
                   description: Page Number
                   example: 1
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: 1000000001
-          example: 1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -10907,16 +10636,7 @@ paths:
                         description: Custom 9
                         example: udf9
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -10971,14 +10691,7 @@ paths:
                   description: Request ID
                   example: 073c8be3-b0db-e811-a954-000d3a92a01e
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: number
-            default: 1000000001
-          example: 1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -11059,16 +10772,7 @@ paths:
                 summary: Autopay
                 $ref: '#/components/examples/SnapPayReportingAutopayRequest'
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -11629,16 +11333,7 @@ paths:
                       description: VAT registration number
                       example: ''
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -11853,16 +11548,7 @@ paths:
                                     description: Comments
                                     example: testcomments
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default:  >- 
-              1000000001
-          example:  >- 
-            1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -12045,16 +11731,7 @@ paths:
                               description: Default
                               example: 'Y'
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-              1000000001
-          example: >- 
-            1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -12214,14 +11891,7 @@ paths:
                                           description: Sales Amount 12
                                           example: 2145.21
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: number
-            default: 1000000001
-          example: 1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -12358,14 +12028,7 @@ paths:
                               description: Company code
                               example: 100
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: number
-            default: 1000000001
-          example: 1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -12622,16 +12285,7 @@ paths:
                                   description: VAT registration number
                                   example: ""
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default:  >- 
-                    1000000001
-          example:  >- 
-                    1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -12785,16 +12439,7 @@ paths:
                         description: Status
                         example: ""
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -12987,16 +12632,7 @@ paths:
                                   description: Comments
                                   example: test comments
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example: >- 
-                    1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -13160,16 +12796,7 @@ paths:
                               description: Currency code
                               example: USD
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -13250,16 +12877,7 @@ paths:
                   example: >-
                     JVBERi0xLjUNCiW1tbW1DQoxIDAgb2JqDQo8PC9UeXBlL0NhdGFsb2cvUGFnZXMgMiAwIFIvTGFuZyhlbi1VUykgL1N0cnVjdFRyZWVSb290IDE2IDAgUi9NYXJrSW5mbzw8L01hcmtlZCB0cnVlPj4+Pg0KZW5kb2JqDQoyIDAgb2JqDQo8PC9UeXBlL1BhZ2VzL0NvdW50IDEvS2lkc1sgNCAwIFJdID4
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -13269,10 +12887,9 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
-                    example:  >- 
-                      1000000001
+                    example:  1000000001
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -13497,14 +13114,7 @@ paths:
                       description: VAT Registration number
                       example: ''
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: number
-            default: 1000000001
-          example:  1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -13560,25 +13170,8 @@ paths:
           schema:
             type: integer
           example: 21341516224
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses:
         '200':
           description: Request successful.
@@ -13789,32 +13382,9 @@ paths:
                   description: Clear display delay
                   example: "500"
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: X-CardConnect-SessionKey
-          in: header
-          description: Session Key
-          required: true
-          schema:
-            type: string
-            default: >-
-              72eb45c4e6034aa1b5c5ba0532209a87
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/SessionKeyParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -13949,32 +13519,9 @@ paths:
                   description: Clear display delay
                   example: "500"
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: X-CardConnect-SessionKey
-          in: header
-          description: Session Key
-          required: true
-          schema:
-            type: string
-            default: >-
-              72eb45c4e6034aa1b5c5ba0532209a87
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/SessionKeyParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -14069,24 +13616,8 @@ paths:
                   description: Force
                   example: "true"
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -14130,32 +13661,9 @@ paths:
                   description: Device ID
                   example: "18100PP84021655"
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: X-CardConnect-SessionKey
-          in: header
-          description: Session Key
-          required: true
-          schema:
-            type: string
-            default: >-
-              72eb45c4e6034aa1b5c5ba0532209a87
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/SessionKeyParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -14203,32 +13711,9 @@ paths:
                   description: Device ID
                   example: "18100PP84021655"
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: X-CardConnect-SessionKey
-          in: header
-          description: Session Key
-          required: true
-          schema:
-            type: string
-            default: >-
-              72eb45c4e6034aa1b5c5ba0532209a87
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/SessionKeyParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -14267,24 +13752,8 @@ paths:
                   description: Merchant ID
                   example: "12452589"
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -14330,32 +13799,9 @@ paths:
                   description: Device ID
                   example: "18100PP84021655"
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: X-CardConnect-SessionKey
-          in: header
-          description: Session Key
-          required: true
-          schema:
-            type: string
-            default: >-
-              72eb45c4e6034aa1b5c5ba0532209a87
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
+        - {$ref: '#/components/parameters/SessionKeyParam'}
       responses:
         '200':
           description: Request successful.
@@ -14399,24 +13845,9 @@ paths:
                   description: Device ID
                   example: "18100PP84021655"
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
+        
       responses:
         '200':
           description: Request successful.
@@ -14504,32 +13935,9 @@ paths:
                   description: Confirm amount flag
                   example: "true"
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: X-CardConnect-SessionKey
-          in: header
-          description: Session Key
-          required: true
-          schema:
-            type: string
-            default: >-
-              72eb45c4e6034aa1b5c5ba0532209a87
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/SessionKeyParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -14590,32 +13998,9 @@ paths:
                   example: "Please confirm"
                 
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: X-CardConnect-SessionKey
-          in: header
-          description: Session Key
-          required: true
-          schema:
-            type: string
-            default: >-
-              72eb45c4e6034aa1b5c5ba0532209a87
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/SessionKeyParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -14671,32 +14056,9 @@ paths:
                   example: "Amount"
                 
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: X-CardConnect-SessionKey
-          in: header
-          description: Session Key
-          required: true
-          schema:
-            type: string
-            default: >-
-              72eb45c4e6034aa1b5c5ba0532209a87
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/SessionKeyParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -14752,32 +14114,9 @@ paths:
                   example: "true"
                 
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: X-CardConnect-SessionKey
-          in: header
-          description: Session Key
-          required: true
-          schema:
-            type: string
-            default: >-
-              72eb45c4e6034aa1b5c5ba0532209a87
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/SessionKeyParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -14830,32 +14169,9 @@ paths:
                   example: "Please confirm"
                 
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: X-CardConnect-SessionKey
-          in: header
-          description: Session Key
-          required: true
-          schema:
-            type: string
-            default: >-
-              72eb45c4e6034aa1b5c5ba0532209a87
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/SessionKeyParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -14914,32 +14230,9 @@ paths:
                     - 20
                 
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: X-CardConnect-SessionKey
-          in: header
-          description: Session Key
-          required: true
-          schema:
-            type: string
-            default: >-
-              72eb45c4e6034aa1b5c5ba0532209a87
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/SessionKeyParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -15007,14 +14300,8 @@ paths:
                           example: 2830252123456
                         
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: number
-            default: 1000000001
-          example:  1000000001
+        - {$ref: '#/components/parameters/AccountIDParam'}
+     
       responses:
         '200':
           description: Request successful.
@@ -15095,32 +14382,9 @@ paths:
                   description: Device ID
                   example: "18100PP84021655"
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: X-CardConnect-SessionKey
-          in: header
-          description: Session Key
-          required: true
-          schema:
-            type: string
-            default: >-
-              72eb45c4e6034aa1b5c5ba0532209a87
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/SessionKeyParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
             description: Request successful.
@@ -15158,32 +14422,9 @@ paths:
                   description: Text
                   example: "Display"
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: X-CardConnect-SessionKey
-          in: header
-          description: Session Key
-          required: true
-          schema:
-            type: string
-            default: >-
-              72eb45c4e6034aa1b5c5ba0532209a87
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/SessionKeyParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -15217,32 +14458,9 @@ paths:
                   description: Device ID
                   example: "18100PP84021655"
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: X-CardConnect-SessionKey
-          in: header
-          description: Session Key
-          required: true
-          schema:
-            type: string
-            default: >-
-              72eb45c4e6034aa1b5c5ba0532209a87
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/SessionKeyParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -15280,32 +14498,9 @@ paths:
                   description: Datetime
                   example: "2019-06-25T21:41:45"
       parameters:
-        - name: AccountId 
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >- 
-                    1000000001
-          example:  >- 
-                    1000000001
-        - name: X-CardConnect-SessionKey
-          in: header
-          description: Session Key
-          required: true
-          schema:
-            type: string
-            default: >-
-              72eb45c4e6034aa1b5c5ba0532209a87
-        - name: MerchantID
-          in: header
-          description: Merchant ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              12345678
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/SessionKeyParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -15326,35 +14521,10 @@ paths:
         To download all rejected ACH transactions.
       operationId: getACHRejects
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: number
-            default: 1000000001
-          example: 1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
-        - name: startdate
-          in: query
-          schema:
-            type: string
-          description: Start/FromDate
-          example: 04/01/2022
-        - name: enddate
-          in: query
-          schema:
-            type: string
-          description: End/To Date
-          example: 04/30/2022
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+        - {$ref: '#/components/parameters/StartDateParam'}
+        - {$ref: '#/components/parameters/EndDateParam'}
       responses:
         '200':
           description: Request successful.
@@ -15547,35 +14717,10 @@ paths:
       description: Reporting for real estate customers.
       operationId: tenantsalesreportdownload
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: number
-            default: 1000000001
-          example: 1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
-        - name: startdate
-          in: query
-          schema:
-            type: string
-          description: Start/FromDate
-          example: 04/01/2022
-        - name: enddate
-          in: query
-          schema:
-            type: string
-          description: End/To Date
-          example: 04/30/2022
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+        - {$ref: '#/components/parameters/StartDateParam'}
+        - {$ref: '#/components/parameters/EndDateParam'}
       responses:
         '200':
           description: Request successful.
@@ -15621,23 +14766,8 @@ paths:
                   type: number
                   example: 100.00
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: number
-            default: 1000000001
-          example: 1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses: 
         '200':
           description: Request successful.
@@ -15768,25 +14898,8 @@ paths:
                 summary: Example 1
                 $ref: '#/components/examples/UserDataUploadRequest'  
       parameters:
-        - name: AccountId
-          in: header
-          description: Account ID
-          required: true
-          schema:
-            type: string
-            default: >-
-              1000000001
-          example: >-
-            1000000001
-        - name: Signature
-          in: header
-          description: HMAC Signature
-          required: true
-          schema:
-            type: string
-          example: >-
-            Hmac
-            MTAwMDQ2Mjk0MjpFK0dRUHZTS2NDaUsweHhZRm8rcFg3SEZJUmYS0wOTkxLTQ0ZDgtYTgzMy03YTdmNDY4OGEzZTc6Y0NDM1NDA0MA==
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
       responses:
         '200':
           description: Request successful.
