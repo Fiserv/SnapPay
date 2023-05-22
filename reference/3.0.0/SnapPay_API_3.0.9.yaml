@@ -459,7 +459,6 @@ components:
             taxamount: '3.72'
             commoditycode: ''
             unitofmeasure: EA
-        
     GetRequestIDResponse:
       value:
         accountid: 1000000001
@@ -602,7 +601,37 @@ components:
         country: US
         email: first.last@company.com
         phonenumber: 123456789
-    CaptureResponseWithFee:
+    CaptureRequestWithSurcharge:
+      value:
+        accountid: 1000000001
+        referencetransactionid: '1234052209561358250'
+        transactionamount: 1.24
+        customerid: '4242'
+        currency: USD
+        companycode: '100'
+        userid: user
+        orderid: P-141153
+        invoiceid: '1407261399'
+        ordertype: ''
+        branchplant: ''
+        purchaseorder: ''
+        orderdate: '20230507'
+    CaptureRequestWithServiceFee:    
+      value:
+        accountid: 1000000001
+        referencetransactionid: '1234052209561358365'
+        transactionamount: 74.00
+        customerid: '4242'
+        currency: USD
+        companycode: '100'
+        userid: user
+        orderid: P-141153
+        invoiceid: '1407261399'
+        ordertype: ''
+        branchplant: ''
+        purchaseorder: ''
+        orderdate: '20230507'
+    CaptureResponseWithServiceFee:
       value:
         accountid: 1000000001
         status: 'Y'
@@ -612,7 +641,7 @@ components:
         reference: ''
         purchaseorder: ''
         transaction:
-          merchantid: '12345789562'
+          merchantid: "12452589"
           returncode: '000'
           returndescription: Transaction successful.
           pgtransactionid: '123456342330'
@@ -634,6 +663,28 @@ components:
           feetransactionid: '01475235228256'
           feetype: Service
           feeprocresp: PPS-26
+    CaptureResponseWithSurcharge:
+      value:
+        accountid: 1000000001
+        status: 'Y'
+        message: Transaction successful.
+        isalreadycaptured: 'N'
+        purchaseorder: ''
+        referencetransactionid: '1234052209561358250'
+        transaction:
+          merchantid: "12452589"
+          returncode: '1'
+          returndescription: Successful Settlement
+          pgtransactionid: '1234052209561358250'
+          paymenttransactionid: '1000011234'
+          authorizationcode: TSTAUT
+          transactiondate: 05/22/2023 05:14:45 AM
+          procrespcode: ''
+          transactionamount: 1.24
+          currency: USD
+          totaltransactionamount: 1.24
+          feeamount: 0
+          feevalue: 0
         
     AuthorizeDefaultRequest:
       value:
@@ -677,13 +728,146 @@ components:
             country: US
             email: first.last@company.com
             phonenumber: null
+    AuthorizeRequestWithSurcharge:
+      value:
+        accountid: 1000000001
+        customerid: '4242'
+        currency: USD
+        companycode: '100'
+        branchplant: ''
+        ordertype: ''
+        orderid: P-141153
+        invoiceid: I-153
+        userid: user
+        reference: P-141153
+        purchaseorder: ''
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        iscardpresent: 'N'
+        iscapture: 'N'
+        cards:
+          - transactionamount: 1.24
+            tokenid: '9520084673621753095'
+            cvv: '124'
+            expirationdate: '102024'
+            customername: Atul N
+            addressline1: 100 Street
+            city: Chicago
+            state: IL
+            zip: '60540'
+            country: US
+            email: first.last@company.com
+            phonenumber: ''
+            type: VISA
+            last4: '3095'
+            secureflag: '05'
+            securevalue: ''
+            securedstid: ''
+            secureexemption: lowvalue
+    AuthorizeResponseWithSurcharge:
+      value:
+        accountid: 1000000001
+        status: 'Y'
+        message: Transaction successful.
+        reference: P-141153
+        purchaseorder: ''
+        cards:
+          - merchantid: "12452589"
+            tokenid: '9520084673621753095'
+            returncode: '1'
+            returndescription: Successful Authorization
+            pgtransactionid: '1234052209561358250'
+            paymenttransactionid: '1000011234'
+            authorizationcode: TSTAUT
+            status: 'Y'
+            transactiondate: 05/22/2023 04:56:05 AM
+            procrespcode: ''
+            scverification: 'N'
+            addressverification: ''
+            transactionamount: 1.24
+            currency: USD
+            totaltransactionamount: 1.24
+            feeamount: 0
+            feevalue: 0
+    AuthorizeRequestWithServiceFee:
+      value:
+        accountid: 1000000001
+        customerid: '4242'
+        currency: USD
+        companycode: '100'
+        branchplant: ''
+        ordertype: ''
+        orderid: P-141153
+        invoiceid: I-153
+        userid: user
+        reference: P-141153
+        purchaseorder: ''
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        iscardpresent: 'N'
+        iscapture: 'N'
+        cards:
+          - transactionamount: 100.24
+            tokenid: '9417085548851111'
+            cvv: '124'
+            expirationdate: '102024'
+            customername: Atul N
+            addressline1: 100 Street
+            city: Chicago
+            state: IL
+            zip: '60540'
+            country: US
+            email: first.last@company.com
+            phonenumber: ''
+            type: VISA
+            last4: '1111'
+            secureflag: '05'
+            securevalue: ''
+            securedstid: ''
+            secureexemption: lowvalue
+    AuthorizeResponseWithServiceFee:
+      value:
+        accountid: 1000000001
+        status: 'Y'
+        message: Transaction successful.
+        reference: P-141153
+        purchaseorder: ''
+        cards:
+          - merchantid: '12452589'
+            tokenid: '9417085548851111'
+            returncode: '000'
+            returndescription: Approval
+            pgtransactionid: '123433330031'
+            paymenttransactionid: '1000011234'
+            authorizationcode: PPS020
+            status: 'Y'
+            transactiondate: 05/22/2023 07:20:23 AM
+            procrespcode: RPCT
+            scverification: M
+            addressverification: Z
+            transactionamount: 100.24
+            currency: USD
+            totaltransactionamount: 110.26
+            feereturncode: '000'
+            feereturndescription: Transaction successful.
+            feeamount: 10.02
+            feeauthcode: PPS506
+            feeformat: Percentage
+            feevalue: 10
+            feestatus: 'Y'
+            feetransactionid: '123427230057'
+            feetype: Service
+            procresp: RPCT-000
+            feeprocresp: RPCT-000
     AuthorizeDefaultResponse:
       value:
         accountid: 1000000001
         status: 'Y'
         message: Authorization successful.
         cards:
-          - merchantid: 'XXXXXXXXXXX234'
+          - merchantid: "12452589"
             returncode: '0'
             returndescription: Transaction successful
             procrespcode: RPCT
@@ -697,6 +881,174 @@ components:
             status: 'Y'
             scverification: P
             addressverification: Z
+    ChargeRequestWithSurcharge:
+      value:
+        accountid: 1000000001
+        companycode: '102'
+        shipfromzip: ''
+        branchplant: ''
+        orderid: '123448'
+        invoiceid: '567848'
+        orderdate: ''
+        userid: user
+        shiptocountry: ''
+        purchaseorder: '1243'
+        shiptozip: ''
+        customerid: '2505'
+        currency: USD
+        sendemailreceipts: 'Y'
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        paymentmethod:
+          tokenid: 1234D8683B1A23BFF867A4C3F8E05CE0AB2A1049CADF
+          transactionamount: '100.50'
+          cvv: '123'
+          customername: ABC Financial
+          addressline1: 100 Ave
+          city: Aurora
+          state: IL
+          zip: '60603'
+          country: US
+          email: first.last@company.com
+          phonenumber: ''
+          type: VISA
+          last4: '1111'
+          routingnumber: ''
+          secureflag: '05'
+          securevalue: ''
+          securexid: ''
+          dstxnid: ''
+        level3:
+          - linenumber: '1.000'
+            productcode: ROS01
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: Mixed Bouquet
+            unitcost: '30.7500'
+            lineitemtotal: '65.96'
+            taxamount: '4.46'
+            commoditycode: ''
+            unitofmeasure: EA
+          - linenumber: '2.000'
+            productcode: 'BQT02'
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: 'Spring Bouquet'
+            unitcost: '25.6250'
+            lineitemtotal: '54.97'
+            taxamount: '3.72'
+            commoditycode: ''
+            unitofmeasure: EA
+        ordertype: SO
+        userfields:
+          - udf0: Value 1
+          - udf1: Value 2
+          - udf2: Value 3
+          - udf3: Value 4
+          - custommerchant: Company
+          - customphone: 123-456-HELP
+    ChargeResponseWithSurcharge:
+      value:
+        accountid: 1000000001
+        status: 'Y'
+        message: Transaction successful.
+        purchaseorder: '1243'
+        transaction:
+          merchantid: "12452589"
+          returncode: '1'
+          returndescription: Successful Authorization
+          pgtransactionid: '1234052210451047452'
+          paymenttransactionid: '1000011234'
+          authorizationcode: TSTAUT
+          transactiondate: 05/22/2023 05:45:03 AM
+          procrespcode: ''
+          scverification: 'Y'
+          addressverification: ''
+          transactionamount: 100.5
+          currency: USD
+          totaltransactionamount: 103.52
+          feeamount: 3.02
+          feeauthcode: TSTAUT
+          feeformat: Percentage
+          feevalue: 3
+          feestatus: 'Y'
+          feetransactionid: '1234052210451047452'
+          feetype: Surcharge
+    ChargeRequestWithServiceFee:
+      value:
+        accountid: 1000000001
+        companycode: '100'
+        shipfromzip: ''
+        branchplant: ''
+        orderid: '123448'
+        invoiceid: '567848'
+        orderdate: ''
+        userid: user
+        shiptocountry: ''
+        purchaseorder: '1243'
+        shiptozip: ''
+        customerid: '4242'
+        currency: USD
+        sendemailreceipts: 'Y'
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        feevalue: 10
+        feeformat: percentage
+        waivefee: 'N'
+        paymentmethod:
+          tokenid: '9401881398911234'
+          transactionamount: '110.50'
+          cvv: '123'
+          customername: ABC Financial
+          addressline1: 100 Ave
+          city: Aurora
+          state: IL
+          zip: '60603'
+          country: US
+          email: first.last@company.com
+          phonenumber: ''
+          type: VISA
+          last4: '1234'
+          routingnumber: ''
+          secureflag: '05'
+          securevalue: ''
+          securexid: ''
+          dstxnid: ''
+    ChargeResponseWithServiceFee:
+      value:
+        accountid: 1000000001
+        status: 'Y'
+        message: Transaction successful.
+        purchaseorder: '1243'
+        transaction:
+          merchantid: "12452589"
+          returncode: '000'
+          returndescription: Approval
+          pgtransactionid: '123418229266'
+          paymenttransactionid: '1000011234'
+          authorizationcode: PPS446
+          transactiondate: 05/22/2023 07:07:40 AM
+          procrespcode: RPCT
+          scverification: M
+          addressverification: Z
+          transactionamount: 110.5
+          currency: USD
+          procresp: RPCT-000
+          totaltransactionamount: 121.55
+          feereturncode: '000'
+          feereturndescription: Transaction successful.
+          feeamount: 11.05
+          feeauthcode: PPS971
+          feeformat: Percentage
+          feevalue: 10
+          feestatus: 'Y'
+          feetransactionid: '123423329291'
+          feetype: Service
+          minimumfeeused: 'N'
+          thresholdfeeused: 'N'
+          feeprocresp: RPCT-000
     SnapPayReportingScheduleRequest:
       value:
         accountid: 1000000001
@@ -7544,7 +7896,13 @@ paths:
                         type: string
                         description: Custom Phone
                         example: "123-456-HELP"
-                      
+            examples:
+              Authorize with Surcharge:
+                summary: Authorize with Surcharge
+                $ref: '#/components/examples/AuthorizeRequestWithSurcharge'
+              Authorize with Service Fee:
+                summary: Authorize with Service Fee
+                $ref: '#/components/examples/AuthorizeRequestWithServiceFee'
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
         - {$ref: '#/components/parameters/MerchantIDParam'}
@@ -7577,7 +7935,7 @@ paths:
                         merchantid:
                           type: string
                           description: Payment Gateway Merchant ID
-                          example: 34032039484234
+                          example: 12452589
                         returncode:
                           type: string
                           description: Payment Gateway Return Code
@@ -7634,6 +7992,12 @@ paths:
                 Default:
                   summary: Default
                   $ref: '#/components/examples/AuthorizeDefaultResponse'
+                Authorize with Surcharge:
+                  summary: Authorize with Surcharge
+                  $ref: '#/components/examples/AuthorizeResponseWithSurcharge'
+                Authorize with Service Fee:
+                  summary: Authorize with Service Fee
+                  $ref: '#/components/examples/AuthorizeResponseWithServiceFee'
         '400':
           description: Invalid request.
         '401':
@@ -7868,6 +8232,13 @@ paths:
                         type: string
                         description: Custom Phone
                         example: "123-456-HELP"
+            examples:
+              Charge with Surcharge:
+                summary: Charge with Surcharge
+                $ref: '#/components/examples/ChargeRequestWithSurcharge'           
+              Charge with Service Fee:
+                summary: Charge with Service Fee
+                $ref: '#/components/examples/ChargeRequestWithServiceFee'  
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
         - {$ref: '#/components/parameters/MerchantIDParam'}
@@ -7898,7 +8269,7 @@ paths:
                       merchantid:
                         type: string
                         description: Payment Gateway Merchant ID
-                        example: 34032039484234
+                        example: 12452589
                       returncode:
                         type: string
                         description: Payment Gateway Return Code
@@ -7995,6 +8366,13 @@ paths:
                         type: integer
                         description: Fee Value (value in % for Surcharge fee)
                         example: 0
+              examples:
+                Charge with Surcharge:
+                  summary: Charge with Surcharge
+                  $ref: '#/components/examples/ChargeResponseWithSurcharge' 
+                Charge with Service Fee:
+                  summary: Charge with Service Fee
+                  $ref: '#/components/examples/ChargeResponseWithServiceFee' 
         '400':
           description: Invalid request.
         '401':
@@ -8032,7 +8410,7 @@ paths:
                 transactionamount:
                   type: integer
                   description: Amount to be captured/settled
-                  example: 74.00
+                  example: 100.00
                 customerid:
                   type: string
                   description: Customer ID
@@ -8118,6 +8496,13 @@ paths:
                         type: integer
                         description: Line Item Total
                         example: 5.37
+            examples:
+              Capture with Surcharge:
+                summary: Capture with Surcharge
+                $ref: '#/components/examples/CaptureRequestWithSurcharge'
+              Capture with Service fee:
+                summary: Capture with Service fee
+                $ref: '#/components/examples/CaptureRequestWithServiceFee'
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
         - {$ref: '#/components/parameters/HMACParam'}
@@ -8163,7 +8548,7 @@ paths:
                       merchantid:
                         type: string
                         description: Payment Gateway Merchant ID
-                        example: 34032039484234
+                        example: 12452589
                       returncode:
                         type: string
                         description: Payment Gateway Return Code
@@ -8201,9 +8586,13 @@ paths:
                         description: Currency Code
                         example: USD
               examples:
-                Capture with fee:
-                  summary: With Fee Parameters
-                  $ref: '#/components/examples/CaptureResponseWithFee'
+                Capture with Surcharge:
+                  summary: Capture with Surcharge
+                  $ref: '#/components/examples/CaptureResponseWithSurcharge'
+                Capture with Service fee:
+                  summary: Capture with Service fee
+                  $ref: '#/components/examples/CaptureResponseWithServiceFee'
+                
         '400':
           description: Invalid request.
         '401':
@@ -13310,6 +13699,529 @@ paths:
           description: Unauthorized access.
         '500':
           description: Internal server error.
+  /api/GetACHRejects:
+    get:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Get ACH Rejects
+      summary: Get ACH Rejects
+      description: >-
+        To download all rejected ACH transactions.
+      operationId: getACHRejects
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+        - {$ref: '#/components/parameters/StartDateParam'}
+        - {$ref: '#/components/parameters/EndDateParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: SnapPay Account ID
+                    example: 1000000001
+                  message:
+                    type: string
+                    description: >-
+                      Return message for API execution
+                    example: 'ACH Rejects found.'
+                  status:
+                    type: string
+                    description: Status of API execution
+                    example: 'Y'
+                  transactionscount:
+                    type: integer
+                    description: >-
+                      Transaction Count – This parameter will give the number of
+                      payment transactions sent.
+                    example: 1
+                  transactions:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        transaction:
+                          type: object
+                          properties:
+                            transactionstatus:
+                              type: string
+                              description: Transaction status
+                              example: 'Failed'
+                            paymenttransactionid:
+                              type: number
+                              description: Payment transaction ID from SnapPay
+                              example: 124253245345
+                            pgtransactionid:
+                              type: string
+                              description: Transaction ID from payment gateway
+                              example: 53245345213121
+                            currencycode:
+                              type: string
+                              description: Currency Code
+                              example: USD
+                            pgtransactiontype:
+                              type: string
+                              description: Payment Gateway Transaction Type
+                              example: S
+                            merchantid:
+                              type: string
+                              description: Merchant id from payment gateway
+                              example: 1012345678
+                            transactionamount:
+                              type: number
+                              description: Transaction Amount
+                              example: 120.1
+                            authorizationnumber:
+                              type: string
+                              description: Authorization Number
+                              example: SDRDXX
+                            pgreturncode:
+                              type: string
+                              description: Payment Gateway Return Code
+                              example: 0
+                            procrespcode:
+                              type: string
+                              description: Payment Gateway response Code
+                              example: 1234
+                            pgreturndescription:
+                              type: string
+                              description: Return Description
+                              example: ACH Reject
+                            paymentdate:
+                              type: string
+                              description: Transaction Date
+                              example: 2022-04-16 8:05 PM
+                            feetype:
+                              type: string
+                              description: Fee Type (Convenience / Surcharge / Service)
+                              example: Service
+                            feeamount:
+                              type: number
+                              description: Fee Amount
+                              example: 0
+                            feevalue:
+                              type: number
+                              description: >-
+                                Fee Value – same as amount for convenience fee
+                                and % for surcharge
+                              example: 0
+                            feeformat:
+                              type: string
+                              description: >-
+                                Fee Format (Flat/Percentage) 
+                              example: Flat
+                            feestatus:
+                              type: string
+                              description: Fee Status (Y/N)
+                              example: 'Y'
+                            feeauthcode:
+                              type: string
+                              description: >-
+                                Fee Authorization Code
+                              example: 1234
+                            feetransactionid:
+                              type: string
+                              description: >-
+                                Fee Transaction ID
+                              example: 10112452326
+                        paymentmethod:
+                          type: object
+                          properties:
+                            type:
+                              type: string
+                              description: Type of payment method – Visa, Mastercard, etc.
+                              example: MC
+                            last4:
+                              type: string
+                              description: Last 4 digits of payment method
+                              example: 5454
+                            routingnumber:
+                              type: string
+                              description: Routing Number
+                              example: null
+                            tokenid:
+                              type: string
+                              description: Token ID
+                              example: 1234567891
+                            paymentgateway:
+                              type: string
+                              description: Payment Gateway
+                              example: BluePay
+                            firstname:
+                              type: string
+                              description: First Name
+                              example: first
+                            lastname:
+                              type: string
+                              description: Last Name
+                              example: last
+                            addressline1:
+                              type: string
+                              description: Address Line 1
+                              example: 123 Main St
+                            city:
+                              type: string
+                              description: City
+                              example: Lombard
+                            state:
+                              type: string
+                              description: State
+                              example: IL
+                            zip:
+                              type: string
+                              description: Zip/Postal Code
+                              example: 60148
+                            country:
+                              type: string
+                              description: Country
+                              example: US
+                            phonenumber:
+                              type: string
+                              description: Phone Number
+                              example: null
+                            email:
+                              type: string
+                              description: Email
+                              example: first.last@company.com
+                        
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/tenantsalesreportdownload:
+    post:
+      tags:
+        - Real Estate
+      x-group-name: Real Estate
+      x-proxy-name: Tenantsalesreport Download
+      summary: Tenantsalesreport Download
+      description: Reporting for real estate customers.
+      operationId: tenantsalesreportdownload
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+        - {$ref: '#/components/parameters/StartDateParam'}
+        - {$ref: '#/components/parameters/EndDateParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              examples: 
+                ResponseExample: 
+                  summary: Schedule
+                  $ref: '#/components/examples/TenantSalesReportingDownloadResponse'
+                
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/interop/GetServiceFeeAmount:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Get Service Fee Amount
+      summary: Get Service Fee Amount
+      description: >-
+        Purpose of this API to get service fee amount based on merchant id and amount sent in request
+      operationId: getServiceFeeAmount
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  type: number
+                  description: Account ID
+                  example: 1000000001
+                merchantid:
+                  description: Merchant ID
+                  type: string
+                  example: 123456789
+                transactionamount:
+                  description: Transaction amount
+                  type: number
+                  example: 100.00
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+      responses: 
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: Account ID
+                    example: 1000000001
+                  servicefeeamount:
+                    type: number
+                    description: Service fee amount 
+                    example: 2.7
+                  message:
+                    type: string
+                    description: Message
+                    example: "Service fee amount retrieved successfully."
+                  status:
+                    type: string
+                    description: API execution status
+                    example: "Y"
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
+  /api/UserDataUpload:
+    post:
+      tags:
+        - ERP Agents
+      x-group-name: ERP Agents
+      x-proxy-name: User Data Upload
+      summary: User Data Upload
+      description: Upload users to SnapPay
+      operationId: userdataupload
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  type: number
+                  description: Account ID
+                  example: 1000000001
+                users:
+                  type: array
+                  items:
+                    properties:
+                      userid:
+                        type: string
+                        description: User ID
+                        example: "user01"
+                      firstname: 
+                        type: string
+                        description: First Name
+                        example:  First
+                      lastname:
+                        type: string
+                        description: Last name
+                        example: Last
+                      email:
+                        type: string
+                        description: Email ID
+                        example: first.last@company.com
+                      usertypename:
+                        type: string
+                        description: User type name
+                        example: CSR
+                      usergroupname:
+                        type: string
+                        description: User group name
+                        example: CSR
+                      isactive:
+                        type: string
+                        description: Active flag
+                        example: "Y"
+                      effectivefrom:
+                        type: string
+                        description: Effective from date
+                        example: "2028-12-31"
+                      effectivetodate:
+                        type: string
+                        description: Effectove to date
+                        example: "2028-12-31"
+                      phone: 
+                        type: string
+                        description: Phone number
+                        example: "123-456-7890"
+                      forcepasswordreset:
+                        type: string 
+                        description: Force password reset flag
+                        example: "Y"
+                      forcetermsandconditions: 
+                        type: string
+                        description: Force terms and conditions flag
+                        example: "N"
+                      devicegroup:
+                        type: string 
+                        description: Device group name
+                        example: "Device group"
+                      deleteuser: 
+                        type: string
+                        description: Delete user flag
+                        example: "N"
+                      customers:
+                        type: array
+                        items:
+                          properties:
+                            customerid: 
+                              type: string
+                              description: CustomerID 
+                              example: "100"
+                            associationtype:
+                              type: string
+                              description: Address type (shipto or soldto)
+                              example: "Shipto"
+                            isdefault:
+                              type: string
+                              description: Default flag for customer-user association 
+                              example: "Y"
+            examples:
+              Example 1:
+                summary: Example 1
+                $ref: '#/components/examples/UserDataUploadRequest'  
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: string
+                    description: Account ID
+                    example: >-
+                        1000000001
+                  requestid:
+                    type: integer
+                    description: Request ID
+                    example: 16290
+                  apiname:
+                    type: string
+                    description: API Name
+                    example: UserDataUpload
+                  status:
+                    type: string
+                    description: API execution status
+                    example: "Y"
+                  message:
+                    type: string
+                    description: Message
+                    example: "Request received."
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.  
+  /api/TransactionUpdate:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Transaction update
+      summary: Transaction update
+      description: To update the message for transaction
+      operationId: transactionupdate
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:  
+                accountid:
+                  type: number
+                  description: Account ID
+                  example: 1000000001
+                message: 
+                  type: string 
+                  description: Message to update
+                  example: "Transaction Successful–Payment modified in ERP"
+                invoicedata:
+                  type: array
+                  items:
+                    properties:
+                        invoicenumber:
+                          type: string
+                          description: Invoice number
+                          example: "INV-101"
+                        paymentheaderid:
+                          type: number
+                          description: Payment header ID
+                          example: 44631
+                        paymenttransactionid:
+                          type: number
+                          description: Payment transaction ID
+                          example: 2830252123456
+                        
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+     
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: Account ID
+                    example: 1000000001
+                  message: 
+                    type: string 
+                    description: Return message
+                    example: "Transaction updated successfully"
+                  status:
+                    type: string
+                    description: Status
+                    example: "Y"
+                  requestid: 
+                    type: number
+                    description: Request ID
+                    example: 16156
+                  apiname:
+                    type: string
+                    description: API name
+                    example: "TransactionUpdate"
+                  invoicedata:
+                    type: array
+                    items:
+                      properties:
+                        invoicenumber:
+                          type: string
+                          description: Invoice number
+                          example: "INV-101"
+                        paymentheaderid:
+                          type: number
+                          description: Payment header ID
+                          example: 44631
+                        paymenttransactionid: 
+                          type: number
+                          description: Payment transaction ID
+                          example: 2830252123456
+                        status: 
+                          type: string
+                          description: Status
+                          example: "Y"
+
+        '400':
+          description: Invalid request.
+        '401':
+          description: Unauthorized access.
+        '500':
+          description: Internal server error.
   /P2PE/authcard:
     post:
       tags:
@@ -14259,105 +15171,6 @@ paths:
           description: Unauthorized access.
         '500':
           description: Internal server error.
-  /api/TransactionUpdate:
-    post:
-      tags:
-        - APIs without User Interaction
-      x-group-name: APIs without User Interaction
-      x-proxy-name: Transaction update
-      summary: Transaction update
-      description: To update the message for transaction
-      operationId: transactionupdate
-      requestBody:
-        content: 
-          application/json:
-            schema:
-              type: object
-              properties:  
-                accountid:
-                  type: number
-                  description: Account ID
-                  example: 1000000001
-                message: 
-                  type: string 
-                  description: Message to update
-                  example: "Transaction Successful–Payment modified in ERP"
-                invoicedata:
-                  type: array
-                  items:
-                    properties:
-                        invoicenumber:
-                          type: string
-                          description: Invoice number
-                          example: "INV-101"
-                        paymentheaderid:
-                          type: number
-                          description: Payment header ID
-                          example: 44631
-                        paymenttransactionid:
-                          type: number
-                          description: Payment transaction ID
-                          example: 2830252123456
-                        
-      parameters:
-        - {$ref: '#/components/parameters/AccountIDParam'}
-     
-      responses:
-        '200':
-          description: Request successful.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  accountid:
-                    type: number
-                    description: Account ID
-                    example: 1000000001
-                  message: 
-                    type: string 
-                    description: Return message
-                    example: "Transaction updated successfully"
-                  status:
-                    type: string
-                    description: Status
-                    example: "Y"
-                  requestid: 
-                    type: number
-                    description: Request ID
-                    example: 16156
-                  apiname:
-                    type: string
-                    description: API name
-                    example: "TransactionUpdate"
-                  invoicedata:
-                    type: array
-                    items:
-                      properties:
-                        invoicenumber:
-                          type: string
-                          description: Invoice number
-                          example: "INV-101"
-                        paymentheaderid:
-                          type: number
-                          description: Payment header ID
-                          example: 44631
-                        paymenttransactionid: 
-                          type: number
-                          description: Payment transaction ID
-                          example: 2830252123456
-                        status: 
-                          type: string
-                          description: Status
-                          example: "Y"
-
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
-          
   /P2PE/cancel:
     post:
       tags:
@@ -14510,429 +15323,5 @@ paths:
             description: Unauthorized access.
         '500':
             description: Internal server error.    
-  /api/GetACHRejects:
-    get:
-      tags:
-        - APIs without User Interaction
-      x-group-name: APIs without User Interaction
-      x-proxy-name: Get ACH Rejects
-      summary: Get ACH Rejects
-      description: >-
-        To download all rejected ACH transactions.
-      operationId: getACHRejects
-      parameters:
-        - {$ref: '#/components/parameters/AccountIDParam'}
-        - {$ref: '#/components/parameters/HMACParam'}
-        - {$ref: '#/components/parameters/StartDateParam'}
-        - {$ref: '#/components/parameters/EndDateParam'}
-      responses:
-        '200':
-          description: Request successful.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  accountid:
-                    type: number
-                    description: SnapPay Account ID
-                    example: 1000000001
-                  message:
-                    type: string
-                    description: >-
-                      Return message for API execution
-                    example: 'ACH Rejects found.'
-                  status:
-                    type: string
-                    description: Status of API execution
-                    example: 'Y'
-                  transactionscount:
-                    type: integer
-                    description: >-
-                      Transaction Count – This parameter will give the number of
-                      payment transactions sent.
-                    example: 1
-                  transactions:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        transaction:
-                          type: object
-                          properties:
-                            transactionstatus:
-                              type: string
-                              description: Transaction status
-                              example: 'Failed'
-                            paymenttransactionid:
-                              type: number
-                              description: Payment transaction ID from SnapPay
-                              example: 124253245345
-                            pgtransactionid:
-                              type: string
-                              description: Transaction ID from payment gateway
-                              example: 53245345213121
-                            currencycode:
-                              type: string
-                              description: Currency Code
-                              example: USD
-                            pgtransactiontype:
-                              type: string
-                              description: Payment Gateway Transaction Type
-                              example: S
-                            merchantid:
-                              type: string
-                              description: Merchant id from payment gateway
-                              example: 1012345678
-                            transactionamount:
-                              type: number
-                              description: Transaction Amount
-                              example: 120.1
-                            authorizationnumber:
-                              type: string
-                              description: Authorization Number
-                              example: SDRDXX
-                            pgreturncode:
-                              type: string
-                              description: Payment Gateway Return Code
-                              example: 0
-                            procrespcode:
-                              type: string
-                              description: Payment Gateway response Code
-                              example: 1234
-                            pgreturndescription:
-                              type: string
-                              description: Return Description
-                              example: ACH Reject
-                            paymentdate:
-                              type: string
-                              description: Transaction Date
-                              example: 2022-04-16 8:05 PM
-                            feetype:
-                              type: string
-                              description: Fee Type (Convenience / Surcharge / Service)
-                              example: Service
-                            feeamount:
-                              type: number
-                              description: Fee Amount
-                              example: 0
-                            feevalue:
-                              type: number
-                              description: >-
-                                Fee Value – same as amount for convenience fee
-                                and % for surcharge
-                              example: 0
-                            feeformat:
-                              type: string
-                              description: >-
-                                Fee Format (Flat/Percentage) 
-                              example: Flat
-                            feestatus:
-                              type: string
-                              description: Fee Status (Y/N)
-                              example: 'Y'
-                            feeauthcode:
-                              type: string
-                              description: >-
-                                Fee Authorization Code
-                              example: 1234
-                            feetransactionid:
-                              type: string
-                              description: >-
-                                Fee Transaction ID
-                              example: 10112452326
-                        paymentmethod:
-                          type: object
-                          properties:
-                            type:
-                              type: string
-                              description: Type of payment method – Visa, Mastercard, etc.
-                              example: MC
-                            last4:
-                              type: string
-                              description: Last 4 digits of payment method
-                              example: 5454
-                            routingnumber:
-                              type: string
-                              description: Routing Number
-                              example: null
-                            tokenid:
-                              type: string
-                              description: Token ID
-                              example: 1234567891
-                            paymentgateway:
-                              type: string
-                              description: Payment Gateway
-                              example: BluePay
-                            firstname:
-                              type: string
-                              description: First Name
-                              example: first
-                            lastname:
-                              type: string
-                              description: Last Name
-                              example: last
-                            addressline1:
-                              type: string
-                              description: Address Line 1
-                              example: 123 Main St
-                            city:
-                              type: string
-                              description: City
-                              example: Lombard
-                            state:
-                              type: string
-                              description: State
-                              example: IL
-                            zip:
-                              type: string
-                              description: Zip/Postal Code
-                              example: 60148
-                            country:
-                              type: string
-                              description: Country
-                              example: US
-                            phonenumber:
-                              type: string
-                              description: Phone Number
-                              example: null
-                            email:
-                              type: string
-                              description: Email
-                              example: first.last@company.com
-                        
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
-  /api/tenantsalesreportdownload:
-    post:
-      tags:
-        - Real Estate
-      x-group-name: Real Estate
-      x-proxy-name: Tenantsalesreport Download
-      summary: Tenantsalesreport Download
-      description: Reporting for real estate customers.
-      operationId: tenantsalesreportdownload
-      parameters:
-        - {$ref: '#/components/parameters/AccountIDParam'}
-        - {$ref: '#/components/parameters/HMACParam'}
-        - {$ref: '#/components/parameters/StartDateParam'}
-        - {$ref: '#/components/parameters/EndDateParam'}
-      responses:
-        '200':
-          description: Request successful.
-          content:
-            application/json:
-              examples: 
-                ResponseExample: 
-                  summary: Schedule
-                  $ref: '#/components/examples/TenantSalesReportingDownloadResponse'
-                
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
-  /api/interop/GetServiceFeeAmount:
-    post:
-      tags:
-        - APIs without User Interaction
-      x-group-name: APIs without User Interaction
-      x-proxy-name: Get Service Fee Amount
-      summary: Get Service Fee Amount
-      description: >-
-        Purpose of this API to get service fee amount based on merchant id and amount sent in request
-      operationId: getServiceFeeAmount
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountid:
-                  type: number
-                  description: Account ID
-                  example: 1000000001
-                merchantid:
-                  description: Merchant ID
-                  type: string
-                  example: 123456789
-                transactionamount:
-                  description: Transaction amount
-                  type: number
-                  example: 100.00
-      parameters:
-        - {$ref: '#/components/parameters/AccountIDParam'}
-        - {$ref: '#/components/parameters/HMACParam'}
-      responses: 
-        '200':
-          description: Request successful.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  accountid:
-                    type: number
-                    description: Account ID
-                    example: 1000000001
-                  servicefeeamount:
-                    type: number
-                    description: Service fee amount 
-                    example: 2.7
-                  message:
-                    type: string
-                    description: Message
-                    example: "Service fee amount retrieved successfully."
-                  status:
-                    type: string
-                    description: API execution status
-                    example: "Y"
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
-  /api/UserDataUpload:
-    post:
-      tags:
-        - ERP Agents
-      x-group-name: ERP Agents
-      x-proxy-name: User Data Upload
-      summary: User Data Upload
-      description: Upload users to SnapPay
-      operationId: userdataupload
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountid:
-                  type: number
-                  description: Account ID
-                  example: 1000000001
-                users:
-                  type: array
-                  items:
-                    properties:
-                      userid:
-                        type: string
-                        description: User ID
-                        example: "user01"
-                      firstname: 
-                        type: string
-                        description: First Name
-                        example:  First
-                      lastname:
-                        type: string
-                        description: Last name
-                        example: Last
-                      email:
-                        type: string
-                        description: Email ID
-                        example: first.last@company.com
-                      usertypename:
-                        type: string
-                        description: User type name
-                        example: CSR
-                      usergroupname:
-                        type: string
-                        description: User group name
-                        example: CSR
-                      isactive:
-                        type: string
-                        description: Active flag
-                        example: "Y"
-                      effectivefrom:
-                        type: string
-                        description: Effective from date
-                        example: "2028-12-31"
-                      effectivetodate:
-                        type: string
-                        description: Effectove to date
-                        example: "2028-12-31"
-                      phone: 
-                        type: string
-                        description: Phone number
-                        example: "123-456-7890"
-                      forcepasswordreset:
-                        type: string 
-                        description: Force password reset flag
-                        example: "Y"
-                      forcetermsandconditions: 
-                        type: string
-                        description: Force terms and conditions flag
-                        example: "N"
-                      devicegroup:
-                        type: string 
-                        description: Device group name
-                        example: "Device group"
-                      deleteuser: 
-                        type: string
-                        description: Delete user flag
-                        example: "N"
-                      customers:
-                        type: array
-                        items:
-                          properties:
-                            customerid: 
-                              type: string
-                              description: CustomerID 
-                              example: "100"
-                            associationtype:
-                              type: string
-                              description: Address type (shipto or soldto)
-                              example: "Shipto"
-                            isdefault:
-                              type: string
-                              description: Default flag for customer-user association 
-                              example: "Y"
-            examples:
-              Example 1:
-                summary: Example 1
-                $ref: '#/components/examples/UserDataUploadRequest'  
-      parameters:
-        - {$ref: '#/components/parameters/AccountIDParam'}
-        - {$ref: '#/components/parameters/HMACParam'}
-      responses:
-        '200':
-          description: Request successful.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  accountid:
-                    type: string
-                    description: Account ID
-                    example: >-
-                        1000000001
-                  requestid:
-                    type: integer
-                    description: Request ID
-                    example: 16290
-                  apiname:
-                    type: string
-                    description: API Name
-                    example: UserDataUpload
-                  status:
-                    type: string
-                    description: API execution status
-                    example: "Y"
-                  message:
-                    type: string
-                    description: Message
-                    example: "Request received."
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.  
+ 
                   
