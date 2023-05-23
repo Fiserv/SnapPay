@@ -1764,6 +1764,15 @@ components:
               - customerid: '100'
                 associationtype: shipto
                 isdefault: 'N'
+    
+    Authorize401Response:
+      value:
+        accountid: 1000000001
+        status: 'N'
+        message: Authentication failed.
+        reference: ''
+        purchaseorder: ''
+        
   parameters:
     AccountIDParam:
       name: accountid
@@ -8002,7 +8011,14 @@ paths:
                   summary: Authorize with Service Fee
                   $ref: '#/components/examples/AuthorizeResponseWithServiceFee'
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Authorize401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/charge:
