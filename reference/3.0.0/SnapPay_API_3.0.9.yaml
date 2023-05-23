@@ -7072,6 +7072,15 @@ components:
                               type: string
                               description: Default flag for customer-user association 
                               example: "Y"
+  responses:
+    TooManyRequest:
+      description: Too many requests.
+    InvalidRequest:
+      description: Invalid Request.
+    Unauthorized:
+      description: Unauthorized Access.
+    ServerError:
+      description: Internal Server Error.
 security:
   - basicAuth: []
 tags:
@@ -7150,12 +7159,10 @@ paths:
                     type: string
                     description: e.g. Information stored successfully
                     example: Information stored successfully.
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/Interop/GetPaymentDetails:
     post:
       tags:
@@ -7367,12 +7374,10 @@ paths:
                         type: integer
                         description: Fee Value (value in % for Surcharge fee)
                         example: 0
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/tokenize:
     post:
       tags:
@@ -7627,12 +7632,10 @@ paths:
                 ACH:
                   summary: ACH
                   $ref: '#/components/examples/TokenizeACHResponse'
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/authorize:
     post:
       tags:
@@ -7998,12 +8001,10 @@ paths:
                 Authorize with Service Fee:
                   summary: Authorize with Service Fee
                   $ref: '#/components/examples/AuthorizeResponseWithServiceFee'
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/charge:
     post:
       tags:
@@ -8373,12 +8374,10 @@ paths:
                 Charge with Service Fee:
                   summary: Charge with Service Fee
                   $ref: '#/components/examples/ChargeResponseWithServiceFee' 
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/Interop/Capture:
     post:
       tags:
@@ -8593,12 +8592,10 @@ paths:
                   summary: Capture with Service fee
                   $ref: '#/components/examples/CaptureResponseWithServiceFee'
                 
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/Interop/Credit:
     post:
       tags:
@@ -8798,12 +8795,10 @@ paths:
                         type: string
                         description: Currency Code
                         example: USD
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/Interop/Refund:
     post:
       tags:
@@ -9007,12 +9002,10 @@ paths:
                         type: integer
                         description: Fee Value (value in % for Surcharge fee)
                         example: 0
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/Interop/Void:
     post:
       tags:
@@ -9155,12 +9148,10 @@ paths:
                         type: string
                         description: Currency Code
                         example: USD
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/GetTransaction:
     post:
       tags:
@@ -9410,12 +9401,10 @@ paths:
                               type: string
                               description: Email Address
                               example: john.smith@company.com
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/TransactionHistory:
     get:
       tags:
@@ -9789,12 +9778,10 @@ paths:
                               type: string
                               description: Interop request number
                               example: "f33b25ed-9cb6-eb11-a7ad-00155d546c89"
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/FundingHistory:
     get:
       tags:
@@ -10198,12 +10185,10 @@ paths:
                 CardConnect:
                   summary: CardConnect
                   $ref: '#/components/examples/FundingHistoryRepsonseCardConnect'
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/binapi/{MID}/{token}:
     get:
       tags:
@@ -10312,12 +10297,10 @@ paths:
                       The high end of the BIN range that includes the cardâ€™s
                       BIN value. Masked after the first six (6) digits.
                     example: 601102XXX
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /AccountUpdater/GetUpdater:
     post:
       tags:
@@ -10523,12 +10506,10 @@ paths:
                                 cardâ€™s BIN value. Masked after the first six
                                 (6) digits.
                               example: 601102XXX
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /AccountUpdater/PutUpdater:
     post:
       tags:
@@ -10609,12 +10590,10 @@ paths:
                           type: string
                           description: Error messages - invalid token, can not tokenize
                           example: invalid token
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /AccountUpdater/DeleteUpdater:
     post:
       tags:
@@ -10680,12 +10659,10 @@ paths:
                           type: string
                           description: Error message
                           example: account/token does not exist in CAU database
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/getpaymentmethods:
     post:
       tags:
@@ -10870,12 +10847,10 @@ paths:
                                 type: integer
                                 description: Max amount
                                 example: 300
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/sendpaymentlink:
     post:
       tags:
@@ -11050,12 +11025,10 @@ paths:
                     type: string
                     description: Message
                     example: Email sent successfully.
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/cancelemaillink:
     post:
       tags:
@@ -11101,12 +11074,10 @@ paths:
                     type: string
                     description: Message
                     example: Request expired.
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/snappayreporting:
     post:
       tags:
@@ -11390,12 +11361,10 @@ paths:
                 Autopay:
                   summary: Autopay
                   $ref: '#/components/examples/SnapPayReportingAutopayResponse'
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/settlementstatus:
     post:
       tags:
@@ -11477,12 +11446,10 @@ paths:
                           type: string
                           description: Return reference
                           example: 1587455632
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/GetSSOToken:
     post:
       tags:
@@ -11748,12 +11715,10 @@ paths:
                     type: string
                     description: e.g. Information stored successfully
                     example: Information stored successfully.
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/invoicedataupload:
     post:
       tags:
@@ -11967,12 +11932,10 @@ paths:
                     type: string
                     description: Return message
                     example: Received Successfully.
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/CustomerPaymentMethodUpload:
     post:
       tags:
@@ -12150,12 +12113,10 @@ paths:
                     type: string
                     description: Return message
                     example: Received Successfully.
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/tenantsaleshistoryupload:
     post:
       tags:
@@ -12309,12 +12270,10 @@ paths:
                     type: string
                     description: Return message
                     example: Received Successfully.
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/CustomerDataUpload:
     post:
       tags:
@@ -12446,12 +12405,10 @@ paths:
                     type: string
                     description: Return message
                     example: Received Successfully.
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/InvoiceOrderInquiry:
     post:
       tags:
@@ -12704,12 +12661,10 @@ paths:
                     type: string
                     description: Return message
                     example: Received Successfully.
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/SupplierDataUpload:
     post:
       tags:
@@ -12858,12 +12813,10 @@ paths:
                     type: string
                     description: Return message
                     example: Received Successfully.
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/supplierinvoicedataupload:
     post:
       tags:
@@ -13051,12 +13004,10 @@ paths:
                     type: string
                     description: Return message
                     example: Received Successfully.
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/SupplierPaymentMethodUpload:
     post:
       tags:
@@ -13215,12 +13166,10 @@ paths:
                     type: string
                     description: Return message
                     example: Request received.
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/documentupload:
     post:
       tags:
@@ -13295,12 +13244,10 @@ paths:
                     type: string
                     description: Return message
                     example: Request received.
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/GetToken:
     post:
       tags:
@@ -13528,12 +13475,10 @@ paths:
                     type: string
                     description: Information stored successfully
                     example: Information stored successfully.
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/inquire/{MID}/{token}:
     get:
       tags:
@@ -13693,209 +13638,10 @@ paths:
                         description: Custom phone
                         example: '222-111-HELP'
                 
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
-  /api/GetACHRejects:
-    get:
-      tags:
-        - APIs without User Interaction
-      x-group-name: APIs without User Interaction
-      x-proxy-name: Get ACH Rejects
-      summary: Get ACH Rejects
-      description: >-
-        To download all rejected ACH transactions.
-      operationId: getACHRejects
-      parameters:
-        - {$ref: '#/components/parameters/AccountIDParam'}
-        - {$ref: '#/components/parameters/HMACParam'}
-        - {$ref: '#/components/parameters/StartDateParam'}
-        - {$ref: '#/components/parameters/EndDateParam'}
-      responses:
-        '200':
-          description: Request successful.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  accountid:
-                    type: number
-                    description: SnapPay Account ID
-                    example: 1000000001
-                  message:
-                    type: string
-                    description: >-
-                      Return message for API execution
-                    example: 'ACH Rejects found.'
-                  status:
-                    type: string
-                    description: Status of API execution
-                    example: 'Y'
-                  transactionscount:
-                    type: integer
-                    description: >-
-                      Transaction Count – This parameter will give the number of
-                      payment transactions sent.
-                    example: 1
-                  transactions:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        transaction:
-                          type: object
-                          properties:
-                            transactionstatus:
-                              type: string
-                              description: Transaction status
-                              example: 'Failed'
-                            paymenttransactionid:
-                              type: number
-                              description: Payment transaction ID from SnapPay
-                              example: 124253245345
-                            pgtransactionid:
-                              type: string
-                              description: Transaction ID from payment gateway
-                              example: 53245345213121
-                            currencycode:
-                              type: string
-                              description: Currency Code
-                              example: USD
-                            pgtransactiontype:
-                              type: string
-                              description: Payment Gateway Transaction Type
-                              example: S
-                            merchantid:
-                              type: string
-                              description: Merchant id from payment gateway
-                              example: 1012345678
-                            transactionamount:
-                              type: number
-                              description: Transaction Amount
-                              example: 120.1
-                            authorizationnumber:
-                              type: string
-                              description: Authorization Number
-                              example: SDRDXX
-                            pgreturncode:
-                              type: string
-                              description: Payment Gateway Return Code
-                              example: 0
-                            procrespcode:
-                              type: string
-                              description: Payment Gateway response Code
-                              example: 1234
-                            pgreturndescription:
-                              type: string
-                              description: Return Description
-                              example: ACH Reject
-                            paymentdate:
-                              type: string
-                              description: Transaction Date
-                              example: 2022-04-16 8:05 PM
-                            feetype:
-                              type: string
-                              description: Fee Type (Convenience / Surcharge / Service)
-                              example: Service
-                            feeamount:
-                              type: number
-                              description: Fee Amount
-                              example: 0
-                            feevalue:
-                              type: number
-                              description: >-
-                                Fee Value – same as amount for convenience fee
-                                and % for surcharge
-                              example: 0
-                            feeformat:
-                              type: string
-                              description: >-
-                                Fee Format (Flat/Percentage) 
-                              example: Flat
-                            feestatus:
-                              type: string
-                              description: Fee Status (Y/N)
-                              example: 'Y'
-                            feeauthcode:
-                              type: string
-                              description: >-
-                                Fee Authorization Code
-                              example: 1234
-                            feetransactionid:
-                              type: string
-                              description: >-
-                                Fee Transaction ID
-                              example: 10112452326
-                        paymentmethod:
-                          type: object
-                          properties:
-                            type:
-                              type: string
-                              description: Type of payment method – Visa, Mastercard, etc.
-                              example: MC
-                            last4:
-                              type: string
-                              description: Last 4 digits of payment method
-                              example: 5454
-                            routingnumber:
-                              type: string
-                              description: Routing Number
-                              example: null
-                            tokenid:
-                              type: string
-                              description: Token ID
-                              example: 1234567891
-                            paymentgateway:
-                              type: string
-                              description: Payment Gateway
-                              example: BluePay
-                            firstname:
-                              type: string
-                              description: First Name
-                              example: first
-                            lastname:
-                              type: string
-                              description: Last Name
-                              example: last
-                            addressline1:
-                              type: string
-                              description: Address Line 1
-                              example: 123 Main St
-                            city:
-                              type: string
-                              description: City
-                              example: Lombard
-                            state:
-                              type: string
-                              description: State
-                              example: IL
-                            zip:
-                              type: string
-                              description: Zip/Postal Code
-                              example: 60148
-                            country:
-                              type: string
-                              description: Country
-                              example: US
-                            phonenumber:
-                              type: string
-                              description: Phone Number
-                              example: null
-                            email:
-                              type: string
-                              description: Email
-                              example: first.last@company.com
-                        
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/tenantsalesreportdownload:
     post:
       tags:
@@ -13920,12 +13666,10 @@ paths:
                   summary: Schedule
                   $ref: '#/components/examples/TenantSalesReportingDownloadResponse'
                 
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/GetServiceFeeAmount:
     post:
       tags:
@@ -13981,12 +13725,10 @@ paths:
                     type: string
                     description: API execution status
                     example: "Y"
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /api/UserDataUpload:
     post:
       tags:
@@ -14118,12 +13860,10 @@ paths:
                     type: string
                     description: Message
                     example: "Request received."
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.  
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'} 
   /api/TransactionUpdate:
     post:
       tags:
@@ -14216,12 +13956,10 @@ paths:
                           description: Status
                           example: "Y"
 
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/authcard:
     post:
       tags:
@@ -14361,12 +14099,10 @@ paths:
                     type: string
                     description: Response stat
                     example: "A"
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/authcardmanual:
     post:
       tags:
@@ -14494,12 +14230,10 @@ paths:
                     type: string
                     description: Response stat
                     example: "A"
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/connect:
     post:
       tags:
@@ -14543,12 +14277,10 @@ paths:
                     description: Card connect session key 
                     example: "72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z"
                   
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/disconnect:
     post:
       tags:
@@ -14593,12 +14325,10 @@ paths:
                     description: Error message 
                     example: "Session key for hsn 18100PP84012345 was not valid"
                   
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/getPanPadVersion:
     post:
       tags:
@@ -14638,12 +14368,10 @@ paths:
                     type: string 
                     description: Error code 
                     example: "01060040"
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/listTerminals:
     post:
       tags:
@@ -14681,12 +14409,10 @@ paths:
                       - "17217SC81316999"
                       - "18145PP21498843"
                       - "18238PP21557324"
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/ping:
     post:
       tags:
@@ -14727,12 +14453,10 @@ paths:
                     description: Connection flag
                     example: "true"
                 
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/preconnect:
     post:
       tags:
@@ -14777,12 +14501,10 @@ paths:
                     description: Error message 
                     example: "Merchant is not configured for two-factor authentication"
                   
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/readCard:
     post:
       tags:
@@ -14871,12 +14593,10 @@ paths:
                     description: Name
                     example: "GIFT/CARD"
                   
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/readConfirmation:
     post:
       tags:
@@ -14925,12 +14645,10 @@ paths:
                     type: string 
                     description: Confirmed flag
                     example: "true"
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/readInput:
     post:
       tags:
@@ -14983,12 +14701,10 @@ paths:
                     type: string 
                     description: Confirmed flag
                     example: "6304299823"
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/readManual:
     post:
       tags:
@@ -15045,12 +14761,10 @@ paths:
                     type: string 
                     description: Card expiry date
                     example: "1225"
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/readSignature:
     post:
       tags:
@@ -15096,12 +14810,10 @@ paths:
                     type: string 
                     description: Signature
                     example: "H4sICAAAAAAC/1NJRy5CTVAA7JihTsRAFEXPpElrJru2glBLUFUowiZ4/qEoHKAIrqP4Ij6gn1KF3gRTsdmHgE3A3icqeMc2J9OZefPmtrd3j5cAcANcAHOCdyCRAOh/nv/GzAiCIAiCIAiCIAiCf0xjk+yOZrOopoWdLZpbFejE166/5yyNnAHY2VFw29NqCyvWn9ZMcAdHaXhcvaioiu52urs9ymqyvT7bRZ/thnXcdiW3l6wDAM/Sxh4BkrS7VQMwSg2yrgC0f5Y5FUDry20q8tltU2nmregyNZ9iR++Z6m5RC2rKG7kYh9w4XLXNedyWISfxyj5jyGJZsWHI6nXSTEOWG/N+qOVuc+1wtw63mnWXvcN9dbhPDvfB4d6/OfLNh8N9cWSjq5Xc85VcPWukspbrOL9yBu0d7q4k2e3MipquGM0OyPl3NE92dny7BkEQBEEQBEEQ/OFrAH0pxvFuKgAA"
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/tip:
     post:
       tags:
@@ -15165,12 +14877,10 @@ paths:
                     type: string 
                     description: Total amount
                     example: "1150"
-        '400':
-          description: Invalid request.
-        '401':
-          description: Unauthorized access.
-        '500':
-          description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/cancel:
     post:
       tags:
@@ -15201,12 +14911,10 @@ paths:
       responses:
         '200':
             description: Request successful.
-        '400':
-            description: Invalid request.
-        '401':
-            description: Unauthorized access.
-        '500':
-            description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/display:
     post:
       tags:
@@ -15241,12 +14949,10 @@ paths:
       responses:
         '200':
           description: Request successful.
-        '400':
-            description: Invalid request.
-        '401':
-            description: Unauthorized access.
-        '500':
-            description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/clearDisplay:
     post:
       tags:
@@ -15277,12 +14983,10 @@ paths:
       responses:
         '200':
           description: Request successful.
-        '400':
-            description: Invalid request.
-        '401':
-            description: Unauthorized access.
-        '500':
-            description: Internal server error.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/dateTime:
     post:
       tags:
@@ -15317,11 +15021,9 @@ paths:
       responses:
         '200':
           description: Request successful.
-        '400':
-            description: Invalid request.
-        '401':
-            description: Unauthorized access.
-        '500':
-            description: Internal server error.    
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
  
                   
