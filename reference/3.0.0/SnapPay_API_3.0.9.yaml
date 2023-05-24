@@ -1765,13 +1765,280 @@ components:
                 associationtype: shipto
                 isdefault: 'N'
     
-    Authorize401Response:
+    Common401Response:
       value:
         accountid: 1000000001
         status: 'N'
         message: Authentication failed.
         reference: ''
         purchaseorder: ''
+    UserDataUpload401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17326
+        apiname: UserDataUploadAPI
+        status: 'N'
+        message: Authentication failed.
+    GetRequestID401Response:
+      value:
+        accountid: 1000000001
+        requestid: ''
+        status: 'N'
+        message: Authentication failed.
+    GetPaymentDetail401Response:
+      value:
+        accountid: 1000000001
+        message: Authentication failed.
+    GetTransaction401Response:
+      value:
+        accountid: 1000000001
+        message: Authentication failed.
+    TransactionHistory401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17327
+        apiname: TransactionHistory
+        status: 'N'
+        message: Authentication failed.
+    FundingHistory401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17328
+        apiname: FundingHistory
+        status: 'N'
+        message: Authentication failed.
+    GetPaymentMethods401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17330
+        apiname: GetPaymentMethods
+        status: 'N'
+        message: Authentication failed.
+    SendPaymentLink401Response:
+      value:
+        accountid: 1000000001
+        requestid: ''
+        status: 'N'
+        message: Authentication failed.
+    CancelEmailLink401Response:
+      value:
+        accountid: 1000000001
+        status: 'N'
+        message: Authentication failed.
+    SnapPayReporting401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17332
+        apiname: SnapPayReporting
+        status: 'N'
+        message: Authentication failed.
+    GetSSOToken401Response:
+      value:
+        accountid: 1000000001
+        token: ''
+        status: 'N'
+        message: Authentication failed.
+    InvoiceDataUpload401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17333
+        apiname: InvoiceDataUpload
+        status: 'N'
+        message: Authentication failed.
+    CustomerPaymentMethod401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17334
+        apiname: CustomerPaymentMethodUpload
+        status: 'N'
+        message: Authentication failed.
+    TenantSalesHistoryUpload401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17335
+        apiname: TenantSalesHistoryUpload
+        status: 'N'
+        message: Authentication failed.
+    CustomerDataUpload401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17336
+        apiname: CustomerDataUpload
+        status: 'N'
+        message: Authentication failed.
+    InvoiceOrderDataUpload401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17337
+        apiname: InvoiceOrderDataUpload
+        status: 'N'
+        message: Authentication failed.
+    SupplierDataUpload401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17338
+        apiname: SupplierDataUpload
+        status: 'N'
+        message: Authentication failed.
+    SupplierInvoiceDataUpload401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17339
+        apiname: SupplierInvoiceDataUpload
+        status: 'N'
+        message: Authentication failed.
+    SupplierPaymentMethodUpload401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17340
+        apiname: SupplierPaymentMethodUpload
+        status: 'Y'
+        message: Request received.
+    DocumentUpload401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17341
+        apiname: DocumentUpload
+        status: 'N'
+        message: Authentication failed.
+    GetToken401Response:
+      value:
+        accountid: 1000000001
+        token: ''
+        status: 'N'
+        message: Authentication failed.
+    TenantSalesReportDownload401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17342
+        apiname: TenantSalesReportDownload
+        status: 'N'
+        message: Authentication failed.
+    GetServiceFeeAmount401Response:
+      value:  
+        accountid: 1000000001
+        servicefeeamount: 0
+        message: Authentication failed.
+        status: 'N'
+    TransactionUpdate401Response:
+      value:
+        accountid: 1000000001
+        requestid: 17343
+        apiname: TransactionUpdate
+        status: 'N'
+        message: Authentication failed.
+    AuthCard401Response:
+      value:
+        accountid: 1000000001
+        requestid: 841
+        apiname: authCard
+        status: 'N'
+        message: Authentication failed.
+    AuthManual401Response:
+      value:
+        accountid: 1000000001
+        requestid: 844
+        apiname: authManual
+        status: 'N'
+        message: Authentication failed.
+    Connect401Response:
+      value:
+        accountid: 1000000001
+        requestid: 845
+        apiname: connect
+        status: 'N'
+        message: Authentication failed.
+    Disconnect401Response:
+      value:
+        accountid: 1000000001
+        requestid: 846
+        apiname: disconnect
+        status: 'N'
+        message: Authentication failed.
+    ListTerminals401Response:
+      value:
+        accountid: 1000000001
+        requestid: 850
+        apiname: listTerminals
+        status: 'N'
+        message: Authentication failed.
+    PreConnect401Response:
+      value:
+        accountid: 1000000001
+        requestid: 853
+        apiname: preconnect
+        status: 'N'
+        message: Authentication failed.
+    ReadCard401Response:
+      value:
+        accountid: 1000000001
+        requestid: 855
+        apiname: readCard
+        status: 'N'
+        message: Authentication failed.
+    ReadConfirmation401Response:
+      value:
+        accountid: 1000000001
+        requestid: 856
+        apiname: readConfirmation
+        status: 'N'
+        message: Authentication failed.
+    ReadInput401Response:
+      value:
+        accountid: 1000000001
+        requestid: 857
+        apiname: readInput
+        status: 'N'
+        message: Authentication failed.
+    ReadManual401Response:
+      value:
+        accountid: 1000000001
+        requestid: 858
+        apiname: readManual
+        status: 'N'
+        message: Authentication failed.
+    ReadSignature401Response:
+      value:
+        accountid: 1000000001
+        requestid: 859
+        apiname: readSignature
+        status: 'N'
+        message: Authentication failed.
+    Tip401Response:
+      value:
+        accountid: 1000000001
+        requestid: 860
+        apiname: tip
+        status: 'N'
+        message: Authentication failed.
+    Cancel401Response:
+      value:
+        accountid: 1000000001
+        requestid: 861
+        apiname: cancel
+        status: 'N'
+        message: Authentication failed.
+    Display401Response: 
+      value:
+        accountid: 1000000001
+        requestid: 862
+        apiname: display
+        status: 'N'
+        message: Authentication failed.
+    ClearDisplay401Response:    
+      value:
+        accountid: 1000000001
+        requestid: 863
+        apiname: clearDisplay
+        status: 'N'
+        message: Authentication failed.
+    DateTime401Response:
+      value:
+        accountid: 1000000001
+        requestid: 864
+        apiname: dateTime
+        status: 'N'
+        message: Authentication failed.
         
   parameters:
     AccountIDParam:
@@ -7169,7 +7436,14 @@ paths:
                     description: e.g. Information stored successfully
                     example: Information stored successfully.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/GetRequestID401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/Interop/GetPaymentDetails:
@@ -7384,7 +7658,14 @@ paths:
                         description: Fee Value (value in % for Surcharge fee)
                         example: 0
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/GetPaymentDetail401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/tokenize:
@@ -7642,7 +7923,14 @@ paths:
                   summary: ACH
                   $ref: '#/components/examples/TokenizeACHResponse'
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/authorize:
@@ -8018,7 +8306,7 @@ paths:
               examples:
                 Authentication Failed: 
                   summary: Authentication Failed
-                  $ref: '#/components/examples/Authorize401Response'
+                  $ref: '#/components/examples/Common401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/charge:
@@ -8391,7 +8679,14 @@ paths:
                   summary: Charge with Service Fee
                   $ref: '#/components/examples/ChargeResponseWithServiceFee' 
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/Interop/Capture:
@@ -8609,7 +8904,14 @@ paths:
                   $ref: '#/components/examples/CaptureResponseWithServiceFee'
                 
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/Interop/Credit:
@@ -8812,7 +9114,14 @@ paths:
                         description: Currency Code
                         example: USD
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/Interop/Refund:
@@ -9019,7 +9328,14 @@ paths:
                         description: Fee Value (value in % for Surcharge fee)
                         example: 0
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/Interop/Void:
@@ -9165,7 +9481,14 @@ paths:
                         description: Currency Code
                         example: USD
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/GetTransaction:
@@ -9418,7 +9741,14 @@ paths:
                               description: Email Address
                               example: john.smith@company.com
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/GetTransaction401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/TransactionHistory:
@@ -9795,7 +10125,14 @@ paths:
                               description: Interop request number
                               example: "f33b25ed-9cb6-eb11-a7ad-00155d546c89"
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/TransactionHistory401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/FundingHistory:
@@ -10202,7 +10539,14 @@ paths:
                   summary: CardConnect
                   $ref: '#/components/examples/FundingHistoryRepsonseCardConnect'
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/FundingHistory401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/binapi/{MID}/{token}:
@@ -10864,7 +11208,14 @@ paths:
                                 description: Max amount
                                 example: 300
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/GetPaymentMethods401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/sendpaymentlink:
@@ -11042,7 +11393,14 @@ paths:
                     description: Message
                     example: Email sent successfully.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/SendPaymentLink401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/cancelemaillink:
@@ -11091,7 +11449,14 @@ paths:
                     description: Message
                     example: Request expired.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/CancelEmailLink401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/snappayreporting:
@@ -11378,7 +11743,14 @@ paths:
                   summary: Autopay
                   $ref: '#/components/examples/SnapPayReportingAutopayResponse'
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/SnapPayReporting401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/settlementstatus:
@@ -11732,7 +12104,14 @@ paths:
                     description: e.g. Information stored successfully
                     example: Information stored successfully.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/GetSSOToken401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/invoicedataupload:
@@ -11949,7 +12328,14 @@ paths:
                     description: Return message
                     example: Received Successfully.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/InvoiceDataUpload401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/CustomerPaymentMethodUpload:
@@ -12130,7 +12516,14 @@ paths:
                     description: Return message
                     example: Received Successfully.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/CustomerPaymentMethod401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/tenantsaleshistoryupload:
@@ -12287,7 +12680,14 @@ paths:
                     description: Return message
                     example: Received Successfully.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/TenantSalesHistoryUpload401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/CustomerDataUpload:
@@ -12422,18 +12822,25 @@ paths:
                     description: Return message
                     example: Received Successfully.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/CustomerDataUpload401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
-  /api/InvoiceOrderInquiry:
+  /api/InvoiceOrderDataUpload:
     post:
       tags:
         - ERP Agents
       x-group-name: ERP Agents
-      x-proxy-name: Invoice Order Inquiry
-      summary: Invoice Order Inquiry
-      description: Invoice Order Inquiry
-      operationId: invoiceorderinquiry
+      x-proxy-name: Invoice Order Data Upload
+      summary: Invoice Order Data Upload
+      description: Invoice Order Data Upload
+      operationId: invoiceorderupload
       requestBody:
         content:
           application/json:
@@ -12678,7 +13085,14 @@ paths:
                     description: Return message
                     example: Received Successfully.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/InvoiceOrderDataUpload401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/SupplierDataUpload:
@@ -12830,7 +13244,14 @@ paths:
                     description: Return message
                     example: Received Successfully.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/SupplierDataUpload401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/supplierinvoicedataupload:
@@ -13021,7 +13442,14 @@ paths:
                     description: Return message
                     example: Received Successfully.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/SupplierInvoiceDataUpload401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/SupplierPaymentMethodUpload:
@@ -13183,7 +13611,14 @@ paths:
                     description: Return message
                     example: Request received.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/SupplierPaymentMethodUpload401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/documentupload:
@@ -13261,7 +13696,14 @@ paths:
                     description: Return message
                     example: Request received.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/DocumentUpload401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/GetToken:
@@ -13492,7 +13934,14 @@ paths:
                     description: Information stored successfully
                     example: Information stored successfully.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/GetToken401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/inquire/{MID}/{token}:
@@ -13683,7 +14132,14 @@ paths:
                   $ref: '#/components/examples/TenantSalesReportingDownloadResponse'
                 
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/TenantSalesReportDownload401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/interop/GetServiceFeeAmount:
@@ -13742,7 +14198,14 @@ paths:
                     description: API execution status
                     example: "Y"
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/GetServiceFeeAmount401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /api/UserDataUpload:
@@ -13877,7 +14340,14 @@ paths:
                     description: Message
                     example: "Request received."
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/UserDataUpload401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'} 
   /api/TransactionUpdate:
@@ -13973,7 +14443,14 @@ paths:
                           example: "Y"
 
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/TransactionUpdate401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/authcard:
@@ -14116,10 +14593,17 @@ paths:
                     description: Response stat
                     example: "A"
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/AuthCard401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
-  /P2PE/authcardmanual:
+  /P2PE/authmanual:
     post:
       tags:
         - Terminal Pass through API
@@ -14247,7 +14731,14 @@ paths:
                     description: Response stat
                     example: "A"
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/AuthManual401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/connect:
@@ -14294,7 +14785,14 @@ paths:
                     example: "72eb45c4e6034aa1b5c5ba0532209a87;expires=2022-11-10T12:46:16.934323Z"
                   
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Connect401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/disconnect:
@@ -14342,7 +14840,14 @@ paths:
                     example: "Session key for hsn 18100PP84012345 was not valid"
                   
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Disconnect401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/getPanPadVersion:
@@ -14426,7 +14931,14 @@ paths:
                       - "18145PP21498843"
                       - "18238PP21557324"
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/ListTerminals401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/ping:
@@ -14518,7 +15030,14 @@ paths:
                     example: "Merchant is not configured for two-factor authentication"
                   
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/PreConnect401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/readCard:
@@ -14610,7 +15129,14 @@ paths:
                     example: "GIFT/CARD"
                   
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/ReadCard401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/readConfirmation:
@@ -14662,7 +15188,14 @@ paths:
                     description: Confirmed flag
                     example: "true"
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/ReadConfirmation401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/readInput:
@@ -14718,7 +15251,14 @@ paths:
                     description: Confirmed flag
                     example: "6304299823"
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/ReadInput401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/readManual:
@@ -14778,7 +15318,14 @@ paths:
                     description: Card expiry date
                     example: "1225"
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/ReadManual401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/readSignature:
@@ -14827,7 +15374,14 @@ paths:
                     description: Signature
                     example: "H4sICAAAAAAC/1NJRy5CTVAA7JihTsRAFEXPpElrJru2glBLUFUowiZ4/qEoHKAIrqP4Ij6gn1KF3gRTsdmHgE3A3icqeMc2J9OZefPmtrd3j5cAcANcAHOCdyCRAOh/nv/GzAiCIAiCIAiCIAiCf0xjk+yOZrOopoWdLZpbFejE166/5yyNnAHY2VFw29NqCyvWn9ZMcAdHaXhcvaioiu52urs9ymqyvT7bRZ/thnXcdiW3l6wDAM/Sxh4BkrS7VQMwSg2yrgC0f5Y5FUDry20q8tltU2nmregyNZ9iR++Z6m5RC2rKG7kYh9w4XLXNedyWISfxyj5jyGJZsWHI6nXSTEOWG/N+qOVuc+1wtw63mnWXvcN9dbhPDvfB4d6/OfLNh8N9cWSjq5Xc85VcPWukspbrOL9yBu0d7q4k2e3MipquGM0OyPl3NE92dny7BkEQBEEQBEEQ/OFrAH0pxvFuKgAA"
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/ReadSignature401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/tip:
@@ -14894,7 +15448,14 @@ paths:
                     description: Total amount
                     example: "1150"
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Tip401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/cancel:
@@ -14928,7 +15489,14 @@ paths:
         '200':
             description: Request successful.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Cancel401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/display:
@@ -14966,7 +15534,14 @@ paths:
         '200':
           description: Request successful.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Display401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/clearDisplay:
@@ -15000,7 +15575,14 @@ paths:
         '200':
           description: Request successful.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/ClearDisplay401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   /P2PE/dateTime:
@@ -15038,7 +15620,14 @@ paths:
         '200':
           description: Request successful.
         '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401': {$ref: '#/components/responses/Unauthorized'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/DateTime401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
  
