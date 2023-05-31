@@ -18,10 +18,8 @@ The following general instructions apply to every API.
 
 
 
-## End Point URLs  
+## List of APIs  
   
-These are production URLs. Test URLs will be provided during test account setup.
-
 ### iFrame related APIs
 
 [Get Request ID](../api/?type=post&path=/api/interop/GetRequestID)  
