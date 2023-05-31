@@ -18,10 +18,8 @@ The following general instructions apply to every API.
 
 
 
-## End Point URLs  
+## List of APIs  
   
-These are production URLs. Test URLs will be provided during test account setup.
-
 ### iFrame related APIs
 
 [Get Request ID](../api/?type=post&path=/api/interop/GetRequestID)  
@@ -40,7 +38,7 @@ These are production URLs. Test URLs will be provided during test account setup.
 [Funding History](../api/?type=post&path=/api/interop/FundingHistory)  
 [Bin Info](../api/?type=post&path=/api/interop/binapi)  
 
-### CAU APIs
+### Card Account Updater APIs
 
 [Get Updater](../api/?type=post&path=/AccountUpdater/GetUpdater)  
 [Put Updater](../api/?type=post&path=/AccountUpdater/PutUpdater)  
