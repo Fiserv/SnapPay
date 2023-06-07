@@ -2039,6 +2039,29 @@ components:
         apiname: dateTime
         status: 'N'
         message: Authentication failed.
+    TransactionUpdateRequest:
+      value:
+        accountid: 1000000001
+        message: Transaction Successful–Payment modified in ERP
+        paymentdata:
+          - paymentheaderid: 452023
+            paymenttransactionid: 1200001295
+          - paymentheaderid: 452082
+            paymenttransactionid: 105516222275
+    TransactionUpdateResponse:
+      value:
+        accountid: 1000000001
+        message: Transaction Updated Succesfully.
+        status: 'Y'
+        requestid: 17386
+        apiname: TransactionUpdate
+        paymentdata:
+          - paymentheaderid: 452023
+            paymenttransactionid: 1200001295
+            status: 'Y'
+          - paymentheaderid: 452082
+            paymenttransactionid: 105516222275
+            status: 'Y'
         
   parameters:
     AccountIDParam:
@@ -14373,23 +14396,22 @@ paths:
                   type: string 
                   description: Message to update
                   example: "Transaction Successful–Payment modified in ERP"
-                invoicedata:
+                paymentdata:
                   type: array
                   items:
                     properties:
-                        invoicenumber:
-                          type: string
-                          description: Invoice number
-                          example: "INV-101"
                         paymentheaderid:
                           type: number
                           description: Payment header ID
-                          example: 44631
+                          example: 47294
                         paymenttransactionid:
                           type: number
                           description: Payment transaction ID
-                          example: 2830252123456
-                        
+                          example: 1540010178
+            examples:
+              With multiple payments:
+                summary: With multiple payments
+                $ref: '#/components/examples/TransactionUpdateRequest'            
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
      
@@ -14421,27 +14443,26 @@ paths:
                     type: string
                     description: API name
                     example: "TransactionUpdate"
-                  invoicedata:
+                  paymentdata:
                     type: array
                     items:
                       properties:
-                        invoicenumber:
-                          type: string
-                          description: Invoice number
-                          example: "INV-101"
                         paymentheaderid:
                           type: number
                           description: Payment header ID
-                          example: 44631
+                          example: 47294
                         paymenttransactionid: 
                           type: number
                           description: Payment transaction ID
-                          example: 2830252123456
+                          example: 1540010178
                         status: 
                           type: string
                           description: Status
                           example: "Y"
-
+              examples:
+                With multiple payments:
+                  summary: With multiple payments
+                  $ref: '#/components/examples/TransactionUpdateResponse'  
         '400': {$ref: '#/components/responses/InvalidRequest'}
         '401':
           description: Authentication Failed
