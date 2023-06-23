@@ -11884,6 +11884,18 @@ paths:
                   type: string
                   description: User ID
                   example: ERPUser
+                language:
+                  type: string
+                  description: Language
+                  example: "en-US"
+                redirecturl:
+                  type: string
+                  description: Redirect Url
+                  example: "https://www.google.com/"
+                oauthtoken:
+                  type: string
+                  description: Auth token
+                  example: "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkJFUElWSHlwcjVGNVZoWEcyX0xueEdUeHRiYyIsImtpZCI6IkJFUElWSHlwcjVGNVZoWEcyX0xueEdUeHRiYyJ9.eyJpc3MiOiJodHRwczovL2RhcGkyMy5jYmNvcnBvcmF0ZS5jb20vYXV0aCIsImF1ZCI6Imh0dHBzOi8vZGFwaTIzLmNiY29ycG9yYXRlLmNvbS9hdXRoL3Jlc291cmNlcyIsImV4cCI6MTY1MzkxNTUwMCwibmJmIjoxNjUzMzEwNzAwLCJjbGllbnRfaWQiOiJjYmNvcnAiLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiYXBpIl0sInN1YiI6IjYxNzUwIiwiYXV0aF90aW1lIjoxNjUzMDkwMDU0LCJpZHAiOiJpZHNydiIsInJvbGUiOiJDdXN0b21lciIsIm5hbWUiOiJUcmFjaWUgQ2Fpcm5zIiwiZW1haWwiOiJzaXZhc2Fua2FyLmRlc3VAZmlzZXJ2LmNvbSIsImlkIjoidHJhY2FpMSIsImV4X2N1cyAgICAiOiIzMCIsIlNBUEFjY291bnRzIjoiMDAwMTAyNjA4NSIsImFtciI6WyJwYXNzd29yZCJdfQ.KS9QDsqMdMh_gpMqCYIWAeJ6e-mCRmshd6EGu-Z2TCeIn0U1hwsUZna5RBfbf_8BvmOAjLEois71O_lotoqaSzF7fgANiaRFqrGg2_CRr0Wn5Ydg6dFVW_JbuhocDxODPXmR7cSgkGdcAT1KwHOmm5Y3kR3siwiSbMgjZFwYBxSI4ZS4oCDfVbUNCHPKAcharQD3pymgve-MNpPQLeQluFko0aromRvM89DMojsMqUL00CZR3IgKdVyOsx7vgymUsT6gjGfmGaaFAf0lL6bAFTXE06SSRqIbxVPVOnQUuG6nlZlfMTYxgvgifkZzNlRio8emm_R6FwV8JxTuUIsPsw"
                 user:
                   properties:
                     userfirstname:
@@ -11984,6 +11996,22 @@ paths:
                       type: string
                       description: VAT registration number
                       example: ''
+                    customertype:
+                      type: string
+                      description: Customer type. Possible values - X or S or C
+                      example: "X"
+                    associate:  
+                      type: string
+                      description: Customer assocation flag
+                      example: "Y"
+                    associationtype:
+                      type: string
+                      description: Association type
+                      example: "shipto"
+                    isselected:
+                      type: string
+                      description: Selected flag
+                      example: "N"
                 customers:
                   type: array
                   items: 
@@ -12045,6 +12073,22 @@ paths:
                         type: string
                         description: VAT registration number
                         example: ''
+                      customertype:
+                        type: string
+                        description: Customer type. Possible values - X or S or C
+                        example: "X"
+                      associate:  
+                        type: string
+                        description: Customer assocation flag
+                        example: "Y"
+                      associationtype:
+                        type: string
+                        description: Association type
+                        example: "shipto"
+                      isselected:
+                        type: string
+                        description: Selected flag
+                        example: "N"
                 supplier:
                   properties:
                     supplierid:
