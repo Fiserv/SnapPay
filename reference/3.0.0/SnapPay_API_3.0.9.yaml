@@ -7371,6 +7371,53 @@ components:
                               type: string
                               description: Default flag for customer-user association 
                               example: "Y"
+    GetRequestIDForOTP:
+      type: object
+      properties:
+        accountid:
+          type: number
+          description: Account ID
+          example: 1000000001
+        company:
+          type: string
+          description: Company code
+          example: "00200"
+        currency: 
+          type: string
+          description: Currency code
+          example: USD
+        customerid: 
+          type: string
+          description: Customer ID
+          example: "4242"
+        userid: 
+          type: string
+          description: User ID
+          example: guestuser
+        language: 
+          type: string
+          description: Language
+          example: en-US
+        invoicelist: 
+          type: array
+          items:
+            properties:
+              invoicenumber:
+                type: string
+                description: Invoice Number
+                example: INV001
+              invoicetype:
+                type: string
+                description: Invoice Type
+                example: RI
+              fiscalyear:
+                type: string
+                description: Fiscal year
+                example: "2023"
+              linenumber: 
+                type: string
+                description: Line number
+                example: "1"
   responses:
     TooManyRequest:
       description: Too many requests.
@@ -7469,6 +7516,65 @@ paths:
                   $ref: '#/components/examples/GetRequestID401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
+  /api/interop/GetRequestIDForOTP:
+    post:
+      tags:
+        - APIs with User Interaction
+        
+      x-group-name: APIs with User Interaction
+      x-proxy-name: Get Request ID For OTP
+      summary: Get Request ID For OTP
+      description: >-
+        GetRequestIDForOTP
+      operationId: getRequestIDforOTP
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetRequestIDForOTP'
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: Account ID
+                    example: 1000000001
+                  invoicesguid:
+                    type: string
+                    description: Invoices Guid
+                    example: a4d98699924a42fdb53453f2e189d48a
+                  userguid:
+                    type: string
+                    description: User Guid
+                    example: 9593c39b-83ef-408e-ad46-c87f6bbec1e5
+                  status:
+                    type: string
+                    description: Y or N
+                    example: 'Y'
+                  message:
+                    type: string
+                    description: Response Message
+                    example: Success.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
+  
   /api/Interop/GetPaymentDetails:
     post:
       tags:
