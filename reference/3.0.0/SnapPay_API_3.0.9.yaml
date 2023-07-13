@@ -7381,7 +7381,7 @@ components:
         company:
           type: string
           description: Company code
-          example: 100
+          example: "00200"
         currency: 
           type: string
           description: Currency code
@@ -7389,7 +7389,7 @@ components:
         customerid: 
           type: string
           description: Customer ID
-          example: 4242
+          example: "4242"
         userid: 
           type: string
           description: User ID
@@ -7413,11 +7413,11 @@ components:
               fiscalyear:
                 type: string
                 description: Fiscal year
-                example: 2023
+                example: "2023"
               linenumber: 
                 type: string
                 description: Line number
-                example: 1
+                example: "1"
   responses:
     TooManyRequest:
       description: Too many requests.
