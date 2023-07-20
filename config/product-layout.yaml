@@ -34,6 +34,7 @@ header:
   image: 
     link: "/assets/images/Fiserv_Logo.jpg"
     altText: Fiserv SnapPay™
+getStarted: /docs/getting-started.md
 featuredFeatures:
   - title: Enable Payments for external application
     description:  This set of API enables our merchants to integrate payment processing with any application of their choice. Their customers can make payments using credit card or ACH.
