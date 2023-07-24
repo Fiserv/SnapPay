@@ -26,6 +26,7 @@
         "apiSpecFileNames": ["SnapPay_API_3.0.9"]
       }
   ],
+  "getStartedFilePath": "/docs/getting-started.md"
   "product": {
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Portal_Logo.png",
