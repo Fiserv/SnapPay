@@ -7,7 +7,7 @@ info:
     integrates with popular ERP solutions and shopping cart solutions to serve
     the holistic B2B payment needs of enterprise-size businesses.
   
-  version: v1.2.0
+  version: 3.0.9
 servers:
   - url: https://restapi.snappayglobal.com/
   - url: https://demo1.cditechnology.com/SnapPay/REST/
@@ -2020,28 +2020,28 @@ components:
         message: Authentication failed.
     Display401Response: 
       value:
-        accountid: '1000000001'
+        accountid: 1000000001
         requestid: 862
         apiname: display
         status: 'N'
         message: Authentication failed.
     ClearDisplay401Response:    
       value:
-        accountid: '1000000001'
+        accountid: 1000000001
         requestid: 863
         apiname: clearDisplay
         status: 'N'
         message: Authentication failed.
     DateTime401Response:
       value:
-        accountid: "1000000001"
+        accountid: 1000000001
         requestid: 864
         apiname: dateTime
         status: 'N'
         message: Authentication failed.
     TransactionUpdateRequest:
       value:
-        accountid: "1000000001"
+        accountid: 1000000001
         message: Transaction Successful–Payment modified in ERP
         paymentdata:
           - paymentheaderid: 452023
@@ -2050,7 +2050,7 @@ components:
             paymenttransactionid: 105516222275
     TransactionUpdateResponse:
       value:
-        accountid: "1000000001"
+        accountid: 1000000001
         message: Transaction Updated Succesfully.
         status: 'Y'
         requestid: 17386
@@ -2153,7 +2153,7 @@ components:
           description: Account ID
           type: string
           example:  >-
-              '1000000001'
+              1000000001
         companycode:
           description: Company Code
           type: string
@@ -2492,7 +2492,7 @@ components:
           type: string
           description: Account ID
           example:  >-
-              '1000000001'
+              1000000001
         token:
           type: string
           description: Request ID that will be used to open SnapPay iFrame
@@ -2524,7 +2524,7 @@ components:
          type: string
          description: Account ID
          example: >-
-              '1000000001'
+              1000000001
        status:
          type: string
          description: Y or N
@@ -2698,7 +2698,7 @@ components:
         type: string
         description: Account ID
         example: >-
-              '1000000001'
+              1000000001
        requesttype:
         type: string
         description: >-
@@ -2804,7 +2804,7 @@ components:
          type: string
          description: Account ID
          example: >-
-              '1000000001'
+              1000000001
        status:
          type: string
          description: Y or N
@@ -2912,7 +2912,7 @@ components:
           type: string
           description: Account ID
           example: >-
-              '1000000001'
+              1000000001
         customerid:
           type: string
           description: Customer ID
@@ -3021,7 +3021,7 @@ components:
         type: string
         description: Account ID
         example: >-
-              '1000000001'
+              1000000001
       status:
         type: string
         description: Y or N
@@ -3099,7 +3099,7 @@ components:
           type: string
           description: Account ID
           example: >-
-              '1000000001'
+              1000000001
         customerid:
           type: string
           description: Customer ID
@@ -3259,7 +3259,7 @@ components:
           type: string
           description: Account ID
           example: >-
-              '1000000001'
+              1000000001
         status:
           type: string
           description: Y or N
@@ -3378,7 +3378,7 @@ components:
           type: string
           description: Account ID
           example:  >-
-              '1000000001'
+              1000000001
         referencetransactionid:
           type: string
           description: >-
@@ -3481,7 +3481,7 @@ components:
           type: string
           description: Account ID
           example: >-
-              '1000000001'
+              1000000001
         status:
           type: string
           description: Y or N
@@ -3549,7 +3549,7 @@ components:
           type: string
           description: Account ID
           example:  >-
-              '1000000001'
+              1000000001
         customerid:
           type: string
           description: Customer ID
@@ -3660,7 +3660,7 @@ components:
           type: string
           description: Account ID
           example: >-
-              '1000000001'
+              1000000001
         status:
           type: string
           description: Y or N
@@ -3720,7 +3720,7 @@ components:
           type: string
           description: Account ID
           example: >-
-              '1000000001'
+              1000000001
         referencetransactionid:
           type: string
           description: >-
@@ -3774,7 +3774,7 @@ components:
           type: string
           description: Account ID
           example:  >-
-              '1000000001'
+              1000000001
         status:
           type: string
           description: Y or N
@@ -3893,7 +3893,7 @@ components:
           type: string
           description: Account ID
           example: >-
-              '1000000001'
+              1000000001
         referencetransactionid:
           type: string
           description: >-
@@ -3935,7 +3935,7 @@ components:
           type: string
           description: Account ID
           example: >-
-              '1000000001'
+              1000000001
         status:
           type: string
           description: Y or N
@@ -8458,9 +8458,9 @@ paths:
               type: object
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: '1000000001'
+                  example: 1000000001
                 customerid:
                   type: string
                   description: Customer ID
@@ -8686,9 +8686,9 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
-                    example: '1000000001'
+                    example: 1000000001
                   status:
                     type: string
                     description: Y or N
@@ -15801,3 +15801,5 @@ paths:
                   $ref: '#/components/examples/DateTime401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
+ 
+                  
