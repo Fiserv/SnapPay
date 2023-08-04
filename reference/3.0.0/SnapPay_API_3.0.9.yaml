@@ -60,6 +60,8 @@ components:
         displaycurrencycode: 'Y'
         displaycustomer: 'Y'
         displaypagetitle: 'Y'
+        adderpcustomerinsnappay: 'Y'
+        forceusertoenteraddress: 'Y'
         user:
           userfirstname: First
           userlastname: Last
@@ -142,6 +144,8 @@ components:
         displaycurrencycode: 'Y'
         displaycustomer: 'Y'
         displaypagetitle: 'Y'
+        adderpcustomerinsnappay: 'Y'
+        forceusertoenteraddress: 'Y'
         user:
           userfirstname: First
           userlastname: Last
@@ -224,6 +228,8 @@ components:
         displaycurrencycode: 'Y'
         displaycustomer: 'Y'
         displaypagetitle: 'Y'
+        adderpcustomerinsnappay: 'Y'
+        forceusertoenteraddress: 'Y'
         user:
           userfirstname: First
           userlastname: Last
@@ -306,6 +312,8 @@ components:
         displaycurrencycode: 'Y'
         displaycustomer: 'Y'
         displaypagetitle: 'Y'
+        adderpcustomerinsnappay: 'Y'
+        forceusertoenteraddress: 'Y'
         user:
           userfirstname: First
           userlastname: Last
@@ -401,6 +409,8 @@ components:
         feevalue: 10.5
         feeformat: Flat
         waivefee: 'N'
+        adderpcustomerinsnappay: 'Y'
+        forceusertoenteraddress: 'Y'
         user:
           userfirstname: first
           userlastname: last
@@ -2145,6 +2155,36 @@ components:
       required: true
       description: >-
             72eb45c4e6034aa1b5c5ba0532209a87
+    PaymentModeParam:
+      name: paymentmode
+      schema: {
+        type: string,
+        default: ""
+      }
+      in: query
+      required: false
+      description: >-
+        CC or ACH or All or empty
+    RequestTypeParam:
+      name: requesttype
+      schema: {
+        type: string,
+        default: ""
+      }
+      in: query
+      required: false
+      description: >-
+        SendLink or Order or Invoice or empty
+    TransactionTypeParam:
+      name: transactiontype
+      schema: {
+        type: string,
+        default: ""
+      }
+      in: query
+      required: false
+      description: >-
+        A or S or D or V or empty
   schemas:
     GetRequestIDRequest: 
       type: object
@@ -2296,6 +2336,14 @@ components:
           example: 'Y'
         displaypagetitle: 
           description: Display page title flag
+          type: string
+          example: 'Y'
+        adderpcustomerinsnappay:
+          description: To override account parameter value AddERPCustomerInSnapPay. Y or N
+          type: string
+          example: 'Y'
+        forceusertoenteraddress:
+          description: To override account parameter value ForceUserToEnterAddress. Y or N
           type: string
           example: 'Y'
         user:
@@ -9907,6 +9955,9 @@ paths:
         - {$ref: '#/components/parameters/EndDateParam'}
         - {$ref: '#/components/parameters/TypeParam'}
         - {$ref: '#/components/parameters/PageNumberParam'}
+        - {$ref: '#/components/parameters/PaymentModeParam'}
+        - {$ref: '#/components/parameters/RequestTypeParam'}
+        - {$ref: '#/components/parameters/TransactionTypeParam'}
       responses:
         '200':
           description: Request successful.
@@ -15801,5 +15852,133 @@ paths:
                   $ref: '#/components/examples/DateTime401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
- 
+  /api/interop/v2/GetPricing:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: GetPricing
+      summary: GetPricing
+      description: >-
+        GetPricing API is integrated to use pricing technology of gateway. It is used to get fee details (total surcharge amount, surcharge percentage etc.) from card, amount and mid.
+        Supported payment gateway is CardX.
+      operationId: getpricing
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  properties:
+                    type: 
+                      type: string
+                      description: Type
+                      example: "Pricing"
+                    attributes:
+                      type: object
+                      properties:
+                        cardNumber:
+                          type: string
+                          description: Credit Card number to price
+                          example: "5401680000000003"
+                        amount: 
+                          type: number
+                          description: Amount due before fee
+                          example: 500
+                        merchantIdentifier: 
+                          type: string
+                          description: >- 
+                            Assigned identifier for the merchant to implement the correct industry pricing program
+                          example: "1D91B84E"
+                        country:
+                          type: string
+                          description: Country
+                          example: "USA"
+                        state:
+                          type: string
+                          description: State
+                          example: "IL"
+                        postalcode:
+                          type: string
+                          description: Postal code
+                          example: "60603"
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
+        
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      type: 
+                        type: string
+                        description: Type
+                        example: "Pricing"
+                      attributes:
+                        type: object
+                        properties:
+                          surchargePercent: 
+                            type: number
+                            description: >-
+                              Percent surcharge actually applied. Do not display unless rounding to one or two decimal places (e.g., 3.5 or 3.99). This avoids confusion for the customer
+                            example: 2.999977340004989
+                          surchargeAmount:
+                            type: number
+                            description: >-
+                              Actual amount of surcharge that should be applied. Do not calculate the surchargeAmount yourself using the surchargePercent provided. Different systems using different algorithms for rounding. Always accepting the provided surchargeAmount is necessary for penny-accurate reconciliation
+                            example: 15
+                          surchargeExempt: 
+                            type: boolean 
+                            description: Surcharge exemption flag
+                            example: false
+                          cardType: 
+                            type: string
+                            description: Credit card type
+                            example: "Credit"
+                          brand:
+                            type: string
+                            description: Credit card brand
+                            example: "Mastercard"
+                          bin:  
+                            type: string
+                            description: ""
+                            example: "540168"
+                          commercialIndicator:
+                            type: string
+                            description: Commercial Indicator
+                            example: "consumer"
+                          debitCategory:
+                            type: string
+                            description: Debit Category
+                            example: ""
+                          countryIssued:
+                            type: string
+                            description: Card issuing Country name
+                            example: "United States of America"
+                          uuid:
+                            type: string
+                            description: Payment gateway internal pricing indicator
+                            example: "7d9bebd9-cf2b-4b52-80b3-bdfc7572582f"
+                          
+                
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
                   
