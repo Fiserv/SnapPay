@@ -2191,9 +2191,8 @@ components:
       properties:
         accountid:
           description: Account ID
-          type: string
-          example:  >-
-              1000000001
+          type: number
+          example:  1000000001
         companycode:
           description: Company Code
           type: string
@@ -15857,8 +15856,8 @@ paths:
       tags:
         - APIs without User Interaction
       x-group-name: APIs without User Interaction
-      x-proxy-name: GetPricing
-      summary: GetPricing
+      x-proxy-name: Get Pricing
+      summary: Get Pricing
       description: >-
         GetPricing API is integrated to use pricing technology of gateway. It is used to get fee details (total surcharge amount, surcharge percentage etc.) from card, amount and mid.
         Supported payment gateway is CardX.
