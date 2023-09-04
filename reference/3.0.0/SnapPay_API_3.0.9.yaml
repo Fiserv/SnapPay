@@ -4320,7 +4320,7 @@ components:
               reasoncode:
                 type: string
                 description: Reason code selected while payment transaction
-                example: ""
+                example: null
               paymentdate:
                 type: string
                 description: SnapPay
@@ -10030,7 +10030,7 @@ paths:
                             reasoncode:
                               type: string
                               description: Reason code selected while payment transaction
-                              example: ""
+                              example: null
                             leasedetail: 
                               type: string
                               description : Lease details
