@@ -4317,6 +4317,10 @@ components:
                 type: string
                 description: Header Comments
                 example: Comments about the payment
+              reasoncode:
+                type: string
+                description: Reason code selected while payment transaction
+                example: ""
               paymentdate:
                 type: string
                 description: SnapPay
@@ -10023,6 +10027,10 @@ paths:
                               type: string
                               description: Header Comments
                               example: Comments about the payment
+                            reasoncode:
+                              type: string
+                              description: Reason code selected while payment transaction
+                              example: ""
                             leasedetail: 
                               type: string
                               description : Lease details
