@@ -7785,12 +7785,7 @@ paths:
                         type: string
                         description: Currency Code
                         example: USD
-                      totaltransactionamount:
-                        type: string
-                        description: >-
-                          Total transaction amount (transactionamount +
-                          feeamount)
-                        example: 100
+                  
                       feereturncode:
                         type: string
                         description: >-
