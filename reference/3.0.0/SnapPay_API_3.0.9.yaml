@@ -4317,6 +4317,10 @@ components:
                 type: string
                 description: Header Comments
                 example: Comments about the payment
+              reasoncode:
+                type: string
+                description: Reason code selected while payment transaction
+                example: null
               paymentdate:
                 type: string
                 description: SnapPay
@@ -7781,12 +7785,7 @@ paths:
                         type: string
                         description: Currency Code
                         example: USD
-                      totaltransactionamount:
-                        type: string
-                        description: >-
-                          Total transaction amount (transactionamount +
-                          feeamount)
-                        example: 100
+                  
                       feereturncode:
                         type: string
                         description: >-
@@ -10023,6 +10022,10 @@ paths:
                               type: string
                               description: Header Comments
                               example: Comments about the payment
+                            reasoncode:
+                              type: string
+                              description: Reason code selected while payment transaction
+                              example: null
                             leasedetail: 
                               type: string
                               description : Lease details
