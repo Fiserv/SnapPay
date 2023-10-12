@@ -2072,6 +2072,38 @@ components:
           - paymentheaderid: 452082
             paymenttransactionid: 105516222275
             status: 'Y'
+    ReadCardPINDebit:
+      value:
+        merchantId: '123456789'
+        hsn: '356765658858'
+        amount: '2'
+        includeSignature: 'false'
+        gzipSignature: 'false'
+        signatureFormat: png
+        signatureImageType: rgb
+        signatureDimensions: 320,450
+        includeAmountDisplay: 'false'
+        confirmAmount: 'true'
+        beep: 'false'
+        aid: debit
+        includePIN: 'true'
+    AuthCardPINDebit:
+      value:
+        merchantId: '123456789'
+        hsn: '356765658858'
+        amount: '2'
+        includeSignature: 'false'
+        includeAmountDisplay: 'true'
+        beep: 'false'
+        aid: debit
+        includePIN: 'true'
+        includeAVS: 'true'
+        capture: 'true'
+        orderId: 06252019-02
+        userFields:
+          UDF1: udf1
+          UDF2: udf2
+        clearDisplayDelay: '500'
         
   parameters:
     AccountIDParam:
@@ -8981,6 +9013,51 @@ paths:
                         type: integer
                         description: Line Item Total
                         example: 5.37
+                userfields:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      udf0:
+                        type: string
+                        description: User field 0
+                        example: "Value 1"
+                      udf1:
+                        type: string
+                        description: User field 1
+                        example: "Value 2"
+                      udf2:
+                        type: string
+                        description: User field 2
+                        example: "Value 3"
+                      udf3:
+                        type: string
+                        description: User field 3
+                        example: "Value 4"
+                      udf4:
+                        type: string
+                        description: User field 4
+                        example: "Value 5"
+                      udf5:
+                        type: string
+                        description: User field 5
+                        example: "Value 6"
+                      udf6:
+                        type: string
+                        description: User field 6
+                        example: "Value 7"
+                      udf7:
+                        type: string
+                        description: User field 7
+                        example: "Value 8"
+                      udf8:
+                        type: string
+                        description: User field 8
+                        example: "Value 9"
+                      udf9:
+                        type: string
+                        description: User field 9
+                        example: "Value 10"  
             examples:
               Capture with Surcharge:
                 summary: Capture with Surcharge
@@ -11548,6 +11625,33 @@ paths:
                         type: string
                         description: Custom 9
                         example: udf9
+                customer:
+                  type: object
+                  properties:
+                    customername: 
+                      type: string
+                      description: Customer name to be displayed in email
+                      example: "Firstname Lastname"
+                    addressline: 
+                      type: string
+                      description: Address line 1
+                      example: "100 Street"
+                    city: 
+                      type: string
+                      description: City
+                      example: "Chicago"
+                    state: 
+                      type: string
+                      description: State code
+                      example: "IL"
+                    zipcode:
+                      type: string
+                      description: Zip code
+                      example: "60603"
+                    country:
+                      type: string
+                      description: Country 
+                      example: "US"
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
@@ -14748,6 +14852,10 @@ paths:
                   type: string
                   description: Clear display delay
                   example: "500"
+            examples:
+              PIN Debit:
+                summary: PIN Debit
+                $ref: '#/components/examples/AuthCardPINDebit'
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
         - {$ref: '#/components/parameters/SessionKeyParam'}
@@ -15327,6 +15435,10 @@ paths:
                   type: string
                   description: Confirm amount flag
                   example: "true"
+            examples:
+              PIN Debit:
+                summary: PIN Debit
+                $ref: '#/components/examples/ReadCardPINDebit'
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
         - {$ref: '#/components/parameters/SessionKeyParam'}
