@@ -2104,7 +2104,15 @@ components:
           UDF1: udf1
           UDF2: udf2
         clearDisplayDelay: '500'
-        
+    GetPMOnRequest401Response:
+      value:
+        accountid: 1000000001
+        token: ''
+        message: Authentication failed.
+    GetSavedPM401Response:
+      value:
+        accountid: 1000000001
+        message: Authentication failed.
   parameters:
     AccountIDParam:
       name: accountid
@@ -16095,4 +16103,280 @@ paths:
                   $ref: '#/components/examples/Common401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
-                  
+  /api/interop/GetPaymentMethodsOnRequest:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Get Payment Methods On Request
+      summary: Get Payment Methods On Request
+      description: >-
+        The GetPaymentMethodsOnRequest API returns the results of the GetRequestID and SnapPay interaction to allow for further business processing like completing the order creation process and call SnapPay API for further processing.
+      operationId: getpaymentmethodsonrequest
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  type: number
+                  description: Account ID
+                  example: 1000000001
+                token:
+                  type: string
+                  description: Request ID
+                  example: "a07ac61b-33b5-e811-896d-000c29cce4c0"
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}      
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: Account ID
+                    example: 1000000001
+                  token:
+                    type: string
+                    description: Request ID
+                    example: "a07ac61b-33b5-e811-896d-000c29cce4c0"
+                  message: 
+                    type: string
+                    description: Return message 
+                    example: "Payment methods retrieved successfully."
+                  emailtoken:
+                    type: string
+                    description: Email token  
+                    example: "N"
+                  emailtokenid: 
+                    type: string
+                    description: Email token id
+                    example: ""
+                  emailtokenreceived: 
+                    type: string
+                    description: Email token received
+                    example: "N"
+                  paymentmethods:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        paymentmethodid: 
+                          type: number
+                          description: SnapPay Payment Method ID for Credit Card or ACH
+                          example: 12590
+                        type: 
+                          type: string
+                          description: Visa / MC / Discover / AMEX / Checking / Saving
+                          example: "Checking"
+                        last4: 
+                          type: string
+                          description: Last 4 digits of credit card or bank account number
+                          example: "6765"
+                        routingnumber: 
+                          type: string
+                          description: Bank Routing Number
+                          example: "123123123"
+                        tokenid: 
+                          type: string
+                          description: Payment Gateway Token ID for Credit Card or ACH
+                          example: "123414048967"
+                        firstname: 
+                          type: string
+                          description: First name
+                          example: "firstname"
+                        lastname: 
+                          type: string
+                          description: Last name
+                          example: "lastname"
+                        expirationmonth: 
+                          type: number
+                          description: Expiration Month
+                          example: 12
+                        expirationyear: 
+                          type: string
+                          description: Expiration Year
+                          example: 2029
+                        addressline1: 
+                          type: string
+                          description: Address Line 1
+                          example: "495 N Commons Dr"
+                        city: 
+                          type: string
+                          description: City
+                          example: "Aurora"
+                        state: 
+                          type: string
+                          description: State
+                          example: "IL"
+                        zip: 
+                          type: string
+                          description: Zipcode
+                          example: "60540"
+                        country: 
+                          type: string
+                          description: Country
+                          example: "US"
+                        phonenumber: 
+                          type: string
+                          description: Phoneumber
+                          example: "123456789"
+                        email: 
+                          type: string
+                          description: Email address
+                          example: "first.last@company.com"
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/GetPMOnRequest401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}                   
+  /api/interop/GetSavedPaymentMethods:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Get Saved Payment Methods
+      summary: Get Saved Payment Methods
+      description: >-
+        GetSavedPaymentMethods API
+      operationId: getsavedpaymentmethods
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  type: number
+                  description: Account ID
+                  example: 1000000001
+                userid:
+                  type: string
+                  description: User ID
+                  example: "user01"
+                company:
+                  type: string
+                  description: Company code
+                  example: "100"
+                currency:
+                  type: string
+                  description: Currency code
+                  example: "USD"
+                branchplant:
+                  type: string
+                  description: Branch plant
+                  example: "M30"
+                ordertype:
+                  type: string
+                  description: Order type
+                  example: "SO"
+                paymentmethod:
+                  type: string
+                  description: Payment method 
+                  example: "CC"
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}      
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: Account ID
+                    example: 1000000001
+                  message: 
+                    type: string
+                    description: Return message 
+                    example: "Payment details retrieved successfully."
+                  paymentmethods:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        paymentmethodid: 
+                          type: number
+                          description: SnapPay Payment Method ID for Credit Card or ACH
+                          example: 12590
+                        type: 
+                          type: string
+                          description: Visa / MC / Discover / AMEX / Checking / Saving
+                          example: "Checking"
+                        last4: 
+                          type: string
+                          description: Last 4 digits of credit card or bank account number
+                          example: "6765"
+                       
+                        tokenid: 
+                          type: string
+                          description: Payment Gateway Token ID for Credit Card or ACH
+                          example: "123414048967"
+                        firstname: 
+                          type: string
+                          description: First name
+                          example: "firstname"
+                        lastname: 
+                          type: string
+                          description: Last name
+                          example: "lastname"
+                        expirationmonth: 
+                          type: number
+                          description: Expiration Month
+                          example: 12
+                        expirationyear: 
+                          type: string
+                          description: Expiration Year
+                          example: 2029
+                        addressline1: 
+                          type: string
+                          description: Address Line 1
+                          example: "495 N Commons Dr"
+                        city: 
+                          type: string
+                          description: City
+                          example: "Aurora"
+                        state: 
+                          type: string
+                          description: State
+                          example: "IL"
+                        zip: 
+                          type: string
+                          description: Zipcode
+                          example: "60540"
+                        country: 
+                          type: string
+                          description: Country
+                          example: "US"
+                        phonenumber: 
+                          type: string
+                          description: Phoneumber
+                          example: "123456789"
+                        email: 
+                          type: string
+                          description: Email address
+                          example: "first.last@company.com"
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/GetSavedPM401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}                   
