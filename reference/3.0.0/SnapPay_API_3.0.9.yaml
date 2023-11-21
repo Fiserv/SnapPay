@@ -2113,6 +2113,146 @@ components:
       value:
         accountid: 1000000001
         message: Authentication failed.
+    IVR401Response:
+      value:
+        error_code: '101'
+        error_message: Authentication failed.
+    IVRAuthRequest:
+      value:
+        method: charge
+        transaction_id: '1234567'
+        cardnumber: '4024007176123123'
+        cvv: '123'
+        expiry_month: '08'
+        expiry_year: '2023'
+        description: test
+        amount: '25.0'
+        currency_code: USD
+        postal_code: '94111'
+        parameters:
+          snappay_action: authorize
+          snappay_accountid: '1000000001'
+          snappay_merchantid: '540991234'
+          snappay_userid: testuser
+          snappay_card_type: VISA
+          snappay_mode: CC
+          snappay_orderid: ORD-112521-01
+          snappay_invoiceid: INV-112521-01
+          snappay_purchaseorder: PO-112521-01
+          snappay_level3:
+            - linenumber: '1.000'
+              productcode: ROS01
+              taxrate: '0.073'
+              quantity: '2'
+              itemdescriptor: Mixed Bouquet
+              unitcost: '30.7500'
+              lineitemtotal: '65.96'
+              taxamount: '4.46'
+              commoditycode: ''
+              unitofmeasure: EA
+            - linenumber: '2.000'
+              productcode: BQT02
+              taxrate: '0.073'
+              quantity: '2'
+              itemdescriptor: Spring Bouquet
+              unitcost: '25.6250'
+              lineitemtotal: '54.97'
+              taxamount: '3.72'
+              commoditycode: ''
+              unitofmeasure: EA
+    IVRChargeRequest:
+      value:
+        method: charge
+        transaction_id: '1234567'
+        cardnumber: '4024007176123123'
+        cvv: '123'
+        expiry_month: '08'
+        expiry_year: '2023'
+        description: test
+        amount: '25.0'
+        currency_code: USD
+        postal_code: '94111'
+        parameters:
+          snappay_action: charge
+          snappay_accountid: '1000000001'
+          snappay_merchantid: '540991234'
+          snappay_userid: testuser
+          snappay_card_type: VISA
+          snappay_mode: CC
+          snappay_orderid: ORD-112521-01
+          snappay_invoiceid: INV-112521-01
+          snappay_purchaseorder: PO-112521-01
+          snappay_level3:
+            - linenumber: '1.000'
+              productcode: ROS01
+              taxrate: '0.073'
+              quantity: '2'
+              itemdescriptor: Mixed Bouquet
+              unitcost: '30.7500'
+              lineitemtotal: '65.96'
+              taxamount: '4.46'
+              commoditycode: ''
+              unitofmeasure: EA
+            - linenumber: '2.000'
+              productcode: BQT02
+              taxrate: '0.073'
+              quantity: '2'
+              itemdescriptor: Spring Bouquet
+              unitcost: '25.6250'
+              lineitemtotal: '54.97'
+              taxamount: '3.72'
+              commoditycode: ''
+              unitofmeasure: EA
+    IVRTokenizeRequest:
+      value:
+        method: charge
+        transaction_id: '1234567'
+        cardnumber: '4024007176123123'
+        cvv: '123'
+        expiry_month: '08'
+        expiry_year: '2023'
+        description: test
+        amount: '25.0'
+        currency_code: USD
+        postal_code: '94111'
+        parameters:
+          snappay_action: tokenize
+          snappay_accountid: '1000000001'
+          snappay_merchantid: '540991234'
+          snappay_userid: testuser
+          snappay_card_type: VISA
+          snappay_mode: CC
+          snappay_orderid: ORD-112521-01
+          snappay_invoiceid: INV-112521-01
+          snappay_purchaseorder: PO-112521-01
+    IVRFailedResponse:
+      value:
+        error_code: '5003'
+        error_message: 'Transaction failed. SGS-005003: The order already exists in the database.'
+        parameters:
+          snappay_action: Authorize
+          snappay_accountid: '1000000001'
+          snappay_response.status: 'N'
+          snappay_response.message: Transaction failed.
+          snappay_response.purchaseorder: PO-AU-24
+          snappay_response.cards.merchantid: '541617612345'
+          snappay_response.cards.tokenid: '12345681973568'
+          snappay_response.cards.returncode: '5003'
+          snappay_response.cards.returndescription: 'SGS-005003: The order already exists in the database.'
+          snappay_response.cards.pgtransactionid: '0'
+          snappay_response.cards.paymenttransactionid: '100001215'
+          snappay_response.cards.authorizationcode: ''
+          snappay_response.cards.status: 'N'
+          snappay_response.cards.transactiondate: 02/01/2022 07:15:40 AM
+          snappay_response.cards.procrespcode: ''
+          snappay_response.cards.scverification: ''
+          snappay_response.cards.addressverification: ''
+          snappay_response.cards.transactionamount: '25'
+          snappay_response.cards.currency: USD
+          snappay_response.cards.totaltransactionamount: '25'
+          snappay_response.cards.feeamount: '0'
+          snappay_response.cards.feevalue: '0'
+      
   parameters:
     AccountIDParam:
       name: accountid
@@ -11662,6 +11802,7 @@ paths:
                       example: "US"
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
       responses:
         '200':
           description: Request successful.
@@ -14789,7 +14930,7 @@ paths:
                   $ref: '#/components/examples/TransactionUpdate401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
-  /P2PE/authcard:
+  /P2PE/authcard: 
     post:
       tags:
         - Terminal Pass through API
@@ -16380,3 +16521,275 @@ paths:
                   $ref: '#/components/examples/GetSavedPM401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}                   
+  /api/interop/v1/ivr:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: IVR
+      summary: IVR
+      description: >-
+        IVR API
+      operationId: ivr
+      requestBody:
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                method:
+                  type: string
+                  description: Method
+                  example: "charge"
+                transaction_id:
+                  type: string
+                  description: Transaction ID
+                  example: "1234567"
+                cardnumber:
+                  type: string
+                  description: Card Number
+                  example: "4024007176766268"
+                cvv:
+                  type: string
+                  description: CVV
+                  example: "123"
+                expiry_month:
+                  type: string
+                  description: Expiration month
+                  example: "12"
+                expiry_year:
+                  type: string
+                  description: Expiration year
+                  example: "2028"
+                description:
+                  type: string
+                  description: Description 
+                  example: "test"
+                amount:
+                  type: string
+                  description: Amount 
+                  example: "25.52"
+                currency_code:
+                  type: string
+                  description: Currency code 
+                  example: "USD"
+                postal_code:
+                  type: string
+                  description: Postal code 
+                  example: "94111"
+                parameters:
+                  type: object
+                  properties:
+                    snappay_action:
+                      type: string
+                      description: Transaction type
+                      example: "authorize"
+                    snappay_accountid:
+                      type: number
+                      description: Account ID
+                      example: 1000000001
+                    snappay_merchantid: 
+                      type: string
+                      description: Merchant ID
+                      example: "120991234"
+                    snappay_userid: 
+                      type: string
+                      description: User ID
+                      example: "testuser"
+                    snappay_card_type:
+                      type: string
+                      description: Card type
+                      example: "VISA"
+                    snappay_mode: 
+                      type: string
+                      description: Payment Mode
+                      example: "CC"
+                    snappay_orderid: 
+                      type: string
+                      description: Order ID
+                      example: "ORD-112521-01"
+                    snappay_invoiceid: 
+                      type: string
+                      description: Invoice ID
+                      example: "INV-112521-01"
+                    snappay_purchaseorder:
+                      type: string 
+                      description: Purchase Order
+                      example: "PO-112521-01"
+                snappay_level3: 
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      linenumber:
+                        type: string
+                        description: Line number
+                        example: "1.00"
+                      productcode: 
+                        type: string
+                        description: Product code
+                        example: "ROS01"
+                      taxrate:
+                        type: string
+                        description: Tax rate
+                        example: "0.073"
+                      quantity:
+                        type: string
+                        description: Quantity
+                        example: "2"
+                      itemdescriptor:
+                        type: string
+                        description: Item descriptor
+                        example: "Mixed Bouquet"
+                      unitcost:
+                        type: string
+                        description: Unit cost
+                        example: "30.75"
+                      lineitemtotal:
+                        type: string
+                        description: Line item total
+                        example: "65.96"
+                      taxamount:
+                        type: string
+                        description: Tax amount
+                        example: "4.46"
+                      commoditycode:
+                        type: string
+                        description: Commodity code
+                        example: ""
+                      unitofmeasure:
+                        type: string
+                        description: Unit of measurement
+                        example: "EA"
+            examples:
+              Tokenize:
+                summary: Tokenize
+                $ref: '#/components/examples/IVRTokenizeRequest'
+              Authorize:
+                summary: Authorize
+                $ref: '#/components/examples/IVRAuthRequest'
+              Charge:
+                summary: Charge
+                $ref: '#/components/examples/IVRChargeRequest'
+              
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}      
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  charge_id:
+                    type: string
+                    description: Charge ID
+                    example: "84588209024"
+                  parameters: 
+                    type: object
+                    properties:
+                      snappay_action: 
+                        type: string
+                        description: Transaction type
+                        example: "Authorize"
+                      snappay_accountid:
+                        type: string
+                        description: Account ID
+                        example: "1000000001"
+                      snappay_response.status: 
+                        type: string
+                        description: Status
+                        example: "Y"
+                      snappay_response.message:
+                        type: string
+                        description: Message
+                        example: "Transaction successful."
+                      snappay_response.purchaseorder:
+                        type: string
+                        description: Purchase order number
+                        example: "PO-AU-24"
+                      snappay_response.cards.merchantid:
+                        type: string
+                        description: Merchant ID
+                        example: "541617666247"
+                      snappay_response.cards.tokenid:
+                        type: string
+                        description: Token ID
+                        example: "1370111581973568"
+                      snappay_response.cards.returncode:
+                        type: string
+                        description: Return code
+                        example: "00"
+                      snappay_response.cards.returndescription:
+                        type: string
+                        description: Return Description
+                        example: "APPROVAL"
+                      snappay_response.cards.pgtransactionid:
+                        type: string
+                        description: Payment gateway transaction ID
+                        example: "12588201234"
+                      snappay_response.cards.paymenttransactionid:
+                        type: string
+                        description: SnapPay Payment Transaction ID
+                        example: "10000012345"
+                      snappay_response.cards.authorizationcode:
+                        type: string
+                        description: Authorization code
+                        example: "OK5288"
+                      snappay_response.cards.status:
+                        type: string
+                        description: Card status
+                        example: "Y"
+                      snappay_response.cards.transactiondate: 
+                        type: string
+                        description: Transaction date
+                        example: "11/01/2022 07:13:47 AM"
+                      snappay_response.cards.procrespcode:
+                        type: string
+                        description: Procrespcode
+                        example: ""
+                      snappay_response.cards.scverification:
+                        type: string
+                        description: SC Verification
+                        example: "Y"
+                      snappay_response.cards.addressverification:
+                        type: string
+                        description: Address verification
+                        example: "Y"
+                      snappay_response.cards.transactionamount:
+                        type: string
+                        description: Transaction amount
+                        example: "25"
+                      snappay_response.cards.currency:
+                        type: string
+                        description: Currency
+                        example: "USD"
+                      snappay_response.cards.totaltransactionamount:
+                        type: string
+                        description: Total transaction amount
+                        example: "25"
+                      snappay_response.cards.feeamount:
+                        type: string
+                        description: Fee amount
+                        example: "0"
+                      snappay_response.cards.feevalue:
+                        type: string
+                        description: Fee value
+                        example: "0"
+              examples: 
+                Failure Response: 
+                  summary: Failure Response
+                  $ref: '#/components/examples/IVRFailedResponse'
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/IVR401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}                   
+      
