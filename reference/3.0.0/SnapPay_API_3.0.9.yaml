@@ -373,6 +373,21 @@ components:
         parenturi: https://company.com
         displaycardname: 'Y'
         displayaddress: 'N'
+    GetRequestID-W:
+      value:
+        accountid: 1000000001
+        companycode: '100'
+        currencycode: USD
+        customerid: '4242'
+        userid: user
+        saveatcustomer: 'Y'
+        savepaymentmethod: 'N'
+        displaycardssavedatcustomer: 'Y'
+        transactiontype: W
+        paymentmethod: CC
+        language: en-US
+        redirecturl: '#'
+        openiniframe: 'Y'
     GetRequestID-Fee:
       value:
         accountid: 1000000001
@@ -7699,15 +7714,18 @@ paths:
               Transaction Type S:
                 summary: Transaction Type S
                 $ref: '#/components/examples/GetRequestID-S'
-              Transaction Type T:
-                summary: Transaction Type T
-                $ref: '#/components/examples/GetRequestID-T'
               Transaction Type O:
                 summary: Transaction Type O
                 $ref: '#/components/examples/GetRequestID-O'
               Transaction Type I:
                 summary: Transaction Type I
                 $ref: '#/components/examples/GetRequestID-I'
+              Transaction Type T:
+                summary: Transaction Type T
+                $ref: '#/components/examples/GetRequestID-T'
+              Transaction Type W:
+                summary: Transaction Type W
+                $ref: '#/components/examples/GetRequestID-W'
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
         - {$ref: '#/components/parameters/MerchantIDParam'}
@@ -7805,7 +7823,6 @@ paths:
                   $ref: '#/components/examples/Common401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
-  
   /api/Interop/GetPaymentDetails:
     post:
       tags:
@@ -11728,6 +11745,14 @@ paths:
                   type: string
                   description: URL to navigate after payment
                   example: www.abc.com
+                openamount:
+                  type: string
+                  description: Open amount flag
+                  example: "Y"
+                forceusertoenteraddress: 
+                  type: string
+                  description: Address required flag
+                  example: "Y"
                 userfields:
                   type: array
                   items:
