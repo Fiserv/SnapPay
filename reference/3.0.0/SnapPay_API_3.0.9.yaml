@@ -2267,7 +2267,13 @@ components:
           snappay_response.cards.totaltransactionamount: '25'
           snappay_response.cards.feeamount: '0'
           snappay_response.cards.feevalue: '0'
-      
+    AddIVRPMRequest401Response:
+      value:
+        accountid: 1000000001
+        token: ''
+        message: Authentication failed.
+        status: 'N'
+        
   parameters:
     AccountIDParam:
       name: accountid
@@ -16817,4 +16823,74 @@ paths:
                   $ref: '#/components/examples/IVR401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}                   
+  /api/interop/AddIVRPaymentMethodsOnRequest:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Add IVR Payment Methods
+      summary: Add IVR Payment Methods 
+      description: >-
+        Add IVR Payment methods on request
+      operationId: addivrpaymentmethods
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  type: number
+                  example: 1000000001
+                token:
+                  description: Request Token ID
+                  type: string
+                  example: 1870de80-072a-ed11-bd6e-0050f2c73a18
+                userid:
+                  description: User ID
+                  type: string
+                  example: "user"
+                paymentmethodid:
+                  description: Payment Method ID
+                  type: string
+                  example: 123
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: Account ID
+                    example: 1000000001
+                  token:
+                    description: Token ID
+                    type: string
+                    example: ""
+                  status:
+                    type: string
+                    description: Y or N
+                    example: 'Y'
+                  message:
+                    type: string
+                    description: Return message
+                    example: Information stored successfully.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/AddIVRPMRequest401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
       
