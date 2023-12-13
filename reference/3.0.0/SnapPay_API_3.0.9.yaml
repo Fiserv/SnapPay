@@ -629,18 +629,40 @@ components:
     CaptureRequestWithSurcharge:
       value:
         accountid: 1000000001
-        referencetransactionid: '1234052209561358250'
-        transactionamount: 1.24
         customerid: '4242'
         currency: USD
         companycode: '100'
-        userid: user
-        orderid: P-141153
-        invoiceid: '1407261399'
-        ordertype: ''
-        branchplant: ''
-        purchaseorder: ''
-        orderdate: '20230507'
+        userid: usercsr
+        transactionamount: '120'
+        referencetransactionid: '017260312345'
+        sendemailreceipts: 'Y'
+        orderid: ORDERID-01172023-2
+        invoiceid: INVOICEID-01172023-2
+        comment: Capture1
+        level3:
+          - linenumber: '001'
+            productcode: BQT01
+            unitcost: '1.75'
+            quantity: '3'
+            itemdescriptor: Bouquet
+            unitofmeasure: EA
+            commoditycode: SNAPPAY
+            taxamount: '0.12'
+            taxrate: '8'
+            itemdiscount: '0'
+            lineitemtotal: '5.37'
+          - linenumber: '002'
+            productcode: BQT02
+            unitcost: '2'
+            quantity: '3'
+            itemdescriptor: Bouquet
+            unitofmeasure: EA
+            commoditycode: SNAPPAY
+            taxamount: '0.97'
+            taxrate: '8'
+            itemdiscount: '0'
+            lineitemtotal: '6.97'
+        
     CaptureRequestWithServiceFee:    
       value:
         accountid: 1000000001
@@ -694,22 +716,28 @@ components:
         status: 'Y'
         message: Transaction successful.
         isalreadycaptured: 'N'
-        purchaseorder: ''
-        referencetransactionid: '1234052209561358250'
+        referencetransactionid: '017260312345'
         transaction:
-          merchantid: "12452589"
-          returncode: '1'
-          returndescription: Successful Settlement
-          pgtransactionid: '1234052209561358250'
-          paymenttransactionid: '1000011234'
-          authorizationcode: TSTAUT
-          transactiondate: 05/22/2023 05:14:45 AM
-          procrespcode: ''
-          transactionamount: 1.24
+          merchantid: '123459000999'
+          returncode: '000'
+          returndescription: Approval
+          pgtransactionid: '017298717557'
+          paymenttransactionid: '1074111451'
+          authorizationcode: PPS257
+          transactiondate: 01/17/2023 03:54:00 AM
+          procrespcode: RPCT
+          transactionamount: 120
           currency: USD
-          totaltransactionamount: 1.24
-          feeamount: 0
-          feevalue: 0
+          procresp: RPCT-000
+          totaltransactionamount: 124.2
+          feeamount: 4.2
+          feeauthcode: PPS257
+          feeformat: Percentage
+          feevalue: 3.5
+          feestatus: 'Y'
+          feetransactionid: '017287417557'
+          feetype: Surcharge
+        
         
     AuthorizeDefaultRequest:
       value:
@@ -756,65 +784,62 @@ components:
     AuthorizeRequestWithSurcharge:
       value:
         accountid: 1000000001
-        customerid: '4242'
         currency: USD
         companycode: '100'
-        branchplant: ''
-        ordertype: ''
-        orderid: P-141153
-        invoiceid: I-153
-        userid: user
-        reference: P-141153
-        purchaseorder: ''
-        ecomind: E
-        cof: C
-        cofscheduled: 'N'
-        iscardpresent: 'N'
-        iscapture: 'N'
+        customerid: '4242'
+        userid: usercsr
+        mode: CC
+        reference: A-20230117-03
+        purchaseorder: A-20230117-03
+        orderid: ORD-20230117-03
+        invoiceid: INV-20230117-03
         cards:
-          - transactionamount: 1.24
-            tokenid: '9520084673621753095'
-            cvv: '124'
-            expirationdate: '102024'
-            customername: Atul N
-            addressline1: 100 Street
-            city: Chicago
+          - transactionamount: 120
+            tokenid: '1234563235811730'
+            cvv: '123'
+            expirationdate: '082025'
+            type: VISA
+            last4: '1730'
+            customername: cust name
+            addressline1: 100 street
+            city: Aurora
             state: IL
             zip: '60540'
             country: US
             email: first.last@company.com
             phonenumber: ''
-            type: VISA
-            last4: '3095'
-            secureflag: '05'
-            securevalue: ''
-            securedstid: ''
-            secureexemption: lowvalue
+        
     AuthorizeResponseWithSurcharge:
       value:
         accountid: 1000000001
         status: 'Y'
         message: Transaction successful.
-        reference: P-141153
-        purchaseorder: ''
+        reference: A-20230117-03
+        purchaseorder: A-20230117-03
         cards:
-          - merchantid: "12452589"
-            tokenid: '9520084673621753095'
-            returncode: '1'
-            returndescription: Successful Authorization
-            pgtransactionid: '1234052209561358250'
-            paymenttransactionid: '1000011234'
-            authorizationcode: TSTAUT
+          - merchantid: '123459000999'
+            tokenid: '1234563235811730'
+            returncode: '000'
+            returndescription: Approval
+            pgtransactionid: '017260312345'
+            paymenttransactionid: '178911449'
+            authorizationcode: PPS257
             status: 'Y'
-            transactiondate: 05/22/2023 04:56:05 AM
-            procrespcode: ''
-            scverification: 'N'
-            addressverification: ''
-            transactionamount: 1.24
+            transactiondate: 01/17/2023 03:52:32 AM
+            procrespcode: RPCT
+            scverification: M
+            addressverification: Z
+            transactionamount: 120
             currency: USD
-            totaltransactionamount: 1.24
-            feeamount: 0
-            feevalue: 0
+            totaltransactionamount: 124.2
+            feeamount: 4.2
+            feeauthcode: PPS257
+            feeformat: Percentage
+            feevalue: 3.5
+            feestatus: 'Y'
+            feetransactionid: '0172147887557'
+            feetype: Surcharge
+            procresp: RPCT-000
     AuthorizeRequestWithServiceFee:
       value:
         accountid: 1000000001
@@ -2273,6 +2298,110 @@ components:
         token: ''
         message: Authentication failed.
         status: 'N'
+    IVRAuthRequestWithSurcharge:
+      value:
+        method: authorize
+        transaction_id: 4ceb5c4f-336f-4e96-bc3d-4bfbde6b435b
+        cardnumber: '1234502808876517'
+        cvv: '123'
+        expiry_month: '08'
+        expiry_year: '25'
+        description: test
+        amount: '25.0'
+        currency_code: USD
+        postal_code: '60540'
+        parameters:
+          snappay_action: authorize
+          snappay_accountid: '1000000001'
+          snappay_merchantid: '123459000999'
+          snappay_customerid: '1212'
+          snappay_userid: testuser
+          snappay_card_type: ''
+          snappay_mode: CC
+          snappay_orderid: ORD-23-5
+          snappay_invoiceid: INV-23-5
+          snappay_purchaseorder: PO-23-5
+    IVRAuthResponseWithSurcharge:
+      value:
+        charge_id: '017833237581'
+        parameters:
+          snappay_action: Authorize
+          snappay_accountid: '1000000001'
+          snappay_response.status: 'Y'
+          snappay_response.message: Transaction successful.
+          snappay_response.purchaseorder: PO-23-5
+          snappay_response.cards.merchantid: '123459000999'
+          snappay_response.cards.tokenid: '1234563235811730'
+          snappay_response.cards.returncode: '000'
+          snappay_response.cards.returndescription: Approval
+          snappay_response.cards.pgtransactionid: '017812337581'
+          snappay_response.cards.paymenttransactionid: '1230011481'
+          snappay_response.cards.authorizationcode: PPS006
+          snappay_response.cards.status: 'Y'
+          snappay_response.cards.transactiondate: 01/17/2023 09:26:15 AM
+          snappay_response.cards.procrespcode: RPCT
+          snappay_response.cards.scverification: P
+          snappay_response.cards.addressverification: Z
+          snappay_response.cards.transactionamount: '25'
+          snappay_response.cards.currency: USD
+          snappay_response.cards.totaltransactionamount: '25.88'
+          snappay_response.cards.feeamount: '0.88'
+          snappay_response.cards.feeauthcode: PPS006
+          snappay_response.cards.feeformat: Percentage
+          snappay_response.cards.feevalue: '3.5'
+          snappay_response.cards.feestatus: 'Y'
+          snappay_response.cards.feetransactionid: '017128237581'
+          snappay_response.cards.feetype: Surcharge
+          snappay_response.cards.procresp: RPCT-000
+    IVRChargeRequestWithSurcharge:
+      value:
+        method: charge
+        transaction_id: 4ceb5c4f-336f-4e96-bc3d-4bfbde6b435b
+        cardnumber: '1234482199413568'
+        cvv: '123'
+        expiry_month: '08'
+        expiry_year: '25'
+        description: test
+        amount: '50.0'
+        currency_code: USD
+        postal_code: '94111'
+        parameters:
+          snappay_action: charge
+          snappay_accountid: '1000000001'
+          snappay_merchantid: '123459000999'
+          snappay_userid: testuser
+          snappay_card_type: ''
+          snappay_mode: CC
+          snappay_orderid: ORD-CH2301-5
+    IVRChargeResponseWithSurcharge:
+      value:
+        charge_id: '017746337810'
+        parameters:
+          snappay_action: Charge
+          snappay_accountid: '1000000001'
+          snappay_response.status: 'Y'
+          snappay_response.message: Transaction successful.
+          snappay_response.transaction.merchantid: '123459000999'
+          snappay_response.transaction.returncode: '000'
+          snappay_response.transaction.returndescription: Approval
+          snappay_response.transaction.pgtransactionid: '019746337810'
+          snappay_response.transaction.paymenttransactionid: '1360011483'
+          snappay_response.transaction.authorizationcode: PPS760
+          snappay_response.transaction.transactiondate: 01/17/2023 09:30:04 AM
+          snappay_response.transaction.procrespcode: RPCT
+          snappay_response.transaction.scverification: P
+          snappay_response.transaction.addressverification: A
+          snappay_response.transaction.transactionamount: '50'
+          snappay_response.transaction.currency: USD
+          snappay_response.transaction.procresp: RPCT-000
+          snappay_response.transaction.totaltransactionamount: '51.75'
+          snappay_response.transaction.feeamount: '1.75'
+          snappay_response.transaction.feeauthcode: PPS760
+          snappay_response.transaction.feeformat: Percentage
+          snappay_response.transaction.feevalue: '3.5'
+          snappay_response.transaction.feestatus: 'Y'
+          snappay_response.transaction.feetransactionid: '037746337810'
+          snappay_response.transaction.feetype: Surcharge
         
   parameters:
     AccountIDParam:
@@ -16702,6 +16831,12 @@ paths:
               Charge:
                 summary: Charge
                 $ref: '#/components/examples/IVRChargeRequest'
+              Authorize with Surcharge:
+                summary: Authorize with Surcharge
+                $ref: '#/components/examples/IVRAuthRequestWithSurcharge'
+              Charge with Surcharge:
+                summary: Charge with Surcharge
+                $ref: '#/components/examples/IVRChargeRequestWithSurcharge'
               
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}      
@@ -16809,6 +16944,12 @@ paths:
                         description: Fee value
                         example: "0"
               examples: 
+                Authorize with Surcharge: 
+                  summary: Authorize with Surcharge
+                  $ref: '#/components/examples/IVRAuthResponseWithSurcharge'
+                Charge with Surcharge: 
+                  summary: Charge with Surcharge
+                  $ref: '#/components/examples/IVRChargeResponseWithSurcharge'
                 Failure Response: 
                   summary: Failure Response
                   $ref: '#/components/examples/IVRFailedResponse'
