@@ -863,7 +863,7 @@ components:
             tokenid: '9417085548851111'
             cvv: '124'
             expirationdate: '102024'
-            customername: Atul N
+            customername: Cust name
             addressline1: 100 Street
             city: Chicago
             state: IL
@@ -1156,7 +1156,7 @@ components:
             leasedescription: Lease Description 1
             businessdescription: Business Description 1
             unitdescription: Unit Description 1
-            createdby: "atulncsr"
+            createdby: "testcsr"
             createdon: "12/16/2022 04:44:55 AM"
             updatedby: null
             updatedon: ""
@@ -1233,7 +1233,7 @@ components:
             phoneno: ''
             createdby: null
             createdon: "06/03/2022 08:38:11 AM"
-            updatedby: "atuladmin"
+            updatedby: "testadmin"
             updatedon: "12/16/2022 07:31:15 AM"
             lockcount: 0
             lastpasswordchanged: "12/16/2022 07:31:15 AM"
@@ -1251,9 +1251,9 @@ components:
             effectivefrom: 06/03/2022 08:37:15 AM
             effectiveto: 06/03/2072 08:37:15 AM
             phoneno: null
-            createdby: "atuladmin"
+            createdby: "testadmin"
             createdon: "05/25/2021 04:55:22 AM"
-            updatedby: "atulncust"
+            updatedby: "testcust"
             updatedon: "06/27/2022 04:47:28 AM"
             lockcount: 0
             lastpasswordchanged: "06/27/2022 04:47:28 AM"
@@ -1814,6 +1814,178 @@ components:
               - customerid: '100'
                 associationtype: shipto
                 isdefault: 'N'
+                
+    CustomerDataUploadRequest:
+      value: 
+        accountid: 1000000001
+        email: first.last@company.com
+        customeraddress:
+          - customerid: 100
+            name: custname
+            displayname: Cust Name
+            customertype: C
+            active: 'Y'
+            addressline1: Street 100
+            addressline2: ''
+            city: Chicago
+            state: IL
+            zipcode: 60603
+            country: US
+            phone: 0
+            email: first.last@company.com
+            vatregistrationnumber: 123212
+            defaultcompanycode: 100
+            paymentmode: CC,ACH
+            companylist:
+              - companycode: 100
+          - customerid: 4242
+            name: customer01
+            displayname: First Last
+            customertype: C
+            active: 'Y'
+            addressline1: Street 142
+            addressline2: ''
+            city: Chicago
+            state: IL
+            zipcode: 60603
+            country: US
+            phone: 0
+            email: first.last@company.com
+            vatregistrationnumber: 741258
+            defaultcompanycode: 100
+            paymentmode: CC
+            companylist:
+              - companycode: 100
+    InvoiceDataUploadRequest:
+      value:
+        accountid: 1000000001
+        email: fist.last@company.com
+        invoicedata:
+          - invoiceheader:
+              - billingcustomerid: 100
+                parentcustomerid: 100
+                shipto: 100
+                invoicenumber: 10112
+                invoicetype: 0
+                companycode: '00200'
+                currency: 0
+                fiscalyear: 2022
+                branchplant: 0
+                ordertype: SO
+                email: 0
+                comments: test comments
+                suppliername: 0
+                allowpayment: 'Y'
+                invoicedetail:
+                  - linenumber: 1
+                    grossamount: 250
+                    openamount: 250
+                    paidamount: 0
+                    taxableamount: 150
+                    nontaxableamount: 50
+                    taxamount: 10
+                    discountamount: 250
+                    discosuntamount2: 250
+                    statementid: 628
+                    invoicepo: PO123
+                    invoicedescription: Description
+                    ordernumber: 1411153
+                    duedate: '2022-06-30'
+                    discountduedate: '2018-06-30'
+                    discountduedate2: '2022-06-30'
+                    invoicedate: '2022-03-30'
+                    statementdate: '2022-03-30'
+                    businessunit: 5100
+                    branch: testbranch
+                    referencedocnumber: Doc001
+                    comments: testcomments
+          - invoiceheader:
+              - billingcustomerid: 4242
+                parentcustomerid: 4242
+                shipto: 4242
+                invoicenumber: 10124
+                invoicetype: 0
+                companycode: '00200'
+                currency: 0
+                fiscalyear: 2023
+                branchplant: 0
+                ordertype: SO
+                email: 0
+                comments: comments
+                suppliername: 0
+                allowpayment: 'Y'
+                invoicedetail:
+                  - linenumber: 1
+                    grossamount: 500
+                    openamount: 500
+                    paidamount: 0
+                    taxableamount: 150
+                    nontaxableamount: 50
+                    taxamount: 10
+                    discountamount: 50
+                    discosuntamount2: 50
+                    statementid: 628
+                    invoicepo: PO231
+                    invoicedescription: Description
+                    ordernumber: 74125
+                    duedate: '2024-02-30'
+                    discountduedate: '2024-02-30'
+                    discountduedate2: '2024-02-30'
+                    invoicedate: '2024-01-03'
+                    statementdate: '2024-01-03'
+                    businessunit: 5100
+                    branch: branch01
+                    referencedocnumber: 3241
+                    comments: comments
+    SupplierDataUploadRequest:
+      value:
+        accountid: 1000000001
+        email: first.last@company.com
+        supplieraddress:
+          - supplierid: 101
+            name: supplier01
+            displayname: ABC Suppliers
+            parentsupplierid: ''
+            suppliertype: S
+            active: 'Y'
+            addressline1: Street 100
+            addressline2: ''
+            city: Chicago
+            state: IL
+            zipcode: 60603
+            country: US
+            phone: string
+            email: first.last@company.com
+            identificationtype: ''
+            identificationdata: 12/12/2022
+            companyname: ABC Suppliers
+            clientcompanyname: Prism LLC
+            internalmemo: ''
+            comments: ''
+            reason: ''
+            status: ''
+          - supplierid: 102
+            name: supplier02
+            displayname: Matrix Ltd
+            parentsupplierid: ''
+            suppliertype: S
+            active: 'Y'
+            addressline1: Street 100
+            addressline2: ''
+            city: Chicago
+            state: IL
+            zipcode: 60603
+            country: US
+            phone: string
+            email: help@company.com
+            identificationtype: ''
+            identificationdata: 04/09/2022
+            companyname: Matrix Ltd
+            clientcompanyname: Prism LLC
+            internalmemo: ''
+            comments: ''
+            reason: ''
+            status: ''
     
     Common401Response:
       value:
@@ -2247,7 +2419,7 @@ components:
       value:
         method: charge
         transaction_id: '1234567'
-        cardnumber: '4024007176123123'
+        cardnumber: '1234007176123123'
         cvv: '123'
         expiry_month: '08'
         expiry_year: '2023'
@@ -2306,7 +2478,7 @@ components:
         cvv: '123'
         expiry_month: '08'
         expiry_year: '25'
-        description: test
+        description: 'test'
         amount: '25.0'
         currency_code: USD
         postal_code: '60540'
@@ -12281,7 +12453,7 @@ paths:
                             email: 
                               type: string
                               description: Email
-                              example: atul.nemade@cditechnology.com
+                              example: first.last@company.com
                         invoicedata:
                           type: array
                           items:
@@ -12935,6 +13107,10 @@ paths:
                                     type: string
                                     description: Comments
                                     example: testcomments
+            examples:
+              Multiple Invoice Records:
+                summary: Multiple Invoice Records
+                $ref: '#/components/examples/InvoiceDataUploadRequest'   
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
@@ -13430,6 +13606,10 @@ paths:
                               type: string
                               description: Company code
                               example: 100
+            examples:
+              Multiple Customer Records:
+                summary: Multiple Customer Records
+                $ref: '#/components/examples/CustomerDataUploadRequest'                  
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
@@ -13851,6 +14031,10 @@ paths:
                         type: string
                         description: Status
                         example: ""
+            examples:
+              Multiple Supplier Records:
+                summary: Multiple Supplier Records
+                $ref: '#/components/examples/SupplierDataUploadRequest'      
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
@@ -14296,7 +14480,7 @@ paths:
                   type: string
                   example: abc.pdf
                 invoiceorstatement:
-                  description: Invioce or statement
+                  description: Invoice or statement
                   type: string
                   example: I
                 content:
@@ -14943,8 +15127,8 @@ paths:
                               description: Default flag for customer-user association 
                               example: "Y"
             examples:
-              Example 1:
-                summary: Example 1
+              Multiple User Records:
+                summary: Multiple User Records
                 $ref: '#/components/examples/UserDataUploadRequest'  
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
@@ -17014,7 +17198,7 @@ paths:
                   token:
                     description: Token ID
                     type: string
-                    example: ""
+                    example: "1870de80-072a-ed11-bd6e-0050f2c73a18"
                   status:
                     type: string
                     description: Y or N
