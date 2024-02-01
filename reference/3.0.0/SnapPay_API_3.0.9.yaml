@@ -818,6 +818,7 @@ components:
         purchaseorder: A-20230117-03
         cards:
           - merchantid: '123459000999'
+            paymentgateway: CardConnect
             tokenid: '1234563235811730'
             returncode: '000'
             returndescription: Approval
@@ -886,6 +887,7 @@ components:
         purchaseorder: ''
         cards:
           - merchantid: '12452589'
+            paymentgateway: CardConnect
             tokenid: '9417085548851111'
             returncode: '000'
             returndescription: Approval
@@ -911,6 +913,46 @@ components:
             feetype: Service
             procresp: RPCT-000
             feeprocresp: RPCT-000
+    AuthorizeResponseWithPGName:
+      value:
+        accountid: 1000000001
+        status: 'Y'
+        message: Authorization successful.
+        reference: ''
+        purchaseorder: ''
+        cards:
+          - merchantid: '123456789856'
+            paymentgateway: CardConnect
+            tokenid: '5412345678912345'
+            returncode: '1'
+            returndescription: Transaction successful.
+            pgtransactionid: '8745615520596'
+            paymenttransactionid: '1328'
+            authorizationcode: ZNZHPJ
+            status: 'Y'
+            transactiondate: 01/15/2024 02:21:26 PM
+            procrespcode: RPCT
+            scverification: P
+            addressverification: Z
+            transactionamount: 75
+            currency: USD
+            procresp: RPCT-00
+          - merchantid: '123456789856'
+            paymentgateway: CardConnect
+            tokenid: '5412345678912345'
+            returncode: '1'
+            returndescription: Transaction successful.
+            pgtransactionid: '8745615520596'
+            paymenttransactionid: '1329'
+            authorizationcode: PATZZG
+            status: 'Y'
+            transactiondate: 01/15/2024 02:21:26 PM
+            procrespcode: RPCT
+            scverification: P
+            addressverification: Z
+            transactionamount: 75
+            currency: USD
+            procresp: RPCT-00
     AuthorizeDefaultResponse:
       value:
         accountid: 1000000001
@@ -918,6 +960,7 @@ components:
         message: Authorization successful.
         cards:
           - merchantid: "12452589"
+            paymentgateway: CardConnect
             returncode: '0'
             returndescription: Transaction successful
             procrespcode: RPCT
@@ -8915,6 +8958,10 @@ paths:
                           type: string
                           description: Payment Gateway Merchant ID
                           example: 12452589
+                        paymentgateway:
+                          type: string
+                          description: Payment Gateway
+                          example: "CardConnect"
                         returncode:
                           type: string
                           description: Payment Gateway Return Code
