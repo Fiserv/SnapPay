@@ -2617,6 +2617,21 @@ components:
           snappay_response.transaction.feestatus: 'Y'
           snappay_response.transaction.feetransactionid: '037746337810'
           snappay_response.transaction.feetype: Surcharge
+    UploadStatus401Response:
+      value:
+        accountid: 1000000001
+        requestid: 0
+        apiname: ''
+        email: ''
+        status: 'N'
+        message: Authentication failed.
+        datareceived: 0
+        datainserted: 0
+        dataupdated: 0
+        datafailed: 0
+        datasent: 0
+        failurerecords: null
+        
         
   parameters:
     AccountIDParam:
@@ -17265,4 +17280,93 @@ paths:
                   $ref: '#/components/examples/AddIVRPMRequest401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
-      
+  /api/UploadStatus:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Upload Status
+      summary: Upload Status 
+      description: >-
+        To check the status of upload APIs
+      operationId: uploadstatus
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  type: number
+                  example: 1000000001
+                requestid:
+                  description: Request ID
+                  type: string
+                  example: 2088
+                apiname:
+                  description: API Name
+                  type: string
+                  example: "CustomerDataUpload"
+                email:
+                  description: Email address
+                  type: string
+                  example: "first.last@company.com"
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: Account ID
+                    example: 1000000001
+                  requestid:
+                    description: Request ID
+                    type: string
+                    example: "1870de80-072a-ed11-bd6e-0050f2c73a18"
+                  apiname: 
+                    description: API name to check its status
+                    type: string
+                    example: "CustomerDateUpload"
+                  status:
+                    type: string
+                    description: Y or N
+                    example: 'Y'
+                  message:
+                    type: string
+                    description: Return message
+                    example: "Customer Data Uploaded Succesfully."
+                  datareceived: 
+                    type: string
+                    description: Customer count received in request
+                    example: "100"
+                  datainserted:
+                    type: string
+                    description: Number of customer inserted.
+                    example: "100"
+                  dataupdated:
+                    type: string
+                    description: Updated customer count
+                    example: "0"
+                  datasent:
+                    type: string
+                    description: Data sent
+                    example: "0"
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/UploadStatus401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
