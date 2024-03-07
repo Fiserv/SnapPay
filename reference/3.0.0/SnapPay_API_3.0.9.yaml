@@ -2029,7 +2029,45 @@ components:
             comments: ''
             reason: ''
             status: ''
+    GetFeeServiceTypeRequest:
+      value:
+        accountid: 1000000001
+        merchantid: '123495144562'
+        transactionamount: '100.00'
+        tokenid: '1234444926857116'
+        zip: '65214'
+        feetype: 'Service'
+    GetFeeSurchargeTypeRequest:
+      value:
+        accountid: 1000000001
+        merchantid: '123495144562'
+        transactionamount: '100.00'
+        tokenid: '1234444926857116'
+        zip: '65214'
+        feetype: 'Surcharge'    
+    GetFeeServiceTypeResponse:
+      value:
+        accountid: 1000000001
+        feeamount: 2
+        message: Fee amount retrieved successfully.
+        status: 'Y'
+        feetype: Service
+        feeformat: Flat
+        feevalue: '2'
+    GetFeeSurchargeTypeResponse:
+      value:
+        accountid: '1000859973'
+        feeamount: 3
+        message: Fee amount retrieved successfully.
+        status: 'Y'
+        feetype: Surcharge
+        feeformat: Percentage
+        feevalue: '3'
+        cardtype: Credit
+        surchargeapplicable: 'Y'
+           
     
+      
     Common401Response:
       value:
         accountid: 1000000001
@@ -17374,3 +17412,116 @@ paths:
                   $ref: '#/components/examples/UploadStatus401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
+  /api/interop/getfee:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Get Fee
+      summary: Get Fee 
+      description: >-
+        To return the fee details for the request MID and transaction amount. 
+      operationId: getfee
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountid:
+                  description: Account ID
+                  type: number
+                  example: 1000000001
+                merchantid:
+                  description: Merchant ID
+                  type: string
+                  example: 123495144562
+                transactionamount:
+                  description: Transaction amount
+                  type: string
+                  example: "100.00"
+                tokenid:
+                  description: Token ID
+                  type: string
+                  example: "1234444926857116"
+                zip: 
+                  description: Zip code
+                  type: string
+                  example: "65214"
+                feetype:
+                  description: Fee Type
+                  type: string
+                  example: "Surcharge"
+            examples:
+              Fee type Service:
+                summary: Fee type Service
+                $ref: '#/components/examples/GetFeeServiceTypeRequest'
+              Fee type Surcharge:
+                summary: Fee type Surcharge
+                $ref: '#/components/examples/GetFeeSurchargeTypeRequest'
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: Account ID
+                    example: 1000000001
+                  feeamount:
+                    description: Fee Amount
+                    type: number
+                    example: 3
+                  message: 
+                    description: Return message
+                    type: string
+                    example: "Fee amount retrieved successfully."
+                  status:
+                    type: string
+                    description: Y or N
+                    example: 'Y'
+                  feetype:
+                    type: string
+                    description: Fee type
+                    example: "Surcharge"
+                  feeformat: 
+                    type: string
+                    description: Fee format
+                    example: "Percentage"
+                  feevalue:
+                    type: string
+                    description: Fee value.
+                    example: "100"
+                  cardtype:
+                    type: string
+                    description: Card type
+                    example: "0"
+                  surchargeapplicable:
+                    type: string
+                    description: Data sent
+                    example: "0"
+              examples:
+                Fee type Service:
+                  summary: Fee type Service
+                  $ref: '#/components/examples/GetFeeServiceTypeResponse'
+                Fee type Surcharge:
+                  summary: Fee type Surcharge
+                  $ref: '#/components/examples/GetFeeSurchargeTypeResponse'
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
+  
