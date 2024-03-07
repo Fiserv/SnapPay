@@ -10335,6 +10335,10 @@ paths:
                     type: string
                     description: Message
                     example: Success
+                  status:
+                    type: string
+                    description: Execution status
+                    example: "Y"
                   transactions:
                     type: array
                     items:
