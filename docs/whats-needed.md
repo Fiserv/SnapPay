@@ -57,7 +57,7 @@ Following information is needed to generate HMAC signature that will be added to
 4. SnapPay Account ID 10 digit Account ID (**1000000001**) 
 Content in bold text are sample values for documentation purpose, please check with your account manager to get your account specific values.
 
-### Steps to Create HMAC signature: -
+### Steps to Create HMAC signature
 
 
 **_1.	Create Request Time Stamp in UTC (GMT) this is to make sure that the incoming request is within certain time limit._**
