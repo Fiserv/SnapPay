@@ -2786,6 +2786,7 @@ components:
   schemas:
     GetRequestIDRequest: 
       type: object
+      required: [accountid, companycode]
       properties:
         accountid:
           description: Account ID
