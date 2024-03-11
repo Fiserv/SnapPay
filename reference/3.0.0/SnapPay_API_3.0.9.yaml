@@ -9,7 +9,7 @@ info:
   
   version: 3.0.9
 servers:
-  - url: https://restapi.snappayglobal.com/
+  - url: https://restapi-stage.SnapPayGlobal.com:443/
   - url: https://demo1.cditechnology.com/SnapPay/REST/
     
 components:
@@ -2065,7 +2065,118 @@ components:
         feevalue: '3'
         cardtype: Credit
         surchargeapplicable: 'Y'
-           
+    TokenizeUsingDualMIDRequest:
+      value:
+        accountid: 1000000001
+        requesttype: C
+        currency: USD
+        companycode: '00200'
+        mode: CC
+        userid: testcsr
+        transactiontype: ''
+        routingnumber: ''
+        bankname: ''
+        checktype: ''
+        identificationtype: ''
+        identificationnumber: ''
+        accountnumber: '1234022601910396'
+        type: MC
+        expirationdate: '072027'
+        name: First Last
+        addressline1: 495 N Commons Dr
+        city: Aurora
+        state: IL
+        zip: '65214'
+        tempdata: '06013'
+        country: US
+        email: first.last@cditechnology.com
+        phonenumber: ''
+        
+    TokenizeUsingDualMIDResponse:
+      value:
+       accountid: 1000000001
+       status: 'Y'
+       message: Transaction successful.
+       requesttype: C
+       currency: USD
+       companycode: '200'
+       mode: CC
+       type: MC
+       last4: '0396'
+       routingnumber: ''
+       bankname: ''
+       checktype: ''
+       identificationtype: ''
+       identificationnumber: ''
+       tokenid: '1234778079420396'
+       expirationdate: '072027'
+       name: first last
+       addressline1: 495 N Commons Dr
+       city: Aurora
+       state: IL
+       zip: '65214'
+       country: US
+       email: first.last@comp.com
+       phonenumber: ''
+       paymentmethodid: 42807
+       cardtype: DEBIT
+       surchargeapplicable: 'N'
+    GetTransactionDualMIDRequest:
+      value:
+        accountid: 1000000001
+        transactionid: '123423323339'
+    GetTransactionDualMIDResponse:
+      value:
+        accountid: 1000000001
+        message: Success
+        status: 'Y'
+        transactions:
+          - transaction:
+              transactionstatus: Success
+              merchantid: '123499000999'
+              returncode: '000'
+              returndescription: Approval
+              pgtransactionid: '123423323339'
+              pgtransactiontype: Charge
+              paymenttransactionid: '100001754'
+              authorizationcode: PPS955
+              transactiondate: 03.05.2024 05:28:51 AM
+              procrespcode: RPCT
+              transactionamount: 272
+              currency: USD
+              totaltransactionamount: 280.16
+              feeamount: 8.16
+              feeauthcode: PPS955
+              feeformat: Percentage
+              feevalue: 3
+              feestatus: 'Y'
+              feetransactionid: '100001775'
+              feetype: Surcharge
+            paymentmethod:
+              paymentmethodid: 42808
+              type: VISA
+              last4: '8762'
+              routingnumber: ''
+              tokenid: '1239592778048762'
+              firstname: First
+              lastname: Last
+              expirationmonth: '8'
+              expirationyear: '2038'
+              addressline1: 495 N Commons Dr
+              city: Aurora
+              state: IL
+              zip: '65214'
+              country: US
+              phonenumber: ''
+              email: first.last@company.com
+              cardtype: CREDIT
+              surchargeapplicable: 'Y'
+    GetTransactionFailedExample:
+     value: 
+      accountid: 1000000001
+      message: Error occurred in GetTransaction. Please contact Customer Service.
+      status: 'N'
+      
     
       
     Common401Response:
@@ -2096,6 +2207,7 @@ components:
       value:
         accountid: 1000000001
         message: Authentication failed.
+        status: 'N'
     TransactionHistory401Response:
       value:
         accountid: 1000000001
@@ -2786,7 +2898,8 @@ components:
   schemas:
     GetRequestIDRequest: 
       type: object
-      required: [accountid, companycode]
+      required: [accountid, companycode, currencycode
+      ,customerid, userid, transactiontype, paymentmethod, redirecturl,transactionamount]
       properties:
         accountid:
           description: Account ID
@@ -8246,12 +8359,12 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid]
               properties:
                 accountid:
                   description: Account ID
-                  type: string
-                  example: >-
-                    1000000001
+                  type: number
+                  example: 1000000001
                 token:
                   description: Request Token ID
                   type: string
@@ -8462,6 +8575,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid,currency,companycode,mode,type,accountnumber,expirationdate]
               properties:
                 accountid:
                   type: number
@@ -8575,6 +8689,9 @@ paths:
               Tokenize Device Data:
                 summary: Tokenize Device Data
                 $ref: '#/components/examples/TokenizeWithDeviceDataRequest'
+              Tokenize Using Dual MID:
+                summary: Tokenize Using Dual MID
+                $ref: '#/components/examples/TokenizeUsingDualMIDRequest'
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
         - {$ref: '#/components/parameters/MerchantIDParam'}
@@ -8698,6 +8815,10 @@ paths:
                 ACH:
                   summary: ACH
                   $ref: '#/components/examples/TokenizeACHResponse'
+                Tokenize Using Dual MID:
+                  summary: Tokenize Using Dual MID
+                  $ref: '#/components/examples/TokenizeUsingDualMIDResponse'
+                
         '400': {$ref: '#/components/responses/InvalidRequest'}
         '401':
           description: Authentication Failed
@@ -8728,6 +8849,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid, customerid,currency,companycode,userid]
               properties:
                 accountid:
                   type: number
@@ -9107,6 +9229,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid,companycode,userid,customerid,currency]
               properties:
                 accountid:
                   type: number
@@ -9182,6 +9305,7 @@ paths:
                   example: "N"
                 paymentmethod:
                   type: object
+                  required: [tokenid, expirationdate]
                   properties:
                     transactionamount:
                       type: integer
@@ -9486,6 +9610,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid,referencetransactionid,customerid,currency,companycode,userid]
               properties:
                 accountid:
                   type: number
@@ -9753,6 +9878,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid,customerid,userid]
               properties:
                 accountid:
                   type: string
@@ -9816,6 +9942,7 @@ paths:
                   example: "N"
                 paymentmethod:
                   type: object
+                  required: [tokenid]
                   properties:
                     transactionamount:
                       type: integer
@@ -9967,6 +10094,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid, referencetransactionid,customerid,currency,companycode,userid]
               properties:
                 accountid:
                   type: number
@@ -10182,12 +10310,12 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid,referencetransactionid,customerid,currency,companycode,userid]
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >-
-                    1000000001
+                  example: 1000000001
                 referencetransactionid:
                   type: string
                   description: >-
@@ -10334,6 +10462,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid]
               properties:
                 accountid:
                   type: number
@@ -10355,6 +10484,10 @@ paths:
                   type: string
                   description: Account
                   example: null
+            examples:
+              Transaction using Dual MID:
+                summary: Transaction using Dual MID
+                $ref: '#/components/examples/GetTransactionDualMIDRequest'
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
         - {$ref: '#/components/parameters/HMACParam'}
@@ -10569,6 +10702,13 @@ paths:
                               type: string
                               description: Email Address
                               example: john.smith@company.com
+              examples:
+                Transaction using Dual MID:
+                  summary: Transaction using Dual MID
+                  $ref: '#/components/examples/GetTransactionDualMIDResponse'
+                Failure scenario:
+                  summary: Failure scenario
+                  $ref: '#/components/examples/GetTransactionFailedExample'
         '400': {$ref: '#/components/responses/InvalidRequest'}
         '401':
           description: Authentication Failed
@@ -11873,12 +12013,12 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid]
               properties:
                 accountid:
-                  type: string
+                  type: number
                   description: Account ID
-                  example: >-
-                    1000000001
+                  example: 1000000001
                 customerid:
                   type: string
                   description: Customer ID
@@ -12068,6 +12208,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid,currencycode,companycode,userid,transactiontype, mode, customerid, email]
               properties:
                 accountid:
                   type: number
@@ -12289,6 +12430,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid, requestid]
               properties:
                 accountid:
                   type: number
@@ -12345,6 +12487,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid,process,fromdate,todate]
               properties:
                 accountid:
                   type: string
@@ -12724,6 +12867,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid,userid,userfirstname,userlastname, useremail, customerid]
               properties:
                 accountid:
                   type: number
@@ -13044,10 +13188,11 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid]
               properties:
                 accountid:
                   description: Account ID
-                  type: string
+                  type: number
                   example: 1000000001
                 email:
                   type: string
@@ -13062,6 +13207,7 @@ paths:
                         type: array
                         items:
                           type: object
+                          required: [billingcustomerid,invoicenumber,invoicetype,companycode,currency,fiscalyear]
                           properties:
                             billingcustomerid:
                               type: integer
@@ -13123,6 +13269,7 @@ paths:
                               type: array
                               items:
                                 type: object
+                                required: [linenumber,grossamount,openamount, invoicedate, duedate]
                                 properties:
                                   linenumber:
                                     type: integer
@@ -13212,6 +13359,102 @@ paths:
                                     type: string
                                     description: Comments
                                     example: testcomments
+                                  amount1:
+                                    type: string 
+                                    description: Amount 1
+                                    example: "0"
+                                  amount2:
+                                    type: string 
+                                    description: Amount 2
+                                    example: "0"
+                                  amount3:
+                                    type: string 
+                                    description: Amount 3
+                                    example: "0"
+                                  amount4:
+                                    type: string 
+                                    description: Amount 4
+                                    example: "0"
+                                  date1:
+                                    type: string
+                                    description: Date 1
+                                    example: "2024-01-01"
+                                  date2:
+                                    type: string
+                                    description: Date 2
+                                    example: "2024-01-01"
+                                  date3:
+                                    type: string
+                                    description: Date 3
+                                    example: "2024-01-01"
+                                  date4:
+                                    type: string
+                                    description: Date 4
+                                    example: "2024-01-01"
+                                  string1:
+                                    type: string
+                                    description: String 1
+                                    example: ""
+                                  string2:
+                                    type: string
+                                    description: String 2
+                                    example: ""
+                                  string3:
+                                    type: string
+                                    description: String 3
+                                    example: ""
+                                  string4:
+                                    type: string
+                                    description: String 4
+                                    example: ""
+                                  number1:
+                                    type: string 
+                                    description: Number 1
+                                    example: "0"
+                                  number2:
+                                    type: string 
+                                    description: Number 2
+                                    example: "0"
+                                  number3:
+                                    type: string 
+                                    description: Number 3
+                                    example: "0"
+                                  number4:
+                                    type: string 
+                                    description: Number 4
+                                    example: "0"
+                                  flag1:
+                                    type: boolean
+                                    description: Flag 1
+                                    example: false
+                                  flag2:
+                                    type: boolean
+                                    description: Flag 2
+                                    example: false
+                                  flag3:
+                                    type: boolean
+                                    description: Flag 3
+                                    example: false
+                                  flag4:
+                                    type: boolean
+                                    description: Flag 4
+                                    example: false
+                                  text1: 
+                                    type: string
+                                    description: Text 1
+                                    example: ""
+                                  text2: 
+                                    type: string
+                                    description: Text 2
+                                    example: ""
+                                  text3: 
+                                    type: string
+                                    description: Text 3
+                                    example: ""
+                                  text4: 
+                                    type: string
+                                    description: Text 4
+                                    example: ""
             examples:
               Multiple Invoice Records:
                 summary: Multiple Invoice Records
