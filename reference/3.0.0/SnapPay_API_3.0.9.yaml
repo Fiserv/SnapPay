@@ -2517,6 +2517,66 @@ components:
             paymenttransactionrecon: null
             paymentdate: 02.14.2024 04:24:12 AM
             interoprequestnumber: 3dc7f313-23cb-ee11-bad5-0022488db98s
+    CustomerPMUploadMultipleRecords:
+     value:
+      accountid: 1000000001
+      email: first.last@company.com
+      paymentgateway: CardConnect
+      customerdetail:
+        - customerid: '4242'
+          paymentmethoddata:
+            - paymentmethod:
+                tokenid: '1234850494839193'
+                type: VISA
+                last4: '9193'
+                maskedaccountnumber: null
+                routingnumber: ''
+                expirationmonth: '01'
+                expirationyear: '2025'
+                merchantid: '123495144562'
+                firstname: First
+                lastname: Last
+                addressline1: 495 N Commons Dr
+                city: Aurora
+                state: IL
+                zip: '60504'
+                country: USA
+                phonenumber: '6304299800'
+                email: first.last@company.com
+              enrollautopay: 'Y'
+              maxamountperinvoice: '1000'
+              currencycode: USD
+              companycode: '00200'
+              branchplant: A10
+              ordertype: SO
+              associationtype: soldto
+              isdefault: 'N'
+            - paymentmethod:
+                tokenid: '1234660588517989'
+                type: MC
+                last4: '7989'
+                maskedaccountnumber: null
+                routingnumber: ''
+                expirationmonth: '01'
+                expirationyear: '2028'
+                merchantid: '123495144562'
+                firstname: First
+                lastname: Last
+                addressline1: 495 N Commons Dr
+                city: Aurora
+                state: IL
+                zip: '60504'
+                country: USA
+                phonenumber: '6304299800'
+                email: first.last@company.com
+              enrollautopay: 'N'
+              maxamountperinvoice: '0'
+              currencycode: USD
+              companycode: '00200'
+              branchplant: A10
+              ordertype: SO
+              associationtype: soldto
+              isdefault: 'Y'
       
          
     Common401Response:
@@ -13897,11 +13957,9 @@ paths:
                           type: object
                           properties:
                             paymentmethod:
-                              type: array
-                              items:
-                                type: object
-                                required: [tokenid,expirationmonth,expirationyear, merchantid,type,last4,addressline1,zip,firstname,lastname,city,state]
-                                properties:
+                              type: object
+                              required: [tokenid,expirationmonth,expirationyear, merchantid,type,last4,addressline1,zip,firstname,lastname,city,state]
+                              properties:
                                   tokenid:
                                     type: string
                                     description: Token against card or account number
@@ -14002,6 +14060,10 @@ paths:
                               type: string
                               description: Default
                               example: 'Y'
+            examples:
+              Multiple Records:
+                summary: Multiple Records
+                $ref: '#/components/examples/CustomerPMUploadMultipleRecords'
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
@@ -14013,10 +14075,9 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
+                    type: number
                     description: Account ID
-                    example: >- 
-                      1000000001
+                    example: 1000000001
                   requestid:
                     type: integer
                     description: Request ID generated for
@@ -15757,6 +15818,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid]
               properties:
                 accountid:
                   type: number
@@ -15765,6 +15827,7 @@ paths:
                 users:
                   type: array
                   items:
+                    required: [userid,firstname,lastname,email,usertypename,usergroupname]
                     properties:
                       userid:
                         type: string
@@ -15825,6 +15888,7 @@ paths:
                       customers:
                         type: array
                         items:
+                          required: [customerid,associationtype]
                           properties:
                             customerid: 
                               type: string
@@ -15899,6 +15963,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid]
               properties:  
                 accountid:
                   type: number
@@ -15911,6 +15976,7 @@ paths:
                 paymentdata:
                   type: array
                   items:
+                    required: [paymentheaderid,paymenttransactionid]
                     properties:
                         paymentheaderid:
                           type: number
@@ -17315,6 +17381,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid]
               properties:
                 accountid:
                   type: number
@@ -17879,6 +17946,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid,paymentmethodid]
               properties:
                 accountid:
                   description: Account ID
@@ -17949,6 +18017,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid]
               properties:
                 accountid:
                   description: Account ID
@@ -18039,6 +18108,7 @@ paths:
           application/json:
             schema:
               type: object
+              required: [accountid,tokenid,zip,feetype]
               properties:
                 accountid:
                   description: Account ID
