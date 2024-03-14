@@ -12447,10 +12447,7 @@ paths:
                   type: integer
                   description: Page Number
                   example: 1
-            examples:
-              Using Dual MID:
-                summary: Using Dual MID
-                $ref: '#/components/examples/GetPMswithDualMID'
+            
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
       responses:
@@ -12595,6 +12592,10 @@ paths:
                                 type: integer
                                 description: Max amount
                                 example: 300
+              examples:
+                Using Dual MID:
+                  summary: Using Dual MID
+                  $ref: '#/components/examples/GetPMswithDualMID'
         '400': {$ref: '#/components/responses/InvalidRequest'}
         '401':
           description: Authentication Failed
