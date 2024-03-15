@@ -8536,6 +8536,7 @@ components:
                               example: "Y"
     GetRequestIDForOTP:
       type: object
+      required: [accountid,company,currency,customerid]
       properties:
         accountid:
           type: number
@@ -8564,6 +8565,7 @@ components:
         invoicelist: 
           type: array
           items:
+            required: [invoicenumber,invoicetype,fiscalyear]
             properties:
               invoicenumber:
                 type: string
@@ -11505,8 +11507,8 @@ paths:
                               description: Interop request number
                               example: "f33b25ed-9cb6-eb11-a7ad-00155d546c89"
               examples: 
-                Using Dual MID:
-                  summary: Using Dual MID
+                Transactions Using Dual MID:
+                  summary: Transactions Using Dual MID
                   $ref: '#/components/examples/TransactionHistoryRespDualMID'
         '400': {$ref: '#/components/responses/InvalidRequest'}
         '401':
@@ -15709,8 +15711,8 @@ paths:
       tags:
         - Real Estate
       x-group-name: Real Estate
-      x-proxy-name: Tenantsalesreport Download
-      summary: Tenantsalesreport Download
+      x-proxy-name: Tenant Sales Report Download
+      summary: Tenant sales report download
       description: Reporting for real estate customers.
       operationId: tenantsalesreportdownload
       parameters:
