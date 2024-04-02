@@ -26,7 +26,7 @@
         "apiSpecFileNames": ["SnapPay_API_3.0.9"]
       },
       {
-        "version": "3.0.0",
+        "version": "3.0.1",
         "versionType": "major",
         "releaseNotesPath": "/release-notes/release-notes-3.0.0.md",
         "apiSpecFileNames": ["SnapPay_API_3.0.9"]
