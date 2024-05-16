@@ -2332,7 +2332,6 @@ components:
             email: first.last@company.com
             cardtype: CREDIT
             surchargeapplicable: 'Y'
-            paymentgateway: 'CardConnect'
     TransactionHistoryRespDualMID:
      value:
       accountid: 1000000001
@@ -17432,10 +17431,6 @@ paths:
                           type: string
                           description: Email address
                           example: "first.last@company.com"
-                        paymentgateway: 
-                          type: string
-                          description: Payment Gateway name
-                          example: "CardConnect"
                         
               examples:
                 Using Dual MID:
