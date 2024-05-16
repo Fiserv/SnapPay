@@ -17431,6 +17431,7 @@ paths:
                           type: string
                           description: Email address
                           example: "first.last@company.com"
+                        
               examples:
                 Using Dual MID:
                   summary: Using Dual MID
@@ -18141,72 +18142,6 @@ paths:
                 Authentication Failed: 
                   summary: Authentication Failed
                   $ref: '#/components/examples/Common401Response'
-        '429': {$ref: '#/components/responses/TooManyRequest'}
-        '500': {$ref: '#/components/responses/ServerError'}
-  /api/interop/GetServiceFeeAmount:
-    post:
-      tags:
-        - APIs without User Interaction
-      x-group-name: APIs without User Interaction
-      x-proxy-name: Get Service Fee Amount
-      summary: Get Service Fee Amount
-      description: >-
-        Purpose of this API to get service fee amount based on merchant id and amount sent in request
-      operationId: getServiceFeeAmount
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountid:
-                  type: number
-                  description: Account ID
-                  example: 1000000001
-                merchantid:
-                  description: Merchant ID
-                  type: string
-                  example: 123456789
-                transactionamount:
-                  description: Transaction amount
-                  type: number
-                  example: 100.00
-      parameters:
-        - {$ref: '#/components/parameters/AccountIDParam'}
-        - {$ref: '#/components/parameters/HMACParam'}
-      responses: 
-        '200':
-          description: Request successful.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  accountid:
-                    type: number
-                    description: Account ID
-                    example: 1000000001
-                  servicefeeamount:
-                    type: number
-                    description: Service fee amount 
-                    example: 2.7
-                  message:
-                    type: string
-                    description: Message
-                    example: "Service fee amount retrieved successfully."
-                  status:
-                    type: string
-                    description: API execution status
-                    example: "Y"
-        '400': {$ref: '#/components/responses/InvalidRequest'}
-        '401':
-          description: Authentication Failed
-          content:
-            application/json:
-              examples:
-                Authentication Failed: 
-                  summary: Authentication Failed
-                  $ref: '#/components/examples/GetServiceFeeAmount401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   
