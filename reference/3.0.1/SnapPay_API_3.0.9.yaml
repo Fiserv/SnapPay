@@ -8596,7 +8596,9 @@ security:
   - basicAuth: []
 tags:
   - name: APIs with User Interaction
+  - name: APIs with User Interaction V2
   - name: APIs without User Interaction
+  - name: APIs without User Interaction V2
   - name: Card Account Updater
   - name: ERP Agents
   - name: Pass through API
@@ -18142,6 +18144,1974 @@ paths:
                 Authentication Failed: 
                   summary: Authentication Failed
                   $ref: '#/components/examples/Common401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
+        
+  /api/interop/v2/tokenize:
+    post:
+      tags:
+        - APIs without User Interaction V2
+      x-group-name: APIs without User Interaction V2
+      x-proxy-name: Tokenize V2
+      summary: Tokenize V2
+      description: >-
+        The Tokenize API provides a token back when credit card is sent in clear
+        text. This API also tokenizes ACH (bank account) details. The token ID
+        is returned on success and can be used in subsequent calls like
+        Authorize, Charge, etc.
+      operationId: tokenize V2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [accountid,currency,companycode,mode,type,accountnumber,expirationdate]
+              properties:
+                accountid:
+                  type: number
+                  description: Account ID
+                  example: 1000000001
+                requesttype:
+                  type: string
+                  description: >-
+                    Request Type C for customer and S for supplier. Default
+                    value is C if this parameter is not sent
+                  example: C
+                currency:
+                  type: string
+                  description: Currency Code
+                  example: USD
+                companycode:
+                  type: string
+                  description: Company Code
+                  example: '00200'
+                branchplant:
+                  type: string
+                  description: Branch Plant
+                  example: null
+                ordertype:
+                  type: string
+                  description: Sales Order Type
+                  example: null
+                mode:
+                  type: string
+                  description: CC for credit card and ACH for back details
+                  example: CC
+                type:
+                  type: string
+                  description: >-
+                    Type of Credit Card or Bank Account - VISA / MC / DISCOVER /
+                    AMEX / CHECKING / SAVING
+                  example: VISA
+                routingnumber:
+                  type: string
+                  description: Bank Routing Number
+                  example: 71904779
+                bankname:
+                  type: string
+                  description: Bank name
+                  example: "Bank"
+                checktype:
+                  type: string
+                  description: Check Type â€“ C for corporate and P for personal
+                  example: null
+                identificationtype:
+                  type: string
+                  description: >-
+                    Identification Type - T for Tax ID, S for SSN & D for Driver
+                    License
+                  example: null
+                dlstate:
+                  type: string
+                  description: Driver License State
+                  example: null
+                identificationnumber:
+                  type: string
+                  description: Identification Number
+                  example: null
+                accountnumber:
+                  type: string
+                  description: Credit Card Number of Bank Account Number
+                  example: 411111111111111
+                expirationdate:
+                  type: string
+                  description: Expiration Date (mmYYYY)
+                  example: 122029
+                name:
+                  type: string
+                  description: Name on credit card or bank account
+                  example: John Smith
+                addressline1:
+                  type: string
+                  description: Address Line 1
+                  example: 123 Main St
+                city:
+                  type: string
+                  description: City
+                  example: Lombard
+                state:
+                  type: string
+                  description: State
+                  example: IL
+                zip:
+                  type: string
+                  description: Zip/Postal Code
+                  example: 60148
+                country:
+                  type: string
+                  description: Country
+                  example: US
+                email:
+                  type: string
+                  description: Email Address
+                  example: abc@company.com
+                phonenumber:
+                  type: string
+                  description: Phone Number
+                  example: 630-123-1233
+            examples:
+              Credit Card:
+                summary: Credit Card
+                $ref: '#/components/examples/TokenizeCCRequest'
+              ACH:
+                summary: ACH
+                $ref: '#/components/examples/TokenizeACHRequest'
+              Tokenize Device Data:
+                summary: Tokenize Device Data
+                $ref: '#/components/examples/TokenizeWithDeviceDataRequest'
+              Tokenize Using Dual MID:
+                summary: Tokenize Using Dual MID
+                $ref: '#/components/examples/TokenizeUsingDualMIDRequest'
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: Account ID
+                    example: 1000000001
+                  status:
+                    type: string
+                    description: Y or N
+                    example: 'Y'
+                  message:
+                    type: string
+                    description: Message
+                    example: Tokenization successful.
+                  currency:
+                    type: string
+                    description: Currency Code
+                    example: USD
+                  companycode:
+                    type: string
+                    description: Company Code
+                    example: '00200'
+                  branchplant:
+                    type: string
+                    description: Branch Plant
+                    example: null
+                  ordertype:
+                    type: string
+                    description: Sales Order Type
+                    example: null
+                  mode:
+                    type: string
+                    description: CC for credit card and ACH for back details
+                    example: Tokenization successful.
+                  type:
+                    type: string
+                    description: >-
+                      Type of Credit Card or Bank Account - VISA / MC / DISCOVER
+                      / AMEX / CHECKING / SAVING
+                    example: VISA
+                  last4:
+                    type: string
+                    description: Last 4 of credit card or bank account number
+                    example: 1111
+                  routingnumber:
+                    type: string
+                    description: Bank Routing Number
+                    example: null
+                  bankname:
+                    type: string
+                    description: Bank Name
+                    example: null
+                  checktype:
+                    type: string
+                    description: Check Type â€“ C for corporate and P for personal
+                    example: null
+                  identificationtype:
+                    type: string
+                    description: >-
+                      Identification Type T for Tax ID, S for SSN and D for
+                      Driver License
+                    example: null
+                  identificationnumber:
+                    type: string
+                    description: Identification Number
+                    example: null
+                  tokenid:
+                    type: string
+                    description: Credit Card or Bank Account Token
+                    example: 9447829389471112
+                  expirationdate:
+                    type: string
+                    description: Credit Card Expiration Date
+                    example: 122029
+                  name:
+                    type: string
+                    description: Name on Credit Card or Bank Account
+                    example: John Smith
+                  addressline1:
+                    type: string
+                    description: Address Line 1
+                    example: 123 Main St
+                  city:
+                    type: string
+                    description: City
+                    example: Lombard
+                  state:
+                    type: string
+                    description: Stage
+                    example: IL
+                  zip:
+                    type: string
+                    description: Zip/Postal Code
+                    example: 60148
+                  country:
+                    type: string
+                    description: Country
+                    example: US
+                  email:
+                    type: string
+                    description: Email Address
+                    example: john.smith@company.com
+                  phonenumber:
+                    type: string
+                    description: Phone Number
+                    example: null
+              examples:
+                Credit Card:
+                  summary: Credit Card
+                  $ref: '#/components/examples/TokenizeCCResponse'
+                ACH:
+                  summary: ACH
+                  $ref: '#/components/examples/TokenizeACHResponse'
+                Tokenize Using Dual MID:
+                  summary: Tokenize Using Dual MID
+                  $ref: '#/components/examples/TokenizeUsingDualMIDResponse'
+                
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
+  /api/interop/v2/authorize:
+    post:
+      tags:
+        - APIs without User Interaction V2
+      x-group-name: APIs without User Interaction V2
+      x-proxy-name: Authorize V2
+      summary: Authorize V2
+      description: >-
+        The Authorize API performs a credit card authorization request using a
+        credit card token to insure the credit card is valid and has the
+        requested credit limit available.  The authorization code is returned on
+        success and error information if not successful.  The Capture API will
+        then need to be called to actually request the funds transfer.
+      operationId: authorize V2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [accountid, customerid,currency,companycode,userid]
+              properties:
+                accountid:
+                  type: number
+                  description: Account ID
+                  example: 1000000001
+                customerid:
+                  type: string
+                  description: Customer ID
+                  example: 100
+                currency:
+                  type: string
+                  description: Currency Code
+                  example: USD
+                companycode:
+                  type: string
+                  description: Company Code
+                  example: '00200'
+                branchplant:
+                  type: string
+                  description: Branch Plant
+                  example: ''
+                ordertype:
+                  type: string
+                  description: Order Type
+                  example: ''
+                orderid:
+                  type: string
+                  description: Order ID
+                  example: 123456
+                invoiceid:
+                  type: string
+                  description: Invoice ID
+                  example: 123456
+                userid:
+                  type: string
+                  description: User ID
+                  example: user1
+                reference:
+                  type: string
+                  description: Reference Text
+                  example: ''
+                purchaseorder:
+                  type: string
+                  description: Purchase Order
+                  example: USD
+                ecomind: 
+                  type: string
+                  description: Ecommerce indicator 
+                  example: "E"
+                cof:
+                  type: string
+                  description: COF
+                  example: "C"
+                cofscheduled: 
+                  type: string
+                  description: COF Scheduled
+                  example: "N"
+                iscapture: 
+                  type: string
+                  description: Is Capture flag (Y or N)
+                  example: "Y"
+                card:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      transactionamount:
+                        type: integer
+                        description: Transaction Amount
+                        example: 10
+                      tokenid:
+                        type: string
+                        description: Token ID
+                        example: 'XXXXXXXXXXXX2344'
+                      type:
+                        type: string
+                        description: Type of credit card
+                        example: VISA
+                      last4:
+                        type: string
+                        description: Last 4 digits of credit card
+                        example: 2345
+                      cvv:
+                        type: string
+                        description: CVV
+                        example: 123
+                      expirationdate:
+                        type: string
+                        description: Expiration Date mmYYYY
+                        example: 122029
+                      customername:
+                        type: string
+                        description: Name on credit card
+                        example: First Last
+                      addressline1:
+                        type: string
+                        description: Address Line 1
+                        example: 123 Main St
+                      city:
+                        type: string
+                        description: City
+                        example: Lombard
+                      state:
+                        type: string
+                        description: State
+                        example: IL
+                      zip:
+                        type: string
+                        description: Zip/Postal Code
+                        example: 60148
+                      country:
+                        type: string
+                        description: Country
+                        example: US
+                      email:
+                        type: string
+                        description: Email Address
+                        example: first.last@company.com
+                      phonenumber:
+                        type: string
+                        description: Phone Number
+                        example: ''
+                      secureflag:
+                        type: string
+                        description: Secure flag
+                        example: "05"
+                      securevalue:
+                        type: string
+                        description: Secure value
+                        example: ""
+                      securedstid: 
+                        type: string 
+                        description: Secure DST ID
+                        example: ""
+                      secureexemption:
+                        type: string
+                        description: Secure exemption
+                        example: "lowvalue"
+                cards:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      transactionamount:
+                        type: integer
+                        description: Transaction Amount
+                        example: 10
+                      tokenid:
+                        type: string
+                        description: Token ID
+                        example: 'XXXXXXXXXXXX2344'
+                      type:
+                        type: string
+                        description: Type of credit card
+                        example: VISA
+                      last4:
+                        type: string
+                        description: Last 4 digits of credit card
+                        example: 2345
+                      cvv:
+                        type: string
+                        description: CVV
+                        example: 123
+                      expirationdate:
+                        type: string
+                        description: Expiration Date mmYYYY
+                        example: 122029
+                      customername:
+                        type: string
+                        description: Name on credit card
+                        example: First Last
+                      addressline1:
+                        type: string
+                        description: Address Line 1
+                        example: 123 Main St
+                      city:
+                        type: string
+                        description: City
+                        example: Lombard
+                      state:
+                        type: string
+                        description: State
+                        example: IL
+                      zip:
+                        type: string
+                        description: Zip/Postal Code
+                        example: 60148
+                      country:
+                        type: string
+                        description: Country
+                        example: US
+                      email:
+                        type: string
+                        description: Email Address
+                        example: first.last@company.com
+                      phonenumber:
+                        type: string
+                        description: Phone Number
+                        example: ''
+                      secureflag:
+                        type: string
+                        description: Secure flag
+                        example: "05"
+                      securevalue:
+                        type: string
+                        description: Secure value
+                        example: ""
+                      securedstid: 
+                        type: string 
+                        description: Secure DST ID
+                        example: ""
+                      secureexemption:
+                        type: string
+                        description: Secure exemption
+                        example: "lowvalue"
+                userfields:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      udf0:
+                        type: string
+                        description: User defined field 0
+                        example: "Value 1"
+                      udf1:
+                        type: string
+                        description: User defined field 1
+                        example: "Value 2"
+                      udf2:
+                        type: string
+                        description: User defined field 2
+                        example: "Value 3"
+                      udf3:
+                        type: string
+                        description: User defined field 3
+                        example: "Value 4"
+                      custommerchant:
+                        type: string
+                        description: Custom Merchant
+                        example: "Company"
+                      customphone:
+                        type: string
+                        description: Custom Phone
+                        example: "123-456-HELP"
+            examples:
+              Authorize with Surcharge:
+                summary: Authorize with Surcharge
+                $ref: '#/components/examples/AuthorizeRequestWithSurcharge'
+              Authorize with Service Fee:
+                summary: Authorize with Service Fee
+                $ref: '#/components/examples/AuthorizeRequestWithServiceFee'
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: Account ID
+                    example: 1000000001
+                  status:
+                    type: string
+                    description: Y or N
+                    example: 'Y'
+                  message:
+                    type: string
+                    description: Message
+                    example: Authorization successful.
+                  cards:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        merchantid:
+                          type: string
+                          description: Payment Gateway Merchant ID
+                          example: 12452589
+                        paymentgateway:
+                          type: string
+                          description: Payment Gateway
+                          example: "CardConnect"
+                        returncode:
+                          type: string
+                          description: Payment Gateway Return Code
+                          example: 0
+                        returndescription:
+                          type: string
+                          description: Payment Gateway Return Description
+                          example: Transaction successful
+                        procrespcode:
+                          type: string
+                          description: Processor Response Code
+                          example: RPCT
+                        pgtransactionid:
+                          type: string
+                          description: Payment Gateway Transaction ID
+                          example: 260711140916
+                        tokenid:
+                          type: string
+                          description: Credit Card Token ID
+                          example: 9412345678912344
+                        paymenttransactionid:
+                          type: string
+                          description: SnapPay Transaction ID
+                          example: 136243
+                        authorizationcode:
+                          type: string
+                          description: Authorization Code
+                          example: 234AS5
+                        transactiondate:
+                          type: string
+                          description: Transaction Date
+                          example: 02/14/2021 03:00:28 PM
+                        transactionamount:
+                          type: string
+                          description: Transaction Amount
+                          example: 100
+                        currency:
+                          type: string
+                          description: Currency Code
+                          example: USD
+                        status:
+                          type: string
+                          description: status - Y/N
+                          example: 'Y'
+                        scverification:
+                          type: string
+                          description: Security/CVV Code Verification
+                          example: P
+                        addressverification:
+                          type: string
+                          description: Address Verification
+                          example: Z
+              examples:
+                Default:
+                  summary: Default
+                  $ref: '#/components/examples/AuthorizeDefaultResponse'
+                Authorize with Surcharge:
+                  summary: Authorize with Surcharge
+                  $ref: '#/components/examples/AuthorizeResponseWithSurcharge'
+                Authorize with Service Fee:
+                  summary: Authorize with Service Fee
+                  $ref: '#/components/examples/AuthorizeResponseWithServiceFee'
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
+  /api/interop/v2/charge:
+    post:
+      tags:
+        - APIs without User Interaction V2
+      x-group-name: APIs without User Interaction V2
+      x-proxy-name: Charge V2
+      summary: Charge V2
+      description: >-
+        The Charge API performs a credit card charge or payment using a credit
+        card token to insure the credit card is valid, has the requested credit
+        limit available and to initiate the transfer of funds.  This performs
+        the functions of the Authorize API and Capture API in a single call.
+      operationId: charge V2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [accountid,companycode,userid,customerid,currency]
+              properties:
+                accountid:
+                  type: number
+                  description: Account ID
+                  example: 1000000001
+                customerid:
+                  type: string
+                  description: Customer ID
+                  example: 100
+                currency:
+                  type: string
+                  description: Currency Code
+                  example: USD
+                companycode:
+                  type: string
+                  description: Company Code
+                  example: '00200'
+                branchplant:
+                  type: string
+                  description: Branch Plant
+                  example: null
+                ordertype:
+                  type: string
+                  description: Order Type
+                  example: null
+                orderid:
+                  type: string
+                  description: Order ID
+                  example: 123456
+                orderdate:
+                  type: string
+                  description: Order Date
+                  example: ""
+                invoiceid:
+                  type: string
+                  description: Invoice ID
+                  example: 123456
+                userid:
+                  type: string
+                  description: User ID
+                  example: user1
+                purchaseorder:
+                  type: string
+                  description: Purchase Order
+                  example: USD
+                sendemailreceipts:
+                  type: string
+                  description: Send Email Receipt
+                  example: 'Y'
+                shipfromzip:
+                  type: string
+                  description: Ship from location
+                  example: 60605
+                shiptozip:
+                  type: string
+                  description: Ship to location
+                  example: 60603
+                shiptocountry:
+                  type: string
+                  description: Ship to country
+                  example: USA
+                ecomind:
+                  type: string
+                  description: Ecommerce indicator
+                  example: "E"
+                cof: 
+                  type: string
+                  description: COF
+                  example: "C"
+                cofscheduled: 
+                  type: string
+                  description: COF schedule flag
+                  example: "N"
+                paymentmethod:
+                  type: object
+                  required: [tokenid, expirationdate]
+                  properties:
+                    transactionamount:
+                      type: integer
+                      description: Transaction Amount
+                      example: 10
+                    tokenid:
+                      type: string
+                      description: Token ID
+                      example: 9412345678912344
+                    type:
+                      type: string
+                      description: Type of credit card
+                      example: VISA
+                    last4:
+                      type: string
+                      description: Last 4 digits of credit card
+                      example: 2345
+                    cvv:
+                      type: string
+                      description: CVV
+                      example: 123
+                    expirationdate:
+                      type: string
+                      description: Expiration Date mmYYYY
+                      example: 122029
+                    customername:
+                      type: string
+                      description: Name on credit card
+                      example: John Smith
+                    addressline1:
+                      type: string
+                      description: Address Line 1
+                      example: 123 Main St
+                    city:
+                      type: string
+                      description: City
+                      example: Lombard
+                    state:
+                      type: string
+                      description: State
+                      example: IL
+                    zip:
+                      type: string
+                      description: Zip/Postal Code
+                      example: 60148
+                    country:
+                      type: string
+                      description: Country
+                      example: US
+                    email:
+                      type: string
+                      description: Email Address
+                      example: john.smith@company.com
+                    phonenumber:
+                      type: string
+                      description: Phone Number
+                      example: null
+                level3:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      linenumber:
+                        type: string
+                        description: Line Number
+                        example: 1
+                      productcode:
+                        type: string
+                        description: Product Code or Item Number
+                        example: BQT01
+                      unitcost:
+                        type: integer
+                        description: Unit Cost
+                        example: 1.75
+                      quantity:
+                        type: integer
+                        description: Quantity
+                        example: 3
+                      itemdescriptor:
+                        type: string
+                        description: Item/Product Description
+                        example: Bouquet
+                      unitofmeasure:
+                        type: string
+                        description: Unit of Measure
+                        example: EA
+                      commoditycode:
+                        type: string
+                        description: Commodity Code
+                        example: Commodity Code1
+                      taxamount:
+                        type: integer
+                        description: Tax Amount
+                        example: 0.12
+                      taxrate:
+                        type: integer
+                        description: Tax Rate in %
+                        example: 8
+                      itemdiscount:
+                        type: integer
+                        description: Item Discount
+                        example: null
+                      lineitemtotal:
+                        type: integer
+                        description: Line Item Total
+                        example: 5.37
+                userfields:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      udf0:
+                        type: string
+                        description: User defined field 0
+                        example: "Value 1"
+                      udf1:
+                        type: string
+                        description: User defined field 1
+                        example: "Value 2"
+                      udf2:
+                        type: string
+                        description: User defined field 2
+                        example: "Value 3"
+                      udf3:
+                        type: string
+                        description: User defined field 3
+                        example: "Value 4"
+                      custommerchant:
+                        type: string
+                        description: Custom Merchant
+                        example: "Company"
+                      customphone:
+                        type: string
+                        description: Custom Phone
+                        example: "123-456-HELP"
+            examples:
+              Charge with Surcharge:
+                summary: Charge with Surcharge
+                $ref: '#/components/examples/ChargeRequestWithSurcharge'           
+              Charge with Service Fee:
+                summary: Charge with Service Fee
+                $ref: '#/components/examples/ChargeRequestWithServiceFee'  
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: Account ID
+                    example: 1000000001
+                  status:
+                    type: string
+                    description: Y or N
+                    example: 'Y'
+                  message:
+                    type: string
+                    description: Message
+                    example: Transaction successful.
+                  transaction:
+                    type: object
+                    properties:
+                      merchantid:
+                        type: string
+                        description: Payment Gateway Merchant ID
+                        example: 12452589
+                      returncode:
+                        type: string
+                        description: Payment Gateway Return Code
+                        example: 0
+                      returndescription:
+                        type: string
+                        description: Payment Gateway Return Description
+                        example: Transaction successful
+                      procrespcode:
+                        type: string
+                        description: Processor Response Code
+                        example: RPCT
+                      pgtransactionid:
+                        type: string
+                        description: Payment Gateway Transaction ID
+                        example: 260711140916
+                      paymenttransactionid:
+                        type: string
+                        description: SnapPay Transaction ID
+                        example: 136243
+                      authorizationcode:
+                        type: string
+                        description: Authorization Code
+                        example: 234AS5
+                      transactiondate:
+                        type: string
+                        description: Transaction Date
+                        example: 02/14/2021 03:00:28 PM
+                      transactionamount:
+                        type: string
+                        description: Transaction Amount
+                        example: 100
+                      currency:
+                        type: string
+                        description: Currency Code
+                        example: USD
+                      scverification:
+                        type: string
+                        description: Security/CVV Code Verification
+                        example: P
+                      addressverification:
+                        type: string
+                        description: Address Verification
+                        example: Z
+                      totaltransactionamount:
+                        type: string
+                        description: >-
+                          Total transaction amount (transactionamount +
+                          feeamount)
+                        example: 100
+                      feereturncode:
+                        type: string
+                        description: >-
+                          Return code for fee transaction. It will same as
+                          returncode if the feetype is convenience or surcharge
+                          and different if the fee type is service (MSF)
+                        example: null
+                      feereturndescription:
+                        type: string
+                        description: Return description for fee transaction
+                        example: null
+                      feetransactionid:
+                        type: string
+                        description: >-
+                          Fee Transaction ID â€“ same as transactionid for
+                          surcharge and convenience fee
+                        example: null
+                      feeauthcode:
+                        type: string
+                        description: >-
+                          Fee Transaction Authorization Code â€“ same as
+                          authorizationcode for surcharge fee and convenience
+                          fee
+                        example: null
+                      feestatus:
+                        type: string
+                        description: Fee Transaction Status (Y/N)
+                        example: null
+                      feetype:
+                        type: string
+                        description: Fee Type (Surcharge, Service or Convenience)
+                        example: null
+                      feeformat:
+                        type: string
+                        description: >-
+                          Fee Format (Percentage for Surcharge and dollar amount
+                          for convenience fee)
+                        example: null
+                      feeamount:
+                        type: integer
+                        description: Fee Amount (amount in currency)
+                        example: 0
+                      feevalue:
+                        type: integer
+                        description: Fee Value (value in % for Surcharge fee)
+                        example: 0
+              examples:
+                Charge with Surcharge:
+                  summary: Charge with Surcharge
+                  $ref: '#/components/examples/ChargeResponseWithSurcharge' 
+                Charge with Service Fee:
+                  summary: Charge with Service Fee
+                  $ref: '#/components/examples/ChargeResponseWithServiceFee' 
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
+  /api/Interop/v2/Capture:
+    post:
+      tags:
+        - APIs without User Interaction V2
+      x-group-name: APIs without User Interaction V2
+      x-proxy-name: Capture V2
+      summary: Capture V2
+      description: >-
+        The Capture API performs the capture of a prior authorization returned
+        by the Authorize API using a credit card token to initiate the transfer
+        of funds.
+      operationId: capture V2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [accountid,referencetransactionid,customerid,currency,companycode,userid]
+              properties:
+                accountid:
+                  type: number
+                  description: Account ID
+                  example: 1000000001
+                referencetransactionid:
+                  type: string
+                  description: >-
+                    Reference Transaction ID. Either pgtransactionid or
+                    paymenttransactionid based on SnapPay account configuration
+                  example: 1394
+                transactionamount:
+                  type: integer
+                  description: Amount to be captured/settled
+                  example: 100.00
+                customerid:
+                  type: string
+                  description: Customer ID
+                  example: 100
+                currency:
+                  type: string
+                  description: Currency Code
+                  example: USD
+                companycode:
+                  type: string
+                  description: Company Code
+                  example: '00200'
+                orderid:
+                  type: string
+                  description: Order ID
+                  example: 123456
+                invoiceid:
+                  type: string
+                  description: Invoice ID
+                  example: 123456
+                userid:
+                  type: string
+                  description: User ID
+                  example: user1
+                customid: 
+                  type: string
+                  description: Custom ID
+                  example: ""
+                comment:
+                  type: string 
+                  description: Comments
+                  example: "Capture"
+                sendemailreceipts:
+                  type: string
+                  description: Send Email Receipt
+                  example: 'Y'
+                level3:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      linenumber:
+                        type: string
+                        description: Line Number
+                        example: 1
+                      productcode:
+                        type: string
+                        description: Product Code or Item Number
+                        example: BQT01
+                      unitcost:
+                        type: integer
+                        description: Unit Cost
+                        example: 1.75
+                      quantity:
+                        type: integer
+                        description: Quantity
+                        example: 3
+                      itemdescriptor:
+                        type: string
+                        description: Item/Product Description
+                        example: Bouquet
+                      unitofmeasure:
+                        type: string
+                        description: Unit of Measure
+                        example: EA
+                      commoditycode:
+                        type: string
+                        description: Commodity Code
+                        example: Commodity Code1
+                      taxamount:
+                        type: integer
+                        description: Tax Amount
+                        example: 0.12
+                      taxrate:
+                        type: integer
+                        description: Tax Rate in %
+                        example: 8
+                      itemdiscount:
+                        type: integer
+                        description: Item Discount
+                        example: null
+                      lineitemtotal:
+                        type: integer
+                        description: Line Item Total
+                        example: 5.37
+                userfields:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      udf0:
+                        type: string
+                        description: User field 0
+                        example: "Value 1"
+                      udf1:
+                        type: string
+                        description: User field 1
+                        example: "Value 2"
+                      udf2:
+                        type: string
+                        description: User field 2
+                        example: "Value 3"
+                      udf3:
+                        type: string
+                        description: User field 3
+                        example: "Value 4"
+                      udf4:
+                        type: string
+                        description: User field 4
+                        example: "Value 5"
+                      udf5:
+                        type: string
+                        description: User field 5
+                        example: "Value 6"
+                      udf6:
+                        type: string
+                        description: User field 6
+                        example: "Value 7"
+                      udf7:
+                        type: string
+                        description: User field 7
+                        example: "Value 8"
+                      udf8:
+                        type: string
+                        description: User field 8
+                        example: "Value 9"
+                      udf9:
+                        type: string
+                        description: User field 9
+                        example: "Value 10"  
+            examples:
+              Capture with Surcharge:
+                summary: Capture with Surcharge
+                $ref: '#/components/examples/CaptureRequestWithSurcharge'
+              Capture with Service fee:
+                summary: Capture with Service fee
+                $ref: '#/components/examples/CaptureRequestWithServiceFee'
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: Account ID
+                    example: 1000000001
+                  status:
+                    type: string
+                    description: Y or N
+                    example: 'Y'
+                  message:
+                    type: string
+                    description: Message
+                    example: Transaction successful.
+                  paymenttransactionid:
+                    type: string
+                    description: SnapPay Payment Transaction ID
+                    example: 1362
+                  pgtransactionid:
+                    type: string
+                    description: Payment Gateway Transaction ID
+                    example: 132912341342
+                  reference: 
+                    type: string
+                    description: Reference
+                    example: ""
+                  purchaseorder: 
+                    type: string
+                    description: Purchase Order
+                    example: ""
+                  transaction:
+                    type: object
+                    properties:
+                      merchantid:
+                        type: string
+                        description: Payment Gateway Merchant ID
+                        example: 12452589
+                      returncode:
+                        type: string
+                        description: Payment Gateway Return Code
+                        example: 0
+                      returndescription:
+                        type: string
+                        description: Payment Gateway Return Description
+                        example: Transaction successful
+                      procrespcode:
+                        type: string
+                        description: Processor Response Code
+                        example: RPCT
+                      pgtransactionid:
+                        type: string
+                        description: Payment Gateway Transaction ID
+                        example: 260711140916
+                      paymenttransactionid:
+                        type: string
+                        description: SnapPay Transaction ID
+                        example: 136243
+                      authorizationcode:
+                        type: string
+                        description: Authorization Code
+                        example: 234AS5
+                      transactiondate:
+                        type: string
+                        description: Transaction Date
+                        example: 02/14/2021 03:00:28 PM
+                      transactionamount:
+                        type: string
+                        description: Transaction Amount
+                        example: 100
+                      currency:
+                        type: string
+                        description: Currency Code
+                        example: USD
+              examples:
+                Capture with Surcharge:
+                  summary: Capture with Surcharge
+                  $ref: '#/components/examples/CaptureResponseWithSurcharge'
+                Capture with Service fee:
+                  summary: Capture with Service fee
+                  $ref: '#/components/examples/CaptureResponseWithServiceFee'
+                
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
+  /api/Interop/v2/Credit:
+    post:
+      tags:
+        - APIs without User Interaction V2
+      x-group-name: APIs without User Interaction V2
+      x-proxy-name: Credit V2
+      summary: Credit V2
+      description: The Credit API places a credit on the credit card or ACH account
+      operationId: credit V2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [accountid,customerid,userid]
+              properties:
+                accountid:
+                  type: string
+                  description: Account ID
+                  example: 1000000001
+                customerid:
+                  type: string
+                  description: Customer ID
+                  example: 100
+                currency:
+                  type: string
+                  description: Currency Code
+                  example: USD
+                companycode:
+                  type: string
+                  description: Company Code
+                  example: '00200'
+                branchplant:
+                  type: string
+                  description: Branch Plant
+                  example: null
+                ordertype:
+                  type: string
+                  description: Order Type
+                  example: null
+                orderid:
+                  type: string
+                  description: Order ID
+                  example: 123456
+                invoiceid:
+                  type: string
+                  description: Invoice ID
+                  example: 123456
+                userid:
+                  type: string
+                  description: User ID
+                  example: user1
+                reference:
+                  type: string
+                  description: Reference Text
+                  example: null
+                purchaseorder:
+                  type: string
+                  description: Purchase Order
+                  example: USD
+                sendemailreceipts:
+                  type: string
+                  description: Send Email Receipt
+                  example: 'Y'
+                ecomind: 
+                  type: string
+                  description: Ecommerce indicator
+                  example: "E"
+                cof: 
+                  type: string
+                  description: COF
+                  example: "C"
+                cofscheduled: 
+                  type: string
+                  description: COF scheduled
+                  example: "N"
+                paymentmethod:
+                  type: object
+                  required: [tokenid]
+                  properties:
+                    transactionamount:
+                      type: integer
+                      description: Transaction Amount
+                      example: 10
+                    tokenid:
+                      type: string
+                      description: Token ID
+                      example: 9412345678912344
+                    secureflag: 
+                      type: string
+                      description: Secure flag
+                      example: "05"
+                    securevalue: 
+                      type: string
+                      description: Secure value
+                      example: ""
+                    securedstid: 
+                      type: string
+                      description: Secure DST ID
+                      example: ""
+                    secureexemption: 
+                      type: string
+                      description: Secure Exemption
+                      example: "lowvalue"
+                userfields:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      udf0:
+                        type: string
+                        description: User defined field 0
+                        example: "Value 1"
+                      udf1:
+                        type: string
+                        description: User defined field 1
+                        example: "Value 2"
+                      udf2:
+                        type: string
+                        description: User defined field 2
+                        example: "Value 3"
+                      udf3:
+                        type: string
+                        description: User defined field 3
+                        example: "Value 4"
+                      custommerchant:
+                        type: string
+                        description: Custom Merchant
+                        example: "Company"
+                      customphone:
+                        type: string
+                        description: Custom Phone
+                        example: "123-456-HELP"
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: string
+                    description: Account ID
+                    example: >-
+                      1000000001
+                  status:
+                    type: string
+                    description: Y or N
+                    example: 'Y'
+                  message:
+                    type: string
+                    description: Message
+                    example: Transaction successful.
+                  transaction:
+                    type: object
+                    properties:
+                      merchantid:
+                        type: string
+                        description: Payment Gateway Merchant ID
+                        example: 34032039484234
+                      returncode:
+                        type: string
+                        description: Payment Gateway Return Code
+                        example: 0
+                      returndescription:
+                        type: string
+                        description: Payment Gateway Return Description
+                        example: Transaction successful
+                      procrespcode:
+                        type: string
+                        description: Processor Response Code
+                        example: RPCT
+                      pgtransactionid:
+                        type: string
+                        description: Payment Gateway Transaction ID
+                        example: 260711140916
+                      paymenttransactionid:
+                        type: string
+                        description: SnapPay Transaction ID
+                        example: 136243
+                      authorizationcode:
+                        type: string
+                        description: Authorization Code
+                        example: 234AS5
+                      transactiondate:
+                        type: string
+                        description: Transaction Date
+                        example: 02/14/2021 03:00:28 PM
+                      transactionamount:
+                        type: string
+                        description: Transaction Amount
+                        example: 100
+                      currency:
+                        type: string
+                        description: Currency Code
+                        example: USD
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
+  /api/Interop/v2/Refund:
+    post:
+      tags:
+        - APIs without User Interaction V2
+      x-group-name: APIs without User Interaction V2
+      x-proxy-name: Refund V2
+      summary: Refund V2
+      description: >-
+        The Refund API places a refund of a prior Capture or Charge on the
+        credit card or ACH account used in the original transaction.  The
+        original transaction is set in parameter referencetransactionid and some
+        explanatory text can be set in the reference parameter.
+      operationId: refund V2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [accountid, referencetransactionid,customerid,currency,companycode,userid]
+              properties:
+                accountid:
+                  type: number
+                  description: Account ID
+                  example: 1000000001
+                referencetransactionid:
+                  type: string
+                  description: >-
+                    Reference Transaction ID. Either pgtransactionid or
+                    paymenttransactionid based on SnapPay account configuration
+                  example: 1394
+                transactionamount:
+                  type: integer
+                  description: Amount to be captured/settled
+                  example: 500
+                customerid:
+                  type: string
+                  description: Customer ID
+                  example: 100
+                currency:
+                  type: string
+                  description: Currency Code
+                  example: USD
+                companycode:
+                  type: string
+                  description: Company Code
+                  example: '00200'
+                orderid:
+                  type: string
+                  description: Order ID
+                  example: 123456
+                invoiceid:
+                  type: string
+                  description: Invoice ID
+                  example: 123456
+                userid:
+                  type: string
+                  description: User ID
+                  example: user1
+                reference:
+                  type: string
+                  description: Reference Text
+                  example: null
+                purchaseorder:
+                  type: string
+                  description: Purchase Order
+                  example: USD
+                sendemailreceipts:
+                  type: string
+                  description: Send Email Receipt
+                  example: 'Y'
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: Account ID
+                    example: 1000000001
+                  status:
+                    type: string
+                    description: Y or N
+                    example: 'Y'
+                  message:
+                    type: string
+                    description: Message
+                    example: Transaction successful.
+                  paymenttransactionid:
+                    type: string
+                    description: SnapPay Payment Transaction ID
+                    example: 1362
+                  pgtransactionid:
+                    type: string
+                    description: Payment Gateway Transaction ID
+                    example: 132912341342
+                  reference": 
+                    type: string
+                    description: Reference
+                    example: ""
+                  purchaseorder: 
+                    type: string
+                    description: Purchase order
+                    example: ""
+                  transaction:
+                    type: object
+                    properties:
+                      merchantid:
+                        type: string
+                        description: Payment Gateway Merchant ID
+                        example: 34032039484234
+                      returncode:
+                        type: string
+                        description: Payment Gateway Return Code
+                        example: 0
+                      returndescription:
+                        type: string
+                        description: Payment Gateway Return Description
+                        example: Transaction successful
+                      procrespcode:
+                        type: string
+                        description: Processor Response Code
+                        example: RPCT
+                      pgtransactionid:
+                        type: string
+                        description: Payment Gateway Transaction ID
+                        example: 260711140916
+                      paymenttransactionid:
+                        type: string
+                        description: SnapPay Transaction ID
+                        example: 136243
+                      authorizationcode:
+                        type: string
+                        description: Authorization Code
+                        example: 234AS5
+                      transactiondate:
+                        type: string
+                        description: Transaction Date
+                        example: 02/14/2021 03:00:28 PM
+                      transactionamount:
+                        type: string
+                        description: Transaction Amount
+                        example: 100
+                      currency:
+                        type: string
+                        description: Currency Code
+                        example: USD
+                      totaltransactionamount:
+                        type: string
+                        description: >-
+                          Total transaction amount (transactionamount +
+                          feeamount)
+                        example: 100
+                      feereturncode:
+                        type: string
+                        description: >-
+                          Return code for fee transaction. It will same as
+                          returncode if the feetype is convenience or surcharge
+                          and different if the fee type is service (MSF)
+                        example: null
+                      feereturndescription:
+                        type: string
+                        description: Return description for fee transaction
+                        example: null
+                      feetransactionid:
+                        type: string
+                        description: >-
+                          Fee Transaction ID â€“ same as transactionid for
+                          surcharge and convenience fee
+                        example: null
+                      feeauthcode:
+                        type: string
+                        description: >-
+                          Fee Transaction Authorization Code â€“ same as
+                          authorizationcode for surcharge fee and convenience
+                          fee
+                        example: null
+                      feestatus:
+                        type: string
+                        description: Fee Transaction Status (Y/N)
+                        example: null
+                      feetype:
+                        type: string
+                        description: Fee Type (Surcharge, Service or Convenience)
+                        example: null
+                      feeformat:
+                        type: string
+                        description: >-
+                          Fee Format (Percentage for Surcharge and dollar amount
+                          for convenience fee)
+                        example: null
+                      feeamount:
+                        type: integer
+                        description: Fee Amount (amount in currency)
+                        example: 0
+                      feevalue:
+                        type: integer
+                        description: Fee Value (value in % for Surcharge fee)
+                        example: 0
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
+  /api/Interop/v2/Void:
+    post:
+      tags:
+        - APIs without User Interaction V2
+      x-group-name: APIs without User Interaction V2
+      x-proxy-name: Void V2
+      summary: Void V2
+      description: >-
+        The Void API attempts to void or cancel a prior authorization
+        transaction. The original authorization transaction is set in parameter
+        referencetransactionid and some explanatory text can be set in the
+        reference parameter. For voding charge and capture transaction, use
+        refund API.
+      operationId: void V2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [accountid,referencetransactionid,customerid,currency,companycode,userid]
+              properties:
+                accountid:
+                  type: number
+                  description: Account ID
+                  example: 1000000001
+                referencetransactionid:
+                  type: string
+                  description: >-
+                    Reference Transaction ID. Either pgtransactionid or
+                    paymenttransactionid based on SnapPay account configuration
+                  example: 1394
+                transactionamount:
+                  type: integer
+                  description: Amount to be captured/settled
+                  example: 500
+                customerid:
+                  type: string
+                  description: Customer ID
+                  example: 100
+                currency:
+                  type: string
+                  description: Currency Code
+                  example: USD
+                companycode:
+                  type: string
+                  description: Company Code
+                  example: '00200'
+                userid:
+                  type: string
+                  description: User ID
+                  example: user1
+                reference:
+                  type: string
+                  description: Reference Text
+                  example: null
+                purchaseorder:
+                  type: string
+                  description: Purchase Order
+                  example: USD
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: string
+                    description: Account ID
+                    example: >-
+                      1000000001
+                  status:
+                    type: string
+                    description: Y or N
+                    example: 'Y'
+                  message:
+                    type: string
+                    description: Message
+                    example: Transaction successful.
+                  paymenttransactionid:
+                    type: string
+                    description: SnapPay Payment Transaction ID
+                    example: 1362
+                  pgtransactionid:
+                    type: string
+                    description: Payment Gateway Transaction ID
+                    example: 132912341342
+                  reference: 
+                    type: string
+                    description: Reference
+                    example: ""
+                  purchaseorder": 
+                    type: string
+                    description: Purchase order
+                    example: ""
+                  transaction:
+                    type: object
+                    properties:
+                      merchantid:
+                        type: string
+                        description: Payment Gateway Merchant ID
+                        example: 34032039484234
+                      returncode:
+                        type: string
+                        description: Payment Gateway Return Code
+                        example: 0
+                      returndescription:
+                        type: string
+                        description: Payment Gateway Return Description
+                        example: Transaction successful
+                      procrespcode:
+                        type: string
+                        description: Processor Response Code
+                        example: RPCT
+                      pgtransactionid:
+                        type: string
+                        description: Payment Gateway Transaction ID
+                        example: 260711140916
+                      paymenttransactionid:
+                        type: string
+                        description: SnapPay Transaction ID
+                        example: 136243
+                      authorizationcode:
+                        type: string
+                        description: Authorization Code
+                        example: 234AS5
+                      transactiondate:
+                        type: string
+                        description: Transaction Date
+                        example: 02/14/2021 03:00:28 PM
+                      transactionamount:
+                        type: string
+                        description: Transaction Amount
+                        example: 100
+                      currency:
+                        type: string
+                        description: Currency Code
+                        example: USD
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
+  /api/interop/v2/GetRequestID:
+    post:
+      tags:
+        - APIs with User Interaction V2
+        
+      x-group-name: APIs with User Interaction V2
+      x-proxy-name: Get Request ID V2
+      summary: Get Request ID V2
+      description: >-
+        The GetRequestID API prepares SnapPay with the information required to
+        properly display SnapPay from within an iFrame or as a full page for
+        user interaction to Authorize, Charge or Tokenize a credit card or ACH
+        account.
+      operationId: getRequestIDEcom V2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetRequestIDRequest'
+            examples:
+              With Fee Parameters:
+                summary: With Fee Parameters
+                $ref: '#/components/examples/GetRequestID-Fee'
+              Transaction Type A:
+                summary: Transaction Type A
+                $ref: '#/components/examples/GetRequestID-A'
+              Transaction Type S:
+                summary: Transaction Type S
+                $ref: '#/components/examples/GetRequestID-S'
+              Transaction Type O:
+                summary: Transaction Type O
+                $ref: '#/components/examples/GetRequestID-O'
+              Transaction Type I:
+                summary: Transaction Type I
+                $ref: '#/components/examples/GetRequestID-I'
+              Transaction Type T:
+                summary: Transaction Type T
+                $ref: '#/components/examples/GetRequestID-T'
+              Transaction Type W:
+                summary: Transaction Type W
+                $ref: '#/components/examples/GetRequestID-W'
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/MerchantIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: Account ID
+                    example: 1000000001
+                  token:
+                    type: string
+                    description: Request ID that will be used to open SnapPay iFrame
+                    example: 0b724a4f-5bbb-e811-b229-000c29cce4c0
+                  status:
+                    type: string
+                    description: Y or N
+                    example: 'Y'
+                  message:
+                    type: string
+                    description: e.g. Information stored successfully
+                    example: Information stored successfully.
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/GetRequestID401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
   
