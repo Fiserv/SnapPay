@@ -270,90 +270,1949 @@ components:
             taxamount: '3.72'
             commoditycode: ''
             unitofmeasure: EA
-    GetRequestID-S:
+    GetRequestID-S-ACH-CLX:
       value:
         accountid: 1000000001
-        companycode: '00200'
         currencycode: USD
-        customerid: '4242'
-        userid: first.last@company.com
+        userid: user
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        openiniframe: 'Y'
+        redirecturl: https://www.xyz.com/receive
+        redirectionurlonerror: '#'
         savepaymentmethod: 'Y'
         saveatsupplier: 'Y'
         displaypmsavedatsupplier: 'Y'
         saveatcustomer: 'Y'
         displaycardssavedatcustomer: 'Y'
-        redirecturl: https://company.com
-        redirectionurlonerror: '#'
-        reference: ''
         type: C
+        reference: null
         transactiontype: S
-        transactionamount: 100.00
         paymentmethod: CC
         cvvrequired: 'Y'
-        invoiceid: '4621657657'
-        orderid: ''
-        comments: ''
         language: en-US
-        stylecss: ''
-        ordertype: ''
-        branchplant: ''
         useboltdevice: 'Y'
-        devicehsn: ''
-        purchaseorder: '1243'
-        ecomind: E
-        cof: C
-        cofscheduled: 'N'
-        openiniframe: 'Y'
+        devicehsn: '122353253252'
         sendemailreceipts: 'Y'
-        parenturi: https://company.com
+        parenturi: https://demo.cditechnology.com
         displaycardname: 'Y'
         displayaddress: 'Y'
         displaytransactionamount: 'Y'
         displaycurrencycode: 'Y'
         displaycustomer: 'Y'
         displaypagetitle: 'Y'
-        adderpcustomerinsnappay: 'Y'
         forceusertoenteraddress: 'Y'
+        transactionamount: 10
+        transactions:
+          - mode: ACH
+            merchantid: XXXXXXXXXXXXX
+            feemerchantid: XXXXXXXXXXXXX
+            feeamount: 1
+            feetype: Service
+            feevalue: ''
+            feeformat: Flat
+            waivefee: ''
+            feemessage: ''
+        templateid: '102'
+        duplicateredirecturl: '#'
+        cancelredirecturl: '#'
         user:
-          userfirstname: First
-          userlastname: Last
-          useremail: first.last@company.com
+          userfirstname: John
+          userlastname: Smith
+          useremail: johns@xyz.com
           isactive: 'Y'
           forcepasswordreset: 'N'
           forcetermsandconditions: 'N'
           devicegroup: ''
+        companycode: '100'
+        ordertype: ''
+        branchplant: ''
+        customerid: '4242'
+        supplierid: '14343'
+        invoiceid: '4621657657'
+        orderid: ''
+        comments: ''
+        purchaseorder: '1243'
+        adderpcustomerinsnappay: 'N'
         customer:
-          customername: ABC, Inc.
-          addressline1: 100 Eve
+          customername: ''
+          addressline1: ''
           addressline2: ''
-          city: Chicago
-          state: IL
-          zipcode: '60605'
-          country: US
+          city: ''
+          state: ''
+          zipcode: ''
+          country: ''
           phone: ''
-          email: name@company.com
+          email: ''
           vatregistrationnumber: ''
+        supplier:
+          suppliername: Battery Builders
+          addressline1: 31W238 91st St,
+          addressline2: ''
+          city: Naperville
+          state: IL
+          zipcode: '60564'
+          country: US
+          phone: (630) 851-5800
+          email: t2@cditechnology.com
+          identificationtype: ''
+          identificationdata: 12/12/1961
+          companyname: Battery Builders
+          clientcompanyname: Fiserv
+          internalmemo: ''
+          comments: ''
+          reason: ''
+          status: ''
         level3:
           - linenumber: '1.000'
-            productcode: 'ROS01'
+            productcode: ROS01
             taxrate: '0.073'
             quantity: '2'
-            itemdescriptor: 'Mixed Bouquet'
+            itemdescriptor: Mixed Bouquet
             unitcost: '30.7500'
             lineitemtotal: '65.96'
             taxamount: '4.46'
             commoditycode: ''
             unitofmeasure: EA
           - linenumber: '2.000'
-            productcode: 'BQT02'
+            productcode: BQT02
             taxrate: '0.073'
             quantity: '2'
-            itemdescriptor: 'Spring Bouquet'
+            itemdescriptor: Spring Bouquet
             unitcost: '25.6250'
             lineitemtotal: '54.97'
             taxamount: '3.72'
             commoditycode: ''
             unitofmeasure: EA
+        clxstream:
+          - transaction:
+              uuid: null
+              pgtransaction: ''
+              transactiondate: ''
+              paymenttype: ''
+              transactionamount: ''
+              cardtpe: ''
+              authorizationnumber: ''
+              last4: ''
+              merchantid: ''
+              localreferenceid: 405DL766171426
+              type: PAYMENT
+              description: TX Driver License Renewal
+              unitprice: 16
+              quantity: 1
+              sku: 0051006405DL
+              company: Leroy Jackson
+              fee: '1.00'
+              department: '6101'
+              vendorid: ''
+              customerid: ''
+              agency: ''
+              batchid: ''
+              reportlines: '3'
+              reportlinedetails:
+                - id: USAS1
+                  attributes:
+                    - name: USAS1AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS1AO
+                      value: '1404'
+                      type: String
+                    - name: USAS1OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS1PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS1TCODE
+                      value: '179'
+                      type: String
+                    - name: USAS1INDEX
+                      value: ''
+                      type: String
+                    - name: USAS1FUND
+                      value: ''
+                      type: String
+                    - name: USAS1APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS1COBJ
+                      value: ''
+                      type: String
+                    - name: USAS1AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS1DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS2
+                  attributes:
+                    - name: USAS2AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS2AO
+                      value: '6296'
+                      type: String
+                    - name: USAS2FUND
+                      value: '6101'
+                      type: String
+                    - name: USAS2OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS2PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS2TCODE
+                      value: '265'
+                      type: String
+                    - name: USAS2INDEX
+                      value: ''
+                      type: String
+                    - name: USAS2FUND
+                      value: ''
+                      type: String
+                    - name: USAS2APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS2COBJ
+                      value: ''
+                      type: String
+                    - name: USAS2AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS2DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS3
+                  attributes:
+                    - name: USAS3AMOUNT
+                      value: '15.0'
+                      type: DOLLAR
+                    - name: USAS3AO
+                      value: '1025'
+                      type: String
+                    - name: USAS3FUND
+                      value: '2365'
+                      type: String
+                    - name: USAS3OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS3PCA
+                      value: '90503'
+                      type: String
+                    - name: USAS3TCODE
+                      value: '188'
+                      type: String
+                    - name: USAS3INDEX
+                      value: ''
+                      type: String
+                    - name: USAS3FUND
+                      value: ''
+                      type: String
+                    - name: USAS3APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS3COBJ
+                      value: ''
+                      type: String
+                    - name: USAS3AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS3DEPAGENCY
+                      value: ''
+                      type: String
+                    - name: USASLINES
+                      value: '3'
+                      type: String
+              additonalinfo:
+                - key: servicecode
+                  value: XXXXXXXXXXXX
+                - key: username
+                  value: XXXXXXXXXXXX
+                - key: sourceapplication
+                  value: MGMW
+                - key: companyname
+                  value: MGMW
+                - key: sourceenvironment
+                  value: XXXXXXXXXXXX
+                - key: hostname
+                  value: XXXXXXXXXXXX
+                - key: shipfirstname
+                  value: XXXXXXXXXXXX
+                - key: shiplastname
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline1
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline2
+                  value: XXXXXXXXXXXX
+                - key: shipcity
+                  value: XXXXXXXXXXXX
+                - key: shipstate
+                  value: XXXXXXXXXXXX
+                - key: shipcountry
+                  value: XXXXXXXXXXXX
+                - key: shipphone
+                  value: XXXXXXXXXXXX
+                - key: shipemail
+                  value: XXXXXXXXXXXX
+                - key: billfirstname
+                  value: XXXXXXXXXXXX
+                - key: billlastname
+                  value: XXXXXXXXXXXX
+                - key: billaddressline1
+                  value: XXXXXXXXXXXX
+                - key: billaddressline2
+                  value: XXXXXXXXXXXX
+                - key: billcity
+                  value: XXXXXXXXXXXX
+                - key: billstate
+                  value: XXXXXXXXXXXX
+                - key: billcountry
+                  value: XXXXXXXXXXXX
+                - key: billphone
+                  value: XXXXXXXXXXXX
+                - key: billemail
+                  value: XXXXXXXXXXXX
+                - key: custom01
+                  value: XXXXXXXXXXXX
+                - key: custom02
+                  value: XXXXXXXXXXXX
+                - key: custom03
+                  value: XXXXXXXXXXXX
+                - key: custom04
+                  value: XXXXXXXXXXXX
+                - key: custom05
+                  value: XXXXXXXXXXXX
+                - key: custom20
+                  value: XXXXXXXXXXXX
+          - feetransaction:
+              uuid: null
+              pgtransaction: ''
+              transactiondate: ''
+              paymenttype: ''
+              transactionamount: ''
+              cardtpe: ''
+              authorizationnumber: ''
+              last4: ''
+              merchantid: ''
+              localreferenceid: 405DL766171426
+              type: PAYMENT
+              description: TX Driver License Renewal
+              unitPrice: 1
+              quantity: 1
+              sku: 0051006405DL
+              company: Leroy Jackson
+              conveniencefee: '1.00'
+              department: '6101'
+              vendorid: ''
+              customerid: ''
+              agency: ''
+              batchid: ''
+              reportlines: '3'
+              reportlinedetails:
+                - id: USAS1
+                  attributes:
+                    - name: USAS1AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS1AO
+                      value: '1404'
+                      type: String
+                    - name: USAS1OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS1PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS1TCODE
+                      value: '179'
+                      type: String
+                    - name: USAS1INDEX
+                      value: ''
+                      type: String
+                    - name: USAS1FUND
+                      value: ''
+                      type: String
+                    - name: USAS1APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS1COBJ
+                      value: ''
+                      type: String
+                    - name: USAS1AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS1DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS2
+                  attributes:
+                    - name: USAS2AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS2AO
+                      value: '6296'
+                      type: String
+                    - name: USAS2FUND
+                      value: '6101'
+                      type: String
+                    - name: USAS2OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS2PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS2TCODE
+                      value: '265'
+                      type: String
+                    - name: USAS2INDEX
+                      value: ''
+                      type: String
+                    - name: USAS2FUND
+                      value: ''
+                      type: String
+                    - name: USAS2APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS2COBJ
+                      value: ''
+                      type: String
+                    - name: USAS2AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS2DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS3
+                  attributes:
+                    - name: USAS3AMOUNT
+                      value: '15.0'
+                      type: DOLLAR
+                    - name: USAS3AO
+                      value: '1025'
+                      type: String
+                    - name: USAS3FUND
+                      value: '2365'
+                      type: String
+                    - name: USAS3OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS3PCA
+                      value: '90503'
+                      type: String
+                    - name: USAS3TCODE
+                      value: '188'
+                      type: String
+                    - name: USAS3INDEX
+                      value: ''
+                      type: String
+                    - name: USAS3FUND
+                      value: ''
+                      type: String
+                    - name: USAS3APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS3COBJ
+                      value: ''
+                      type: String
+                    - name: USAS3AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS3DEPAGENCY
+                      value: ''
+                      type: String
+                    - name: USASLINES
+                      value: '3'
+                      type: String
+              additonalinfo:
+                - key: servicecode
+                  value: XXXXXXXXXXXX
+                - key: username
+                  value: XXXXXXXXXXXX
+                - key: sourceapplication
+                  value: MGMW
+                - key: companyname
+                  value: MGMW
+                - key: sourceenvironment
+                  value: XXXXXXXXXXXX
+                - key: hostname
+                  value: XXXXXXXXXXXX
+                - key: shipfirstname
+                  value: XXXXXXXXXXXX
+                - key: shiplastname
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline1
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline2
+                  value: XXXXXXXXXXXX
+                - key: shipcity
+                  value: XXXXXXXXXXXX
+                - key: shipstate
+                  value: XXXXXXXXXXXX
+                - key: shipcountry
+                  value: XXXXXXXXXXXX
+                - key: shipphone
+                  value: XXXXXXXXXXXX
+                - key: shipemail
+                  value: XXXXXXXXXXXX
+                - key: billfirstname
+                  value: XXXXXXXXXXXX
+                - key: billlastname
+                  value: XXXXXXXXXXXX
+                - key: billaddressline1
+                  value: XXXXXXXXXXXX
+                - key: billaddressline2
+                  value: XXXXXXXXXXXX
+                - key: billcity
+                  value: XXXXXXXXXXXX
+                - key: billstate
+                  value: XXXXXXXXXXXX
+                - key: billcountry
+                  value: XXXXXXXXXXXX
+                - key: billphone
+                  value: XXXXXXXXXXXX
+                - key: billemail
+                  value: XXXXXXXXXXXX
+                - key: custom01
+                  value: XXXXXXXXXXXX
+                - key: custom02
+                  value: XXXXXXXXXXXX
+                - key: custom03
+                  value: XXXXXXXXXXXX
+                - key: custom04
+                  value: XXXXXXXXXXXX
+                - key: custom05
+                  value: XXXXXXXXXXXX
+                - key: custom20
+                  value: XXXXXXXXXXXX
+    GetRequestID-S-ACH:
+      value:
+        accountid: 1000000001
+        currencycode: USD
+        userid: user
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        openiniframe: 'Y'
+        redirecturl: https://www.xyz.com/receive
+        redirectionurlonerror: '#'
+        savepaymentmethod: 'Y'
+        saveatsupplier: 'Y'
+        displaypmsavedatsupplier: 'Y'
+        saveatcustomer: 'Y'
+        displaycardssavedatcustomer: 'Y'
+        type: C
+        reference: null
+        transactiontype: S
+        paymentmethod: CC
+        cvvrequired: 'Y'
+        language: en-US
+        useboltdevice: 'Y'
+        devicehsn: '122353253252'
+        sendemailreceipts: 'Y'
+        parenturi: https://demo.abc.com
+        displaycardname: 'Y'
+        displayaddress: 'Y'
+        displaytransactionamount: 'Y'
+        displaycurrencycode: 'Y'
+        displaycustomer: 'Y'
+        displaypagetitle: 'Y'
+        forceusertoenteraddress: 'Y'
+        transactionamount: 10
+        transactions:
+          - mode: ACH
+            merchantid: XXXXXXXXXXXXX
+            feemerchantid: XXXXXXXXXXXXX
+            feeamount: 1
+            feetype: Service
+            feevalue: ''
+            feeformat: Flat
+            waivefee: ''
+            feemessage: ''
+        templateid: '102'
+        duplicateredirecturl: '#'
+        cancelredirecturl: '#'
+        user:
+          userfirstname: John
+          userlastname: Smith
+          useremail: johns@xyz.com
+          isactive: 'Y'
+          forcepasswordreset: 'N'
+          forcetermsandconditions: 'N'
+          devicegroup: ''
+        companycode: '100'
+        ordertype: ''
+        branchplant: ''
+        customerid: '4242'
+        supplierid: '14343'
+        invoiceid: '4621657657'
+        orderid: ''
+        comments: ''
+        purchaseorder: '1243'
+        adderpcustomerinsnappay: 'N'
+        customer:
+          customername: ''
+          addressline1: ''
+          addressline2: ''
+          city: ''
+          state: ''
+          zipcode: ''
+          country: ''
+          phone: ''
+          email: ''
+          vatregistrationnumber: ''
+        supplier:
+          suppliername: Battery Builders
+          addressline1: 15th St,
+          addressline2: ''
+          city: Naperville
+          state: IL
+          zipcode: '60564'
+          country: US
+          phone: (630) 888-1234
+          email: t2@company.com
+          identificationtype: ''
+          identificationdata: 12/12/1961
+          companyname: Battery Builders
+          clientcompanyname: Company
+          internalmemo: ''
+          comments: ''
+          reason: ''
+          status: ''
+        level3:
+          - linenumber: '1.000'
+            productcode: ROS01
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: Mixed Bouquet
+            unitcost: '30.7500'
+            lineitemtotal: '65.96'
+            taxamount: '4.46'
+            commoditycode: ''
+            unitofmeasure: EA
+          - linenumber: '2.000'
+            productcode: BQT02
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: Spring Bouquet
+            unitcost: '25.6250'
+            lineitemtotal: '54.97'
+            taxamount: '3.72'
+            commoditycode: ''
+            unitofmeasure: EA
+        clxstream: null
+    GetRequestID-S-CC-CLX:
+      value:
+        accountid: 1000000000
+        currencycode: USD
+        userid: user
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        openiniframe: 'Y'
+        redirecturl: https://www.xyz.com/receive
+        redirectionurlonerror: '#'
+        savepaymentmethod: 'Y'
+        saveatsupplier: 'Y'
+        displaypmsavedatsupplier: 'Y'
+        saveatcustomer: 'Y'
+        displaycardssavedatcustomer: 'Y'
+        type: C
+        reference: null
+        transactiontype: S
+        paymentmethod: CC
+        cvvrequired: 'Y'
+        language: en-US
+        useboltdevice: 'Y'
+        devicehsn: '122353253252'
+        sendemailreceipts: 'Y'
+        parenturi: https://demo.cditechnology.com
+        displaycardname: 'Y'
+        displayaddress: 'Y'
+        displaytransactionamount: 'Y'
+        displaycurrencycode: 'Y'
+        displaycustomer: 'Y'
+        displaypagetitle: 'Y'
+        forceusertoenteraddress: 'Y'
+        transactionamount: 10
+        transactions:
+          - mode: CC
+            merchantid: XXXXXXXXXXXXX
+            feemerchantid: XXXXXXXXXXXXX
+            feeamount: 1
+            feetype: Service
+            feevalue: ''
+            feeformat: Flat
+            waivefee: ''
+            feemessage: ''
+        templateid: '102'
+        duplicateredirecturl: '#'
+        cancelredirecturl: '#'
+        user:
+          userfirstname: John
+          userlastname: Smith
+          useremail: johns@xyz.com
+          isactive: 'Y'
+          forcepasswordreset: 'N'
+          forcetermsandconditions: 'N'
+          devicegroup: ''
+        companycode: '100'
+        ordertype: ''
+        branchplant: ''
+        customerid: '4242'
+        supplierid: '14343'
+        invoiceid: '4621657657'
+        orderid: ''
+        comments: ''
+        purchaseorder: '1243'
+        adderpcustomerinsnappay: 'N'
+        customer:
+          customername: ''
+          addressline1: ''
+          addressline2: ''
+          city: ''
+          state: ''
+          zipcode: ''
+          country: ''
+          phone: ''
+          email: ''
+          vatregistrationnumber: ''
+        supplier:
+          suppliername: Battery Builders
+          addressline1: 31W238 91st St,
+          addressline2: ''
+          city: Naperville
+          state: IL
+          zipcode: '60564'
+          country: US
+          phone: (630) 851-5800
+          email: t2@cditechnology.com
+          identificationtype: ''
+          identificationdata: 12/12/1961
+          companyname: Battery Builders
+          clientcompanyname: Fiserv
+          internalmemo: ''
+          comments: ''
+          reason: ''
+          status: ''
+        level3:
+          - linenumber: '1.000'
+            productcode: ROS01
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: Mixed Bouquet
+            unitcost: '30.7500'
+            lineitemtotal: '65.96'
+            taxamount: '4.46'
+            commoditycode: ''
+            unitofmeasure: EA
+          - linenumber: '2.000'
+            productcode: BQT02
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: Spring Bouquet
+            unitcost: '25.6250'
+            lineitemtotal: '54.97'
+            taxamount: '3.72'
+            commoditycode: ''
+            unitofmeasure: EA
+        clxstream:
+          - transaction:
+              uuid: null
+              pgtransaction: ''
+              transactiondate: ''
+              paymenttype: ''
+              transactionamount: ''
+              cardtpe: ''
+              authorizationnumber: ''
+              last4: ''
+              merchantid: ''
+              localreferenceid: 405DL766171426
+              type: PAYMENT
+              description: TX Driver License Renewal
+              unitprice: 16
+              quantity: 1
+              sku: 0051006405DL
+              company: Leroy Jackson
+              fee: '1.00'
+              department: '6101'
+              vendorid: ''
+              customerid: ''
+              agency: ''
+              batchid: ''
+              reportlines: '3'
+              reportlinedetails:
+                - id: USAS1
+                  attributes:
+                    - name: USAS1AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS1AO
+                      value: '1404'
+                      type: String
+                    - name: USAS1OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS1PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS1TCODE
+                      value: '179'
+                      type: String
+                    - name: USAS1INDEX
+                      value: ''
+                      type: String
+                    - name: USAS1FUND
+                      value: ''
+                      type: String
+                    - name: USAS1APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS1COBJ
+                      value: ''
+                      type: String
+                    - name: USAS1AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS1DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS2
+                  attributes:
+                    - name: USAS2AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS2AO
+                      value: '6296'
+                      type: String
+                    - name: USAS2FUND
+                      value: '6101'
+                      type: String
+                    - name: USAS2OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS2PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS2TCODE
+                      value: '265'
+                      type: String
+                    - name: USAS2INDEX
+                      value: ''
+                      type: String
+                    - name: USAS2FUND
+                      value: ''
+                      type: String
+                    - name: USAS2APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS2COBJ
+                      value: ''
+                      type: String
+                    - name: USAS2AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS2DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS3
+                  attributes:
+                    - name: USAS3AMOUNT
+                      value: '15.0'
+                      type: DOLLAR
+                    - name: USAS3AO
+                      value: '1025'
+                      type: String
+                    - name: USAS3FUND
+                      value: '2365'
+                      type: String
+                    - name: USAS3OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS3PCA
+                      value: '90503'
+                      type: String
+                    - name: USAS3TCODE
+                      value: '188'
+                      type: String
+                    - name: USAS3INDEX
+                      value: ''
+                      type: String
+                    - name: USAS3FUND
+                      value: ''
+                      type: String
+                    - name: USAS3APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS3COBJ
+                      value: ''
+                      type: String
+                    - name: USAS3AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS3DEPAGENCY
+                      value: ''
+                      type: String
+              additonalinfo:
+                - key: servicecode
+                  value: XXXXXXXXXXXX
+                - key: username
+                  value: XXXXXXXXXXXX
+                - key: sourceapplication
+                  value: MGMW
+                - key: companyname
+                  value: MGMW
+                - key: sourceenvironment
+                  value: XXXXXXXXXXXX
+                - key: hostname
+                  value: XXXXXXXXXXXX
+                - key: shipfirstname
+                  value: XXXXXXXXXXXX
+                - key: shiplastname
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline1
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline2
+                  value: XXXXXXXXXXXX
+                - key: shipcity
+                  value: XXXXXXXXXXXX
+                - key: shipstate
+                  value: XXXXXXXXXXXX
+                - key: shipcountry
+                  value: XXXXXXXXXXXX
+                - key: shipphone
+                  value: XXXXXXXXXXXX
+                - key: shipemail
+                  value: XXXXXXXXXXXX
+                - key: billfirstname
+                  value: XXXXXXXXXXXX
+                - key: billlastname
+                  value: XXXXXXXXXXXX
+                - key: billaddressline1
+                  value: XXXXXXXXXXXX
+                - key: billaddressline2
+                  value: XXXXXXXXXXXX
+                - key: billcity
+                  value: XXXXXXXXXXXX
+                - key: billstate
+                  value: XXXXXXXXXXXX
+                - key: billcountry
+                  value: XXXXXXXXXXXX
+                - key: billphone
+                  value: XXXXXXXXXXXX
+                - key: billemail
+                  value: XXXXXXXXXXXX
+                - key: custom01
+                  value: XXXXXXXXXXXX
+                - key: custom02
+                  value: XXXXXXXXXXXX
+                - key: custom03
+                  value: XXXXXXXXXXXX
+                - key: custom04
+                  value: XXXXXXXXXXXX
+                - key: custom05
+                  value: XXXXXXXXXXXX
+                - key: custom30
+                  value: XXXXXXXXXXXX
+          - feetransaction:
+              uuid: null
+              pgtransaction: ''
+              transactiondate: ''
+              paymenttype: ''
+              transactionamount: ''
+              cardtpe: ''
+              authorizationnumber: ''
+              last4: ''
+              merchantid: ''
+              localreferenceid: 405DL766171426
+              type: PAYMENT
+              description: TX Driver License Renewal
+              unitPrice: 1
+              quantity: 1
+              sku: 0051006405DL
+              company: Leroy Jackson
+              conveniencefee: '1.00'
+              department: '6101'
+              vendorid: ''
+              customerid: ''
+              agency: ''
+              batchid: ''
+              reportlines: '3'
+              reportlinedetails:
+                - id: USAS1
+                  attributes:
+                    - name: USAS1AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS1AO
+                      value: '1404'
+                      type: String
+                    - name: USAS1OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS1PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS1TCODE
+                      value: '179'
+                      type: String
+                    - name: USAS1INDEX
+                      value: ''
+                      type: String
+                    - name: USAS1FUND
+                      value: ''
+                      type: String
+                    - name: USAS1APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS1COBJ
+                      value: ''
+                      type: String
+                    - name: USAS1AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS1DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS2
+                  attributes:
+                    - name: USAS2AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS2AO
+                      value: '6296'
+                      type: String
+                    - name: USAS2FUND
+                      value: '6101'
+                      type: String
+                    - name: USAS2OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS2PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS2TCODE
+                      value: '265'
+                      type: String
+                    - name: USAS2INDEX
+                      value: ''
+                      type: String
+                    - name: USAS2FUND
+                      value: ''
+                      type: String
+                    - name: USAS2APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS2COBJ
+                      value: ''
+                      type: String
+                    - name: USAS2AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS2DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS3
+                  attributes:
+                    - name: USAS3AMOUNT
+                      value: '15.0'
+                      type: DOLLAR
+                    - name: USAS3AO
+                      value: '1025'
+                      type: String
+                    - name: USAS3FUND
+                      value: '2365'
+                      type: String
+                    - name: USAS3OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS3PCA
+                      value: '90503'
+                      type: String
+                    - name: USAS3TCODE
+                      value: '188'
+                      type: String
+                    - name: USAS3INDEX
+                      value: ''
+                      type: String
+                    - name: USAS3FUND
+                      value: ''
+                      type: String
+                    - name: USAS3APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS3COBJ
+                      value: ''
+                      type: String
+                    - name: USAS3AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS3DEPAGENCY
+                      value: ''
+                      type: String
+              additonalinfo:
+                - key: servicecode
+                  value: XXXXXXXXXXXX
+                - key: username
+                  value: XXXXXXXXXXXX
+                - key: sourceapplication
+                  value: MGMW
+                - key: companyname
+                  value: MGMW
+                - key: sourceenvironment
+                  value: XXXXXXXXXXXX
+                - key: hostname
+                  value: XXXXXXXXXXXX
+                - key: shipfirstname
+                  value: XXXXXXXXXXXX
+                - key: shiplastname
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline1
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline2
+                  value: XXXXXXXXXXXX
+                - key: shipcity
+                  value: XXXXXXXXXXXX
+                - key: shipstate
+                  value: XXXXXXXXXXXX
+                - key: shipcountry
+                  value: XXXXXXXXXXXX
+                - key: shipphone
+                  value: XXXXXXXXXXXX
+                - key: shipemail
+                  value: XXXXXXXXXXXX
+                - key: billfirstname
+                  value: XXXXXXXXXXXX
+                - key: billlastname
+                  value: XXXXXXXXXXXX
+                - key: billaddressline1
+                  value: XXXXXXXXXXXX
+                - key: billaddressline2
+                  value: XXXXXXXXXXXX
+                - key: billcity
+                  value: XXXXXXXXXXXX
+                - key: billstate
+                  value: XXXXXXXXXXXX
+                - key: billcountry
+                  value: XXXXXXXXXXXX
+                - key: billphone
+                  value: XXXXXXXXXXXX
+                - key: billemail
+                  value: XXXXXXXXXXXX
+                - key: custom01
+                  value: XXXXXXXXXXXX
+                - key: custom02
+                  value: XXXXXXXXXXXX
+                - key: custom03
+                  value: XXXXXXXXXXXX
+                - key: custom04
+                  value: XXXXXXXXXXXX
+                - key: custom05
+                  value: XXXXXXXXXXXX
+                - key: custom30
+                  value: XXXXXXXXXXXX
+    GetRequestID-S-CC:
+      value:
+        accountid: 1000000001
+        currencycode: USD
+        userid: user
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        openiniframe: 'Y'
+        redirecturl: https://www.xyz.com/receive
+        redirectionurlonerror: '#'
+        savepaymentmethod: 'Y'
+        saveatsupplier: 'Y'
+        displaypmsavedatsupplier: 'Y'
+        saveatcustomer: 'Y'
+        displaycardssavedatcustomer: 'Y'
+        type: C
+        reference: null
+        transactiontype: S
+        paymentmethod: CC
+        cvvrequired: 'Y'
+        language: en-US
+        useboltdevice: 'Y'
+        devicehsn: '122353253252'
+        sendemailreceipts: 'Y'
+        parenturi: https://demo.cditechnology.com
+        displaycardname: 'Y'
+        displayaddress: 'Y'
+        displaytransactionamount: 'Y'
+        displaycurrencycode: 'Y'
+        displaycustomer: 'Y'
+        displaypagetitle: 'Y'
+        forceusertoenteraddress: 'Y'
+        transactionamount: 10
+        transactions:
+          - mode: CC
+            merchantid: XXXXXXXXXXXXX
+            feemerchantid: XXXXXXXXXXXXX
+            feeamount: 1
+            feetype: Service
+            feevalue: ''
+            feeformat: Flat
+            waivefee: ''
+            feemessage: ''
+        templateid: '102'
+        duplicateredirecturl: '#'
+        cancelredirecturl: '#'
+        user:
+          userfirstname: John
+          userlastname: Smith
+          useremail: johns@xyz.com
+          isactive: 'Y'
+          forcepasswordreset: 'N'
+          forcetermsandconditions: 'N'
+          devicegroup: ''
+        companycode: '100'
+        ordertype: ''
+        branchplant: ''
+        customerid: '4242'
+        supplierid: '14343'
+        invoiceid: '4621657657'
+        orderid: ''
+        comments: ''
+        purchaseorder: '1243'
+        adderpcustomerinsnappay: 'N'
+        customer:
+          customername: ''
+          addressline1: ''
+          addressline2: ''
+          city: ''
+          state: ''
+          zipcode: ''
+          country: ''
+          phone: ''
+          email: ''
+          vatregistrationnumber: ''
+        supplier:
+          suppliername: Battery Builders
+          addressline1: 31W238 91st St,
+          addressline2: ''
+          city: Naperville
+          state: IL
+          zipcode: '60564'
+          country: US
+          phone: (630) 851-5800
+          email: t2@cditechnology.com
+          identificationtype: ''
+          identificationdata: 12/12/1961
+          companyname: Battery Builders
+          clientcompanyname: Fiserv
+          internalmemo: ''
+          comments: ''
+          reason: ''
+          status: ''
+        level3:
+          - linenumber: '1.000'
+            productcode: ROS01
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: Mixed Bouquet
+            unitcost: '30.7500'
+            lineitemtotal: '65.96'
+            taxamount: '4.46'
+            commoditycode: ''
+            unitofmeasure: EA
+          - linenumber: '2.000'
+            productcode: BQT02
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: Spring Bouquet
+            unitcost: '25.6250'
+            lineitemtotal: '54.97'
+            taxamount: '3.72'
+            commoditycode: ''
+            unitofmeasure: EA
+        clxstream: null
+    GetRequestID-S-CCACH-CLX:
+      value:
+        accountid: 1000000000
+        currencycode: USD
+        userid: user
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        openiniframe: 'Y'
+        redirecturl: https://www.xyz.com/receive
+        redirectionurlonerror: '#'
+        savepaymentmethod: 'Y'
+        saveatsupplier: 'Y'
+        displaypmsavedatsupplier: 'Y'
+        saveatcustomer: 'Y'
+        displaycardssavedatcustomer: 'Y'
+        type: C
+        reference: null
+        transactiontype: S
+        paymentmethod: CC,ACH
+        cvvrequired: 'Y'
+        language: en-US
+        useboltdevice: 'Y'
+        devicehsn: '122353253252'
+        sendemailreceipts: 'Y'
+        parenturi: https://demo.cditechnology.com
+        displaycardname: 'Y'
+        displayaddress: 'Y'
+        displaytransactionamount: 'Y'
+        displaycurrencycode: 'Y'
+        displaycustomer: 'Y'
+        displaypagetitle: 'Y'
+        forceusertoenteraddress: 'N'
+        transactionamount: 10
+        transactions:
+          - mode: CC
+            merchantid: XXXXXXXXXXXXX
+            feemerchantid: XXXXXXXXXXXXX
+            feeamount: 1
+            feetype: Service
+            feevalue: ''
+            feeformat: Flat
+            waivefee: ''
+            feemessage: ''
+          - mode: ACH
+            merchantid: XXXXXXXXXXXXX
+            feemerchantid: XXXXXXXXXXXXX
+            feeamount: 1
+            feetype: Service
+            feevalue: ''
+            feeformat: Flat
+            waivefee: ''
+            feemessage: ''
+        templateid: '102'
+        duplicateredirecturl: '#'
+        cancelredirecturl: '#'
+        user:
+          userfirstname: John
+          userlastname: Smith
+          useremail: johns@xyz.com
+          isactive: 'Y'
+          forcepasswordreset: 'N'
+          forcetermsandconditions: 'N'
+          devicegroup: ''
+        companycode: '100'
+        ordertype: ''
+        branchplant: ''
+        customerid: '4242'
+        supplierid: '14343'
+        invoiceid: '4621657657'
+        orderid: ''
+        comments: ''
+        purchaseorder: '1243'
+        adderpcustomerinsnappay: 'N'
+        customer:
+          customername: ''
+          addressline1: ''
+          addressline2: ''
+          city: ''
+          state: ''
+          zipcode: ''
+          country: ''
+          phone: ''
+          email: ''
+          vatregistrationnumber: ''
+        supplier:
+          suppliername: Battery Builders
+          addressline1: 31W238 91st St,
+          addressline2: ''
+          city: Naperville
+          state: IL
+          zipcode: '60564'
+          country: US
+          phone: (630) 851-5800
+          email: t2@cditechnology.com
+          identificationtype: ''
+          identificationdata: 12/12/1961
+          companyname: Battery Builders
+          clientcompanyname: Fiserv
+          internalmemo: ''
+          comments: ''
+          reason: ''
+          status: ''
+        level3:
+          - linenumber: '1.000'
+            productcode: ROS01
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: Mixed Bouquet
+            unitcost: '30.7500'
+            lineitemtotal: '65.96'
+            taxamount: '4.46'
+            commoditycode: ''
+            unitofmeasure: EA
+          - linenumber: '2.000'
+            productcode: BQT02
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: Spring Bouquet
+            unitcost: '25.6250'
+            lineitemtotal: '54.97'
+            taxamount: '3.72'
+            commoditycode: ''
+            unitofmeasure: EA
+        clxstream:
+          - transaction:
+              uuid: null
+              pgtransaction: ''
+              transactiondate: ''
+              paymenttype: ''
+              transactionamount: ''
+              cardtpe: ''
+              authorizationnumber: ''
+              last4: ''
+              merchantid: ''
+              localreferenceid: 405DL766171426
+              type: PAYMENT
+              description: TX Driver License Renewal
+              unitprice: 16
+              quantity: 1
+              sku: 0051006405DL
+              company: Leroy Jackson
+              fee: '1.00'
+              department: '6101'
+              vendorid: ''
+              customerid: ''
+              agency: ''
+              batchid: ''
+              reportlines: '3'
+              reportlinedetails:
+                - id: USAS1
+                  attributes:
+                    - name: USAS1AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS1AO
+                      value: '1404'
+                      type: String
+                    - name: USAS1OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS1PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS1TCODE
+                      value: '179'
+                      type: String
+                    - name: USAS1INDEX
+                      value: ''
+                      type: String
+                    - name: USAS1FUND
+                      value: ''
+                      type: String
+                    - name: USAS1APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS1COBJ
+                      value: ''
+                      type: String
+                    - name: USAS1AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS1DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS2
+                  attributes:
+                    - name: USAS2AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS2AO
+                      value: '6296'
+                      type: String
+                    - name: USAS2FUND
+                      value: '6101'
+                      type: String
+                    - name: USAS2OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS2PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS2TCODE
+                      value: '265'
+                      type: String
+                    - name: USAS2INDEX
+                      value: ''
+                      type: String
+                    - name: USAS2FUND
+                      value: ''
+                      type: String
+                    - name: USAS2APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS2COBJ
+                      value: ''
+                      type: String
+                    - name: USAS2AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS2DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS3
+                  attributes:
+                    - name: USAS3AMOUNT
+                      value: '15.0'
+                      type: DOLLAR
+                    - name: USAS3AO
+                      value: '1025'
+                      type: String
+                    - name: USAS3FUND
+                      value: '2365'
+                      type: String
+                    - name: USAS3OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS3PCA
+                      value: '90503'
+                      type: String
+                    - name: USAS3TCODE
+                      value: '188'
+                      type: String
+                    - name: USAS3INDEX
+                      value: ''
+                      type: String
+                    - name: USAS3FUND
+                      value: ''
+                      type: String
+                    - name: USAS3APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS3COBJ
+                      value: ''
+                      type: String
+                    - name: USAS3AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS3DEPAGENCY
+                      value: ''
+                      type: String
+              additonalinfo:
+                - key: servicecode
+                  value: XXXXXXXXXXXX
+                - key: username
+                  value: XXXXXXXXXXXX
+                - key: sourceapplication
+                  value: MGMW
+                - key: companyname
+                  value: MGMW
+                - key: sourceenvironment
+                  value: XXXXXXXXXXXX
+                - key: hostname
+                  value: XXXXXXXXXXXX
+                - key: shipfirstname
+                  value: XXXXXXXXXXXX
+                - key: shiplastname
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline1
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline2
+                  value: XXXXXXXXXXXX
+                - key: shipcity
+                  value: XXXXXXXXXXXX
+                - key: shipstate
+                  value: XXXXXXXXXXXX
+                - key: shipcountry
+                  value: XXXXXXXXXXXX
+                - key: shipphone
+                  value: XXXXXXXXXXXX
+                - key: shipemail
+                  value: XXXXXXXXXXXX
+                - key: billfirstname
+                  value: XXXXXXXXXXXX
+                - key: billlastname
+                  value: XXXXXXXXXXXX
+                - key: billaddressline1
+                  value: XXXXXXXXXXXX
+                - key: billaddressline2
+                  value: XXXXXXXXXXXX
+                - key: billcity
+                  value: XXXXXXXXXXXX
+                - key: billstate
+                  value: XXXXXXXXXXXX
+                - key: billcountry
+                  value: XXXXXXXXXXXX
+                - key: billphone
+                  value: XXXXXXXXXXXX
+                - key: billemail
+                  value: XXXXXXXXXXXX
+                - key: custom01
+                  value: XXXXXXXXXXXX
+                - key: custom02
+                  value: XXXXXXXXXXXX
+                - key: custom03
+                  value: XXXXXXXXXXXX
+                - key: custom04
+                  value: XXXXXXXXXXXX
+                - key: custom05
+                  value: XXXXXXXXXXXX
+                - key: custom20
+                  value: XXXXXXXXXXXX
+          - feetransaction:
+              uuid: null
+              pgtransaction: ''
+              transactiondate: ''
+              paymenttype: ''
+              transactionamount: ''
+              cardtpe: ''
+              authorizationnumber: ''
+              last4: ''
+              merchantid: ''
+              localreferenceid: 405DL766171426
+              type: PAYMENT
+              description: TX Driver License Renewal
+              unitPrice: 1
+              quantity: 1
+              sku: 0051006405DL
+              company: Leroy Jackson
+              conveniencefee: '1.00'
+              department: '6101'
+              vendorid: ''
+              customerid: ''
+              agency: ''
+              batchid: ''
+              reportlines: '3'
+              reportlinedetails:
+                - id: USAS1
+                  attributes:
+                    - name: USAS1AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS1AO
+                      value: '1404'
+                      type: String
+                    - name: USAS1OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS1PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS1TCODE
+                      value: '179'
+                      type: String
+                    - name: USAS1INDEX
+                      value: ''
+                      type: String
+                    - name: USAS1FUND
+                      value: ''
+                      type: String
+                    - name: USAS1APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS1COBJ
+                      value: ''
+                      type: String
+                    - name: USAS1AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS1DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS2
+                  attributes:
+                    - name: USAS2AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS2AO
+                      value: '6296'
+                      type: String
+                    - name: USAS2FUND
+                      value: '6101'
+                      type: String
+                    - name: USAS2OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS2PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS2TCODE
+                      value: '265'
+                      type: String
+                    - name: USAS2INDEX
+                      value: ''
+                      type: String
+                    - name: USAS2FUND
+                      value: ''
+                      type: String
+                    - name: USAS2APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS2COBJ
+                      value: ''
+                      type: String
+                    - name: USAS2AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS2DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS3
+                  attributes:
+                    - name: USAS3AMOUNT
+                      value: '15.0'
+                      type: DOLLAR
+                    - name: USAS3AO
+                      value: '1025'
+                      type: String
+                    - name: USAS3FUND
+                      value: '2365'
+                      type: String
+                    - name: USAS3OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS3PCA
+                      value: '90503'
+                      type: String
+                    - name: USAS3TCODE
+                      value: '188'
+                      type: String
+                    - name: USAS3INDEX
+                      value: ''
+                      type: String
+                    - name: USAS3FUND
+                      value: ''
+                      type: String
+                    - name: USAS3APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS3COBJ
+                      value: ''
+                      type: String
+                    - name: USAS3AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS3DEPAGENCY
+                      value: ''
+                      type: String
+              additonalinfo:
+                - key: servicecode
+                  value: XXXXXXXXXXXX
+                - key: username
+                  value: XXXXXXXXXXXX
+                - key: sourceapplication
+                  value: MGMW
+                - key: companyname
+                  value: MGMW
+                - key: sourceenvironment
+                  value: XXXXXXXXXXXX
+                - key: hostname
+                  value: XXXXXXXXXXXX
+                - key: shipfirstname
+                  value: XXXXXXXXXXXX
+                - key: shiplastname
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline1
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline2
+                  value: XXXXXXXXXXXX
+                - key: shipcity
+                  value: XXXXXXXXXXXX
+                - key: shipstate
+                  value: XXXXXXXXXXXX
+                - key: shipcountry
+                  value: XXXXXXXXXXXX
+                - key: shipphone
+                  value: XXXXXXXXXXXX
+                - key: shipemail
+                  value: XXXXXXXXXXXX
+                - key: billfirstname
+                  value: XXXXXXXXXXXX
+                - key: billlastname
+                  value: XXXXXXXXXXXX
+                - key: billaddressline1
+                  value: XXXXXXXXXXXX
+                - key: billaddressline2
+                  value: XXXXXXXXXXXX
+                - key: billcity
+                  value: XXXXXXXXXXXX
+                - key: billstate
+                  value: XXXXXXXXXXXX
+                - key: billcountry
+                  value: XXXXXXXXXXXX
+                - key: billphone
+                  value: XXXXXXXXXXXX
+                - key: billemail
+                  value: XXXXXXXXXXXX
+                - key: custom01
+                  value: XXXXXXXXXXXX
+                - key: custom02
+                  value: XXXXXXXXXXXX
+                - key: custom03
+                  value: XXXXXXXXXXXX
+                - key: custom04
+                  value: XXXXXXXXXXXX
+                - key: custom05
+                  value: XXXXXXXXXXXX
+                - key: custom30
+                  value: XXXXXXXXXXXX
+    GetRequestID-S-CCACH:
+      value:
+        accountid: 1000000000
+        currencycode: USD
+        userid: user
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        openiniframe: 'Y'
+        redirecturl: https://www.xyz.com/receive
+        redirectionurlonerror: '#'
+        savepaymentmethod: 'Y'
+        saveatsupplier: 'Y'
+        displaypmsavedatsupplier: 'Y'
+        saveatcustomer: 'Y'
+        displaycardssavedatcustomer: 'Y'
+        type: C
+        reference: null
+        transactiontype: S
+        paymentmethod: CC,ACH
+        cvvrequired: 'Y'
+        language: en-US
+        useboltdevice: 'Y'
+        devicehsn: '122353253252'
+        sendemailreceipts: 'Y'
+        parenturi: https://demo.cditechnology.com
+        displaycardname: 'Y'
+        displayaddress: 'Y'
+        displaytransactionamount: 'Y'
+        displaycurrencycode: 'Y'
+        displaycustomer: 'Y'
+        displaypagetitle: 'Y'
+        forceusertoenteraddress: 'N'
+        transactionamount: 10
+        transactions:
+          - mode: CC
+            merchantid: XXXXXXXXXXXXX
+            feemerchantid: XXXXXXXXXXXXX
+            feeamount: 1
+            feetype: Service
+            feevalue: ''
+            feeformat: Flat
+            waivefee: ''
+            feemessage: ''
+          - mode: ACH
+            merchantid: XXXXXXXXXXXXX
+            feemerchantid: XXXXXXXXXXXXX
+            feeamount: 1
+            feetype: Service
+            feevalue: ''
+            feeformat: Flat
+            waivefee: ''
+            feemessage: ''
+        templateid: '102'
+        duplicateredirecturl: '#'
+        cancelredirecturl: '#'
+        user:
+          userfirstname: John
+          userlastname: Smith
+          useremail: johns@xyz.com
+          isactive: 'Y'
+          forcepasswordreset: 'N'
+          forcetermsandconditions: 'N'
+          devicegroup: ''
+        companycode: '100'
+        ordertype: ''
+        branchplant: ''
+        customerid: '4242'
+        supplierid: '14343'
+        invoiceid: '4621657657'
+        orderid: ''
+        comments: ''
+        purchaseorder: '1243'
+        adderpcustomerinsnappay: 'N'
+        customer:
+          customername: ''
+          addressline1: ''
+          addressline2: ''
+          city: ''
+          state: ''
+          zipcode: ''
+          country: ''
+          phone: ''
+          email: ''
+          vatregistrationnumber: ''
+        supplier:
+          suppliername: Battery Builders
+          addressline1: 31W238 91st St,
+          addressline2: ''
+          city: Naperville
+          state: IL
+          zipcode: '60564'
+          country: US
+          phone: (630) 851-5800
+          email: t2@cditechnology.com
+          identificationtype: ''
+          identificationdata: 12/12/1961
+          companyname: Battery Builders
+          clientcompanyname: Fiserv
+          internalmemo: ''
+          comments: ''
+          reason: ''
+          status: ''
+        level3:
+          - linenumber: '1.000'
+            productcode: ROS01
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: Mixed Bouquet
+            unitcost: '30.7500'
+            lineitemtotal: '65.96'
+            taxamount: '4.46'
+            commoditycode: ''
+            unitofmeasure: EA
+          - linenumber: '2.000'
+            productcode: BQT02
+            taxrate: '0.073'
+            quantity: '2'
+            itemdescriptor: Spring Bouquet
+            unitcost: '25.6250'
+            lineitemtotal: '54.97'
+            taxamount: '3.72'
+            commoditycode: ''
+            unitofmeasure: EA
+        clxstream: null
+    GetRequestID-T-CC:
+      value:
+        accountid: 1000000001
+        companycode: '00200'
+        currencycode: USD
+        transactionType: T
+        paymentmethod: CC
+        paymentmode: CC
+        language: en-US
+        stylecss: 'width: 50.50%;height:50.50%;'
+        customerid: '100'
+        userid: user1
+        savepaymentmethod: 'N'
+        saveatcustomer: 'N'
+        displaycardssavedatcustomer: 'N'
+        redirecturl: https://www.google.com/
+        transactionamount: 0
+        parenturi: https://company.com
+        displaycardname: 'Y'
+        displayaddress: 'N'
+    GetRequestID-T-ACH:
+      value:
+        accountid: 1000000001
+        companycode: '00200'
+        currencycode: USD
+        transactionType: T
+        paymentmethod: ACH
+        paymentmode: ACH
+        language: en-US
+        stylecss: 'width: 50.50%;height:50.50%;'
+        customerid: '100'
+        userid: user1
+        savepaymentmethod: 'N'
+        saveatcustomer: 'N'
+        displaycardssavedatcustomer: 'N'
+        redirecturl: https://www.google.com/
+        transactionamount: 0
+        parenturi: https://company.com
+        displaycardname: 'Y'
+        displayaddress: 'N'
+        
     GetRequestID-T:
       value:
         accountid: 1000000001
@@ -1041,6 +2900,964 @@ components:
           - udf3: Value 4
           - custommerchant: Company
           - customphone: 123-456-HELP
+    ChargeMultiTransactionCLX:
+      value:
+        accountid: 1000000001
+        userid: user
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        transactions:
+          - merchantid: XXXXXXXXXXXXX
+            currencycode: USD
+            companycode: '100'
+            customerid: '4242'
+            branchplant: string
+            ordertype: string
+            orderid: '123456'
+            orderdate: ''
+            invoiceid: string
+            sendemailreceipts: 'N'
+            purchaseorder: string
+            shipfromzip: string
+            shiptozip: string
+            shiptocountry: US
+            paymentmethod:
+              tokenid: 9XXXXXXXXXXXX1111
+              transactionamount: '16.00'
+              cvv: ''
+              customername: ABC Financial
+              addressline1: 100 Ave
+              city: Aurora
+              state: IL
+              zip: '60603'
+              country: US
+              email: first.last@company.com
+              phonenumber: ''
+              type: VISA
+              last4: '1111'
+              routingnumber: ''
+              secureflag: '05'
+              securevalue: ''
+              securexid: ''
+              dstxnid: ''
+            level3:
+              - linenumber: '1.000'
+                productcode: '1'
+                taxrate: '0'
+                quantity: '1'
+                itemdescriptor: Mixed Bouquet
+                unitcost: '16.00'
+                lineitemtotal: '16.00'
+                taxamount: '0'
+                commoditycode: ''
+                unitofmeasure: EA
+            userfields:
+              - udf0: Value 1
+              - udf1: Value 2
+              - udf2: Value 3
+              - udf3: Value 4
+              - udf4: Value 5
+              - udf5: Value 6
+              - udf6: Value 7
+              - udf7: Value 8
+              - udf8: Value 9
+              - udf9: Value 10
+            clxstream:
+              uuid: null
+              pgtransaction: ''
+              transactiondate: ''
+              paymenttype: ''
+              transactionamount: ''
+              cardtpe: ''
+              authorizationnumber: ''
+              last4: ''
+              merchantid: ''
+              localreferenceid: 405DL766171426
+              type: PAYMENT
+              description: TX Driver License Renewal
+              unitprice: 16
+              quantity: 1
+              sku: 0051006405DL
+              company: Leroy Jackson
+              fee: '1.00'
+              department: '6101'
+              vendorid: ''
+              customerid: ''
+              agency: ''
+              batchid: ''
+              reportlines: '3'
+              reportlinedetails:
+                - id: USAS1
+                  attributes:
+                    - name: USAS1AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS1AO
+                      value: '1404'
+                      type: String
+                    - name: USAS1OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS1PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS1TCODE
+                      value: '179'
+                      type: String
+                    - name: USAS1INDEX
+                      value: ''
+                      type: String
+                    - name: USAS1FUND
+                      value: ''
+                      type: String
+                    - name: USAS1APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS1COBJ
+                      value: ''
+                      type: String
+                    - name: USAS1AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS1DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS2
+                  attributes:
+                    - name: USAS2AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS2AO
+                      value: '6296'
+                      type: String
+                    - name: USAS2FUND
+                      value: '6101'
+                      type: String
+                    - name: USAS2OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS2PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS2TCODE
+                      value: '265'
+                      type: String
+                    - name: USAS2INDEX
+                      value: ''
+                      type: String
+                    - name: USAS2FUND
+                      value: ''
+                      type: String
+                    - name: USAS2APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS2COBJ
+                      value: ''
+                      type: String
+                    - name: USAS2AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS2DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS3
+                  attributes:
+                    - name: USAS3AMOUNT
+                      value: '15.0'
+                      type: DOLLAR
+                    - name: USAS3AO
+                      value: '1025'
+                      type: String
+                    - name: USAS3FUND
+                      value: '2365'
+                      type: String
+                    - name: USAS3OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS3PCA
+                      value: '90503'
+                      type: String
+                    - name: USAS3TCODE
+                      value: '188'
+                      type: String
+                    - name: USAS3INDEX
+                      value: ''
+                      type: String
+                    - name: USAS3FUND
+                      value: ''
+                      type: String
+                    - name: USAS3APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS3COBJ
+                      value: ''
+                      type: String
+                    - name: USAS3AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS3DEPAGENCY
+                      value: ''
+                      type: String
+              additonalinfo:
+                - key: servicecode
+                  value: XXXXXXXXXXXX
+                - key: username
+                  value: XXXXXXXXXXXX
+                - key: sourceapplication
+                  value: MGMW
+                - key: companyname
+                  value: MGMW
+                - key: sourceenvironment
+                  value: XXXXXXXXXXXX
+                - key: hostname
+                  value: XXXXXXXXXXXX
+                - key: shipfirstname
+                  value: XXXXXXXXXXXX
+                - key: shiplastname
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline1
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline2
+                  value: XXXXXXXXXXXX
+                - key: shipcity
+                  value: XXXXXXXXXXXX
+                - key: shipstate
+                  value: XXXXXXXXXXXX
+                - key: shipcountry
+                  value: XXXXXXXXXXXX
+                - key: shipphone
+                  value: XXXXXXXXXXXX
+                - key: shipemail
+                  value: XXXXXXXXXXXX
+                - key: billfirstname
+                  value: XXXXXXXXXXXX
+                - key: billlastname
+                  value: XXXXXXXXXXXX
+                - key: billaddressline1
+                  value: XXXXXXXXXXXX
+                - key: billaddressline2
+                  value: XXXXXXXXXXXX
+                - key: billcity
+                  value: XXXXXXXXXXXX
+                - key: billstate
+                  value: XXXXXXXXXXXX
+                - key: billcountry
+                  value: XXXXXXXXXXXX
+                - key: billphone
+                  value: XXXXXXXXXXXX
+                - key: billemail
+                  value: XXXXXXXXXXXX
+                - key: custom01
+                  value: XXXXXXXXXXXX
+                - key: custom02
+                  value: XXXXXXXXXXXX
+                - key: custom03
+                  value: XXXXXXXXXXXX
+                - key: custom04
+                  value: XXXXXXXXXXXX
+                - key: custom05
+                  value: XXXXXXXXXXXX
+                - key: custom30
+                  value: XXXXXXXXXXXX
+          - merchantid: XXXXXXXXXXXXX
+            currencycode: USD
+            companycode: '100'
+            customerid: '4242'
+            branchplant: string
+            ordertype: string
+            orderid: '123456'
+            orderdate: ''
+            invoiceid: string
+            sendemailreceipts: 'N'
+            purchaseorder: string
+            shipfromzip: string
+            shiptozip: string
+            shiptocountry: US
+            paymentmethod:
+              tokenid: 9XXXXXXXXXXXX1111
+              transactionamount: '1.00'
+              cvv: ''
+              customername: ABC Financial
+              addressline1: 100 Ave
+              city: Aurora
+              state: IL
+              zip: '60603'
+              country: US
+              email: first.last@company.com
+              phonenumber: ''
+              type: VISA
+              last4: '1111'
+              routingnumber: ''
+              secureflag: '05'
+              securevalue: ''
+              securexid: ''
+              dstxnid: ''
+            level3:
+              - linenumber: '1.000'
+                productcode: '1'
+                taxrate: '0'
+                quantity: '1'
+                itemdescriptor: Mixed Bouquet
+                unitcost: '1.00'
+                lineitemtotal: '1.00'
+                taxamount: '0'
+                commoditycode: ''
+                unitofmeasure: EA
+            userfields:
+              - udf0: Value 1
+              - udf1: Value 2
+              - udf2: Value 3
+              - udf3: Value 4
+              - udf4: Value 5
+              - udf5: Value 6
+              - udf6: Value 7
+              - udf7: Value 8
+              - udf8: Value 9
+              - udf9: Value 10
+            clxstream:
+              uuid: null
+              pgtransaction: ''
+              transactiondate: ''
+              paymenttype: ''
+              transactionamount: ''
+              cardtpe: ''
+              authorizationnumber: ''
+              last4: ''
+              merchantid: ''
+              localreferenceid: 405DL766171426
+              type: PAYMENT
+              description: TX Driver License Renewal
+              unitPrice: 1
+              quantity: 1
+              sku: 0051006405DL
+              company: Leroy Jackson
+              conveniencefee: '1.00'
+              department: '6101'
+              vendorid: ''
+              customerid: ''
+              agency: ''
+              batchid: ''
+              reportlines: '3'
+              reportlinedetails:
+                - id: USAS1
+                  attributes:
+                    - name: USAS1AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS1AO
+                      value: '1404'
+                      type: String
+                    - name: USAS1OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS1PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS1TCODE
+                      value: '179'
+                      type: String
+                    - name: USAS1INDEX
+                      value: ''
+                      type: String
+                    - name: USAS1FUND
+                      value: ''
+                      type: String
+                    - name: USAS1APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS1COBJ
+                      value: ''
+                      type: String
+                    - name: USAS1AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS1DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS2
+                  attributes:
+                    - name: USAS2AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS2AO
+                      value: '6296'
+                      type: String
+                    - name: USAS2FUND
+                      value: '6101'
+                      type: String
+                    - name: USAS2OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS2PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS2TCODE
+                      value: '265'
+                      type: String
+                    - name: USAS2INDEX
+                      value: ''
+                      type: String
+                    - name: USAS2FUND
+                      value: ''
+                      type: String
+                    - name: USAS2APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS2COBJ
+                      value: ''
+                      type: String
+                    - name: USAS2AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS2DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS3
+                  attributes:
+                    - name: USAS3AMOUNT
+                      value: '15.0'
+                      type: DOLLAR
+                    - name: USAS3AO
+                      value: '1025'
+                      type: String
+                    - name: USAS3FUND
+                      value: '2365'
+                      type: String
+                    - name: USAS3OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS3PCA
+                      value: '90503'
+                      type: String
+                    - name: USAS3TCODE
+                      value: '188'
+                      type: String
+                    - name: USAS3INDEX
+                      value: ''
+                      type: String
+                    - name: USAS3FUND
+                      value: ''
+                      type: String
+                    - name: USAS3APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS3COBJ
+                      value: ''
+                      type: String
+                    - name: USAS3AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS3DEPAGENCY
+                      value: ''
+                      type: String
+              additonalinfo:
+                - key: servicecode
+                  value: XXXXXXXXXXXX
+                - key: username
+                  value: XXXXXXXXXXXX
+                - key: sourceapplication
+                  value: MGMW
+                - key: companyname
+                  value: MGMW
+                - key: sourceenvironment
+                  value: XXXXXXXXXXXX
+                - key: hostname
+                  value: XXXXXXXXXXXX
+                - key: shipfirstname
+                  value: XXXXXXXXXXXX
+                - key: shiplastname
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline1
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline2
+                  value: XXXXXXXXXXXX
+                - key: shipcity
+                  value: XXXXXXXXXXXX
+                - key: shipstate
+                  value: XXXXXXXXXXXX
+                - key: shipcountry
+                  value: XXXXXXXXXXXX
+                - key: shipphone
+                  value: XXXXXXXXXXXX
+                - key: shipemail
+                  value: XXXXXXXXXXXX
+                - key: billfirstname
+                  value: XXXXXXXXXXXX
+                - key: billlastname
+                  value: XXXXXXXXXXXX
+                - key: billaddressline1
+                  value: XXXXXXXXXXXX
+                - key: billaddressline2
+                  value: XXXXXXXXXXXX
+                - key: billcity
+                  value: XXXXXXXXXXXX
+                - key: billstate
+                  value: XXXXXXXXXXXX
+                - key: billcountry
+                  value: XXXXXXXXXXXX
+                - key: billphone
+                  value: XXXXXXXXXXXX
+                - key: billemail
+                  value: XXXXXXXXXXXX
+                - key: custom01
+                  value: XXXXXXXXXXXX
+                - key: custom02
+                  value: XXXXXXXXXXXX
+                - key: custom03
+                  value: XXXXXXXXXXXX
+                - key: custom04
+                  value: XXXXXXXXXXXX
+                - key: custom05
+                  value: XXXXXXXXXXXX
+                - key: custom30
+                  value: XXXXXXXXXXXX
+    ChargeMultiTransaction:
+      value:
+        accountid: 1000000001
+        userid: user
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        transactions:
+          - merchantid: XXXXXXXXXXXXX
+            currencycode: USD
+            companycode: '100'
+            customerid: '4242'
+            branchplant: string
+            ordertype: string
+            orderid: '123456'
+            orderdate: ''
+            invoiceid: string
+            sendemailreceipts: 'N'
+            purchaseorder: string
+            shipfromzip: string
+            shiptozip: string
+            shiptocountry: US
+            paymentmethod:
+              tokenid: 9XXXXXXXXXXXX1111
+              transactionamount: '16.00'
+              cvv: ''
+              customername: ABC Financial
+              addressline1: 100 Ave
+              city: Aurora
+              state: IL
+              zip: '60603'
+              country: US
+              email: first.last@company.com
+              phonenumber: ''
+              type: VISA
+              last4: '1111'
+              routingnumber: ''
+              secureflag: '05'
+              securevalue: ''
+              securexid: ''
+              dstxnid: ''
+            level3:
+              - linenumber: '1.000'
+                productcode: '1'
+                taxrate: '0'
+                quantity: '1'
+                itemdescriptor: Mixed Bouquet
+                unitcost: '16.00'
+                lineitemtotal: '16.00'
+                taxamount: '0'
+                commoditycode: ''
+                unitofmeasure: EA
+            userfields:
+              - udf0: Value 1
+              - udf1: Value 2
+              - udf2: Value 3
+              - udf3: Value 4
+              - udf4: Value 5
+              - udf5: Value 6
+              - udf6: Value 7
+              - udf7: Value 8
+              - udf8: Value 9
+              - udf9: Value 10
+            clxstream: null
+          - merchantid: XXXXXXXXXXXXX
+            currencycode: USD
+            companycode: '100'
+            customerid: '4242'
+            branchplant: string
+            ordertype: string
+            orderid: '123456'
+            orderdate: ''
+            invoiceid: string
+            sendemailreceipts: 'N'
+            purchaseorder: string
+            shipfromzip: string
+            shiptozip: string
+            shiptocountry: US
+            paymentmethod:
+              tokenid: 9XXXXXXXXXXXX1111
+              transactionamount: '1.00'
+              cvv: ''
+              customername: ABC Financial
+              addressline1: 100 Ave
+              city: Aurora
+              state: IL
+              zip: '60603'
+              country: US
+              email: first.last@company.com
+              phonenumber: ''
+              type: VISA
+              last4: '1111'
+              routingnumber: ''
+              secureflag: '05'
+              securevalue: ''
+              securexid: ''
+              dstxnid: ''
+            level3:
+              - linenumber: '1.000'
+                productcode: '1'
+                taxrate: '0'
+                quantity: '1'
+                itemdescriptor: Mixed Bouquet
+                unitcost: '1.00'
+                lineitemtotal: '1.00'
+                taxamount: '0'
+                commoditycode: ''
+                unitofmeasure: EA
+            userfields:
+              - udf0: Value 1
+              - udf1: Value 2
+              - udf2: Value 3
+              - udf3: Value 4
+              - udf4: Value 5
+              - udf5: Value 6
+              - udf6: Value 7
+              - udf7: Value 8
+              - udf8: Value 9
+              - udf9: Value 10
+            clxstream: null
+    ChargeSingleTransactionCLX:  
+      value:
+        accountid: 1000000001
+        userid: user
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        transactions:
+          - merchantid: XXXXXXXXXXXXX
+            currencycode: USD
+            companycode: '100'
+            customerid: '4242'
+            branchplant: string
+            ordertype: string
+            orderid: '123456'
+            orderdate: ''
+            invoiceid: string
+            sendemailreceipts: 'N'
+            purchaseorder: string
+            shipfromzip: string
+            shiptozip: string
+            shiptocountry: US
+            paymentmethod:
+              tokenid: 9XXXXXXXXXXXX1111
+              transactionamount: '16.00'
+              cvv: ''
+              customername: ABC Financial
+              addressline1: 100 Ave
+              city: Aurora
+              state: IL
+              zip: '60603'
+              country: US
+              email: first.last@company.com
+              phonenumber: ''
+              type: VISA
+              last4: '1111'
+              routingnumber: ''
+              secureflag: '05'
+              securevalue: ''
+              securexid: ''
+              dstxnid: ''
+            level3:
+              - linenumber: '1.000'
+                productcode: '1'
+                taxrate: '0'
+                quantity: '1'
+                itemdescriptor: Mixed Bouquet
+                unitcost: '16.00'
+                lineitemtotal: '16.00'
+                taxamount: '0'
+                commoditycode: ''
+                unitofmeasure: EA
+            userfields:
+              - udf0: Value 1
+              - udf1: Value 2
+              - udf2: Value 3
+              - udf3: Value 4
+              - udf4: Value 5
+              - udf5: Value 6
+              - udf6: Value 7
+              - udf7: Value 8
+              - udf8: Value 9
+              - udf9: Value 10
+            clxstream:
+              uuid: null
+              pgtransaction: ''
+              transactiondate: ''
+              paymenttype: ''
+              transactionamount: ''
+              cardtpe: ''
+              authorizationnumber: ''
+              last4: ''
+              merchantid: ''
+              localreferenceid: 405DL766171426
+              type: PAYMENT
+              description: TX Driver License Renewal
+              unitprice: 16
+              quantity: 1
+              sku: 0051006405DL
+              company: Leroy Jackson
+              fee: '1.00'
+              department: '6101'
+              vendorid: ''
+              customerid: ''
+              agency: ''
+              batchid: ''
+              reportlines: '3'
+              reportlinedetails:
+                - id: USAS1
+                  attributes:
+                    - name: USAS1AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS1AO
+                      value: '1404'
+                      type: String
+                    - name: USAS1OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS1PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS1TCODE
+                      value: '179'
+                      type: String
+                    - name: USAS1INDEX
+                      value: ''
+                      type: String
+                    - name: USAS1FUND
+                      value: ''
+                      type: String
+                    - name: USAS1APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS1COBJ
+                      value: ''
+                      type: String
+                    - name: USAS1AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS1DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS2
+                  attributes:
+                    - name: USAS2AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: USAS2AO
+                      value: '6296'
+                      type: String
+                    - name: USAS2FUND
+                      value: '6101'
+                      type: String
+                    - name: USAS2OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS2PCA
+                      value: '90901'
+                      type: String
+                    - name: USAS2TCODE
+                      value: '265'
+                      type: String
+                    - name: USAS2INDEX
+                      value: ''
+                      type: String
+                    - name: USAS2FUND
+                      value: ''
+                      type: String
+                    - name: USAS2APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS2COBJ
+                      value: ''
+                      type: String
+                    - name: USAS2AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS2DEPAGENCY
+                      value: ''
+                      type: String
+                - id: USAS3
+                  attributes:
+                    - name: USAS3AMOUNT
+                      value: '15.0'
+                      type: DOLLAR
+                    - name: USAS3AO
+                      value: '1025'
+                      type: String
+                    - name: USAS3FUND
+                      value: '2365'
+                      type: String
+                    - name: USAS3OTHER
+                      value: '405DL766198245                          04/01/202413:36:0747081132       04   '
+                      type: String
+                    - name: USAS3PCA
+                      value: '90503'
+                      type: String
+                    - name: USAS3TCODE
+                      value: '188'
+                      type: String
+                    - name: USAS3INDEX
+                      value: ''
+                      type: String
+                    - name: USAS3FUND
+                      value: ''
+                      type: String
+                    - name: USAS3APPDFUND
+                      value: ''
+                      type: String
+                    - name: USAS3COBJ
+                      value: ''
+                      type: String
+                    - name: USAS3AOBJ
+                      value: ''
+                      type: String
+                    - name: USAS3DEPAGENCY
+                      value: ''
+                      type: String
+              additonalinfo:
+                - key: servicecode
+                  value: XXXXXXXXXXXX
+                - key: username
+                  value: XXXXXXXXXXXX
+                - key: sourceapplication
+                  value: MGMW
+                - key: companyname
+                  value: MGMW
+                - key: sourceenvironment
+                  value: XXXXXXXXXXXX
+                - key: hostname
+                  value: XXXXXXXXXXXX
+                - key: shipfirstname
+                  value: XXXXXXXXXXXX
+                - key: shiplastname
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline1
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline2
+                  value: XXXXXXXXXXXX
+                - key: shipcity
+                  value: XXXXXXXXXXXX
+                - key: shipstate
+                  value: XXXXXXXXXXXX
+                - key: shipcountry
+                  value: XXXXXXXXXXXX
+                - key: shipphone
+                  value: XXXXXXXXXXXX
+                - key: shipemail
+                  value: XXXXXXXXXXXX
+                - key: billfirstname
+                  value: XXXXXXXXXXXX
+                - key: billlastname
+                  value: XXXXXXXXXXXX
+                - key: billaddressline1
+                  value: XXXXXXXXXXXX
+                - key: billaddressline2
+                  value: XXXXXXXXXXXX
+                - key: billcity
+                  value: XXXXXXXXXXXX
+                - key: billstate
+                  value: XXXXXXXXXXXX
+                - key: billcountry
+                  value: XXXXXXXXXXXX
+                - key: billphone
+                  value: XXXXXXXXXXXX
+                - key: billemail
+                  value: XXXXXXXXXXXX
+                - key: custom01
+                  value: XXXXXXXXXXXX
+                - key: custom02
+                  value: XXXXXXXXXXXX
+                - key: custom03
+                  value: XXXXXXXXXXXX
+                - key: custom04
+                  value: XXXXXXXXXXXX
+                - key: custom05
+                  value: XXXXXXXXXXXX
+                - key: custom30
+                  value: XXXXXXXXXXXX
+    ChargeSingleTransaction:
+      value:
+        accountid: 1000000001
+        userid: user
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        transactions:
+          - merchantid: XXXXXXXXXXXXX
+            currencycode: USD
+            companycode: '100'
+            customerid: '4242'
+            branchplant: string
+            ordertype: string
+            orderid: '123456'
+            orderdate: ''
+            invoiceid: string
+            sendemailreceipts: 'N'
+            purchaseorder: string
+            shipfromzip: string
+            shiptozip: string
+            shiptocountry: US
+            paymentmethod:
+              tokenid: 9XXXXXXXXXXXX1111
+              transactionamount: '16.00'
+              cvv: ''
+              customername: ABC Financial
+              addressline1: 100 Ave
+              city: Aurora
+              state: IL
+              zip: '60603'
+              country: US
+              email: first.last@company.com
+              phonenumber: ''
+              type: VISA
+              last4: '1111'
+              routingnumber: ''
+              secureflag: '05'
+              securevalue: ''
+              securexid: ''
+              dstxnid: ''
+            level3:
+              - linenumber: '1.000'
+                productcode: '1'
+                taxrate: '0'
+                quantity: '1'
+                itemdescriptor: Mixed Bouquet
+                unitcost: '16.00'
+                lineitemtotal: '16.00'
+                taxamount: '0'
+                commoditycode: ''
+                unitofmeasure: EA
+            userfields:
+              - udf0: Value 1
+              - udf1: Value 2
+              - udf2: Value 3
+              - udf3: Value 4
+              - udf4: Value 5
+              - udf5: Value 6
+              - udf6: Value 7
+              - udf7: Value 8
+              - udf8: Value 9
+              - udf9: Value 10
+            clxstream: null
+        
+        
     ChargeResponseWithSurcharge:
       value:
         accountid: 1000000001
@@ -3457,6 +6274,316 @@ components:
           description: To override account parameter value ForceUserToEnterAddress. Y or N
           type: string
           example: 'Y'
+        templateid:
+          description: UPI Template ID
+          type: string
+          example: "102"
+        duplicateredirecturl:
+          description: Redirect URL accessed from UPI
+          type: string
+          example: "#"
+        cancelredirecturl:
+          description: Redirect to URL while cancellation
+          type: string
+          example: "#"
+        transactions:
+          type: array
+          items:
+            type: object
+            properties:
+              mode:
+                description: Payment model
+                type: string
+                example: "CC"
+              merchantid:
+                description: Merchant ID
+                type: string
+                example: "123456789"
+              feemerchantid:
+                description: Merchant ID for fee transaction
+                type: string
+                example: "123456789"
+              feeamount:
+                description: transction amount for fee transaction
+                type: string
+                example: "123456789"
+              feetype:
+                description: Fee type
+                type: string
+                example: "Service"
+              feevalue:
+                description: Fee value
+                type: string
+                example: ""
+              feeformat:
+                description: Fee format
+                type: string
+                example: "Flat"
+              waivefee:
+                description: to waive the fee or not
+                type: string
+                example: ""
+              feemessage: 
+                description: return message for Fee Transaction
+                type: string
+                example: ""
+        clxstream:
+          type: array
+          items:
+            type: object
+            properties:
+              transaction:
+                type: object
+                properties:
+                  uuid:
+                    description: UUID
+                    type: string
+                    example: null
+                  pgtransaction:
+                    description: Transaction returned by Payment Gateway
+                    type: string
+                    example: ""
+                  transactiondate:
+                    description: Transaction performed on date
+                    type: string
+                    example: ""
+                  paymenttype:
+                    description: Payment type
+                    type: string
+                    example: ""
+                  transactionamount: 
+                    description: Transaction Amount
+                    type: number
+                    example: 10
+                  cardtpe:
+                    description: Card type
+                    type: string
+                    example: ""
+                  authorizationnumber:
+                    description: Authorization Number
+                    type: string
+                    example: ""
+                  last4:
+                    description: Last
+                    type: string
+                    example: ""
+                  merchantid:
+                    description: Merchant ID
+                    type: string
+                    example: ""
+                  localreferenceid:
+                    description: Local Reference ID
+                    type: string
+                    example: "405ABC66171426"
+                  type:
+                    description: Type
+                    type: string
+                    example: ""
+                  description:
+                    description: Description
+                    type: string
+                    example: "TX Driver License Renewal"
+                  unitprice:
+                    description: Unit Price
+                    type: number
+                    example: 16
+                  quantity:
+                    description: Quantity
+                    type: number
+                    example: 2
+                  sku:
+                    description: SKU
+                    type: string
+                    example: "0051322405DL"
+                  company:
+                    description: Company
+                    type: string
+                    example: "Leroy Jackson"
+                  fee:
+                    description: Convenience Fee
+                    type: string
+                    example: "1.00"
+                  department:
+                    description: Department
+                    type: string
+                    example: "6101"
+                  vendorid:
+                    description: Vendor ID
+                    type: string
+                    example: ""
+                  customerid:
+                    description: Customer ID
+                    type: string
+                    example: ""
+                  agency:
+                    description: Agency
+                    type: string
+                    example: ""
+                  batchid:
+                    description: Batch Id
+                    type: string
+                    example: ""
+                  reportlines:
+                    description: Report Lines (USAS lines count)
+                    type: string
+                    example: "3"
+                  reportlinedetails:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          description: ID
+                          type: string
+                          example: "USAS1"
+                        attributes:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              name: 
+                                description: Name
+                                type: string
+                                example: "USAS1AMOUNT"
+                  additonalinfo:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        key: 
+                          description: Key
+                          type: string
+                          example: "servicecode"
+                        value: 
+                          description: Value
+                          type: string
+                          example: "XXXXXXXXXXXX"
+              feetransaction:
+                type: object
+                properties:
+                  uuid:
+                    description: UUID
+                    type: string
+                    example: null
+                  pgtransaction:
+                    description: Transaction returned by Payment Gateway
+                    type: string
+                    example: ""
+                  transactiondate:
+                    description: Transaction performed on date
+                    type: string
+                    example: ""
+                  paymenttype:
+                    description: Payment type
+                    type: string
+                    example: ""
+                  transactionamount: 
+                    description: Transaction Amount
+                    type: number
+                    example: 10
+                  cardtpe:
+                    description: Card type
+                    type: string
+                    example: ""
+                  authorizationnumber:
+                    description: Authorization Number
+                    type: string
+                    example: ""
+                  last4:
+                    description: Last
+                    type: string
+                    example: ""
+                  merchantid:
+                    description: Merchant ID
+                    type: string
+                    example: ""
+                  localreferenceid:
+                    description: Local Reference ID
+                    type: string
+                    example: "405ABC66171426"
+                  type:
+                    description: Type
+                    type: string
+                    example: ""
+                  description:
+                    description: Description
+                    type: string
+                    example: "TX Driver License Renewal"
+                  unitprice:
+                    description: Unit Price
+                    type: number
+                    example: 16
+                  quantity:
+                    description: Quantity
+                    type: number
+                    example: 2
+                  sku:
+                    description: SKU
+                    type: string
+                    example: "0051322405DL"
+                  company:
+                    description: Company
+                    type: string
+                    example: "Leroy Jackson"
+                  fee:
+                    description: Convenience Fee
+                    type: string
+                    example: "1.00"
+                  department:
+                    description: Department
+                    type: string
+                    example: "6101"
+                  vendorid:
+                    description: Vendor ID
+                    type: string
+                    example: ""
+                  customerid:
+                    description: Customer ID
+                    type: string
+                    example: ""
+                  agency:
+                    description: Agency
+                    type: string
+                    example: ""
+                  batchid:
+                    description: Batch Id
+                    type: string
+                    example: ""
+                  reportlines:
+                    description: Report Lines (USAS lines count)
+                    type: string
+                    example: "3"
+                  reportlinedetails:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          description: ID
+                          type: string
+                          example: "USAS1"
+                        attributes:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              name: 
+                                description: Name
+                                type: string
+                                example: "USAS1AMOUNT"
+                  additonalinfo:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        key: 
+                          description: Key
+                          type: string
+                          example: "servicecode"
+                        value: 
+                          description: Value
+                          type: string
+                          example: "XXXXXXXXXXXX"
         user:
           type: object
           properties:
@@ -8630,18 +11757,31 @@ paths:
               Transaction Type A:
                 summary: Transaction Type A
                 $ref: '#/components/examples/GetRequestID-A'
-              Transaction Type S:
+              Transaction Type S (ACH CLX):
                 summary: Transaction Type S
-                $ref: '#/components/examples/GetRequestID-S'
+                $ref: '#/components/examples/GetRequestID-S-ACH-CLX'
+              Transaction Type S (ACH):
+                $ref: '#/components/examples/GetRequestID-S-ACH'
+              Transaction Type S (CC CLX):
+                $ref: '#/components/examples/GetRequestID-S-CC-CLX'
+              Transaction Type S (CC):
+                $ref: '#/components/examples/GetRequestID-S-CC'
+              Transaction Type S (CCACH CLX):
+                $ref: '#/components/examples/GetRequestID-S-CCACH-CLX'
+              Transaction Type S (CCACH):
+                $ref: '#/components/examples/GetRequestID-S-CCACH'
               Transaction Type O:
                 summary: Transaction Type O
                 $ref: '#/components/examples/GetRequestID-O'
               Transaction Type I:
                 summary: Transaction Type I
                 $ref: '#/components/examples/GetRequestID-I'
-              Transaction Type T:
-                summary: Transaction Type T
-                $ref: '#/components/examples/GetRequestID-T'
+              Transaction Type T (CC):
+                summary: Transaction Type T (CC)
+                $ref: '#/components/examples/GetRequestID-T-CC'
+              Transaction Type T (ACH):
+                summary: Transaction Type T (ACH)
+                $ref: '#/components/examples/GetRequestID-T-ACH'
               Transaction Type W:
                 summary: Transaction Type W
                 $ref: '#/components/examples/GetRequestID-W'
@@ -9848,6 +12988,18 @@ paths:
                         description: Custom Phone
                         example: "123-456-HELP"
             examples:
+              Charge Multi Transaction:
+                summary: Charge Multi Transaction
+                $ref: '#/components/examples/ChargeMultiTransaction'   
+              Charge Multi Transaction - CLX:
+                summary: Charge Multi Transaction - CLX
+                $ref: '#/components/examples/ChargeMultiTransactionCLX' 
+              Charge Single Transaction:
+                summary: Charge Single Transaction
+                $ref: '#/components/examples/ChargeSingleTransaction'
+              Charge Single Transaction - CLX:
+                summary: Charge Single Transaction - CLX
+                $ref: '#/components/examples/ChargeSingleTransactionCLX'
               Charge with Surcharge:
                 summary: Charge with Surcharge
                 $ref: '#/components/examples/ChargeRequestWithSurcharge'           
@@ -17431,6 +20583,7 @@ paths:
                           type: string
                           description: Email address
                           example: "first.last@company.com"
+                        
               examples:
                 Using Dual MID:
                   summary: Using Dual MID
@@ -18143,4 +21296,6 @@ paths:
                   $ref: '#/components/examples/Common401Response'
         '429': {$ref: '#/components/responses/TooManyRequest'}
         '500': {$ref: '#/components/responses/ServerError'}
+        
+ 
   
