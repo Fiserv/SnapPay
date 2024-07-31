@@ -53,7 +53,7 @@ components:
         displaypagetitle: 'Y'
         forceusertoenteraddress: 'Y'
         transactionamount: 10
-        transactions:
+        payments:
           - mode: ACH
             merchantid: XXXXXXXXXXXXX
             feemerchantid: XXXXXXXXXXXXX
@@ -136,14 +136,6 @@ components:
             unitofmeasure: EA
         clxstream:
           - transaction:
-              uuid: null
-              pgtransaction: ''
-              transactiondate: ''
-              paymenttype: ''
-              transactionamount: ''
-              cardtpe: ''
-              authorizationnumber: ''
-              last4: ''
               merchantid: ''
               localreferenceid: XXXXXXXXX
               type: XXXXXXXX
@@ -336,14 +328,6 @@ components:
                 - key: custom30
                   value: XXXXXXXXXXXX
           - feetransaction:
-              uuid: null
-              pgtransaction: ''
-              transactiondate: ''
-              paymenttype: ''
-              transactionamount: ''
-              cardtpe: ''
-              authorizationnumber: ''
-              last4: ''
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -569,7 +553,7 @@ components:
         displaypagetitle: 'Y'
         forceusertoenteraddress: 'Y'
         transactionamount: 10
-        transactions:
+        payments:
           - mode: ACH
             merchantid: XXXXXXXXXXXXX
             feemerchantid: XXXXXXXXXXXXX
@@ -685,7 +669,7 @@ components:
         displaypagetitle: 'Y'
         forceusertoenteraddress: 'Y'
         transactionamount: 10
-        transactions:
+        payments:
           - mode: CC
             merchantid: XXXXXXXXXXXXX
             feemerchantid: XXXXXXXXXXXXX
@@ -768,14 +752,6 @@ components:
             unitofmeasure: EA
         clxstream:
           - transaction:
-              uuid: null
-              pgtransaction: ''
-              transactiondate: ''
-              paymenttype: ''
-              transactionamount: ''
-              cardtpe: ''
-              authorizationnumber: ''
-              last4: ''
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -965,14 +941,6 @@ components:
                 - key: custom30
                   value: XXXXXXXXXXXX
           - feetransaction:
-              uuid: null
-              pgtransaction: ''
-              transactiondate: ''
-              paymenttype: ''
-              transactionamount: ''
-              cardtpe: ''
-              authorizationnumber: ''
-              last4: ''
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -1195,7 +1163,7 @@ components:
         displaypagetitle: 'Y'
         forceusertoenteraddress: 'Y'
         transactionamount: 10
-        transactions:
+        payments:
           - mode: CC
             merchantid: XXXXXXXXXXXXX
             feemerchantid: XXXXXXXXXXXXX
@@ -1311,7 +1279,7 @@ components:
         displaypagetitle: 'Y'
         forceusertoenteraddress: 'N'
         transactionamount: 10
-        transactions:
+        payments:
           - mode: CC
             merchantid: XXXXXXXXXXXXX
             feemerchantid: XXXXXXXXXXXXX
@@ -1403,14 +1371,6 @@ components:
             unitofmeasure: EA
         clxstream:
           - transaction:
-              uuid: null
-              pgtransaction: ''
-              transactiondate: ''
-              paymenttype: ''
-              transactionamount: ''
-              cardtpe: ''
-              authorizationnumber: ''
-              last4: ''
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -1600,14 +1560,6 @@ components:
                 - key: custom30
                   value: XXXXXXXXXXXX
           - feetransaction:
-              uuid: null
-              pgtransaction: ''
-              transactiondate: ''
-              paymenttype: ''
-              transactionamount: ''
-              cardtpe: ''
-              authorizationnumber: ''
-              last4: ''
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -1830,7 +1782,7 @@ components:
         displaypagetitle: 'Y'
         forceusertoenteraddress: 'N'
         transactionamount: 10
-        transactions:
+        payments:
           - mode: CC
             merchantid: XXXXXXXXXXXXX
             feemerchantid: XXXXXXXXXXXXX
@@ -1929,6 +1881,7 @@ components:
         transactionType: T
         paymentmethod: CC
         paymentmode: CC
+        templateid: '102'
         language: en-US
         stylecss: 'width: 50.50%;height:50.50%;'
         customerid: '100'
@@ -1949,6 +1902,7 @@ components:
         transactionType: T
         paymentmethod: ACH
         paymentmode: ACH
+        templateid: 102
         language: en-US
         stylecss: 'width: 50.50%;height:50.50%;'
         customerid: '100'
@@ -1961,7 +1915,7 @@ components:
         parenturi: https://company.com
         displaycardname: 'Y'
         displayaddress: 'N'
-    ChargeMultiTransactionCLX:
+    ChargeMultiTransaction-CLX:
       value:
         accountid: 1000000001
         userid: user
@@ -2025,14 +1979,6 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              uuid: null
-              pgtransaction: ''
-              transactiondate: ''
-              paymenttype: ''
-              transactionamount: ''
-              cardtpe: ''
-              authorizationnumber: ''
-              last4: ''
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -2277,14 +2223,6 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              uuid: null
-              pgtransaction: ''
-              transactiondate: ''
-              paymenttype: ''
-              transactionamount: ''
-              cardtpe: ''
-              authorizationnumber: ''
-              last4: ''
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -2593,7 +2531,7 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream: null
-    ChargeSingleTransactionCLX:  
+    ChargeSingleTransaction-CLX:  
       value:
         accountid: 1000000001
         userid: user
@@ -2657,14 +2595,6 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              uuid: null
-              pgtransaction: ''
-              transactiondate: ''
-              paymenttype: ''
-              transactionamount: ''
-              cardtpe: ''
-              authorizationnumber: ''
-              last4: ''
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -2999,7 +2929,7 @@ components:
         default: ''
       }
       in: header
-      required: true
+      
       description: >-
             Merchant ID (if you pass this parameter, SnapPay will bypass the
             logic of identifying MID for this transaction)
@@ -3098,7 +3028,7 @@ components:
     GetRequestIDRequest: 
       type: object
       required: [accountid, companycode, currencycode
-      ,customerid, userid, transactiontype, paymentmethod, redirecturl,transactionamount]
+      ,customerid, userid, transactiontype, paymentmode, redirecturl,transactionamount]
       properties:
         accountid:
           description: Account ID
@@ -3128,8 +3058,9 @@ components:
           description: S - for Sale
           type: string
           example: S
-        paymentmethod:
+        paymentmode:
           description: CC - for credit card
+                       ACH - for bank transfer
           type: string
           example: CC
         displaycardssavedatcustomer: 
@@ -3356,7 +3287,7 @@ components:
                   localreferenceid:
                     description: Local Reference ID
                     type: string
-                    example: "405ABC66171426"
+                    example: "XXXXXXXXXXXX"
                   type:
                     description: Type
                     type: string
@@ -3376,11 +3307,11 @@ components:
                   sku:
                     description: SKU
                     type: string
-                    example: "0051322405DL"
+                    example: "XXXXXXXXXXXX"
                   company:
                     description: Company
                     type: string
-                    example: "Leroy Jackson"
+                    example: "company"
                   fee:
                     description: Convenience Fee
                     type: string
@@ -3388,7 +3319,7 @@ components:
                   department:
                     description: Department
                     type: string
-                    example: "6101"
+                    example: "XXXX"
                   vendorid:
                     description: Vendor ID
                     type: string
@@ -3482,7 +3413,7 @@ components:
                   localreferenceid:
                     description: Local Reference ID
                     type: string
-                    example: "405ABC66171426"
+                    example: "XXXXXXXXXXXX"
                   type:
                     description: Type
                     type: string
@@ -3502,11 +3433,11 @@ components:
                   sku:
                     description: SKU
                     type: string
-                    example: "0051322405DL"
+                    example: "XXXXXXXXXXXX"
                   company:
                     description: Company
                     type: string
-                    example: "Leroy Jackson"
+                    example: "company"
                   fee:
                     description: Convenience Fee
                     type: string
@@ -3514,7 +3445,7 @@ components:
                   department:
                     description: Department
                     type: string
-                    example: "6101"
+                    example: "XXXX"
                   vendorid:
                     description: Vendor ID
                     type: string
@@ -4368,6 +4299,10 @@ components:
           description: Account ID
           example: >-
               1000000001
+        merchantid:
+          type: string
+          description: Merchant ID
+          example: XXXXXXXXXXXXX
         customerid:
           type: string
           description: Customer ID
@@ -9094,7 +9029,7 @@ paths:
                                 localreferenceid:
                                   description: Local Reference ID
                                   type: string
-                                  example: "405ABC66171426"
+                                  example: "XXXXXXXXXXXX"
                                 type:
                                   description: Type
                                   type: string
@@ -9114,11 +9049,11 @@ paths:
                                 sku:
                                   description: SKU
                                   type: string
-                                  example: "0051322405DL"
+                                  example: "XXXXXXXXXXXX"
                                 company:
                                   description: Company
                                   type: string
-                                  example: "Leroy Jackson"
+                                  example: "company"
                                 fee:
                                   description: Convenience Fee
                                   type: string
@@ -9126,7 +9061,7 @@ paths:
                                 department:
                                   description: Department
                                   type: string
-                                  example: "6101"
+                                  example: "XXXX"
                                 vendorid:
                                   description: Vendor ID
                                   type: string
@@ -9220,7 +9155,7 @@ paths:
                                 localreferenceid:
                                   description: Local Reference ID
                                   type: string
-                                  example: "405ABC66171426"
+                                  example: "XXXXXXXXXXXX"
                                 type:
                                   description: Type
                                   type: string
@@ -9240,11 +9175,11 @@ paths:
                                 sku:
                                   description: SKU
                                   type: string
-                                  example: "0051322405DL"
+                                  example: "XXXXXXXXXXXX"
                                 company:
                                   description: Company
                                   type: string
-                                  example: "Leroy Jackson"
+                                  example: "company"
                                 fee:
                                   description: Convenience Fee
                                   type: string
@@ -9252,7 +9187,7 @@ paths:
                                 department:
                                   description: Department
                                   type: string
-                                  example: "6101"
+                                  example: "XXXX"
                                 vendorid:
                                   description: Vendor ID
                                   type: string
@@ -9310,13 +9245,13 @@ paths:
                 $ref: '#/components/examples/ChargeMultiTransaction'   
               Charge Multi Transaction - CLX:
                 summary: Charge Multi Transaction - CLX
-                $ref: '#/components/examples/ChargeMultiTransactionCLX' 
+                $ref: '#/components/examples/ChargeMultiTransaction-CLX' 
               Charge Single Transaction:
                 summary: Charge Single Transaction
                 $ref: '#/components/examples/ChargeSingleTransaction'
               Charge Single Transaction - CLX:
                 summary: Charge Single Transaction - CLX
-                $ref: '#/components/examples/ChargeSingleTransactionCLX'
+                $ref: '#/components/examples/ChargeSingleTransaction-CLX'
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
         - {$ref: '#/components/parameters/MerchantIDParam'}
