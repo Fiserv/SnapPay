@@ -1,4 +1,4 @@
-# What’s needed for calling any SnapPay API.
+# What’s needed for calling any SnapPay API
 
 The following general instructions apply to every API.
 
@@ -10,7 +10,7 @@ The following general instructions apply to every API.
 | Password                             | API Password                                         |
 | Secret Key (API Authentication Code) | Shared Secret Key used for generating HMAC signature |
 
-### Following values are needed for API authentication
+## Following values are needed for API authentication
 
 1.  API user ID
 2.  API password
