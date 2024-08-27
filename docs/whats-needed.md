@@ -109,10 +109,10 @@ string HmacValue = Convert.ToBase64String(string.Format("{0}:{1}:{2}:{3}", accou
 req.Headers.Authorization = new AuthenticationHeaderValue("Hmac ", HmacValue);
 
 
-### HMAC Example
+### HMAC Example  
 Hmac MTAwMDAyOTQyNTpdftgzRFROWi96elMyeS9xSnpDRG1nT3ZzRldzakdGWlVjVHBjRkhIeGo4PTo0ODJhMzBiNzZkZDQ0MTM4YjUzODE0NDEyNDE1NmFmMToxNzI0NDEyODEza
 
-### Sample Code
+### Sample Code  
 DateTime epochStart = new DateTime(1970, 01, 01, 0, 0, 0, 0, DateTimeKind.Utc); <br>
 TimeSpan timeSpan = DateTime.UtcNow - epochStart;<br>
 string requestTimeStamp = Convert.ToUInt64(timeSpan.TotalSeconds).ToString();<br>
