@@ -113,19 +113,19 @@ req.Headers.Authorization = new AuthenticationHeaderValue("Hmac ", HmacValue);
 Hmac MTAwMDAyOTQyNTpdftgzRFROWi96elMyeS9xSnpDRG1nT3ZzRldzakdGWlVjVHBjRkhIeGo4PTo0ODJhMzBiNzZkZDQ0MTM4YjUzODE0NDEyNDE1NmFmMToxNzI0NDEyODEza
 
 ### Sample Code
-DateTime epochStart = new DateTime(1970, 01, 01, 0, 0, 0, 0, DateTimeKind.Utc);
-TimeSpan timeSpan = DateTime.UtcNow - epochStart;
-string requestTimeStamp = Convert.ToUInt64(timeSpan.TotalSeconds).ToString();
-string nonce = Guid.NewGuid().ToString("N");
-requestContentBase64String = req.Content.ReadAsStringAsync().Result;
-signatureRawData = accountid + requestHttpMethod + requestUri + requestTimeStamp + nonce + requestContentBase64String;
-var secretKeyByteArray = Convert.FromBase64String(apiAuthCode);
-byte[] signature = Encoding.UTF8.GetBytes(signatureRawData);
-string requestSignatureBase64String = string.Empty;
-HMACSHA256 hmac = new HMACSHA256(secretKeyByteArray);
-byte[] signatureBytes = hmac.ComputeHash(signature);
-string requestSignatureBase64String = Convert.ToBase64String(signatureBytes);
-string HmacValue = Convert.ToBase64String(string.Format("{0}:{1}:{2}:{3}", accountid, requestSignatureBase64String, nonce, requestTimeStamp));
+DateTime epochStart = new DateTime(1970, 01, 01, 0, 0, 0, 0, DateTimeKind.Utc); <br>
+TimeSpan timeSpan = DateTime.UtcNow - epochStart;<br>
+string requestTimeStamp = Convert.ToUInt64(timeSpan.TotalSeconds).ToString();<br>
+string nonce = Guid.NewGuid().ToString("N");<br>
+requestContentBase64String = req.Content.ReadAsStringAsync().Result;<br>
+signatureRawData = accountid + requestHttpMethod + requestUri + requestTimeStamp + nonce + requestContentBase64String;<br>
+var secretKeyByteArray = Convert.FromBase64String(apiAuthCode);<br>
+byte[] signature = Encoding.UTF8.GetBytes(signatureRawData);<br>
+string requestSignatureBase64String = string.Empty;<br>
+HMACSHA256 hmac = new HMACSHA256(secretKeyByteArray);<br>
+byte[] signatureBytes = hmac.ComputeHash(signature);<br>
+string requestSignatureBase64String = Convert.ToBase64String(signatureBytes);<br>
+string HmacValue = Convert.ToBase64String(string.Format("{0}:{1}:{2}:{3}", accountid, requestSignatureBase64String, nonce, requestTimeStamp));<br>
 
 ### Adding Request Header 
 req.Headers.Authorization = new AuthenticationHeaderValue("Hmac ", HmacValue);
