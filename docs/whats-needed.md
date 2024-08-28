@@ -113,6 +113,9 @@ req.Headers.Authorization = new AuthenticationHeaderValue("Hmac ", HmacValue);
 Hmac MTAwMDAyOTQyNTpdftgzRFROWi96elMyeS9xSnpDRG1nT3ZzRldzakdGWlVjVHBjRkhIeGo4PTo0ODJhMzBiNzZkZDQ0MTM4YjUzODE0NDEyNDE1NmFmMToxNzI0NDEyODEza
 
 ### Sample Code  
+
+**_1. C# Code_**
+<br>
 DateTime epochStart = new DateTime(1970, 01, 01, 0, 0, 0, 0, DateTimeKind.Utc); <br>
 TimeSpan timeSpan = DateTime.UtcNow - epochStart;<br>
 string requestTimeStamp = Convert.ToUInt64(timeSpan.TotalSeconds).ToString();<br>
@@ -125,8 +128,37 @@ string requestSignatureBase64String = string.Empty;<br>
 HMACSHA256 hmac = new HMACSHA256(secretKeyByteArray);<br>
 byte[] signatureBytes = hmac.ComputeHash(signature);<br>
 string requestSignatureBase64String = Convert.ToBase64String(signatureBytes);<br>
-string HmacValue = Convert.ToBase64String(string.Format("{0}:{1}:{2}:{3}", accountid, requestSignatureBase64String, nonce, requestTimeStamp));<br>
+string signatureData = string.Format("{0}:{1}:{2}:{3}", accountid, requestSignatureBase64String, nonce, requestTimeStamp);<br>
+string hmacValue = "Hmac " + Convert.ToBase64String(Encoding.UTF8.GetBytes(signatureData));<br>
 
-### Adding Request Header 
-req.Headers.Authorization = new AuthenticationHeaderValue("Hmac ", HmacValue);
+**_2. JAVA Code_**
+<br>String hmacValue = "";
+<br>String requestUri = pUrl;
+<br>String requestContentBase64String = "";
+<br>String requestTimeStamp = Long.toString(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
+<br>
+<br>UUID uuid = UUID.randomUUID();
+<br>String nonce = uuid.toString();
+<br>
+<br>if (!pMethod.equalsIgnoreCase("GET"))
+<br>{
+<br>    &nbsp;&nbsp;&nbsp;byte[] payload = payLoad.getBytes(StandardCharsets.UTF_8);
+<br>    &nbsp;&nbsp;&nbsp;MessageDigest md = MessageDigest.getInstance("MD5");
+<br>    &nbsp;&nbsp;&nbsp;md.update(payload);
+<br>    &nbsp;&nbsp;&nbsp;requestContentBase64String = new String(DatatypeConverter.printBase64Binary(md.digest()));
+<br>}
+<br>String signatureRawData = pAccount + pMethod + requestUri + requestTimeStamp + nonce + requestContentBase64String;
+<br>byte[] secretKeyByteArray = DatatypeConverter.parseBase64Binary(pKey);
+<br>byte[] signature;
+<br>signature = signatureRawData.getBytes("UTF-8");
+<br>String requestSignatureBase64String = "";
+<br>Mac sha256_HMAC = Mac.getInstance("HmacSHA256");
+<br>SecretKeySpec secret_key = new SecretKeySpec(secretKeyByteArray, "HmacSHA256");
+<br>sha256_HMAC.init(secret_key);
+<br>byte[] Signaturebytes = sha256_HMAC.doFinal(signature);
+<br>requestSignatureBase64String = new String(DatatypeConverter.printBase64Binary(Signaturebytes));
+<br>String hmacData = pAccount + ":" + requestSignatureBase64String + ":" + nonce + ":" + requestTimeStamp;
+<br>hmacValue = new String(DatatypeConverter.printBase64Binary(hmacData.getBytes()));
+
+
 
