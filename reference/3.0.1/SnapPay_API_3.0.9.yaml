@@ -1979,6 +1979,7 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
+              uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -2595,7 +2596,15 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              merchantid: ''
+              uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
+              pgtransaction: "" 
+              transactiondate: ""
+              paymenttype: ""
+              transactionamount: ""
+              cardtpe: ""
+              authorizationnumber: "1234"
+              last4: "1111"
+              merchantid: "XXXXXXXXXXXXX"
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
               description: Description
@@ -4404,13 +4413,11 @@ paths:
                               description: User defined field 9
                               example: "Value 10"
                       clxstream:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            transaction:
-                              type: object
-                              properties:
+                        type: object
+                        properties:
+                          transaction:
+                            type: object
+                            properties:
                                 uuid:
                                   description: UUID
                                   type: string
@@ -4521,6 +4528,15 @@ paths:
                                               description: Name
                                               type: string
                                               example: "XXXX1AMOUNT"
+                                            value:
+                                              description: Value
+                                              type: string
+                                              example: "10.0"
+                                            type:
+                                              description: Type
+                                              type: string
+                                              example: "string"
+                                            
                                 additonalinfo:
                                   type: array
                                   items:
@@ -4534,132 +4550,7 @@ paths:
                                         description: Value
                                         type: string
                                         example: "XXXXXXXXXXXX"
-                            feetransaction:
-                              type: object
-                              properties:
-                                uuid:
-                                  description: UUID
-                                  type: string
-                                  example: null
-                                pgtransaction:
-                                  description: Transaction returned by Payment Gateway
-                                  type: string
-                                  example: ""
-                                transactiondate:
-                                  description: Transaction performed on date
-                                  type: string
-                                  example: ""
-                                paymenttype:
-                                  description: Payment type
-                                  type: string
-                                  example: ""
-                                transactionamount: 
-                                  description: Transaction Amount
-                                  type: number
-                                  example: 10
-                                cardtpe:
-                                  description: Card type
-                                  type: string
-                                  example: ""
-                                authorizationnumber:
-                                  description: Authorization Number
-                                  type: string
-                                  example: ""
-                                last4:
-                                  description: Last
-                                  type: string
-                                  example: ""
-                                merchantid:
-                                  description: Merchant ID
-                                  type: string
-                                  example: ""
-                                localreferenceid:
-                                  description: Local Reference ID
-                                  type: string
-                                  example: "XXXXXXXXXXXX"
-                                type:
-                                  description: Type
-                                  type: string
-                                  example: ""
-                                description:
-                                  description: Description
-                                  type: string
-                                  example: "Description"
-                                unitprice:
-                                  description: Unit Price
-                                  type: number
-                                  example: 16
-                                quantity:
-                                  description: Quantity
-                                  type: number
-                                  example: 2
-                                sku:
-                                  description: SKU
-                                  type: string
-                                  example: "XXXXXXXXXXXX"
-                                company:
-                                  description: Company
-                                  type: string
-                                  example: "company"
-                                fee:
-                                  description: Convenience Fee
-                                  type: string
-                                  example: "1.00"
-                                department:
-                                  description: Department
-                                  type: string
-                                  example: "XXXX"
-                                vendorid:
-                                  description: Vendor ID
-                                  type: string
-                                  example: ""
-                                customerid:
-                                  description: Customer ID
-                                  type: string
-                                  example: ""
-                                agency:
-                                  description: Agency
-                                  type: string
-                                  example: ""
-                                batchid:
-                                  description: Batch Id
-                                  type: string
-                                  example: ""
-                                reportlines:
-                                  description: Report Lines (XXXX lines count)
-                                  type: string
-                                  example: "3"
-                                reportlinedetails:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      id:
-                                        description: ID
-                                        type: string
-                                        example: "XXXX1"
-                                      attributes:
-                                        type: array
-                                        items:
-                                          type: object
-                                          properties:
-                                            name: 
-                                              description: Name
-                                              type: string
-                                              example: "XXXX1AMOUNT"
-                                additonalinfo:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      key: 
-                                        description: Key
-                                        type: string
-                                        example: "servicecode"
-                                      value: 
-                                        description: Value
-                                        type: string
-                                        example: "XXXXXXXXXXXX"           
+                            
             examples:
               Charge Multi Transaction:
                 summary: Charge Multi Transaction
