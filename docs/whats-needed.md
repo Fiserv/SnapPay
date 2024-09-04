@@ -50,11 +50,11 @@ Following information is needed to generate HMAC signature that will be added to
 
 1. API Authentication Code (wYNLEzZFE4+e9FAk5Rvifnn7hWwFgBGYcHA9+v2Y4dg=)
   
-2. SnapPay API URL - https://restapi-stage.snappayglobal.com/api/XXXXXXX where XXXXXXX refers to actual method name that you are calling
+2. SnapPay API URL - https://[siteurl]/api/interop/[apiname]
+   
+4. HTTP Method GET or POST 
   
-3. HTTP Method GET or POST 
-  
-4. SnapPay Account ID 10 digit Account ID (**1000000001**) 
+5. SnapPay Account ID 10 digit Account ID (**1000000001**) 
 Content in bold text are sample values for documentation purpose, please check with your account manager to get your account specific values.
 
 ### Steps to Create HMAC signature
@@ -116,11 +116,57 @@ Hmac MTAwMDAyOTQyNTpdftgzRFROWi96elMyeS9xSnpDRG1nT3ZzRldzakdGWlVjVHBjRkhIeGo4PTo
 
 **_1. C# Code_**
 <br>
+HttpRequestMessage req = new HttpRequestMessage("GET", "apiurl");<br>
+req.Content = new StringContent(inputJSONstring, Encoding.UTF8, "application/json");<br>
 DateTime epochStart = new DateTime(1970, 01, 01, 0, 0, 0, 0, DateTimeKind.Utc); <br>
 TimeSpan timeSpan = DateTime.UtcNow - epochStart;<br>
 string requestTimeStamp = Convert.ToUInt64(timeSpan.TotalSeconds).ToString();<br>
 string nonce = Guid.NewGuid().ToString("N");<br>
+if (includeBody.Equals("Yes"))<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if (req.Content != null)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if (useMd5.Equals("Yes"))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+byte[] content = req.Content.ReadAsByteArrayAsync().Result;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MD5 md5 = MD5.Create();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+byte[] requestContentHash = null;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if (content.Length != 0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+requestContentHash = md5.ComputeHash(content);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if (requestContentHash != null)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+requestContentBase64String = Convert.ToBase64String(requestContentHash);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 requestContentBase64String = req.Content.ReadAsStringAsync().Result;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}<br>
+}<br>
 signatureRawData = accountid + requestHttpMethod + requestUri + requestTimeStamp + nonce + requestContentBase64String;<br>
 var secretKeyByteArray = Convert.FromBase64String(apiAuthCode);<br>
 byte[] signature = Encoding.UTF8.GetBytes(signatureRawData);<br>
