@@ -205,6 +205,57 @@ string hmacValue = "Hmac " + Convert.ToBase64String(Encoding.UTF8.GetBytes(signa
 <br>requestSignatureBase64String = new String(DatatypeConverter.printBase64Binary(Signaturebytes));
 <br>String hmacData = pAccount + ":" + requestSignatureBase64String + ":" + nonce + ":" + requestTimeStamp;
 <br>hmacValue = new String(DatatypeConverter.printBase64Binary(hmacData.getBytes()));
-
+<br>
+<br>
+**_3. JAVAScript Code_**
+<br>var apiAuthCode = [apiauthcode];
+<br>var accountid = [accountid];
+<br>var url = [siteurl]/api/interop/[apiname];
+<br>var requestHttpMethod = POST or GET
+<br>var txttimestamp = "";
+<br>var epochStart = new Date(Date.UTC(1970, 01, 01, 0, 0, 0, 0));
+<br>var timeSpan = Date.now() - epochStart;
+<br>txttimestamp = timeSpan;
+<br>var txtnonce = createGuid();
+<br>const obj = 
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "accountid": [accountid],
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "orderid": [orderid]
+<br>};
+<br>const myJSON = JSON.stringify(obj);
+<br>let bytesContent = CryptoJS.enc.Utf8.parse(myJSON);
+<br>var md = CryptoJS.MD5(bytesContent);
+<br>var mdresult = md.toString(CryptoJS.enc.Base64);
+<br>var signatureRawData = accountid + requestHttpMethod + url + txttimestamp +txtnonce;
+<br>var secretkey = CryptoJS.enc.Base64.parse(apiAuthCode);
+<br>var prehash = CryptoJS.enc.Utf8.parse(signatureRawData);
+<br>var hash = generateHash(prehash,secretkey);
+<br>var signature = hash.toString(CryptoJS.enc.Base64);
+<br>var signatureData = accountid + ":" + signature + ":" + txtnonce + ":" + txttimestamp;
+<br>var prehash1 = CryptoJS.enc.Utf8.parse(signatureData);
+<br>var HmacValue = prehash1.toString(CryptoJS.enc.Base64);
+<br>function generateHash(prehash,secretkey)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	var hashText = CryptoJS.HmacSHA256(prehash,secretkey);
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	return hashText ;
+<br>}
+<br>function createGuid()
+<br>{
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var r = Math.random()*16|0, v = c === 'x' ? r : (r&0x3|0x8);
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return v.toString(16);
+<br> });
+<br>}
+<br>function unpack(str) 
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   var bytes = [];
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   for (var i = 0; i < str.length; i++) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      var char = str.charCodeAt(i);
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      bytes.push(char >>> 8);
+ <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     bytes.push(char & 0xFF);
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   }
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   return bytes;
+<br>}
 
 
