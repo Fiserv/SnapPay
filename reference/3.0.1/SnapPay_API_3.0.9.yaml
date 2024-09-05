@@ -1980,7 +1980,14 @@ components:
               - udf9: Value 10
             clxstream:
               uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
-              merchantid: ''
+              pgtransaction: ""
+              transactiondate: 
+              paymenttype: "" 
+              transactionamount: "" 
+              cardtype: "" 
+              authorizationnumber: "" 
+              last4: "" 
+              merchantid: "XXXXXXXXX"
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
               description: Description
@@ -2224,7 +2231,15 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              merchantid: ''
+              uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
+              pgtransaction: ""
+              transactiondate: 
+              paymenttype: "" 
+              transactionamount: "" 
+              cardtype: "" 
+              authorizationnumber: "" 
+              last4: "" 
+              merchantid: "XXXXX"
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
               description: Description
@@ -2601,7 +2616,7 @@ components:
               transactiondate: ""
               paymenttype: ""
               transactionamount: ""
-              cardtpe: ""
+              cardtype: ""
               authorizationnumber: "1234"
               last4: "1111"
               merchantid: "XXXXXXXXXXXXX"
@@ -4438,7 +4453,7 @@ paths:
                                   description: Transaction Amount
                                   type: number
                                   example: 10
-                                cardtpe:
+                                cardtype:
                                   description: Card type
                                   type: string
                                   example: ""
