@@ -14,10 +14,3 @@ The first set of API’s support use cases that involve user interaction through
 
 The second set of API’s do not involve a user interface but require a CC or ACH token to perform an authorization, capture funds related to an authorization, charge a sale (authorization and capture in a single call), request a credit, request a refund or void a prior transaction. CC or ACH tokens to use with these APIs are created using the first set of user interface APIs that allow a user to enter a credit card or bank account.
 
-## Card Account Updater
-
-The Card Account Updater service provides merchants the ability to keep their customers' card data up-to-date. The Card Account Updater API includes support pagination of GET requests, and the ability to submit DELETE requests.
-
-*   Use the PutUpdater method to manually submit tokens to the Card Account Updater service.
-*   Use the GetUpdater method to retrieve data about recent updates.
-*   Use the DeleteUpdater method to manually remove tokens from the Card Account Updater service.
