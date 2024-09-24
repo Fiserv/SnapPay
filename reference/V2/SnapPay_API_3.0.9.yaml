@@ -7,7 +7,7 @@ info:
     integrates with popular ERP solutions and shopping cart solutions to serve
     the holistic B2B payment needs of enterprise-size businesses.
   
-  version: 3.0.9
+  version: V2
 servers:
   - url: https://Snappaydirectapi-cert.fiserv.com/
   - url: https://demo1.cditechnology.com/SnapPay/REST/
