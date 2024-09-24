@@ -31,6 +31,13 @@
         "releaseNotesPath": "/release-notes/release-notes-3.0.0.md",
         "apiSpecFileNames": ["SnapPay_API_3.0.9"]
       }
+	  ,
+      {
+        "version": "V2",
+        "versionType": "patch",
+        "releaseNotesPath": "/release-notes/release-notes-3.0.0.md",
+        "apiSpecFileNames": ["SnapPay_V2_API_3.0.0"]
+      }
   ],
   "product": {
     "featured": true,
