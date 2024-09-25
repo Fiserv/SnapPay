@@ -5730,7 +5730,8 @@ components:
       }
       in: header
       required: true
-      description: Account ID  
+      description: >-
+        Pass the SnapPay account ID provided by SnapPay.
     MerchantIDParam:
       name: merchantid
       schema: {
@@ -5763,7 +5764,7 @@ components:
       in: header
       required: true
       description: >-
-            HMAC Signature
+            HMAC Signature is required for authentication. Please visit the section "What's Needed" under Documentation.
     StartDateParam:
       name: startdate
       schema: {
