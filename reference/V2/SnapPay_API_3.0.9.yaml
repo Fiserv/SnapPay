@@ -5765,7 +5765,7 @@ components:
       required: true
       description: >-
             HMAC Signature is required for authentication. Please visit the section "What's Needed" under Documentation.
-            [HMAC Generation Logic](..docs/?path=docs/whats-needed.md&branch=develop#hmac-generation-logic)  
+             
     StartDateParam:
       name: startdate
       schema: {
