@@ -24,10 +24,15 @@
         "versionType": "major",
         "releaseNotesPath": "/release-notes/release-notes-3.0.0.md",
         "apiSpecFileNames": ["SnapPay_API_3.0.9"]
-      }
-	  ,
+      },
       {
         "version": "3.0.0",
+        "versionType": "minor",
+        "releaseNotesPath": "/release-notes/release-notes-3.0.0.md",
+        "apiSpecFileNames": ["SnapPay_API_3.0.9"]
+      },
+      {
+        "version": "V2",
         "versionType": "minor",
         "releaseNotesPath": "/release-notes/release-notes-3.0.0.md",
         "apiSpecFileNames": ["SnapPay_API_3.0.9"]
