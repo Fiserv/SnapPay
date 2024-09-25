@@ -5851,7 +5851,8 @@ components:
       ,customerid, userid, transactiontype, redirecturl,transactionamount,payments,paymentmethod]
       properties:
         accountid:
-          description: Pass the SnapPay account ID provided by SnapPay.
+          description: >-
+            Pass the SnapPay account ID provided by SnapPay.
           type: number
           example:  1000000001
         companycode:
