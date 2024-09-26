@@ -18,7 +18,182 @@ components:
       type: http
       scheme: basic
   examples:
-  
+    GetRequestID-FiservInternal:
+      value:
+        accountid: 1000000001
+        companycode: '00200'
+        currencycode: USD
+        customerid: 100
+        supplierid: 100
+        userid: first.last@company.com
+        savepaymentmethod: 'Y'
+        saveatsupplier: 'Y'
+        displaypmsavedatsupplier: 'Y'
+        saveatcustomer: 'Y'
+        displaycardssavedatcustomer: 'Y'
+        transactiontype: S
+        paymentmethod: CC
+        language: en-US
+        reference: ecom
+        type: C
+        transactionamount: 100.25
+        cvvrequired: 'Y'
+        invoiceid: '4621657657'
+        orderid: ''
+        comments: test comments
+        stylecss: ''
+        ordertype: SO
+        branchplant: BR001
+        useboltdevice: 'N'
+        devicehsn: ''
+        purchaseorder: '1243'
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        openiniframe: 'Y'
+        sendemailreceipts: 'Y'
+        displaycardname: 'Y'
+        displayaddress: 'Y'
+        displaytransactionamount: 'Y'
+        displaycurrencycode: 'Y'
+        displaycustomer: 'Y'
+        displaypagetitle: 'Y'
+        adderpcustomerinsnappay: 'Y'
+        forceusertoenteraddress: 'Y'
+        templateid: '102'
+        tokenid: '9123123412341111'
+        redirecturl: https://xyz.com/orderconfirmation
+        redirectionurlonerror: '#'
+        duplicateredirecturl: '#'
+        cancelredirecturl: '#'
+        parenturi: https://abc.com
+        transactionuuid: ''
+        feetransactionuuid: ''
+        payments:
+          - mode: CC
+            merchantid: '123456789'
+            feemerchantid: '123456789'
+            feeamount: '2.00'
+            feetype: Service
+            feevalue: '3'
+            feeformat: Flat
+            waivefee: 'N'
+            feemessage: ''
+        user:
+          userfirstname: Fistname
+          userlastname: Lastname
+          useremail: firstname.lastname@company.com
+          forcepasswordreset: 'N'
+          forcetermsandconditions: 'N'
+          devicegroup: Device1
+        addcustomerinsnappay: 'N'
+        customer:
+          customername: custname
+          addressline1: Street 100
+          addressline2: ''
+          city: Chicago
+          state: IL
+          zipcode: 60603
+          country: US
+          phone: 0
+          email: first.last@company.com
+          vatregistrationnumber: ''
+        supplier:
+          suppliername: suppname
+          addressline1: Street 100
+          addressline2: ''
+          city: Chicago
+          state: IL
+          zipcode: 60603
+          country: US
+          phone: 0
+          email: first.last@company.com
+          identificationtype: MEMBER_ID
+          identificationdata: '123456'
+          companyname: ABC Builders
+          clientcompanyname: XYZ
+          internalmemo: ''
+          comments: test comments
+          reason: ''
+          status: ''
+        level3:
+          - linenumber: '1'
+            productcode: ROS01
+            taxrate: 0.073
+            quantity: 2
+            itemdescription: Mixed bouquet
+            unitcost: 30.75
+            lineitemtotal: 65.96
+            taxamount: 4.46
+            commoditycode: ''
+            unitofmeasure: EA
+        clxstream:
+          - transaction:
+              uuid: string
+              pgtransactionid: ''
+              transactiondate: ''
+              paymenttype: ''
+              transactionamount: 10
+              cardtpe: ''
+              authorizationnumber: ''
+              last4: ''
+              merchantid: ''
+              localreferenceid: XXXXXXXXXXXX
+              type: ''
+              description: Description
+              unitprice: 16
+              quantity: 2
+              sku: XXXXXXXXXXXX
+              company: company
+              fee: '1.00'
+              department: XXXX
+              vendorid: ''
+              customerid: 100
+              agency: ''
+              batchid: ''
+              reportlines: '3'
+              reportlinedetails:
+                - id: XXXX1
+                  attributes:
+                    - name: XXXX1AMOUNT
+                      value: XXXX
+                      type: XXXX
+              additionalinfo:
+                - key: servicecode
+                  value: XXXXXXXXXXXX
+            feetransaction:
+              uuid: string
+              pgtransactionid: ''
+              transactiondate: ''
+              paymenttype: ''
+              transactionamount: 10
+              cardtpe: ''
+              authorizationnumber: ''
+              last4: ''
+              merchantid: ''
+              localreferenceid: XXXXXXXXXXXX
+              type: ''
+              description: Description
+              unitprice: 16
+              quantity: 2
+              sku: XXXXXXXXXXXX
+              company: company
+              fee: '1.00'
+              department: XXXX
+              vendorid: ''
+              customerid: 100
+              agency: ''
+              batchid: ''
+              reportlines: '3'
+              reportlinedetails:
+                - id: XXXX1
+                  attributes:
+                    - name: XXXX1AMOUNT
+                      value: XXXX
+                      type: XXXX
+              additionalinfo:
+                - key: servicecode
+                  value: XXXXXXXXXXXX
     GetRequestID-S-ACH-CLX:
       value:
         accountid: 1000000001
@@ -5655,6 +5830,104 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream: null        
+    Charge-Fiservinternal:
+      value:
+        accountid: 1000000001
+        userid: user
+        ecomind: E
+        cof: C
+        cofscheduled: 'N'
+        transactions:
+          - uuid: ''
+            merchantid: XXXXXXXX
+            currency: USD
+            companycode: '00200'
+            customerid: 100
+            supplierid: 100
+            branchplant: BR001
+            ordertype: SO
+            orderid: 123456
+            orderdate: ''
+            invoiceid: 123456
+            sendemailreceipts: 'Y'
+            purchaseorder: 1234
+            shipfromzip: 60605
+            shiptozip: 60603
+            shiptocountry: USA
+            paymentmethod:
+              tokenid: 9412345678912344
+              transactionamount: 10
+              cvv: 123
+              customername: John Smith
+              addressline1: 123 Main St
+              city: Lombard
+              state: IL
+              zip: 60148
+              country: US
+              email: john.smith@company.com
+              phonenumber: string
+              type: VISA
+              last4: 2345
+              routingnumber: ''
+              secureflag: '05'
+              securevalue: '=asju1ljfl86bAAAAAACm9zU 6aqY='
+            level3:
+              - linenumber: '1'
+                productcode: ROS01
+                taxrate: 0.073
+                quantity: 2
+                itemdescription: Mixed bouquet
+                unitcost: 30.75
+                lineitemtotal: 65.96
+                taxamount: 4.46
+                commoditycode: ''
+                unitofmeasure: EA
+            userfields:
+              - udf0: Value 1
+                udf1: Value 2
+                udf2: Value 3
+                udf3: Value 4
+                udf4: Value 5
+                udf5: Value 6
+                udf6: Value 7
+                udf7: Value 8
+                udf8: Value 9
+                udf9: Value 10
+            clxstream:
+              transaction:
+                uuid: string
+                pgtransactionid: ''
+                transactiondate: ''
+                paymenttype: ''
+                transactionamount: 10
+                cardtpe: ''
+                authorizationnumber: ''
+                last4: ''
+                merchantid: ''
+                localreferenceid: XXXXXXXXXXXX
+                type: ''
+                description: Description
+                unitprice: 16
+                quantity: 2
+                sku: XXXXXXXXXXXX
+                company: company
+                fee: '1.00'
+                department: XXXX
+                vendorid: ''
+                customerid: 100
+                agency: ''
+                batchid: ''
+                reportlines: '3'
+                reportlinedetails:
+                  - id: XXXX1
+                    attributes:
+                      - name: XXXX1AMOUNT
+                        value: XXXX
+                        type: XXXX
+                additionalinfo:
+                  - key: servicecode
+                    value: XXXXXXXXXXXX
+        
     
     ChargeResponseMultiTransaction:
       value:
@@ -5765,7 +6038,6 @@ components:
       required: true
       description: >-
             HMAC Signature is required for authentication. Please visit the section "What's Needed" under Documentation.
-             
     StartDateParam:
       name: startdate
       schema: {
@@ -5847,6 +6119,7 @@ components:
       description: >-
         A or S or D or V or empty
   schemas:
+    
     GetRequestIDRequest: 
       type: object
       required: [accountid, companycode, currencycode
@@ -5918,7 +6191,8 @@ components:
           description: Specify C for Customer or S for Supplier.
           example: "C"
         transactionamount:
-          description: Transaction Amount
+          description: >- 
+            Enter the transaction amount. For single-field tokenization, this amount does not need to be passed explicitly.
           type: integer
           example: 100.25
         cvvrequired:
@@ -6041,14 +6315,6 @@ components:
           description: Optional. Provide the Parent URL for IPG integration, including for eCommerce whitelisting purposes.
           type: string
           example: 'https://abc.com'
-        transactionuuid: 
-          type: string
-          description: Unique internal transaction ID generated by SnapPay for standard transactions.
-          example: ''
-        feetransactionuuid: 
-          type: string
-          description: Unique internal transaction ID generated by SnapPay for fee transactions.
-          example: ''
         payments:
           type: array
           description: Array of payment modes. 
@@ -6084,7 +6350,8 @@ components:
                 type: string
                 example: "Flat"
               waivefee:
-                description: to waive the fee or not. Allowed values Y or N
+                description: >- 
+                  Indicates whether the fee should be waived. Acceptable values are 'Y' (Yes) or 'N' (No).
                 type: string
                 example: "N"
               feemessage: 
@@ -6096,27 +6363,33 @@ components:
           properties:
             userfirstname:
               type: string
-              description: User first name
+              description: >- 
+                Enter the first name of the user.
               example: Fistname
             userlastname: 
               type: string
-              description: User last name
+              description: >-
+                Enter the last name of the user.          
               example: Lastname
             useremail:
               type: string
-              description: User email
+              description: >-
+                Enter the email address of the user.
               example: firstname.lastname@company.com
             forcepasswordreset: 
               type: string
-              description: Force password flag
+              description: >-
+                Forces a password reset for the user.   
               example: N
             forcetermsandconditions:
               type: string
-              description: Force terms and conditions flag
+              description: >-
+                Forces the user to accept the terms and conditions. 
               example: N
             devicegroup: 
               type: string
-              description: Device group
+              description: >-
+                Used to pass the device group.
               example: Device1 
         addcustomerinsnappay: 
           type: string
@@ -6152,11 +6425,13 @@ components:
               example: 60603
             country:
               type: string
-              description: Country
+              description: >-
+                Customer's country from the ERP or eCommerce application.
               example: US
             phone:
               type: integer
-              description: Customer's country from the ERP or eCommerce application.
+              description: >-
+                Enter the customer's phone number, sourced from the ERP or eCommerce application.
               example: null
             email:
               type: string
@@ -6293,38 +6568,6 @@ components:
               transaction:
                 type: object
                 properties:
-                  uuid:
-                    description: Unique ID generated by SnapPay for each transaction. 
-                    type: string
-                    example: null
-                  pgtransactionid:
-                    description: Payment gateway transaction ID generated by SnapPay upon successful completion.
-                    type: string
-                    example: ""
-                  transactiondate:
-                    description: Transaction date populated by SnapPay upon successful completion.
-                    type: string
-                    example: ""
-                  paymenttype:
-                    description: Details of the payment type populated by SnapPay upon successful completion.
-                    type: string
-                    example: ""
-                  transactionamount: 
-                    description: Transaction amount populated by SnapPay upon successful completion.  
-                    type: number
-                    example: 10
-                  cardtpe:
-                    description: Card type populated by SnapPay upon successful completion (for credit card transactions).
-                    type: string
-                    example: ""
-                  authorizationnumber:
-                    description: Authorization number provided by SnapPay upon successful completion.
-                    type: string
-                    example: ""
-                  last4:
-                    description: Last four digits of the credit card (for credit card payments) or bank account number (for ACH payments), populated upon successful completion.
-                    type: string
-                    example: ""
                   merchantid:
                     description: Provide the merchant ID associated with the transaction.
                     type: string
@@ -6594,10 +6837,7 @@ components:
           items:
             type: object
             properties:
-              uuid: 
-                type: string
-                description: Unique ID generated by SnapPay for each transaction.
-                example: ''
+              
               merchantid:
                 type: string
                 description: Enter the Payment Gateway Merchant ID associated with the transaction.
@@ -6828,38 +7068,6 @@ components:
                   transaction:
                     type: object
                     properties:
-                      uuid:
-                        description: Unique ID generated by SnapPay for each transaction. 
-                        type: string
-                        example: null
-                      pgtransactionid:
-                        description: Payment gateway transaction ID generated by SnapPay upon successful completion.
-                        type: string
-                        example: ""
-                      transactiondate:
-                        description: Transaction date populated by SnapPay upon successful completion.
-                        type: string
-                        example: ""
-                      paymenttype:
-                        description: Details of the payment type populated by SnapPay upon successful completion.
-                        type: string
-                        example: ""
-                      transactionamount: 
-                        description: Transaction amount populated by SnapPay upon successful completion.  
-                        type: number
-                        example: 10
-                      cardtpe:
-                        description: Card type populated by SnapPay upon successful completion (for credit card transactions).
-                        type: string
-                        example: ""
-                      authorizationnumber:
-                        description: Authorization number provided by SnapPay upon successful completion.
-                        type: string
-                        example: ""
-                      last4:
-                        description: Last four digits of the credit card (for credit card payments) or bank account number (for ACH payments), populated upon successful completion.
-                        type: string
-                        example: ""
                       merchantid:
                         description: Provide the merchant ID associated with the transaction.
                         type: string
@@ -6937,15 +7145,18 @@ components:
                                 type: object
                                 properties:
                                   name: 
-                                    description: Name
+                                    description: >-
+                                      Enter the name of the report line-item.
                                     type: string
                                     example: "XXXX1AMOUNT"
                                   value: 
-                                    description: value
+                                    description: >-
+                                      Enter the value of the report line-item.
                                     type: string
                                     example: "XXXX"
                                   type: 
-                                    description: data type of value
+                                    description: >-
+                                      Specify the type of the report line-item.
                                     type: string
                                     example: "XXXX"
                       additionalinfo:
@@ -6955,11 +7166,13 @@ components:
                           type: object
                           properties:
                             key: 
-                              description: Key
+                              description: >-
+                                Represents the key identifier for the additional information.
                               type: string
                               example: "servicecode"
                             value: 
-                              description: Value
+                              description: >-
+                                Corresponds to the value associated with the key.
                               type: string
                               example: "XXXXXXXXXXXX"
   responses:
@@ -7025,6 +7238,9 @@ paths:
               Transaction Type T (ACH):
                 summary: Transaction Type T (ACH)
                 $ref: '#/components/examples/GetRequestID-T-ACH'
+              Fiserv Internal:
+                summary: Fiserv Internal
+                $ref: '#/components/examples/GetRequestID-FiservInternal'
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
         - {$ref: '#/components/parameters/MerchantIDParamGetRequestID'}
@@ -7039,19 +7255,23 @@ paths:
                 properties:
                   accountid:
                     type: number
-                    description: Account ID
+                    description: >-
+                      Pass the SnapPay account ID provided by SnapPay. 
                     example: 1000000001
                   token:
                     type: string
-                    description: Request ID that will be used to open SnapPay iFrame
+                    description: >-
+                      Optional. Enter the Payment Gateway Token ID based on the use case.
                     example: 0b724a4f-5bbb-e811-b229-000c29cce4c0
                   status:
                     type: string
-                    description: Y or N
+                    description: >-
+                      API call status.
                     example: 'Y'
                   message:
                     type: string
-                    description: e.g. Information stored successfully
+                    description: >-
+                      The status message for the API request. This message provides additional information or context about the outcome of the request.
                     example: Information stored successfully.
         '400': {$ref: '#/components/responses/InvalidRequest'}
         '401':
@@ -7120,6 +7340,11 @@ paths:
               Charge Single Transaction - ACH - Partial - CLX:
                 summary: Charge Single Transaction - ACH - Partial - CLX
                 $ref: '#/components/examples/ChargeSingleTransaction-CC-Partial-CLX'
+              Fiserv Internal:
+                summary: Fiserv Internal
+                $ref: '#/components/examples/Charge-Fiservinternal'
+                
+                
       parameters:
         - {$ref: '#/components/parameters/AccountIDParam'}
         - {$ref: '#/components/parameters/MerchantIDParam'}
@@ -7134,30 +7359,36 @@ paths:
                 properties:
                   accountid:
                     type: number
-                    description: Account ID
+                    description: >-
+                      SnapPay account id
                     example: 1000000001
                   status:
                     type: string
-                    description: Y or N
+                    description: >- 
+                      Overall status
                     example: 'Y'
                   message:
                     type: string
-                    description: Message
+                    description: >-
+                      Status message for transaction.
                     example: Transaction successful.
                   transactions:
                     type: object
                     properties:
                       merchantid:
                         type: string
-                        description: Payment Gateway Merchant ID
+                        description: >-
+                          Transaction payment gateway merchant id
                         example: 12452589
                       returncode:
                         type: string
-                        description: Payment Gateway Return Code
+                        description: >- 
+                          Transaction payment gateway return code.
                         example: 0
                       returndescription:
                         type: string
-                        description: Payment Gateway Return Description
+                        description: >-
+                          Transaction payment gateway return description.
                         example: Transaction successful
                       procrespcode:
                         type: string
@@ -7165,35 +7396,71 @@ paths:
                         example: RPCT
                       pgtransactionid:
                         type: string
-                        description: Payment Gateway Transaction ID
+                        description: >-
+                          Transaction payment gateway transaction id.
                         example: 260711140916
                       paymenttransactionid:
                         type: string
-                        description: SnapPay Transaction ID
+                        description: >-
+                          SnapPay transaction id.
                         example: 136243
                       authorizationcode:
                         type: string
-                        description: Authorization Code
+                        description: >-
+                          Transaction payment gateway authorization code. 
                         example: 234AS5
                       transactiondate:
                         type: string
-                        description: Transaction Date
+                        description: >-
+                          Transaction date
                         example: 02/14/2021 03:00:28 PM
                       transactionamount:
                         type: string
-                        description: Transaction Amount
+                        description: >-
+                          transaction amount
                         example: 100
                       currency:
                         type: string
-                        description: Currency Code
+                        description: >-
+                          Transaction currency
                         example: USD
                       scverification:
                         type: string
-                        description: Security/CVV Code Verification
+                        description: >-
+                          Alpha-numeric CVV (card verification value) verification response code, if returned by
+                          the processor.
+                          One of the following values:
+                          M - Valid CVV Match.
+                          N - Invalid CVV.
+                          P - CVV Not Processed.
+                          S - Merchant indicated that the
+                          CVV is not present on the card.
+                          U - Card issuer is not certified
+                          and/or has not provided Visa
+                          encryption keys.
+                          X - No response.
+                          Note: cvvresp is typically only
+                          returned for approved
+                          authorizations, however this
+                          field can be returned in the response for a declined
+                          authorization if this setting is
+                          enabled for the merchant account
+
                         example: P
                       addressverification:
                         type: string
-                        description: Address Verification
+                        description: >-
+                          AVS (zip code) verification
+                          response code.
+                          Note: avsresp is typically only
+                          returned for approved
+                          authorizations, however this
+                          field can be returned in the
+                          response for a declined
+                          authorization if this setting is
+                          enabled for the merchant
+                          account.
+
                         example: Z
                       totaltransactionamount:
                         type: string
@@ -7201,52 +7468,64 @@ paths:
                           Total transaction amount (transactionamount +
                           feeamount)
                         example: 100
-                      feereturncode:
+                      tokenid:
                         type: string
-                        description: >-
-                          Return code for fee transaction. It will same as
-                          returncode if the feetype is convenience or surcharge
-                          and different if the fee type is service (MSF)
-                        example: null
-                      feereturndescription:
-                        type: string
-                        description: Return description for fee transaction
-                        example: null
-                      feetransactionid:
-                        type: string
-                        description: >-
-                          Fee Transaction ID â€“ same as transactionid for
-                          surcharge and convenience fee
-                        example: null
-                      feeauthcode:
-                        type: string
-                        description: >-
-                          Fee Transaction Authorization Code â€“ same as
-                          authorizationcode for surcharge fee and convenience
-                          fee
-                        example: null
-                      feestatus:
-                        type: string
-                        description: Fee Transaction Status (Y/N)
-                        example: null
-                      feetype:
-                        type: string
-                        description: Fee Type (Surcharge, Service or Convenience)
-                        example: null
-                      feeformat:
-                        type: string
-                        description: >-
-                          Fee Format (Percentage for Surcharge and dollar amount
-                          for convenience fee)
-                        example: null
-                      feeamount:
-                        type: integer
-                        description: Fee Amount (amount in currency)
-                        example: 0
-                      feevalue:
-                        type: integer
-                        description: Fee Value (value in % for Surcharge fee)
-                        example: 0
+                        description: >- 
+                          Payment gateway token id
+                        example: "9XXXXXXXXXXXX1111"
+                      paymentmethod:
+                          type: object
+                          properties:
+                            tokenid:
+                              type: string
+                              description: >- 
+                                Payment gateway token id
+                              example: "9XXXXXXXXXXXX1111"
+                            transactionamount:
+                              type: integer
+                              description: Transaction Amount
+                              example: 10
+                            customername:
+                              type: string
+                              description: Name on credit card
+                              example: John Smith
+                            type:
+                              type: string
+                              description: >- 
+                                Type of Credit Card of Bank Account - Visa/ MC / Discover /AMEX / Checking /Saving
+                              example: VISA
+                            last4:
+                              type: string
+                              description: Last 4 digits of credit card
+                              example: 2345
+                            addressline1:
+                              type: string
+                              description: Address Line 1
+                              example: 123 Main St
+                            city:
+                              type: string
+                              description: City
+                              example: Lombard
+                            state:
+                              type: string
+                              description: State
+                              example: IL
+                            zip:
+                              type: string
+                              description: Zip/Postal Code
+                              example: 60148
+                            country:
+                              type: string
+                              description: Country
+                              example: US
+                            email:
+                              type: string
+                              description: Email Address
+                              example: john.smith@company.com
+                            phonenumber:
+                              type: string
+                              description: Phone Number
+                              example: null
               examples:
                 Charge Multi Transactions:
                   summary: Charge Multi Transactions
