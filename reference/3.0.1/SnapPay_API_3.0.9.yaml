@@ -8592,6 +8592,8 @@ components:
       description: Unauthorized Access.
     ServerError:
       description: Internal Server Error.
+    
+      
 security:
   - basicAuth: []
 tags:
@@ -8785,170 +8787,159 @@ paths:
                 type: object
                 properties:
                   accountid:
-                    type: string
-                    description: Account ID
-                    example: >-
-                      1000000001
+                    type: number
+                    description: The SnapPay account ID assigned by SnapPay.
+                    example: 1000000001
                   status:
                     type: string
-                    description: Y or N
+                    description: This message provides additional information or context about the outcome of the request.
                     example: 'Y'
                   message:
                     type: string
-                    description: e.g. Payment details retrieved successfully
+                    description:  API call status.
                     example: Payment details retrieved successfully
                   paymentmethod:
                     type: object
                     properties:
                       paymentmethodid:
                         type: integer
-                        description: SnapPay Payment Method ID for Credit Card or ACH
+                        description: The SnapPay payment method ID used in the transaction. This ID uniquely identifies the specific payment method.
                         example: 123456
                       tokenid:
                         type: string
-                        description: Payment Gateway Token ID for Credit Card or ACH
+                        description: Optional. Enter the Payment Gateway Token ID based on the use case.
                         example: XXXXXXXXXXXX1234
                       last4:
                         type: string
-                        description: Last 4 digits of credit card or bank account number
+                        description: Last four digits of the credit card or bank account number, populated upon successful completion.
                         example: 2345
                       type:
                         type: string
-                        description: Visa / MC / Discover / AMEX / Checking / Saving
+                        description: Type of credit card or bank account. Visa/MC/Discover/AMEX/Checking/Saving
                         example: VISA
                       routingnumber:
                         type: string
-                        description: Bank Routing Number
+                        description: The bank's routing number.
                         example: 123123123
                       firstname:
                         type: string
-                        description: First Name
+                        description: The first name of the cardholder or account holder. 
                         example: First
                       lastname:
                         type: string
-                        description: Last Name
+                        description: The last name of the cardholder or account holder. 
                         example: Last
                       expirationmonth:
                         type: string
-                        description: Expiration Month
+                        description: Expiration month for credit card transactions.
                         example: 12
                       expirationyear:
                         type: string
-                        description: Expiration Year
+                        description: Expiration year for credit card transactions.
                         example: 2029
                       addressline1:
                         type: string
-                        description: Address Line 1
+                        description: Billing Address Line 1 from the ERP or eCommerce application, or from the card/bank account holder.
                         example: 123 Main St
                       city:
                         type: string
-                        description: City
+                        description: Billing city from the ERP or eCommerce application, or from the card/bank account holder. 
                         example: Lombard
                       state:
                         type: string
-                        description: State
+                        description: Billing state from the ERP or eCommerce application, or from the card/bank account holder.
                         example: IL
                       zip:
                         type: string
-                        description: Zip/Postal Code
+                        description: Billing ZIP code from the ERP or eCommerce application, or from the card/bank account holder.  
                         example: 60148
                       country:
                         type: string
-                        description: Country
+                        description: Billing country from the ERP or eCommerce application, or from the card/bank account holder.             
                         example: US
                       email:
                         type: string
-                        description: Email Address
+                        description: Billing email address from the ERP or eCommerce application, or from the card/bank account holder. 
                         example: first.last@company.com
                   transaction:
                     type: object
                     properties:
                       merchantid:
                         type: string
-                        description: Payment Gateway Merchant ID
+                        description: The Payment Gateway Merchant ID associated with the transaction.
                         example: 34032039484234
                       returncode:
                         type: string
-                        description: Payment Gateway Return Code
+                        description: The payment gateway return code for the transaction, indicates the result such as success or a specific error.
                         example: 0
                       returndescription:
                         type: string
-                        description: Payment Gateway Return Description
+                        description: The payment gateway return description for the transaction, explaining the nature of the success or error.
                         example: Transaction successful
                       procrespcode:
                         type: string
-                        description: Processor Response Code
+                        description: An abbreviation that represents the platform and the processor used for the transaction.
                         example: RPCT
                       pgtransactionid:
                         type: string
-                        description: Payment Gateway Transaction ID
+                        description: Payment gateway transaction ID generated by SnapPay upon successful completion.
                         example: 260711140916
                       paymenttransactionid:
                         type: string
-                        description: SnapPay Transaction ID
+                        description: The unique SnapPay transaction ID assigned to the payment transaction for tracking in SnapPay.
                         example: 136243
                       authorizationcode:
                         type: string
-                        description: Authorization Code
+                        description: Authorization code from the original authorization request
                         example: 234AS5
                       transactiondate:
                         type: string
-                        description: Transaction Date
+                        description: Transaction date populated by SnapPay upon successful completion.
                         example: 02/14/2021 03:00:28 PM
                       transactionamount:
                         type: string
-                        description: Transaction Amount
+                        description: Transaction amount populated by SnapPay upon successful completion.  
                         example: 100
                       currency:
                         type: string
-                        description: Currency Code
+                        description: Currency code for the transaction.  
                         example: USD
                   
                       feereturncode:
                         type: string
-                        description: >-
-                          Return code for fee transaction. It will same as
-                          returncode if the feetype is convenience or surcharge
-                          and different if the fee type is service (MSF)
+                        description: The payment gateway return code for the fee transaction, indicates the result of the fee-related action.
                         example: null
                       feereturndescription:
                         type: string
-                        description: Return description for fee transaction
+                        description: The payment gateway return description for the fee transaction. 
                         example: null
                       feetransactionid:
                         type: string
-                        description: >-
-                          Fee Transaction ID â€“ same as transactionid for
-                          surcharge and convenience fee
+                        description: The unique ID for the fee transaction.
                         example: null
                       feeauthcode:
                         type: string
-                        description: >-
-                          Fee Transaction Authorization Code â€“ same as
-                          authorizationcode for surcharge fee and convenience
-                          fee
+                        description: Authorization code for the fee transaction.
                         example: null
                       feestatus:
                         type: string
-                        description: Fee Transaction Status (Y/N)
+                        description: The status of the fee transaction, indicating whether it has been successfully processed.
                         example: null
                       feetype:
                         type: string
-                        description: Fee Type (Surcharge, Service or Convenience)
+                        description: The type of fee applied to the transaction, such as service fee or processing fee.
                         example: null
                       feeformat:
                         type: string
-                        description: >-
-                          Fee Format (Percentage for Surcharge and dollar amount
-                          for convenience fee)
+                        description: The format in which the fee is charged, either as a percentage or a flat amount.
                         example: null
                       feeamount:
                         type: integer
-                        description: Fee Amount (amount in currency)
+                        description: Enter the fee amount for the fee transaction.
                         example: 0
                       feevalue:
                         type: integer
-                        description: Fee Value (value in % for Surcharge fee)
+                        description: Specify the fee value, either as a percentage or a flat amount (e.g., 3 or 0).
                         example: 0
               examples:
                 Using Dual MID:
