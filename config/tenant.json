@@ -35,7 +35,7 @@
   "product": {
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Portal_Logo.png",
-    "description": "Digitally transform your payment process with certified ERP integration to improve working capital and increase efficiencies. SnapPay from Fiserv, integrates with popular ERP solutions and shopping cart solutions to serve the holistic B2B payment needs of enterprise-size businesses.",
+    "description": "Digitally transform your payment process with ERP integration.",
     "longDescription":"Digitally transform your payment process with certified ERP integration to improve working capital and increase efficiencies. SnapPay from Fiserv, integrates with popular ERP solutions and shopping cart solutions to serve the holistic B2B payment needs of enterprise-size businesses.",
     "apiSpecification": "/v1/apis/SnapPay",
     "layout": "/v1/layouts/SnapPay",
