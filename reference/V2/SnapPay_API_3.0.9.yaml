@@ -6004,7 +6004,7 @@ components:
       in: header
       required: true
       description: >-
-        Pass the SnapPay account ID provided by SnapPay.
+        Provide the SnapPay account ID as supplied by SnapPay.
     MerchantIDParam:
       name: merchantid
       schema: {
@@ -6014,8 +6014,7 @@ components:
       in: header
       
       description: >-
-            Merchant ID (if you pass this parameter, SnapPay will bypass the
-            logic of identifying MID for this transaction)
+            The Merchant ID. If you provide this parameter, SnapPay will bypass the logic of identifying the merchant ID for the transaction. For transactions of type 'T', always include the Merchant ID.
     MerchantIDParamGetRequestID:
       name: merchantid
       schema: {
@@ -6037,7 +6036,7 @@ components:
       in: header
       required: true
       description: >-
-            HMAC Signature is required for authentication. Please visit the section "What's Needed" under Documentation.
+            HMAC Signature required for authentication. Refer to the "What's Needed" section under Documentation for more details.
     StartDateParam:
       name: startdate
       schema: {
@@ -6212,7 +6211,7 @@ components:
           type: string
           example: 'test comments'
         stylecss: 
-          description: Style CSS  
+          description: The CSS styles applied to the single field tokenizer component. This field allows you to customize the look and feel of the tokenizer by specifying CSS rules.  
           type: string
           example: ''
         ordertype: 
@@ -6645,15 +6644,15 @@ components:
                             type: object
                             properties:
                               name: 
-                                description: Name
+                                description: Enter the name of the report line-item.
                                 type: string
                                 example: "XXXX1AMOUNT"
                               value: 
-                                description: value
+                                description: Enter the value of the report line-item.
                                 type: string
                                 example: "XXXX"
                               type: 
-                                description: data type of value
+                                description: Specify the type of the report line-item.
                                 type: string
                                 example: "XXXX"
                   additionalinfo:
@@ -6663,11 +6662,11 @@ components:
                       type: object
                       properties:
                         key: 
-                          description: Key
+                          description: Represents the key identifier for the additional information.
                           type: string
                           example: "servicecode"
                         value: 
-                          description: Value
+                          description: Corresponds to the value associated with the key.
                           type: string
                           example: "XXXXXXXXXXXX"
               feetransaction:
@@ -6968,7 +6967,7 @@ components:
                     example: "05"
                   securevalue:
                     type: string
-                    description: Enter the Base64-encoded Cardholder Authentication Verification Value returned by your 3DS provider. Example =asju1ljfl86bAAAAAACm9zU 6aqY=
+                    description: Enter the Base64-encoded Cardholder Authentication Verification Value returned by your 3DS provider. 
                     example: "=asju1ljfl86bAAAAAACm9zU 6aqY="
               level3:
                         type: array
@@ -7256,22 +7255,22 @@ paths:
                   accountid:
                     type: number
                     description: >-
-                      Pass the SnapPay account ID provided by SnapPay. 
+                      The SnapPay account ID associated with the transaction.
                     example: 1000000001
                   token:
                     type: string
                     description: >-
-                      Optional. Enter the Payment Gateway Token ID based on the use case.
+                      A unique token generated for the transaction. This token can be used to open the Hosted Payment Page (HPP) screen, allowing for seamless completion of the transaction.
                     example: 0b724a4f-5bbb-e811-b229-000c29cce4c0
                   status:
                     type: string
                     description: >-
-                      API call status.
+                      Indicates the overall status of the transaction. This field determines whether the transaction was successful, or is failed
                     example: 'Y'
                   message:
                     type: string
                     description: >-
-                      The status message for the API request. This message provides additional information or context about the outcome of the request.
+                      Provides a detailed status message for the transaction, offering additional context or information about the transaction outcome.
                     example: Information stored successfully.
         '400': {$ref: '#/components/responses/InvalidRequest'}
         '401':
@@ -7360,17 +7359,17 @@ paths:
                   accountid:
                     type: number
                     description: >-
-                      SnapPay account id
+                      The SnapPay account ID associated with the transaction.
                     example: 1000000001
                   status:
                     type: string
                     description: >- 
-                      Overall status
+                      Indicates the overall status of the transaction. This field determines whether the transaction was successful, or is failed
                     example: 'Y'
                   message:
                     type: string
                     description: >-
-                      Status message for transaction.
+                      Provides a detailed status message for the transaction, offering additional context or information about the transaction outcome.
                     example: Transaction successful.
                   transactions:
                     type: object
@@ -7378,100 +7377,82 @@ paths:
                       merchantid:
                         type: string
                         description: >-
-                          Transaction payment gateway merchant id
+                          The Payment Gateway Merchant ID associated with the transaction.
                         example: 12452589
                       returncode:
                         type: string
                         description: >- 
-                          Transaction payment gateway return code.
+                          The payment gateway return code indicating the result of the transaction, such as success or a specific error.
                         example: 0
                       returndescription:
                         type: string
                         description: >-
-                          Transaction payment gateway return description.
+                          The payment gateway return description for the transaction. This provides more details about the returncode, explaining the nature of the success or error.
                         example: Transaction successful
                       procrespcode:
                         type: string
-                        description: Processor Response Code
+                        description: >-
+                          An abbreviation that represents the platform and the processor used for the transaction.
                         example: RPCT
                       pgtransactionid:
                         type: string
                         description: >-
-                          Transaction payment gateway transaction id.
+                          Payment gateway transaction ID generated by SnapPay upon successful completion.
                         example: 260711140916
                       paymenttransactionid:
                         type: string
                         description: >-
-                          SnapPay transaction id.
+                          The unique SnapPay transaction ID assigned to the payment transaction. This ID is used for tracking and referencing the specific transaction within the SnapPay system.
                         example: 136243
                       authorizationcode:
                         type: string
                         description: >-
-                          Transaction payment gateway authorization code. 
+                          Authorization code from original authorization request
                         example: 234AS5
                       transactiondate:
                         type: string
                         description: >-
-                          Transaction date
+                          Transaction date populated by SnapPay upon successful completion.
                         example: 02/14/2021 03:00:28 PM
                       transactionamount:
                         type: string
                         description: >-
-                          transaction amount
+                         Transaction amount populated by SnapPay upon successful completion.  
                         example: 100
                       currency:
                         type: string
                         description: >-
-                          Transaction currency
+                          Currency code for the transaction.  
                         example: USD
                       scverification:
                         type: string
                         description: >-
-                          Alpha-numeric CVV (card verification value) verification response code, if returned by
-                          the processor.
-                          One of the following values:
-                          M - Valid CVV Match.
-                          N - Invalid CVV.
-                          P - CVV Not Processed.
-                          S - Merchant indicated that the
-                          CVV is not present on the card.
-                          U - Card issuer is not certified
-                          and/or has not provided Visa
-                          encryption keys.
-                          X - No response.
-                          Note: cvvresp is typically only
-                          returned for approved
-                          authorizations, however this
-                          field can be returned in the response for a declined
-                          authorization if this setting is
-                          enabled for the merchant account
+                          The alpha-numeric CVV (Card Verification Value) verification response code returned by the processor.
+                            M: Valid CVV Match
+                            N: Invalid CVV
+                            P: CVV Not Processed
+                            S: Merchant indicated that the CVV is not present on the card
+                            U: Card issuer is not certified and/or has not provided Visa                          encryption keys
+                            X: No response
+                            Note: The cvvresp is typically only returned for approved                          authorizations but can be provided in the response for a declined                        authorization if this setting is enabled for the merchant account.
 
                         example: P
                       addressverification:
                         type: string
                         description: >-
-                          AVS (zip code) verification
-                          response code.
-                          Note: avsresp is typically only
-                          returned for approved
-                          authorizations, however this
-                          field can be returned in the
-                          response for a declined
-                          authorization if this setting is
-                          enabled for the merchant
-                          account.
+                          The AVS (Address Verification System) response code indicating the result of ZIP code verification.
+                          Note: The avsresp is typically only returned for approved                        authorizations but can be provided in the response for a declined                      authorization if this setting is enabled for the merchant account.
 
                         example: Z
                       totaltransactionamount:
                         type: string
                         description: >-
-                          Total transaction amount (transactionamount +
-                          feeamount)
+                          The total transaction amount, which is the sum of the primary transaction amount and any applicable fees.
                         example: 100
                       tokenid:
                         type: string
                         description: >- 
-                          Payment gateway token id
+                          The Payment Gateway Token ID used for the transaction.
                         example: "9XXXXXXXXXXXX1111"
                       paymentmethod:
                           type: object
@@ -7479,11 +7460,12 @@ paths:
                             tokenid:
                               type: string
                               description: >- 
-                                Payment gateway token id
+                                The Payment Gateway Token ID used for the transaction.
                               example: "9XXXXXXXXXXXX1111"
                             transactionamount:
                               type: integer
-                              description: Transaction Amount
+                              description: >-
+                                The total transaction amount, which is the sum of the primary transaction amount and any applicable fees.
                               example: 10
                             customername:
                               type: string
@@ -7492,7 +7474,7 @@ paths:
                             type:
                               type: string
                               description: >- 
-                                Type of Credit Card of Bank Account - Visa/ MC / Discover /AMEX / Checking /Saving
+                                The type of credit card or bank account used, such as Visa, MasterCard, Discover, AMEX, Checking, or Saving.
                               example: VISA
                             last4:
                               type: string
@@ -7500,31 +7482,38 @@ paths:
                               example: 2345
                             addressline1:
                               type: string
-                              description: Address Line 1
+                              description: >-
+                                Billing Address Line 1 from the card/bank account holder.
                               example: 123 Main St
                             city:
                               type: string
-                              description: City
+                              description: >-
+                                Billing city from the card/bank account holder. 
                               example: Lombard
                             state:
                               type: string
-                              description: State
+                              description: >-
+                                Billing state from the card/bank account holder.
                               example: IL
                             zip:
                               type: string
-                              description: Zip/Postal Code
+                              description: >-
+                                Billing ZIP code from the card/bank account holder.  
                               example: 60148
                             country:
                               type: string
-                              description: Country
+                              description: >-
+                                Billing country from the card/bank account holder.                    
                               example: US
                             email:
                               type: string
-                              description: Email Address
+                              description: >-
+                                Billing email address from the card/bank account holder. 
                               example: john.smith@company.com
                             phonenumber:
                               type: string
-                              description: Phone Number
+                              description: >-
+                                Billing phone number from the card/bank account holder. 
                               example: null
               examples:
                 Charge Multi Transactions:
