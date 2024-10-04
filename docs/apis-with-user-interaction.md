@@ -3,9 +3,9 @@
 ## User Interaction APIs are used for the following use cases
 
 1. Use SnapPay iFrame/Popup Form to authorize an amount using a saved or new credit card. The SnapPay iFrame will optionally display the following based on application configuration: ability to list, select, delete, edit or add a card.  
-    To implement, use authorizationtype=”A” (Authorize) on API GetRequestID.
+    To implement, use transactiontype="A" (Authorize) on API GetRequestID.
 1. Use SnapPay iFrame/Popup Form to make a payment using saved or new payment method for a credit card or ACH account. The SnapPay iFrame will optionally display the following based on application configuration: ability to list, select, delete, edit or add a card as well as the ability to list, select, delete, edit or add an ACH bank account.  
-    To implement, use authorizationtype=”S” (Sale) on API GetRequestID.
+    To implement, use transactiontype="S" (Sale) on API GetRequestID.
 1. Use the SnapPay field level control iFrame to only tokenize a credit card number. The SnapPay iFrame will only display a single field for credit card number entry, and allows style sheet customization of the field display.  
     See section: API – GetRequestID – Field Level Control.
 
