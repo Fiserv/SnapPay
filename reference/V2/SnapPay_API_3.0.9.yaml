@@ -32,7 +32,7 @@ components:
         saveatcustomer: 'Y'
         displaycardssavedatcustomer: 'Y'
         transactiontype: S
-        paymentmethod: CC
+        paymentmode: CC
         language: en-US
         reference: ecom
         type: C
@@ -2993,7 +2993,6 @@ components:
         companycode: '00200'
         currencycode: USD
         transactionType: T
-        paymentmethod: CC
         paymentmode: CC
         templateid: '102'
         language: en-US
@@ -3014,7 +3013,6 @@ components:
         companycode: '00200'
         currencycode: USD
         transactionType: T
-        paymentmethod: ACH
         paymentmode: ACH
         templateid: 102
         language: en-US
@@ -6122,7 +6120,7 @@ components:
     GetRequestIDRequest: 
       type: object
       required: [accountid, companycode, currencycode
-      ,customerid, userid, transactiontype, redirecturl,transactionamount,payments,paymentmethod]
+      ,customerid, userid, transactiontype, redirecturl,transactionamount,payments,paymentmode]
       properties:
         accountid:
           description: Pass the SnapPay account ID provided by SnapPay.
@@ -6172,7 +6170,7 @@ components:
           description: Specify the type of transaction (e.g., S for Sale, T for Single Field Tokenization).
           type: string
           example: S
-        paymentmethod:
+        paymentmode:
           description: CC - for credit card
                        ACH - for bank transfer
           type: string
