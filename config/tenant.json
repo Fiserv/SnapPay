@@ -20,14 +20,20 @@
   "getStartedFilePath": "/docs/getting-started.md",
   "apiVersions": [
       {
+        "version": "3.0.1",
+        "versionType": "major",
+        "releaseNotesPath": "/release-notes/release-notes-3.0.0.md",
+        "apiSpecFileNames": ["SnapPay_API_3.0.9"]
+      },
+      {
         "version": "3.0.0",
         "versionType": "minor",
         "releaseNotesPath": "/release-notes/release-notes-3.0.0.md",
         "apiSpecFileNames": ["SnapPay_API_3.0.9"]
       },
       {
-        "version": "3.0.1",
-        "versionType": "major",
+        "version": "V2",
+        "versionType": "minor",
         "releaseNotesPath": "/release-notes/release-notes-3.0.0.md",
         "apiSpecFileNames": ["SnapPay_API_3.0.9"]
       }
@@ -35,7 +41,7 @@
   "product": {
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Portal_Logo.png",
-    "description": "Digitally transform your payment process with certified ERP integration to improve working capital and increase efficiencies. SnapPay from Fiserv, integrates with popular ERP solutions and shopping cart solutions to serve the holistic B2B payment needs of enterprise-size businesses.",
+    "description": "Digitally transform your payment process.",
     "longDescription":"Digitally transform your payment process with certified ERP integration to improve working capital and increase efficiencies. SnapPay from Fiserv, integrates with popular ERP solutions and shopping cart solutions to serve the holistic B2B payment needs of enterprise-size businesses.",
     "apiSpecification": "/v1/apis/SnapPay",
     "layout": "/v1/layouts/SnapPay",
