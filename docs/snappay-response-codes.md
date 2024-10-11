@@ -8,7 +8,7 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00000002	|	Content of request is null or empty.	                                        |	API	|
 |	AM00000003	|	Request header is null or empty.	                                            |	API	|
 |	AM00000004	|	Account is missing in the header of request.	                                |	API	|
-|	AM00000005	|	Authorization or Signature is missing in the header of request.	              |	API	|
+|	AM00000005	|	Authorization or Signature is missing in the header </br>of request.	        |	API	|
 |	AM00000006	|	Authentication failed.	                                                      |	API	|
 |	AM00000007	|	Account is not active.	                                                      |	API	|
 |	AM00000008	|	Account does not exist.	                                                      |	API	|
@@ -18,7 +18,7 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00000012	|	Upload completed.	                                                            |	API	|
 |	AM00000013	|	Upload failed.	                                                              |	API	|
 |	AM00000014	|	Transaction history sent.	                                                    |	API	|
-|	AM00000015	|	Unable to validate the request. Please contact your administrator.	          |	API	|
+|	AM00000015	|	Unable to validate the request. Please contact your </br>administrator.	          |	API	|
 |	AM00000016	|	Request does not exist.	                                                      |	API	|
 |	AM00000017	|	Status update sent.	                                                          |	API	|
 |	AM00000018	|	Failed to send the status update.	                                            |	API	|
@@ -57,15 +57,15 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00000613	|	Invalid reference transaction ID.	                                            |	API	|
 |	AM00000614	|	No transaction found for reference transaction ID.	                          |	API	|
 |	AM00000615	|	Invalid transaction amount.	                                                  |	API	|
-|	AM00000616	|	User is deleted, inactive or not found for the account.	                      |	API	|
+|	AM00000616	|	User is deleted, inactive or not found for the </br>account.	                      |	API	|
 |	AM00000617	|	User ID is required.	                                                        |	API	|
 |	AM00000618	|	Invalid amount.	                                                              |	API	|
-|	AM00000619	|	Capture cannot be performed for a failed authorization.	                      |	API	|
+|	AM00000619	|	Capture cannot be performed for a failed </br>authorization.	                      |	API	|
 |	AM00000620	|	Authorization already captured.	                                              |	API	|
 |	AM00000621	|	Transaction not found for referencetransactionid.	                            |	API	|
 |	AM00000622	|	Cannot perform reference refund for a failed charge.	                        |	API	|
 |	AM00000623	|	Charge already refunded.	                                                    |	API	|
-|	AM00000624	|	Failed authorizations, charges or payments cannot be voided.	                |	API	|
+|	AM00000624	|	Failed authorizations, charges or payments cannot be </br>voided.	                |	API	|
 |	AM00000625	|	Transaction already voided.	|	API	|
 |	AM00000626	|	Refund amount cannot exceed charge amount.	|	API	|
 |	AM00000666	|	Payment details retrieved successfully.	|	API	|
@@ -73,43 +73,43 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00000671	|	Invalid pg transaction ID.	|	API	|
 |	AM00000672	|	Transaction not found for PG Transaction ID.	|	API	|
 |	AM00000681	|	Payment Receipt	|	API	|
-|	AM00000683	|	User id, payment method, company and currency are required.	|	API	|
+|	AM00000683	|	User id, payment method, company and currency are </br>required.	|	API	|
 |	AM00000684	|	User id not found for account.	|	API	|
 |	AM00000685	|	Payment method not supported.	|	API	|
 |	AM00000688	|	No transaction found for the given input.	|	API	|
-|	AM00000689	|	Either transactionid, orderid, reference or purchaseorder is required.	|	API	|
+|	AM00000689	|	Either transactionid, orderid, reference or purchaseorder </br>is required.	|	API	|
 |	AM00000690	|	Success	|	API	|
 |	AM00000701	|	User is not active.	|	API	|
 |	AM00000702	|	Payment Receipt	|	API	|
 |	AM00000703	|	Refund Payment Receipt	|	API	|
 |	AM00000726	|	Void amount has to be less than actual transaction.	|	API	|
 |	AM00000727	|	Invalid void amount.	|	API	|
-|	AM00000728	|	Payment method update failed at SnapPay but successful at merchant level.	|	API	|
+|	AM00000728	|	Payment method update failed at SnapPay but successful </br>at merchant level.	|	API	|
 |	AM00000729	|	Customer name update failed.	|	API	|
 |	AM00000730	|	Invalid expiration date.	|	API	|
 |	AM00000736	|	Payment method update failed at merchant.	|	API	|
 |	AM00000737	|	Type is required for payment method.	|	API	|
 |	AM00000738	|	Last 4 is required.	|	API	|
-|	AM00000740	|	Transaction requires the following fields when payment method is not found: addressline1, city, state, country, zip, customername, expirationdate, last4, type.	|	API	|
+|	AM00000740	|	Transaction requires the following fields when payment </br>method is not found: addressline1, city, state, country, zip, </br>customername, expirationdate, last4, type.	|	API	|
 |	AM00000744	|	Customer Payment Method Upload Status Notification	|	API	|
 |	AM00000745	|	expirationyear cannot be greater than &1.	|	API	|
 |	AM00000746	|	expirationyear should be 4 characters.	|	API	|
 |	AM00000747	|	Valid values Y or N or leave blank for enrollautopay.	|	API	|
 |	AM00000748	|	Valid values are 01 through 12 for expirationmonth.	|	API	|
-|	AM00000749	|	Valid types are VISA, MC, AMEX, DISCOVER, CHECKING, SAVING.	|	API	|
+|	AM00000749	|	Valid types are VISA, MC, AMEX, DISCOVER, CHECKING,  </br>SAVING.	|	API	|
 |	AM00000750	|	Invalid expirationyear.	|	API	|
 |	AM00000751	|	Invalid last4.	|	API	|
 |	AM00000752	|	Tenant is missing in the header of request.	|	API	|
 |	AM00000753	|	Invalid tenant.	|	API	|
 |	AM00000754	|	No 	|	API	|
-|	AM00000785	|	Tokenization is not applicable for configured payment gateway.	|	API	|
+|	AM00000785	|	Tokenization is not applicable for configured payment </br>gateway.	|	API	|
 |	AM00000786	|	Invalid supplier type.	|	API	|
 |	AM00000793	|	Only ACH or debit card supported.	|	API	|
 |	AM00000794	|	Supplier Payment Method Upload Status Notification	|	API	|
 |	AM00000795	|	Supplier Data Upload Status Notification	|	API	|
 |	AM00000796	|	Supplier Invoice Data Upload Status Notification	|	API	|
 |	AM00000816	|	Valid types are CHECKING & SAVING.	|	API	|
-|	AM00000842	|	Account requires an active supplier. Contact your account administrator.	|	API	|
+|	AM00000842	|	Account requires an active supplier. Contact your account </br>administrator.	|	API	|
 |	AM00000843	|	Invalid type.	|	API	|
 |	AM00000851	|	Enter a valid type of C or S.	|	API	|
 |	AM00000859	|	EffectiveFrom date is invalid.	|	API	|
@@ -118,27 +118,27 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00000862	|	No deposit information found.	|	API	|
 |	AM00000863	|	Invalid usertypename.	|	API	|
 |	AM00000864	|	Invalid usergroupname.	|	API	|
-|	AM00000865	|	Invalid usertypename. Valid usertypes are CSR/Customer/CustomerAdmin.	|	API	|
-|	AM00000866	|	Invalid usertypename. Valid usertypes are Buyer/Supplier/SupplierAdmin.	|	API	|
+|	AM00000865	|	Invalid usertypename. Valid usertypes are </br>CSR/Customer/CustomerAdmin.	|	API	|
+|	AM00000866	|	Invalid usertypename. Valid usertypes are </br>Buyer/Supplier/SupplierAdmin.	|	API	|
 |	AM00000867	|	Supplier IDs are either invalid or do not exist.	|	API	|
 |	AM00000868	|	Customer IDs are either invalid or do not exist.	|	API	|
 |	AM00000869	|	IsActive should be Y or N.	|	API	|
 |	AM00000871	|	UserGroup is required.	|	API	|
-|	AM00000872	|	User having usertype as Customer or Customer Admin must have customers to associate.	|	API	|
-|	AM00000873	|	User having usertype as Supplier or Supplier Admin must have suppliers to associate.	|	API	|
+|	AM00000872	|	User having usertype as Customer or Customer Admin </br>must have customers to associate.	|	API	|
+|	AM00000873	|	User having usertype as Supplier or Supplier Admin </br>must have suppliers to associate.	|	API	|
 |	AM00000874	|	Welcome email cannot be sent to inactive users.	|	API	|
 |	AM00000875	|	Error occurred while sending welcome email.	|	API	|
-|	AM00000876	|	Supplier association is not needed for Customer or Customer Admin or CSR type of users.	|	API	|
-|	AM00000877	|	Customer association is not needed for Supplier or Supplier Admin or Buyer type of users.	|	API	|
+|	AM00000876	|	Supplier association is not needed for Customer or </br>Customer Admin or CSR type of users.	|	API	|
+|	AM00000877	|	Customer association is not needed for Supplier or </br>Supplier Admin or Buyer type of users.	|	API	|
 |	AM00000878	|	UserGroup is not compatible with UserType.	|	API	|
 |	AM00000879	|	Valid values are Y or N for welcomeemail.	|	API	|
-|	AM00000880	|	Customer association is not needed for an user having usertype as &1.	|	API	|
-|	AM00000881	|	Supplier association is not needed for an user having usertype as &1.	|	API	|
+|	AM00000880	|	Customer association is not needed for an user having </br>usertype as &1.	|	API	|
+|	AM00000881	|	Supplier association is not needed for an user having </br>usertype as &1.	|	API	|
 |	AM00000883	|	User Data Upload Status Notification	|	API	|
 |	AM00000884	|	User Data needed for transaction.	|	API	|
 |	AM00000885	|	User is an invalid type for transaction.	|	API	|
 |	AM00000886	|	User upload failed.	|	API	|
-|	AM00000887	|	Authorization(A) only supports credit card when amount is greater than zero.	|	API	|
+|	AM00000887	|	Authorization(A) only supports credit card when amount </br>is greater than zero.	|	API	|
 |	AM00000889	|	Error occurred in &1. Please contact Customer Service.	|	API	|
 |	AM00000890	|	Customer upload failed.	|	API	|
 |	AM00000891	|	Supplier upload failed.	|	API	|
@@ -156,12 +156,12 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00000962	|	Error occured when calling the Card Connect API &1.	|	API	|
 |	AM00000963	|	Response received from Card Connect.	|	API	|
 |	AM00000964	|	Merchant is missing in the header of the request.	|	API	|
-|	AM00000965	|	Please Contact SnapPay Administrator to enable CardPointe Integrated Terminal API.	|	API	|
+|	AM00000965	|	Please Contact SnapPay Administrator to enable CardPointe </br>Integrated Terminal API.	|	API	|
 |	AM00000966	|	Merchant setup is missing.	|	API	|
 |	AM00000967	|	Device is missing in the header of the request.	|	API	|
-|	AM00000968	|	X-CardConnect-SessionKey is missing in the header of the request.	|	API	|
+|	AM00000968	|	X-CardConnect-SessionKey is missing in the header of the </br>request.	|	API	|
 |	AM00000969	|	X-CardConnect-SessionKey is missing in the response header.	|	API	|
-|	AM00000972	|	File name should be alpha-numeric and extension should be lower case alpha-numeric.	|	API	|
+|	AM00000972	|	File name should be alpha-numeric and extension should be </br>lower case alpha-numeric.	|	API	|
 |	AM00000973	|	Content limit exceeded.	|	API	|
 |	AM00000975	|	Invalid status. Status can be S, F or A.	|	API	|
 |	AM00001003	|	Lease Numbers are either invalid or do not exist.	|	API	|
@@ -194,11 +194,11 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00001271	|	Customer ID is invalid or Customer ID is missing.	|	API	|
 |	AM00001277	|	Invalid checktype.	|	API	|
 |	AM00001278	|	Invalid mode.	|	API	|
-|	AM00001279	|	Total amount should not be greater than &1. Please contact Customer Service.	|	API	|
+|	AM00001279	|	Total amount should not be greater than &1. Please contact </br>Customer Service.	|	API	|
 |	AM00001281	|	The following column is missing from the upload: &1	|	API	|
 |	AM00001287	|	Merchant ID is missing in request.	|	API	|
 |	AM00001288	|	Account ID is missing in request.	|	API	|
-|	AM00001289	|	Given date format in request is invalid. Format should be yyyymmdd.	|	API	|
+|	AM00001289	|	Given date format in request is invalid. Format should </br>be yyyymmdd.	|	API	|
 |	AM00001290	|	No updates found.	|	API	|
 |	AM00001291	|	EnableAccountUpdater is tunerd off for account &1.	|	API	|
 |	AM00001292	|	Error occurred while generating response.	|	API	|
@@ -209,7 +209,7 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00001453	|	feeformat for Convenience fee can be flat only.	|	API	|
 |	AM00001454	|	waivefee should be Y or N.	|	API	|
 |	AM00001460	|	&1 should be of &2 characters.	|	API	|
-|	AM00001461	|	Partial refund is not allowed as original transaction has fee.	|	API	|
+|	AM00001461	|	Partial refund is not allowed as original transaction </br>has fee.	|	API	|
 |	AM00001467	|	&2 valid values &1.	|	API	|
 |	AM00001468	|	Invalid 3D secure field entered – secureflag	|	API	|
 |	AM00001469	|	Transaction amount is required.	|	API	|
@@ -221,20 +221,20 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00001476	|	&1 % Service fee will be charged.	|	API	|
 |	AM00001477	|	Invalid dlstate.	|	API	|
 |	AM00001478	|	Valid identification type is T for Company Check Type.	|	API	|
-|	AM00001479	|	Valid identification types are D and S for Personal Check Type.	|	API	|
+|	AM00001479	|	Valid identification types are D and S for Personal </br>Check Type.	|	API	|
 |	AM00001480	|	dlstate is required for D identification type.	|	API	|
 |	AM00001481	|	Fee is waived.	|	API	|
 |	AM00001483	|	Invalid 3D secure field entered – secureexemption	|	API	|
 |	AM00001491	|	Transaction successful.	|	API	|
 |	AM00001495	|	Please wait...	|	API	|
 |	AM00001509	|	The payment mode &1 is not applied to this user.	|	API	|
-|	AM00001510	|	Payment method &1 is only applicable to User type Customer in SnapPay.	|	API	|
-|	AM00001511	|	Payment method &1 is not enabled for an user or usergroup.	|	API	|
-|	AM00001512	|	Payment method &1 is only applicable for Transaction type A/S.	|	API	|
+|	AM00001510	|	Payment method &1 is only applicable to User type </br>Customer in SnapPay.	|	API	|
+|	AM00001511	|	Payment method &1 is not enabled for an user or </br>usergroup.	|	API	|
+|	AM00001512	|	Payment method &1 is only applicable for Transaction </br>type A/S.	|	API	|
 |	AM00001513	|	Invalid cardtype.	|	API	|
 |	AM00001520	|	&1 is not enabled.	|	API	|
 |	AM00001522	|	Customer country must be China for AliPay payments.	|	API	|
-|	AM00001529	|	Transaction requires the following fields when payment method is not found: customername.	|	API	|
+|	AM00001529	|	Transaction requires the following fields when payment </br>method is not found: customername.	|	API	|
 |	AM00001542	|	Error occurred while processing fee.	|	API	|
 |	AM00001543	|	Fee transation failed. Main transaction is voided.	|	API	|
 |	AM00001544	|	Transaction is voided.	|	API	|
@@ -246,8 +246,8 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00001554	|	Customer Threshold Upload Status Notification	|	API	|
 |	AM00001570	|	Valid txntype is Capture, Credit or Refund.	|	API	|
 |	AM00001576	|	IVR feature not available. Please contact administrator.	|	API	|
-|	AM00001577	|	Payment method is already associated to token. Please contact administrator.	|	API	|
-|	AM00001578	|	Cannot associate payment method more than limit. Please contact administrator.	|	API	|
+|	AM00001577	|	Payment method is already associated to token. Please </br>contact administrator.	|	API	|
+|	AM00001578	|	Cannot associate payment method more than limit. Please </br>contact administrator.	|	API	|
 |	AM00001584	|	Token is missing in request.	|	API	|
 |	AM00001585	|	EnableBINAPI feature is turned off for account.	|	API	|
 |	AM00001586	|	iscapture valid values Y or N	|	API	|
@@ -261,10 +261,10 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00001640	|	ACH Rejects not found.	|	API	|
 |	AM00001654	|	No payment methods found.	|	API	|
 |	AM00001656	|	Payment methods found.	|	API	|
-|	AM00001657	|	enrolledforautopay should be either Y or N or leave blank then it will defaults to Y.	|	API	|
+|	AM00001657	|	enrolledforautopay should be either Y or N or leave blank </br>then it will defaults to Y.	|	API	|
 |	AM00001658	|	Request failed. &1	|	API	|
 |	AM00001664	|	customerid is required.	|	API	|
-|	AM00001669	|	Paynow url is not configured. Please contact Customer Service.	|	API	|
+|	AM00001669	|	Paynow url is not configured. Please contact Customer </br>Service.	|	API	|
 |	AM00001675	|	EnableSettlementStatus is tunerd off for account &1.	|	API	|
 |	AM00001685	|	customerid is required.	|	API	|
 |	AM00001686	|	ordernumber is required.	|	API	|
@@ -302,9 +302,9 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00001781	|	Lastname is required.	|	API	|
 |	AM00001782	|	Usertypename is required.	|	API	|
 |	AM00001783	|	Usergroupname is required.	|	API	|
-|	AM00001784	|	Invoice having different lease number at line level is not allowed.	|	API	|
-|	AM00001789	|	usertypename valid values are accountadmin,buyer,csr,customer,customeradmin,supplier,supplieradmin.	|	API	|
-|	AM00001790	|	usergroupname valid values are Customer,CSR,Supplier,Buyer,AccountAdmin.	|	API	|
+|	AM00001784	|	Invoice having different lease number at line level </br>is not allowed.	|	API	|
+|	AM00001789	|	usertypename valid values are accountadmin,buyer,csr, </br>customer,customeradmin,supplier,supplieradmin.	|	API	|
+|	AM00001790	|	usergroupname valid values are Customer,CSR,Supplier, </br>Buyer,AccountAdmin.	|	API	|
 |	AM00001791	|	isactive valid values are Y or N.	|	API	|
 |	AM00001792	|	forcepasswordreset valid values are Y or N.	|	API	|
 |	AM00001793	|	forcetermsandconditions valid values are Y or N.	|	API	|
@@ -315,18 +315,18 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00001798	|	Work with shipto is not enabled.	|	API	|
 |	AM00001799	|	associationtype is required.	|	API	|
 |	AM00001800	|	deleteuser valid values are Y or N.	|	API	|
-|	AM00001804	|	User can only be associated to one customer association type.	|	API	|
+|	AM00001804	|	User can only be associated to one customer association </br>type.	|	API	|
 |	AM00001805	|	Association type &1 is not valid for customer &2.	|	API	|
-|	AM00001837	|	Pricing technology feature not available. Please contact administrator.	|	API	|
+|	AM00001837	|	Pricing technology feature not available. Please contact </br>administrator.	|	API	|
 |	AM00001843	|	Invalid paymentmode. Payment Mode can be CC, ACH or All.	|	API	|
-|	AM00001844	|	Invalid requesttype. Request Type can be SendLink, Order or Invoice.	|	API	|
-|	AM00001845	|	Invalid transactiontype. Transaction Type can be A, S, D, V, C, R, P, SV, AV or CV.	|	API	|
+|	AM00001844	|	Invalid requesttype. Request Type can be SendLink, Order </br>or Invoice.	|	API	|
+|	AM00001845	|	Invalid transactiontype. Transaction Type can be A, S, D, </br>V, C, R, P, SV, AV or CV.	|	API	|
 |	AM00001849	|	Invalid transactiontype. Transaction Type can be &1.	|	API	|
 |	AM00001877	|	customername is required.	|	API	|
 |	AM00001878	|	addressline1 is required.	|	API	|
 |	AM00001879	|	country is required.	|	API	|
 |	AM00001880	|	customerid is required.	|	API	|
-|	AM00001884	|	Wallet maintenance feature is not available. Please contact the administrator.	|	API	|
+|	AM00001884	|	Wallet maintenance feature is not available. Please contact </br>the administrator.	|	API	|
 |	AM00001886	|	savepaymentmethod and/or saveatcustomer must be ‘Y’	|	API	|
 |	AM00001894	|	Customer User Payment Method Upload Status Notification	|	API	|
 |	AM00001947	|	Fee configuration not matching.	|	API	|
@@ -334,12 +334,12 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00001952	|	408 - Timeout	|	API	|
 |	AM00001953	|	408	|	API	|
 |	AM00001954	|	Timeout	|	API	|
-|	AM00001960	|	Please verify multiple payment payload, all merchants should be configured to use UPI	|	API	|
-|	AM00001961	|	multiple payment mode is only applicatble fo UPI, please verify merchant configured to use UPI	|	API	|
+|	AM00001960	|	Please verify multiple payment payload, all merchants should </br>be configured to use UPI	|	API	|
+|	AM00001961	|	multiple payment mode is only applicatble fo UPI, please </br>verify merchant configured to use UPI	|	API	|
 |	AM00001964	|	Error occurred while reading json file.	|	API	|
 |	AM00001965	|	Json file not found to process the request.	|	API	|
-|	AM00001966	|	Error occurred while checking for Json in Azure storage location.	|	API	|
-|	AM00050001	|	This is for adding disclaimar if any for UPI screen of a SnapPay Account.	|	HPP	|
+|	AM00001966	|	Error occurred while checking for Json in Azure storage </br>location.	|	API	|
+|	AM00050001	|	This is for adding disclaimar if any for UPI screen of a  </br>SnapPay Account.	|	HPP	|
 |	AM00050002	|	Captcha validation failed.	|	HPP	|
 |	AM00050003	|	Card Type not supported.	|	HPP	|
 |	AM00050004	|	Invalid card number.	|	HPP	|
@@ -356,7 +356,7 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00050016	|	Stay On Page	|	HPP	|
 |	AM00050017	|	Cancel	|	HPP	|
 |	AM00050018	|	Invalid email.	|	HPP	|
-|	AM00050019	|	Unable to complete submission of the transaction. Do not perform transaction again. Contact customer service.	|	HPP	|
+|	AM00050019	|	Unable to complete submission of the transaction.  </br>Do not perform transaction again.  </br>Contact customer                        service.	|	HPP	|
 |	AM00050020	|	Redirecting. Contact customer service.	|	HPP	|
 |	AM00050021	|	Invalid zip code.	|	HPP	|
 
