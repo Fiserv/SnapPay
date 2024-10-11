@@ -41,6 +41,9 @@
   - title: APIs without User Interaction
     link: docs/apis-without-user-interaction.md
 - sections:
+  - title: SnapPay Response Codes
+    link: docs/snappay-response-codes.md
+- sections:
   - title: Appendix A - Test Data
     link: docs/appendix-a-test-data.md
 
