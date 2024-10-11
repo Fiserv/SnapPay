@@ -1,71 +1,71 @@
 # SnapPay Response Codes
 
-The following general instructions apply to every API.
+This section outlines the response codes you may encounter when interacting with the SnapPay API. The API will return a message description for each response code, providing details on the outcome of an API request.
 
-| Name                                 | Value                                                | Purpose
-|--------------------------------------|------------------------------------------------------|--------
-|	AM00000001	|	Request is null or empty.	|	API	|
-|	AM00000002	|	Content of request is null or empty.	|	API	|
-|	AM00000003	|	Request header is null or empty.	|	API	|
-|	AM00000004	|	Account is missing in the header of request.	|	API	|
-|	AM00000005	|	Authorization or Signature is missing in the header of request.	|	API	|
-|	AM00000006	|	Authentication failed.	|	API	|
-|	AM00000007	|	Account is not active.	|	API	|
-|	AM00000008	|	Account does not exist.	|	API	|
-|	AM00000009	|	Request received.	|	API	|
-|	AM00000010	|	Request in progress.	|	API	|
-|	AM00000011	|	Unable to parse the request.	|	API	|
-|	AM00000012	|	Upload completed.	|	API	|
-|	AM00000013	|	Upload failed.	|	API	|
-|	AM00000014	|	Transaction history sent.	|	API	|
-|	AM00000015	|	Unable to validate the request. Please contact your administrator.	|	API	|
-|	AM00000016	|	Request does not exist.	|	API	|
-|	AM00000017	|	Status update sent.	|	API	|
-|	AM00000018	|	Failed to send the status update.	|	API	|
-|	AM00000019	|	&1 cannot be null or empty.	|	API	|
-|	AM00000020	|	&1 cannot be more than &2 characters.	|	API	|
-|	AM00000021	|	Invalid account.	|	API	|
-|	AM00000022	|	Request from invalid IP address.	|	API	|
-|	AM00000023	|	Valid date format YYYY-MM-DD.	|	API	|
-|	AM00000024	|	End date must be greater than start date.	|	API	|
-|	AM00000032	|	Invalid customer type.	|	API	|
-|	AM00000033	|	Active valid values Y or N.	|	API	|
-|	AM00000034	|	Only letters are valid in &1.	|	API	|
-|	AM00000035	|	Allow payment valid values Y or N.	|	API	|
-|	AM00000036	|	Invalid account ID in request.	|	API	|
-|	AM00000047	|	Invoice Data Upload Status Notification	|	API	|
-|	AM00000048	|	Invoice Order Data Upload Status Notification	|	API	|
-|	AM00000049	|	Customer Data Upload Status Notification	|	API	|
-|	AM00000061	|	Billing or shipping valid values B or S.	|	API	|
-|	AM00000547	|	Information stored successfully.	|	API	|
-|	AM00000548	|	Transaction type not supported.	|	API	|
-|	AM00000549	|	Payment method not supported.	|	API	|
-|	AM00000550	|	Company and currency setup not found.	|	API	|
-|	AM00000581	|	Payment method not supported for transaction type.	|	API	|
-|	AM00000588	|	Payment methods retrieved successfully.	|	API	|
-|	AM00000589	|	Payment methods not found.	|	API	|
-|	AM00000590	|	Active payment methods not found.	|	API	|
-|	AM00000602	|	Customer Id not found for account.	|	API	|
-|	AM00000603	|	Company and Currency are required.	|	API	|
-|	AM00000604	|	Token and amount are required.	|	API	|
-|	AM00000605	|	No cards found for transaction.	|	API	|
-|	AM00000606	|	Transaction successful.	|	API	|
-|	AM00000607	|	Transaction partially successful.	|	API	|
-|	AM00000608	|	Transaction failed.	|	API	|
-|	AM00000609	|	Inactive, deleted or invalid token.	|	API	|
-|	AM00000610	|	Merchant information not found.	|	API	|
-|	AM00000613	|	Invalid reference transaction ID.	|	API	|
-|	AM00000614	|	No transaction found for reference transaction ID.	|	API	|
-|	AM00000615	|	Invalid transaction amount.	|	API	|
-|	AM00000616	|	User is deleted, inactive or not found for the account.	|	API	|
-|	AM00000617	|	User ID is required.	|	API	|
-|	AM00000618	|	Invalid amount.	|	API	|
-|	AM00000619	|	Capture cannot be performed for a failed authorization.	|	API	|
-|	AM00000620	|	Authorization already captured.	|	API	|
-|	AM00000621	|	Transaction not found for referencetransactionid.	|	API	|
-|	AM00000622	|	Cannot perform reference refund for a failed charge.	|	API	|
-|	AM00000623	|	Charge already refunded.	|	API	|
-|	AM00000624	|	Failed authorizations, charges or payments cannot be voided.	|	API	|
+| Name        | Value                                                                         | Purpose |
+|-------------|-------------------------------------------------------------------------------|---------|
+|	AM00000001	|	Request is null or empty.	                                                    |	API	|
+|	AM00000002	|	Content of request is null or empty.	                                        |	API	|
+|	AM00000003	|	Request header is null or empty.	                                            |	API	|
+|	AM00000004	|	Account is missing in the header of request.	                                |	API	|
+|	AM00000005	|	Authorization or Signature is missing in the header of request.	              |	API	|
+|	AM00000006	|	Authentication failed.	                                                      |	API	|
+|	AM00000007	|	Account is not active.	                                                      |	API	|
+|	AM00000008	|	Account does not exist.	                                                      |	API	|
+|	AM00000009	|	Request received.	                                                            |	API	|
+|	AM00000010	|	Request in progress.	                                                        |	API	|
+|	AM00000011	|	Unable to parse the request.	                                                |	API	|
+|	AM00000012	|	Upload completed.	                                                            |	API	|
+|	AM00000013	|	Upload failed.	                                                              |	API	|
+|	AM00000014	|	Transaction history sent.	                                                    |	API	|
+|	AM00000015	|	Unable to validate the request. Please contact your administrator.	          |	API	|
+|	AM00000016	|	Request does not exist.	                                                      |	API	|
+|	AM00000017	|	Status update sent.	                                                          |	API	|
+|	AM00000018	|	Failed to send the status update.	                                            |	API	|
+|	AM00000019	|	&1 cannot be null or empty.	                                                  |	API	|
+|	AM00000020	|	&1 cannot be more than &2 characters.	                                        |	API	|
+|	AM00000021	|	Invalid account.	                                                            |	API	|
+|	AM00000022	|	Request from invalid IP address.	                                            |	API	|
+|	AM00000023	|	Valid date format YYYY-MM-DD.	                                                |	API	|
+|	AM00000024	|	End date must be greater than start date.	                                    |	API	|
+|	AM00000032	|	Invalid customer type.	                                                      |	API	|
+|	AM00000033	|	Active valid values Y or N.	                                                  |	API	|
+|	AM00000034	|	Only letters are valid in &1.	                                                |	API	|
+|	AM00000035	|	Allow payment valid values Y or N.	                                          |	API	|
+|	AM00000036	|	Invalid account ID in request.	                                              |	API	|
+|	AM00000047	|	Invoice Data Upload Status Notification	                                      |	API	|
+|	AM00000048	|	Invoice Order Data Upload Status Notification	                                |	API	|
+|	AM00000049	|	Customer Data Upload Status Notification	                                    |	API	|
+|	AM00000061	|	Billing or shipping valid values B or S.	                                    |	API	|
+|	AM00000547	|	Information stored successfully.	                                            |	API	|
+|	AM00000548	|	Transaction type not supported.	                                              |	API	|
+|	AM00000549	|	Payment method not supported.	                                                |	API	|
+|	AM00000550	|	Company and currency setup not found.	                                        |	API	|
+|	AM00000581	|	Payment method not supported for transaction type.	                          |	API	|
+|	AM00000588	|	Payment methods retrieved successfully.	                                      |	API	|
+|	AM00000589	|	Payment methods not found.	                                                  |	API	|
+|	AM00000590	|	Active payment methods not found.	                                            |	API	|
+|	AM00000602	|	Customer Id not found for account.	                                          |	API	|
+|	AM00000603	|	Company and Currency are required.	                                          |	API	|
+|	AM00000604	|	Token and amount are required.	                                              |	API	|
+|	AM00000605	|	No cards found for transaction.	                                              |	API	|
+|	AM00000606	|	Transaction successful.	                                                      |	API	|
+|	AM00000607	|	Transaction partially successful.	                                            |	API	|
+|	AM00000608	|	Transaction failed.	                                                          |	API	|
+|	AM00000609	|	Inactive, deleted or invalid token.	                                          |	API	|
+|	AM00000610	|	Merchant information not found.	                                              |	API	|
+|	AM00000613	|	Invalid reference transaction ID.	                                            |	API	|
+|	AM00000614	|	No transaction found for reference transaction ID.	                          |	API	|
+|	AM00000615	|	Invalid transaction amount.	                                                  |	API	|
+|	AM00000616	|	User is deleted, inactive or not found for the account.	                      |	API	|
+|	AM00000617	|	User ID is required.	                                                        |	API	|
+|	AM00000618	|	Invalid amount.	                                                              |	API	|
+|	AM00000619	|	Capture cannot be performed for a failed authorization.	                      |	API	|
+|	AM00000620	|	Authorization already captured.	                                              |	API	|
+|	AM00000621	|	Transaction not found for referencetransactionid.	                            |	API	|
+|	AM00000622	|	Cannot perform reference refund for a failed charge.	                        |	API	|
+|	AM00000623	|	Charge already refunded.	                                                    |	API	|
+|	AM00000624	|	Failed authorizations, charges or payments cannot be voided.	                |	API	|
 |	AM00000625	|	Transaction already voided.	|	API	|
 |	AM00000626	|	Refund amount cannot exceed charge amount.	|	API	|
 |	AM00000666	|	Payment details retrieved successfully.	|	API	|
