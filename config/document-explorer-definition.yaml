@@ -41,6 +41,9 @@
   - title: APIs without User Interaction
     link: docs/apis-without-user-interaction.md
 - sections:
+  - title: Card Account Updater
+    link: docs/card-account-updater.md
+- sections:
   - title: SnapPay Response Codes
     link: docs/snappay-response-codes.md
 - sections:
