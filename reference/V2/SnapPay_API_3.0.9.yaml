@@ -314,6 +314,7 @@ components:
               merchantid: ''
               localreferenceid: XXXXXXXXX
               type: XXXXXXXX
+              paymenttype: XXXXXXXX
               description: 'Description'
               unitprice: 16
               quantity: 1
@@ -506,6 +507,7 @@ components:
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
+              paymenttype: XXXXXXXX
               description: Description
               unitPrice: 1
               quantity: 1
@@ -814,6 +816,7 @@ components:
               merchantid: ''
               localreferenceid: XXXXXXXXX
               type: XXXXXXXX
+              paymenttype: XXXXXXXX
               description: 'Description'
               unitprice: 16
               quantity: 1
@@ -892,6 +895,7 @@ components:
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
+              paymenttype: XXXXXXXX
               description: Description
               unitPrice: 1
               quantity: 1
@@ -1316,6 +1320,7 @@ components:
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
+              paymenttype: XXXXXXXX
               description: Description
               unitprice: 16
               quantity: 1
@@ -1505,6 +1510,7 @@ components:
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
+              paymenttype: XXXXXXXX
               description: Description
               unitPrice: 1
               quantity: 1
@@ -1810,6 +1816,7 @@ components:
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
+              paymenttype: XXXXXXXX
               description: Description
               unitprice: 16
               quantity: 1
@@ -1888,6 +1895,7 @@ components:
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
+              paymenttype: XXXXXXXX
               description: Description
               unitPrice: 1
               quantity: 1
@@ -2207,6 +2215,7 @@ components:
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
+              paymenttype: XXXXXXXX
               description: Description
               unitprice: 16
               quantity: 1
@@ -2396,6 +2405,7 @@ components:
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
+              paymenttype: XXXXXXXX
               description: Description
               unitPrice: 1
               quantity: 1
@@ -2710,6 +2720,7 @@ components:
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
+              paymenttype: XXXXXXXX
               description: Description
               unitprice: 16
               quantity: 1
@@ -2788,6 +2799,7 @@ components:
               merchantid: ''
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
+              paymenttype: XXXXXXXX
               description: Description
               unitPrice: 1
               quantity: 1
@@ -3093,14 +3105,8 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
-              pgtransaction: ""
-              transactiondate: 
               paymenttype: "" 
-              transactionamount: "" 
               cardtype: "" 
-              authorizationnumber: "" 
-              last4: "" 
               merchantid: "XXXXXXXXX"
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -3346,14 +3352,8 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
-              pgtransaction: ""
-              transactiondate: 
               paymenttype: "" 
-              transactionamount: "" 
               cardtype: "" 
-              authorizationnumber: "" 
-              last4: "" 
               merchantid: "XXXXX"
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -3607,14 +3607,8 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
-              pgtransaction: ""
-              transactiondate: 
               paymenttype: "" 
-              transactionamount: "" 
               cardtype: "" 
-              authorizationnumber: "" 
-              last4: "" 
               merchantid: "XXXXXXXXX"
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -3749,14 +3743,8 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
-              pgtransaction: ""
-              transactiondate: 
               paymenttype: "" 
-              transactionamount: "" 
               cardtype: "" 
-              authorizationnumber: "" 
-              last4: "" 
               merchantid: "XXXXX"
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -4021,14 +4009,8 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
-              pgtransaction: "" 
-              transactiondate: ""
               paymenttype: ""
-              transactionamount: ""
               cardtype: ""
-              authorizationnumber: "1234"
-              last4: "1111"
               merchantid: "XXXXXXXXXXXXX"
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -4282,14 +4264,8 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
-              pgtransaction: "" 
-              transactiondate: ""
               paymenttype: ""
-              transactionamount: ""
               cardtype: ""
-              authorizationnumber: "1234"
-              last4: "1111"
               merchantid: "XXXXXXXXXXXXX"
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -4497,14 +4473,8 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
-              pgtransaction: ""
-              transactiondate: 
               paymenttype: "" 
-              transactionamount: "" 
               cardtype: "" 
-              authorizationnumber: "" 
-              last4: "" 
               merchantid: "XXXXXXXXX"
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -4749,14 +4719,8 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
-              pgtransaction: ""
-              transactiondate: 
               paymenttype: "" 
-              transactionamount: "" 
               cardtype: "" 
-              authorizationnumber: "" 
-              last4: "" 
               merchantid: "XXXXX"
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -5009,14 +4973,8 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
-              pgtransaction: ""
-              transactiondate: 
               paymenttype: "" 
-              transactionamount: "" 
               cardtype: "" 
-              authorizationnumber: "" 
-              last4: "" 
               merchantid: "XXXXXXXXX"
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -5150,14 +5108,8 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
-              pgtransaction: ""
-              transactiondate: 
               paymenttype: "" 
-              transactionamount: "" 
               cardtype: "" 
-              authorizationnumber: "" 
-              last4: "" 
               merchantid: "XXXXX"
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -5419,14 +5371,8 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
-              pgtransaction: "" 
-              transactiondate: ""
               paymenttype: ""
-              transactionamount: ""
               cardtype: ""
-              authorizationnumber: "1234"
-              last4: "1111"
               merchantid: "XXXXXXXXXXXXX"
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -5679,14 +5625,8 @@ components:
               - udf8: Value 9
               - udf9: Value 10
             clxstream:
-              uuid: "2e010438-aba3-ed11-bad1-0022488db98a"
-              pgtransaction: "" 
-              transactiondate: ""
               paymenttype: ""
-              transactionamount: ""
               cardtype: ""
-              authorizationnumber: "1234"
-              last4: "1111"
               merchantid: "XXXXXXXXXXXXX"
               localreferenceid: XXXXXXXXXXX
               type: XXXXXXX
@@ -5926,7 +5866,519 @@ components:
                   - key: servicecode
                     value: XXXXXXXXXXXX
         
-    
+
+    RefundSingleTransaction-CLX:
+      value:
+        accountid: 1000000001
+        transactions:
+          - currencycode: USD
+            companycode: '100'
+            customerid: '4242'
+            userid: user
+            referencetransactionid: 1234567890
+            orderid: '123456'
+            purchaseorder: string
+            reference: string
+            invoiceid: string
+            sendemailreceipts: 'N'
+            clxstream:
+              paymenttype: ""
+              cardtype: ""
+              merchantid: "XXXXXXXXXXXXX"
+              localreferenceid: XXXXXXXXXXX
+              type: XXXXXXX
+              description: Description
+              unitprice: 16
+              quantity: 1
+              sku: XXXXXXXX
+              company: Company
+              fee: '1.00'
+              department: 'Department'
+              vendorid: ''
+              customerid: ''
+              agency: ''
+              batchid: ''
+              reportlines: '3'
+              reportlinedetails:
+                - id: XXXX1
+                  attributes:
+                    - name: XXXX1AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: XXXX1AO
+                      value: 'XXXX'
+                      type: String
+                    - name: XXXX1OTHER
+                      value: 'XXXX   XXXXXXXX  XX  '
+                      type: String
+                    - name: XXXX1PCA
+                      value: 'XXXXX'
+                      type: String
+                    - name: XXXX1TCODE
+                      value: 'XXX'
+                      type: String
+                    - name: XXXX1INDEX
+                      value: ''
+                      type: String
+                    - name: XXXX1FUND
+                      value: ''
+                      type: String
+                    - name: XXXX1APPDFUND
+                      value: ''
+                      type: String
+                    - name: XXXX1COBJ
+                      value: ''
+                      type: String
+                    - name: XXXX1AOBJ
+                      value: ''
+                      type: String
+                    - name: XXXX1DEPAGENCY
+                      value: ''
+                      type: String
+                - id: XXXX2
+                  attributes:
+                    - name: XXXX2AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: XXXX2AO
+                      value: 'XXXX'
+                      type: String
+                    - name: XXXX2FUND
+                      value: 'XXXX'
+                      type: String
+                    - name: XXXX2OTHER
+                      value: 'XXXX   XXXXXXXX  XX  '
+                      type: String
+                    - name: XXXX2PCA
+                      value: 'XXXXX'
+                      type: String
+                    - name: XXXX2TCODE
+                      value: 'XXX'
+                      type: String
+                    - name: XXXX2INDEX
+                      value: ''
+                      type: String
+                    - name: XXXX2FUND
+                      value: ''
+                      type: String
+                    - name: XXXX2APPDFUND
+                      value: ''
+                      type: String
+                    - name: XXXX2COBJ
+                      value: ''
+                      type: String
+                    - name: XXXX2AOBJ
+                      value: ''
+                      type: String
+                    - name: XXXX2DEPAGENCY
+                      value: ''
+                      type: String
+                - id: XXXX3
+                  attributes:
+                    - name: XXXX3AMOUNT
+                      value: '15.0'
+                      type: DOLLAR
+                    - name: XXXX3AO
+                      value: 'XXXX'
+                      type: String
+                    - name: XXXX3FUND
+                      value: 'XXXX'
+                      type: String
+                    - name: XXXX3OTHER
+                      value: 'XXXX   XXXXXXXX  XX  '
+                      type: String
+                    - name: XXXX3PCA
+                      value: 'XXXX'
+                      type: String
+                    - name: XXXX3TCODE
+                      value: 'XXX'
+                      type: String
+                    - name: XXXX3INDEX
+                      value: ''
+                      type: String
+                    - name: XXXX3FUND
+                      value: ''
+                      type: String
+                    - name: XXXX3APPDFUND
+                      value: ''
+                      type: String
+                    - name: XXXX3COBJ
+                      value: ''
+                      type: String
+                    - name: XXXX3AOBJ
+                      value: ''
+                      type: String
+                    - name: XXXX3DEPAGENCY
+                      value: ''
+                      type: String
+              additionalinfo:
+                - key: servicecode
+                  value: XXXXXXXXXXXX
+                - key: username
+                  value: XXXXXXXXXXXX
+                - key: sourceapplication
+                  value: XXXX
+                - key: companyname
+                  value: XXXX
+                - key: sourceenvironment
+                  value: XXXXXXXXXXXX
+                - key: hostname
+                  value: XXXXXXXXXXXX
+                - key: shipfirstname
+                  value: XXXXXXXXXXXX
+                - key: shiplastname
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline1
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline2
+                  value: XXXXXXXXXXXX
+                - key: shipcity
+                  value: XXXXXXXXXXXX
+                - key: shipstate
+                  value: XXXXXXXXXXXX
+                - key: shipcountry
+                  value: XXXXXXXXXXXX
+                - key: shipphone
+                  value: XXXXXXXXXXXX
+                - key: shipemail
+                  value: XXXXXXXXXXXX
+                - key: billfirstname
+                  value: XXXXXXXXXXXX
+                - key: billlastname
+                  value: XXXXXXXXXXXX
+                - key: billaddressline1
+                  value: XXXXXXXXXXXX
+                - key: billaddressline2
+                  value: XXXXXXXXXXXX
+                - key: billcity
+                  value: XXXXXXXXXXXX
+                - key: billstate
+                  value: XXXXXXXXXXXX
+                - key: billcountry
+                  value: XXXXXXXXXXXX
+                - key: billphone
+                  value: XXXXXXXXXXXX
+                - key: billemail
+                  value: XXXXXXXXXXXX
+                - key: custom00
+                  value: XXXXXXXXXXXX
+                - key: custom01
+                  value: XXXXXXXXXXXX
+                - key: custom02
+                  value: XXXXXXXXXXXX
+                - key: custom03
+                  value: XXXXXXXXXXXX
+                - key: custom04
+                  value: XXXXXXXXXXXX
+                - key: custom29
+                  value: XXXXXXXXXXXX
+    RefundSingleTransaction-Partial-CLX:
+      value:
+        accountid: 1000000001
+        transactions:
+          - currencycode: USD
+            companycode: '100'
+            customerid: '4242'
+            userid: user
+            referencetransactionid: 1234567890
+            orderid: '123456'
+            purchaseorder: string
+            reference: string
+            invoiceid: string
+            sendemailreceipts: 'N'
+            clxstream:
+              paymenttype: ""
+              cardtype: ""
+              merchantid: "XXXXXXXXXXXXX"
+              localreferenceid: XXXXXXXXXXX
+              type: XXXXXXX
+              description: Description
+              unitprice: 16
+              quantity: 1
+              sku: XXXXXXXX
+              company: Company
+              fee: '1.00'
+              department: 'Department'
+              vendorid: ''
+              customerid: ''
+              agency: ''
+              batchid: ''
+              reportlines: '0'
+              reportlinedetails: null
+              additionalinfo:
+                - key: servicecode
+                  value: XXXXXXXXXXXX
+                - key: username
+                  value: XXXXXXXXXXXX
+                - key: sourceapplication
+                  value: XXXX
+                - key: companyname
+                  value: XXXX
+                - key: sourceenvironment
+                  value: XXXXXXXXXXXX
+                - key: hostname
+                  value: XXXXXXXXXXXX
+                - key: shipfirstname
+                  value: XXXXXXXXXXXX
+                - key: shiplastname
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline1
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline2
+                  value: XXXXXXXXXXXX
+                - key: shipcity
+                  value: XXXXXXXXXXXX
+                - key: shipstate
+                  value: XXXXXXXXXXXX
+                - key: shipcountry
+                  value: XXXXXXXXXXXX
+                - key: shipphone
+                  value: XXXXXXXXXXXX
+                - key: shipemail
+                  value: XXXXXXXXXXXX
+                - key: billfirstname
+                  value: XXXXXXXXXXXX
+                - key: billlastname
+                  value: XXXXXXXXXXXX
+                - key: billaddressline1
+                  value: XXXXXXXXXXXX
+                - key: billaddressline2
+                  value: XXXXXXXXXXXX
+                - key: billcity
+                  value: XXXXXXXXXXXX
+                - key: billstate
+                  value: XXXXXXXXXXXX
+                - key: billcountry
+                  value: XXXXXXXXXXXX
+                - key: billphone
+                  value: XXXXXXXXXXXX
+                - key: billemail
+                  value: XXXXXXXXXXXX
+                - key: custom00
+                  value: XXXXXXXXXXXX
+                - key: custom01
+                  value: XXXXXXXXXXXX
+                - key: custom02
+                  value: XXXXXXXXXXXX
+                - key: custom03
+                  value: XXXXXXXXXXXX
+                - key: custom04
+                  value: XXXXXXXXXXXX
+                - key: custom29
+                  value: XXXXXXXXXXXX              
+    RefundFiservinternal-CLX:
+      value:
+        accountid: 1000000001
+        transactions:
+          - uuid: string
+            currencycode: USD
+            companycode: '100'
+            customerid: '4242'
+            userid: user
+            referencetransactionid: 1234567890
+            orderid: '123456'
+            purchaseorder: string
+            reference: string
+            invoiceid: string
+            sendemailreceipts: 'N'
+            clxstream:
+              uuid: string
+              pgtransactionid: ''
+              transactiondate: ''
+              transactionamount: 10
+              authorizationnumber: ''
+              last4: ''
+              paymenttype: ""
+              cardtype: ""
+              merchantid: "XXXXXXXXXXXXX"
+              localreferenceid: XXXXXXXXXXX
+              type: XXXXXXX
+              description: Description
+              unitprice: 16
+              quantity: 1
+              sku: XXXXXXXX
+              company: Company
+              fee: '1.00'
+              department: 'Department'
+              vendorid: ''
+              customerid: ''
+              agency: ''
+              batchid: ''
+              reportlines: '3'
+              reportlinedetails:
+                - id: XXXX1
+                  attributes:
+                    - name: XXXX1AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: XXXX1AO
+                      value: 'XXXX'
+                      type: String
+                    - name: XXXX1OTHER
+                      value: 'XXXX   XXXXXXXX  XX  '
+                      type: String
+                    - name: XXXX1PCA
+                      value: 'XXXXX'
+                      type: String
+                    - name: XXXX1TCODE
+                      value: 'XXX'
+                      type: String
+                    - name: XXXX1INDEX
+                      value: ''
+                      type: String
+                    - name: XXXX1FUND
+                      value: ''
+                      type: String
+                    - name: XXXX1APPDFUND
+                      value: ''
+                      type: String
+                    - name: XXXX1COBJ
+                      value: ''
+                      type: String
+                    - name: XXXX1AOBJ
+                      value: ''
+                      type: String
+                    - name: XXXX1DEPAGENCY
+                      value: ''
+                      type: String
+                - id: XXXX2
+                  attributes:
+                    - name: XXXX2AMOUNT
+                      value: '1.00'
+                      type: DOLLAR
+                    - name: XXXX2AO
+                      value: 'XXXX'
+                      type: String
+                    - name: XXXX2FUND
+                      value: 'XXXX'
+                      type: String
+                    - name: XXXX2OTHER
+                      value: 'XXXX   XXXXXXXX  XX  '
+                      type: String
+                    - name: XXXX2PCA
+                      value: 'XXXXX'
+                      type: String
+                    - name: XXXX2TCODE
+                      value: 'XXX'
+                      type: String
+                    - name: XXXX2INDEX
+                      value: ''
+                      type: String
+                    - name: XXXX2FUND
+                      value: ''
+                      type: String
+                    - name: XXXX2APPDFUND
+                      value: ''
+                      type: String
+                    - name: XXXX2COBJ
+                      value: ''
+                      type: String
+                    - name: XXXX2AOBJ
+                      value: ''
+                      type: String
+                    - name: XXXX2DEPAGENCY
+                      value: ''
+                      type: String
+                - id: XXXX3
+                  attributes:
+                    - name: XXXX3AMOUNT
+                      value: '15.0'
+                      type: DOLLAR
+                    - name: XXXX3AO
+                      value: 'XXXX'
+                      type: String
+                    - name: XXXX3FUND
+                      value: 'XXXX'
+                      type: String
+                    - name: XXXX3OTHER
+                      value: 'XXXX   XXXXXXXX  XX  '
+                      type: String
+                    - name: XXXX3PCA
+                      value: 'XXXX'
+                      type: String
+                    - name: XXXX3TCODE
+                      value: 'XXX'
+                      type: String
+                    - name: XXXX3INDEX
+                      value: ''
+                      type: String
+                    - name: XXXX3FUND
+                      value: ''
+                      type: String
+                    - name: XXXX3APPDFUND
+                      value: ''
+                      type: String
+                    - name: XXXX3COBJ
+                      value: ''
+                      type: String
+                    - name: XXXX3AOBJ
+                      value: ''
+                      type: String
+                    - name: XXXX3DEPAGENCY
+                      value: ''
+                      type: String
+              additionalinfo:
+                - key: servicecode
+                  value: XXXXXXXXXXXX
+                - key: username
+                  value: XXXXXXXXXXXX
+                - key: sourceapplication
+                  value: XXXX
+                - key: companyname
+                  value: XXXX
+                - key: sourceenvironment
+                  value: XXXXXXXXXXXX
+                - key: hostname
+                  value: XXXXXXXXXXXX
+                - key: shipfirstname
+                  value: XXXXXXXXXXXX
+                - key: shiplastname
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline1
+                  value: XXXXXXXXXXXX
+                - key: shipaddressline2
+                  value: XXXXXXXXXXXX
+                - key: shipcity
+                  value: XXXXXXXXXXXX
+                - key: shipstate
+                  value: XXXXXXXXXXXX
+                - key: shipcountry
+                  value: XXXXXXXXXXXX
+                - key: shipphone
+                  value: XXXXXXXXXXXX
+                - key: shipemail
+                  value: XXXXXXXXXXXX
+                - key: billfirstname
+                  value: XXXXXXXXXXXX
+                - key: billlastname
+                  value: XXXXXXXXXXXX
+                - key: billaddressline1
+                  value: XXXXXXXXXXXX
+                - key: billaddressline2
+                  value: XXXXXXXXXXXX
+                - key: billcity
+                  value: XXXXXXXXXXXX
+                - key: billstate
+                  value: XXXXXXXXXXXX
+                - key: billcountry
+                  value: XXXXXXXXXXXX
+                - key: billphone
+                  value: XXXXXXXXXXXX
+                - key: billemail
+                  value: XXXXXXXXXXXX
+                - key: custom00
+                  value: XXXXXXXXXXXX
+                - key: custom01
+                  value: XXXXXXXXXXXX
+                - key: custom02
+                  value: XXXXXXXXXXXX
+                - key: custom03
+                  value: XXXXXXXXXXXX
+                - key: custom04
+                  value: XXXXXXXXXXXX
+                - key: custom29
+                  value: XXXXXXXXXXXX
+
     ChargeResponseMultiTransaction:
       value:
         accountid: 1000000001
@@ -5978,6 +6430,25 @@ components:
             scverification: P
             addressverification: Z
             totaltransactionamount: 100
+            
+    RefundResponseSingleTransaction:
+      value:
+        accountid: 1000000001
+        status: 'Y'
+        message: Transaction successful.
+        transactions:
+          - merchantid: XXXXXXXXXXXXX
+            returncode: 0
+            returndescription: Transaction successful
+            procrespcode: RPCT
+            pgtransactionid: 260711140916
+            paymenttransactionid: 136243
+            authorizationcode: 123456
+            transactiondate: 07/14/2024 03:00:28 PM
+            transactionamount: 100
+            currency: USD
+            totaltransactionamount: 100
+    
     Common401Response:
       value:
         accountid: 1000000001
@@ -6577,6 +7048,10 @@ components:
                     description: Specify the payment type.
                     type: string
                     example: ""
+                  paymenttype:
+                    description: Specify the payment type.
+                    type: string
+                    example: ""
                   description:
                     description: Provide a description of the payment.
                     type: string
@@ -6679,6 +7154,10 @@ components:
                     type: string
                     example: "XXXXXXXXXXXX"
                   type:
+                    description: Specify the payment type.
+                    type: string
+                    example: ""
+                  paymenttype:
                     description: Specify the payment type.
                     type: string
                     example: ""
@@ -7042,6 +7521,182 @@ components:
                         type: string
                         example: "XXXXXXXXXXXX"
                       type:   
+                        description: Specify the payment type.
+                        type: string
+                        example: ""
+                      paymenttype:
+                        description: Specify the payment type.
+                        type: string
+                        example: ""
+                      description:
+                        description: Provide a description of the payment.
+                        type: string
+                        example: "Description"
+                      unitprice:
+                        description: Enter the unit price for the payment.
+                        type: number
+                        example: 16
+                      quantity:
+                        description: Enter the quantity for the payment.
+                        type: number
+                        example: 2
+                      sku:
+                        description: Enter the SKU (Stock Keeping Unit) for the payment.
+                        type: string
+                        example: "XXXXXXXXXXXX"
+                      company:
+                        description: Provide the name of the company. 
+                        type: string
+                        example: "company"
+                      fee:
+                        description: Enter the fee amount.
+                        type: string
+                        example: "1.00"
+                      department:
+                        description: Enter the department name.
+                        type: string
+                        example: "XXXX"
+                      vendorid:
+                        description: Enter the vendor ID.
+                        type: string
+                        example: ""
+                      customerid: 
+                        description: Enter the customer ID.
+                        type: string
+                        example: 100
+                      agency:
+                        description: Provide the agency details.
+                        type: string
+                        example: ""
+                      batchid:
+                        description: Not applicable, as this is automatically generated by CLX.
+                        type: string
+                        example: ""
+                      reportlines:
+                        description: Enter the count of report line items.
+                        type: string
+                        example: "3"
+                      reportlinedetails:
+                        type: array
+                        description: Report line details
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              description: Provide the report line number.
+                              type: string
+                              example: "XXXX1"
+                            attributes:
+                              type: array
+                              description: Provide an array of report line item details.
+                              items:
+                                type: object
+                                properties:
+                                  name: 
+                                    description: >-
+                                      Enter the name of the report line-item.
+                                    type: string
+                                    example: "XXXX1AMOUNT"
+                                  value: 
+                                    description: >-
+                                      Enter the value of the report line-item.
+                                    type: string
+                                    example: "XXXX"
+                                  type: 
+                                    description: >-
+                                      Specify the type of the report line-item.
+                                    type: string
+                                    example: "XXXX"
+                      additionalinfo:
+                        type: array
+                        description: This section includes additional information for CLX reporting, consisting of an array of key-value pairs.
+                        items:
+                          type: object
+                          properties:
+                            key: 
+                              description: >-
+                                Represents the key identifier for the additional information.
+                              type: string
+                              example: "servicecode"
+                            value: 
+                              description: >-
+                                Corresponds to the value associated with the key.
+                              type: string
+                              example: "XXXXXXXXXXXX"
+    Refund:
+      type: object
+      required: [accountid]
+      properties:
+         accountid:
+                  type: number
+                  description: Pass the SnapPay account ID provided by SnapPay.
+                  example: 1000000001
+         transactions:
+          type: array
+          description: This section contains an array of transaction details, which can include single or multiple transactions.
+          items:
+            type: object
+            required: [currency,companycode,customerid,userid,referencetransactionid]
+            properties:
+              currency:
+                type: string
+                description: Currency code for the transaction.
+                example: USD
+              companycode:
+                description: Company code from the SnapPay portal or ERP system.
+                type: string
+                example: '00200'
+              customerid:
+                type: string
+                description: Customer ID from the ERP system or eCommerce. application.
+                example: 100
+              userid:
+                type: string
+                description:  User ID sourced from an external application or the SnapPay portal.
+                example: user
+              referencetransactionid:
+                type: string
+                description: The unique ID of the original transaction that needs to be refunded. This ID is required to identify the transaction to be refunded.
+                example: 123123123  
+              orderid:
+                type: string
+                description: Order ID from the ERP or eCommerce system. Includes duplicate transaction check based on account parameters.
+                example: 123456
+              invoiceid:
+                type: string
+                description: Invoice ID from the ERP system. 
+                example: 123456
+              purchaseorder:
+                type: string
+                description:  Purchase order from the ERP or eCommerce system.
+                example: 1234
+              reference:
+                type: string
+                description: Reference from the ERP system. 
+                example: 123456
+              sendemailreceipts:
+                type: string
+                description: Send email receipts to the user. Allowed values Y or N.
+                example: 'Y'
+              clxstream:
+                type: object
+                properties:
+                  transaction:
+                    type: object
+                    properties:
+                      merchantid:
+                        description: Provide the merchant ID associated with the transaction.
+                        type: string
+                        example: ""
+                      localreferenceid:
+                        description: Provide the unique reference or ID for the transaction.
+                        type: string
+                        example: "XXXXXXXXXXXX"
+                      type:   
+                        description: Specify the payment type.
+                        type: string
+                        example: ""
+                      paymenttype:   
                         description: Specify the payment type.
                         type: string
                         example: ""
@@ -7488,6 +8143,219 @@ paths:
                 Charge Single Transaction:
                   summary: Charge Single Transaction
                   $ref: '#/components/examples/ChargeResponseSingleTransaction' 
+        '400': {$ref: '#/components/responses/InvalidRequest'}
+        '401':
+          description: Authentication Failed
+          content:
+            application/json:
+              examples:
+                Authentication Failed: 
+                  summary: Authentication Failed
+                  $ref: '#/components/examples/Common401Response'
+        '429': {$ref: '#/components/responses/TooManyRequest'}
+        '500': {$ref: '#/components/responses/ServerError'}
+  /api/interop/v2/refund:
+    post:
+      tags:
+        - APIs without User Interaction
+      x-group-name: APIs without User Interaction
+      x-proxy-name: Refund
+      summary: Refund
+      description: >-
+        The Charge API performs a credit card charge or payment using a credit
+        card token to insure the credit card is valid, has the requested credit
+        limit available and to initiate the transfer of funds.  This performs
+        the functions of the Authorize API and Capture API in a single call.
+      operationId: refund
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Refund'
+            examples:
+              Refund Single Transaction - CLX :
+                summary: Refund Single Transaction - CLX
+                $ref: '#/components/examples/RefundSingleTransaction-CLX'
+              Refund Single Transaction Partial - CLX :
+                summary: Refund Single Transaction Partial - CLX
+                $ref: '#/components/examples/RefundSingleTransaction-Partial-CLX'
+              Refund Fiserv Internal :
+                summary: Refund Fiserv Internal-CLX
+                $ref: '#/components/examples/RefundFiservinternal-CLX'
+      parameters:
+        - {$ref: '#/components/parameters/AccountIDParam'}
+        - {$ref: '#/components/parameters/HMACParam'}
+      responses:
+        '200':
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountid:
+                    type: number
+                    description: >-
+                      The SnapPay account ID associated with the transaction.
+                    example: 1000000001
+                  status:
+                    type: string
+                    description: >- 
+                      Indicates the overall status of the transaction. This field determines whether the transaction was successful, or is failed
+                    example: 'Y'
+                  message:
+                    type: string
+                    description: >-
+                      Provides a detailed status message for the transaction, offering additional context or information about the transaction outcome.
+                    example: Transaction successful.
+                  transactions:
+                    type: object
+                    properties:
+                      merchantid:
+                        type: string
+                        description: >-
+                          The Payment Gateway Merchant ID associated with the transaction.
+                        example: 12452589
+                      returncode:
+                        type: string
+                        description: >- 
+                          The payment gateway return code indicating the result of the transaction, such as success or a specific error.
+                        example: 0
+                      returndescription:
+                        type: string
+                        description: >-
+                          The payment gateway return description for the transaction. This provides more details about the returncode, explaining the nature of the success or error.
+                        example: Transaction successful
+                      procrespcode:
+                        type: string
+                        description: >-
+                          An abbreviation that represents the platform and the processor used for the transaction.
+                        example: RPCT
+                      pgtransactionid:
+                        type: string
+                        description: >-
+                          Payment gateway transaction ID generated by SnapPay upon successful completion.
+                        example: 260711140916
+                      paymenttransactionid:
+                        type: string
+                        description: >-
+                          The unique SnapPay transaction ID assigned to the payment transaction. This ID is used for tracking and referencing the specific transaction within the SnapPay system.
+                        example: 136243
+                      authorizationcode:
+                        type: string
+                        description: >-
+                          Authorization code from original authorization request
+                        example: 234AS5
+                      transactiondate:
+                        type: string
+                        description: >-
+                          Transaction date populated by SnapPay upon successful completion.
+                        example: 02/14/2021 03:00:28 PM
+                      transactionamount:
+                        type: string
+                        description: >-
+                         Transaction amount populated by SnapPay upon successful completion.  
+                        example: 100
+                      currency:
+                        type: string
+                        description: >-
+                          Currency code for the transaction.  
+                        example: USD
+                      scverification:
+                        type: string
+                        description: >-
+                          The alpha-numeric CVV (Card Verification Value) verification response code returned by the processor.
+                            M: Valid CVV Match
+                            N: Invalid CVV
+                            P: CVV Not Processed
+                            S: Merchant indicated that the CVV is not present on the card
+                            U: Card issuer is not certified and/or has not provided Visa                          encryption keys
+                            X: No response
+                            Note: The cvvresp is typically only returned for approved                          authorizations but can be provided in the response for a declined                        authorization if this setting is enabled for the merchant account.
+
+                        example: P
+                      addressverification:
+                        type: string
+                        description: >-
+                          The AVS (Address Verification System) response code indicating the result of ZIP code verification.
+                          Note: The avsresp is typically only returned for approved                        authorizations but can be provided in the response for a declined                      authorization if this setting is enabled for the merchant account.
+
+                        example: Z
+                      totaltransactionamount:
+                        type: string
+                        description: >-
+                          The total transaction amount, which is the sum of the primary transaction amount and any applicable fees.
+                        example: 100
+                      tokenid:
+                        type: string
+                        description: >- 
+                          The Payment Gateway Token ID used for the transaction.
+                        example: "9XXXXXXXXXXXX1111"
+                      paymentmethod:
+                          type: object
+                          properties:
+                            tokenid:
+                              type: string
+                              description: >- 
+                                The Payment Gateway Token ID used for the transaction.
+                              example: "9XXXXXXXXXXXX1111"
+                            transactionamount:
+                              type: integer
+                              description: >-
+                                The total transaction amount, which is the sum of the primary transaction amount and any applicable fees.
+                              example: 10
+                            customername:
+                              type: string
+                              description: Name on credit card
+                              example: John Smith
+                            type:
+                              type: string
+                              description: >- 
+                                The type of credit card or bank account used, such as Visa, MasterCard, Discover, AMEX, Checking, or Saving.
+                              example: VISA
+                            last4:
+                              type: string
+                              description: Last 4 digits of credit card
+                              example: 2345
+                            addressline1:
+                              type: string
+                              description: >-
+                                Billing Address Line 1 from the card/bank account holder.
+                              example: 123 Main St
+                            city:
+                              type: string
+                              description: >-
+                                Billing city from the card/bank account holder. 
+                              example: Lombard
+                            state:
+                              type: string
+                              description: >-
+                                Billing state from the card/bank account holder.
+                              example: IL
+                            zip:
+                              type: string
+                              description: >-
+                                Billing ZIP code from the card/bank account holder.  
+                              example: 60148
+                            country:
+                              type: string
+                              description: >-
+                                Billing country from the card/bank account holder.                    
+                              example: US
+                            email:
+                              type: string
+                              description: >-
+                                Billing email address from the card/bank account holder. 
+                              example: john.smith@company.com
+                            phonenumber:
+                              type: string
+                              description: >-
+                                Billing phone number from the card/bank account holder. 
+                              example: null
+              examples:
+                Refund Single Transaction:
+                  summary: Refund Single Transaction
+                  $ref: '#/components/examples/RefundResponseSingleTransaction' 
         '400': {$ref: '#/components/responses/InvalidRequest'}
         '401':
           description: Authentication Failed
