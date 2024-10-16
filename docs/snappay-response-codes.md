@@ -343,10 +343,10 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00000880	|	Customer association is not needed for an user having usertype as &1.	|	API	|	Customer association is not needed for an user having usertype as account admin.	|
 |	AM00000881	|	Supplier association is not needed for an user having usertype as &1.	|	API	|	Supplier association is not needed for an user having usertype as account admin.	|
 |	AM00000889	|	Error occurred in &1. Please contact Customer Service.	|	API	|	Error occurred in [apiname]. Please contact Customer Service.	|
-|	AM00000962	|	Error occured when calling the Card Connect API &1.	|	API	|	Error occured when calling the Card Connect API <<apiname>>.	|
+|	AM00000962	|	Error occured when calling the Card Connect API &1.	|	API	|	Error occured when calling the Card Connect API [apiname].	|
 |	AM00001279	|	Total amount should not be greater than &1. Please contact Customer Service.	|	API	|	Total amount should not be greater than [threshold value]. Please contact Customer Service.	|
 |	AM00001281	|	The following column is missing from the upload: &1	|	API	|	The following column is missing from the upload: [upload api field]	|
-|	AM00001291	|	EnableAccountUpdater is tunerd off for account &1.	|	API	|	EnableAccountUpdater is tunerd off for account <<snappay accoutid>>.	|
+|	AM00001291	|	EnableAccountUpdater is tunerd off for account &1.	|	API	|	EnableAccountUpdater is tunerd off for account [snappay accoutid].	|
 |	AM00001467	|	&2 valid values &1.	|	API	|	[fieldname] valid values [allowed values].	|
 |	AM00001470	|	&1 is invalid.	|	API	|	type is invalid.	|
 |	AM00001475	|	&1 fee will be charged.	|	API	|	[Service/Surcharge] fee will be charged.	|
@@ -359,7 +359,7 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00001658	|	Request failed. &1	|	API	|	Request failed. [Description for following messagecodes will get appended <<AM00000889/AM00001715/AM00001654/AM00001656/AM00000011/AM00000036/AM00000020/AM00001657/AM00001707/AM00001716/AM00000889/AM00001654/AM00000889/AM00001292>>	|
 |	AM00001675	|	EnableSettlementStatus is tunerd off for account &1.	|	API	|	EnableSettlementStatus is tunerd off for account [snappay accountid].	|
 |	AM00001746	|	Failed to update the Description for Transaction ID &1.	|	API	|	Failed to update the Description for Transaction ID [payment transaction id].	|
-|	AM00001805	|	Association type &1 is not valid for customer &2.	|	API	|	Association type <<soldto/shipto/supplier>> is not valid for customer [customer id].	|
+|	AM00001805	|	Association type &1 is not valid for customer &2.	|	API	|	Association type [soldto/shipto/supplier] is not valid for customer [customer id].	|
 |	AM00001849	|	Invalid transactiontype. Transaction Type can be &1.	|	API	|	Invalid transactiontype. Transaction Type can be Authorizarion, Credit, Capture, Payment, Cancel Payment, Refund, Sale, Void.	|
 
 
