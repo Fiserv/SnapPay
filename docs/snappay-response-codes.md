@@ -351,12 +351,12 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00001470	|	&1 is invalid.	|	API	|	type is invalid.	|
 |	AM00001475	|	&1 fee will be charged.	|	API	|	[Service/Surcharge] fee will be charged.	|
 |	AM00001476	|	&1 % Service fee will be charged.	|	API	|	[feevalue] % Service fee will be charged.	|
-|	AM00001509	|	The payment mode &1 is not applied to this user.	|	API	|	The payment mode <<CC/ACH/DC/PP/ALP/GP/AP>> is not applied to this user.	|
-|	AM00001510	|	Payment method &1 is only applicable to User type Customer in SnapPay.	|	API	|	Payment method  <<CC/ACH/DC/PP/ALP/GP/AP>> is only applicable to User type Customer in SnapPay.	|
-|	AM00001511	|	Payment method &1 is not enabled for an user or usergroup.	|	API	|	Payment method <<CC/ACH/DC/PP/ALP/GP/AP>> is not enabled for an user or usergroup.	|
-|	AM00001512	|	Payment method &1 is only applicable for Transaction type A/S.	|	API	|	Payment method <<CC/ACH/DC/PP/ALP/GP/AP>>  is only applicable for Transaction type A/S.	|
-|	AM00001520	|	&1 is not enabled.	|	API	|	<<CC/ACH/DC/PP/ALP/GP/AP>> is not enabled.	|
-|	AM00001658	|	Request failed. &1	|	API	|	Request failed. [Description for following messagecodes will get appended <<AM00000889/AM00001715/AM00001654/AM00001656/AM00000011/AM00000036/AM00000020/AM00001657/AM00001707/AM00001716/AM00000889/AM00001654/AM00000889/AM00001292>>	|
+|	AM00001509	|	The payment mode &1 is not applied to this user.	|	API	|	The payment mode [CC/ACH/DC/PP/ALP/GP/AP] is not applied to this user.	|
+|	AM00001510	|	Payment method &1 is only applicable to User type Customer in SnapPay.	|	API	|	Payment method  [CC/ACH/DC/PP/ALP/GP/AP] is only applicable to User type Customer in SnapPay.	|
+|	AM00001511	|	Payment method &1 is not enabled for an user or usergroup.	|	API	|	Payment method [CC/ACH/DC/PP/ALP/GP/AP] is not enabled for an user or usergroup.	|
+|	AM00001512	|	Payment method &1 is only applicable for Transaction type A/S.	|	API	|	Payment method [CC/ACH/DC/PP/ALP/GP/AP]  is only applicable for Transaction type A/S.	|
+|	AM00001520	|	&1 is not enabled.	|	API	|	[CC/ACH/DC/PP/ALP/GP/AP] is not enabled.	|
+|	AM00001658	|	Request failed. &1	|	API	|	Request failed. [Description for following messagecodes will get appended [AM00000889/AM00001715/AM00001654/AM00001656/AM00000011/AM00000036/AM00000020/AM00001657/AM00001707/AM00001716/AM00000889/AM00001654/AM00000889/AM00001292]	|
 |	AM00001675	|	EnableSettlementStatus is tunerd off for account &1.	|	API	|	EnableSettlementStatus is tunerd off for account [snappay accountid].	|
 |	AM00001746	|	Failed to update the Description for Transaction ID &1.	|	API	|	Failed to update the Description for Transaction ID [payment transaction id].	|
 |	AM00001805	|	Association type &1 is not valid for customer &2.	|	API	|	Association type [soldto/shipto/supplier] is not valid for customer [customer id].	|
