@@ -2,7 +2,7 @@
 
 This section outlines the response codes you may encounter when interacting with the SnapPay API. The API will return a message description for each response code, providing details on the outcome of an API request.
 
-| Name        | Value                                                                         | Purpose |
+| Message Code        | Description                                                                         | Purpose |
 |-------------|-------------------------------------------------------------------------------|---------|
 |	AM00000001	|	Request is null or empty.	                                                    |	API	|
 |	AM00000002	|	Content of request is null or empty.	                                        |	API	|
@@ -334,32 +334,32 @@ This section outlines the response codes you may encounter when interacting with
 
 # Dynamic Messages
 
-|	Name	|	Value	|	Purpose	|	Description	|
-|-------------|-------------|---------|---------------------|
-|	AM00000019	|	&1 cannot be null or empty.	|	API	|	[fieldname] cannot be null or empty.	|
-|	AM00000020	|	&1 cannot be more than &2 characters.	|	API	|	[fieldname] cannot be more than [allowed length] characters.	|
-|	AM00000034	|	Only letters are valid in &1.	|	API	|	Only letters are valid in [fieldname].	|
-|	AM00000745	|	expirationyear cannot be greater than &1.	|	API	|	expirationyear cannot be greater than the currentyear+10	|
-|	AM00000880	|	Customer association is not needed for an user having usertype as &1.	|	API	|	Customer association is not needed for an user having usertype as account admin.	|
-|	AM00000881	|	Supplier association is not needed for an user having usertype as &1.	|	API	|	Supplier association is not needed for an user having usertype as account admin.	|
-|	AM00000889	|	Error occurred in &1. Please contact Customer Service.	|	API	|	Error occurred in [apiname]. Please contact Customer Service.	|
-|	AM00000962	|	Error occured when calling the Card Connect API &1.	|	API	|	Error occured when calling the Card Connect API [apiname].	|
-|	AM00001279	|	Total amount should not be greater than &1. Please contact Customer Service.	|	API	|	Total amount should not be greater than [threshold value]. Please contact Customer Service.	|
-|	AM00001281	|	The following column is missing from the upload: &1	|	API	|	The following column is missing from the upload: [upload api field]	|
-|	AM00001291	|	EnableAccountUpdater is tunerd off for account &1.	|	API	|	EnableAccountUpdater is tunerd off for account [snappay accoutid].	|
-|	AM00001467	|	&2 valid values &1.	|	API	|	[fieldname] valid values [allowed values].	|
-|	AM00001470	|	&1 is invalid.	|	API	|	type is invalid.	|
-|	AM00001475	|	&1 fee will be charged.	|	API	|	[Service/Surcharge] fee will be charged.	|
-|	AM00001476	|	&1 % Service fee will be charged.	|	API	|	[feevalue] % Service fee will be charged.	|
-|	AM00001509	|	The payment mode &1 is not applied to this user.	|	API	|	The payment mode [CC/ACH/DC/PP/ALP/GP/AP] is not applied to this user.	|
-|	AM00001510	|	Payment method &1 is only applicable to User type Customer in SnapPay.	|	API	|	Payment method  [CC/ACH/DC/PP/ALP/GP/AP] is only applicable to User type Customer in SnapPay.	|
-|	AM00001511	|	Payment method &1 is not enabled for an user or usergroup.	|	API	|	Payment method [CC/ACH/DC/PP/ALP/GP/AP] is not enabled for an user or usergroup.	|
-|	AM00001512	|	Payment method &1 is only applicable for Transaction type A/S.	|	API	|	Payment method [CC/ACH/DC/PP/ALP/GP/AP]  is only applicable for Transaction type A/S.	|
-|	AM00001520	|	&1 is not enabled.	|	API	|	[CC/ACH/DC/PP/ALP/GP/AP] is not enabled.	|
-|	AM00001658	|	Request failed. &1	|	API	|	Request failed. [Description for following messagecodes will get appended [AM00000889/AM00001715/AM00001654/AM00001656/AM00000011/AM00000036/AM00000020/AM00001657/AM00001707/AM00001716/AM00000889/AM00001654/AM00000889/AM00001292]	|
-|	AM00001675	|	EnableSettlementStatus is tunerd off for account &1.	|	API	|	EnableSettlementStatus is tunerd off for account [snappay accountid].	|
-|	AM00001746	|	Failed to update the Description for Transaction ID &1.	|	API	|	Failed to update the Description for Transaction ID [payment transaction id].	|
-|	AM00001805	|	Association type &1 is not valid for customer &2.	|	API	|	Association type [soldto/shipto/supplier] is not valid for customer [customer id].	|
-|	AM00001849	|	Invalid transactiontype. Transaction Type can be &1.	|	API	|	Invalid transactiontype. Transaction Type can be Authorizarion, Credit, Capture, Payment, Cancel Payment, Refund, Sale, Void.	|
+|	Message Code	|	Description	|	Purpose	|
+|-------------|-------------|---------|
+|	AM00000019	|	[fieldname] cannot be null or empty.	|	API	|
+|	AM00000020	|	[fieldname] cannot be more than [allowed length] characters.	|	API	|
+|	AM00000034	|	Only letters are valid in [fieldname].	|	API	|
+|	AM00000745	|	expirationyear cannot be greater than the currentyear+10	|	API	|
+|	AM00000880	|	Customer association is not needed for an user having usertype as account admin.	|
+|	AM00000881	|	Supplier association is not needed for an user having usertype as account admin.	|	API	|
+|	AM00000889	|	Error occurred in [apiname]. Please contact Customer Service.	|	API	|
+|	AM00000962	|	Error occured when calling the Card Connect API [apiname].	|	API	|
+|	AM00001279	|	Total amount should not be greater than [threshold value]. Please contact Customer Service.	|	API	|
+|	AM00001281	|	The following column is missing from the upload: [upload api field]	|	API	|
+|	AM00001291	|	EnableAccountUpdater is tunerd off for account [snappay accoutid].	|	API	|
+|	AM00001467	|	[fieldname] valid values [allowed values].|	API	|
+|	AM00001470	|	type is invalid.	|	API	|
+|	AM00001475	|	[Service/Surcharge] fee will be charged.	|	API	|
+|	AM00001476	|	[feevalue] % Service fee will be charged.	|	API	|
+|	AM00001509	|	The payment mode [CC/ACH/DC/PP/ALP/GP/AP] is not applied to this user.	|	API	|
+|	AM00001510	|	Payment method  [CC/ACH/DC/PP/ALP/GP/AP] is only applicable to User type Customer in SnapPay.	|	API	|
+|	AM00001511	|	Payment method [CC/ACH/DC/PP/ALP/GP/AP] is not enabled for an user or usergroup.	|	API	|
+|	AM00001512	|	Payment method [CC/ACH/DC/PP/ALP/GP/AP]  is only applicable for Transaction type A/S.	|	API	|
+|	AM00001520	|	[CC/ACH/DC/PP/ALP/GP/AP] is not enabled.	|	API	|
+|	AM00001658	|	Request failed. [Description for following messagecodes will get appended [AM00000889/AM00001715/AM00001654/AM00001656/AM00000011/AM00000036/AM00000020/AM00001657/AM00001707/AM00001716/AM00000889/AM00001654/AM00000889/AM00001292]]	|	API	|
+|	AM00001675	|	EnableSettlementStatus is tunerd off for account [snappay accountid].	|	API	|
+|	AM00001746	|	Failed to update the Description for Transaction ID [payment transaction id].	|	API	|
+|	AM00001805	|	Association type [soldto/shipto/supplier] is not valid for customer [customer id].	|	API	|
+|	AM00001849	|	Invalid transactiontype. Transaction Type can be Authorizarion, Credit, Capture, Payment, Cancel Payment, Refund, Sale, Void.	|	API	|
 
 
