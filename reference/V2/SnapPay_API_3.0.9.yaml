@@ -8162,10 +8162,7 @@ paths:
       x-proxy-name: Refund
       summary: Refund
       description: >-
-        The Charge API performs a credit card charge or payment using a credit
-        card token to insure the credit card is valid, has the requested credit
-        limit available and to initiate the transfer of funds.  This performs
-        the functions of the Authorize API and Capture API in a single call.
+        The Refund API places a refund of a prior Capture or Charge on the credit card or ACH account used in the original transaction. The original transaction is set in parameter referencetransactionid and some explanatory text can be set in the reference parameter.
       operationId: refund
       requestBody:
         content:
