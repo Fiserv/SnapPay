@@ -5882,196 +5882,197 @@ components:
             invoiceid: string
             sendemailreceipts: 'N'
             clxstream:
-              paymenttype: ""
-              cardtype: ""
-              merchantid: "XXXXXXXXXXXXX"
-              localreferenceid: XXXXXXXXXXX
-              type: XXXXXXX
-              description: Description
-              unitprice: 16
-              quantity: 1
-              sku: XXXXXXXX
-              company: Company
-              fee: '1.00'
-              department: 'Department'
-              vendorid: ''
-              customerid: ''
-              agency: ''
-              batchid: ''
-              reportlines: '3'
-              reportlinedetails:
-                - id: XXXX1
-                  attributes:
-                    - name: XXXX1AMOUNT
-                      value: '1.00'
-                      type: DOLLAR
-                    - name: XXXX1AO
-                      value: 'XXXX'
-                      type: String
-                    - name: XXXX1OTHER
-                      value: 'XXXX   XXXXXXXX  XX  '
-                      type: String
-                    - name: XXXX1PCA
-                      value: 'XXXXX'
-                      type: String
-                    - name: XXXX1TCODE
-                      value: 'XXX'
-                      type: String
-                    - name: XXXX1INDEX
-                      value: ''
-                      type: String
-                    - name: XXXX1FUND
-                      value: ''
-                      type: String
-                    - name: XXXX1APPDFUND
-                      value: ''
-                      type: String
-                    - name: XXXX1COBJ
-                      value: ''
-                      type: String
-                    - name: XXXX1AOBJ
-                      value: ''
-                      type: String
-                    - name: XXXX1DEPAGENCY
-                      value: ''
-                      type: String
-                - id: XXXX2
-                  attributes:
-                    - name: XXXX2AMOUNT
-                      value: '1.00'
-                      type: DOLLAR
-                    - name: XXXX2AO
-                      value: 'XXXX'
-                      type: String
-                    - name: XXXX2FUND
-                      value: 'XXXX'
-                      type: String
-                    - name: XXXX2OTHER
-                      value: 'XXXX   XXXXXXXX  XX  '
-                      type: String
-                    - name: XXXX2PCA
-                      value: 'XXXXX'
-                      type: String
-                    - name: XXXX2TCODE
-                      value: 'XXX'
-                      type: String
-                    - name: XXXX2INDEX
-                      value: ''
-                      type: String
-                    - name: XXXX2FUND
-                      value: ''
-                      type: String
-                    - name: XXXX2APPDFUND
-                      value: ''
-                      type: String
-                    - name: XXXX2COBJ
-                      value: ''
-                      type: String
-                    - name: XXXX2AOBJ
-                      value: ''
-                      type: String
-                    - name: XXXX2DEPAGENCY
-                      value: ''
-                      type: String
-                - id: XXXX3
-                  attributes:
-                    - name: XXXX3AMOUNT
-                      value: '15.0'
-                      type: DOLLAR
-                    - name: XXXX3AO
-                      value: 'XXXX'
-                      type: String
-                    - name: XXXX3FUND
-                      value: 'XXXX'
-                      type: String
-                    - name: XXXX3OTHER
-                      value: 'XXXX   XXXXXXXX  XX  '
-                      type: String
-                    - name: XXXX3PCA
-                      value: 'XXXX'
-                      type: String
-                    - name: XXXX3TCODE
-                      value: 'XXX'
-                      type: String
-                    - name: XXXX3INDEX
-                      value: ''
-                      type: String
-                    - name: XXXX3FUND
-                      value: ''
-                      type: String
-                    - name: XXXX3APPDFUND
-                      value: ''
-                      type: String
-                    - name: XXXX3COBJ
-                      value: ''
-                      type: String
-                    - name: XXXX3AOBJ
-                      value: ''
-                      type: String
-                    - name: XXXX3DEPAGENCY
-                      value: ''
-                      type: String
-              additionalinfo:
-                - key: servicecode
-                  value: XXXXXXXXXXXX
-                - key: username
-                  value: XXXXXXXXXXXX
-                - key: sourceapplication
-                  value: XXXX
-                - key: companyname
-                  value: XXXX
-                - key: sourceenvironment
-                  value: XXXXXXXXXXXX
-                - key: hostname
-                  value: XXXXXXXXXXXX
-                - key: shipfirstname
-                  value: XXXXXXXXXXXX
-                - key: shiplastname
-                  value: XXXXXXXXXXXX
-                - key: shipaddressline1
-                  value: XXXXXXXXXXXX
-                - key: shipaddressline2
-                  value: XXXXXXXXXXXX
-                - key: shipcity
-                  value: XXXXXXXXXXXX
-                - key: shipstate
-                  value: XXXXXXXXXXXX
-                - key: shipcountry
-                  value: XXXXXXXXXXXX
-                - key: shipphone
-                  value: XXXXXXXXXXXX
-                - key: shipemail
-                  value: XXXXXXXXXXXX
-                - key: billfirstname
-                  value: XXXXXXXXXXXX
-                - key: billlastname
-                  value: XXXXXXXXXXXX
-                - key: billaddressline1
-                  value: XXXXXXXXXXXX
-                - key: billaddressline2
-                  value: XXXXXXXXXXXX
-                - key: billcity
-                  value: XXXXXXXXXXXX
-                - key: billstate
-                  value: XXXXXXXXXXXX
-                - key: billcountry
-                  value: XXXXXXXXXXXX
-                - key: billphone
-                  value: XXXXXXXXXXXX
-                - key: billemail
-                  value: XXXXXXXXXXXX
-                - key: custom00
-                  value: XXXXXXXXXXXX
-                - key: custom01
-                  value: XXXXXXXXXXXX
-                - key: custom02
-                  value: XXXXXXXXXXXX
-                - key: custom03
-                  value: XXXXXXXXXXXX
-                - key: custom04
-                  value: XXXXXXXXXXXX
-                - key: custom29
-                  value: XXXXXXXXXXXX
+              transaction:
+               paymenttype: ""
+               cardtype: ""
+               merchantid: "XXXXXXXXXXXXX"
+               localreferenceid: XXXXXXXXXXX
+               type: XXXXXXX
+               description: Description
+               unitprice: 16
+               quantity: 1
+               sku: XXXXXXXX
+               company: Company
+               fee: '1.00'
+               department: 'Department'
+               vendorid: ''
+               customerid: ''
+               agency: ''
+               batchid: ''
+               reportlines: '3'
+               reportlinedetails:
+                 - id: XXXX1
+                   attributes:
+                     - name: XXXX1AMOUNT
+                       value: '1.00'
+                       type: DOLLAR
+                     - name: XXXX1AO
+                       value: 'XXXX'
+                       type: String
+                     - name: XXXX1OTHER
+                       value: 'XXXX   XXXXXXXX  XX  '
+                       type: String
+                     - name: XXXX1PCA
+                       value: 'XXXXX'
+                       type: String
+                     - name: XXXX1TCODE
+                       value: 'XXX'
+                       type: String
+                     - name: XXXX1INDEX
+                       value: ''
+                       type: String
+                     - name: XXXX1FUND
+                       value: ''
+                       type: String
+                     - name: XXXX1APPDFUND
+                       value: ''
+                       type: String
+                     - name: XXXX1COBJ
+                       value: ''
+                       type: String
+                     - name: XXXX1AOBJ
+                       value: ''
+                       type: String
+                     - name: XXXX1DEPAGENCY
+                       value: ''
+                       type: String
+                 - id: XXXX2
+                   attributes:
+                     - name: XXXX2AMOUNT
+                       value: '1.00'
+                       type: DOLLAR
+                     - name: XXXX2AO
+                       value: 'XXXX'
+                       type: String
+                     - name: XXXX2FUND
+                       value: 'XXXX'
+                       type: String
+                     - name: XXXX2OTHER
+                       value: 'XXXX   XXXXXXXX  XX  '
+                       type: String
+                     - name: XXXX2PCA
+                       value: 'XXXXX'
+                       type: String
+                     - name: XXXX2TCODE
+                       value: 'XXX'
+                       type: String
+                     - name: XXXX2INDEX
+                       value: ''
+                       type: String
+                     - name: XXXX2FUND
+                       value: ''
+                       type: String
+                     - name: XXXX2APPDFUND
+                       value: ''
+                       type: String
+                     - name: XXXX2COBJ
+                       value: ''
+                       type: String
+                     - name: XXXX2AOBJ
+                       value: ''
+                       type: String
+                     - name: XXXX2DEPAGENCY
+                       value: ''
+                       type: String
+                 - id: XXXX3
+                   attributes:
+                     - name: XXXX3AMOUNT
+                       value: '15.0'
+                       type: DOLLAR
+                     - name: XXXX3AO
+                       value: 'XXXX'
+                       type: String
+                     - name: XXXX3FUND
+                       value: 'XXXX'
+                       type: String
+                     - name: XXXX3OTHER
+                       value: 'XXXX   XXXXXXXX  XX  '
+                       type: String
+                     - name: XXXX3PCA
+                       value: 'XXXX'
+                       type: String
+                     - name: XXXX3TCODE
+                       value: 'XXX'
+                       type: String
+                     - name: XXXX3INDEX
+                       value: ''
+                       type: String
+                     - name: XXXX3FUND
+                       value: ''
+                       type: String
+                     - name: XXXX3APPDFUND
+                       value: ''
+                       type: String
+                     - name: XXXX3COBJ
+                       value: ''
+                       type: String
+                     - name: XXXX3AOBJ
+                       value: ''
+                       type: String
+                     - name: XXXX3DEPAGENCY
+                       value: ''
+                       type: String
+               additionalinfo:
+                 - key: servicecode
+                   value: XXXXXXXXXXXX
+                 - key: username
+                   value: XXXXXXXXXXXX
+                 - key: sourceapplication
+                   value: XXXX
+                 - key: companyname
+                   value: XXXX
+                 - key: sourceenvironment
+                   value: XXXXXXXXXXXX
+                 - key: hostname
+                   value: XXXXXXXXXXXX
+                 - key: shipfirstname
+                   value: XXXXXXXXXXXX
+                 - key: shiplastname
+                   value: XXXXXXXXXXXX
+                 - key: shipaddressline1
+                   value: XXXXXXXXXXXX
+                 - key: shipaddressline2
+                   value: XXXXXXXXXXXX
+                 - key: shipcity
+                   value: XXXXXXXXXXXX
+                 - key: shipstate
+                   value: XXXXXXXXXXXX
+                 - key: shipcountry
+                   value: XXXXXXXXXXXX
+                 - key: shipphone
+                   value: XXXXXXXXXXXX
+                 - key: shipemail
+                   value: XXXXXXXXXXXX
+                 - key: billfirstname
+                   value: XXXXXXXXXXXX
+                 - key: billlastname
+                   value: XXXXXXXXXXXX
+                 - key: billaddressline1
+                   value: XXXXXXXXXXXX
+                 - key: billaddressline2
+                   value: XXXXXXXXXXXX
+                 - key: billcity
+                   value: XXXXXXXXXXXX
+                 - key: billstate
+                   value: XXXXXXXXXXXX
+                 - key: billcountry
+                   value: XXXXXXXXXXXX
+                 - key: billphone
+                   value: XXXXXXXXXXXX
+                 - key: billemail
+                   value: XXXXXXXXXXXX
+                 - key: custom00
+                   value: XXXXXXXXXXXX
+                 - key: custom01
+                   value: XXXXXXXXXXXX
+                 - key: custom02
+                   value: XXXXXXXXXXXX
+                 - key: custom03
+                   value: XXXXXXXXXXXX
+                 - key: custom04
+                   value: XXXXXXXXXXXX
+                 - key: custom29
+                   value: XXXXXXXXXXXX
     RefundSingleTransaction-Partial-CLX:
       value:
         accountid: 1000000001
@@ -6087,25 +6088,26 @@ components:
             invoiceid: string
             sendemailreceipts: 'N'
             clxstream:
-              paymenttype: ""
-              cardtype: ""
-              merchantid: "XXXXXXXXXXXXX"
-              localreferenceid: XXXXXXXXXXX
-              type: XXXXXXX
-              description: Description
-              unitprice: 16
-              quantity: 1
-              sku: XXXXXXXX
-              company: Company
-              fee: '1.00'
-              department: 'Department'
-              vendorid: ''
-              customerid: ''
-              agency: ''
-              batchid: ''
-              reportlines: '0'
-              reportlinedetails: null
-              additionalinfo:
+             transaction:
+               paymenttype: ""
+               cardtype: ""
+               merchantid: "XXXXXXXXXXXXX"
+               localreferenceid: XXXXXXXXXXX
+               type: XXXXXXX
+               description: Description
+               unitprice: 16
+               quantity: 1
+               sku: XXXXXXXX
+               company: Company
+               fee: '1.00'
+               department: 'Department'
+               vendorid: ''
+               customerid: ''
+               agency: ''
+               batchid: ''
+               reportlines: '0'
+               reportlinedetails: null
+               additionalinfo:
                 - key: servicecode
                   value: XXXXXXXXXXXX
                 - key: username
@@ -6182,203 +6184,204 @@ components:
             invoiceid: string
             sendemailreceipts: 'N'
             clxstream:
-              uuid: string
-              pgtransactionid: ''
-              transactiondate: ''
-              transactionamount: 10
-              authorizationnumber: ''
-              last4: ''
-              paymenttype: ""
-              cardtype: ""
-              merchantid: "XXXXXXXXXXXXX"
-              localreferenceid: XXXXXXXXXXX
-              type: XXXXXXX
-              description: Description
-              unitprice: 16
-              quantity: 1
-              sku: XXXXXXXX
-              company: Company
-              fee: '1.00'
-              department: 'Department'
-              vendorid: ''
-              customerid: ''
-              agency: ''
-              batchid: ''
-              reportlines: '3'
-              reportlinedetails:
-                - id: XXXX1
-                  attributes:
-                    - name: XXXX1AMOUNT
-                      value: '1.00'
-                      type: DOLLAR
-                    - name: XXXX1AO
-                      value: 'XXXX'
-                      type: String
-                    - name: XXXX1OTHER
-                      value: 'XXXX   XXXXXXXX  XX  '
-                      type: String
-                    - name: XXXX1PCA
-                      value: 'XXXXX'
-                      type: String
-                    - name: XXXX1TCODE
-                      value: 'XXX'
-                      type: String
-                    - name: XXXX1INDEX
-                      value: ''
-                      type: String
-                    - name: XXXX1FUND
-                      value: ''
-                      type: String
-                    - name: XXXX1APPDFUND
-                      value: ''
-                      type: String
-                    - name: XXXX1COBJ
-                      value: ''
-                      type: String
-                    - name: XXXX1AOBJ
-                      value: ''
-                      type: String
-                    - name: XXXX1DEPAGENCY
-                      value: ''
-                      type: String
-                - id: XXXX2
-                  attributes:
-                    - name: XXXX2AMOUNT
-                      value: '1.00'
-                      type: DOLLAR
-                    - name: XXXX2AO
-                      value: 'XXXX'
-                      type: String
-                    - name: XXXX2FUND
-                      value: 'XXXX'
-                      type: String
-                    - name: XXXX2OTHER
-                      value: 'XXXX   XXXXXXXX  XX  '
-                      type: String
-                    - name: XXXX2PCA
-                      value: 'XXXXX'
-                      type: String
-                    - name: XXXX2TCODE
-                      value: 'XXX'
-                      type: String
-                    - name: XXXX2INDEX
-                      value: ''
-                      type: String
-                    - name: XXXX2FUND
-                      value: ''
-                      type: String
-                    - name: XXXX2APPDFUND
-                      value: ''
-                      type: String
-                    - name: XXXX2COBJ
-                      value: ''
-                      type: String
-                    - name: XXXX2AOBJ
-                      value: ''
-                      type: String
-                    - name: XXXX2DEPAGENCY
-                      value: ''
-                      type: String
-                - id: XXXX3
-                  attributes:
-                    - name: XXXX3AMOUNT
-                      value: '15.0'
-                      type: DOLLAR
-                    - name: XXXX3AO
-                      value: 'XXXX'
-                      type: String
-                    - name: XXXX3FUND
-                      value: 'XXXX'
-                      type: String
-                    - name: XXXX3OTHER
-                      value: 'XXXX   XXXXXXXX  XX  '
-                      type: String
-                    - name: XXXX3PCA
-                      value: 'XXXX'
-                      type: String
-                    - name: XXXX3TCODE
-                      value: 'XXX'
-                      type: String
-                    - name: XXXX3INDEX
-                      value: ''
-                      type: String
-                    - name: XXXX3FUND
-                      value: ''
-                      type: String
-                    - name: XXXX3APPDFUND
-                      value: ''
-                      type: String
-                    - name: XXXX3COBJ
-                      value: ''
-                      type: String
-                    - name: XXXX3AOBJ
-                      value: ''
-                      type: String
-                    - name: XXXX3DEPAGENCY
-                      value: ''
-                      type: String
-              additionalinfo:
-                - key: servicecode
-                  value: XXXXXXXXXXXX
-                - key: username
-                  value: XXXXXXXXXXXX
-                - key: sourceapplication
-                  value: XXXX
-                - key: companyname
-                  value: XXXX
-                - key: sourceenvironment
-                  value: XXXXXXXXXXXX
-                - key: hostname
-                  value: XXXXXXXXXXXX
-                - key: shipfirstname
-                  value: XXXXXXXXXXXX
-                - key: shiplastname
-                  value: XXXXXXXXXXXX
-                - key: shipaddressline1
-                  value: XXXXXXXXXXXX
-                - key: shipaddressline2
-                  value: XXXXXXXXXXXX
-                - key: shipcity
-                  value: XXXXXXXXXXXX
-                - key: shipstate
-                  value: XXXXXXXXXXXX
-                - key: shipcountry
-                  value: XXXXXXXXXXXX
-                - key: shipphone
-                  value: XXXXXXXXXXXX
-                - key: shipemail
-                  value: XXXXXXXXXXXX
-                - key: billfirstname
-                  value: XXXXXXXXXXXX
-                - key: billlastname
-                  value: XXXXXXXXXXXX
-                - key: billaddressline1
-                  value: XXXXXXXXXXXX
-                - key: billaddressline2
-                  value: XXXXXXXXXXXX
-                - key: billcity
-                  value: XXXXXXXXXXXX
-                - key: billstate
-                  value: XXXXXXXXXXXX
-                - key: billcountry
-                  value: XXXXXXXXXXXX
-                - key: billphone
-                  value: XXXXXXXXXXXX
-                - key: billemail
-                  value: XXXXXXXXXXXX
-                - key: custom00
-                  value: XXXXXXXXXXXX
-                - key: custom01
-                  value: XXXXXXXXXXXX
-                - key: custom02
-                  value: XXXXXXXXXXXX
-                - key: custom03
-                  value: XXXXXXXXXXXX
-                - key: custom04
-                  value: XXXXXXXXXXXX
-                - key: custom29
-                  value: XXXXXXXXXXXX
-
+             transaction:
+               uuid: string
+               pgtransactionid: ''
+               transactiondate: ''
+               transactionamount: 10
+               authorizationnumber: ''
+               last4: ''
+               paymenttype: ""
+               cardtype: ""
+               merchantid: "XXXXXXXXXXXXX"
+               localreferenceid: XXXXXXXXXXX
+               type: XXXXXXX
+               description: Description
+               unitprice: 16
+               quantity: 1
+               sku: XXXXXXXX
+               company: Company
+               fee: '1.00'
+               department: 'Department'
+               vendorid: ''
+               customerid: ''
+               agency: ''
+               batchid: ''
+               reportlines: '3'
+               reportlinedetails:
+                 - id: XXXX1
+                   attributes:
+                     - name: XXXX1AMOUNT
+                       value: '1.00'
+                       type: DOLLAR
+                     - name: XXXX1AO
+                       value: 'XXXX'
+                       type: String
+                     - name: XXXX1OTHER
+                       value: 'XXXX   XXXXXXXX  XX  '
+                       type: String
+                     - name: XXXX1PCA
+                       value: 'XXXXX'
+                       type: String
+                     - name: XXXX1TCODE
+                       value: 'XXX'
+                       type: String
+                     - name: XXXX1INDEX
+                       value: ''
+                       type: String
+                     - name: XXXX1FUND
+                       value: ''
+                       type: String
+                     - name: XXXX1APPDFUND
+                       value: ''
+                       type: String
+                     - name: XXXX1COBJ
+                       value: ''
+                       type: String
+                     - name: XXXX1AOBJ
+                       value: ''
+                       type: String
+                     - name: XXXX1DEPAGENCY
+                       value: ''
+                       type: String
+                 - id: XXXX2
+                   attributes:
+                     - name: XXXX2AMOUNT
+                       value: '1.00'
+                       type: DOLLAR
+                     - name: XXXX2AO
+                       value: 'XXXX'
+                       type: String
+                     - name: XXXX2FUND
+                       value: 'XXXX'
+                       type: String
+                     - name: XXXX2OTHER
+                       value: 'XXXX   XXXXXXXX  XX  '
+                       type: String
+                     - name: XXXX2PCA
+                       value: 'XXXXX'
+                       type: String
+                     - name: XXXX2TCODE
+                       value: 'XXX'
+                       type: String
+                     - name: XXXX2INDEX
+                       value: ''
+                       type: String
+                     - name: XXXX2FUND
+                       value: ''
+                       type: String
+                     - name: XXXX2APPDFUND
+                       value: ''
+                       type: String
+                     - name: XXXX2COBJ
+                       value: ''
+                       type: String
+                     - name: XXXX2AOBJ
+                       value: ''
+                       type: String
+                     - name: XXXX2DEPAGENCY
+                       value: ''
+                       type: String
+                 - id: XXXX3
+                   attributes:
+                     - name: XXXX3AMOUNT
+                       value: '15.0'
+                       type: DOLLAR
+                     - name: XXXX3AO
+                       value: 'XXXX'
+                       type: String
+                     - name: XXXX3FUND
+                       value: 'XXXX'
+                       type: String
+                     - name: XXXX3OTHER
+                       value: 'XXXX   XXXXXXXX  XX  '
+                       type: String
+                     - name: XXXX3PCA
+                       value: 'XXXX'
+                       type: String
+                     - name: XXXX3TCODE
+                       value: 'XXX'
+                       type: String
+                     - name: XXXX3INDEX
+                       value: ''
+                       type: String
+                     - name: XXXX3FUND
+                       value: ''
+                       type: String
+                     - name: XXXX3APPDFUND
+                       value: ''
+                       type: String
+                     - name: XXXX3COBJ
+                       value: ''
+                       type: String
+                     - name: XXXX3AOBJ
+                       value: ''
+                       type: String
+                     - name: XXXX3DEPAGENCY
+                       value: ''
+                       type: String
+               additionalinfo:
+                 - key: servicecode
+                   value: XXXXXXXXXXXX
+                 - key: username
+                   value: XXXXXXXXXXXX
+                 - key: sourceapplication
+                   value: XXXX
+                 - key: companyname
+                   value: XXXX
+                 - key: sourceenvironment
+                   value: XXXXXXXXXXXX
+                 - key: hostname
+                   value: XXXXXXXXXXXX
+                 - key: shipfirstname
+                   value: XXXXXXXXXXXX
+                 - key: shiplastname
+                   value: XXXXXXXXXXXX
+                 - key: shipaddressline1
+                   value: XXXXXXXXXXXX
+                 - key: shipaddressline2
+                   value: XXXXXXXXXXXX
+                 - key: shipcity
+                   value: XXXXXXXXXXXX
+                 - key: shipstate
+                   value: XXXXXXXXXXXX
+                 - key: shipcountry
+                   value: XXXXXXXXXXXX
+                 - key: shipphone
+                   value: XXXXXXXXXXXX
+                 - key: shipemail
+                   value: XXXXXXXXXXXX
+                 - key: billfirstname
+                   value: XXXXXXXXXXXX
+                 - key: billlastname
+                   value: XXXXXXXXXXXX
+                 - key: billaddressline1
+                   value: XXXXXXXXXXXX
+                 - key: billaddressline2
+                   value: XXXXXXXXXXXX
+                 - key: billcity
+                   value: XXXXXXXXXXXX
+                 - key: billstate
+                   value: XXXXXXXXXXXX
+                 - key: billcountry
+                   value: XXXXXXXXXXXX
+                 - key: billphone
+                   value: XXXXXXXXXXXX
+                 - key: billemail
+                   value: XXXXXXXXXXXX
+                 - key: custom00
+                   value: XXXXXXXXXXXX
+                 - key: custom01
+                   value: XXXXXXXXXXXX
+                 - key: custom02
+                   value: XXXXXXXXXXXX
+                 - key: custom03
+                   value: XXXXXXXXXXXX
+                 - key: custom04
+                   value: XXXXXXXXXXXX
+                 - key: custom29
+                   value: XXXXXXXXXXXX
+ 
     ChargeResponseMultiTransaction:
       value:
         accountid: 1000000001
