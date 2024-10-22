@@ -340,7 +340,7 @@ This section outlines the response codes you may encounter when interacting with
 |	AM00000020	|	[fieldname] cannot be more than [allowed length] characters.	|	API	|
 |	AM00000034	|	Only letters are valid in [fieldname].	|	API	|
 |	AM00000745	|	expirationyear cannot be greater than the currentyear+10	|	API	|
-|	AM00000880	|	Customer association is not needed for an user having usertype as account admin.	|
+|	AM00000880	|	Customer association is not needed for an user having usertype as account admin.	| API |
 |	AM00000881	|	Supplier association is not needed for an user having usertype as account admin.	|	API	|
 |	AM00000889	|	Error occurred in [apiname]. Please contact Customer Service.	|	API	|
 |	AM00000962	|	Error occured when calling the Card Connect API [apiname].	|	API	|
