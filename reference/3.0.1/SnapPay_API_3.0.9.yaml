@@ -8757,7 +8757,7 @@ paths:
           application/json:
             schema:
               type: object
-              required: [accountid]
+              required: [accountid, token]
               properties:
                 accountid:
                   description: >-
@@ -10940,7 +10940,7 @@ paths:
                   type: string
                   description: >-
                     Provide the order ID, sourced from the ERP system.
-                  example: 123456
+                  example: "Ord123"
                 transactionid:
                   type: string
                   description: >-
