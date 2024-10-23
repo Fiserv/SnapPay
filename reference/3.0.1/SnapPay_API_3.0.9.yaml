@@ -2176,6 +2176,47 @@ components:
       accountid: 1000000001
       message: Error occurred in GetTransaction. Please contact Customer Service.
       status: 'N'
+    GetTransactionV2:
+      value:
+        accountid: 1000000001
+        message: Success
+        status: 'Y'
+        transactions:
+          - transaction:
+              transactionstatus: Success
+              returncode: '000'
+              returndescription: Approval
+              pgtransactionid: '123454267968'
+              pgtransactiontype: Capture
+              paymenttransactionid: '22871'
+              authorizationcode: PPS688
+              transactiondate: 12/29/2020 05:53:13 PM
+              procrespcode: RPCT
+              transactionamount: 75.25
+              currency: USD
+              orderid: ord123
+              invoiceid: inv123
+              reference: ecom
+              totaltransactionamount: 75.25
+              feeamount: 0
+              feevalue: 0
+            paymentmethod:
+              paymentmethodid: 16825
+              type: VISA
+              last4: '4242'
+              tokenid: '9412345672514242'
+              firstname: ABC
+              lastname: Customer
+              expirationmonth: '4'
+              expirationyear: '2022'
+              addressline1: 495 N Commons Dr
+              city: Aurora
+              state: IL
+              zip: '60540'
+              country: US
+              phonenumber: ''
+              email: first.last@company.com
+        
     GetPMswithDualMID:
      value:
       accountid: 1000000001
@@ -2306,6 +2347,165 @@ components:
         email: first.last@company.com
         cardtype: DEBIT
         surchargeapplicable: 'N'
+    GetPaymentDetailsFailedAttempt:
+     value:
+      accountid: 1000000001
+      message: Payment details retrieved successfully.
+      status: 'Y'
+      transaction:
+        merchantid: '123456144562'
+        returncode: '000'
+        returndescription: Approval
+        transactionstatus: 'Y'
+        pgtransactionid: '1234557539'
+        paymenttransactionid: '3527'
+        authorizationcode: PPS010
+        transactiondate: 02/14/2019 03:00:28 PM
+        procrespcode: RPCT
+        transactionamount: 75
+        currency: USD
+        feeamount: 0.35
+        feeauthcode: TSTAUT
+        feeformat: Percentage
+        feestatus: 'Y'
+        feetransactionid: '6141'
+        feetype: Surcharge
+        feevalue: 3.5
+      paymentmethod:
+        paymentmethodid: 12900
+        type: MC
+        last4: '5454'
+        tokenid: '123456641895454'
+        firstname: Test
+        lastname: Auth
+        expirationmonth: '4'
+        expirationyear: '2027'
+        addressline1: 495 N Commons Dr
+        city: Aurora
+        state: IL
+        zip: '60563'
+        country: US
+      failedattempts:
+        transactions:
+          - transaction:
+              merchantid: '123544128'
+              returncode: '5005'
+              returndescription: 'DECLINED: The country of the credit card has been blocked.'
+              pgtransactionid: '12345088624'
+              paymenttransactionid: '30331'
+              authorizationcode: ''
+              transactiondate: 7/16/2023 04:12:55 AM
+              procrespcode: null
+              scverification: ''
+              addressverification: ''
+              transactionamount: 2
+              currency: USD
+              feeamount: 0
+              feeauthcode: null
+              feeformat: null
+              feestatus: null
+              feetransactionid: null
+              feetype: null
+              feevalue: 0
+              threedsecure: null
+            paymentmethod:
+              paymentmethodid: 32631
+              type: VISA
+              last4: '0006'
+              routingnumber: null
+              tokenid: null
+              firstname: ABC
+              lastname: Financial
+              expirationmonth: '6'
+              expirationyear: '2030'
+              addressline1: 495 N Commons Dr
+              city: Aurora
+              state: IL
+              zip: '60563'
+              country: US
+              phonenumber: ''
+              email: deepak.patil2@cditechnology.com
+          - transaction:
+              merchantid: '123544128'
+              returncode: '5005'
+              returndescription: 'DECLINED: The country of the credit card has been blocked.'
+              pgtransactionid: '12345088624'
+              paymenttransactionid: '30330'
+              authorizationcode: ''
+              transactiondate: 7/16/2023 04:11:48 AM
+              procrespcode: null
+              scverification: ''
+              addressverification: ''
+              transactionamount: 2
+              currency: USD
+              feeamount: 0
+              feeauthcode: null
+              feeformat: null
+              feestatus: null
+              feetransactionid: null
+              feetype: null
+              feevalue: 0
+              threedsecure: null
+            paymentmethod:
+              paymentmethodid: 32630
+              type: VISA
+              last4: '6599'
+              routingnumber: null
+              tokenid: null
+              firstname: ABC
+              lastname: Financial
+              expirationmonth: '8'
+              expirationyear: '2030'
+              addressline1: 495 N Commons Dr
+              city: Aurora
+              state: IL
+              zip: '60563'
+              country: US
+              phonenumber: ''
+              email: first.last@company.com
+    GetPaymentDetailsV2:
+     value:
+      accountid: 1000000001
+      message: Payment details retrieved successfully.
+      status: 'Y'
+      transaction:
+        merchantid: '123456144562'
+        returncode: '000'
+        returndescription: Approval
+        transactionstatus: 'Y'
+        pgtransactionid: '1234557539'
+        paymenttransactionid: '3527'
+        authorizationcode: PPS010
+        transactiondate: 02/14/2019 03:00:28 PM
+        procrespcode: RPCT
+        transactionamount: 75
+        currency: USD
+        orderid: ord123
+        invoiceid: inv123
+        reference: ecom
+        feeamount: 0.35
+        feeauthcode: TSTAUT
+        feeformat: Percentage
+        feestatus: 'Y'
+        feetransactionid: '6141'
+        feetype: Surcharge
+        feevalue: 3.5
+      paymentmethod:
+        paymentmethodid: 12900
+        type: MC
+        last4: '5454'
+        tokenid: '123456641895454'
+        firstname: Test
+        lastname: Auth
+        expirationmonth: '4'
+        expirationyear: '2027'
+        addressline1: 495 N Commons Dr
+        city: Aurora
+        state: IL
+        zip: '60563'
+        country: US
+      
+      
     GetPMOnRequestDualMID:
       value:
         accountid: 1000000001
@@ -8976,6 +9176,12 @@ paths:
                 Using Dual MID:
                   summary: Using Dual MID
                   $ref: '#/components/examples/GetPaymentDetailsResponseDualMID'
+                Including Failed Attempts:
+                  summary: Including Failed Attempts
+                  $ref: '#/components/examples/GetPaymentDetailsFailedAttempt'
+                Get Payment Detail (V2):
+                  summary: Get Payment Detail (V2)
+                  $ref: '#/components/examples/GetPaymentDetailsV2'
         '400': {$ref: '#/components/responses/InvalidRequest'}
         '401':
           description: Authentication Failed
@@ -11048,6 +11254,63 @@ paths:
                               description: >-
                                 Transaction date populated by SnapPay upon successful completion.
                               example: 02/14/2021 030028 PM
+                            dctransaction:
+                             type: object
+                             properties:
+                               merchantid:
+                                 type: string
+                                 description: Payment Gateway Merchant ID
+                                 example: 496695144562
+                               returncode:
+                                 type: string
+                                 description: Payment Gateway Return Code
+                                 example: 0
+                               returndescription:
+                                 type: string
+                                 description: Return Description
+                                 example: Approval
+                               pgtransactionid:
+                                 type: string
+                                 description: Payment Gateway Transaction ID
+                                 example: 360354240638
+                               paymenttransactionid:
+                                 type: integer
+                                 description: SnapPay Transaction ID
+                                 example: 43237
+                               authorizationcode:
+                                 type: string
+                                 description: Authorization Code
+                                 example: PPS351
+                               transactiondate:
+                                 type: string
+                                 description: Transaction Date
+                                 example: 07/31/2021 10:19:37 AM
+                               procrespcode:
+                                 type: string
+                                 description: Processor Response Code
+                                 example: RPCT
+                               transactionamount:
+                                 type: integer
+                                 description: Transaction Amount
+                                 example: 75.25
+                               currency:
+                                 type: string
+                                 description: Currency Code
+                                 example: USD
+                               totaltransactionamount:
+                                 type: integer
+                                 description: >-
+                                   Total transaction amount (transactionamount +
+                                   feeamount)
+                                 example: 75.25
+                               feeamount:
+                                 type: integer
+                                 description: Fee Amount (amount in currency)
+                                 example: 0
+                               feevalue:
+                                 type: integer
+                                 description: Fee Value (value in % for Surcharge fee)
+                                 example: 0
                             transactionamount:
                               type: integer
                               description: >-
@@ -11073,63 +11336,7 @@ paths:
                               description: >-
                                 Specify the fee value, either as a percentage or a flat amount (e.g., 3 or 0).
                               example: 0
-                        dctransaction:
-                          type: object
-                          properties:
-                            merchantid:
-                              type: string
-                              description: Payment Gateway Merchant ID
-                              example: 496695144562
-                            returncode:
-                              type: string
-                              description: Payment Gateway Return Code
-                              example: 0
-                            returndescription:
-                              type: string
-                              description: Return Description
-                              example: Approval
-                            pgtransactionid:
-                              type: string
-                              description: Payment Gateway Transaction ID
-                              example: 360354240638
-                            paymenttransactionid:
-                              type: integer
-                              description: SnapPay Transaction ID
-                              example: 43237
-                            authorizationcode:
-                              type: string
-                              description: Authorization Code
-                              example: PPS351
-                            transactiondate:
-                              type: string
-                              description: Transaction Date
-                              example: 07/31/2021 10:19:37 AM
-                            procrespcode:
-                              type: string
-                              description: Processor Response Code
-                              example: RPCT
-                            transactionamount:
-                              type: integer
-                              description: Transaction Amount
-                              example: 75.25
-                            currency:
-                              type: string
-                              description: Currency Code
-                              example: USD
-                            totaltransactionamount:
-                              type: integer
-                              description: >-
-                                Total transaction amount (transactionamount +
-                                feeamount)
-                              example: 75.25
-                            feeamount:
-                              type: integer
-                              description: Fee Amount (amount in currency)
-                              example: 0
-                            feevalue:
-                              type: integer
-                              description: Fee Value (value in % for Surcharge fee)
-                              example: 0
+                        
                         paymentmethod:
                           type: object
                           properties:
@@ -11207,6 +11414,9 @@ paths:
                 Transaction using Dual MID:
                   summary: Transaction using Dual MID
                   $ref: '#/components/examples/GetTransactionDualMIDResponse'
+                Get Transaction (V2):
+                  summary: Get Transaction (V2)
+                  $ref: '#/components/examples/GetTransactionV2'
                 Failure scenario:
                   summary: Failure scenario
                   $ref: '#/components/examples/GetTransactionFailedExample'
