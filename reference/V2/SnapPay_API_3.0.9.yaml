@@ -7842,11 +7842,11 @@ paths:
         account.
         </br></br>
         To enforce duplicate transaction checks, we are introducing the following account parameter configuration:</br></br>
-        1. EnableDuplicateCheck – This configuration ensures the uniqueness of each transaction.</br>
-        2. DuplicateCheckField – This parameter specifies the field(s) used for the uniqueness check, such as Order ID, Invoice ID, or both.</br>
-        3. EnableDuplicateCheckBasedOnCustomer: This property enables the system to perform a duplicate check based on Customer for OrderID, InvoiceID, or both. </br>
-        4. DuplicateCheckTransactionType: This property determines which transaction types (A, S, D) are used for the duplicate check. Multiple transaction types should be separated by commas. </br>
-        5. EnableDuplicateCheckForGetRequest: This property enables the duplicate check for the GetRequestId API. </br></br>
+        1. EnableDuplicateCheck - This configuration ensures the uniqueness of each transaction.</br>
+        2. DuplicateCheckField - This parameter specifies the field(s) used for the uniqueness check, such as Order ID, Invoice ID, or both.</br>
+        3. EnableDuplicateCheckBasedOnCustomer - This property enables the system to perform a duplicate check based on Customer for OrderID, InvoiceID, or both. </br>
+        4. DuplicateCheckTransactionType - This property determines which transaction types (A, S, D) are used for the duplicate check. Multiple transaction types should be separated by commas. </br>
+        5. EnableDuplicateCheckForGetRequest - This property enables the duplicate check for the GetRequestId API. </br></br>
         By adding these configurations, we aim to enhance the integrity of transaction processing by preventing duplicate entries.
 
       operationId: getRequestIDEcom
