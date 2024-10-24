@@ -5883,11 +5883,12 @@ components:
       value:
         accountid: 1000000001
         transactions:
-          - currencycode: USD
+          - currencycode: "USD"
             companycode: '100'
             customerid: '4242'
             userid: user
-            referencetransactionid: 1234567890
+            referencetransactionid: "1234567890"
+            transactionamount: 13.00
             orderid: '123456'
             purchaseorder: string
             reference: string
@@ -6089,11 +6090,12 @@ components:
       value:
         accountid: 1000000001
         transactions:
-          - currencycode: USD
+          - currencycode: "USD"
             companycode: '100'
             customerid: '4242'
-            userid: user
-            referencetransactionid: 1234567890
+            userid: "user"
+            referencetransactionid: "1234567890"
+            transactionamount: 13.00
             orderid: '123456'
             purchaseorder: string
             reference: string
@@ -6189,7 +6191,8 @@ components:
             companycode: '100'
             customerid: '4242'
             userid: user
-            referencetransactionid: 1234567890
+            referencetransactionid: "1234567890"
+            transactionamount: 13.00
             orderid: '123456'
             purchaseorder: string
             reference: string
@@ -7643,9 +7646,9 @@ components:
       required: [accountid]
       properties:
          accountid:
-                  type: number
-                  description: Pass the SnapPay account ID provided by SnapPay.
-                  example: 1000000001
+          type: number
+          description: Pass the SnapPay account ID provided by SnapPay.
+          example: 1000000001
          transactions:
           type: array
           description: This section contains an array of transaction details, which can include single or multiple transactions.
@@ -7656,7 +7659,7 @@ components:
               currency:
                 type: string
                 description: Currency code for the transaction.
-                example: USD
+                example: "USD"
               companycode:
                 description: Company code from the SnapPay portal or ERP system.
                 type: string
@@ -7664,31 +7667,36 @@ components:
               customerid:
                 type: string
                 description: Customer ID from the ERP system or eCommerce. application.
-                example: 100
+                example: "100"
               userid:
                 type: string
                 description:  User ID sourced from an external application or the SnapPay portal.
-                example: user
+                example: "user"
+              
               referencetransactionid:
                 type: string
                 description: The unique ID of the original transaction that needs to be refunded. This ID is required to identify the transaction to be refunded.
-                example: 123123123  
+                example: "123123123"
+              transactionamount:
+                type: number
+                description: Transaction amount for the sale
+                example: 13
               orderid:
                 type: string
                 description: Order ID from the ERP or eCommerce system. Includes duplicate transaction check based on account parameters.
-                example: 123456
+                example: "order1234"
               invoiceid:
                 type: string
                 description: Invoice ID from the ERP system. 
-                example: 123456
+                example: "inv1234"
               purchaseorder:
                 type: string
                 description:  Purchase order from the ERP or eCommerce system.
-                example: 1234
+                example: "1234"
               reference:
                 type: string
                 description: Reference from the ERP system. 
-                example: 123456
+                example: "123456"
               sendemailreceipts:
                 type: string
                 description: Send email receipts to the user. Allowed values Y or N.
@@ -8192,12 +8200,7 @@ paths:
       x-proxy-name: Refund
       summary: Refund
       description: >-
-        The Refund API places a refund of a prior Capture or Charge on the credit card or ACH account used in the original transaction. The original transaction is set in parameter referencetransactionid and some explanatory text can be set in the reference parameter.  </br></br>
-        To enforce duplicate transaction checks, we are introducing the following account parameter configuration:</br></br>
-        1. EnableDuplicateCheck – This configuration ensures the uniqueness of each transaction.</br>
-        2. DuplicateCheckField – This parameter specifies the field(s) used for the uniqueness check, such as Order ID, Invoice ID, or both.</br></br>
-        By adding these configurations, we aim to enhance the integrity of transaction processing by preventing duplicate entries.
-        
+        The Refund API places a refund of a prior Capture or Charge on the credit card or ACH account used in the original transaction. The original transaction is set in parameter referencetransactionid and some explanatory text can be set in the reference parameter.  
       operationId: refund
       requestBody:
         content:
